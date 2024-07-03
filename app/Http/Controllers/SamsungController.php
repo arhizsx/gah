@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Validator;
 
 class SamsungController extends Controller
 {
@@ -15,7 +16,7 @@ class SamsungController extends Controller
 
         try{
 
-            $validate = Validator::make($request->all(), array(
+            $validate = Validator::make( $request->all(), array(
                 'serviceability_check' => 'required',
                 'receipt' => 'required',
             ));
@@ -32,7 +33,11 @@ class SamsungController extends Controller
                     $file_error = true;
                 }
 
-                return true;
+                if( $file_error ){
+                    return "Upload Error";
+                }
+
+                return "Uploaded";
             }
 
 
@@ -48,123 +53,123 @@ class SamsungController extends Controller
 
     }
 
-        try {
-            $validate = Validator::make($request->all(), array(
-                'document_upload' => 'required',
-            ));
+        // try {
+        //     $validate = Validator::make($request->all(), array(
+        //         'document_upload' => 'required',
+        //     ));
 
-            if($validate->passes()){
-
-
-                if($request->hasFile('document_upload')) {
-
-                    // Upload path
-                    $destinationPath = 'files/';
-
-                    // Get file extension
-                    $extension = $request->file('document_upload')->getClientOriginalExtension();
-
-                    // Rename file
-                    $fileName = time().$request->file('document_upload')->getClientOriginalName();
-
-                    // Uploading file to given path
-                    $request->file('document_upload')->move($destinationPath, $fileName);
-
-                    $document_type_clean = $this->clean_special_char($request->input("document_type"));
-
-                    $new_file = $this->rename_file($fileName, $document_type_clean, $request->input("site_id"), $prefix);
-
-                    \Storage::move( $fileName, $new_file );
+        //     if($validate->passes()){
 
 
-                    \DB::beginTransaction();
+        //         if($request->hasFile('document_upload')) {
+
+        //             // Upload path
+        //             $destinationPath = 'files/';
+
+        //             // Get file extension
+        //             $extension = $request->file('document_upload')->getClientOriginalExtension();
+
+        //             // Rename file
+        //             $fileName = time().$request->file('document_upload')->getClientOriginalName();
+
+        //             // Uploading file to given path
+        //             $request->file('document_upload')->move($destinationPath, $fileName);
+
+        //             $document_type_clean = $this->clean_special_char($request->input("document_type"));
+
+        //             $new_file = $this->rename_file($fileName, $document_type_clean, $request->input("site_id"), $prefix);
+
+        //             \Storage::move( $fileName, $new_file );
 
 
-                    try {
+        //             \DB::beginTransaction();
 
 
-
-                        $site_data = \DB::table($request->input("table"))->where("id", $request->input("site_id"))->first();
-
-
-                        $site = json_decode($site_data->data, true);
+        //             try {
 
 
 
-                        $site["documents_data"][] = [
-                            "document_type" => $request->input("document_type"),
-                            "document_type_acronym" => $request->input("document_type_acronym"),
-                            "filename" => $new_file,
-                            "timestamp" => time(),
-                            "user_id" => \Auth::user()->id,
-                            "approvals" => [],
-                            "status" => "uploaded"
-                        ];
+        //                 $site_data = \DB::table($request->input("table"))->where("id", $request->input("site_id"))->first();
+
+
+        //                 $site = json_decode($site_data->data, true);
 
 
 
-                        \DB::table($request->input("table"))
-                            ->where("id", $request->input("site_id"))
-                            ->update([
-                                "data" => $site
-                            ]);
-
-                        \DB::table($request->input("tracking"))->insert([
-                            "site_id" => $request->site_id,
-                            "user_id" => \Auth::user()->id,
-                            "user_group" => "demo",
-                            "action" => "Document Upload",
-                            "action_description" => "Uploaded " . $request->document_type
-                        ]);
+        //                 $site["documents_data"][] = [
+        //                     "document_type" => $request->input("document_type"),
+        //                     "document_type_acronym" => $request->input("document_type_acronym"),
+        //                     "filename" => $new_file,
+        //                     "timestamp" => time(),
+        //                     "user_id" => \Auth::user()->id,
+        //                     "approvals" => [],
+        //                     "status" => "uploaded"
+        //                 ];
 
 
 
-                        $new_data = \DB::table($request->input("table"))
-                                        ->where("id", $request->input("site_id"))
-                                        ->first();
+        //                 \DB::table($request->input("table"))
+        //                     ->where("id", $request->input("site_id"))
+        //                     ->update([
+        //                         "data" => $site
+        //                     ]);
 
-                        $new = json_decode($new_data->data,  true);
-
-
-                        $filter = $request->input("document_type_acronym");
-
-                        $filtered = collect( $new["documents_data"] )->filter(function ($vx, $kx) use ($filter){
-                            return $vx['document_type_acronym'] == $filter;
-                        });
-
-                        $result = [
-                            "document_type_acronym" => $request->input("document_type_acronym"),
-                            "files" => array_values($filtered->all())
-                        ];
-
-                        \DB::commit();
+        //                 \DB::table($request->input("tracking"))->insert([
+        //                     "site_id" => $request->site_id,
+        //                     "user_id" => \Auth::user()->id,
+        //                     "user_group" => "demo",
+        //                     "action" => "Document Upload",
+        //                     "action_description" => "Uploaded " . $request->document_type
+        //                 ]);
 
 
-                        return response()->json(['error' => false, 'message' =>  $result ]);
 
-                    } catch (\Exception $e) {
+        //                 $new_data = \DB::table($request->input("table"))
+        //                                 ->where("id", $request->input("site_id"))
+        //                                 ->first();
 
-                        if( \Storage::exists($new_file) ){
+        //                 $new = json_decode($new_data->data,  true);
 
-                            \Storage::delete( $new_file);
 
-                        }else{
-                        }
+        //                 $filter = $request->input("document_type_acronym");
 
-                        \DB::rollback();
+        //                 $filtered = collect( $new["documents_data"] )->filter(function ($vx, $kx) use ($filter){
+        //                     return $vx['document_type_acronym'] == $filter;
+        //                 });
 
-                        return response()->json(['error' => true, 'message' =>  "Database Error Encountered: " . $e ]);
+        //                 $result = [
+        //                     "document_type_acronym" => $request->input("document_type_acronym"),
+        //                     "files" => array_values($filtered->all())
+        //                 ];
 
-                    }
+        //                 \DB::commit();
 
-                }
 
-            } else {
-                return response()->json(['error' => true, 'message' => $validate->errors()->all()]);
-            }
-        } catch (\Throwable $th) {
+        //                 return response()->json(['error' => false, 'message' =>  $result ]);
 
-            return response()->json(['error' => true, 'message' => $th->getMessage()]);
-        }
+        //             } catch (\Exception $e) {
+
+        //                 if( \Storage::exists($new_file) ){
+
+        //                     \Storage::delete( $new_file);
+
+        //                 }else{
+        //                 }
+
+        //                 \DB::rollback();
+
+        //                 return response()->json(['error' => true, 'message' =>  "Database Error Encountered: " . $e ]);
+
+        //             }
+
+        //         }
+
+        //     } else {
+        //         return response()->json(['error' => true, 'message' => $validate->errors()->all()]);
+        //     }
+        // } catch (\Throwable $th) {
+
+        //     return response()->json(['error' => true, 'message' => $th->getMessage()]);
+        // }
 
 }

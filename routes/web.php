@@ -7,7 +7,16 @@ Route::get('/', function () {
     return view('home');
 })->middleware(['auth', 'verified'])->name('home');
 
+Route::get('/', function () {
+    return view('applications');
+})->middleware(['auth', 'verified'])->name('applications');
+
+
 Route::get('/samsung', function () {
+    return view('samsung');
+});
+
+Route::get('/samsung/register', function () {
     return view('samsung');
 });
 

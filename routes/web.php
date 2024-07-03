@@ -7,13 +7,14 @@ Route::get('/', function () {
     return view('home');
 })->middleware(['auth', 'verified'])->name('home');
 
+
 Route::get('/applications', function () {
     return view('applications');
 })->middleware(['auth', 'verified'])->name('applications');
 
-Route::get('/applications-mobile', function () {
+Route::get('/mobile/applications', function () {
     return view('applications');
-})->middleware(['auth', 'verified'])->name('applications-mobile');
+})->middleware(['auth', 'verified'])->name('mobile-applications');
 
 
 Route::get('/samsung', function () {

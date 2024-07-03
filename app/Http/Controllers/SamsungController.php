@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Validator;
 
 class SamsungController extends Controller
 {
@@ -16,7 +15,7 @@ class SamsungController extends Controller
 
         try{
 
-            $validate = Validator::make( $request->all(), array(
+            $validate = \Validator::make( $request->all(), array(
                 'serviceability_check' => 'required',
                 'receipt' => 'required',
             ));

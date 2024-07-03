@@ -1,4 +1,4 @@
-<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 316 316">
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 316 316" width="316" height="316">
 	<title>Globe_Telecom_logo-svg</title>
 	<style>
 		.s0 { fill: #29348f }

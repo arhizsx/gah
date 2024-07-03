@@ -22,6 +22,7 @@
     <body  class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
         <div id="registration_form" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
             <form id="samsung_form">
+                @csrf
                 <img src="/images/banner.png" width="100%" />
 
                 <div class="border rounded-3 p-3 mt-4">

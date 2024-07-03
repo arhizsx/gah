@@ -11,7 +11,9 @@ class SamsungController extends Controller
 
     function register(Request $request){
 
-        return $request->all();
+
+
+        return $request->file;
 
     }
 

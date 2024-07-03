@@ -9,7 +9,7 @@ class SamsungController extends Controller
         return view('samsung');
     }
 
-    function FunctionName(Request $request){
+    function register(Request $request){
 
         return $request->all();
 

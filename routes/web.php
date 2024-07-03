@@ -21,6 +21,11 @@ Route::get('/samsung/register', function () {
 });
 
 
+Route::get('/verifier', function () {
+    return redirect('https://sam.globe.com.ph/broadband');
+});
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

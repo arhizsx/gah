@@ -6,7 +6,7 @@
     </x-slot>
     <x-slot name="slot">
 
-        <div class="container mt-5" style="height: 380px;">
+        <div class="container mt-3" style="height: 380px;">
             <div class="row"  style="height: 100%;">
                 <div class="col">
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 100%;">

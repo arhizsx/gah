@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SamsungController;
+
 
 Route::get('/', function () {
     return view('home');
@@ -17,13 +19,9 @@ Route::get('/mobile/applications', function () {
 })->middleware(['auth', 'verified'])->name('mobile-applications');
 
 
-Route::get('/samsung', function () {
-    return view('samsung');
-});
+Route::post('/samsung/register', [SamsungController::class, 'register']);
 
-Route::get('/samsung/register', function () {
-    return view('samsung');
-});
+Route::get('/samsung', [SamsungController::class, 'index']);
 
 
 Route::get('/verifier', function () {

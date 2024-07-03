@@ -7,7 +7,7 @@ Route::get('/', function () {
     return view('home');
 })->middleware(['auth', 'verified'])->name('home');
 
-Route::get('/', function () {
+Route::get('/applications', function () {
     return view('applications');
 })->middleware(['auth', 'verified'])->name('applications');
 

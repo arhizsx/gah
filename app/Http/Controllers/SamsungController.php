@@ -11,7 +11,7 @@ class SamsungController extends Controller
 
     function FunctionName(Request $request){
 
-        return $request;
+        return $request->all();
 
     }
 

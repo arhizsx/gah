@@ -13,7 +13,7 @@ class SamsungController extends Controller
 
 
 
-        return $request->file;
+        return $request->all();
 
     }
 

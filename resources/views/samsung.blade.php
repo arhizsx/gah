@@ -218,7 +218,7 @@
 
             $.ajax({
                 type: 'post',
-                url: "/samsung/register.php",
+                url: "/samsung/register",
                 data: form,
                 enctype: 'multipart/form-data',
                 processData: false,

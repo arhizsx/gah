@@ -80,7 +80,7 @@
                                     <label for="province">Province</label>
                                     <select class="form-control mb-3 checker" name="province" data-checker="required" name="province" id="province">
                                         <option value="" selected>Select Province</option>
-                                        @include("province.php")
+                                        @include("province")
                                     </select>
                                 </div>
                                 <div class="form-row">
@@ -122,7 +122,7 @@
                                     <label for="province2">Province</label>
                                     <select class="form-control mb-3 checker" data-checker="required" name="province2" id="province2">
                                         <option value="" selected>Select Province</option>
-                                        @include("province.php")
+                                        @include("province")
                                     </select>
                                 </div>
                                 <div class="form-row">

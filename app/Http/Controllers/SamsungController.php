@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Validator;
 
 class SamsungController extends Controller
 {
@@ -19,6 +20,7 @@ class SamsungController extends Controller
                 'serviceability_check' => 'required',
                 'receipt' => 'required',
             ));
+
 
             if($validate->passes()){
 

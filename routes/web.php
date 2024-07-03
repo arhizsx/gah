@@ -11,6 +11,10 @@ Route::get('/applications', function () {
     return view('applications');
 })->middleware(['auth', 'verified'])->name('applications');
 
+Route::get('/applications-mobile', function () {
+    return view('applications');
+})->middleware(['auth', 'verified'])->name('applications-mobile');
+
 
 Route::get('/samsung', function () {
     return view('samsung');

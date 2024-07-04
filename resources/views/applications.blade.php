@@ -25,20 +25,21 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
-                <div class="row mb-3">
-                    <div class="col-4">
-                        <label for="province">Province</label>
+                    <div class="row mb-3">
+                        <div class="col-3">
+                            <label for="province">Province</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" type="text" value="" name="province" id="province" placeholder="Province">
+                        </div>
                     </div>
-                    <div class="col-8">
-                        <input class="form-control" type="text" value="" name="province" id="province" placeholder="Province">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-4">
-                        <label for="city">City</label>
-                    </div>
-                    <div class="col-8">
-                        <input class="form-control" type="text" value="" name="city" id="city" placeholder="City">
+                    <div class="row mb-3">
+                        <div class="col-3">
+                            <label for="city">City</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" type="text" value="" name="city" id="city" placeholder="City">
+                        </div>
                     </div>
                 </div>
             </div>

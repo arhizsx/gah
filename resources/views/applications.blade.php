@@ -26,11 +26,11 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-6">
-                            Details
+                        <div class="col-lg-8">
+                            <H5>Details</H5>
                         </div>
-                        <div class="col-lg-6">
-                            Attachments
+                        <div class="col-lg-4">
+                            <H5>Attachments</H5>
                         </div>
                     </div>
                 </div>

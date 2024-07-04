@@ -8,3 +8,15 @@
         <div id="gridContainer"></div>
     </x-slot>
 </x-app-layout>
+
+<script>
+
+let datagrid = "#gridContainer";
+let datasource = '/supervendor/applications/data';
+let columns = ['name', 'email'];
+
+$(() => {
+     setDatagrid( datagrid, datasource, columns);
+});
+
+</script>

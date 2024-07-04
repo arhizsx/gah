@@ -16,16 +16,17 @@ class SamsungController extends Controller
 
         $data = $request->all();
 
+        return $request->file();
+
         $files_to_check = [ "serviceability_check", "serviceability_check2" , "receipt" ];
-        $files = [];
 
         try{
 
             // Upload path
             $destinationPath = 'files/';
 
-
-            foreach( $files_to_check as $f ){
+            // Cycle all uploaded files
+            foreach( $request->file() as $f ){
 
                 if( $request->hasFile( $f )) {
 
@@ -35,7 +36,6 @@ class SamsungController extends Controller
                     // Uploading file to given path
                     $request->file( $f)->move($destinationPath, $fileName);
 
-                    $files[ $f ] = $fileName;
                     $data[ $f ] = $fileName;
 
                 }
@@ -45,7 +45,7 @@ class SamsungController extends Controller
             return response()->json(['error' => true, 'message' => $th->getMessage()]);
         }
 
-        $data["files"] = $files;
+
 
         return $data;
 

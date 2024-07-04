@@ -18,7 +18,7 @@
     <div class="modal-dialog modal-lg modal-fullscreen-lg-down">
         <div class="modal-content">
             <div class="modal-header bg-primary text-white">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Application Details</h1>
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Installation Details</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -40,7 +40,7 @@
                             <input class="form-control form-control-sm" type="text" value="" name="mobile_number" id="mobile_number" placeholder="Mobile Number">
                         </div>
                     </div>
-                    <div class="section-title">Primary Installation Address</div>
+                    <div class="section-title">Installation Address</div>
                     <div class="row mt-3 mb-3">
                         <div class="col-3">
                             <label for="province">Province</label>
@@ -79,65 +79,6 @@
                         </div>
                         <div class="col-9">
                             <input class="form-control form-control-sm" type="text" value="" name="house_floor_bldg" id="house_floor_bldg" placeholder="House no., Floor no., Bldg">
-                        </div>
-                    </div>
-                    <div class="section-title">Secondary Installation Address</div>
-                    <div class="row mt-3 mb-3">
-                        <div class="col-3">
-                            <label for="province">Province</label>
-                        </div>
-                        <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="province" id="province" placeholder="Province">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-3">
-                            <label for="city">City</label>
-                        </div>
-                        <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="City">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-3">
-                            <label for="brgy_village">Barangay / Village</label>
-                        </div>
-                        <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="brgy_village" id="brgy_village" placeholder="Barangay / Village">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-3">
-                            <label for="street">Street</label>
-                        </div>
-                        <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="street" id="street" placeholder="Street">
-                        </div>
-                    </div>
-                    <div class="row mb-4 border-bottom pb-3">
-                        <div class="col-3">
-                            <label for="house_floor_bldg">House no., Floor no., Bldg</label>
-                        </div>
-                        <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="house_floor_bldg" id="house_floor_bldg" placeholder="House no., Floor no., Bldg">
-                        </div>
-                    </div>
-                    <div class="section-title">Attachments</div>
-                    <div class="row">
-                        <div class="col">
-                            <div  class="border" style="height: 150px; width: 100%;">
-                                <img src="" alt-text="one"/>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div  class="border" style="height: 150px; width: 100%;">
-                                <img src="" alt-text="one"/>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div  class="border" style="height: 150px; width: 100%;">
-                                <img src="" alt-text="one"/>
-                            </div>
                         </div>
                     </div>
                 </div>

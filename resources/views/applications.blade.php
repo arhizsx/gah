@@ -130,16 +130,20 @@
                             <div  class="border" style="height: 150px; width: 100%;">
                                 <img src="" alt-text="one"/>
                             </div>
+                            <input type="text" name='serviceability_check'>
+
                         </div>
                         <div class="col">
                             <div  class="border" style="height: 150px; width: 100%;">
                                 <img src="" alt-text="one"/>
                             </div>
+                            <input type="text" name='serviceability_check2'>
                         </div>
                         <div class="col">
                             <div  class="border" style="height: 150px; width: 100%;">
                                 <img src="" alt-text="one"/>
                             </div>
+                            <input type="text" name='receipt'>
                         </div>
                     </div>
                 </div>

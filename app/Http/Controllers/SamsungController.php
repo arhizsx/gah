@@ -34,12 +34,12 @@ class SamsungController extends Controller
                     // Uploading file to given path
                     $request->file( $f)->move($destinationPath, $fileName);
 
-
+                    $files[ $f ] = $fileName;
 
                 }
-
             }
 
+            return $files;
 
 
 

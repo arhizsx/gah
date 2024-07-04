@@ -25,6 +25,7 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
+                    <strong>Personal Information</strong>
                     <div class="row mb-3">
                         <div class="col-3">
                             <label for="province">Customer Name</label>
@@ -41,6 +42,7 @@
                             <input class="form-control" type="text" value="" name="province" id="province" placeholder="Mobile Number">
                         </div>
                     </div>
+                    <strong>Primary Installation Address</strong>
                     <div class="row mb-3">
                         <div class="col-3">
                             <label for="province">Province</label>

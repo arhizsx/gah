@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Models\CampaignRegistration;
+use Illuminate\Support\Facades\Auth;
 
 class SamsungController extends Controller
 {
@@ -16,6 +18,7 @@ class SamsungController extends Controller
 
         $data = $request->all();
 
+        // Upload Attached Documents
         try{
 
             // Upload path
@@ -41,9 +44,13 @@ class SamsungController extends Controller
             return response()->json(['error' => true, 'message' => $th->getMessage()]);
         }
 
+        $registration = CampaignRegistration::create([
+            "campaign" => 'samsung',
+            "user_id" => Auth::user()->id,
+            "data" => $data
+        ]);
 
-
-        return $data;
+        return $registration;
 
     }
 

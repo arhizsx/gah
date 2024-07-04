@@ -27,6 +27,22 @@
                 <div class="container-fluid">
                     <div class="row mb-3">
                         <div class="col-3">
+                            <label for="province">Customer Name</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" type="text" value="" name="province" id="province" placeholder="Customer Name">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-3">
+                            <label for="province">Mobile Number</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" type="text" value="" name="province" id="province" placeholder="Mobile Number">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-3">
                             <label for="province">Province</label>
                         </div>
                         <div class="col-9">

@@ -1,7 +1,7 @@
 
-$.fn.setDatagrid = function( datagrid, datasource, columns){
+$.fn.setDatagrid = function( datasource, columns){
 
-    $( datagrid ).dxDataGrid({
+    $( this ).dxDataGrid({
         dataSource: datasource,
         rowAlternationEnabled: true,
         selection: {
@@ -48,9 +48,8 @@ $.fn.setDatagrid = function( datagrid, datasource, columns){
         headerFilter: {
             visible: true,
         },
-        onRowClick: function(e, datagrid) {
+        onRowClick: function(e) {
 
-            console.log(datagrid);
             console.log( e );
 
         },

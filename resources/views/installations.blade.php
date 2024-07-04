@@ -21,7 +21,7 @@ let columns = ['campaign', 'name', 'email', 'action'];
 
 $(() => {
 
-    $(this).setDatagrid( datagrid, datasource, columns );
+    $(datagrid).setDatagrid( datasource, columns );
 
 });
 

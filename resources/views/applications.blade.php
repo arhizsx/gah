@@ -59,6 +59,71 @@
                             <input class="form-control" type="text" value="" name="city" id="city" placeholder="City">
                         </div>
                     </div>
+                    <div class="row mb-4 border-bottom pb-3">
+                        <div class="col-3">
+                            <label for="city">Barangay / Village</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" type="text" value="" name="city" id="city" placeholder="Barangay / Village">
+                        </div>
+                    </div>
+                    <div class="row mb-4 border-bottom pb-3">
+                        <div class="col-3">
+                            <label for="city">Street</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" type="text" value="" name="city" id="city" placeholder="Street">
+                        </div>
+                    </div>
+                    <div class="row mb-4 border-bottom pb-3">
+                        <div class="col-3">
+                            <label for="city">House no., Floor no., Bldg</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" type="text" value="" name="city" id="city" placeholder="House no., Floor no., Bldg">
+                        </div>
+                    </div>
+                    <H1 class="text-primary"><strong>Secondary Installation Address</strong></H1>
+                    <div class="row mt-3 mb-3">
+                        <div class="col-3">
+                            <label for="province">Province</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" type="text" value="" name="province" id="province" placeholder="Province">
+                        </div>
+                    </div>
+                    <div class="row mb-4 border-bottom pb-3">
+                        <div class="col-3">
+                            <label for="city">City</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" type="text" value="" name="city" id="city" placeholder="City">
+                        </div>
+                    </div>
+                    <div class="row mb-4 border-bottom pb-3">
+                        <div class="col-3">
+                            <label for="city">Barangay / Village</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" type="text" value="" name="city" id="city" placeholder="Barangay / Village">
+                        </div>
+                    </div>
+                    <div class="row mb-4 border-bottom pb-3">
+                        <div class="col-3">
+                            <label for="city">Street</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" type="text" value="" name="city" id="city" placeholder="Street">
+                        </div>
+                    </div>
+                    <div class="row mb-4 border-bottom pb-3">
+                        <div class="col-3">
+                            <label for="city">House no., Floor no., Bldg</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control" type="text" value="" name="city" id="city" placeholder="House no., Floor no., Bldg">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">

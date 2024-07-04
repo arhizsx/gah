@@ -34,7 +34,7 @@
                             <input class="form-control" type="text" value="" name="province" id="province" placeholder="Customer Name">
                         </div>
                     </div>
-                    <div class="row mb-5">
+                    <div class="row mb-4 border-bottom">
                         <div class="col-3">
                             <label for="province">Mobile Number</label>
                         </div>
@@ -51,7 +51,7 @@
                             <input class="form-control" type="text" value="" name="province" id="province" placeholder="Province">
                         </div>
                     </div>
-                    <div class="row mb-5">
+                    <div class="row mb-4 border-bottom">
                         <div class="col-3">
                             <label for="city">City</label>
                         </div>

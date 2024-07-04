@@ -36,6 +36,7 @@ class SamsungController extends Controller
                     $request->file( $f)->move($destinationPath, $fileName);
 
                     $files[ $f ] = $fileName;
+                    $data[ $f ] = $fileName;
 
                 }
             }

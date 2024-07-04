@@ -11,9 +11,12 @@
 
 <script>
 
+let datasource = '/supervendor/applications/data';
+let columns = ['name', 'email'];
+
 $(() => {
   $('#gridContainer').dxDataGrid({
-    dataSource: '/supervendor/applications/data',
+    dataSource: datasource,
     rowAlternationEnabled: true,
     selection: {
         mode: 'single',
@@ -65,7 +68,7 @@ $(() => {
     allowColumnResizing: {
         enabled: true
     },
-    columns: ['name', 'email'],
+    columns: columns,
     showBorders: true,
   });
 });

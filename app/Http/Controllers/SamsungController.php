@@ -47,7 +47,7 @@ class SamsungController extends Controller
         $registration = CampaignRegistration::create([
             "campaign" => 'samsung',
             "user_id" => Auth::user()->id,
-            "data" => $data
+            "data" => json_encode($data)
         ]);
 
         return $registration;

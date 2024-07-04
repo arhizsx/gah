@@ -13,9 +13,28 @@
     </x-slot>
 </x-app-layout>
 
+<!-- Modal -->
+<div class="modal fade" id="installation_details" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Installation Details</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                {{-- <button type="button" class="btn btn-primary">Installed</button> --}}
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
 
-let modal = "Modal X";
+let modal = "#installation_details";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/installations';
 let columns = ['campaign', 'name', 'email', 'action'];

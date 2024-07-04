@@ -49,7 +49,9 @@
 
             <!-- Page Content -->
             <main>
+                <div class="border shadow-lg p-3 mx-3 mt-3 mb-5 bg-white rounded">
                 {{ $slot }}
+                </div>
             </main>
         </div>
     </body>

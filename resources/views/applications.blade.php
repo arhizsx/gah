@@ -14,6 +14,13 @@
 
 
 </x-app-layout>
+<style>
+    .section-title{
+        font-size: 2em;
+        color: darkblue;
+        font-weight: bolder;
+    }
+</style>
 
 <!-- Modal -->
 <div class="modal fade" id="application_details" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -25,7 +32,7 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
-                    <H1 class="text-primary"><strong>Personal Information</strong></H1>
+                    <div class="section-title">Personal Information</div>
                     <div class="row mt-3 mb-3">
                         <div class="col-3">
                             <label for="province">Customer Name</label>
@@ -42,7 +49,7 @@
                             <input class="form-control form-control-sm" type="text" value="" name="province" id="province" placeholder="Mobile Number">
                         </div>
                     </div>
-                    <H1 class="text-primary"><strong>Primary Installation Address</strong></H1>
+                    <div class="section-title">Primary Installation Address</div>
                     <div class="row mt-3 mb-3">
                         <div class="col-3">
                             <label for="province">Province</label>
@@ -83,7 +90,7 @@
                             <input class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="House no., Floor no., Bldg">
                         </div>
                     </div>
-                    <H1 class="text-primary"><strong>Secondary Installation Address</strong></H1>
+                    <div class="section-title">Secondary Installation Address</div>
                     <div class="row mt-3 mb-3">
                         <div class="col-3">
                             <label for="province">Province</label>
@@ -124,7 +131,7 @@
                             <input class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="House no., Floor no., Bldg">
                         </div>
                     </div>
-                    <H1 class="text-primary"><strong>Attachments</strong></H1>
+                    <div class="section-title">Attachments</div>
 
                 </div>
             </div>

@@ -73,7 +73,7 @@
                             <input class="form-control form-control-sm" type="text" value="" name="street" id="street" placeholder="Street">
                         </div>
                     </div>
-                    <div class="row mb-4 border-bottom pb-3">
+                    <div class="row mb-4 pb-3">
                         <div class="col-3">
                             <label for="house_floor_bldg">House no., Floor no., Bldg</label>
                         </div>

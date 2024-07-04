@@ -75,7 +75,7 @@
                             <input class="form-control" type="text" value="" name="city" id="city" placeholder="Street">
                         </div>
                     </div>
-                    <div class="row mb-3">
+                    <div class="row mb-4 border-bottom pb-3">
                         <div class="col-3">
                             <label for="city">House no., Floor no., Bldg</label>
                         </div>

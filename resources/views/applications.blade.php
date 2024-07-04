@@ -41,7 +41,7 @@
                                     <label for="city">City</label>
                                 </div>
                                 <div class="col-8">
-                                    <input class="form-control" type="text" value="" name="city" id="city" placeholder="Province">
+                                    <input class="form-control" type="text" value="" name="city" id="city" placeholder="City">
                                 </div>
                             </div>
                         </div>

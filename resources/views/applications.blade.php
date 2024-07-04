@@ -25,29 +25,20 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <H2>Details</H2>
-                            <div class="row mb-3">
-                                <div class="col-4">
-                                    <label for="province">Province</label>
-                                </div>
-                                <div class="col-8">
-                                    <input class="form-control" type="text" value="" name="province" id="province" placeholder="Province">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-4">
-                                    <label for="city">City</label>
-                                </div>
-                                <div class="col-8">
-                                    <input class="form-control" type="text" value="" name="city" id="city" placeholder="City">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <H2>Attachments</H2>
-                        </div>
+                <div class="row mb-3">
+                    <div class="col-4">
+                        <label for="province">Province</label>
+                    </div>
+                    <div class="col-8">
+                        <input class="form-control" type="text" value="" name="province" id="province" placeholder="Province">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-4">
+                        <label for="city">City</label>
+                    </div>
+                    <div class="col-8">
+                        <input class="form-control" type="text" value="" name="city" id="city" placeholder="City">
                     </div>
                 </div>
             </div>

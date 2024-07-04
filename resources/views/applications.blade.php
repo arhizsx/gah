@@ -5,7 +5,9 @@
         </h2>
     </x-slot>
     <x-slot name="slot">
-        <div id="gridContainer" class="m-3"></div>
+        <div class="p-3 border">
+            <div id="gridContainer"></div>
+        </div>
     </x-slot>
 </x-app-layout>
 

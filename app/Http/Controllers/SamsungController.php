@@ -39,6 +39,8 @@ class SamsungController extends Controller
                 }
             }
 
+            return $request->all();
+
             return $files;
 
 

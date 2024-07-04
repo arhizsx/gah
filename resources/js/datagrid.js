@@ -49,7 +49,7 @@ $.fn.setDatagrid = function( datagrid, datasource, columns){
             visible: true,
         },
         onRowClick: function(e) {
-
+            console.log( e );
         },
         allowColumnResizing: {
             enabled: true

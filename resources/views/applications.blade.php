@@ -134,13 +134,19 @@
                     <div class="section-title">Attachments</div>
                     <div class="row">
                         <div class="col">
-                            <img class="border" src="" alt-text="one" style="height: 100px;"/>
+                            <div  class="border" style="height: 100px; width: 100%;">
+                                <img src="" alt-text="one"/>
+                            </div>
                         </div>
                         <div class="col">
-                            <img class="border" src="" alt-text="one" style="height: 100px;"/>
+                            <div  class="border" style="height: 100px; width: 100%;">
+                                <img src="" alt-text="one"/>
+                            </div>
                         </div>
                         <div class="col">
-                            <img class="border" src="" alt-text="one" style="height: 100px;"/>
+                            <div  class="border" style="height: 100px; width: 100%;">
+                                <img src="" alt-text="one"/>
+                            </div>
                         </div>
                     </div>
                 </div>

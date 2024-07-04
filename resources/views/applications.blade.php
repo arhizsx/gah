@@ -16,7 +16,7 @@
 </x-app-layout>
 <style>
     .section-title{
-        font-size: 2em;
+        font-size: 1.2em;
         color: darkblue;
         font-weight: bolder;
     }

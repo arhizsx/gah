@@ -50,7 +50,8 @@ $.fn.setDatagrid = function( datagrid, datasource, columns){
         },
         onRowClick: function(e) {
 
-            $(datagrid).addCLass("d-none");
+            $(document).find(datagrid).addCLass("d-none");
+
             console.log( e );
         },
         allowColumnResizing: {

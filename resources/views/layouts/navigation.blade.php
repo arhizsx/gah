@@ -18,6 +18,12 @@
                     <x-nav-link :href="route('applications')" :active="request()->routeIs('applications')">
                         {{ __('Applications') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('installations')" :active="request()->routeIs('installations')">
+                        {{ __('Installations') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('company')" :active="request()->routeIs('company')">
+                        {{ __('Company') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -75,6 +81,12 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('mobile-applications')" :active="request()->routeIs('mobile-applications')">
                 {{ __('Applications') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('mobile-installations')" :active="request()->routeIs('mobile-installations')">
+                {{ __('Installations') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('mobile-company')" :active="request()->routeIs('mobile-company')">
+                {{ __('Company') }}
             </x-responsive-nav-link>
         </div>
 

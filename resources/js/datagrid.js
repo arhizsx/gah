@@ -1,5 +1,7 @@
 
-$.fn.setDatagrid = function( datasource, columns){
+$.fn.setDatagrid = function( modal, datasource, columns){
+
+    let whatmodal = modal;
 
     $( this ).dxDataGrid({
         dataSource: datasource,
@@ -50,7 +52,7 @@ $.fn.setDatagrid = function( datasource, columns){
         },
         onRowClick: function(e) {
 
-            console.log( e );
+            $(this).openModal( whatmodal, e.data );
 
         },
         allowColumnResizing: {
@@ -61,4 +63,11 @@ $.fn.setDatagrid = function( datasource, columns){
     });
 }
 
+
+$.fn.openModal = function( modal, data ){
+
+    console.log( modal );
+    console.log( data );
+
+};
 

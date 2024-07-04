@@ -15,13 +15,14 @@
 
 <script>
 
+let modal = "Modal X";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/installations';
 let columns = ['campaign', 'name', 'email', 'action'];
 
 $(() => {
 
-    $(datagrid).setDatagrid( datasource, columns );
+    $(datagrid).setDatagrid( modal, datasource, columns );
 
 });
 

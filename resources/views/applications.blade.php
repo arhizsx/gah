@@ -124,6 +124,8 @@
                             <input class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="House no., Floor no., Bldg">
                         </div>
                     </div>
+                    <H1 class="text-primary"><strong>Attachments</strong></H1>
+
                 </div>
             </div>
             <div class="modal-footer">

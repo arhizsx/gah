@@ -14,13 +14,6 @@
 
 
 </x-app-layout>
-<style>
-    .section-title{
-        font-size: 1.4em;
-        color: darkblue;
-        font-weight: bolder;
-    }
-</style>
 
 <!-- Modal -->
 <div class="modal fade" id="application_details" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

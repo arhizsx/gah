@@ -33,7 +33,7 @@
                                     <label for="province">Province</label>
                                 </div>
                                 <div class="col-8">
-                                    <input type="text" value="" name="province" id="province" placeholder="Province">
+                                    <input class="form-control" type="text" value="" name="province" id="province" placeholder="Province">
                                 </div>
                             </div>
                             <div class="form-row">
@@ -41,7 +41,7 @@
                                     <label for="city">City</label>
                                 </div>
                                 <div class="col-8">
-                                    <input type="text" value="" name="city" id="city" placeholder="Province">
+                                    <input class="form-control" type="text" value="" name="city" id="city" placeholder="Province">
                                 </div>
                             </div>
                         </div>

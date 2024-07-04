@@ -26,7 +26,7 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <H2><strong>Personal Information</strong></H2>
-                    <div class="row mb-3">
+                    <div class="row mt-2 mb-3">
                         <div class="col-3">
                             <label for="province">Customer Name</label>
                         </div>
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <H2><strong>Primary Installation Address</strong></H2>
-                    <div class="row mb-3">
+                    <div class="row mt-2 mb-3">
                         <div class="col-3">
                             <label for="province">Province</label>
                         </div>

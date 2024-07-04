@@ -13,8 +13,8 @@
 
 $(() => {
   $('#gridContainer').dxDataGrid({
-    dataSource: 'data/customers.json',
-    columns: ['CompanyName', 'City', 'State', 'Phone', 'Fax'],
+    dataSource: '/supervendor/applications/data',
+    columns: ['id', 'name', 'email'],
     showBorders: true,
   });
 });

@@ -14,6 +14,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/supervendor/installations',  [SupervendorController::class, 'installations'])->name('installations');
     Route::get('/supervendor/company',  [SupervendorController::class, 'company'])->name('company');
 
+    Route::get('/supervendor/applications/data',  [SupervendorController::class, 'applications_data'])->name('applications_data');
+
 });
 
 // SAMSUNG CAMPAIGN

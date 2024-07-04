@@ -9,6 +9,8 @@
     </x-slot>
 </x-app-layout>
 
+@vite(['resources/js/datagrid.js'])
+
 <script>
 
 let datagrid = "#gridContainer";
@@ -16,7 +18,9 @@ let datasource = '/supervendor/applications/data';
 let columns = ['name', 'email'];
 
 $(() => {
-     setDatagrid( datagrid, datasource, columns);
+
+    $(this).setDatagrid( datagrid, datasource, columns );
+
 });
 
 </script>

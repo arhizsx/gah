@@ -1,5 +1,5 @@
 
-function setDatagrid( datagrid, datasource, columns){
+$.fn.setDatagrid = function( datagrid, datasource, columns){
 
     $( datagrid ).dxDataGrid({
         dataSource: datasource,

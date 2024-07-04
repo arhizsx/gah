@@ -9,6 +9,8 @@
     </x-slot>
 </x-app-layout>
 
+@vite(['resources/js/datagrid.js'])
+
 <script>
 
 let datagrid = "#gridContainer";

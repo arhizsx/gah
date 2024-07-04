@@ -16,17 +16,13 @@ class SamsungController extends Controller
 
         $data = $request->all();
 
-        return $request->file();
-
-        $files_to_check = [ "serviceability_check", "serviceability_check2" , "receipt" ];
-
         try{
 
             // Upload path
             $destinationPath = 'files/';
 
             // Cycle all uploaded files
-            foreach( $request->file() as $f ){
+            foreach( $request->file() as $f => $k ){
 
                 if( $request->hasFile( $f )) {
 

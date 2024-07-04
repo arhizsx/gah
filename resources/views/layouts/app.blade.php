@@ -54,6 +54,10 @@
                 </div>
             </main>
         </div>
+
         @vite('resources/js/datagrid.js')
+
+        {{ $script }}
+
     </body>
 </html>

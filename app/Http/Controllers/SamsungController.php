@@ -17,7 +17,7 @@ class SamsungController extends Controller
         try{
 
 
-            $files_to_check = [ "serviceability_check", "receipt" ];
+            $files_to_check = [ "serviceability_check", "serviceability_check2" , "receipt" ];
 
             // Upload path
             $destinationPath = 'files/';

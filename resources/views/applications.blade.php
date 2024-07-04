@@ -28,7 +28,7 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <H5>Details</H5>
-                            <div class="form-row">
+                            <div class="row">
                                 <div class="col-4">
                                     <label for="province">Province</label>
                                 </div>
@@ -36,7 +36,7 @@
                                     <input class="form-control" type="text" value="" name="province" id="province" placeholder="Province">
                                 </div>
                             </div>
-                            <div class="form-row">
+                            <div class="row">
                                 <div class="col-4">
                                     <label for="city">City</label>
                                 </div>

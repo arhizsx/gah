@@ -48,9 +48,9 @@ $.fn.setDatagrid = function( datagrid, datasource, columns){
         headerFilter: {
             visible: true,
         },
-        onRowClick: function(e) {
+        onRowClick: function(e, datagrid) {
 
-            $(document).find(datagrid).addCLass("d-none");
+            $(datagrid).addCLass("d-none");
 
             console.log( e );
         },

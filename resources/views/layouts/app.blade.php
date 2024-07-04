@@ -54,5 +54,6 @@
                 </div>
             </main>
         </div>
+        @vite('resources/js/datagrid.js')
     </body>
 </html>

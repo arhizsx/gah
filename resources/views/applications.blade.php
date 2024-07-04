@@ -67,7 +67,7 @@ $(() => {
     allowColumnResizing: {
         enabled: true
     },
-    columns: ['id', 'name', 'email'],
+    columns: ['name', 'email'],
     showBorders: true,
   });
 });

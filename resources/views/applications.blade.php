@@ -132,7 +132,17 @@
                         </div>
                     </div>
                     <div class="section-title">Attachments</div>
-
+                    <div class="row">
+                        <div class="col">
+                            <img class="border" src="" alt-text="one" style="height: 100px;"/>
+                        </div>
+                        <div class="col">
+                            <img class="border" src="" alt-text="one" style="height: 100px;"/>
+                        </div>
+                        <div class="col">
+                            <img class="border" src="" alt-text="one" style="height: 100px;"/>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">

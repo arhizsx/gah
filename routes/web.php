@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SamsungController;
 
 
-Route::get('/', function () {
+Route::get('/supervendor', function () {
     return view('home');
 })->middleware(['auth', 'verified'])->name('home');
 
@@ -24,7 +24,7 @@ Route::post('/samsung/register', [SamsungController::class, 'register']);
 Route::get('/samsung', [SamsungController::class, 'index']);
 
 
-Route::get('/verifier', function () {
+Route::get('/', function () {
     return redirect('https://sam.globe.com.ph/broadband');
 });
 

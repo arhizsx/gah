@@ -35,18 +35,18 @@
                     <div class="section-title">Personal Information</div>
                     <div class="row mt-3 mb-3">
                         <div class="col-3">
-                            <label for="province">Customer Name</label>
+                            <label for="complete_name">Complete Name</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="province" id="province" placeholder="Customer Name">
+                            <input class="form-control form-control-sm" type="text" value="" name="complete_name" id="complete_name" placeholder="Customer Name">
                         </div>
                     </div>
                     <div class="row mb-4 border-bottom pb-3">
                         <div class="col-3">
-                            <label for="province">Mobile Number</label>
+                            <label for="mobile_number">Mobile Number</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="province" id="province" placeholder="Mobile Number">
+                            <input class="form-control form-control-sm" type="text" value="" name="mobile_number" id="mobile_number" placeholder="Mobile Number">
                         </div>
                     </div>
                     <div class="section-title">Primary Installation Address</div>
@@ -68,26 +68,26 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-3">
-                            <label for="city">Barangay / Village</label>
+                            <label for="brgy_village">Barangay / Village</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="Barangay / Village">
+                            <input class="form-control form-control-sm" type="text" value="" name="brgy_village" id="brgy_village" placeholder="Barangay / Village">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-3">
-                            <label for="city">Street</label>
+                            <label for="street">Street</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="Street">
+                            <input class="form-control form-control-sm" type="text" value="" name="street" id="street" placeholder="Street">
                         </div>
                     </div>
                     <div class="row mb-4 border-bottom pb-3">
                         <div class="col-3">
-                            <label for="city">House no., Floor no., Bldg</label>
+                            <label for="house_floor_bldg">House no., Floor no., Bldg</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="House no., Floor no., Bldg">
+                            <input class="form-control form-control-sm" type="text" value="" name="house_floor_bldg" id="house_floor_bldg" placeholder="House no., Floor no., Bldg">
                         </div>
                     </div>
                     <div class="section-title">Secondary Installation Address</div>
@@ -109,26 +109,26 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-3">
-                            <label for="city">Barangay / Village</label>
+                            <label for="brgy_village">Barangay / Village</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="Barangay / Village">
+                            <input class="form-control form-control-sm" type="text" value="" name="brgy_village" id="brgy_village" placeholder="Barangay / Village">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-3">
-                            <label for="city">Street</label>
+                            <label for="street">Street</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="Street">
+                            <input class="form-control form-control-sm" type="text" value="" name="street" id="street" placeholder="Street">
                         </div>
                     </div>
                     <div class="row mb-4 border-bottom pb-3">
                         <div class="col-3">
-                            <label for="city">House no., Floor no., Bldg</label>
+                            <label for="house_floor_bldg">House no., Floor no., Bldg</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="House no., Floor no., Bldg">
+                            <input class="form-control form-control-sm" type="text" value="" name="house_floor_bldg" id="house_floor_bldg" placeholder="House no., Floor no., Bldg">
                         </div>
                     </div>
                     <div class="section-title">Attachments</div>

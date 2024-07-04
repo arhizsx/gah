@@ -29,7 +29,7 @@ class SamsungController extends Controller
                 if( $request->hasFile( $f )) {
 
                     $extension = $request->file( $f )->getClientOriginalExtension();
-                    $fileName = time() . $request->file( $f )->getClientOriginalName();
+                    $fileName = $f . '-' . time() . '-' . $request->file( $f )->getClientOriginalName();
 
                     // Uploading file to given path
                     $request->file( $f)->move($destinationPath, $fileName);

@@ -31,7 +31,7 @@
                             <label for="province">Customer Name</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control" type="text" value="" name="province" id="province" placeholder="Customer Name">
+                            <input class="form-control form-control-sm" type="text" value="" name="province" id="province" placeholder="Customer Name">
                         </div>
                     </div>
                     <div class="row mb-4 border-bottom pb-3">
@@ -39,7 +39,7 @@
                             <label for="province">Mobile Number</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control" type="text" value="" name="province" id="province" placeholder="Mobile Number">
+                            <input class="form-control form-control-sm" type="text" value="" name="province" id="province" placeholder="Mobile Number">
                         </div>
                     </div>
                     <H1 class="text-primary"><strong>Primary Installation Address</strong></H1>
@@ -48,7 +48,7 @@
                             <label for="province">Province</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control" type="text" value="" name="province" id="province" placeholder="Province">
+                            <input class="form-control form-control-sm" type="text" value="" name="province" id="province" placeholder="Province">
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -56,7 +56,7 @@
                             <label for="city">City</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control" type="text" value="" name="city" id="city" placeholder="City">
+                            <input class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="City">
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -64,7 +64,7 @@
                             <label for="city">Barangay / Village</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control" type="text" value="" name="city" id="city" placeholder="Barangay / Village">
+                            <input class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="Barangay / Village">
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -72,7 +72,7 @@
                             <label for="city">Street</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control" type="text" value="" name="city" id="city" placeholder="Street">
+                            <input class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="Street">
                         </div>
                     </div>
                     <div class="row mb-4 border-bottom pb-3">
@@ -80,7 +80,7 @@
                             <label for="city">House no., Floor no., Bldg</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control" type="text" value="" name="city" id="city" placeholder="House no., Floor no., Bldg">
+                            <input class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="House no., Floor no., Bldg">
                         </div>
                     </div>
                     <H1 class="text-primary"><strong>Secondary Installation Address</strong></H1>
@@ -89,7 +89,7 @@
                             <label for="province">Province</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control" type="text" value="" name="province" id="province" placeholder="Province">
+                            <input class="form-control form-control-sm" type="text" value="" name="province" id="province" placeholder="Province">
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -97,7 +97,7 @@
                             <label for="city">City</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control" type="text" value="" name="city" id="city" placeholder="City">
+                            <input class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="City">
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -105,7 +105,7 @@
                             <label for="city">Barangay / Village</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control" type="text" value="" name="city" id="city" placeholder="Barangay / Village">
+                            <input class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="Barangay / Village">
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -113,7 +113,7 @@
                             <label for="city">Street</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control" type="text" value="" name="city" id="city" placeholder="Street">
+                            <input class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="Street">
                         </div>
                     </div>
                     <div class="row mb-4 border-bottom pb-3">
@@ -121,7 +121,7 @@
                             <label for="city">House no., Floor no., Bldg</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control" type="text" value="" name="city" id="city" placeholder="House no., Floor no., Bldg">
+                            <input class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="House no., Floor no., Bldg">
                         </div>
                     </div>
                 </div>

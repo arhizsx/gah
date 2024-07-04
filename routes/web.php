@@ -10,18 +10,41 @@ Route::get('/supervendor', function () {
 })->middleware(['auth', 'verified'])->name('home');
 
 
-Route::get('/applications', function () {
+
+Route::get('/supervendor/applications', function () {
     return view('applications');
 })->middleware(['auth', 'verified'])->name('applications');
 
-Route::get('/mobile/applications', function () {
+Route::get('/supervendor/mobile/applications', function () {
     return view('applications');
 })->middleware(['auth', 'verified'])->name('mobile-applications');
+
+
+
+Route::get('/supervendor/installations', function () {
+    return view('installations');
+})->middleware(['auth', 'verified'])->name('installations');
+
+Route::get('/supervendor/mobile/installations', function () {
+    return view('installations');
+})->middleware(['auth', 'verified'])->name('mobile-installations');
+
+
+
+Route::get('/supervendor/company', function () {
+    return view('company');
+})->middleware(['auth', 'verified'])->name('company');
+
+Route::get('/supervendor/mobile/company', function () {
+    return view('company');
+})->middleware(['auth', 'verified'])->name('mobile-company');
+
 
 
 Route::post('/samsung/register', [SamsungController::class, 'register']);
 
 Route::get('/samsung', [SamsungController::class, 'index']);
+
 
 
 Route::get('/', function () {

@@ -68,6 +68,12 @@ $.fn.openModal = function( modal, data ){
 
     $(document).find(modal).modal("show");
 
+    $.each( data, function( k, v){
+
+        console.log(v);
+
+    } );
+
     console.log( modal );
     console.log( data );
 

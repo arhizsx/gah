@@ -26,7 +26,7 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-8">
+                        <div class="col-lg-7">
                             <H5>Details</H5>
                             <div class="row mb-3">
                                 <div class="col-4">
@@ -45,7 +45,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-5">
                             <H5>Attachments</H5>
                         </div>
                     </div>

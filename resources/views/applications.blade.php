@@ -15,9 +15,28 @@
 
 </x-app-layout>
 
+<!-- Modal -->
+<div class="modal fade" id="application_details" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Application Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        ...
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Installed</button>
+    </div>
+    </div>
+</div>
+</div>
+
 <script>
 
-let modal = "Modal X";
+let modal = "#application_details";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/applications';
 let columns = ['campaign', 'name', 'email', 'action'];

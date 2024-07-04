@@ -66,6 +66,8 @@ $.fn.setDatagrid = function( modal, datasource, columns){
 
 $.fn.openModal = function( modal, data ){
 
+    $(document).find(modal).modal("show");
+
     console.log( modal );
     console.log( data );
 

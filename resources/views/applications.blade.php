@@ -16,7 +16,7 @@
 <script>
 
 let datagrid = "#gridContainer";
-let datasource = '/supervendor/applications/data';
+let datasource = '/supervendor/data/applications';
 let columns = ['campaign', 'name', 'email', 'action'];
 
 $(() => {

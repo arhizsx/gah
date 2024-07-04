@@ -26,9 +26,25 @@ class SupervendorController extends Controller
 
     // Table Data
 
-    function applications_data(){
+    function data( $action ){
 
-        $data = DB::table("users")->get();
+        switch( $action ){
+
+            case "applications":
+
+                $data = DB::table("users")->get();
+                break;
+
+            case "installations":
+
+                $data = DB::table("users")->get();
+                break;
+
+            default:
+
+                $data = DB::table("users")->get();
+                break;
+        }
 
         return json_encode($data);
 

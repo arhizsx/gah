@@ -49,6 +49,8 @@ $.fn.setDatagrid = function( datagrid, datasource, columns){
             visible: true,
         },
         onRowClick: function(e) {
+
+            $(datagrid).addCLass("d-none");
             console.log( e );
         },
         allowColumnResizing: {

@@ -11,6 +11,8 @@
 
         </div>
     </x-slot>
+
+
 </x-app-layout>
 
 <script>
@@ -18,6 +20,7 @@
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/applications';
 let columns = ['campaign', 'name', 'email', 'action'];
+
 
 $(() => {
 

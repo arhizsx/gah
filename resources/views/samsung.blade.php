@@ -21,6 +21,9 @@
 
     <body  class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
         <div id="registration_form" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
+            @php
+                print_r($regions);
+            @endphp
             <form id="samsung_form">
                 @csrf
 
@@ -80,6 +83,14 @@
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse">
                             <div class="accordion-body">
+                                <div class="form-row">
+                                    <label for="province">Region</label>
+                                    <select class="form-control mb-3 checker" name="province" data-checker="required" name="region" id="region">
+                                        <option value="" selected>Select Region</option>
+                                        @include("province")
+                                    </select>
+                                </div>
+
                                 <div class="form-row">
                                     <label for="province">Province</label>
                                     <select class="form-control mb-3 checker" name="province" data-checker="required" name="province" id="province">

@@ -5,12 +5,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\CampaignRegistration;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 
 class SamsungController extends Controller
 {
     function index(){
 
-        return view('samsung');
+        $regions = DB::table("location.regions")->get();
+
+        return view('samsung', ["regions" => $regions]);
 
     }
 

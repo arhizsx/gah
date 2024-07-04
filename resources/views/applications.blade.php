@@ -163,7 +163,7 @@
 
 let modal = "#application_details";
 let datagrid = "#gridContainer";
-let datasource = '/supervendor/data/applications';
+let datasource = '/supervendor/data/samsung';
 let columns = ['campaign', 'name', 'email', 'action'];
 
 

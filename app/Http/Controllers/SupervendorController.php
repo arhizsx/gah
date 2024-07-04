@@ -40,6 +40,11 @@ class SupervendorController extends Controller
                 $data = DB::table("users")->get();
                 break;
 
+            case "samsung":
+
+                $data = DB::table("samsung_registrations")->get();
+                break;
+
             default:
 
                 $data = DB::table("users")->get();

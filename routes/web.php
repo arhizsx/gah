@@ -3,50 +3,25 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SamsungController;
+use App\Http\Controllers\SupervendorController;
 
+// SUPERVENDOR
+Route::group(['middleware' => ['auth', 'verified']], function () {
 
-Route::get('/supervendor', function () {
-    return view('home');
-})->middleware(['auth', 'verified'])->name('home');
+    Route::get('/supervendor',  [SupervendorController::class, 'index'])->name('home');
 
+    Route::get('/supervendor/applications',  [SupervendorController::class, 'applications'])->name('applications');
+    Route::get('/supervendor/installations',  [SupervendorController::class, 'installations'])->name('installations');
+    Route::get('/supervendor/company',  [SupervendorController::class, 'company'])->name('company');
 
+});
 
-Route::get('/supervendor/applications', function () {
-    return view('applications');
-})->middleware(['auth', 'verified'])->name('applications');
-
-Route::get('/supervendor/mobile/applications', function () {
-    return view('applications');
-})->middleware(['auth', 'verified'])->name('mobile-applications');
-
-
-
-Route::get('/supervendor/installations', function () {
-    return view('installations');
-})->middleware(['auth', 'verified'])->name('installations');
-
-Route::get('/supervendor/mobile/installations', function () {
-    return view('installations');
-})->middleware(['auth', 'verified'])->name('mobile-installations');
-
-
-
-Route::get('/supervendor/company', function () {
-    return view('company');
-})->middleware(['auth', 'verified'])->name('company');
-
-Route::get('/supervendor/mobile/company', function () {
-    return view('company');
-})->middleware(['auth', 'verified'])->name('mobile-company');
-
-
-
+// SAMSUNG CAMPAIGN
 Route::post('/samsung/register', [SamsungController::class, 'register']);
-
 Route::get('/samsung', [SamsungController::class, 'index']);
 
 
-
+// NUMBER VERIFIER
 Route::get('/', function () {
     return redirect('https://sam.globe.com.ph/broadband');
 });

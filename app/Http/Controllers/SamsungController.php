@@ -14,15 +14,16 @@ class SamsungController extends Controller
 
     function register(Request $request){
 
+        $data = $request->all();
+
+        $files_to_check = [ "serviceability_check", "serviceability_check2" , "receipt" ];
+        $files = [];
+
         try{
-
-
-            $files_to_check = [ "serviceability_check", "serviceability_check2" , "receipt" ];
 
             // Upload path
             $destinationPath = 'files/';
 
-            $files = [];
 
             foreach( $files_to_check as $f ){
 
@@ -39,31 +40,13 @@ class SamsungController extends Controller
                 }
             }
 
-            return $request->all();
-
-            return $files;
-
-
-
         } catch (\Throwable $th) {
             return response()->json(['error' => true, 'message' => $th->getMessage()]);
         }
 
+        $data["files"] = $files;
 
-
-
-
-
-
-    }
-
-    public function rename_file( $filename_data ) {
-
-        $ext = pathinfo($filename_data, PATHINFO_EXTENSION);
-
-        $file_name = strtolower( $filename_data ."-" . time()) . "." . $ext;
-
-        return $file_name;
+        return $data;
 
     }
 

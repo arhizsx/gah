@@ -37,7 +37,7 @@
                     <p>By completing and submitting this form, I allow GLOBE to collect and process the personal data I will provide for GFiber Prepaid and Samsung partnership, until September 2024, in accordance with the <a target="_blank" href="https://www.privacy.gov.ph/data-privacy-act/">Data Privacy Act of 2012</a> and the <a target="_blank" href="https://www.globe.com.ph/privacy-policy.html">Privacy Policy of Globe</a>.</p>
                     <div class="form-row">
                         <div class="form-check">
-                            <input class="form-check-input checker me-3" data-checker="required" type="checkbox" value="" name="agree_policy" id="agree_policy">
+                            <input class="form-check-input checker me-3" data-checker="required" type="checkbox" value="" id="agree_policy">
                             <label class="form-check-label" for="agree_policy">
                                 I understand and agree with the Privacy notice
                             </label>

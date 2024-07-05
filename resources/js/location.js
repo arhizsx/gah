@@ -25,6 +25,21 @@ $(document).on('change','.location_filters',function(){
                 .append('<option value="-">-</option>')
                 .val('');
 
+
+            $.ajax({
+                type: 'get',
+                url: "/supervendor/data/provinces",
+                success: function(resp){
+
+                    console.log(resp) ;
+
+                },
+                error: function(){
+                    console.log("Error in AJAX");
+                }
+            });
+
+
             break;
 
 

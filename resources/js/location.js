@@ -27,9 +27,7 @@ $(document).on('change','.location_filters',function(){
                     .end()
                     .append('<option value="">Select Province</option>');
 
-                    var data = JSON.parse(resp) ;
-
-                    $.each(data, function(k, v){
+                    $.each(resp, function(k, v){
                         province.append('<option value="' + v.PROVINCE +'" data-region="' + v.REGION +'">' + v.PROVINCE +'</option>')
                     });
 

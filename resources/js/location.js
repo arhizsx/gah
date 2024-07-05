@@ -17,7 +17,7 @@ $(document).on('change','.location_filters',function(){
         case "region":
 
             $.ajax({
-                url: "/supervendor/ajax",
+                url: "/supervendor/locations",
                 method: "POST",
                 data: {
                     "action" : "provinces",
@@ -58,7 +58,7 @@ $(document).on('change','.location_filters',function(){
         case "province":
 
             $.ajax({
-                url: "/supervendor/ajax",
+                url: "/supervendor/locations",
                 method: "POST",
                 data: {
                     "action" : "cities",

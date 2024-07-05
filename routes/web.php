@@ -19,6 +19,10 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
 });
 
+
+Route::post('/supervendor/locations',  [SupervendorController::class, 'locations'])->name('locations');
+
+
 // SAMSUNG CAMPAIGN
 Route::post('/samsung/register', [SamsungController::class, 'register']);
 Route::get('/samsung', [SamsungController::class, 'index']);

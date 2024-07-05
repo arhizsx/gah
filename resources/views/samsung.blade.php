@@ -83,7 +83,7 @@
                             <div class="accordion-body">
                                 <div class="form-row">
                                     <label for="province">Region</label>
-                                    <select class="form-control mb-3 checker location_filters" data-filter='region' data-checker="required" name="region" id="region">
+                                    <select class="form-control mb-3 checker location_filters" data-filter='region' data-parent='#collapseTwo' data-checker="required" name="region" id="region">
                                         <option value="" selected>Select Region</option>
                                         @foreach($regions as $option)
                                         <option value="{{ $option->region }}">{{ $option->region }}</option>
@@ -93,13 +93,13 @@
 
                                 <div class="form-row">
                                     <label for="province">Province</label>
-                                    <select class="form-control mb-3 checker location_filters" data-filter='province' data-checker="required" name="province" id="province">
+                                    <select class="form-control mb-3 checker location_filters" data-filter='province' data-parent='#collapseTwo' data-checker="required" name="province" id="province">
                                         <option value="" selected>Select Province</option>
                                     </select>
                                 </div>
                                 <div class="form-row">
                                     <label for="city">City</label>
-                                    <select class="form-control mb-3 checker location_filters" data-filter='city' data-checker="required" name="city" id="city">
+                                    <select class="form-control mb-3 checker location_filters" data-filter='city' data-parent='#collapseTwo' data-checker="required" name="city" id="city">
                                         <option value="" selected>Select City</option>
                                         <option value="-">-</option>
                                     </select>

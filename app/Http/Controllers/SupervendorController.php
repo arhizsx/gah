@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class SupervendorController extends Controller
 {
@@ -39,9 +40,21 @@ class SupervendorController extends Controller
 
             case "applications":
 
-                $data = DB::table("view_registrations")
+                if( Auth::user()->company == NULL  ){
+
+                    $data = DB::table("view_registrations")
                         ->where("status", "registered")
                         ->get();
+
+                } else {
+
+                    $data = DB::table("view_registrations")
+                        ->where("status", "registered")
+                        ->where("supervendor", Auth::user()->company )
+                        ->get();
+
+                }
+
                 break;
 
             default:

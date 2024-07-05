@@ -152,8 +152,8 @@ $(document).on("click", ".btn-action", function(){
 
 function applicationSetImage(data){
 
-    $("#img_receipt").attr("src", data.receipt);
-    $("#img_serviceability_check").attr("src", data.serviceability_check);
+    $("#img_receipt").attr("src", "/files/" + data.receipt);
+    $("#img_serviceability_check").attr("src",  "/files/" + data.serviceability_check);
 
 }
 

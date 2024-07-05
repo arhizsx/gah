@@ -76,7 +76,7 @@ $.fn.openModal = function( modal, data ){
 
     } );
 
-    $(document).find(modal).find(".btn-action").data("id", data.id );
+    console.log($(document).find(modal).find(".btn-action"));
 
 
 };

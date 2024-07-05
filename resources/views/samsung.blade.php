@@ -193,8 +193,8 @@
                 </div>
 
                 <div class="d-flex justify-content-between mt-3">
-                    <button class='btn btn-primary action_button' data-action="submit_form">Submit</button>
                     <button class='btn btn-outline-dark'>Clear Form</button>
+                    <button class='btn btn-primary action_button' data-action="submit_form">Submit</button>
                 </div>
                 <div class="d-flex justify-content-center my-5">
                     <small>Globe At Home 2024</small>

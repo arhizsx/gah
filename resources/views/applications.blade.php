@@ -83,65 +83,18 @@
                             <input class="form-control form-control-sm" type="text" value="" name="house_floor_bldg" id="house_floor_bldg" placeholder="House no., Floor no., Bldg">
                         </div>
                     </div>
-                    {{-- <div class="section-title">Secondary Installation Address</div>
-                    <div class="row mt-3 mb-3">
-                        <div class="col-3">
-                            <label for="province">Province</label>
-                        </div>
-                        <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="province2" id="province2" placeholder="Province">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-3">
-                            <label for="city">City</label>
-                        </div>
-                        <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="city2" id="city2" placeholder="City">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-3">
-                            <label for="brgy_village">Barangay / Village</label>
-                        </div>
-                        <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="brgy_village2" id="brgy_village2" placeholder="Barangay / Village">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-3">
-                            <label for="street">Street</label>
-                        </div>
-                        <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="street" id="street2" placeholder="Street">
-                        </div>
-                    </div>
-                    <div class="row mb-4 border-bottom pb-3">
-                        <div class="col-3">
-                            <label for="house_floor_bldg">House no., Floor no., Bldg</label>
-                        </div>
-                        <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="house_floor_bldg2" id="house_floor_bldg2" placeholder="House no., Floor no., Bldg">
-                        </div>
-                    </div> --}}
                     <div class="section-title">Attachments</div>
                     <div class="row">
                         <div class="col">
                             <div  class="border" style="height: 180px; width: 100%;">
-                                <img src="" alt-text="one"/>
+                                <img src="" id="img_receipt" alt-text="receipt"/>
                             </div>
                             <input class="form-control" type="text" name='serviceability_check'>
 
                         </div>
-                        {{-- <div class="col">
-                            <div  class="border" style="height: 180px; width: 100%;">
-                                <img src="" alt-text="one"/>
-                            </div>
-                            <input class="form-control" type="text" name='serviceability_check2'>
-                        </div> --}}
                         <div class="col">
                             <div  class="border" style="height: 180px; width: 100%;">
-                                <img src="" alt-text="one"/>
+                                <img src=""  id="img_serviceability_check" alt-text="serviceability_check"/>
                             </div>
                             <input class="form-control" type="text" name='receipt'>
                         </div>
@@ -199,9 +152,9 @@ $(document).on("click", ".btn-action", function(){
 
 function applicationSetImage(data){
 
-    console.log(data.receipt);
-    console.log(data.serviceability_check);
-}
+    $("#img_receipt").attr("src", data.receipt);
+    $("#img_serviceability_check").attr("src", data.serviceability_check);
 
+}
 
 </script>

@@ -199,6 +199,7 @@
             <div class="border rounded-3 p-5 mt-4">
                 <H5>Registration Successful</H5>
                 <p>Please wait for the feedback of our installer.</p>
+                <a href="/samsung">New Application</a>
             </div>
             <div class="d-flex justify-content-center my-5">
                 <small>Globe At Home 2024</small>

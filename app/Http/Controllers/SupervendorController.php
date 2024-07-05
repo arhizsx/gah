@@ -57,12 +57,12 @@ class SupervendorController extends Controller
 
     function ajax( Request $request ){
 
-        return $request->value;
-
         switch( $request->action ){
 
             case "regions":
-                return DB::table("location_provinces")->get();
+                return DB::table("location_provinces")
+                        ->where("REGION", $request->value)
+                        ->get();
                 break;
 
             case "provinces":

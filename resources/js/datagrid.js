@@ -76,8 +76,8 @@ $.fn.openModal = function( modal, data ){
 
     } );
 
-    console.log( modal );
-    console.log( data );
+    $( modal ).find(".btn-action").data( data.id );
+
 
 };
 

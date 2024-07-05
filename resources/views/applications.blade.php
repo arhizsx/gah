@@ -150,7 +150,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary btn-action" data-action="application_installed">Installed</button>
+                <button type="button" class="btn btn-primary btn-action" data-action="application_installed" data-id="">Installed</button>
             </div>
         </div>
     </div>

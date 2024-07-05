@@ -162,11 +162,12 @@ let modal = "#application_details";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/applications';
 let columns = ['campaign', 'complete_name', 'mobile_number', 'province', 'city', 'supervendor'];
+let callback = 'applicationSetImage';
 
 
 $(() => {
 
-    $(datagrid).setDatagrid( modal, datasource, columns );
+    $(datagrid).setDatagrid( modal, datasource, columns, callback );
 
 });
 

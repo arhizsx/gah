@@ -1,5 +1,5 @@
 
-$.fn.setDatagrid = function( modal, datasource, columns){
+$.fn.setDatagrid = function( modal, datasource, columns, callback=false){
 
     let whatmodal = modal;
 
@@ -52,7 +52,7 @@ $.fn.setDatagrid = function( modal, datasource, columns){
         },
         onRowClick: function(e) {
 
-            $(this).openModal( whatmodal, e.data );
+            $(this).openModal( whatmodal, e.data, callback );
 
         },
         allowColumnResizing: {
@@ -64,7 +64,7 @@ $.fn.setDatagrid = function( modal, datasource, columns){
 }
 
 
-$.fn.openModal = function( modal, data ){
+$.fn.openModal = function( modal, data, callback ){
 
     $(document).find(modal).modal("show");
 
@@ -76,5 +76,13 @@ $.fn.openModal = function( modal, data ){
 
     $(modal).find(".btn-action").attr("data-id", data.id.toString());
 
+    if(callback != false){
+        eval( callback + "(data)" );
+    }
+
 };
+
+function applicationSetImage(data){
+    console.log(data);
+}
 

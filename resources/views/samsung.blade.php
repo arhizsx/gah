@@ -94,9 +94,6 @@
                                     <label for="province">Province</label>
                                     <select class="form-control mb-3 checker" data-checker="required" name="province" id="province">
                                         <option value="" selected>Select Province</option>
-                                        @foreach($provinces as $option)
-                                        <option value="{{ $option->PROVINCE }}" data-region="{{ $option->REGION }}" >{{ $option->PROVINCE }}</option>
-                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="form-row">

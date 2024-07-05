@@ -30,19 +30,16 @@ class SupervendorController extends Controller
 
         switch( $action ){
 
-            case "applications":
-
-                $data = DB::table("users")->get();
-                break;
-
             case "installations":
 
                 $data = DB::table("users")->get();
                 break;
 
-            case "samsung":
+            case "applications":
 
-                $data = DB::table("view_registrations")->get();
+                $data = DB::table("view_registrations")
+                        ->where("status", "registered")
+                        ->get();
                 break;
 
             default:

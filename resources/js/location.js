@@ -25,7 +25,7 @@ $(document).on('change','.location_filters',function(){
                     var data = JSON.parse(resp) ;
 
                     $.each(data, function(k, v){
-                        console.log( v );
+                        console.log( v.PROVINCE );
                     });
 
                 },

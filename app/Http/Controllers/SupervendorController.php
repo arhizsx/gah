@@ -32,7 +32,9 @@ class SupervendorController extends Controller
 
             case "installations":
 
-                $data = DB::table("users")->get();
+                $data = DB::table("view_registrations")
+                        ->where("status", "installation")
+                        ->get();
                 break;
 
             case "applications":

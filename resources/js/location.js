@@ -15,8 +15,26 @@ $(document).on('change','.location_filters',function(){
                 .remove()
                 .end()
                 .append('<option value="">Select Province</option>')
-                .append('<option value="-">-</option>')
                 .val('');
+
+            $.ajax({
+                type: 'get',
+                url: "/supervendor/data/provinces",
+                success: function(resp){
+                    $.each( resp, function(k, v){
+
+                        province.find('option')
+                        .append('<option value="' + v.PROVINCE + '" data-region="' + v.region + '">' + v.PROVINCE + '</option>')
+
+                    } );
+                    console.log(resp) ;
+
+                },
+                error: function(){
+                    console.log("Error in AJAX");
+                }
+            });
+
 
             city.find('option')
                 .remove()
@@ -26,18 +44,6 @@ $(document).on('change','.location_filters',function(){
                 .val('');
 
 
-            $.ajax({
-                type: 'get',
-                url: "/supervendor/data/provinces",
-                success: function(resp){
-
-                    console.log(resp) ;
-
-                },
-                error: function(){
-                    console.log("Error in AJAX");
-                }
-            });
 
 
             break;

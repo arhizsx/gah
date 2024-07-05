@@ -24,12 +24,6 @@ $(document).on('change','.location_filters',function(){
 
                     console.log( resp );
 
-                    $.each( data, function(k, v){
-
-                        $(province).append('<option value="' + v.PROVINCE + '" data-region="' + v.region + '">' + v.PROVINCE + '</option>')
-
-                    } );
-                    console.log(resp) ;
 
                 },
                 error: function(){

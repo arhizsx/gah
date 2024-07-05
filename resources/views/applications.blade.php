@@ -197,4 +197,9 @@ $(document).on("click", ".btn-action", function(){
 
 });
 
+function applicationSetImage(data){
+    console.log(data);
+}
+
+
 </script>

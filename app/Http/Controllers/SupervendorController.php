@@ -50,6 +50,11 @@ class SupervendorController extends Controller
                 $data = DB::table("location_regions")->get();
                 break;
 
+            case "provinces":
+
+                $data = DB::table("location_provinces")->get();
+                break;
+
             default:
 
                 $data = [];

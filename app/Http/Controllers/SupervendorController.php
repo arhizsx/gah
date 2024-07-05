@@ -57,6 +57,8 @@ class SupervendorController extends Controller
 
     function ajax( Request $request ){
 
+        return $request->value;
+
         switch( $request->action ){
 
             case "regions":

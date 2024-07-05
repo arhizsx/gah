@@ -74,7 +74,8 @@ $.fn.openModal = function( modal, data ){
 
     } );
 
-    $(document).find(modal).find(".btn-action").attr("data-id", data.id);
+
+    $(modal).find(".btn-action").attr("data-id", "1");
 
 };
 

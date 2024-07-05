@@ -25,8 +25,6 @@ $(document).on('change','.location_filters',function(){
                 .append('<option value="-">-</option>')
                 .val('');
 
-
-
             break;
 
         case "province":
@@ -35,6 +33,7 @@ $(document).on('change','.location_filters',function(){
                 .remove()
                 .end()
                 .append('<option value="">Select City</option>')
+                .append('<option value="-">-</option>')
                 .val('');
 
             break;

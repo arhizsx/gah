@@ -178,6 +178,8 @@ $(document).on("click", ".btn-action", function(){
         method: "POST",
         data: {
             "action" : "application_installed",
+            "id": $(this).data("id")
+
         },
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

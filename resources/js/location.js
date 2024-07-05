@@ -12,8 +12,14 @@ $(document).on('change','.location_filters',function(){
         case "region":
 
             $.ajax({
-                type: 'get',
-                url: "/supervendor/data/provinces",
+                url: "/supervendor/ajax",
+                method: "POST",
+                data: {
+                    "action" : "provinces",
+                },
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
                 success: function(resp){
 
                     province.find('option')

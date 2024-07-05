@@ -15,6 +15,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/supervendor/company',  [SupervendorController::class, 'company'])->name('company');
 
     Route::get('/supervendor/data/{action}',  [SupervendorController::class, 'data'])->name('data');
+    Route::post('/supervendor/ajax}',  [SupervendorController::class, 'ajax'])->name('ajax');
 
 });
 

@@ -23,8 +23,7 @@ $(document).on('change','.location_filters',function(){
                 success: function(resp){
                     $.each( resp, function(k, v){
 
-                        province.find('option')
-                        .append('<option value="' + v.PROVINCE + '" data-region="' + v.region + '">' + v.PROVINCE + '</option>')
+                        $(province).append('<option value="' + v.PROVINCE + '" data-region="' + v.region + '">' + v.PROVINCE + '</option>')
 
                     } );
                     console.log(resp) ;

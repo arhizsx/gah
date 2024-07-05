@@ -22,7 +22,7 @@ $(document).on('change','.location_filters',function(){
                 url: "/supervendor/data/provinces",
                 success: function(resp){
 
-                    console.log( resp );
+                    console.log( JSON.parse(resp) );
 
 
                 },

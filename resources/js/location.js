@@ -25,19 +25,6 @@ $(document).on('change','.location_filters',function(){
                 .append('<option value="-">-</option>')
                 .val('');
 
-            $.ajax({
-                type: 'post',
-                url: "/samsung/register",
-                data: form,
-                enctype: 'multipart/form-data',
-                processData: false,
-                contentType: false,
-                success: function(resp){
-                },
-                error: function(){
-                    console.log("Error in AJAX");
-                }
-            });
 
 
             break;

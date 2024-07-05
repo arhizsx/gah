@@ -1,4 +1,5 @@
-$(".location_filters").on("change", function(){
+
+$(document).on("change",".location_filters", function(){
 
     console.log($(this));
 

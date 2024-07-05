@@ -83,6 +83,25 @@ class SupervendorController extends Controller
 
         switch( $request->action ){
 
+            case "application_installed":
+                CampaignRegistration::where("id", $request->id)
+                    ->update([
+                        "status" => 'installed'
+                    ]);
+
+                return ["error"=> false];
+        }
+
+
+        return $request;
+
+    }
+
+
+    function locations( Request $request ){
+
+        switch( $request->action ){
+
             case "provinces":
                 return DB::table("location_provinces")
                         ->where("REGION", $request->value)
@@ -96,13 +115,6 @@ class SupervendorController extends Controller
                         ->get();
                 break;
 
-            case "application_installed":
-                CampaignRegistration::where("id", $request->id)
-                    ->update([
-                        "status" => 'installed'
-                    ]);
-
-                return ["error"=> false];
         }
 
 

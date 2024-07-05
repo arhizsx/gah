@@ -59,14 +59,10 @@ class SupervendorController extends Controller
 
         switch( $request->action ){
 
-            case "regions":
+            case "provinces":
                 return DB::table("location_provinces")
                         ->where("REGION", $request->value)
                         ->get();
-                break;
-
-            case "provinces":
-                return DB::table("location_provinces")->get();
                 break;
 
         }

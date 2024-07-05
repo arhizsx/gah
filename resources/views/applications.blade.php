@@ -42,7 +42,7 @@
                             <input class="form-control form-control-sm" type="text" value="" name="mobile_number" id="mobile_number" placeholder="Mobile Number">
                         </div>
                     </div>
-                    <div class="section-title">Primary Installation Address</div>
+                    <div class="section-title">Installation Address</div>
                     <div class="row mt-3 mb-3">
                         <div class="col-3">
                             <label for="province">Province</label>

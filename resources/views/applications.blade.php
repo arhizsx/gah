@@ -85,15 +85,17 @@
                     </div>
                     <div class="section-title">Attachments</div>
                     <div class="row">
-                        <div class="col">
+                        <div class="col text-center">
                             <div  class="border" style="width: 100%;">
                                 <a target="_blank" href="" id="href_receipt"><img src="" id="img_receipt" alt-text="receipt"/></a>
                             </div>
+                            <small>Proof of Purchase</small>
                         </div>
-                        <div class="col">
+                        <div class="col text-center">
                             <div  class="border" style="width: 100%;">
                                 <a target="_blank" href="" id="href_serviceability_check"><img src=""  id="img_serviceability_check" alt-text="serviceability_check"/></a>
                             </div>
+                            <small>Serviceability</small>
                         </div>
                     </div>
                 </div>
@@ -146,6 +148,7 @@ $(document).on("click", ".btn-action", function(){
     });
 
 });
+
 
 function applicationSetImage(data){
 

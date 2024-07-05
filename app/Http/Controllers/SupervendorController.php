@@ -33,9 +33,20 @@ class SupervendorController extends Controller
 
             case "installations":
 
-                $data = DB::table("view_registrations")
-                        ->where("status", "installation")
+                if( Auth::user()->company == NULL  ){
+
+                    $data = DB::table("view_registrations")
+                        ->where("status", "installed")
                         ->get();
+
+                } else {
+
+                    $data = DB::table("view_registrations")
+                        ->where("status", "installed")
+                        ->where("supervendor", Auth::user()->company )
+                        ->get();
+
+                }
                 break;
 
             case "applications":

@@ -33,7 +33,6 @@
                 <div class="border rounded-3 p-3 mt-4">
                     <H5>GPF X SAMSUNG</H5>
                     <p>Kindly fill out this form for your Free GlobeFiber Prepaid</p>
-                    <p>Please nominate at least 2 addresses for serviceability check</p>
                     <p>*Bundle of GFiber Prepaid will be on the serviceability of the nominated address</p>
                 </div>
 

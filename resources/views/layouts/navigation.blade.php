@@ -21,9 +21,9 @@
                     <x-nav-link :href="route('installations')" :active="request()->routeIs('installations')">
                         {{ __('Installations') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('company')" :active="request()->routeIs('company')">
+                    {{-- <x-nav-link :href="route('company')" :active="request()->routeIs('company')">
                         {{ __('Company') }}
-                    </x-nav-link>
+                    </x-nav-link> --}}
                 </div>
             </div>
 
@@ -85,9 +85,9 @@
             <x-responsive-nav-link :href="route('installations')" :active="request()->routeIs('installations')">
                 {{ __('Installations') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('company')" :active="request()->routeIs('company')">
+            {{-- <x-responsive-nav-link :href="route('company')" :active="request()->routeIs('company')">
                 {{ __('Company') }}
-            </x-responsive-nav-link>
+            </x-responsive-nav-link> --}}
         </div>
 
         <!-- Responsive Settings Options -->

@@ -5,6 +5,44 @@ $(document).on('change','.location_filters',function(){
     let province = $(this).closest( $(this).data("parent") ).find("[name='province']");
     let city = $(this).closest( $(this).data("parent") ).find("[name='city']");
 
+    let filter = $(this).data("filter");
+
+    switch(filter){
+
+        case "region":
+
+            province.find('option')
+                .remove()
+                .end()
+                .append('<option value="">Select Province</option>')
+                .val('');
+
+            city.find('option')
+                .remove()
+                .end()
+                .append('<option value="">Select City</option>')
+                .val('');
+
+            break;
+
+        case "province":
+
+            city.find('option')
+                .remove()
+                .end()
+                .append('<option value="">Select City</option>')
+                .val('');
+
+            break;
+
+        case "city":
+            break;
+
+        default:
+            console.log("Unknown location filter");
+
+    }
+
     console.log( region );
     console.log( province );
     console.log( city );

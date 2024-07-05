@@ -73,7 +73,7 @@ $(document).on('change','.location_filters',function(){
                     .append('<option value="">Select City</option>');
 
                     $.each(resp, function(k, v){
-                        city.append('<option value="' + v.PROVINCE +'" data-region="' + v.REGION +'">' + v.PROVINCE +'</option>')
+                        city.append('<option value="' + v.CITY +'" data-region="' + v.REGION +'" data-province="' + v.PROVINCE +'">' + v.CITY +'</option>')
                     });
 
                 },

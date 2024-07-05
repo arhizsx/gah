@@ -66,9 +66,9 @@ class SupervendorController extends Controller
                 break;
 
             case "cities":
-                return DB::table("locations")
+                return DB::table("location_cities")
                         ->where("PROVINCE", $request->value)
-                        ->where("CFS Region", $request->region)
+                        ->where("REGION", $request->region)
                         ->get();
                 break;
 

@@ -83,7 +83,7 @@
                             <input class="form-control form-control-sm" type="text" value="" name="house_floor_bldg" id="house_floor_bldg" placeholder="House no., Floor no., Bldg">
                         </div>
                     </div>
-                    <div class="section-title">Secondary Installation Address</div>
+                    {{-- <div class="section-title">Secondary Installation Address</div>
                     <div class="row mt-3 mb-3">
                         <div class="col-3">
                             <label for="province">Province</label>
@@ -123,7 +123,7 @@
                         <div class="col-9">
                             <input class="form-control form-control-sm" type="text" value="" name="house_floor_bldg2" id="house_floor_bldg2" placeholder="House no., Floor no., Bldg">
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="section-title">Attachments</div>
                     <div class="row">
                         <div class="col">
@@ -133,12 +133,12 @@
                             <input class="form-control" type="text" name='serviceability_check'>
 
                         </div>
-                        <div class="col">
+                        {{-- <div class="col">
                             <div  class="border" style="height: 180px; width: 100%;">
                                 <img src="" alt-text="one"/>
                             </div>
                             <input class="form-control" type="text" name='serviceability_check2'>
-                        </div>
+                        </div> --}}
                         <div class="col">
                             <div  class="border" style="height: 180px; width: 100%;">
                                 <img src="" alt-text="one"/>

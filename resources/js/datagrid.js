@@ -72,8 +72,6 @@ $.fn.openModal = function( modal, data ){
 
         $(modal).find("input[name='" + k + "']").val( v );
 
-        console.log(v);
-
     } );
 
     console.log(data.id);

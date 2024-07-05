@@ -45,9 +45,14 @@ class SupervendorController extends Controller
                 $data = DB::table("samsung_registrations")->get();
                 break;
 
+            case "regions":
+
+                $data = DB::table("location_regions")->get();
+                break;
+
             default:
 
-                $data = DB::table("users")->get();
+                $data = [];
                 break;
         }
 

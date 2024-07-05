@@ -48,21 +48,39 @@ $(document).on('change','.location_filters',function(){
                 .append('<option value="-">-</option>')
                 .val('');
 
-
-
-
             break;
 
 
 
         case "province":
 
-            city.find('option')
-                .remove()
-                .end()
-                .append('<option value="">Select City</option>')
-                .append('<option value="-">-</option>')
-                .val('');
+            $.ajax({
+                url: "/supervendor/ajax",
+                method: "POST",
+                data: {
+                    "action" : "cities",
+                    "value": value,
+                    "region": region.val()
+                },
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(resp){
+
+                    city.find('option')
+                    .remove()
+                    .end()
+                    .append('<option value="">Select City</option>');
+
+                    $.each(resp, function(k, v){
+                        city.append('<option value="' + v.PROVINCE +'" data-region="' + v.REGION +'">' + v.PROVINCE +'</option>')
+                    });
+
+                },
+                error: function(){
+                    console.log("Error in AJAX");
+                }
+            });
 
             break;
 

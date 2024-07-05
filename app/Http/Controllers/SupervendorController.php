@@ -65,6 +65,13 @@ class SupervendorController extends Controller
                         ->get();
                 break;
 
+            case "cities":
+                return DB::table("location_provinces")
+                        ->where("REGION", $request->value)
+                        ->where("REGION", $request->region)
+                        ->get();
+                break;
+
         }
 
 

@@ -11,16 +11,15 @@ $(document).on('change','.location_filters',function(){
 
         case "region":
 
-            province.find('option')
-                .remove()
-                .end()
-                .append('<option value="">Select Province</option>')
-                .val('');
-
             $.ajax({
                 type: 'get',
                 url: "/supervendor/data/provinces",
                 success: function(resp){
+
+                    province.find('option')
+                    .remove()
+                    .end()
+                    .append('<option value="">Select Province</option>');
 
                     var data = JSON.parse(resp) ;
 

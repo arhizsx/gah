@@ -22,8 +22,11 @@ $(document).on('change','.location_filters',function(){
                 url: "/supervendor/data/provinces",
                 success: function(resp){
 
-                    console.log( JSON.parse(resp) );
+                    var data = JSON.parse(resp) ;
 
+                    $.each(data, function(k, v){
+                        console.log( v );
+                    });
 
                 },
                 error: function(){

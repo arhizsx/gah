@@ -1,9 +1,9 @@
 
 $(document).on('change','.location_filters',function(){
 
-    let region = $(this).closest( $(this).data("parent") ).find("[name='" + $(this).data("region") + "']");
-    let province = $(this).closest( $(this).data("parent") ).find("[name='" + $(this).data("province") + "']");
-    let city = $(this).closest( $(this).data("parent") ).find("[name='" + $(this).data("city") + "']");
+    let region = $(this).closest( $(this).data("parent") ).find("[name='region']");
+    let province = $(this).closest( $(this).data("parent") ).find("[name='province']");
+    let city = $(this).closest( $(this).data("parent") ).find("[name='city']");
 
 
     let value = $(this).val();

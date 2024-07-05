@@ -5,6 +5,8 @@ $(document).on('change','.location_filters',function(){
     let province = $(this).closest( $(this).data("parent") ).find("[name='province']");
     let city = $(this).closest( $(this).data("parent") ).find("[name='city']");
 
+
+    let value = $(this).val();
     let filter = $(this).data("filter");
 
     switch(filter){
@@ -16,6 +18,7 @@ $(document).on('change','.location_filters',function(){
                 method: "POST",
                 data: {
                     "action" : "provinces",
+                    "value": value
                 },
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

@@ -55,7 +55,7 @@ class SamsungController extends Controller
             "data" => json_encode($data)
         ]);
 
-        return $registration;
+        return ["error" => false, "registration" => $registration ];
 
     }
 

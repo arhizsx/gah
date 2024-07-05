@@ -27,6 +27,8 @@ $(document).on('change','.location_filters',function(){
 
             break;
 
+
+
         case "province":
 
             city.find('option')

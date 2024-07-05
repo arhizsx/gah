@@ -229,8 +229,6 @@
 
             let form = new FormData( $("#samsung_form")[0] );
 
-
-
             $.ajax({
                 type: 'post',
                 url: "/samsung/register",

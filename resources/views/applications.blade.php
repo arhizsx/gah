@@ -86,14 +86,14 @@
                     <div class="section-title">Attachments</div>
                     <div class="row">
                         <div class="col">
-                            <div  class="border" style="height: 180px; width: 100%;">
+                            <div  class="border" style="width: 100%;">
                                 <img src="" id="img_receipt" alt-text="receipt"/>
                             </div>
                             <input class="form-control" type="text" name='serviceability_check'>
 
                         </div>
                         <div class="col">
-                            <div  class="border" style="height: 180px; width: 100%;">
+                            <div  class="border" style="width: 100%;">
                                 <img src=""  id="img_serviceability_check" alt-text="serviceability_check"/>
                             </div>
                             <input class="form-control" type="text" name='receipt'>

@@ -77,7 +77,7 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <H5>Primary Installation Address</H5>
+                            <H5>Installation Address</H5>
                         </button>
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse">

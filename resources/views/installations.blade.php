@@ -94,8 +94,8 @@
 
 let modal = "#installation_details";
 let datagrid = "#gridContainer";
-let datasource = '/supervendor/data/samsung';
-let columns = ['campaign', 'complete_name', 'mobile_number', 'province', 'city', 'action'];
+let datasource = '/supervendor/data/applications';
+let columns = ['campaign', 'complete_name', 'mobile_number', 'province', 'city', 'supervendor'];
 
 $(() => {
 

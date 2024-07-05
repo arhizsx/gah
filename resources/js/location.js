@@ -15,13 +15,30 @@ $(document).on('change','.location_filters',function(){
                 .remove()
                 .end()
                 .append('<option value="">Select Province</option>')
+                .append('<option value="-">-</option>')
                 .val('');
 
             city.find('option')
                 .remove()
                 .end()
                 .append('<option value="">Select City</option>')
+                .append('<option value="-">-</option>')
                 .val('');
+
+            $.ajax({
+                type: 'post',
+                url: "/samsung/register",
+                data: form,
+                enctype: 'multipart/form-data',
+                processData: false,
+                contentType: false,
+                success: function(resp){
+                },
+                error: function(){
+                    console.log("Error in AJAX");
+                }
+            });
+
 
             break;
 

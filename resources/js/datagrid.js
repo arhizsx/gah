@@ -82,7 +82,3 @@ $.fn.openModal = function( modal, data, callback ){
 
 };
 
-function applicationSetImage(data){
-    console.log(data);
-}
-

@@ -21,7 +21,10 @@ $(document).on('change','.location_filters',function(){
                 type: 'get',
                 url: "/supervendor/data/provinces",
                 success: function(resp){
-                    $.each( resp, function(k, v){
+
+                    data = JSON.parse(resp);
+
+                    $.each( data, function(k, v){
 
                         $(province).append('<option value="' + v.PROVINCE + '" data-region="' + v.region + '">' + v.PROVINCE + '</option>')
 

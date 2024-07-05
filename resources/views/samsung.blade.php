@@ -2,7 +2,7 @@
 <html lang="en" >
     <head>
         <meta charset="UTF-8">
-        <title>GFP X SAMSUNG</title>
+        <title>GFP & Samsung Partnership</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -31,7 +31,7 @@
                 <img src="/images/banner.png" width="100%" />
 
                 <div class="border rounded-3 p-3 mt-4">
-                    <H5>GPF X SAMSUNG</H5>
+                    <H3>GFP & Samsung Partnership</H3>
                     <p>Kindly fill out this form for your Free GFiber Prepaid</p>
                     <p>*Bundle of GFiber Prepaid will be on the serviceability of the nominated address</p>
                 </div>

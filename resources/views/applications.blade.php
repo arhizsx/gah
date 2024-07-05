@@ -150,7 +150,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Installed</button>
+                <button type="button" class="btn btn-primary btn-action" data-action="application_installed">Installed</button>
             </div>
         </div>
     </div>
@@ -167,6 +167,28 @@ let columns = ['campaign', 'complete_name', 'mobile_number', 'province', 'city',
 $(() => {
 
     $(datagrid).setDatagrid( modal, datasource, columns );
+
+});
+
+$(document).on("click", ".btn-action", function(){
+    let action = $(this).data("action");
+
+    $.ajax({
+        url: "/supervendor/ajax",
+        method: "POST",
+        data: {
+            "action" : "application_installed",
+        },
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function(resp){
+
+        },
+        error: function(){
+            console.log("Error in AJAX");
+        }
+    });
 
 });
 

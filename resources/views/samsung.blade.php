@@ -85,7 +85,7 @@
                                     <select class="form-control mb-3 checker" name="province" data-checker="required" name="region" id="region">
                                         <option value="" selected>Select Region</option>
                                         @foreach($regions as $option)
-                                        <option value="{{ $option["region"] }}">{{ $option["region"] }}</option>
+                                        <option value="{{ $option->region }}">{{ $option->region }}</option>
                                         @endforeach
                                     </select>
                                 </div>

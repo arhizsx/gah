@@ -185,7 +185,9 @@ $(document).on("click", ".btn-action", function(){
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         success: function(resp){
-
+            if(resp.error == false){
+                location.reload();
+            }
         },
         error: function(){
             console.log("Error in AJAX");

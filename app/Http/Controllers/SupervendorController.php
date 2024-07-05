@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Models\CampaignRegistration;
 
 class SupervendorController extends Controller
 {
@@ -95,6 +96,13 @@ class SupervendorController extends Controller
                         ->get();
                 break;
 
+            case "application_installed":
+                CampaignRegistration::where("id", $request->id)
+                    ->update([
+                        "status" => 'installed'
+                    ]);
+
+                return ["error"=> false];
         }
 
 

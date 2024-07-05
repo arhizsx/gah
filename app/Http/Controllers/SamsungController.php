@@ -13,8 +13,9 @@ class SamsungController extends Controller
     function index(){
 
         $regions = DB::table("location_regions")->get();
+        $provinces = DB::table("location_provinces")->get();
 
-        return view('samsung', ["regions" => $regions]);
+        return view('samsung', ["regions" => $regions, "provinces" => $provinces]);
 
     }
 

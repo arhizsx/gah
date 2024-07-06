@@ -45,7 +45,18 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
     public function updated(CampaignRegistration $campaignRegistration): void
     {
         Log::info("updated " . json_encode($campaignRegistration));
-        Mail::to( "arhizsx@gmail.com" )->queue( new UpdatedCampaignRegistration($campaignRegistration) );
+
+        if( $campaignRegistration->vendor == null ){
+
+        } elseif( $campaignRegistration->vendor == "%MULTI_VENDORS%" ){
+
+        } else {
+
+            $selected = DB::table("vendors")->where("supervendor", $campaignRegistration->vendor)->first();
+            Mail::to( $selected->email )->queue( new UpdatedCampaignRegistration($campaignRegistration) );
+
+        }
+
 
     }
 

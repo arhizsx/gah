@@ -79,7 +79,7 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
                     ->where("CITY", $city)
                     ->get();
 
-        return $vendor->{'Super vendor'};
+        return $vendor->SUPERVENDOR;
 
     }
 }

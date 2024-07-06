@@ -17,30 +17,29 @@
 @endsection
 
 @section("secondContent")
-    <table width="100%">
+    <table width="100%" style="border-collapse:collapse;border: 1px solid;">
         @php
             $data = json_decode( $campaignRegistration->data, true );
         @endphp
-
-        <tr>
+        <tr style="border: 1px solid;">
             <td>Campaign</td>
             <td>{{ $campaignRegistration->campaign }}</td>
         </tr>
-        <tr>
+        <tr style="border: 1px solid;">
             <td>Complete Name</td>
             <td>{{ $data["complete_name"] }}</td>
         </tr>
-        <tr>
+        <tr style="border: 1px solid;">
             <td>Mobile Number</td>
             <td>{{ $data["mobile_number"] }}</td>
 
         </tr>
-        <tr>
+        <tr style="border: 1px solid;">
             <td>Province</td>
             <td>{{ $data["province"] }}</td>
 
         </tr>
-        <tr>
+        <tr style="border: 1px solid;">
             <td>City</td>
             <td>{{ $data["city"] }}</td>
         </tr>

@@ -21,27 +21,27 @@
         @php
             $data = json_decode( $campaignRegistration->data, true );
         @endphp
-        <tr style="border: 1px solid;">
-            <td>Campaign</td>
+        <tr style="border: 1px solid;padding:5px;">
             <td>{{ $campaignRegistration->campaign }}</td>
         </tr>
-        <tr style="border: 1px solid;">
-            <td>Complete Name</td>
+        <tr style="border: 1px solid;padding:5px;">
             <td>{{ $data["complete_name"] }}</td>
         </tr>
-        <tr style="border: 1px solid;">
-            <td>Mobile Number</td>
+        <tr style="border: 1px solid;padding:5px;">
             <td>{{ $data["mobile_number"] }}</td>
-
         </tr>
-        <tr style="border: 1px solid;">
-            <td>Province</td>
+        <tr style="border: 1px solid;padding:5px;">
             <td>{{ $data["province"] }}</td>
 
         </tr>
-        <tr style="border: 1px solid;">
-            <td>City</td>
+        <tr style="border: 1px solid;padding:5px;">
             <td>{{ $data["city"] }}</td>
+        </tr>
+        <tr style="border: 1px solid;padding:5px;">
+            <td>{{ $data["brgy_village"] }}</td>
+        </tr>
+        <tr style="border: 1px solid;padding:5px;">
+            <td>{{ $data["street"] }}</td>
         </tr>
     </table>
 

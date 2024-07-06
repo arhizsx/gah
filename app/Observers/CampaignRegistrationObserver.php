@@ -6,6 +6,7 @@ use App\Models\CampaignRegistration;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Contracts\Events\ShouldHandleEventsAfterCommit;
 use Illuminate\Support\Facades\Mail;
+
 use App\Mail\NewCampaignRegistration;
 use App\Mail\UpdatedCampaignRegistration;
 
@@ -17,13 +18,8 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
     public function created(CampaignRegistration $campaignRegistration): void
     {
 
-
-
         Log::info("cretated " . json_encode($campaignRegistration));
-
-
-
-        Mail::to( "arhizsx@gmail.com" )->queue(new NewCampaignRegistration($campaignRegistration));
+        Mail::to( "arhizsx@gmail.com" )->queue( new NewCampaignRegistration( $campaignRegistration ) );
 
     }
 
@@ -33,7 +29,7 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
     public function updated(CampaignRegistration $campaignRegistration): void
     {
         Log::info("updated " . json_encode($campaignRegistration));
-        Mail::to( "arhizsx@gmail.com" )->queue(new UpdatedCampaignRegistration($campaignRegistration));
+        Mail::to( "arhizsx@gmail.com" )->queue( new UpdatedCampaignRegistration($campaignRegistration) );
 
     }
 

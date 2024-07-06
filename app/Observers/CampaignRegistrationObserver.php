@@ -26,7 +26,7 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
 
         $vendor = $this->getVendor( $data["province"], $data["city"] );
 
-        $selected = DB::table("vendors")->where("supervendor", $vendor["Super vendor"])->first();
+        $selected = DB::table("vendors")->where("supervendor", $vendor->{'Super vendor'})->first();
 
         if( $vendor  && $selected){
             Mail::to( $selected->email )->queue( new NewCampaignRegistration( $campaignRegistration ) );

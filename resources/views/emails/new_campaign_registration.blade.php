@@ -4,8 +4,14 @@
     NEW APPLICATION RECEIVED
 @endsection
 
+@section("greetings")
+    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:24px;color:#666666;text-align:center">
+        HI,&nbsp;%COMPANY% TEAM
+    </p>
+@endsection
+
 @section("firstContent")
-    <p style="padding-top: 50px;Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:24px;color:#666666;text-align:center">
+    <p style="padding-top: 50px; padding-bottom: 30px; Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:24px;color:#666666;text-align:center">
         We assigned a new GFiber Installation Application to your company.
     </p>
 @endsection

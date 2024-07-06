@@ -1,7 +1,7 @@
 @extends("layouts.email")
 
 @section("headerText")
-    APPLICATION STATUS RECEIVED
+    APPLICATION STATUS UPDATED
 @endsection
 
 @section("greetings")
@@ -9,7 +9,7 @@
 
 @section("firstContent")
     <p style="padding-top: 30px; padding-bottom: 30px; Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:24px;color:#666666;text-align:center">
-        The status of the GFiber Installation was updated. Please the details below
+        The GFiber Installation status was updated. Please the see details below
     </p>
 @endsection
 

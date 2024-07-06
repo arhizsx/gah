@@ -22,9 +22,10 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
 
         Log::info("cretated " . json_encode($campaignRegistration));
 
-        dd($campaignRegistration);
 
         $selected = DB::table("vendors")->where("supervendor", $$campaignRegistration->vendor)->first();
+
+        dd($selected);
 
         if( $selected ){
             Mail::to( $selected->email )->queue( new NewCampaignRegistration( $campaignRegistration ) );

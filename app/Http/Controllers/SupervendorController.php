@@ -87,7 +87,7 @@ class SupervendorController extends Controller
 
                 $registration = CampaignRegistration::find($request->id);
                 $registration->update([
-                    "status" => 'installed'
+                    "status" => 'INSTALLED'
                 ]);
 
                 return ["error"=> false, "registration" => $registration];

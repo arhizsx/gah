@@ -21,27 +21,35 @@
         @php
             $data = json_decode( $campaignRegistration->data, true );
         @endphp
-        <tr style="border: 1px solid;padding:5px;">
-            <td>{{ $campaignRegistration->campaign }}</td>
+        <tr style="border: 1px solid;">
+            <td style="padding:5px;">
+            {{ $campaignRegistration->campaign }}</td>
         </tr>
-        <tr style="border: 1px solid;padding:5px;">
-            <td>{{ $data["complete_name"] }}</td>
+        <tr style="border: 1px solid;">
+            <td style="padding:5px;">
+            {{ $data["complete_name"] }}</td>
         </tr>
-        <tr style="border: 1px solid;padding:5px;">
-            <td>{{ $data["mobile_number"] }}</td>
+        <tr style="border: 1px solid;">
+            <td style="padding:5px;">
+            {{ $data["mobile_number"] }}</td>
         </tr>
-        <tr style="border: 1px solid;padding:5px;">
-            <td>{{ $data["province"] }}</td>
+        <tr style="border: 1px solid;">
+            <td style="padding:5px;">
+                {{ $data["province"] }}
+            </td>
 
         </tr>
-        <tr style="border: 1px solid;padding:5px;">
-            <td>{{ $data["city"] }}</td>
+        <tr style="border: 1px solid;">
+            <td style="padding:5px;">
+            {{ $data["city"] }}</td>
         </tr>
-        <tr style="border: 1px solid;padding:5px;">
-            <td>{{ $data["brgy_village"] }}</td>
+        <tr style="border: 1px solid;">
+            <td style="padding:5px;">
+            {{ $data["brgy_village"] }}</td>
         </tr>
-        <tr style="border: 1px solid;padding:5px;">
-            <td>{{ $data["street"] }}</td>
+        <tr style="border: 1px solid;">
+            <td style="padding:5px;">
+            {{ $data["street"] }}</td>
         </tr>
     </table>
 

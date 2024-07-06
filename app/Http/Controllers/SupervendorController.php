@@ -98,6 +98,60 @@ class SupervendorController extends Controller
 
     }
 
+    function ajax_public(Request $request){
+
+        $data = $request->all();
+
+        // Upload Attached Documents
+        try{
+
+            // Upload path
+            $destinationPath = 'files/';
+
+            // Cycle all uploaded files
+            foreach( $request->file() as $f => $k ){
+
+                if( $request->hasFile( $f )) {
+
+                    $extension = $request->file( $f )->getClientOriginalExtension();
+                    $fileName = $f . '-' . rand( time() , 1000 ) . '-' . $request->file( $f )->getClientOriginalName();
+
+                    // Uploading file to given path
+                    $request->file( $f)->move($destinationPath, $fileName);
+
+                    $data[ $f ] = $fileName;
+
+                }
+            }
+
+        } catch (\Throwable $th) {
+            return response()->json(['error' => true, 'message' => $th->getMessage()]);
+        }
+
+        $vendor = $this->getVendor($request->province, $request->city);
+
+        if( count( $vendor ) == 1 ){
+
+            $registration = CampaignRegistration::create([
+                "campaign" => $request->campaign,
+                "user_id" => null,
+                "vendor" => $vendor[0]->SUPERVENDOR,
+                "data" => json_encode($data)
+            ]);
+
+            return ["error" => false, "registration" => $registration ];
+
+        }
+        elseif( count( $vendor ) > 1 ){
+
+        } else {
+
+        }
+
+
+
+    }
+
 
     function locations( Request $request ){
 
@@ -121,6 +175,14 @@ class SupervendorController extends Controller
 
         return $request;
 
+    }
+
+    function getVendor( $province, $city ){
+
+        return DB::table("locations")
+                ->where("province", $province)
+                ->where("city", $city)
+                ->get();
     }
 
 }

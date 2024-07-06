@@ -24,11 +24,9 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
 
         $data = json_decode( $campaignRegistration->data, true );
 
-        $vendor = $this->getVendor( $data["province"], $data["city"] );
+        $selected = DB::table("vendors")->where("supervendor", $$campaignRegistration->vendor)->first();
 
-        $selected = DB::table("vendors")->where("supervendor", $vendor)->first();
-
-        if( $vendor  && $selected){
+        if( $selected ){
             Mail::to( $selected->email )->queue( new NewCampaignRegistration( $campaignRegistration ) );
         }
         else {
@@ -71,15 +69,4 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
         //
     }
 
-
-    function getVendor ( $province, $city ) {
-
-        $vendor = DB::table("locations")
-                    ->where("PROVINCE", $province)
-                    ->where("CITY", $city)
-                    ->first();
-
-        return $vendor->SUPERVENDOR;
-
-    }
 }

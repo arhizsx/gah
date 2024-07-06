@@ -113,7 +113,7 @@
 let modal = "#application_details";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/applications';
-let columns = ['campaign', 'complete_name', 'mobile_number', 'province', 'city', 'supervendor'];
+let columns = ['campaign', 'complete_name', 'mobile_number', 'province', 'city', 'vendor'];
 let callback = 'applicationSetImage';
 
 

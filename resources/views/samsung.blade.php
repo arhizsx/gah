@@ -26,7 +26,7 @@
             <form id="samsung_form">
                 @csrf
 
-                <input type="hidden"  name="campaign" id="campaign" value='samsung'>
+                <input type="hidden"  name="campaign" id="campaign" value='SAMSUNG'>
 
                 <img src="/images/banner.png" width="100%" />
 
@@ -124,58 +124,6 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="accordion-item">
-                        <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            <H5>Secondary Installation Address</H5>
-                        </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse">
-                            <div class="accordion-body">
-                                <div class="form-row">
-                                    <label for="province">Region</label>
-                                    <select class="form-control mb-3 checker location_filters" data-filter='region' data-parent='#collapseThree' data-checker="required" name="region2" id="region2">
-                                        <option value="" selected>Select Region</option>
-                                        @foreach($regions as $option)
-                                        <option value="{{ $option->region }}">{{ $option->region }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-
-                                <div class="form-row">
-                                    <label for="province">Province</label>
-                                    <select class="form-control mb-3 checker location_filters" data-filter='province' data-parent='#collapseThree' data-checker="required" name="province2" id="province2">
-                                        <option value="" selected>Select Province</option>
-                                    </select>
-                                </div>
-                                <div class="form-row">
-                                    <label for="city">City</label>
-                                    <select class="form-control mb-3 checker location_filters" data-filter='city' data-parent='#collapseThree' data-checker="required" name="city2" id="city2">
-                                        <option value="" selected>Select City</option>
-                                        <option value="-">-</option>
-                                    </select>
-                                </div>
-                                <div class="form-row">
-                                    <label for="brgy_village2">Barangay / Village</label>
-                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="brgy_village2" id="brgy_village2">
-                                </div>
-                                <div class="form-row">
-                                    <label for="street2">Street</label>
-                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="street2" id="street2">
-                                </div>
-                                <div class="form-row">
-                                    <label for="house_floor_bldg2">House no., Floor no., Bldg</label>
-                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="house_floor_bldg2" id="house_floor_bldg2">
-                                </div>
-                                <div class="form-row">
-                                    <label for="serviceability_check">Serviceability Screenshot</label>
-                                    <input type="file" class="form-control mb-3 checker" data-checker="optional" name="serviceability_check2" id="serviceability_check2">
-
-                                    <a target="_blank" href="https://gfiberprepaid.globe.com.ph/serviceability/">Check Address Serviceability</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -241,7 +189,7 @@
 
             $.ajax({
                 type: 'post',
-                url: "/samsung/register",
+                url: "/supervendor/ajax-public",
                 data: form,
                 enctype: 'multipart/form-data',
                 processData: false,

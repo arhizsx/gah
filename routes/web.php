@@ -21,34 +21,11 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
 });
 
-
-Route::get('/event', function(){
-
-    // $campaignRegistration = CampaignRegistration::create([
-    //     "campaign" => "samsung",
-    //     "user_id" => 1,
-    //     "data" => json_encode([]),
-    //     "status" => "test",
-    // ]);
-
-
-    $campaignRegistration = CampaignRegistration::find(1);
-    $campaignRegistration->update(["status" => "fire" ]);
-
-    return $campaignRegistration;
-
-
-});
-
-Route::get('/email', function(){
-
-
-    $campaignRegistration = CampaignRegistration::find(1);
-    return view("emails.new_campaign_registration_no_vendor")->with('campaignRegistration', $campaignRegistration);
-});
-
 Route::post('/supervendor/locations',  [SupervendorController::class, 'locations'])->name('locations');
 
+
+
+Route::post('/supervendor/ajax-public',  [SupervendorController::class, 'ajax_public'])->name('ajax_public');
 
 // SAMSUNG CAMPAIGN
 Route::post('/samsung/register', [SamsungController::class, 'register']);

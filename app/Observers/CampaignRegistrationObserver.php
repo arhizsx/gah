@@ -16,7 +16,13 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
      */
     public function created(CampaignRegistration $campaignRegistration): void
     {
+
+
+
         Log::info("cretated " . json_encode($campaignRegistration));
+
+
+
         Mail::to( "arhizsx@gmail.com" )->queue(new NewCampaignRegistration($campaignRegistration));
 
     }

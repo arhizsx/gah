@@ -344,6 +344,11 @@
                                                                                             <p style="padding-top: 30px;Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:24px;color:#666666">
                                                                                                 To view all the applications assigned to your team please click on the button below
                                                                                             </p>
+                                                                                            <p style="padding-top: 30px;Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:24px;color:#666666">
+                                                                                                @php
+                                                                                                    print_r( $campaignRegistration );
+                                                                                                @endphp
+                                                                                            </p>
                                                                                         </td>
                                                                                     </tr>
                                                                                     <tr style="border-collapse:collapse">

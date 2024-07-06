@@ -11,13 +11,34 @@
 @endsection
 
 @section("firstContent")
-    <p style="padding-top: 50px; padding-bottom: 30px; Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:24px;color:#666666;text-align:center">
+    <p style="padding-top: 30px; padding-bottom: 30px; Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:24px;color:#666666;text-align:center">
         We assigned a new GFiber Installation Application to your company.
     </p>
 @endsection
 
 @section("secondContent")
-    {{ print_r( $campaignRegistration) }}
+    <table width="100%">
+        <tr>
+            <td>Campaign</td>
+            <td>{{ $campaignRegistration->campaign }}</td>
+        </tr>
+        <tr>
+            <td>Complete Name</td>
+            <td>{{ $campaignRegistration->complete_name }}</td>
+        </tr>
+        <tr>
+            <td>Mobile Number</td>
+            <td>{{ $campaignRegistration->mobile_number }}</td>
+        </tr>
+        <tr>
+            <td>Province</td>
+            <td>{{ $campaignRegistration->province }}</td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td>{{ $campaignRegistration->city }}</td>
+        </tr>
+    </table>
 @endsection
 
 @section("thirdContent")

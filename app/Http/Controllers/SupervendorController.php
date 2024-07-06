@@ -170,7 +170,6 @@ class SupervendorController extends Controller
             case "cities":
                 return DB::table("location_cities")
                         ->where("PROVINCE", $request->value)
-                        ->where("REGION", $request->region)
                         ->get();
                 break;
 

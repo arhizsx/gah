@@ -17,7 +17,7 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
     /**
      * Handle the CampaignRegistration "created" event.
      */
-    public function created(CampaignRegistration $campaignRegistration): void
+    public function created(CampaignRegistration $campaignRegistration)
     {
 
         Log::info("cretated " . json_encode($campaignRegistration));
@@ -25,6 +25,8 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
         $data = json_decode( $campaignRegistration->data, true );
 
         $vendor = $this->getVendor( $data["province"], $data["city"] );
+
+        return $vendor;
 
         $selected = DB::table("vendors")->where("supervendor", $vendor->{'Super vendor'})->first();
 

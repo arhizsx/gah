@@ -23,7 +23,7 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
         Log::info("cretated " . json_encode($campaignRegistration));
 
 
-        $selected = DB::table("vendors")->where("supervendor", $$campaignRegistration->vendor)->first();
+        $selected = DB::table("vendors")->where("supervendor", $campaignRegistration->vendor)->first();
 
         dd($selected);
 

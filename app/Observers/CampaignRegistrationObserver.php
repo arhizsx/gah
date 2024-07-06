@@ -77,12 +77,9 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
         $vendor = DB::table("locations")
                     ->where("PROVINCE", $province)
                     ->where("CITY", $city)
-                    ->get();
-        if( $vendor ){
-            return dd($vendor);
-        } else {
-            return false;
-        }
+                    ->first();
+
+        return $vendor->SUPERVENDOR;
 
     }
 }

@@ -117,7 +117,7 @@ $(document).on('change','.location_filters',function(){
                     brgy.find('option')
                     .remove()
                     .end()
-                    .append('<option value="">Select City</option>');
+                    .append('<option value="">Select Barangay</option>');
 
                     $.each(resp, function(k, v){
                         city.append('<option value="' + v.BRGY +'" data-region="' + v.REGION +'" data-province="' + v.PROVINCE +'" data-city="' + v.CITY +'">' + v.BRGY +'</option>')

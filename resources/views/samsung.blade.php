@@ -93,7 +93,12 @@
                                     <label for="city">City</label>
                                     <select class="form-control mb-3 checker location_filters" data-filter='city' data-parent='#collapseTwo' data-checker="required" name="city" id="city">
                                         <option value="" selected>Select City</option>
-                                        <option value="-">-</option>
+                                    </select>
+                                </div>
+                                <div class="form-row">
+                                    <label for="city">Barangay</label>
+                                    <select class="form-control mb-3 checker location_filters" data-filter='brgy' data-parent='#collapseTwo' data-checker="optional" name="brgy" id="brgy">
+                                        <option value="" selected>Select Barangay</option>
                                     </select>
                                 </div>
                                 <div class="form-row">

@@ -22,14 +22,19 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
 
         Log::info("cretated " . json_encode($campaignRegistration));
 
+        if( $campaignRegistration->vendor == null ){
 
-        $selected = DB::table("vendors")->where("supervendor", $campaignRegistration->vendor)->first();
-
-        if( $selected ){
-            Mail::to( $selected->email )->queue( new NewCampaignRegistration( $campaignRegistration ) );
-        }
-        else {
             Mail::to( "arhizsx@gmail.com" )->queue( new NewCampaignRegistrationNoVendor( $campaignRegistration ) );
+
+        } elseif( $campaignRegistration->vendor == "%MULTI_VENDORS%" ){
+
+            Mail::to( "arhizsx@gmail.com" )->queue( new NewCampaignRegistrationNoVendor( $campaignRegistration ) );
+
+        } else {
+
+            $selected = DB::table("vendors")->where("supervendor", $campaignRegistration->vendor)->first();
+            Mail::to( $selected->email )->queue( new NewCampaignRegistration( $campaignRegistration ) );
+
         }
 
     }

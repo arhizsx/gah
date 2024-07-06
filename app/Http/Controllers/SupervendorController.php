@@ -132,22 +132,27 @@ class SupervendorController extends Controller
 
         if( count( $vendor ) == 1 ){
 
-            $registration = CampaignRegistration::create([
-                "campaign" => $request->campaign,
-                "user_id" => null,
-                "vendor" => $vendor[0]->SUPERVENDOR,
-                "data" => json_encode($data)
-            ]);
-
-            return ["error" => false, "registration" => $registration ];
+            $supervendor = $vendor[0]->SUPERVENDOR;
 
         }
         elseif( count( $vendor ) > 1 ){
 
+            $supervendor = "%MULTI_VENDORS%";
+
         } else {
+
+            $supervendor = null;
 
         }
 
+        $registration = CampaignRegistration::create([
+            "campaign" => $request->campaign,
+            "user_id" => null,
+            "vendor" => $supervendor,
+            "data" => json_encode($data)
+        ]);
+
+        return ["error" => false, "registration" => $registration ];
 
 
     }

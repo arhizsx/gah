@@ -26,10 +26,10 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
 
         $vendor = $this->getVendor( $data["province"], $data["city"] );
 
+        $selected = DB::table("vendors")->where("supervendor", $vendor["Super vendor"])->first();
 
-
-        if( $vendor ){
-            Mail::to( "arhizsx@gmail.com" )->queue( new NewCampaignRegistration( $campaignRegistration ) );
+        if( $vendor  && $selected){
+            Mail::to( $selected->email )->queue( new NewCampaignRegistration( $campaignRegistration ) );
         }
         else {
             Mail::to( "arhizsx@gmail.com" )->queue( new NewCampaignRegistrationNoVendor( $campaignRegistration ) );

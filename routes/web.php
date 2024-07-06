@@ -41,7 +41,10 @@ Route::get('/event', function(){
 });
 
 Route::get('/email', function(){
-    return view("emails.updated_campaign_registration");
+
+
+    $campaignRegistration = CampaignRegistration::find(1);
+    return view("emails.new_campaign_registration_no_vendor")->with('campaignRegistration', $campaignRegistration);
 });
 
 Route::post('/supervendor/locations',  [SupervendorController::class, 'locations'])->name('locations');

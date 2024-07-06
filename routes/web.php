@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SamsungController;
 use App\Http\Controllers\SupervendorController;
 
+use App\Models\CampaignRegistration;
+
 // SUPERVENDOR
 Route::group(['middleware' => ['auth', 'verified']], function () {
 
@@ -19,6 +21,28 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
 });
 
+
+Route::get('/event', function(){
+
+    // $campaignRegistration = CampaignRegistration::create([
+    //     "campaign" => "samsung",
+    //     "user_id" => 1,
+    //     "data" => json_encode([]),
+    //     "status" => "test",
+    // ]);
+
+
+    $campaignRegistration = CampaignRegistration::find(1);
+    $campaignRegistration->update(["status" => "fire" ]);
+
+    return $campaignRegistration;
+
+
+});
+
+Route::get('/email', function(){
+    return view("emails.updated_campaign_registration");
+});
 
 Route::post('/supervendor/locations',  [SupervendorController::class, 'locations'])->name('locations');
 

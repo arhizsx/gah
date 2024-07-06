@@ -84,12 +84,13 @@ class SupervendorController extends Controller
         switch( $request->action ){
 
             case "application_installed":
-                CampaignRegistration::where("id", $request->id)
-                    ->update([
-                        "status" => 'installed'
-                    ]);
 
-                return ["error"=> false];
+                $registration = CampaignRegistration::find($request->id);
+                $registration->update([
+                    "status" => 'installed'
+                ]);
+
+                return ["error"=> false, "registration" => $registration];
         }
 
 

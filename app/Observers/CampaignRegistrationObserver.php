@@ -17,7 +17,7 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
     /**
      * Handle the CampaignRegistration "created" event.
      */
-    public function created(CampaignRegistration $campaignRegistration)
+    public function created(CampaignRegistration $campaignRegistration): void
     {
 
         Log::info("cretated " . json_encode($campaignRegistration));
@@ -26,9 +26,7 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
 
         $vendor = $this->getVendor( $data["province"], $data["city"] );
 
-        return $vendor;
-
-        $selected = DB::table("vendors")->where("supervendor", $vendor->{'Super vendor'})->first();
+        $selected = DB::table("vendors")->where("supervendor", $vendor)->first();
 
         if( $vendor  && $selected){
             Mail::to( $selected->email )->queue( new NewCampaignRegistration( $campaignRegistration ) );
@@ -81,7 +79,7 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
                     ->where("CITY", $city)
                     ->get();
 
-        return $vendor;
+        return $vendor->{'Super vendor'};
 
     }
 }

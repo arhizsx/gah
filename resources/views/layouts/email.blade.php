@@ -345,17 +345,17 @@
                                                                                     </tr>
                                                                                     <tr style="border-collapse:collapse">
                                                                                         <td align="left" style="padding:0;Margin:0;padding-right:35px;padding-left:40px">
-                                                                                            @yield('secondConntent')
+                                                                                            @yield('secondContent')
                                                                                         </td>
                                                                                     </tr>
                                                                                     <tr style="border-collapse:collapse">
                                                                                         <td align="left" style="padding:0;Margin:0;padding-right:35px;padding-left:40px">
-                                                                                            @yield('thirdConntent')
+                                                                                            @yield('thirdContent')
                                                                                         </td>
                                                                                     </tr>
                                                                                     <tr style="border-collapse:collapse">
                                                                                         <td align="center" style="Margin:0;padding-left:10px;padding-right:10px;padding-top:40px;padding-bottom:40px">
-                                                                                            @yield('fourthConntent')
+                                                                                            @yield('fourthContent')
                                                                                         </td>
                                                                                     </tr>
                                                                                 </tbody>

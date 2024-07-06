@@ -18,28 +18,34 @@
 
 @section("secondContent")
     <table width="100%">
+        @php
+            $data = json_decode( $campaignRegistration->data, true );
+        @endphp
+
         <tr>
             <td>Campaign</td>
             <td>{{ $campaignRegistration->campaign }}</td>
         </tr>
         <tr>
             <td>Complete Name</td>
-            <td>{{ $campaignRegistration->complete_name }}</td>
+            <td>{{ $data["complete_name"] }}</td>
         </tr>
         <tr>
             <td>Mobile Number</td>
-            <td>{{ $campaignRegistration->mobile_number }}</td>
+            <td>{{ $data["mobile_number"] }}</td>
+
         </tr>
         <tr>
             <td>Province</td>
-            <td>{{ $campaignRegistration->province }}</td>
+            <td>{{ $data["province"] }}</td>
+
         </tr>
         <tr>
             <td>City</td>
-            <td>{{ $campaignRegistration->city }}</td>
+            <td>{{ $data["city"] }}</td>
         </tr>
     </table>
-    {{ print_r( $campaignRegistration ) }}
+
 @endsection
 
 @section("thirdContent")

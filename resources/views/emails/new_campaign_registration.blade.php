@@ -39,6 +39,7 @@
             <td>{{ $campaignRegistration->city }}</td>
         </tr>
     </table>
+    {{ print_r( $campaignRegistration ) }}
 @endsection
 
 @section("thirdContent")

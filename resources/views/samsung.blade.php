@@ -179,7 +179,7 @@
 
     $(document).on("click", ".action_button", function(e){
 
-        e.preentDefault();
+        e.preventDefault();
 
         if( Checker() ) {
 

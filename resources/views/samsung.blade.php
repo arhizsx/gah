@@ -26,6 +26,7 @@
             <form id="samsung_form">
                 @csrf
 
+                <input type="hidden"  name="action" id="action" value='register'>
                 <input type="hidden"  name="campaign" id="campaign" value='SAMSUNG'>
 
                 <img src="/images/banner.png" width="100%" />
@@ -95,12 +96,12 @@
                                         <option value="" selected>Select City</option>
                                     </select>
                                 </div>
-                                <div class="form-row">
+                                {{-- <div class="form-row">
                                     <label for="city">Barangay</label>
                                     <select class="form-control mb-3 checker location_filters" data-filter='brgy' data-parent='#collapseTwo' data-checker="optional" name="brgy" id="brgy">
                                         <option value="" selected>Select Barangay</option>
                                     </select>
-                                </div>
+                                </div> --}}
                                 <div class="form-row">
                                     <label for="brgy_village">Barangay / Village</label>
                                     <input type="text" class="form-control mb-3 checker" data-checker="required" name="brgy_village" id="brgy_village">
@@ -178,7 +179,7 @@
 
     $(document).on("click", ".action_button", function(e){
 
-        e.preventDefault();
+        e.preentDefault();
 
         if( Checker() ) {
 

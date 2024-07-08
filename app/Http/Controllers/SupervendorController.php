@@ -102,6 +102,22 @@ class SupervendorController extends Controller
 
         $data = $request->all();
 
+        switch( $request->action ){
+
+            case "register":
+
+                return $this->doRegistration( $data, $request );
+                break;
+
+            default:
+
+                return "action not found";
+        }
+
+    }
+
+    function doRegistration( $data, $request ){
+
         // Upload Attached Documents
         try{
 
@@ -154,9 +170,7 @@ class SupervendorController extends Controller
 
         return ["error" => false, "registration" => $registration ];
 
-
     }
-
 
     function locations( Request $request ){
 
@@ -173,7 +187,12 @@ class SupervendorController extends Controller
                         ->get();
                 break;
 
-        }
+            case "brgy":
+                    return DB::table("location_cities")
+                            ->where("PROVINCE", $request->value)
+                            ->get();
+                    break;
+            }
 
 
         return $request;

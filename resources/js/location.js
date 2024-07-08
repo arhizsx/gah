@@ -62,6 +62,11 @@ $(document).on('change','.location_filters',function(){
 
         case "province":
 
+                city.find('option')
+                .remove()
+                .end()
+                .append('<option value="">Please wait...</option>');
+
             $.ajax({
                 url: "/supervendor/locations",
                 method: "POST",

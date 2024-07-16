@@ -91,6 +91,15 @@ class SupervendorController extends Controller
                 ]);
 
                 return ["error"=> false, "registration" => $registration];
+
+            case "application_cancelled":
+
+                $registration = CampaignRegistration::find($request->id);
+                $registration->update([
+                    "status" => 'CANCELLED'
+                ]);
+
+                return ["error"=> false, "registration" => $registration];
         }
 
 

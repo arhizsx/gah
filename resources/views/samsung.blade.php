@@ -85,6 +85,7 @@
                                 <div class="form-row">
                                     <label for="province">Province</label>
                                     <select class="form-control mb-3 checker location_filters" data-filter='province' data-parent='#collapseTwo' data-checker="required" name="province" id="province">
+                                        <option value="" selected>Select Province</option>
                                         @foreach($provinces as $option)
                                         <option value="{{ $option->PROVINCE }}">{{ $option->PROVINCE }}</option>
                                         @endforeach

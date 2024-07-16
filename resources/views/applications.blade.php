@@ -98,10 +98,20 @@
                             <small>Serviceability</small>
                         </div>
                     </div>
+                    <div class="section-title">Remarks</div>
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="remarks">Rremarks</label>
+                        </div>
+                        <div class="col-9">
+                            <textarea class="form-control form-control-sm" name="remarks" id="remarks" placeholder="Remarks"></textarea>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger btn-action" data-action="application_cancelled" data-id="">Cancelled</button>
                 <button type="button" class="btn btn-primary btn-action" data-action="application_installed" data-id="">Installed</button>
             </div>
         </div>
@@ -130,9 +140,8 @@ $(document).on("click", ".btn-action", function(){
         url: "/supervendor/ajax",
         method: "POST",
         data: {
-            "action" : "application_installed",
+            "action" : action,
             "id": $(this).data("id")
-
         },
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

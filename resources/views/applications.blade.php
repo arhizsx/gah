@@ -100,10 +100,7 @@
                     </div>
                     <div class="section-title">Remarks</div>
                     <div class="row">
-                        <div class="col-3">
-                            <label for="remarks">Rremarks</label>
-                        </div>
-                        <div class="col-9">
+                        <div class="col-12">
                             <textarea class="form-control form-control-sm" name="remarks" id="remarks" placeholder="Remarks"></textarea>
                         </div>
                     </div>

@@ -73,7 +73,7 @@
                             <input class="form-control form-control-sm" type="text" value="" name="street" id="street" placeholder="Street">
                         </div>
                     </div>
-                    <div class="row mb-4 pb-3">
+                    <div class="row mb-4 border-bottom pb-3">
                         <div class="col-3">
                             <label for="house_floor_bldg">House no., Floor no., Bldg</label>
                         </div>
@@ -81,6 +81,28 @@
                             <input class="form-control form-control-sm" type="text" value="" name="house_floor_bldg" id="house_floor_bldg" placeholder="House no., Floor no., Bldg">
                         </div>
                     </div>
+                    <div class="section-title">Attachments</div>
+                    <div class="row mb-4 border-bottom pb-3">
+                        <div class="col text-center">
+                            <div  class="border" style="width: 100%;">
+                                <a target="_blank" href="" id="href_receipt"><img src="" id="img_receipt" alt-text="receipt"/></a>
+                            </div>
+                            <small>Proof of Purchase</small>
+                        </div>
+                        <div class="col text-center">
+                            <div  class="border" style="width: 100%;">
+                                <a target="_blank" href="" id="href_serviceability_check"><img src=""  id="img_serviceability_check" alt-text="serviceability_check"/></a>
+                            </div>
+                            <small>Serviceability</small>
+                        </div>
+                    </div>
+                    <div class="section-title">Remarks</div>
+                    <div class="row">
+                        <div class="col-12">
+                            <textarea class="form-control form-control-sm" name="remarks" id="remarks" placeholder="Remarks"></textarea>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <div class="modal-footer">

@@ -84,7 +84,7 @@
                         </div>
                     </div>
                     <div class="section-title">Attachments</div>
-                    <div class="row">
+                    <div class="row mb-4 border-bottom pb-3">
                         <div class="col text-center">
                             <div  class="border" style="width: 100%;">
                                 <a target="_blank" href="" id="href_receipt"><img src="" id="img_receipt" alt-text="receipt"/></a>

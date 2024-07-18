@@ -179,7 +179,7 @@ class SupervendorController extends Controller
             "user_id" => null,
             "vendor" => $supervendor,
             "sgt_name" => $sgt_name,
-            "sgt_email" => $sgt_name,
+            "sgt_email" => $sgt_email,
             "data" => json_encode($data)
         ]);
 

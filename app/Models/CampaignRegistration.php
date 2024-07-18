@@ -17,7 +17,7 @@ class CampaignRegistration extends Model
     protected $table = 'campaign_registrations';
 
     protected $primaryKey = 'id';
-    protected $fillable = ['campaign', 'user_id', 'data', 'status', 'vendor'];
+    protected $fillable = ['campaign', 'user_id', 'data', 'status', 'vendor', 'sgt_name', 'sgt_email'];
 
 }
 

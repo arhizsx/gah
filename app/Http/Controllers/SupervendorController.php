@@ -155,6 +155,9 @@ class SupervendorController extends Controller
 
         $vendor = $this->getVendor($request->province, $request->city);
 
+
+
+
         $sgt_name = null;
         $sgt_email = null;
 
@@ -163,8 +166,8 @@ class SupervendorController extends Controller
 
             $supervendor = $vendor[0]->SUPERVENDOR;
 
-            $sgt_name = "ARIS SALVADOR";
-            $sgt_email = "arhizsx@gmail.com";
+            $sgt_name = $vendor[0]->sgt_name;
+            $sgt_email = $vendor[0]->sgt_email;
 
         }
         elseif( count( $vendor ) > 1 ){
@@ -176,6 +179,9 @@ class SupervendorController extends Controller
             $supervendor = null;
 
         }
+
+
+
 
         $registration = CampaignRegistration::create([
             "campaign" => $request->campaign,

@@ -171,8 +171,8 @@ class SupervendorController extends Controller
 
             $supervendor = "%MULTI_VENDORS%";
 
-            $sgt_name = "ARIS SALVADOR";
-            $sgt_email = "arhizsx@gmail.com";
+            $sgt_name = null;
+            $sgt_email = null;
 
 
         } else {

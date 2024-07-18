@@ -155,8 +155,8 @@ class SupervendorController extends Controller
 
         $vendor = $this->getVendor($request->province, $request->city);
 
-        $sgt_name = "ARIS SALVADOR";
-        $sgt_email = "arhizsx@gmail.com";
+        $sgt_name = null;
+        $sgt_email = null;
 
 
         if( count( $vendor ) == 1 ){
@@ -171,16 +171,9 @@ class SupervendorController extends Controller
 
             $supervendor = "%MULTI_VENDORS%";
 
-            $sgt_name = null;
-            $sgt_email = null;
-
-
         } else {
 
             $supervendor = null;
-            $sgt_name = null;
-            $sgt_email = null;
-
 
         }
 

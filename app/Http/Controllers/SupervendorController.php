@@ -163,14 +163,24 @@ class SupervendorController extends Controller
 
             $supervendor = $vendor[0]->SUPERVENDOR;
 
+            $sgt_name = "ARIS SALVADOR";
+            $sgt_email = "arhizsx@gmail.com";
+
         }
         elseif( count( $vendor ) > 1 ){
 
             $supervendor = "%MULTI_VENDORS%";
 
+            $sgt_name = "ARIS SALVADOR";
+            $sgt_email = "arhizsx@gmail.com";
+
+
         } else {
 
             $supervendor = null;
+            $sgt_name = null;
+            $sgt_email = null;
+
 
         }
 

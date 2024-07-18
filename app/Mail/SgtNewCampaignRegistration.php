@@ -13,7 +13,8 @@ use Illuminate\Mail\Mailables\Envelope;
 
 use App\Models\CampaignRegistration;
 
-class NewCampaignRegistration extends Mailable
+
+class SgtNewCampaignRegistration extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -21,9 +22,10 @@ class NewCampaignRegistration extends Mailable
      * Create a new message instance.
      */
     public function __construct(
-        public CampaignRegistration $campaignRegistration,
+        public CampaignRegistration $campaignRegistration
     )
     {
+        //
     }
 
     /**
@@ -45,11 +47,9 @@ class NewCampaignRegistration extends Mailable
      */
     public function content(): Content
     {
-
-            return new Content(
-                view: 'emails.new_campaign_registration',
-            );
-
+        return new Content(
+            view: 'emails.sgt_new_campaign_registration',
+        );
     }
 
     /**

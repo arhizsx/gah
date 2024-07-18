@@ -8,6 +8,7 @@ use Illuminate\Contracts\Events\ShouldHandleEventsAfterCommit;
 use Illuminate\Support\Facades\Mail;
 
 use App\Mail\NewCampaignRegistration;
+use App\Mail\SgtNewCampaignRegistration;
 use App\Mail\NewCampaignRegistrationNoVendor;
 use App\Mail\UpdatedCampaignRegistration;
 use Illuminate\Support\Facades\DB;
@@ -35,10 +36,10 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
             $selected = DB::table("vendors")->where("supervendor", $campaignRegistration->vendor)->first();
 
             // VENDOR
-            Mail::to( $selected->email )->queue( new NewCampaignRegistration( $campaignRegistration, "vendor" ) );
+            Mail::to( $selected->email )->queue( new NewCampaignRegistration( $campaignRegistration) );
 
             // SGT
-            Mail::to( $campaignRegistration->sgt_email )->queue( new NewCampaignRegistration( $campaignRegistration, "sgt" ) );
+            Mail::to( $campaignRegistration->sgt_email )->queue( new SgtNewCampaignRegistration( $campaignRegistration) );
 
         }
 

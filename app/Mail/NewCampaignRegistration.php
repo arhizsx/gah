@@ -50,6 +50,8 @@ class NewCampaignRegistration extends Mailable
      */
     public function content(): Content
     {
+        dd($this->mode);
+
         if($this->mode == "vendor"){
             return new Content(
                 view: 'emails.new_campaign_registration',

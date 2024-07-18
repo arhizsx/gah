@@ -6,7 +6,7 @@
 
 @section("greetings")
     <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif;line-height:24px;color:#666666;text-align:center">
-        HI, SGT TEAM
+        HI, SGT {{ strtoupper( $campaignRegistration->sgt_name ) }}
     </p>
 @endsection
 

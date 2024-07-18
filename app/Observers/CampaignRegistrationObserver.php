@@ -33,7 +33,12 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
         } else {
 
             $selected = DB::table("vendors")->where("supervendor", $campaignRegistration->vendor)->first();
+
+            // VENDOR
             Mail::to( $selected->email )->queue( new NewCampaignRegistration( $campaignRegistration ) );
+
+            // SGT
+            Mail::to( $campaignRegistration->sgt_email )->queue( new NewCampaignRegistration( $campaignRegistration ) );
 
         }
 

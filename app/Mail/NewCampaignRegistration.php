@@ -21,7 +21,8 @@ class NewCampaignRegistration extends Mailable
      * Create a new message instance.
      */
     public function __construct(
-        public CampaignRegistration $campaignRegistration
+        public CampaignRegistration $campaignRegistration,
+        public $mode
     )
     {
     }
@@ -45,9 +46,19 @@ class NewCampaignRegistration extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            view: 'emails.new_campaign_registration',
-        );
+        if($this->mode == "vendor"){
+            return new Content(
+                view: 'emails.new_campaign_registration',
+            );
+
+        }
+        elseif($this->mode == "sgt"){
+            return new Content(
+                view: 'emails.sgt_new_campaign_registration',
+            );
+
+        }
+
     }
 
     /**

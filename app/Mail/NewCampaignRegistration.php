@@ -20,13 +20,15 @@ class NewCampaignRegistration extends Mailable
     /**
      * Create a new message instance.
      */
-
+    public $mode;
 
     public function __construct(
         public CampaignRegistration $campaignRegistration,
-        public $mode
+        $mode
     )
     {
+        $this->mode = $mode;
+
     }
 
     /**

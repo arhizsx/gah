@@ -180,9 +180,6 @@ class SupervendorController extends Controller
 
         }
 
-        dd($vendor);
-
-
 
         $registration = CampaignRegistration::create([
             "campaign" => $request->campaign,

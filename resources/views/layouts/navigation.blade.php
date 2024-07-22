@@ -16,10 +16,10 @@
                         {{ __('Home') }}
                     </x-nav-link>
                     <x-nav-link :href="route('applications')" :active="request()->routeIs('applications')">
-                        {{ __('Applications') }}
+                        {{ __('For Installation') }}
                     </x-nav-link>
                     <x-nav-link :href="route('installations')" :active="request()->routeIs('installations')">
-                        {{ __('Installations') }}
+                        {{ __('Processed') }}
                     </x-nav-link>
                     {{-- <x-nav-link :href="route('company')" :active="request()->routeIs('company')">
                         {{ __('Company') }}

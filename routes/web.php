@@ -32,11 +32,16 @@ Route::post('/samsung/register', [SamsungController::class, 'register']);
 Route::get('/samsung', [SamsungController::class, 'index']);
 
 
+
+
 // NUMBER VERIFIER
 Route::get('/', function () {
     return redirect('https://sam.globe.com.ph/broadband');
 });
 
+Route::get('/internal', function () {
+    return redirect('https://sam.globe.com.ph/broadband/internal');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

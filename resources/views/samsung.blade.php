@@ -96,8 +96,13 @@
                                     <input type="text" class="form-control mb-3 checker" data-checker="required" name="zipcode" id="zipcode">
                                 </div>
                                 <div class="form-row">
-                                    <label for="zipcode">Installation Schedule</label>
-                                    <input type="datetime-local" class="form-control mb-3 checker" data-checker="required" name="schedule" id="schedule">
+                                    <label for="schedule">Installation Schedule</label>
+                                    <div id="scchedule" class="d-flex">
+                                    <input type="date" class="form-control mb-3 checker flex-fill" data-checker="required" name="schedule_date" id="schedule_date">
+                                    <select class="form-control mb-3 checker flex-fill" data-checker="required" name="schedule_hour" id="schedule_hour">
+                                        <option value="" selected>Select City</option>
+                                    </select>
+                                    </div>
                                 </div>
                                 <div class="form-row">
                                     <label for="serviceability_check">Serviceability Screenshot</label>

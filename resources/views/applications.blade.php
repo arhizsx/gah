@@ -171,23 +171,16 @@ function callbackAction(data){
 
     applicationSetImage(data);
 
-    var show_vendor = ["REGISTERED"];
-
+    var show_vendor = ["ENDORSED"];
     var vendor_btns = $(document).find(modal).find(".btn-action[data-user_mode='vendor']");
 
-
     if( $.inArray( data.status, show_vendor ) > 0){
-
-        alert("HERE");
         vendor_btns.removeClass("d-none");
-
     } else {
-
-        alert("NONE");
         vendor_btns.addClass("d-none");
-
     }
 
+    var show_vendor = ["REGISTERED"];
     var gt_btns = $(document).find(modal).find(".btn-action[data-user_mode='gt']");
 
     console.log(data.status);

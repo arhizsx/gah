@@ -57,6 +57,8 @@ class SupervendorController extends Controller
 
                     $data = DB::table("view_registrations")
                         ->where("status", "REGISTERED")
+                        ->where("SGT Name", Auth::user()->name)
+
                         ->get();
 
                 } else {

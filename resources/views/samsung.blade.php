@@ -30,6 +30,11 @@
                 <input type="hidden"  name="campaign" id="campaign" value='SAMSUNG'>
 
                 <img src="/images/banner.png" width="100%" />
+                <div class="border rounded-3 p-3 mt-4">
+                    <H3>GFP & Samsung Partnership</H3>
+                    <p>Kindly fill out this form for your Free GFiber Prepaid</p>
+                    <p>*Bundle of GFiber Prepaid will be on the serviceability of the nominated address</p>
+                </div>
 
                 <div class="accordion  mt-4" id="information">
                     <div class="accordion-item">
@@ -502,12 +507,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="border rounded-3 p-3 mt-4">
-                        <H3>GFP & Samsung Partnership</H3>
-                        <p>Kindly fill out this form for your Free GFiber Prepaid</p>
-                        <p>*Bundle of GFiber Prepaid will be on the serviceability of the nominated address</p>
-                    </div>
-
                     <div class="border rounded-3 p-3 mt-4">
                         <H5>Privacy Notice</H5>
                         <p>By completing and submitting this form, I allow GLOBE to collect and process the personal data I will provide for GFiber Prepaid and Samsung partnership, until September 2024, in accordance with the <a target="_blank" href="https://www.privacy.gov.ph/data-privacy-act/">Data Privacy Act of 2012</a> and the <a target="_blank" href="https://www.globe.com.ph/privacy-policy.html">Privacy Policy of Globe</a>.</p>

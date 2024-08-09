@@ -132,7 +132,7 @@
                         <div id="collapseFour" class="accordion-collapse collapse">
                             <div class="accordion-body">
                                 <div class="form-row">
-                                    <input type="file" class="form-control checker" data-checker="required" name="receipt" id="receipt">
+                                    <input type="file" class="form-control checker mb-3" data-checker="required" name="receipt" id="receipt">
                                 </div>
                                 <div class="form-row">
                                     <label for="store">Store</label>

@@ -74,6 +74,29 @@ class SupervendorController extends Controller
 
                 break;
 
+            case "sgt":
+
+                if( Auth::user()->company == NULL  ){
+
+                    $data = DB::table("view_registrations")
+                        ->wherein("status", array("REGISTERED", "PENDING", "DROPPED"))
+                        ->where("SGT Name", Auth::user()->name)
+                        ->orwhere("SGT Name", "")
+                        ->orwhere("SGT Name", null)
+                        ->orderBy("SGT Name", "desc")
+                        ->get();
+
+                } else {
+
+                    $data = DB::table("view_registrations")
+                        ->where("vendor", Auth::user()->company )
+                        ->where("status", array("ENDORSED"))
+                        ->get();
+
+                }
+
+                break;
+
             default:
 
                 $data = [];

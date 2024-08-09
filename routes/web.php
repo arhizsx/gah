@@ -12,6 +12,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
     Route::get('/supervendor',  [SupervendorController::class, 'index'])->name('home');
 
+    Route::get('/supervendor/sgt',  [SupervendorController::class, 'sgt'])->name('sgt');
     Route::get('/supervendor/applications',  [SupervendorController::class, 'applications'])->name('applications');
     Route::get('/supervendor/installations',  [SupervendorController::class, 'installations'])->name('installations');
     Route::get('/supervendor/company',  [SupervendorController::class, 'company'])->name('company');

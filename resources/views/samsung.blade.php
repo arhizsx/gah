@@ -111,9 +111,6 @@
                                         <option value="03:00 PM">03:00 PM</option>
                                         <option value="04:00 PM">04:00 PM</option>
                                         <option value="05:00 PM">05:00 PM</option>
-                                        <option value="06:00 PM">06:00 PM</option>
-                                        <option value="07:00 PM">07:00 PM</option>
-                                        <option value="08:00 PM">08:00 PM</option>
                                     </select>
                                     </div>
                                 </div>

@@ -111,14 +111,14 @@
 
                 @if( \Auth::user()->company == null )
 
-                <button type="button" class="btn btn-success btn-action" data-action="application_endorsed" data-id="">Endorse to SV</button>
-                <button type="button" class="btn btn-warning btn-action" data-action="application_pending" data-id="">Pending</button>
-                <button type="button" class="btn btn-danger btn-action" data-action="application_dropped" data-id="">Drop</button>
+                <button type="button" class="btn btn-success btn-action" data-user_mode="gt" data-action="application_endorsed" data-id="">Endorse to SV</button>
+                <button type="button" class="btn btn-warning btn-action" data-user_mode="gt" data-action="application_pending" data-id="">Pending</button>
+                <button type="button" class="btn btn-danger btn-action" data-user_mode="gt" data-action="application_dropped" data-id="">Drop</button>
 
                 @else
 
-                <button type="button" class="btn btn-danger btn-action" data-action="application_cancelled" data-id="">Cancelled</button>
-                <button type="button" class="btn btn-primary btn-action" data-action="application_installed" data-id="">Installed</button>
+                <button type="button" class="btn btn-danger btn-action" data-user_mode="vendor" data-action="application_cancelled" data-id="">Cancelled</button>
+                <button type="button" class="btn btn-primary btn-action" data-user_mode="vendor" data-action="application_installed" data-id="">Installed</button>
 
                 @endif
 
@@ -133,7 +133,7 @@ let modal = "#application_details";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/applications';
 let columns = ['campaign', 'complete_name', 'mobile_number', 'province', 'city', 'vendor', 'SGT Name', 'status'];
-let callback = 'applicationSetImage';
+let callback = 'callbackAction';
 
 
 $(() => {
@@ -167,6 +167,14 @@ $(document).on("click", ".btn-action", function(){
 
 });
 
+function callbackAction(data){
+
+    applicationSetImage(data);
+
+    $(document).find(modal).find(".btn-action").attr("[data-user_mode='vendor']").addClass("d-none")
+
+}
+
 
 function applicationSetImage(data){
 
@@ -175,6 +183,9 @@ function applicationSetImage(data){
 
     $("#href_receipt").attr("href", "/files/" + data.receipt);
     $("#href_serviceability_check").attr("href",  "/files/" + data.serviceability_check);
+
+
+
 
 }
 

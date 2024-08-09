@@ -105,6 +105,34 @@ class SupervendorController extends Controller
                 ]);
 
                 return ["error"=> false, "registration" => $registration];
+
+            case "application_endorsed":
+
+                $registration = CampaignRegistration::find($request->id);
+                $registration->update([
+                    "status" => 'ENDORSED'
+                ]);
+
+                return ["error"=> false, "registration" => $registration];
+
+            case "application_pending":
+
+                $registration = CampaignRegistration::find($request->id);
+                $registration->update([
+                    "status" => 'PENDING'
+                ]);
+
+                return ["error"=> false, "registration" => $registration];
+
+            case "application_dropped":
+
+                $registration = CampaignRegistration::find($request->id);
+                $registration->update([
+                    "status" => 'DROPPED'
+                ]);
+
+                return ["error"=> false, "registration" => $registration];
+
         }
 
 

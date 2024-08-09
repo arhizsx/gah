@@ -97,7 +97,7 @@
                                 </div>
                                 <div class="form-row">
                                     <label for="zipcode">Installation Schedule</label>
-                                    <input type="date" class="form-control mb-3 checker" data-checker="required" name="brgy_village" id="brgy_village">
+                                    <input type="datetime-local" class="form-control mb-3 checker" data-checker="required" name="schedule" id="schedule">
                                 </div>
                                 <div class="form-row">
                                     <label for="serviceability_check">Serviceability Screenshot</label>

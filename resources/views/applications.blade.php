@@ -117,7 +117,7 @@
                                 ->first();
                     }
                 @endphp
-                @if( $user->profile == "SGT" && property_exists($user, "profile") )
+                @if( $user->profile == "SGT" && isset($user) )
                     <button type="button" class="btn btn-success btn-action" data-action="application_endorsed" data-id="">Endorse to SV</button>
                     <button type="button" class="btn btn-warning btn-action" data-action="application_pending" data-id="">Pending</button>
                     <button type="button" class="btn btn-danger btn-action" data-action="application_dropped" data-id="">Drop</button>

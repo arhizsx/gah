@@ -109,16 +109,15 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 @php
+                    $user = null;
                     if( Auth::user()->company == null ){
                         $user = \DB::table("users_access")
                                 ->where("campaign", "SAMSUNG")
                                 ->where("user_id", \Auth::user()->id)
                                 ->first();
-                    } else {
-                        $user->profile = "VENDOR";
                     }
                 @endphp
-                @if($user->profile == "SGT")
+                @if( $user->profile == "SGT" )
                     <button type="button" class="btn btn-success btn-action" data-action="application_endorsed" data-id="">Endorse to SV</button>
                     <button type="button" class="btn btn-warning btn-action" data-action="application_pending" data-id="">Pending</button>
                     <button type="button" class="btn btn-danger btn-action" data-action="application_dropped" data-id="">Drop</button>

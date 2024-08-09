@@ -36,6 +36,7 @@ class SupervendorController extends Controller
 
                 if( Auth::user()->company == NULL  ){
 
+
                     $data = DB::table("view_registrations")
                         ->whereNot("status", "REGISTERED")
                         ->get();
@@ -56,6 +57,8 @@ class SupervendorController extends Controller
 
                     $data = DB::table("view_registrations")
                         ->where("status", "registered")
+                        ->where("SGT Name", Auth::user()->name)
+                        ->whereNull("SGT Name")
                         ->get();
 
                 } else {

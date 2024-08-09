@@ -172,7 +172,7 @@ function callbackAction(data){
     applicationSetImage(data);
 
 
-    console.log( $(document).find(modal).find(".btn-action") );
+    console.log( $(document).find(modal).find(".btn-action").attr("[data-user_mode='vendor']") );
 
 }
 

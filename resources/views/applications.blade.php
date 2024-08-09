@@ -115,7 +115,7 @@
                                 ->where("user_id", \Auth::user()->id)
                                 ->first();
                     } else {
-                        $user = [];
+                        $user["profile"] = "VENDOR";
                     }
                 @endphp
                 @if($user->profile == "SGT")

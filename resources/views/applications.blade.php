@@ -171,7 +171,7 @@ function callbackAction(data){
 
     applicationSetImage(data);
 
-    var show_vendor = ["ENDORSED"];
+    var show_vendor = ["REGISTERED"];
     var vendor_btns = $(document).find(modal).find(".btn-action[data-user_mode='vendor']");
 
     if( $.inArray( data.status, show_vendor ) >= 0){

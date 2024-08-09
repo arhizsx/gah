@@ -174,7 +174,7 @@ function callbackAction(data){
     var show_vendor = ["ENDORSED"];
     var vendor_btns = $(document).find(modal).find(".btn-action[data-user_mode='vendor']");
 
-    if( $.inArray( data.status, show_vendor ) > 0){
+    if( $.inArray( data.status, show_vendor ) >= 0){
         vendor_btns.removeClass("d-none");
     } else {
         vendor_btns.addClass("d-none");

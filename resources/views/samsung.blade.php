@@ -524,11 +524,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="border rounded-3 p-3 mt-4" style="font-size: 8px">
-                        <H5>Disclaimer</H5>
+                    <div class="border rounded-3 p-3 mt-4" style="font-size: 10px">
+                        <H5 style="font-size: 14px">Disclaimer</H5>
                         <p>This Samsung bundle offer is subject to the fiber serviceability of your nominated address. The value of this bundle cannot be converted to cash in case of unsuccessful installation. <a href="https://www.globe.com.ph/website-terms-conditions?_gl=1*11wvnk5*_gcl_aw*R0NMLjE3MTEyNzIzOTEuQ2p3S0NBandudi12QmhCZEVpd0FCQ1lRQS1BUFZtcmp6OWw5TXI4a2xWS0J2cDg4MFlBbDN3cDIzNWlwamtwNWZBdHQ4SXByV2daWGdob0NVakFRQXZEX0J3RQ..*_gcl_au*MTk1NTAzMjE4NS4xNzE4OTI5MDEw*_ga*NzMwMDM2NDYzLjE2NTc1MTk0MjM.*_ga_TD2ZL4WC9D*MTcxODkzOTQ5MC43LjAuMTcxODkzOTQ5My41Ny4wLjA.&_ga=2.129421836.1270274114.1718929010-730036463.1657519423">Terms and conditions</a> apply.</p>
 
-                        <H5>Privacy Notice</H5>
+                        <H5 style="font-size: 14px">Privacy Notice</H5>
                         <p>By completing and submitting this form, I allow GLOBE to collect and process the personal data I will provide for GFiber Prepaid and Samsung partnership, until October 2024, in accordance with the <a target="_blank" href="https://www.globe.com.ph/privacy-policy.html">Privacy Policy of Globe</a>.</p>
                         <div class="form-row">
                             <div class="form-check">

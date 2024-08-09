@@ -66,7 +66,6 @@ class SupervendorController extends Controller
                 } else {
 
                     $data = DB::table("view_registrations")
-                        ->where("status", "ENDORSED")
                         ->where("vendor", Auth::user()->company )
                         ->get();
 

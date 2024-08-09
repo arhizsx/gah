@@ -109,9 +109,9 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 @php
-                    $user = db::table("users_access")
+                    $user = \db::table("users_access")
                                 ->where("campaign", "SAMSUNG")
-                                ->where("user_id", Auth::user()->id)
+                                ->where("user_id", \Auth::user()->id)
                                 ->first();
                 @endphp
                 @if($user->profile == "SGT")

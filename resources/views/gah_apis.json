@@ -1,0 +1,582 @@
+{
+	"info": {
+		"_postman_id": "f7784a81-63aa-4066-bcd2-168a83a417ab",
+		"name": "GFP - NotifyOSSMilestone v1.1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "586013"
+	},
+	"item": [
+		{
+			"name": "Change Plan",
+			"item": [
+				{
+					"name": "Change Plan",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "913ece31-b4f9-414d-8006-eafc559a7762",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:oss=\"http://www.globe.com/warcraft/wsdl/oss/\">\n    <soap:Header/>\n    <soap:Body>\n        <oss:SubmitServiceChange>\n            <OrderId>SHE-FORCE-GFP-CH-{{customer_id}}c</OrderId>\n            <OrderItems>\n                <OrderItem>\n                    <OrderActionId>SHE-FORCE-GFP-CH-{{customer_id}}d</OrderActionId>\n                    <OrderActionStatus>DE</OrderActionStatus>\n                    <ActionType>CH</ActionType>\n                    <ActionSubType>Install</ActionSubType>\n                    <ProductInstanceId>{{external_product_instance_id}}</ProductInstanceId>\n                    <APDetails>\n                        <APDetail>\n                            <APID>{{external_product_relationship_id}}</APID>\n                            <CID>14967976</CID>\n                            <ComponentAction>UP</ComponentAction>\n                            <ProductCharacteristics>\n                                <ProductCharacteristic>\n                                    <Name>Bandwidth</Name>\n                                    <Value>0.25</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>Download_Speed</Name>\n                                    <Value>0.25</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>Upload_Speed</Name>\n                                    <Value>0.25</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>Data_Policy_Code</Name>\n                                    <Value>UNLI_0.25M_0.25M_01M_0.000M</Value>\n                                </ProductCharacteristic>\n                            </ProductCharacteristics>\n                        </APDetail>\n                        <APDetail>\n                            <APID>100002010</APID>\n                            <CID>14996007</CID>\n                            <ComponentAction>UP</ComponentAction>\n                            <ProductCharacteristics>\n                                <ProductCharacteristic>\n                                    <Name>Service_ID</Name>\n                                    <Value>{{service_id}}</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>PreferredAccessType</Name>\n                                    <Value>GPON</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>Product_Instance_ID</Name>\n                                    <Value>{{external_product_instance_id}}</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>Service_Type</Name>\n                                    <Value>BBWL</Value>\n                                </ProductCharacteristic>\n                            </ProductCharacteristics>\n                        </APDetail>\n                    </APDetails>                    \n                </OrderItem>\n            </OrderItems>\n            <CustomerDetails>\n                <CustomerId>{{customer_id}}</CustomerId>                \n                <CustomerType>C</CustomerType>\n                <CustomerSubtype>R</CustomerSubtype>               \n                <FirstName>{{first_name}}</FirstName>\n                <LastName>{{last_name}}</LastName>\n            </CustomerDetails>\n        </oss:SubmitServiceChange>\n    </soap:Body>\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "https://val-msoss-events.globe.com.ph/hip-gw-event/gfp/ws/soap12/oss"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"let v = pm.info.iteration;",
+							"",
+							"console.log(v);"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Reclass",
+			"item": [
+				{
+					"name": "Reclass",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "913ece31-b4f9-414d-8006-eafc559a7762",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:oss=\"http://www.globe.com/warcraft/wsdl/oss/\">\n    <soap:Header/>\n    <soap:Body>\n        <oss:SubmitServiceChange>\n            <OrderId>SHE-FORCE-GFP-RC-{{customer_id}}c</OrderId>\n            <OrderItems>\n                <OrderItem>\n                    <OrderActionId>SHE-FORCE-GFP-RC-{{customer_id}}d</OrderActionId>\n                    <OrderActionStatus>DE</OrderActionStatus>\n                    <ActionType>CH</ActionType>\n                    <ActionSubType>Install</ActionSubType>\n                    <ProductInstanceId>{{external_product_instance_id}}</ProductInstanceId>\n                    <APDetails>\n                        <APDetail>\n                            <APID>{{external_product_relationship_id_voice}}</APID>\n                            <CID>15000827</CID>\n                            <ComponentAction>RM</ComponentAction>\n                            <ProductCharacteristics>\n                                <ProductCharacteristic>\n                                    <Name>Product_Instance_ID</Name>\n                                    <Value>{{external_product_instance_id}}</Value>\n                                </ProductCharacteristic>\n                            </ProductCharacteristics>\n                        </APDetail>\n                    </APDetails>\n                </OrderItem>\n            </OrderItems>\n            <CustomerDetails>\n                <CustomerId>{{customer_id}}</CustomerId>\n                <CustomerType>C</CustomerType>\n                <CustomerSubtype>R</CustomerSubtype>\n                <FirstName>{{first_name}}</FirstName>\n                <LastName>{{last_name}}</LastName>\n            </CustomerDetails>\n        </oss:SubmitServiceChange>\n    </soap:Body>\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "https://val-msoss-events.globe.com.ph/hip-gw-event/gfp/ws/soap12/oss"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"let v = pm.info.iteration;",
+							"",
+							"console.log(v);"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Transfer Ownership",
+			"item": [
+				{
+					"name": "Transfer Ownership",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// var user_id = data.user_id;",
+									"",
+									"// var new_user_id = user_id.substring(0, 20);",
+									"",
+									"// console.log(new_user_id);",
+									"// pm.collectionVariables.set(\"new_user_id\", new_user_id);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "913ece31-b4f9-414d-8006-eafc559a7762",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:oss=\"http://www.globe.com/warcraft/wsdl/oss/\">\n    <soap:Header/>\n    <soap:Body>\n        <oss:SubmitServiceChange>\n            <OrderId>SHE-FORCE-GFP-CW-{{customer_id}}a</OrderId>\n            <OrderItems>\n                <OrderItem>\n                    <OrderActionId>SHE-FORCE-GFP-CW-{{customer_id}}b</OrderActionId>\n                    <OrderActionStatus>DE</OrderActionStatus>\n                    <ActionType>CW</ActionType>\n                    <ActionSubType>Install</ActionSubType>\n                    <ProductInstanceId>{{external_product_instance_id}}</ProductInstanceId>\n                    <APDetails>\n                        <APDetail>\n                            <APID>100002010</APID>\n                            <CID>14996007</CID>\n                            <ComponentAction>UP</ComponentAction>\n                            <ProductCharacteristics>\n                                <ProductCharacteristic>\n                                    <Name>Service_Type</Name>\n                                    <Value>BBWL</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>Product_Instance_ID</Name>\n                                    <Value>{{external_product_instance_id}}</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>PreferredAccessType</Name>\n                                    <Value>GPON</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>Service_ID</Name>\n                                    <Value>{{service_id}}</Value>\n                                </ProductCharacteristic>\n                            </ProductCharacteristics>\n                        </APDetail>\n                    </APDetails>\n                </OrderItem>\n            </OrderItems>\n            <CustomerDetails>\n                <CustomerId>{{user_id}}</CustomerId>\n                <CustomerType>C</CustomerType>\n                <CustomerSubtype>R</CustomerSubtype>\n                <FirstName>{{first_name}}</FirstName>\n                <LastName>{{last_name}}</LastName>\n            </CustomerDetails>\n        </oss:SubmitServiceChange>\n    </soap:Body>\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "https://val-msoss-events.globe.com.ph/hip-gw-event/gfp/ws/soap12/oss"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"let v = pm.info.iteration;",
+							"",
+							"console.log(v);"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Reconnect",
+			"item": [
+				{
+					"name": "Reconnect",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "913ece31-b4f9-414d-8006-eafc559a7762",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:oss=\"http://www.globe.com/warcraft/wsdl/oss/\">\n    <soap:Header/>\n    <soap:Body>\n        <oss:UpdateServiceStatus>\n            <IsAsync xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:nil=\"true\"/>\n            <OrderId>SHE-FORCE-GFP-RS-{{customer_id}}a</OrderId>\n            <OrderItems>\n                <OrderItem>\n                    <OrderActionId>SHE-FORCE-GFP-RS-{{customer_id}}b</OrderActionId>\n                    <OrderActionStatus>DE</OrderActionStatus>\n                    <ActionType>RS</ActionType>\n                    <ActionSubType xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:nil=\"true\"/>\n                    <ProductInstanceId>{{external_product_instance_id}}</ProductInstanceId>\n                    <APDetails>\n                        <APDetail>\n                            <APID>000000001</APID>\n                            <CID>14996007</CID>\n                            <ComponentAction>UP</ComponentAction>\n                            <ProductCharacteristics>\n                                <ProductCharacteristic>\n                                    <Name>PreferredAccessType</Name>\n                                    <Value>GPON</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>Access_Type</Name>\n                                    <Value>GPON</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>Product_Instance_ID</Name>\n                                    <Value>{{external_product_instance_id}}</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>Service_Type</Name>\n                                    <Value>BBWL</Value>\n                                </ProductCharacteristic>\n                            </ProductCharacteristics>\n                        </APDetail>\n                    </APDetails>\n                </OrderItem>\n            </OrderItems>\n        </oss:UpdateServiceStatus>\n    </soap:Body>\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "https://val-msoss-events.globe.com.ph/hip-gw-event/gfp/ws/soap12/oss"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"let v = pm.info.iteration;",
+							"",
+							"console.log(v);"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Revert",
+			"item": [
+				{
+					"name": "Revert Change Plan",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "913ece31-b4f9-414d-8006-eafc559a7762",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:oss=\"http://www.globe.com/warcraft/wsdl/oss/\">\n    <soap:Header/>\n    <soap:Body>\n        <oss:SubmitServiceChange>\n            <OrderId>SHE-FORCE-GFP-CHR-{{customer_id}}x</OrderId>\n            <OrderItems>\n                <OrderItem>\n                    <OrderActionId>SHE-FORCE-GFP-CHR-{{customer_id}}y</OrderActionId>\n                    <OrderActionStatus>DE</OrderActionStatus>\n                    <ActionType>CH</ActionType>\n                    <ActionSubType>Install</ActionSubType>\n                    <ProductInstanceId>{{external_product_instance_id}}</ProductInstanceId>\n                    <APDetails>\n                        <APDetail>\n                            <APID>{{external_product_relationship_id}}</APID>\n                            <CID>14967976</CID>\n                            <ComponentAction>UP</ComponentAction>\n                            <ProductCharacteristics>\n                                <ProductCharacteristic>\n                                    <Name>Bandwidth</Name>\n                                    <Value>{{bandwidth}}</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>Download_Speed</Name>\n                                    <Value>{{download_speed}}</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>Upload_Speed</Name>\n                                    <Value>{{upload_speed}}</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>Data_Policy_Code</Name>\n                                    <Value>{{data_policy_code}}</Value>\n                                </ProductCharacteristic>\n                            </ProductCharacteristics>\n                        </APDetail>\n                        <APDetail>\n                            <APID>100002010</APID>\n                            <CID>14996007</CID>\n                            <ComponentAction>UP</ComponentAction>\n                            <ProductCharacteristics>\n                                <ProductCharacteristic>\n                                    <Name>Service_ID</Name>\n                                    <Value>{{service_id}}</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>PreferredAccessType</Name>\n                                    <Value>GPON</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>Product_Instance_ID</Name>\n                                    <Value>{{external_product_instance_id}}</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>Service_Type</Name>\n                                    <Value>BBWL</Value>\n                                </ProductCharacteristic>\n                            </ProductCharacteristics>\n                        </APDetail>\n                    </APDetails>                    \n                </OrderItem>\n            </OrderItems>\n            <CustomerDetails>\n                <CustomerId>{{customer_id}}</CustomerId>                \n                <CustomerType>C</CustomerType>\n                <CustomerSubtype>R</CustomerSubtype>               \n                <FirstName>{{first_name}}</FirstName>\n                <LastName>{{last_name}}</LastName>\n            </CustomerDetails>\n        </oss:SubmitServiceChange>\n    </soap:Body>\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "https://val-msoss-events.globe.com.ph/hip-gw-event/gfp/ws/soap12/oss"
+					},
+					"response": []
+				},
+				{
+					"name": "Revert Transfer Ownership",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// var user_id = data.user_id;",
+									"",
+									"// var new_user_id = user_id.substring(0, 20);",
+									"",
+									"// console.log(new_user_id);",
+									"// pm.collectionVariables.set(\"new_user_id\", new_user_id);",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "913ece31-b4f9-414d-8006-eafc559a7762",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:oss=\"http://www.globe.com/warcraft/wsdl/oss/\">\n    <soap:Header/>\n    <soap:Body>\n        <oss:SubmitServiceChange>\n            <OrderId>SHE-FORCE-GFP-CWR-{{customer_id}}e</OrderId>\n            <OrderItems>\n                <OrderItem>\n                    <OrderActionId>SHE-FORCE-GFP-CWR-{{customer_id}}f</OrderActionId>\n                    <OrderActionStatus>DE</OrderActionStatus>\n                    <ActionType>CW</ActionType>\n                    <ActionSubType>Install</ActionSubType>\n                    <ProductInstanceId>{{external_product_instance_id}}</ProductInstanceId>\n                    <APDetails>\n                        <APDetail>\n                            <APID>100002010</APID>\n                            <CID>14996007</CID>\n                            <ComponentAction>UP</ComponentAction>\n                            <ProductCharacteristics>\n                                <ProductCharacteristic>\n                                    <Name>Service_Type</Name>\n                                    <Value>BBWL</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>Product_Instance_ID</Name>\n                                    <Value>{{external_product_instance_id}}</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>PreferredAccessType</Name>\n                                    <Value>GPON</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>Service_ID</Name>\n                                    <Value>{{service_id}}</Value>\n                                </ProductCharacteristic>\n                            </ProductCharacteristics>\n                        </APDetail>\n                    </APDetails>\n                </OrderItem>\n            </OrderItems>\n            <CustomerDetails>\n                <CustomerId>{{customer_id}}</CustomerId>\n                <CustomerType>C</CustomerType>\n                <CustomerSubtype>R</CustomerSubtype>\n                <FirstName>{{first_name}}</FirstName>\n                <LastName>{{last_name}}</LastName>\n            </CustomerDetails>\n        </oss:SubmitServiceChange>\n    </soap:Body>\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "https://val-msoss-events.globe.com.ph/hip-gw-event/gfp/ws/soap12/oss"
+					},
+					"response": []
+				},
+				{
+					"name": "Revert Reconnect",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "913ece31-b4f9-414d-8006-eafc559a7762",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:oss=\"http://www.globe.com/warcraft/wsdl/oss/\">\n    <soap:Header/>\n    <soap:Body>\n        <oss:UpdateServiceStatus>\n            <IsAsync xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:nil=\"true\"/>\n            <OrderId>SHE-FORCE-GFP-SU-{{customer_id}}a</OrderId>\n            <OrderItems>\n                <OrderItem>\n                    <OrderActionId>SHE-FORCE-GFP-SU-{{customer_id}}b</OrderActionId>\n                    <OrderActionStatus>DE</OrderActionStatus>\n                    <ActionType>SU</ActionType>\n                    <ActionSubType xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:nil=\"true\"/>\n                    <ProductInstanceId>{{external_product_instance_id}}</ProductInstanceId>\n                    <APDetails>\n                        <APDetail>\n                            <APID>000000001</APID>\n                            <CID>14996007</CID>\n                            <ComponentAction>UP</ComponentAction>\n                            <ProductCharacteristics>\n                                <ProductCharacteristic>\n                                    <Name>PreferredAccessType</Name>\n                                    <Value>GPON</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>Access_Type</Name>\n                                    <Value>GPON</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>Product_Instance_ID</Name>\n                                    <Value>{{external_product_instance_id}}</Value>\n                                </ProductCharacteristic>\n                                <ProductCharacteristic>\n                                    <Name>Service_Type</Name>\n                                    <Value>BBWL</Value>\n                                </ProductCharacteristic>\n                            </ProductCharacteristics>\n                        </APDetail>\n                    </APDetails>\n                </OrderItem>\n            </OrderItems>\n        </oss:UpdateServiceStatus>\n    </soap:Body>\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": "https://val-msoss-events.globe.com.ph/hip-gw-event/gfp/ws/soap12/oss"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "NotifyOSSMilestone - ACK",
+			"item": [
+				{
+					"name": "NotifyOSS",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var moment = require('moment');",
+									"var timestamp = moment().format((\"YYYY-MM-DDTHH:mm:SS\"))+\"+08:00\";",
+									"pm.environment.set('timestamp', timestamp);",
+									"",
+									"var cell = data.message;",
+									"var start = cell.indexOf(\"{\")",
+									"var end = cell.lastIndexOf(\"}\");",
+									"var parsed_data = cell.substring(start+0, end+1);",
+									"var json_parsed_data = JSON.parse(parsed_data);",
+									"",
+									"// console.log(json_parsed_data)",
+									"",
+									"var order = json_parsed_data.orderItem[0];",
+									"var product = order.product;",
+									"var all_product_relationship = product.productRelationship;",
+									"var specific_product_relationship = all_product_relationship.find(x => x.product.productSpecification.id === \"14996007\")",
+									"",
+									"// console.log(specific_product_relationship)",
+									"var specific_product_relationship_product = specific_product_relationship.product",
+									"var service_id_kv_pair = specific_product_relationship_product.productCharacteristic.find(x => x.name === \"Service_ID\")",
+									"var service_id = service_id_kv_pair.value",
+									"",
+									"// console.log(service_id)",
+									"",
+									"pm.collectionVariables.set(\"order_id\", json_parsed_data.externalId);",
+									"pm.collectionVariables.set(\"orderItem_id\", order.id);",
+									"pm.collectionVariables.set(\"product_id\", product.id);",
+									"pm.collectionVariables.set(\"effective_date\", timestamp);",
+									"pm.collectionVariables.set(\"service_id\", service_id);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "913ece31-b4f9-414d-8006-eafc559a7762",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"eventId\": \"\",\n    \"eventTime\": \"2023-09-04T17:24:00+08:00\",\n    \"eventType\": \"ProductOrderValueChangeNotification\",\n    \"fieldPath\": \"\",\n    \"resourcePath\": \"order/{{order_id}}/orderItem/{{orderItem_id}}\",\n    \"event\": {\n        \"productOrder\": {\n            \"id\": \"\",\n            \"href\": \"\",\n            \"externalId\": \"{{order_id}}\",\n            \"priority\": \"\",\n            \"category\": \"\",\n            \"state\": \"InProgress\",\n            \"relatedParty\": [\n                {\n                    \"id\": \"\",\n                    \"role\": \"\",\n                    \"name\": \"\"\n                }\n            ],\n            \"orderDate\": \"\",\n            \"orderItem\": [\n                {\n                    \"id\": \"{{orderItem_id}}\",\n                    \"action\": \"\",\n                    \"state\": \"InProgress\",\n                    \"product\": {\n                        \"relatedParty\": [\n                            {\n                                \"id\": \"\",\n                                \"role\": \"\",\n                                \"name\": \"\"\n                            }\n                        ],\n                        \"id\": \"{{product_id}}\",\n                        \"productRelationship\": [\n                            {\n                                \"type\": \"\",\n                                \"id\": \"\",\n                                \"product\": {\n                                    \"productSpecification\": {\n                                        \"id\": \"\"\n                                    },\n                                    \"productCharacteristic\": [\n                                        {\n                                            \"name\": \"AccessType\",\n                                            \"value\": \"GPON\"\n                                        }\n                                    ]\n                                }\n                            }\n                        ],\n                        \"productSpecification\": {\n                            \"id\": \"Broadband\",\n                            \"name\": \"Globe B2C Bundled Product\"\n                        },\n                        \"productCharacteristic\": [\n                            {\n                                \"name\": \"Service_ID\",\n                                \"value\": \"{{service_id}}\"\n                            },\n                            {\n                                \"name\": \"Milestone\",\n                                \"value\": \"Acknowledged\"\n                            }\n                        ]\n                    }\n                }\n            ]\n        }\n    }\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://val-hipms-nrpl.globetel.com/hip-gw-nrpl/gfp/rs/json/bss"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"let v = pm.info.iteration;",
+							"",
+							"console.log(v);"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "NotifyOSSMilestone - COMPLETED",
+			"item": [
+				{
+					"name": "NotifyOSS",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var moment = require('moment');",
+									"var timestamp = moment().format((\"YYYY-MM-DDTHH:mm:SS\"))+\"+08:00\";",
+									"pm.environment.set('timestamp', timestamp);",
+									"",
+									"var cell = data.message;",
+									"var start = cell.indexOf(\"{\")",
+									"var end = cell.lastIndexOf(\"}\");",
+									"var parsed_data = cell.substring(start+0, end+1);",
+									"var json_parsed_data = JSON.parse(parsed_data);",
+									"",
+									"// console.log(json_parsed_data)",
+									"",
+									"var order = json_parsed_data.orderItem[0];",
+									"var product = order.product;",
+									"var all_product_relationship = product.productRelationship;",
+									"var specific_product_relationship = all_product_relationship.find(x => x.product.productSpecification.id === \"14996007\")",
+									"",
+									"// console.log(specific_product_relationship)",
+									"var specific_product_relationship_product = specific_product_relationship.product",
+									"var service_id_kv_pair = specific_product_relationship_product.productCharacteristic.find(x => x.name === \"Service_ID\")",
+									"var service_id = service_id_kv_pair.value",
+									"",
+									"// console.log(service_id)",
+									"",
+									"pm.collectionVariables.set(\"order_id\", json_parsed_data.externalId);",
+									"pm.collectionVariables.set(\"orderItem_id\", order.id);",
+									"pm.collectionVariables.set(\"product_id\", product.id);",
+									"pm.collectionVariables.set(\"effective_date\", timestamp);",
+									"pm.collectionVariables.set(\"service_id\", service_id);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "913ece31-b4f9-414d-8006-eafc559a7762",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"eventId\": \"\",\n    \"eventTime\": \"2023-09-04T17:24:00+08:00\",\n    \"eventType\": \"ProductOrderValueChangeNotification\",\n    \"fieldPath\": \"\",\n    \"resourcePath\": \"order/{{order_id}}/orderItem/{{orderItem_id}}\",\n    \"event\": {\n        \"productOrder\": {\n            \"id\": \"\",\n            \"href\": \"\",\n            \"externalId\": \"{{order_id}}\",\n            \"priority\": \"\",\n            \"category\": \"\",\n            \"state\": \"InProgress\",\n            \"relatedParty\": [\n                {\n                    \"id\": \"\",\n                    \"role\": \"\",\n                    \"name\": \"\"\n                }\n            ],\n            \"orderDate\": \"\",\n            \"orderItem\": [\n                {\n                    \"id\": \"{{orderItem_id}}\",\n                    \"action\": \"\",\n                    \"state\": \"InProgress\",\n                    \"product\": {\n                        \"relatedParty\": [\n                            {\n                                \"id\": \"\",\n                                \"role\": \"\",\n                                \"name\": \"\"\n                            }\n                        ],\n                        \"id\": \"{{product_id}}\",\n                        \"productRelationship\": [\n                            {\n                                \"type\": \"\",\n                                \"id\": \"\",\n                                \"product\": {\n                                    \"productSpecification\": {\n                                        \"id\": \"\"\n                                    },\n                                    \"productCharacteristic\": [\n                                        {\n                                            \"name\": \"AccessType\",\n                                            \"value\": \"GPON\"\n                                        }\n                                    ]\n                                }\n                            }\n                        ],\n                        \"productSpecification\": {\n                            \"id\": \"Broadband\",\n                            \"name\": \"Globe B2C Bundled Product\"\n                        },\n                        \"productCharacteristic\": [\n                            {\n                                \"name\": \"Service_ID\",\n                                \"value\": \"{{service_id}}\"\n                            },\n                            {\n                                \"name\": \"Milestone\",\n                                \"value\": \"Completed\"\n                            },\n                            {\n                                \"name\": \"EffectiveDate\",\n                                \"value\": \"{{effective_date}}\"\n                            }\n                        ]\n                    }\n                }\n            ]\n        }\n    }\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://val-hipms-nrpl.globetel.com/hip-gw-nrpl/gfp/rs/json/bss"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"let v = pm.info.iteration;",
+							"",
+							"console.log(v);"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "_parsed",
+			"value": ""
+		},
+		{
+			"key": "externalId",
+			"value": ""
+		},
+		{
+			"key": "orderId",
+			"value": ""
+		},
+		{
+			"key": "order_id",
+			"value": ""
+		},
+		{
+			"key": "effective_date",
+			"value": ""
+		},
+		{
+			"key": "product_id",
+			"value": ""
+		},
+		{
+			"key": "service_id",
+			"value": ""
+		},
+		{
+			"key": "new_user_id",
+			"value": ""
+		},
+		{
+			"key": "orderItem_id",
+			"value": ""
+		}
+	]
+}

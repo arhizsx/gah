@@ -644,6 +644,11 @@
                             value = to_check.eq( k ).val();
                             break;
 
+                        case "date":
+
+                            value = to_check.eq( k ).val();
+                            break;
+
                         case "checkbox":
 
 

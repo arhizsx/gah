@@ -109,7 +109,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 @php
-                    if( Auth::user()->company != null ){
+                    if( Auth::user()->company == null ){
                         $user = \DB::table("users_access")
                                 ->where("campaign", "SAMSUNG")
                                 ->where("user_id", \Auth::user()->id)

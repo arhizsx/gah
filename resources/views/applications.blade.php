@@ -109,10 +109,12 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 @php
-                    $user = \DB::table("users_access")
+                    if( Auth::user()->company != null ){
+                        $user = \DB::table("users_access")
                                 ->where("campaign", "SAMSUNG")
                                 ->where("user_id", \Auth::user()->id)
                                 ->first();
+                    }
                 @endphp
                 @if($user->profile == "SGT")
                     <button type="button" class="btn btn-success btn-action" data-action="application_endorsed" data-id="">Endorse to SV</button>

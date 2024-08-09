@@ -108,12 +108,20 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-danger btn-action" data-action="application_cancelled" data-id="">Cancelled</button>
-                <button type="button" class="btn btn-primary btn-action" data-action="application_installed" data-id="">Installed</button>
-
-                <button type="button" class="btn btn-success btn-action" data-action="application_endorsed" data-id="">Endorse to SV</button>
-                <button type="button" class="btn btn-warning btn-action" data-action="application_pending" data-id="">Pending</button>
-                <button type="button" class="btn btn-danger btn-action" data-action="application_dropped" data-id="">Drop</button>
+                @php
+                    $user = db::table("users_access")
+                                ->where("campaign", "SAMSUNG")
+                                ->where("user_id", Auth::user()->id)
+                                ->first();
+                @endphp
+                @if($user->profile == "SGT")
+                    <button type="button" class="btn btn-success btn-action" data-action="application_endorsed" data-id="">Endorse to SV</button>
+                    <button type="button" class="btn btn-warning btn-action" data-action="application_pending" data-id="">Pending</button>
+                    <button type="button" class="btn btn-danger btn-action" data-action="application_dropped" data-id="">Drop</button>
+                @else
+                    <button type="button" class="btn btn-danger btn-action" data-action="application_cancelled" data-id="">Cancelled</button>
+                    <button type="button" class="btn btn-primary btn-action" data-action="application_installed" data-id="">Installed</button>
+                @endif
             </div>
         </div>
     </div>

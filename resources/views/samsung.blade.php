@@ -91,12 +91,14 @@
                                         <option value="" selected>Select City</option>
                                     </select>
                                 </div>
-                                {{-- <div class="form-row">
-                                    <label for="city">Barangay</label>
-                                    <select class="form-control mb-3 checker location_filters" data-filter='brgy' data-parent='#collapseTwo' data-checker="optional" name="brgy" id="brgy">
-                                        <option value="" selected>Select Barangay</option>
-                                    </select>
-                                </div> --}}
+                                <div class="form-row">
+                                    <label for="zipcode">Zip Code</label>
+                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="zipcode" id="zipcode">
+                                </div>
+                                <div class="form-row">
+                                    <label for="zipcode">Installation Schedule</label>
+                                    <input type="date" class="form-control mb-3 checker" data-checker="required" name="brgy_village" id="brgy_village">
+                                </div>
                                 <div class="form-row">
                                     <label for="serviceability_check">Serviceability Screenshot</label>
                                     <input type="file" class="form-control mb-3 checker" data-checker="required" name="serviceability_check" id="serviceability_check">

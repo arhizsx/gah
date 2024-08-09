@@ -67,7 +67,7 @@ class SupervendorController extends Controller
 
                     $data = DB::table("view_registrations")
                         ->where("vendor", Auth::user()->company )
-                        ->wherenotin("status", array("INSTALLED", "CANCELLED"))
+                        ->wherenotin("status", array("ENDORSED"))
                         ->get();
 
                 }

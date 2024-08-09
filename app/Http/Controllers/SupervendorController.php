@@ -60,10 +60,8 @@ class SupervendorController extends Controller
                 if( Auth::user()->company == NULL  ){
 
                     $data = DB::table("view_registrations")
-                        ->wherein("status", array("REGISTERED", "PENDING", "DROPPED"))
+                        ->wherein("status", array("ENDORSED"))
                         ->where("SGT Name", Auth::user()->name)
-                        ->orwhere("SGT Name", "")
-                        ->orwhere("SGT Name", null)
                         ->orderBy("SGT Name", "desc")
                         ->get();
 

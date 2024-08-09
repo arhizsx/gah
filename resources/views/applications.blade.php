@@ -175,8 +175,10 @@ function callbackAction(data){
 
     var vendor_btns = $(document).find(modal).find(".btn-action[data-user_mode='vendor']");
     if( $.inArray( data.status, show_vendor ) ){
+        alert("HERE");
         vendor_btns.removeClass("d-none");
     } else {
+        alert("NONE");
         vendor_btns.addClass("d-none");
     }
 

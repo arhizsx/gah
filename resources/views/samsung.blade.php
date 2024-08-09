@@ -554,7 +554,7 @@
             </form>
         </div>
         <div id="registration_successful" class="d-none" style="max-width: 640px; min-width: 400px; margin: auto;">
-            <img src="/images/banner.png" width="100%" />
+            <img src="/images/finish.png" width="100%" />
 
 
             <div class="border rounded-3 p-5 mt-4">

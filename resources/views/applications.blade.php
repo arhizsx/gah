@@ -183,7 +183,7 @@ function callbackAction(data){
     var show_gt = ["REGISTERED", "PENDING", "DROPPED"];
     var gt_btns = $(document).find(modal).find(".btn-action[data-user_mode='gt']");
 
-    if( $.inArray( data.status, show_vendor ) >= 0){
+    if( $.inArray( data.status, show_gt ) >= 0){
         gt_btns.removeClass("d-none");
     } else {
         gt_btns.addClass("d-none");

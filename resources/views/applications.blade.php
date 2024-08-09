@@ -173,7 +173,7 @@ function callbackAction(data){
 
     $(document).find(modal).find(".btn-action").attr("[data-user_mode='vendor']").addClass("d-none")
 
-    console.log($(document).find(modal).find(".btn-action").attr("[data-user_mode='vendor']"));
+    console.log( $(document).find(modal).find(".btn-action") );
 
 }
 

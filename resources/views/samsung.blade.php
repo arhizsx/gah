@@ -98,8 +98,8 @@
                                 <div class="form-row">
                                     <label for="schedule">Installation Schedule</label>
                                     <div id="scchedule" class="d-flex">
-                                    <input type="date" class="form-control mb-3 checker flex-fill" data-checker="required" name="schedule_date" id="schedule_date">
-                                    <select class="form-control mb-3 checker flex-fill" data-checker="required" name="schedule_hour" id="schedule_hour">
+                                    <input type="date" class="form-control mb-3 checker flex-fill me-1" data-checker="required" name="schedule_date" id="schedule_date">
+                                    <select class="form-control mb-3 checker flex-fill  ms-1" data-checker="required" name="schedule_hour" id="schedule_hour">
                                         <option value="" selected>Select City</option>
                                     </select>
                                     </div>

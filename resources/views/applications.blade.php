@@ -114,6 +114,8 @@
                                 ->where("campaign", "SAMSUNG")
                                 ->where("user_id", \Auth::user()->id)
                                 ->first();
+                    } else {
+                        $user = [];
                     }
                 @endphp
                 @if($user->profile == "SGT")

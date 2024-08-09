@@ -83,6 +83,18 @@
                         <div id="collapseTwo" class="accordion-collapse collapse">
                             <div class="accordion-body">
                                 <div class="form-row">
+                                    <label for="house_floor_bldg">House no., Floor no., Bldg</label>
+                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="house_floor_bldg" id="house_floor_bldg">
+                                </div>
+                                <div class="form-row">
+                                    <label for="street">Street</label>
+                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="street" id="street">
+                                </div>
+                                <div class="form-row">
+                                    <label for="brgy_village">Barangay / Village</label>
+                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="brgy_village" id="brgy_village">
+                                </div>
+                                <div class="form-row">
                                     <label for="province">Province</label>
                                     <select class="form-control mb-3 checker location_filters" data-filter='province' data-parent='#collapseTwo' data-checker="required" name="province" id="province">
                                         <option value="" selected>Select Province</option>
@@ -103,18 +115,6 @@
                                         <option value="" selected>Select Barangay</option>
                                     </select>
                                 </div> --}}
-                                <div class="form-row">
-                                    <label for="brgy_village">Barangay / Village</label>
-                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="brgy_village" id="brgy_village">
-                                </div>
-                                <div class="form-row">
-                                    <label for="street">Street</label>
-                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="street" id="street">
-                                </div>
-                                <div class="form-row">
-                                    <label for="house_floor_bldg">House no., Floor no., Bldg</label>
-                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="house_floor_bldg" id="house_floor_bldg">
-                                </div>
                                 <div class="form-row">
                                     <label for="serviceability_check">Serviceability Screenshot</label>
                                     <input type="file" class="form-control mb-3 checker" data-checker="required" name="serviceability_check" id="serviceability_check">

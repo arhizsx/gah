@@ -57,7 +57,6 @@ class SupervendorController extends Controller
 
                     $data = DB::table("view_registrations")
                         ->where("status", "REGISTERED")
-                        ->whereNull("SGT Name")
                         ->get();
 
                 } else {

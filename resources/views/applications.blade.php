@@ -171,8 +171,15 @@ function callbackAction(data){
 
     applicationSetImage(data);
 
+    var show_vendor = ["ENDORSED"];
 
     var vendor_btns = $(document).find(modal).find(".btn-action[data-user_mode='vendor']");
+    if( $.inArray( data.status, show_vendor ) ){
+        vendor_btns.removeClass("d-none");
+    } else {
+        vendor_btns.addClass("d-none");
+    }
+
     var gt_btns = $(document).find(modal).find(".btn-action[data-user_mode='gt']");
 
     console.log(data.status);

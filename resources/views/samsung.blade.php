@@ -135,6 +135,7 @@
                                     <input type="file" class="form-control checker" data-checker="required" name="receipt" id="receipt">
                                 </div>
                                 <div class="form-row">
+                                    <label for="store">Store</label>
                                     <select class="form-control checker" data-checker="required" name="store" id="store">
                                         <option value='ABENSON_ABENSON_MARQUEE MALL_3F_ANGELES_0515'>ABENSON_ABENSON_MARQUEE MALL_3F_ANGELES_0515</option>
                                         <option value='ABENSON_ABENSON_NEPO MALL ANGELES_GF_ANGELES_0515'>ABENSON_ABENSON_NEPO MALL ANGELES_GF_ANGELES_0515</option>

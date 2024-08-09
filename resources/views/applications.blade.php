@@ -172,7 +172,10 @@ function callbackAction(data){
     applicationSetImage(data);
 
 
-    console.log( $(document).find(modal).find(".btn-action[data-user_mode='vendor']") );
+    var vendor_btns = $(document).find(modal).find(".btn-action[data-user_mode='vendor']");
+    var gt_btns = $(document).find(modal).find(".btn-action[data-user_mode='gt']");
+
+    console.log(data.status);
 
 }
 

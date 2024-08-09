@@ -14,6 +14,10 @@ class SupervendorController extends Controller
         return view("home");
     }
 
+    function sgt(){
+        return view("sgt");
+    }
+
     function applications(){
         return view("applications");
     }

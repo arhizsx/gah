@@ -88,7 +88,8 @@ class SupervendorController extends Controller
                         ->orderBy("SGT Name", "desc")
                         ->get();
 
-                } else {
+                }
+                else {
 
                     $data = DB::table("view_registrations")
                         ->where("vendor", Auth::user()->company )

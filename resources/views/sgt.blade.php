@@ -131,7 +131,7 @@
 
 let modal = "#application_details";
 let datagrid = "#gridContainer";
-let datasource = '/supervendor/data/applications';
+let datasource = '/supervendor/data/sgt';
 let columns = ['campaign', 'complete_name', 'mobile_number', 'province', 'city', 'vendor', 'SGT Name', 'status'];
 let callback = 'callbackAction';
 

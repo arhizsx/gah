@@ -60,6 +60,7 @@ class SupervendorController extends Controller
                         ->where("SGT Name", Auth::user()->name)
                         ->orwhere("SGT Name", "")
                         ->orwhere("SGT Name", null)
+                        ->orderBy("SGT Name", "desc")
                         ->get();
 
                 } else {

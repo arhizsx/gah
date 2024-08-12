@@ -31,7 +31,7 @@
 
                 <img src="/images/finish.png" width="100%" />
                 <div class="border rounded-3 p-3 mt-4">
-                    <H3>GFP & Samsung Partnership</H3>
+                    <H3>Samsung with GFiber Prepaid Bundle Promo</H3>
                     <p>Kindly fill out this form for your Free GFiber Prepaid</p>
                     <p>*Bundle of GFiber Prepaid will be on the serviceability of the nominated address</p>
                 </div>

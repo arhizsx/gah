@@ -2,7 +2,7 @@
 <html lang="en" >
     <head>
         <meta charset="UTF-8">
-        <title>GFP & Samsung Partnership</title>
+        <title>Samsung with GFiber Prepaid Bundle Promo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 

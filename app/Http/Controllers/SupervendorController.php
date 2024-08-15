@@ -193,7 +193,7 @@ class SupervendorController extends Controller
 
                             $registrations = $registrations
                                 ->whereIn("campaign", $campaign)
-                                ->whereIn("status", "X");
+                                ->where("status", "X");
 
                         }
 
@@ -326,9 +326,6 @@ class SupervendorController extends Controller
         }
 
         $vendor = $this->getVendor($request->province, $request->city);
-
-
-
 
         $sgt_name = null;
         $sgt_email = null;

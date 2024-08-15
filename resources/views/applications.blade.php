@@ -161,7 +161,6 @@ $(document).on("click", ".btn-action", function(){
         method: "POST",
         data: {
             "action" : action,
-            "remarks": $(document).find(modal).find("[name='remarks']").val(),
             "id": $(this).data("id")
         },
         headers: {

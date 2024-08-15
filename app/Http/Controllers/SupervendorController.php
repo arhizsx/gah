@@ -57,6 +57,9 @@ class SupervendorController extends Controller
                     $page_allowed_statuses = array("INSTALLED", "CANCELLED", "DROPPED");
                 }
 
+
+                dd($campaign);
+
                 if( Auth::user()->company == NULL  ){
 
 

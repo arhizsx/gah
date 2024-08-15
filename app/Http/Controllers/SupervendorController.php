@@ -114,13 +114,12 @@ class SupervendorController extends Controller
 
                     $access_data = $access->where("campaign", $what_campaign)->first();
 
-                    dd( $access_data );
 
                     if( Auth::user()->company == NULL  ){
 
                         if( $access_data ){
 
-                            if( $access_data == "SGT" ){
+                            if( $access_data->profile == "SGT" ){
 
                                 $registrations = $registrations
                                     ->whereIn("campaign", $campaign)

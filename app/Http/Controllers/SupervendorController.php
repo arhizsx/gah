@@ -107,16 +107,32 @@ class SupervendorController extends Controller
 
                 $campaign = array("SAMSUNG");
 
-                if( in_array("SAMSUNG", $campaign) ){
+                $what_campaign = "SAMSUNG";
+                if( in_array($what_campaign, $campaign) ){
 
                     $page_allowed_statuses = array("REGISTERED", "PENDING");
 
+                    $access_data = $access->where("campaign", $what_campaign)->first();
+
                     if( Auth::user()->company == NULL  ){
 
-                        $registrations = $registrations
-                                            ->whereIn("campaign", $campaign)
-                                            ->whereIn("status", $page_allowed_statuses)
-                                            ->where("SGT Name", Auth::user()->name);
+                        if( $access_data ){
+                            if( $access_data == "SGT" ){
+
+                                $registrations = $registrations
+                                    ->whereIn("campaign", $campaign)
+                                    ->whereIn("status", $page_allowed_statuses)
+                                    ->where("SGT Name", Auth::user()->name);
+
+                            }
+                        } else {
+
+                            $registrations = $registrations
+                                ->whereIn("campaign", $campaign)
+                                ->whereIn("status", $page_allowed_statuses);
+
+                        }
+
 
                     } else {
 

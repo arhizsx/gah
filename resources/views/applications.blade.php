@@ -31,7 +31,7 @@
                             <label for="complete_name">Complete Name</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="complete_name" id="complete_name" placeholder="Customer Name">
+                            <input disabled class="form-control form-control-sm" type="text" value="" name="complete_name" id="complete_name" placeholder="Customer Name">
                         </div>
                     </div>
                     <div class="row mb-4 border-bottom pb-3">
@@ -39,7 +39,7 @@
                             <label for="mobile_number">Mobile Number</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="mobile_number" id="mobile_number" placeholder="Mobile Number">
+                            <input disabled class="form-control form-control-sm" type="text" value="" name="mobile_number" id="mobile_number" placeholder="Mobile Number">
                         </div>
                     </div>
                     <div class="section-title">Installation Address</div>
@@ -48,7 +48,7 @@
                             <label for="province">Province</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="province" id="province" placeholder="Province">
+                            <input disabled class="form-control form-control-sm" type="text" value="" name="province" id="province" placeholder="Province">
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -56,7 +56,7 @@
                             <label for="city">City</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="City">
+                            <input disabled class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="City">
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -64,7 +64,7 @@
                             <label for="brgy_village">Barangay / Village</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="brgy_village" id="brgy_village" placeholder="Barangay / Village">
+                            <input disabled class="form-control form-control-sm" type="text" value="" name="brgy_village" id="brgy_village" placeholder="Barangay / Village">
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -72,7 +72,7 @@
                             <label for="street">Street</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="street" id="street" placeholder="Street">
+                            <input disabled class="form-control form-control-sm" type="text" value="" name="street" id="street" placeholder="Street">
                         </div>
                     </div>
                     <div class="row mb-3     pb-3">
@@ -80,7 +80,7 @@
                             <label for="house_floor_bldg">House no., Floor no., Bldg</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="house_floor_bldg" id="house_floor_bldg" placeholder="House no., Floor no., Bldg">
+                            <input disabled class="form-control form-control-sm" type="text" value="" name="house_floor_bldg" id="house_floor_bldg" placeholder="House no., Floor no., Bldg">
                         </div>
                     </div>
                     <div class="row mb-4 border-bottom pb-3">
@@ -88,10 +88,10 @@
                             <label for="house_floor_bldg">Schedule</label>
                         </div>
                         <div class="col-5">
-                            <input class="form-control form-control-sm" type="text" value="" name="schedule_date" id="schedule_date" placeholder="Schedule Date">
+                            <input disabled class="form-control form-control-sm" type="text" value="" name="schedule_date" id="schedule_date" placeholder="Schedule Date">
                         </div>
                         <div class="col-4">
-                            <input class="form-control form-control-sm" type="text" value="" name="schedule_hour" id="schedule_hour" placeholder="Schedule Hour">
+                            <input disabled class="form-control form-control-sm" type="text" value="" name="schedule_hour" id="schedule_hour" placeholder="Schedule Hour">
                         </div>
                     </div>
                     <div class="section-title">Attachments</div>
@@ -112,7 +112,7 @@
                     <div class="section-title">Remarks</div>
                     <div class="row">
                         <div class="col-12">
-                            <textarea class="form-control form-control-sm" name="remarks" id="remarks" placeholder="Remarks"></textarea>
+                            <textarea disabled class="form-control form-control-sm" name="remarks" id="remarks" placeholder="Remarks"></textarea>
                         </div>
                     </div>
                 </div>
@@ -122,9 +122,9 @@
 
                 @if( \Auth::user()->company == null )
 
-                <button type="button" class="btn btn-success btn-action" data-user_mode="gt" data-action="application_endorsed" data-id="">Endorse to SV</button>
+                {{-- <button type="button" class="btn btn-success btn-action" data-user_mode="gt" data-action="application_endorsed" data-id="">Endorse to SV</button>
                 <button type="button" class="btn btn-warning btn-action" data-user_mode="gt" data-action="application_pending" data-id="">Pending</button>
-                <button type="button" class="btn btn-danger btn-action" data-user_mode="gt" data-action="application_dropped" data-id="">Drop</button>
+                <button type="button" class="btn btn-danger btn-action" data-user_mode="gt" data-action="application_dropped" data-id="">Drop</button> --}}
 
                 @else
 

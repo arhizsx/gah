@@ -34,43 +34,68 @@ class SupervendorController extends Controller
 
     function data( $action ){
 
+        $access = DB::table("users_access")
+            ->where( "user_id", Auth::user()->id );
+
+
         switch( $action ){
 
             case "installations":
 
+                $campaign = array("SAMSUNG");
+
+                $access_data = $access
+                                ->wherIn("campaign", $campaign);
+
+                $registrations = DB::table("view_registrations")
+                                    ->whereIn("campaign", $campaign);
+
+                if( $campaign == "SAMSUNG" ){
+                    $page_allowed_statuses = array("INSTALLED", "CANCELLED", "DROPPED");
+                }
+
                 if( Auth::user()->company == NULL  ){
 
+                    dd($access_data);
 
-                    $data = DB::table("view_registrations")
-                        ->wherein("status", array("INSTALLED", "CANCELLED", "DROPPED"))
-                        ->get();
+                    $data = $registrations
+                                ->wherein("status", $page_allowed_statuses)
+                                ->get();
 
                 } else {
 
-                    $data = DB::table("view_registrations")
-                        ->wherein("status", array("CANCELLED", "INSTALLED", "DROPPED"))
-                        ->where("vendor", Auth::user()->company )
-                        ->get();
-
+                    $data = $registrations
+                                ->wherein("status", $page_allowed_statuses )
+                                ->where( "vendor", Auth::user()->company )
+                                ->get();
                 }
+
                 break;
 
             case "applications":
 
+                $campaign = array("SAMSUNG");
+
+                $registrations = DB::table("view_registrations")
+                                    ->whereIn("campaign", $campaign);
+
+                if( $campaign == "SAMSUNG" ){
+                    $page_allowed_statuses = array("ENDORSED");
+                }
+
                 if( Auth::user()->company == NULL  ){
 
-                    $data = DB::table("view_registrations")
-                        ->wherein("status", array("ENDORSED"))
-                        ->where("SGT Name", Auth::user()->name)
-                        ->orderBy("SGT Name", "desc")
-                        ->get();
+
+                    $data = $registrations
+                                ->wherein("status", $page_allowed_statuses )
+                                ->where("SGT Name", Auth::user()->name)
+                                ->get();
 
                 } else {
 
-                    $data = DB::table("view_registrations")
-                        ->where("vendor", Auth::user()->company )
-                        ->where("status", array("ENDORSED"))
-                        ->get();
+                    $data = $registrations
+                                ->where("vendor", Auth::user()->company )
+                                ->get();
 
                 }
 

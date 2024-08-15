@@ -114,9 +114,12 @@ class SupervendorController extends Controller
 
                     $access_data = $access->where("campaign", $what_campaign)->first();
 
+                    dd( $access_data );
+
                     if( Auth::user()->company == NULL  ){
 
                         if( $access_data ){
+
                             if( $access_data == "SGT" ){
 
                                 $registrations = $registrations
@@ -125,6 +128,8 @@ class SupervendorController extends Controller
                                     ->where("SGT Name", Auth::user()->name);
 
                             }
+
+
                         } else {
 
                             $registrations = $registrations

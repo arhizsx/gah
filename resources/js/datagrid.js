@@ -70,7 +70,7 @@ $.fn.openModal = function( modal, data, callback ){
 
     $.each( data, function( k, v){
 
-        $(modal).find("input[name='" + k + "']").val( v );
+        $(modal).find("[name='" + k + "']").val( v );
 
     } );
 

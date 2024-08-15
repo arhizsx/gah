@@ -27,11 +27,14 @@
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('Home') }}
                     </x-nav-link>
-                    @if($access)
-                    <x-nav-link :href="route('sgt')" :active="request()->routeIs('sgt')">
-                        {{ __('SGT') }}
-                    </x-nav-link>
+                    @if(Auth::user()->company == null)
+                        @if($access)
+                        <x-nav-link :href="route('sgt')" :active="request()->routeIs('sgt')">
+                            {{ __('SGT') }}
+                        </x-nav-link>
+                        @endif
                     @endif
+
 
                     <x-nav-link :href="route('applications')" :active="request()->routeIs('applications')">
                         {{ __('Work Orders') }}
@@ -97,11 +100,16 @@
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
                 {{ __('Home') }}
             </x-responsive-nav-link>
-            @if($access)
-            <x-responsive-nav-link :href="route('applications')" :active="request()->routeIs('sgt')">
-                {{ __('SGT') }}
-            </x-responsive-nav-link>
+            @if(Auth::user()->company == null)
+
+                @if($access)
+                <x-responsive-nav-link :href="route('applications')" :active="request()->routeIs('sgt')">
+                    {{ __('SGT') }}
+                </x-responsive-nav-link>
+                @endif
+
             @endif
+
             <x-responsive-nav-link :href="route('applications')" :active="request()->routeIs('applications')">
                 {{ __('Applications') }}
             </x-responsive-nav-link>

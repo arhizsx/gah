@@ -247,8 +247,13 @@ class SupervendorController extends Controller
 
             case "application_endorsed":
 
-                dd($request);
                 $registration = CampaignRegistration::find($request->id);
+
+                $registration_data = $registration->first();
+                $registration_data = json_decode($registration_data,true);
+
+                dd($registration_data);
+
                 $registration->update([
                     "status" => 'ENDORSED'
                 ]);

@@ -127,6 +127,13 @@ class SupervendorController extends Controller
                                     ->where("SGT Name", Auth::user()->name);
 
                             }
+                            elseif( $access_data->profile == "NSGT" ){
+
+                                $registrations = $registrations
+                                    ->whereIn("campaign", $campaign)
+                                    ->whereIn("status", $page_allowed_statuses);
+
+                            }
 
 
                         } else {

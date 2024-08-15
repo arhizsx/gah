@@ -50,7 +50,7 @@ class SupervendorController extends Controller
                 $registrations = DB::table("view_registrations")
                                     ->whereIn("campaign", $campaign);
 
-                if( $campaign == "SAMSUNG" ){
+                if( in_array("SAMSUNG", $campaign) ){
                     $page_allowed_statuses = array("INSTALLED", "CANCELLED", "DROPPED");
                 }
 
@@ -80,7 +80,7 @@ class SupervendorController extends Controller
                 $registrations = DB::table("view_registrations")
                                     ->whereIn("campaign", $campaign);
 
-                if( $campaign == "SAMSUNG" ){
+                if( in_array("SAMSUNG", $campaign) ){
                     $page_allowed_statuses = array("ENDORSED");
                 }
 

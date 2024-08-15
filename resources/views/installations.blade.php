@@ -110,6 +110,7 @@
 
 <script>
 
+let x= "";
 let modal = "#installation_details";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/installations';

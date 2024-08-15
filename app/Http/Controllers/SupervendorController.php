@@ -59,18 +59,19 @@ class SupervendorController extends Controller
                     dd($access_data);
 
                     $data = $registrations
-                                ->wherein("status", $page_allowed_statuses)
+                                ->whereIn("status", $page_allowed_statuses)
                                 ->get();
 
                 } else {
 
                     $data = $registrations
-                                ->wherein("status", $page_allowed_statuses )
+                                ->whereIn("status", $page_allowed_statuses )
                                 ->where( "vendor", Auth::user()->company )
                                 ->get();
                 }
 
                 break;
+
 
             case "applications":
 

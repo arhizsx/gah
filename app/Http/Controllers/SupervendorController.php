@@ -107,41 +107,29 @@ class SupervendorController extends Controller
 
                 $campaign = array("SAMSUNG");
 
-                $registrations = DB::table("view_registrations")
-                                    ->whereIn("campaign", $campaign);
+                if( in_array("SAMSUNG", $campaign) ){
 
-                if( Auth::user()->company == NULL  ){
+                    $page_allowed_statuses = array("REGISTERED", "PENDING");
 
-
-                    if( in_array("SAMSUNG", $campaign) ){
-
-                        $page_allowed_statuses = array("REGISTERED", "PENDING");
+                    if( Auth::user()->company == NULL  ){
 
                         $registrations = $registrations
-                                            ->where("SGT Name", Auth::user()->name)
-                                            ->orwhere("SGT Name", "")
-                                            ->orwhere("SGT Name", null);
+                                            ->whereIn("campaign", $campaign)
+                                            ->whereIn("status", $page_allowed_statuses)
+                                            ->where("SGT Name", Auth::user()->name);
+
+                    } else {
+
+                        $registrations = $registrations
+                                            ->whereIn("status", $page_allowed_statuses)
+                                            ->where( "vendor", Auth::user()->company );
+
                     }
 
-                    $data = $registrations
-                        ->wherein("status", $page_allowed_statuses)
-                        ->orderBy("SGT Name", "desc")
-                        ->get();
-
                 }
-                else {
 
-                    if( in_array("SAMSUNG", $campaign) ){
-                        $page_allowed_statuses = array("ENDORSED");
-                    }
+                $data = $registrations->get();
 
-
-                    $data = DB::table("view_registrations")
-                        ->where( "vendor", Auth::user()->company )
-                        ->where( "status", $page_allowed_statuses )
-                        ->get();
-
-                }
 
                 break;
 

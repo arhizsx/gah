@@ -75,12 +75,23 @@
                             <input class="form-control form-control-sm" type="text" value="" name="street" id="street" placeholder="Street">
                         </div>
                     </div>
-                    <div class="row mb-4 border-bottom pb-3">
+                    <div class="row mb-4 pb-3">
                         <div class="col-3">
                             <label for="house_floor_bldg">House no., Floor no., Bldg</label>
                         </div>
                         <div class="col-9">
                             <input class="form-control form-control-sm" type="text" value="" name="house_floor_bldg" id="house_floor_bldg" placeholder="House no., Floor no., Bldg">
+                        </div>
+                    </div>
+                    <div class="row mb-4 border-bottom pb-3">
+                        <div class="col-3">
+                            <label for="house_floor_bldg">Schedule</label>
+                        </div>
+                        <div class="col-5">
+                            <input class="form-control form-control-sm" type="text" value="" name="schedule_date" id="schedule_date" placeholder="Schedule Date">
+                        </div>
+                        <div class="col-4">
+                            <input class="form-control form-control-sm" type="text" value="" name="schedule_hour" id="schedule_hour" placeholder="Schedule Hour">
                         </div>
                     </div>
                     <div class="section-title">Attachments</div>

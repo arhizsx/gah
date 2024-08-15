@@ -1,3 +1,14 @@
+@php
+    $sgt_allowed_profiles = array("NSGT", "SGT");
+
+    $access = DB::table("users_access")
+            ->where( "user_id", Auth::user()->id );
+            ->whereIn( "profile", $sgt_allowed_profiles )
+            ->get();
+
+
+@endphp
+
 <nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
     <!-- Primary Navigation Menu -->
     <div class="max-w-8xl  px-4 sm:px-6 lg:px-12">
@@ -10,14 +21,18 @@
                     </a>
                 </div>
 
+
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('Home') }}
                     </x-nav-link>
+                    @if($access)
                     <x-nav-link :href="route('sgt')" :active="request()->routeIs('sgt')">
                         {{ __('SGT') }}
                     </x-nav-link>
+                    @endif
+
                     <x-nav-link :href="route('applications')" :active="request()->routeIs('applications')">
                         {{ __('Work Orders') }}
                     </x-nav-link>
@@ -82,6 +97,11 @@
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
                 {{ __('Home') }}
             </x-responsive-nav-link>
+            @if($access)
+            <x-responsive-nav-link :href="route('applications')" :active="request()->routeIs('sgt')">
+                {{ __('SGT') }}
+            </x-responsive-nav-link>
+            @endif
             <x-responsive-nav-link :href="route('applications')" :active="request()->routeIs('applications')">
                 {{ __('Applications') }}
             </x-responsive-nav-link>

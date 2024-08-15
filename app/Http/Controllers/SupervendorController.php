@@ -247,6 +247,7 @@ class SupervendorController extends Controller
 
             case "application_endorsed":
 
+                dd($request);
                 $registration = CampaignRegistration::find($request->id);
                 $registration->update([
                     "status" => 'ENDORSED'

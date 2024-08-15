@@ -117,8 +117,6 @@ class SupervendorController extends Controller
 
                     if( Auth::user()->company == NULL  ){
 
-                        dd($access_data);
-
                         if( $access_data ){
 
                             if( $access_data->profile == "SGT" ){
@@ -135,7 +133,7 @@ class SupervendorController extends Controller
 
                             $registrations = $registrations
                                 ->whereIn("campaign", $campaign)
-                                ->whereIn("status", $page_allowed_statuses);
+                                ->whereIn("status", "X");
 
                         }
 

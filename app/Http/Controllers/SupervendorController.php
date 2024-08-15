@@ -117,6 +117,8 @@ class SupervendorController extends Controller
 
                     if( Auth::user()->company == NULL  ){
 
+                        dd($access_data);
+
                         if( $access_data ){
 
                             if( $access_data->profile == "SGT" ){

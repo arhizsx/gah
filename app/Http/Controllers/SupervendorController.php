@@ -45,7 +45,7 @@ class SupervendorController extends Controller
                 $campaign = array("SAMSUNG");
 
                 $access_data = $access
-                                ->wherIn("campaign", $campaign);
+                                ->whereIn("campaign", $campaign);
 
                 $registrations = DB::table("view_registrations")
                                     ->whereIn("campaign", $campaign);

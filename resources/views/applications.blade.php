@@ -75,7 +75,7 @@
                             <input class="form-control form-control-sm" type="text" value="" name="street" id="street" placeholder="Street">
                         </div>
                     </div>
-                    <div class="row mb-3 pb-3">
+                    <div class="row mb-3     pb-3">
                         <div class="col-3">
                             <label for="house_floor_bldg">House no., Floor no., Bldg</label>
                         </div>
@@ -161,6 +161,7 @@ $(document).on("click", ".btn-action", function(){
         method: "POST",
         data: {
             "action" : action,
+            "remarks": $(document).find(modal).find("[name='remarks']").val(),
             "id": $(this).data("id")
         },
         headers: {
@@ -210,8 +211,6 @@ function applicationSetImage(data){
 
     $("#href_receipt").attr("href", "/files/" + data.receipt);
     $("#href_serviceability_check").attr("href",  "/files/" + data.serviceability_check);
-
-
 
 
 }

@@ -250,34 +250,77 @@ class SupervendorController extends Controller
                 $registration = CampaignRegistration::find($request->id);
 
                 $registration_data = $registration->first();
+
                 if( $registration_data ){
+
                     $registration_data = json_decode($registration_data->data,true);
                     $registration_data["remarks"] = $request->remarks;
-                    dd($registration_data);
+
+                    $registration->update([
+                        "status" => 'ENDORSED',
+                        "data" => $registration_data
+                    ]);
+
+                } else {
+
+                    $registration->update([
+                        "status" => 'ENDORSED',
+                    ]);
 
                 }
 
-                $registration->update([
-                    "status" => 'ENDORSED'
-                ]);
 
                 return ["error"=> false, "registration" => $registration];
 
             case "application_pending":
 
                 $registration = CampaignRegistration::find($request->id);
-                $registration->update([
-                    "status" => 'PENDING'
-                ]);
+
+                $registration_data = $registration->first();
+
+                if( $registration_data ){
+
+                    $registration_data = json_decode($registration_data->data,true);
+                    $registration_data["remarks"] = $request->remarks;
+
+                    $registration->update([
+                        "status" => 'PENDING',
+                        "data" => $registration_data
+                    ]);
+
+                } else {
+
+                    $registration->update([
+                        "status" => 'PENDING',
+                    ]);
+
+                }
 
                 return ["error"=> false, "registration" => $registration];
 
             case "application_dropped":
 
                 $registration = CampaignRegistration::find($request->id);
-                $registration->update([
-                    "status" => 'DROPPED'
-                ]);
+                $registration_data = $registration->first();
+
+                if( $registration_data ){
+
+                    $registration_data = json_decode($registration_data->data,true);
+
+                    $registration_data["remarks"] = $request->remarks;
+
+                    $registration->update([
+                        "status" => 'DROPPED',
+                        "data" => $registration_data
+                    ]);
+
+                } else {
+
+                    $registration->update([
+                        "status" => 'DROPPED',
+                    ]);
+
+                }
 
                 return ["error"=> false, "registration" => $registration];
 

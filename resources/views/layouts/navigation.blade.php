@@ -2,7 +2,7 @@
     $sgt_allowed_profiles = array("NSGT", "SGT");
 
     $access = DB::table("users_access")
-            ->where( "user_id", Auth::user()->id );
+            ->where( "user_id", Auth::user()->id )
             ->whereIn( "profile", $sgt_allowed_profiles )
             ->get();
 

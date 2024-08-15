@@ -50,13 +50,15 @@ class SupervendorController extends Controller
                 $registrations = DB::table("view_registrations")
                                     ->whereIn("campaign", $campaign);
 
+                                    dd($access_data);
+
+
                 if( in_array("SAMSUNG", $campaign) ){
                     $page_allowed_statuses = array("INSTALLED", "CANCELLED", "DROPPED");
                 }
 
                 if( Auth::user()->company == NULL  ){
 
-                    dd($access_data);
 
                     $data = $registrations
                                 ->whereIn("status", $page_allowed_statuses)

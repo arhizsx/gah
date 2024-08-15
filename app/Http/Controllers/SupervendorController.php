@@ -58,8 +58,6 @@ class SupervendorController extends Controller
                 }
 
 
-                dd($campaign);
-
                 if( Auth::user()->company == NULL  ){
 
 

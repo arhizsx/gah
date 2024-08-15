@@ -45,17 +45,43 @@ class SupervendorController extends Controller
 
                 $campaign = array("SAMSUNG");
 
-
+                $what_campaign = "SAMSUNG";
                 if( in_array("SAMSUNG", $campaign) ){
 
                     $page_allowed_statuses = array("INSTALLED", "CANCELLED", "DROPPED");
 
+                    $access_data = $access->where("campaign", $what_campaign)->first();
+
                     if( Auth::user()->company == NULL  ){
 
-                        $registrations = $registrations
-                                            ->whereIn("campaign", $campaign)
-                                            ->whereIn("status", $page_allowed_statuses)
-                                            ->where("SGT Name", Auth::user()->name);
+                        if( $access_data ){
+
+                            if( $access_data->profile == "SGT" ){
+
+                                $registrations = $registrations
+                                    ->whereIn("campaign", $campaign)
+                                    ->whereIn("status", $page_allowed_statuses)
+                                    ->where("SGT Name", Auth::user()->name);
+
+                            }
+                            elseif( $access_data->profile == "NSGT" ){
+
+                                $registrations = $registrations
+                                    ->whereIn("campaign", $campaign)
+                                    ->whereIn("status", $page_allowed_statuses);
+
+                            }
+
+
+                        } else {
+
+                            $registrations = $registrations
+                                ->whereIn("campaign", $campaign)
+                                ->whereIn("status", $page_allowed_statuses)
+                                ->where( "vendor", Auth::user()->company );
+
+                        }
+
 
                     } else {
 
@@ -63,6 +89,7 @@ class SupervendorController extends Controller
                                             ->whereIn("campaign", $campaign)
                                             ->whereIn("status", $page_allowed_statuses)
                                             ->where( "vendor", Auth::user()->company );
+
                     }
                 }
 
@@ -75,17 +102,43 @@ class SupervendorController extends Controller
 
                 $campaign = array("SAMSUNG");
 
+                $what_campaign = "SAMSUNG";
                 if( in_array("SAMSUNG", $campaign) ){
 
                     $page_allowed_statuses = array("ENDORSED");
 
+                    $access_data = $access->where("campaign", $what_campaign)->first();
 
                     if( Auth::user()->company == NULL  ){
 
-                        $registrations = $registrations
-                                            ->whereIn("campaign", $campaign)
-                                            ->whereIn("status", $page_allowed_statuses)
-                                            ->where("SGT Name", Auth::user()->name);
+                        if( $access_data ){
+
+                            if( $access_data->profile == "SGT" ){
+
+                                $registrations = $registrations
+                                    ->whereIn("campaign", $campaign)
+                                    ->whereIn("status", $page_allowed_statuses)
+                                    ->where("SGT Name", Auth::user()->name);
+
+                            }
+                            elseif( $access_data->profile == "NSGT" ){
+
+                                $registrations = $registrations
+                                    ->whereIn("campaign", $campaign)
+                                    ->whereIn("status", $page_allowed_statuses);
+
+                            }
+
+
+                        } else {
+
+                            $registrations = $registrations
+                                ->whereIn("campaign", $campaign)
+                                ->whereIn("status", $page_allowed_statuses)
+                                ->where( "vendor", Auth::user()->company );
+
+                        }
+
 
                     } else {
 

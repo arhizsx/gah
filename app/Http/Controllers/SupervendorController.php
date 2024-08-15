@@ -252,7 +252,7 @@ class SupervendorController extends Controller
                 $registration_data = $registration->first();
                 if( $registration_data ){
                     $registration_data = json_decode($registration_data->data,true);
-
+                    $registration_data["remarks"] = $request->remarks;
                     dd($registration_data);
 
                 }

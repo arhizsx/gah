@@ -250,9 +250,12 @@ class SupervendorController extends Controller
                 $registration = CampaignRegistration::find($request->id);
 
                 $registration_data = $registration->first();
-                $registration_data = json_decode($registration_data,true);
+                if( $registration_data ){
+                    $registration_data = json_decode($registration_data->data,true);
 
-                dd($registration_data);
+                    dd($registration_data);
+
+                }
 
                 $registration->update([
                     "status" => 'ENDORSED'

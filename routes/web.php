@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SamsungController;
 use App\Http\Controllers\SupervendorController;
 
+use App\Http\Controllers\CampaignController;
 use App\Models\CampaignRegistration;
 
 // SUPERVENDOR
@@ -30,9 +31,10 @@ Route::post('/supervendor/ajax-public',  [SupervendorController::class, 'ajax_pu
 
 // SAMSUNG CAMPAIGN
 Route::post('/samsung/register', [SamsungController::class, 'register']);
-Route::get('/samsung', [SamsungController::class, 'index']);
+Route::get('/samsung', [CampaignController::class, 'samsung']);
 
 
+Route::get('/xiaomi', [CampaignController::class, 'xiaomi']);
 
 
 // NUMBER VERIFIER

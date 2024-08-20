@@ -27,7 +27,7 @@
                 @csrf
 
                 <input type="hidden"  name="action" id="action" value='register'>
-                <input type="hidden"  name="campaign" id="campaign" value='SAMSUNG'>
+                <input type="hidden"  name="campaign" id="campaign" value='XIAOMI'>
 
                 <img src="/images/xiaomi.jpg" width="100%" />
                 <div class="border rounded-3 p-3 mt-4">

@@ -29,7 +29,7 @@
                 <input type="hidden"  name="action" id="action" value='register'>
                 <input type="hidden"  name="campaign" id="campaign" value='SAMSUNG'>
 
-                <img src="/images/finish.png" width="100%" />
+                <img src="/images/xiaomi.jpg" width="100%" />
                 <div class="border rounded-3 p-3 mt-4">
                     <H3>Xiaomi with GFiber Prepaid Bundle Promo</H3>
                     <p>Kindly fill out this form for your Free GFiber Prepaid</p>
@@ -148,7 +148,7 @@
             </form>
         </div>
         <div id="registration_successful" class="d-none" style="max-width: 640px; min-width: 400px; margin: auto;">
-            <img src="/images/finish.png" width="100%" />
+            <img src="/images/xiaomi.jpg" width="100%" />
 
 
             <div class="border rounded-3 p-5 mt-4">

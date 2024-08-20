@@ -229,8 +229,9 @@ class SupervendorController extends Controller
 
             case "application_installed":
 
-                $registration = CampaignRegistration::find($request->id);
+                $registration = CampaignRegistration::where($request->id);
                 $registration->update([
+
                     "status" => 'INSTALLED'
                 ]);
 
@@ -238,7 +239,7 @@ class SupervendorController extends Controller
 
             case "application_cancelled":
 
-                $registration = CampaignRegistration::find($request->id);
+                $registration = CampaignRegistration::where($request->id);
                 $registration->update([
                     "status" => 'CANCELLED'
                 ]);
@@ -247,8 +248,7 @@ class SupervendorController extends Controller
 
             case "application_endorsed":
 
-                $registration = CampaignRegistration::find($request->id);
-
+                $registration = CampaignRegistration::where($request->id);
                 $registration_data = $registration->first();
 
                 if( $registration_data ){
@@ -274,9 +274,9 @@ class SupervendorController extends Controller
 
             case "application_pending":
 
-                $registration = CampaignRegistration::find($request->id);
+                $registration = CampaignRegistration::where($request->id);
 
-                $registration_data = $registration->first();
+                $registration_data = CampaignRegistration::where($request->id)->first();
 
                 if( $registration_data ){
 
@@ -300,7 +300,7 @@ class SupervendorController extends Controller
 
             case "application_dropped":
 
-                $registration = CampaignRegistration::find($request->id);
+                $registration = CampaignRegistration::where($request->id);
                 $registration_data = $registration->first();
 
                 if( $registration_data ){

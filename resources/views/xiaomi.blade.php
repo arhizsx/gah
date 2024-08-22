@@ -32,7 +32,7 @@
                 <img src="/images/xiaomi.jpg" width="100%" />
                 <div class="border rounded-3 p-3 mt-4">
                     <H1>Free P500 XIAOMI voucher with new GFiber Prepaid application</H1>
-                    <p>Kindly fill out this form to avail of your free P500 XIAOMI voucher with your new GFiber Prepaid application. Make sure to input below the promo code <span  style="color: red; font-size: 1.2em;">HPWG5955</span>. Your P500 XIAOMI voucher will be sent to your number within 3 working days from the installation.</p>
+                    <p>Kindly fill out this form to avail of your free P500 XIAOMI voucher when you apply for GFiber Prepaid.. Make sure to input below the promo code <span  style="color: red; font-size: 1.2em;">HPWG5955</span>. Your P500 XIAOMI voucher will be sent to your number within 3 working days from the installation.</p>
                 </div>
 
                 <div class="accordion  mt-4" id="information">

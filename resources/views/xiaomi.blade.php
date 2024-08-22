@@ -2,7 +2,7 @@
 <html lang="en" >
     <head>
         <meta charset="UTF-8">
-        <title>Xiaomi with GFiber Prepaid Bundle Promo</title>
+        <title>Free P500 XIAOMI voucher with new GFiber Prepaid</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -31,8 +31,8 @@
 
                 <img src="/images/xiaomi.jpg" width="100%" />
                 <div class="border rounded-3 p-3 mt-4">
-                    <H3>Xiaomi with GFiber Prepaid Bundle Promo</H3>
-                    <p>Kindly fill out this form for your Free GFiber Prepaid</p>
+                    <H1>Free P500 XIAOMI voucher with new GFiber Prepaid application</H1>
+                    <p>Kindly fill out this form to avail of your free P500 XIAOMI voucher with your new GFiber Prepaid application. Make sure to input below the promo code <span  style="color: red; font-size: 1.2em;">HPWG5955</span>. Your P500 XIAOMI voucher will be sent to your number within 3 working days from the installation.</p>
                 </div>
 
                 <div class="accordion  mt-4" id="information">
@@ -95,6 +95,10 @@
                                     <input type="text" class="form-control mb-3 checker" data-checker="required" name="zipcode" id="zipcode">
                                 </div>
                                 <div class="form-row">
+                                    <label for="promo_code">Promo Code</label>
+                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="promo_code" id="promo_code">
+                                </div>
+                                <div class="form-row">
                                     <label for="schedule">Installation Schedule</label>
                                     <div id="scchedule" class="d-flex">
                                     <input type="date" class="form-control mb-3 checker flex-fill me-1" data-checker="required" name="schedule_date" id="schedule_date">
@@ -126,7 +130,7 @@
                         <p>This Xiaomi offer is subject to the fiber serviceability of your nominated address. The value of this bundle cannot be converted to cash in case of unsuccessful installation. <a href="https://www.globe.com.ph/website-terms-conditions?_gl=1*11wvnk5*_gcl_aw*R0NMLjE3MTEyNzIzOTEuQ2p3S0NBandudi12QmhCZEVpd0FCQ1lRQS1BUFZtcmp6OWw5TXI4a2xWS0J2cDg4MFlBbDN3cDIzNWlwamtwNWZBdHQ4SXByV2daWGdob0NVakFRQXZEX0J3RQ..*_gcl_au*MTk1NTAzMjE4NS4xNzE4OTI5MDEw*_ga*NzMwMDM2NDYzLjE2NTc1MTk0MjM.*_ga_TD2ZL4WC9D*MTcxODkzOTQ5MC43LjAuMTcxODkzOTQ5My41Ny4wLjA.&_ga=2.129421836.1270274114.1718929010-730036463.1657519423">Terms and conditions</a> apply.</p>
 
                         <H5 style="font-size: 14px">Privacy Notice</H5>
-                        <p>By completing and submitting this form, I allow GLOBE to collect and process the personal data I will provide for GFiber Prepaid and Samsung partnership, until October 2024, in accordance with the <a target="_blank" href="https://www.globe.com.ph/privacy-policy.html">Privacy Policy of Globe</a>.</p>
+                        <p>By completing and submitting this form, I allow GLOBE to collect and process the personal data I will provide for GFiber Prepaid, in accordance with the <a target="_blank" href="https://www.globe.com.ph/privacy-policy.html">Privacy Policy of Globe</a>.</p>
                         <div class="form-row">
                             <div class="form-check">
                                 <input class="form-check-input checker me-3" data-checker="required" type="checkbox" value="" id="agree_policy">

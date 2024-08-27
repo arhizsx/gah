@@ -10,6 +10,8 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
         <style>
             body {
@@ -78,7 +80,7 @@
                                 </div>
                                 <div class="form-row">
                                     <label for="province">Province</label>
-                                    <select class="form-control mb-3 checker location_filters" data-filter='province' data-parent='#collapseTwo' data-checker="required" name="province" id="province">
+                                    <select class="form-control mb-3 checker location_filters select2"  data-filter='province' data-parent='#collapseTwo' data-checker="required" name="province" id="province">
                                         <option value="" selected>Select Province</option>
                                         @foreach($provinces as $option)
                                         <option value="{{ $option->PROVINCE }}">{{ $option->PROVINCE }}</option>
@@ -87,7 +89,7 @@
                                 </div>
                                 <div class="form-row">
                                     <label for="city">City</label>
-                                    <select class="form-control mb-3 checker location_filters" data-filter='city' data-parent='#collapseTwo' data-checker="required" name="city" id="city">
+                                    <select class="form-control mb-3 checker location_filters select2" data-filter='city' data-parent='#collapseTwo' data-checker="required" name="city" id="city">
                                         <option value="" selected>Select City</option>
                                     </select>
                                 </div>
@@ -99,7 +101,7 @@
                                     <label for="schedule">Installation Schedule</label>
                                     <div id="scchedule" class="d-flex">
                                     <input type="date" class="form-control mb-3 checker flex-fill me-1" data-checker="required" name="schedule_date" id="schedule_date">
-                                    <select class="form-control mb-3 checker flex-fill  ms-1" data-checker="required" name="schedule_hour" id="schedule_hour">
+                                    <select class="form-control mb-3 checker flex-fill ms-1 select2" data-checker="required" name="schedule_hour" id="schedule_hour">
                                         <option value="" selected>Select Time</option>
                                         <option value="08:00 AM">08:00 AM</option>
                                         <option value="09:00 AM">09:00 AM</option>

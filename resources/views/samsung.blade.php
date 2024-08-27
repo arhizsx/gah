@@ -23,13 +23,10 @@
             .select2-container {
                 width: 100% !important;
             }
-            .select2-selection__rendered{
+            .select2-selection__rendered, .select2-selection__arrow, .select2-selection--single{
                 height: 40px !important;
             }
 
-            .select2-selection--single{
-                height: 40px !important;
-            }
         </style>
     </head>
 

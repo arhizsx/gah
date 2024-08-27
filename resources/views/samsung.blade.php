@@ -21,7 +21,7 @@
                 transform: scale(1.5);
             }
             .select2-container {
-                width: 100%;
+                width: 100% !important;
             }
         </style>
     </head>

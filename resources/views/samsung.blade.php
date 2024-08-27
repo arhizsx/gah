@@ -27,7 +27,7 @@
                 height: 40px !important;
             }
             .select2-selection__rendered {
-                line-height: 40px;
+                line-height: 40px !important;
             }
 
         </style>

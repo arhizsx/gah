@@ -987,7 +987,7 @@
                 </div>
             </form>
         </div>
-        <div id="loading" class="d-none text-center" style="max-width: 640px; min-width: 400px; margin: auto; padding-top: 300px;">
+        <div id="loading" class="d-none text-center" style="max-width: 640px; min-width: 400px; margin: auto; padding-top: 150px;">
             <H1>Submitting Data...</H1>
         </div>
         <div id="registration_successful" class="d-none" style="max-width: 640px; min-width: 400px; margin: auto;">

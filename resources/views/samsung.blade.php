@@ -149,7 +149,7 @@
                                 </div>
                                 <div class="form-row">
                                     <label for="store">Store</label>
-                                    <select class="form-control checker" data-checker="required" name="store" id="store">
+                                    <select class="form-control checker select2" data-checker="required" name="store" id="store">
                                         <option value="" selected>Store item was purchased</option>
                                         <option value='ABENSON_ABENSON_ABREEZA_2F_DAVAO_0515'>ABENSON_ABENSON_ABREEZA_2F_DAVAO_0515</option>
                                         <option value='ABENSON_ABENSON_AGUINALDO HWY__DASMARINAS_0515'>ABENSON_ABENSON_AGUINALDO HWY__DASMARINAS_0515</option>

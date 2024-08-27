@@ -22,7 +22,7 @@
             }
             .select2-container {
                 width: 100% !important;
-                margin-bottom: 10px;
+                margin-bottom: 15px;
             }
             .select2-selection__rendered, .select2-selection__arrow, .select2-selection--single{
                 height: 40px !important;

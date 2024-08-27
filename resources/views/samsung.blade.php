@@ -79,8 +79,8 @@
                                     <input type="text" class="form-control mb-3 checker" data-checker="required" name="brgy_village" id="brgy_village">
                                 </div>
                                 <div class="form-row">
-                                    <label for="province">Province</label>
-                                    <select class="form-control mb-3 checker location_filters select2"  data-filter='province' data-parent='#collapseTwo' data-checker="required" name="province" id="province">
+                                    <label for="province">Province</label><br>
+                                    <select class="form-control mb-3 checker location_filters select2"  data-filter='province' data-parent='#collapseTwo' data-checker="required" name="province" id="province" style="width=100%;">
                                         <option value="" selected>Select Province</option>
                                         @foreach($provinces as $option)
                                         <option value="{{ $option->PROVINCE }}">{{ $option->PROVINCE }}</option>
@@ -88,8 +88,8 @@
                                     </select>
                                 </div>
                                 <div class="form-row">
-                                    <label for="city">City</label>
-                                    <select class="form-control mb-3 checker location_filters select2" data-filter='city' data-parent='#collapseTwo' data-checker="required" name="city" id="city">
+                                    <label for="city">City</label><br>
+                                    <select class="form-control mb-3 checker location_filters select2" data-filter='city' data-parent='#collapseTwo' data-checker="required" name="city" id="city" style="width=100%;">
                                         <option value="" selected>Select City</option>
                                     </select>
                                 </div>

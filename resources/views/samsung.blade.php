@@ -20,6 +20,9 @@
             input[type=checkbox] {
                 transform: scale(1.5);
             }
+            .select2-container {
+                width: 100%;
+            }
         </style>
     </head>
 

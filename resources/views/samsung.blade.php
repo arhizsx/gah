@@ -1023,6 +1023,8 @@
 
         e.preventDefault();
 
+        $(this).prop("disabled");
+
         if( Checker() ) {
 
             let form = new FormData( $("#samsung_form")[0] );

@@ -26,6 +26,9 @@
             .select2-selection__rendered, .select2-selection__arrow, .select2-selection--single{
                 height: 40px !important;
             }
+            .select2-selection__rendered {
+                line-height: 40px;
+            }
 
         </style>
     </head>

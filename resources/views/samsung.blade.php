@@ -1028,6 +1028,7 @@
         if( Checker() ) {
 
             let form = new FormData( $("#samsung_form")[0] );
+            console.log("Submitting");
 
             var submission = SubmitData( form );
 

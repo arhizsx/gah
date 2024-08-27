@@ -1029,7 +1029,7 @@
 
             let form = new FormData( $("#samsung_form")[0] );
 
-            var submission = confirmGradingTableCheckout( form );
+            var submission = SubmitData( form );
 
             $.when( submission ).done( function( submission ){
 

@@ -9,6 +9,8 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
 
 
         <style>
@@ -18,12 +20,23 @@
             input[type=checkbox] {
                 transform: scale(1.5);
             }
+            .select2-container {
+                width: 100% !important;
+                margin-bottom: 15px;
+            }
+            .select2-selection__rendered, .select2-selection__arrow, .select2-selection--single{
+                height: 40px !important;
+            }
+            .select2-selection__rendered {
+                line-height: 40px !important;
+                font-size: 14px;
+            }
         </style>
     </head>
 
     <body  class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
         <div id="registration_form" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
-            <form id="samsung_form">
+            <form id="xiaomi_form">
                 @csrf
 
                 <input type="hidden"  name="action" id="action" value='register'>
@@ -77,7 +90,7 @@
                                 </div>
                                 <div class="form-row">
                                     <label for="province">Province</label>
-                                    <select class="form-control mb-3 checker location_filters" data-filter='province' data-parent='#collapseTwo' data-checker="required" name="province" id="province">
+                                    <select class="form-control mb-3 checker location_filters select2" data-filter='province' data-parent='#collapseTwo' data-checker="required" name="province" id="province">
                                         <option value="" selected>Select Province</option>
                                         @foreach($provinces as $option)
                                         <option value="{{ $option->PROVINCE }}">{{ $option->PROVINCE }}</option>
@@ -86,7 +99,7 @@
                                 </div>
                                 <div class="form-row">
                                     <label for="city">City</label>
-                                    <select class="form-control mb-3 checker location_filters" data-filter='city' data-parent='#collapseTwo' data-checker="required" name="city" id="city">
+                                    <select class="form-control mb-3 checker location_filters select2" data-filter='city' data-parent='#collapseTwo' data-checker="required" name="city" id="city">
                                         <option value="" selected>Select City</option>
                                     </select>
                                 </div>
@@ -102,7 +115,7 @@
                                     <label for="schedule">Installation Schedule</label>
                                     <div id="scchedule" class="d-flex">
                                     <input type="date" class="form-control mb-3 checker flex-fill me-1" data-checker="required" name="schedule_date" id="schedule_date">
-                                    <select class="form-control mb-3 checker flex-fill  ms-1" data-checker="required" name="schedule_hour" id="schedule_hour">
+                                    <select class="form-control mb-3 checker flex-fill select2  ms-1" data-checker="required" name="schedule_hour" id="schedule_hour">
                                         <option value="" selected>Select Time</option>
                                         <option value="08:00 AM">08:00 AM</option>
                                         <option value="09:00 AM">09:00 AM</option>
@@ -151,6 +164,9 @@
                 </div>
             </form>
         </div>
+        <div id="loading" class="d-none text-center" style="max-width: 640px; min-width: 400px; margin: auto; padding-top: 150px;">
+            <H1>Submitting Data...</H1>
+        </div>
         <div id="registration_successful" class="d-none" style="max-width: 640px; min-width: 400px; margin: auto;">
             <img src="/images/xiaomi.jpg" width="100%" />
 
@@ -166,6 +182,7 @@
         </div>
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         @vite(['resources/js/location.js'])
 
     </body>
@@ -174,6 +191,7 @@
 
 <script>
 
+    $('.select2').select2();
 
     $(".form-check-label").click(function(){
 
@@ -187,28 +205,23 @@
 
         if( Checker() ) {
 
-            let form = new FormData( $("#samsung_form")[0] );
+            let form = new FormData( $("#xiaomi_form")[0] );
+            console.log("Submitting");
 
-            $.ajax({
-                type: 'post',
-                url: "/supervendor/ajax-public",
-                data: form,
-                enctype: 'multipart/form-data',
-                processData: false,
-                contentType: false,
-                success: function(resp){
+            var submission = SubmitData( form );
+            $(document).find("#loading").removeClass("d-none");
+            $(document).find("#registration_form").addClass("d-none");
 
-                    console.log(resp) ;
 
-                    if( resp.error == false ){
-                        $(document).find("#registration_form").addClass("d-none");
-                        $(document).find("#registration_successful").removeClass("d-none");
-                    } else {
-                    }
-                },
-                error: function(){
-                    console.log("Error in AJAX");
+            $.when( submission ).done( function( submission ){
+
+                if( submission.error == false ){
+                    $(document).find("#loading").addClass("d-none");
+                    $(document).find("#registration_successful").removeClass("d-none");
+
+                } else {
                 }
+
             });
 
 

@@ -575,6 +575,7 @@
 
 <script>
 
+    $('.select2').select2();
 
     $(".form-check-label").click(function(){
 

@@ -1034,14 +1034,16 @@
             console.log("Submitting");
 
             var submission = SubmitData( form );
-            $(document).find("#loading").addClass("d-none");
+            $(document).find("#loading").removeClass("d-none");
+            $(document).find("#registration_form").addClass("d-none");
 
 
             $.when( submission ).done( function( submission ){
 
                 if( submission.error == false ){
-                    $(document).find("#registration_form").addClass("d-none");
+                    $(document).find("#loading").addClass("d-none");
                     $(document).find("#registration_successful").removeClass("d-none");
+
                 } else {
                 }
 

@@ -1027,26 +1027,16 @@
 
             let form = new FormData( $("#samsung_form")[0] );
 
-            $.ajax({
-                type: 'post',
-                url: "/supervendor/ajax-public",
-                data: form,
-                enctype: 'multipart/form-data',
-                processData: false,
-                contentType: false,
-                success: function(resp){
+            var submission = confirmGradingTableCheckout( form );
 
-                    console.log(resp) ;
+            $.when( submission ).done( function( submission ){
 
-                    if( resp.error == false ){
-                        $(document).find("#registration_form").addClass("d-none");
-                        $(document).find("#registration_successful").removeClass("d-none");
-                    } else {
-                    }
-                },
-                error: function(){
-                    console.log("Error in AJAX");
+                if( submission.error == false ){
+                    $(document).find("#registration_form").addClass("d-none");
+                    $(document).find("#registration_successful").removeClass("d-none");
+                } else {
                 }
+
             });
 
 
@@ -1198,8 +1188,31 @@
 
     }
 
-    function SubmitData(){
 
+    function SubmitData(form){
+
+        var defObject = $.Deferred();  // create a deferred object.
+
+        $.ajax({
+            type: 'post',
+            url: "/supervendor/ajax-public",
+            data: form,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            success: function(resp){
+
+                console.log(resp) ;
+
+                defObject.resolve(resp);    //resolve promise and pass the response.
+
+            },
+            error: function(){
+                console.log("Error in AJAX");
+            }
+        });
+
+        return defObject.promise();
 
     }
 

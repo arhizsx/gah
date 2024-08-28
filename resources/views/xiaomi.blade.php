@@ -214,16 +214,15 @@
 
             $.when( submission ).done( function( submission ){
 
+                console.log(submission );
+
                 if( submission.error == false ){
                     $(document).find("#loading").addClass("d-none");
                     $(document).find("#registration_successful").removeClass("d-none");
 
                 } else {
                 }
-
             });
-
-
         }
 
     });

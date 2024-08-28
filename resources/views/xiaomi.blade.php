@@ -371,8 +371,30 @@
 
     }
 
-    function SubmitData(){
+    function SubmitData(form){
 
+        var defObject = $.Deferred();  // create a deferred object.
+
+        $.ajax({
+            type: 'post',
+            url: "/supervendor/ajax-public",
+            data: form,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            success: function(resp){
+
+                console.log(resp) ;
+
+                defObject.resolve(resp);    //resolve promise and pass the response.
+
+            },
+            error: function(){
+                console.log("Error in AJAX");
+            }
+        });
+
+        return defObject.promise();
 
     }
 

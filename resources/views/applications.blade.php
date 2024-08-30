@@ -143,7 +143,7 @@
 let modal = "#application_details";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/applications';
-let columns = ['campaign', 'complete_name', 'mobile_number', 'province', 'city', 'vendor', 'SGT Name', 'status', 'add_timestamp', 'update_timestamp'];
+let columns = ['campaign', 'complete_name', 'mobile_number', 'province', 'city', 'vendor', 'SGT Name', 'status', 'Registration Date', 'Last Update'];
 let callback = 'callbackAction';
 
 

@@ -128,6 +128,7 @@
 
                 @else
 
+
                 <button type="button" class="btn btn-danger btn-action" data-user_mode="vendor" data-action="application_cancelled" data-id="">Cancelled</button>
                 <button type="button" class="btn btn-primary btn-action" data-user_mode="vendor" data-action="application_installed" data-id="">Installed</button>
 
@@ -182,7 +183,9 @@ function callbackAction(data){
 
     applicationSetImage(data);
 
-    console.log(data);
+    if( data.campaign == "XIAOMI" ){
+
+    }
 
     var show_vendor = ["ENDORSED"];
     var vendor_btns = $(document).find(modal).find(".btn-action[data-user_mode='vendor']");

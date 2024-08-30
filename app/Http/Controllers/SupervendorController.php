@@ -115,7 +115,7 @@ class SupervendorController extends Controller
                                         ->whereIn("status", array("REGISTERED") )
                                         ->get();
 
-                    return dd($xiaomi);
+                    return dd($samsung);
 
 
                     return json_encode($samsung);

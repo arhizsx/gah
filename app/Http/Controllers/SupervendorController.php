@@ -118,9 +118,6 @@ class SupervendorController extends Controller
 
                     $samsung->push(...$xiaomi);
 
-                    return dd( $samsung );
-
-
                     return json_encode($samsung);
 
 

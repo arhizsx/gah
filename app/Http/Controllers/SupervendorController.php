@@ -204,9 +204,6 @@ class SupervendorController extends Controller
                 }
 
 
-                return dd( $registrations );
-
-
                 $data = $registrations->get();
 
                 break;

@@ -110,6 +110,10 @@ class SupervendorController extends Controller
 
                 if( Auth::user()->company == NULL  ){
 
+                    // ////////////////////////
+                    // GT DATA :: APPLICATIONS
+                    // ////////////////////////
+
                     foreach(  $campaigns as $campaign ){
 
                         if( $campaign == "SAMSUNG" ){
@@ -149,7 +153,7 @@ class SupervendorController extends Controller
 
                             if( $data != null ){
 
-                                $campaign_data[$campaign] = $data;
+                                $return_data->push(  ...$data );
 
                             }
 
@@ -200,19 +204,57 @@ class SupervendorController extends Controller
 
                     }
 
-                    return $return_data;
-
 
                 } else {
 
-                    $registrations = DB::table("view_registrations_applications")
-                                    ->where( "vendor", Auth::user()->company );
+                    // VENDOR DATA :: APPLICATIONS
+
+                    foreach(  $campaigns as $campaign ){
+
+                        if( $campaign == "SAMSUNG" ){
+
+                            $data = null;
+
+                            $data = DB::table("view_registrations")
+                                    ->where("campaign", $campaign)
+                                    ->whereIn("status", array(""))
+                                    ->where( "vendor", Auth::user()->company )
+                                    ->get();
+
+                            if( $data != null ){
+
+                                $campaign_data[$campaign] = $data;
+
+                            }
+
+
+                        }
+
+
+                        elseif( $campaign == "XIAOMI" ){
+
+                            $data = null;
+
+                            $data = DB::table("view_registrations")
+                                    ->where("campaign", $campaign)
+                                    ->whereIn("status", array("REGISTERED"))
+                                    ->where( "vendor", Auth::user()->company )
+                                    ->get();
+
+                            if( $data != null ){
+
+                                $campaign_data[$campaign] = $data;
+
+                            }
+
+                        }
+
+                    }
+
 
                 }
 
-
-
-                $data = $registrations->get();
+                return $return_data;
 
                 break;
 

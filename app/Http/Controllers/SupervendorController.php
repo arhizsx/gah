@@ -93,6 +93,7 @@ class SupervendorController extends Controller
                     }
                 }
 
+
                 $data = $registrations->get();
 
                 break;
@@ -100,10 +101,11 @@ class SupervendorController extends Controller
 
             case "applications":
 
-                $campaign = array("SAMSUNG");
+                $campaign = array("SAMSUNG", "XIAOMI");
 
                 $what_campaign = "SAMSUNG";
-                if( in_array("SAMSUNG", $campaign) ){
+                $samsung = null;
+                if( in_array($what_campaign, $campaign) ){
 
                     $page_allowed_statuses = array("");
 
@@ -115,16 +117,16 @@ class SupervendorController extends Controller
 
                             if( $access_data->profile == "SGT" ){
 
-                                $registrations = $registrations
-                                    ->whereIn("campaign", $campaign)
+                                $samsung = $registrations
+                                    ->where("campaign", $campaign)
                                     ->whereIn("status", $page_allowed_statuses)
                                     ->where("SGT Name", Auth::user()->name);
 
                             }
                             elseif( $access_data->profile == "NSGT" ){
 
-                                $registrations = $registrations
-                                    ->whereIn("campaign", $campaign)
+                                $samsung = $registrations
+                                    ->where("campaign", $campaign)
                                     ->whereIn("status", $page_allowed_statuses);
 
                             }
@@ -132,8 +134,8 @@ class SupervendorController extends Controller
 
                         } else {
 
-                            $registrations = $registrations
-                                ->whereIn("campaign", $campaign)
+                            $samsung = $registrations
+                                ->where("campaign", $campaign)
                                 ->whereIn("status", $page_allowed_statuses)
                                 ->where( "vendor", Auth::user()->company );
 
@@ -142,7 +144,7 @@ class SupervendorController extends Controller
 
                     } else {
 
-                        $registrations = $registrations
+                        $samsung = $registrations
                                             ->whereIn("campaign", $campaign)
                                             ->whereIn("status", $page_allowed_statuses)
                                             ->where( "vendor", Auth::user()->company );
@@ -152,7 +154,60 @@ class SupervendorController extends Controller
 
                 }
 
-                $data = $registrations->get();
+                $what_campaign = "XIAOMI";
+                $xiaomi = null;
+                if( in_array($what_campaign, $campaign) ){
+
+                    $page_allowed_statuses = array("REGISTERED");
+
+                    $access_data = $access->where("campaign", $what_campaign)->first();
+
+                    if( Auth::user()->company == NULL  ){
+
+                        if( $access_data ){
+
+                            if( $access_data->profile == "SGT" ){
+
+                                $xiaomi = $registrations
+                                    ->where("campaign", $campaign)
+                                    ->whereIn("status", $page_allowed_statuses)
+                                    ->where("SGT Name", Auth::user()->name);
+
+                            }
+                            elseif( $access_data->profile == "NSGT" ){
+
+                                $xiaomi = $registrations
+                                    ->where("campaign", $campaign)
+                                    ->whereIn("status", $page_allowed_statuses);
+
+                            }
+
+
+                        } else {
+
+                            $xiaomi = $registrations
+                                ->where("campaign", $campaign)
+                                ->whereIn("status", $page_allowed_statuses)
+                                ->where( "vendor", Auth::user()->company );
+
+                        }
+
+
+                    } else {
+
+                        $xiaomi = $registrations
+                                    ->whereIn("campaign", $campaign)
+                                    ->whereIn("status", $page_allowed_statuses)
+                                    ->where( "vendor", Auth::user()->company );
+
+                    }
+
+
+                }
+
+
+                $data = $samsung
+                            ->union($xiaomi)->get();
 
                 break;
 

@@ -199,6 +199,8 @@ class SupervendorController extends Controller
 
                     }
 
+                    return $campaign_data;
+
                     $samsung = DB::table("view_registrations")
                                         ->whereNotNull("SGT Name")
                                         ->where("campaign", "SAMSUNG")

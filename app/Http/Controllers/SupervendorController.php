@@ -103,11 +103,15 @@ class SupervendorController extends Controller
 
                 if( Auth::user()->company == NULL  ){
 
-                    $registrations = DB::table("view_registrations")
+                    $samsung = DB::table("view_registrations")
                                         ->whereNotNull("SGT Name")
+                                        ->where("campaign", "SAMSUNG")
+                                        ->whereIn("status", "")
                                         ->get();
 
-                    return json_encode($registrations);
+
+
+                    return json_encode($samsung);
 
 
                 } else {

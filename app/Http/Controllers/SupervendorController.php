@@ -124,7 +124,7 @@ class SupervendorController extends Controller
                         elseif( $access_data->profile == "NSGT" ){
 
                             $registrations = $registrations
-                                ->where("campaign", $campaign)
+                                ->whereIn("campaign", $campaign)
                                 ->whereIn("status", $page_allowed_statuses);
 
                         }

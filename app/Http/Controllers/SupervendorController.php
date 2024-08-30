@@ -135,10 +135,22 @@ class SupervendorController extends Controller
 
                 } else {
 
+                    $page_allowed_statuses = array("");
+
+                    $samsung = $registrations
+                                ->whereIn("campaign", "SAMSUNG")
+                                ->whereIn("status", $page_allowed_statuses)
+                                ->where( "vendor", Auth::user()->company );
+
+                    $page_allowed_statuses = array("REGISTERED");
+
                     $registrations = $registrations
-                                        ->whereIn("campaign", $campaign)
-                                        ->whereIn("status", $page_allowed_statuses)
-                                        ->where( "vendor", Auth::user()->company );
+                                ->whereIn("campaign", "XIAOMI")
+                                ->whereIn("status", $page_allowed_statuses)
+                                ->where( "vendor", Auth::user()->company )
+                                ->union($samsung);
+
+
 
                 }
 

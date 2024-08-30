@@ -112,7 +112,6 @@ class SupervendorController extends Controller
                     $xiaomi = DB::table("view_registrations")
                                         ->whereNotNull("SGT Name")
                                         ->where("campaign", "XIOAMI")
-                                        ->whereIn("status", array("REGISTERED"))
                                         ->get();
 
                     return dd($xiaomi);

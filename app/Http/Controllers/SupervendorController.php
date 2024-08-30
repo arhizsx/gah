@@ -35,9 +35,14 @@ class SupervendorController extends Controller
     function data( $action ){
 
         $access = DB::table("users_access")
-            ->where( "user_id", Auth::user()->id );
+            ->where( "user_id", Auth::user()->id )
+            ->get();
+
 
         $registrations = DB::table("view_registrations");
+
+        $campaigns = [ "SAMSUNG", "XIAOMI" ];
+        $campaign_data = [];
 
         switch( $action ){
 
@@ -102,6 +107,97 @@ class SupervendorController extends Controller
             case "applications":
 
                 if( Auth::user()->company == NULL  ){
+
+                    foreach(  $campaigns as $campaign ){
+
+                        if( $campaign == "SAMSUNG" ){
+
+                            $data = null;
+
+                            if( $access ){
+
+                                foreach( $access as $u ){
+
+                                    if( $u->campaign == $campaign ){
+
+                                        if( $u->profile == "NSGT" ){
+
+                                            $data = DB::table("view_registrations")
+                                                ->whereNotNull("SGT Name")
+                                                ->where("campaign", $campaign)
+                                                ->whereIn("status", array("") )
+                                                ->get();
+
+                                        }
+                                        else if( $u->profile == "SGT" ){
+
+                                            $data = DB::table("view_registrations")
+                                                ->where("SGT Name", Auth::user()->name)
+                                                ->where("campaign", $campaign)
+                                                ->whereIn("status", array("") )
+                                                ->get();
+
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
+                            if( $data != null ){
+
+                                $campaign_data[$campaign] = $data;
+
+                            }
+
+                        }
+
+                        elseif( $campaign == "XIAOMI" ){
+
+                            $data = null;
+
+                            if( $access ){
+
+                                foreach( $access as $u ){
+
+                                    if( $u->campaign == $campaign ){
+
+                                        if( $u->profile == "NSGT" ){
+
+                                            $data = DB::table("view_registrations")
+                                                ->whereNotNull("SGT Name")
+                                                ->where("campaign", $campaign)
+                                                ->whereIn("status", array("REGISTERED") )
+                                                ->get();
+
+                                        }
+                                        else if( $u->profile == "SGT" ){
+
+                                            $data = DB::table("view_registrations")
+                                                ->where("SGT Name", Auth::user()->name)
+                                                ->where("campaign", $campaign)
+                                                ->whereIn("status", array("REGISTERED") )
+                                                ->get();
+
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
+                            if( $data != null ){
+
+                                $campaign_data[$campaign] = $data;
+
+                            }
+
+                        }
+
+
+                    }
 
                     $samsung = DB::table("view_registrations")
                                         ->whereNotNull("SGT Name")

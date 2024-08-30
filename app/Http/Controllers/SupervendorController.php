@@ -142,7 +142,7 @@ class SupervendorController extends Controller
 
                         }
 
-                        return dd( $registrations );
+                        return dd( $samsung );
 
                     } else {
 

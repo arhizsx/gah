@@ -154,6 +154,8 @@ class SupervendorController extends Controller
 
                 }
 
+                return $samsung;
+
                 $what_campaign = "XIAOMI";
                 $xiaomi = null;
                 if( in_array($what_campaign, $campaign) ){
@@ -206,8 +208,7 @@ class SupervendorController extends Controller
                 }
 
 
-                $data = $samsung
-                            ->union($xiaomi)->get();
+                $data = $samsung->union($xiaomi)->get();
 
                 break;
 

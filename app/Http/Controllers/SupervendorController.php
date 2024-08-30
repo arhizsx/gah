@@ -116,7 +116,9 @@ class SupervendorController extends Controller
                                         ->get();
 
 
-                    return dd( array_merge($samsung, $xiaomi ));
+                    $samsung->push(...$xiaomi);
+
+                    return dd( $samsung );
 
 
                     return json_encode($samsung);

@@ -115,7 +115,9 @@ class SupervendorController extends Controller
 
                         if( $access_data->profile == "SGT" ){
 
-                            $registrations = $registrations
+
+
+                            $registrations = DB::table("view_registrations_applications")
                                 ->whereIn("campaign", $campaign)
                                 ->whereIn("status", $page_allowed_statuses)
                                 ->where("SGT Name", Auth::user()->name);
@@ -123,7 +125,7 @@ class SupervendorController extends Controller
                         }
                         elseif( $access_data->profile == "NSGT" ){
 
-                            $registrations = $registrations
+                            $registrations = DB::table("view_registrations_applications")
                                 ->whereIn("campaign", $campaign)
                                 ->whereIn("status", $page_allowed_statuses);
 
@@ -135,11 +137,7 @@ class SupervendorController extends Controller
 
                 } else {
 
-                    $page_allowed_statuses = array("REGISTERED");
-
-                    $registrations = $registrations
-                                ->where("campaign", "XIAOMI")
-                                ->whereIn("status", $page_allowed_statuses)
+                    $registrations = DB::table("view_registrations_applications")
                                 ->where( "vendor", Auth::user()->company );
 
                 }

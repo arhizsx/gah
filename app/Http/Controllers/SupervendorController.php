@@ -104,8 +104,6 @@ class SupervendorController extends Controller
                 if( Auth::user()->company == NULL  ){
 
                     $xiaomi = DB::table("view_registrations")
-                                        ->whereNotNull("SGT Name")
-                                        ->where("campaign", "XIOAMI")
                                         ->get();
 
                     return dd($xiaomi);

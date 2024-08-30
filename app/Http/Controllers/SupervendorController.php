@@ -104,7 +104,7 @@ class SupervendorController extends Controller
                 $campaign = array("SAMSUNG", "XIAOMI");
 
                 $what_campaign = "SAMSUNG";
-                $samsung = null;
+                $samsung = [];
                 if( in_array($what_campaign, $campaign) ){
 
                     $page_allowed_statuses = array("");

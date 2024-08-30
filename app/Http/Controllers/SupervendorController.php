@@ -115,19 +115,13 @@ class SupervendorController extends Controller
 
                         if( $access_data->profile == "SGT" ){
 
-
-
                             $registrations = DB::table("view_registrations_applications")
-                                ->whereIn("campaign", $campaign)
-                                ->whereIn("status", $page_allowed_statuses)
                                 ->where("SGT Name", Auth::user()->name);
 
                         }
                         elseif( $access_data->profile == "NSGT" ){
 
-                            $registrations = DB::table("view_registrations_applications")
-                                ->whereIn("campaign", $campaign)
-                                ->whereIn("status", $page_allowed_statuses);
+                            $registrations = DB::table("view_registrations_applications");
 
                         }
 
@@ -138,7 +132,7 @@ class SupervendorController extends Controller
                 } else {
 
                     $registrations = DB::table("view_registrations_applications")
-                                ->where( "vendor", Auth::user()->company );
+                                    ->where( "vendor", Auth::user()->company );
 
                 }
 

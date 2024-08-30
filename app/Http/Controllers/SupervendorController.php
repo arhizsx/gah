@@ -142,6 +142,7 @@ class SupervendorController extends Controller
 
                         }
 
+                        return dd( $registrations );
 
                     } else {
 
@@ -202,7 +203,6 @@ class SupervendorController extends Controller
                                     ->whereIn("status", $page_allowed_statuses);
                                     // ->where( "vendor", Auth::user()->company );
 
-                                return dd( $registrations );
 
                     }
 

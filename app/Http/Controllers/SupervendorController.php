@@ -199,8 +199,8 @@ class SupervendorController extends Controller
 
                         $xiaomi = $registrations
                                     ->whereIn("campaign", $campaign)
-                                    ->whereIn("status", $page_allowed_statuses)
-                                    ->where( "vendor", Auth::user()->company );
+                                    ->whereIn("status", $page_allowed_statuses);
+                                    // ->where( "vendor", Auth::user()->company );
 
                                     return $xiaomi->get();
 

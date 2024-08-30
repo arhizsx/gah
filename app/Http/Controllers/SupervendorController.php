@@ -105,7 +105,7 @@ class SupervendorController extends Controller
 
                 $what_campaign = "SAMSUNG";
 
-                $page_allowed_statuses = array("");
+                $page_allowed_statuses = array("REGISTERED");
 
                 $access_data = $access->where("campaign", $what_campaign)->first();
 

@@ -121,7 +121,9 @@ class SupervendorController extends Controller
                         }
                         elseif( $access_data->profile == "NSGT" ){
 
-                            $registrations = DB::table("view_registrations_applications");
+                            $registrations = DB::table("view_registrations_applications")
+                                                ->whereNotNull("SGT Name", Auth::user()->name);
+
 
                         }
 

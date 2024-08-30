@@ -182,6 +182,8 @@ function callbackAction(data){
 
     applicationSetImage(data);
 
+    console.log(data);
+
     var show_vendor = ["ENDORSED"];
     var vendor_btns = $(document).find(modal).find(".btn-action[data-user_mode='vendor']");
 
@@ -204,6 +206,7 @@ function callbackAction(data){
 
 
 function applicationSetImage(data){
+
 
     $("#img_receipt").attr("src", "/files/" + data.receipt);
     $("#img_serviceability_check").attr("src",  "/files/" + data.serviceability_check);

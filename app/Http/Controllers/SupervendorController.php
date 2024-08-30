@@ -198,10 +198,11 @@ class SupervendorController extends Controller
                     } else {
 
                         $xiaomi = $registrations
+                                    ->whereIn("campaign", $campaign)
                                     ->whereIn("status", $page_allowed_statuses);
                                     // ->where( "vendor", Auth::user()->company );
 
-                                return dd(  $xiaomi->get() );
+                                return dd( $registrations );
 
                     }
 

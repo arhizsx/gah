@@ -43,7 +43,6 @@ class SupervendorController extends Controller
         $registrations = DB::table("view_registrations");
 
         $campaigns = [ "SAMSUNG", "XIAOMI" ];
-        $campaign_data = [];
         $return_data = new Collection();
 
         switch( $action ){
@@ -165,7 +164,7 @@ class SupervendorController extends Controller
 
                             if( $data != null ){
 
-                                $campaign_data[$campaign] = $data;
+                                $return_data->push(  ...$data );
 
                             }
 
@@ -185,7 +184,7 @@ class SupervendorController extends Controller
 
                             if( $data != null ){
 
-                                $campaign_data[$campaign] = $data;
+                                $return_data->push(  ...$data );
 
                             }
 
@@ -318,7 +317,7 @@ class SupervendorController extends Controller
 
                             if( $data != null ){
 
-                                $campaign_data[$campaign] = $data;
+                                $return_data->push(  ...$data );
 
                             }
 
@@ -338,7 +337,7 @@ class SupervendorController extends Controller
 
                             if( $data != null ){
 
-                                $campaign_data[$campaign] = $data;
+                                $return_data->push(  ...$data );
 
                             }
 
@@ -462,7 +461,7 @@ class SupervendorController extends Controller
 
                             if( $data != null ){
 
-                                $campaign_data[$campaign] = $data;
+                                $return_data->push(  ...$data );
 
                             }
 
@@ -478,7 +477,7 @@ class SupervendorController extends Controller
 
                             if( $data != null ){
 
-                                $campaign_data[$campaign] = $data;
+                                $return_data->push(  ...$data );
 
                             }
 

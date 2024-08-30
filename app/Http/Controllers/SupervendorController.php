@@ -101,35 +101,9 @@ class SupervendorController extends Controller
 
             case "applications":
 
-                $campaign = array("SAMSUNG", "XIAOMI");
-
-                $what_campaign = "SAMSUNG";
-
-                $page_allowed_statuses = array("REGISTERED");
-
-                $access_data = $access->where("campaign", $what_campaign)->first();
-
                 if( Auth::user()->company == NULL  ){
 
-                    if( $access_data ){
-
-                        if( $access_data->profile == "SGT" ){
-
-                            $registrations = DB::table("view_registrations_applications")
-                                ->where("SGT Name", Auth::user()->name);
-
-                        }
-                        elseif( $access_data->profile == "NSGT" ){
-
-                            $registrations = DB::table("view_registrations_applications")
-                                                ->whereNotNull("SGT Name");
-
-
-                        }
-
-
-                    }
-
+                    $registrations = DB::table("view_registrations_applications");
 
                 } else {
 

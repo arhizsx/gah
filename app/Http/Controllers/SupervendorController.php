@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\CampaignRegistration;
+use Illuminate\Support\Collection;
 
 class SupervendorController extends Controller
 {
@@ -196,10 +197,16 @@ class SupervendorController extends Controller
 
                         }
 
-
                     }
 
-                    return $campaign_data;
+                    $return_data = new Collection();
+
+                    foreach( $campaign_data as $c_data ){
+                        $return_data->push(  ...$c_data );
+                    }
+
+
+                    return $return_data;
 
                     $samsung = DB::table("view_registrations")
                                         ->whereNotNull("SGT Name")

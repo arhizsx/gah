@@ -126,7 +126,7 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations")
                                                 ->whereNotNull("SGT Name")
                                                 ->where("campaign", $campaign)
-                                                ->whereIn("status", array("ENDORSED") )
+                                                ->whereIn("status", array("") )
                                                 ->get();
 
                                         }
@@ -135,7 +135,7 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations")
                                                 ->where("SGT Name", Auth::user()->name)
                                                 ->where("campaign", $campaign)
-                                                ->whereIn("status", array("ENDORSED") )
+                                                ->whereIn("status", array("") )
                                                 ->get();
 
                                         }

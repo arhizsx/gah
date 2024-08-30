@@ -126,6 +126,10 @@
                 <button type="button" class="btn btn-warning btn-action" data-user_mode="gt" data-action="application_pending" data-id="">Pending</button>
                 <button type="button" class="btn btn-danger btn-action" data-user_mode="gt" data-action="application_dropped" data-id="">Drop</button>
 
+                <button type="button" class="btn btn-danger btn-action" data-user_mode="vendor" data-action="application_cancelled" data-id="">Cancelled</button>
+                <button type="button" class="btn btn-primary btn-action" data-user_mode="vendor" data-action="application_installed" data-id="">Installed</button>
+
+
                 @else
 
                 <button type="button" class="btn btn-danger btn-action" data-user_mode="vendor" data-action="application_cancelled" data-id="">Cancelled</button>

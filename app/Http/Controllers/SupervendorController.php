@@ -44,6 +44,7 @@ class SupervendorController extends Controller
 
         $campaigns = [ "SAMSUNG", "XIAOMI" ];
         $campaign_data = [];
+        $return_data = new Collection();
 
         switch( $action ){
 
@@ -191,7 +192,7 @@ class SupervendorController extends Controller
 
                             if( $data != null ){
 
-                                $campaign_data[$campaign] = $data;
+                                $return_data->push(  ...$data );
 
                             }
 
@@ -199,31 +200,7 @@ class SupervendorController extends Controller
 
                     }
 
-                    $return_data = new Collection();
-
-                    foreach( $campaign_data as $c_data ){
-                        $return_data->push(  ...$c_data );
-                    }
-
-
                     return $return_data;
-
-                    $samsung = DB::table("view_registrations")
-                                        ->whereNotNull("SGT Name")
-                                        ->where("campaign", "SAMSUNG")
-                                        ->whereIn("status", array("") )
-                                        ->get();
-
-                    $xiaomi = DB::table("view_registrations")
-                                        ->whereNotNull("SGT Name")
-                                        ->where("campaign", "XIAOMI")
-                                        ->whereIn("status", array("REGISTERED") )
-                                        ->get();
-
-
-                    $samsung->push(...$xiaomi);
-
-                    return json_encode($samsung);
 
 
                 } else {

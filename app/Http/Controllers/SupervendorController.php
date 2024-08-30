@@ -103,7 +103,8 @@ class SupervendorController extends Controller
 
                 if( Auth::user()->company == NULL  ){
 
-                    $registrations = DB::table("view_registrations_applications");
+                    $registrations = DB::table("view_registrations_applications")
+                                        ->whereNotNull("SGT Name");
 
                 } else {
 

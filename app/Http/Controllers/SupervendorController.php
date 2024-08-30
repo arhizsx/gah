@@ -139,6 +139,8 @@ class SupervendorController extends Controller
                                 ->whereIn("status", $page_allowed_statuses)
                                 ->where( "vendor", Auth::user()->company );
 
+                            return $samsung;
+
                         }
 
 
@@ -154,7 +156,6 @@ class SupervendorController extends Controller
 
                 }
 
-                return $samsung;
 
                 $what_campaign = "XIAOMI";
                 $xiaomi = null;

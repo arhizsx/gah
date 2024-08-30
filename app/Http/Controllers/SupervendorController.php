@@ -138,17 +138,16 @@ class SupervendorController extends Controller
                     $page_allowed_statuses = array("");
 
                     $samsung = $registrations
-                                ->whereIn("campaign", "SAMSUNG")
+                                ->where("campaign", "SAMSUNG")
                                 ->whereIn("status", $page_allowed_statuses)
                                 ->where( "vendor", Auth::user()->company );
 
                     $page_allowed_statuses = array("REGISTERED");
 
-                    $registrations = $registrations
-                                ->whereIn("campaign", "XIAOMI")
+                    $xiaomi = $registrations
+                                ->where("campaign", "XIAOMI")
                                 ->whereIn("status", $page_allowed_statuses)
-                                ->where( "vendor", Auth::user()->company )
-                                ->union($samsung);
+                                ->where( "vendor", Auth::user()->company );
 
 
 
@@ -156,7 +155,7 @@ class SupervendorController extends Controller
 
 
 
-                $data = $registrations->get();
+                $data = $samsung->union($xiaomi)->get();
 
                 break;
 

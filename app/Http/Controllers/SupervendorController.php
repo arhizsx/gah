@@ -202,7 +202,7 @@ class SupervendorController extends Controller
                                     ->whereIn("status", $page_allowed_statuses)
                                     ->where( "vendor", Auth::user()->company );
 
-                                    return $xiaomi;
+                                    return $xiaomi->get();
 
                     }
 

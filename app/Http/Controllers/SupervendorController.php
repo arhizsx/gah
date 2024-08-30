@@ -163,7 +163,7 @@ class SupervendorController extends Controller
                 $what_campaign = "SAMSUNG";
                 if( in_array($what_campaign, $campaign) ){
 
-                    $page_allowed_statuses = array("REGISTERED", "PENDING");
+                    $page_allowed_statuses = array("REGISTERED", "PENDING", "ENDORSED");
 
                     $access_data = $access->where("campaign", $what_campaign)->first();
 

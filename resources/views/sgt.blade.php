@@ -96,13 +96,13 @@
                     </div>
                     <div class="section-title">Attachments</div>
                     <div class="row mb-4 border-bottom pb-3">
-                        <div class="col text-center">
+                        <div class="col text-center" id="proof_of_purchase_col">
                             <div  class="border" style="width: 100%;">
                                 <a target="_blank" href="" id="href_receipt"><img src="" id="img_receipt" alt-text="receipt"/></a>
                             </div>
                             <small>Proof of Purchase</small>
                         </div>
-                        <div class="col text-center">
+                        <div class="col text-center" id="serviceability_col">
                             <div  class="border" style="width: 100%;">
                                 <a target="_blank" href="" id="href_serviceability_check"><img src=""  id="img_serviceability_check" alt-text="serviceability_check"/></a>
                             </div>

@@ -106,7 +106,7 @@ class SupervendorController extends Controller
                     $samsung = DB::table("view_registrations")
                                         ->whereNotNull("SGT Name")
                                         ->where("campaign", "SAMSUNG")
-                                        ->whereIn("status", array("") )
+                                        ->whereIn("status", array("DROPPED") )
                                         ->get();
 
                     $xiaomi = DB::table("view_registrations")

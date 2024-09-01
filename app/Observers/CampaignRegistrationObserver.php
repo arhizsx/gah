@@ -25,21 +25,21 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
 
         if( $campaignRegistration->vendor == null ){
 
-            Mail::to( "arhizsx@gmail.com" )->queue( new NewCampaignRegistrationNoVendor( $campaignRegistration ) );
+            Mail::to( "arhizsx@gmail.com" )->send( new NewCampaignRegistrationNoVendor( $campaignRegistration ) );
 
         } elseif( $campaignRegistration->vendor == "%MULTI_VENDORS%" ){
 
-            Mail::to( "arhizsx@gmail.com" )->queue( new NewCampaignRegistrationNoVendor( $campaignRegistration ) );
+            Mail::to( "arhizsx@gmail.com" )->send( new NewCampaignRegistrationNoVendor( $campaignRegistration ) );
 
         } else {
 
             $selected = DB::table("vendors")->where("supervendor", $campaignRegistration->vendor)->first();
 
             // VENDOR
-            Mail::to( $selected->email )->queue( new NewCampaignRegistration( $campaignRegistration) );
+            Mail::to( $selected->email )->send( new NewCampaignRegistration( $campaignRegistration) );
 
             // SGT
-            Mail::to( $campaignRegistration->sgt_email )->queue( new SgtNewCampaignRegistration( $campaignRegistration) );
+            Mail::to( $campaignRegistration->sgt_email )->send( new SgtNewCampaignRegistration( $campaignRegistration) );
 
         }
 

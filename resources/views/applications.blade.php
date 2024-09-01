@@ -193,7 +193,10 @@ function callbackAction(data){
     if( data.campaign == "XIAOMI" ){
 
         $(document).find("#proof_of_purchase_col").addClass("d-none");
-        $(document).find(".btn-action[data-user_mode='vendor']").removeClass("d-none");
+
+        console.log($(document).find(".modal-footer").find(".btn-action[data-user_mode='vendor']"));
+
+        $(document).find(".modal-footer").find(".btn-action[data-user_mode='vendor']").removeClass("d-none");
 
     }
     else if( data.campaign == "SAMSUNG" ){

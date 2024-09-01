@@ -23,23 +23,29 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
 
         Log::info("cretated " . json_encode($campaignRegistration));
 
-        if( $campaignRegistration->vendor == null ){
+        // ////////////////
+        //    SAMSUNG
+        // ////////////////
+        if( $campaignRegistration->campaign == "SAMSUNG" ){
 
-            Mail::to( "arhizsx@gmail.com" )->send( new NewCampaignRegistrationNoVendor( $campaignRegistration ) );
+            $no_sgt = ["NSGT"];
+            $with_sgt = ["SGT"];
+            $mode = "new";
 
-        } elseif( $campaignRegistration->vendor == "%MULTI_VENDORS%" ){
+            $this->sender( $campaignRegistration, $no_sgt, $with_sgt, $mode );
 
-            Mail::to( "arhizsx@gmail.com" )->send( new NewCampaignRegistrationNoVendor( $campaignRegistration ) );
+        }
 
-        } else {
+        // ////////////////
+        //     XIAOMI
+        // ////////////////
+        elseif( $campaignRegistration->campaign == "XIAOMI" ){
 
-            $selected = DB::table("vendors")->where("supervendor", $campaignRegistration->vendor)->first();
+            $no_sgt = ["NSGT"];
+            $with_sgt = ["SGT", "SV"];
+            $mode = "new";
 
-            // VENDOR
-            Mail::to( $selected->email )->send( new NewCampaignRegistration( $campaignRegistration) );
-
-            // SGT
-            Mail::to( $campaignRegistration->sgt_email )->send( new SgtNewCampaignRegistration( $campaignRegistration) );
+            $this->sender( $campaignRegistration, $no_sgt, $with_sgt, $mode );
 
         }
 
@@ -58,8 +64,8 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
 
         } else {
 
-            $selected = DB::table("vendors")->where("supervendor", $campaignRegistration->vendor)->first();
-            Mail::to( $selected->email )->queue( new UpdatedCampaignRegistration($campaignRegistration) );
+            // $selected = DB::table("vendors")->where("supervendor", $campaignRegistration->vendor)->first();
+            // Mail::to( $selected->email )->queue( new UpdatedCampaignRegistration($campaignRegistration) );
 
         }
 
@@ -88,6 +94,71 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
     public function forceDeleted(CampaignRegistration $campaignRegistration): void
     {
         //
+    }
+
+    function sender( $registration, $no_sgt, $with_sgt, $mode ){
+
+        if( $registration->vendor == null || $registration->vendor == "%MULTI_VENDORS%" ){
+
+            $to = [];
+
+            if( in_array( "NSGT", $no_sgt ) ){
+
+                $users = DB::TABLE("users_access")->where("profile", "NSGT")
+                            ->JOIN("users", "users"."id", "users_access"."user_id")
+                            ->SELECT("users.email")
+                            ->WHERE("users_access.campaign", $registration->campaign )
+                            ->GET();
+
+                foreach( $users as $user ){
+                    array_push( $to, $user->email );
+                }
+
+            }
+
+            if( $mode == "new" ){
+                Mail::to( $to )->send( new NewCampaignRegistrationNoVendor( $registration ) );
+            }
+
+            if( $mode == "update" ){
+                Mail::to( $to )->queue( new UpdatedCampaignRegistration($registration) );
+            }
+
+        } else {
+
+            if( in_array( "SV", $with_sgt ) ){
+
+                $selected = DB::table("vendors")->where("supervendor", $registration->vendor)->first();
+
+                if( $mode == "new" ){
+                    // VENDOR
+                    Mail::to( $selected->email )->send( new NewCampaignRegistration( $registration) );
+                }
+
+                if( $mode == "update" ){
+                    // VENDOR
+                    Mail::to( $selected->email )->send( new UpdatedCampaignRegistration( $registration) );
+                }
+
+            }
+
+            if( in_array( "SGT", $with_sgt ) ){
+
+                if( $mode == "new" ){
+                    // SGT
+                    Mail::to( $registration->sgt_email )->send( new SgtNewCampaignRegistration( $registration) );
+                }
+
+                if( $mode == "update" ){
+                    // VENDOR
+                    Mail::to( $registration->sgt_email )->send( new UpdatedCampaignRegistration( $registration) );
+                }
+
+            }
+
+        }
+
+
     }
 
 }

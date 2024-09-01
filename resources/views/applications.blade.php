@@ -120,6 +120,10 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
+
+                <button type="button" class="btn btn-danger btn-action d-none" data-user_mode="vendor" data-action="application_cancelled" data-id="">Cancelled</button>
+                <button type="button" class="btn btn-primary btn-action  d-none" data-user_mode="vendor" data-action="application_installed" data-id="">Installed</button>
+
                 @if( \Auth::user()->company == null )
 
                 {{-- <button type="button" class="btn btn-success btn-action" data-user_mode="gt" data-action="application_endorsed" data-id="">Endorse to SV</button>
@@ -129,8 +133,7 @@
                 @else
 
 
-                <button type="button" class="btn btn-danger btn-action" data-user_mode="vendor" data-action="application_cancelled" data-id="">Cancelled</button>
-                <button type="button" class="btn btn-primary btn-action" data-user_mode="vendor" data-action="application_installed" data-id="">Installed</button>
+
 
                 @endif
 
@@ -187,6 +190,8 @@ function callbackAction(data){
     if( data.campaign == "XIAOMI" ){
 
         $(document).find("#proof_of_purchase_col").addClass("d-none");
+
+
 
     }
     else if( data.campaign == "SAMSUNG" ){

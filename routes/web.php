@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SamsungController;
 use App\Http\Controllers\SupervendorController;
+use Illuminate\Support\Facades\Mail;
 
 use App\Http\Controllers\CampaignController;
 use App\Models\CampaignRegistration;
@@ -45,6 +46,14 @@ Route::get('/', function () {
 Route::get('/internal', function () {
     return redirect('https://sam.globe.com.ph/broadband/internal');
 });
+
+Route::get('/mailgun', function () {
+    Mail::raw('This is a test email using Mailgun!', function ($message) {
+        $message->to('recipient@example.com')
+                ->subject('Mailgun Test');
+    });
+});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

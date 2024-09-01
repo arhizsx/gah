@@ -196,7 +196,7 @@ function callbackAction(data){
 
         $(document).find("#proof_of_purchase_col").addClass("d-none");
 
-        console.log($(document).find(".modal-footer").find(".btn-action[data-user_mode='vendor']"));
+        console.log($(document).find(".modal-footer").find(".btn-action[data-user_mode='vendor'][data-action='application_cancelled']"));
 
         $(document).find(".modal-footer").find("button.btn-action[data-user_mode='vendor'][data-action='application_cancelled']").removeClass("d-none");
         $(document).find(".modal-footer").find("button.btn-action[data-user_mode='vendor'][data-action='application_installed']").removeClass("d-none");

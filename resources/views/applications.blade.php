@@ -121,8 +121,8 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
 
-                <button type="button" class="btn btn-danger btn-action xiaomi" data-user_mode="vendor" data-action="application_cancelled" data-id="">Cancelled</button>
-                <button type="button" class="btn btn-primary btn-action xiaomi" data-user_mode="vendor" data-action="application_installed" data-id="">Installed</button>
+                <button type="button" class="btn btn-danger btn-action" id="btn_application_cancelled" data-user_mode="vendor" data-action="application_cancelled" data-id="">Cancelled</button>
+                <button type="button" class="btn btn-primary btn-action" id="application_installed" data-user_mode="vendor" data-action="application_installed" data-id="">Installed</button>
 
                 @if( \Auth::user()->company == null )
 
@@ -189,14 +189,17 @@ function callbackAction(data){
 
 
 
-    // $(document).find(".btn-action[data-user_mode='vendor']").addClass("d-none");
-    // $(document).find(".btn-action[data-user_mode='gt']").addClass("d-none");
+    $(document).find(".btn-action[data-user_mode='vendor']").addClass("d-none");
+    $(document).find(".btn-action[data-user_mode='gt']").addClass("d-none");
 
     if( data.campaign == "XIAOMI" ){
 
         $(document).find("#proof_of_purchase_col").addClass("d-none");
+        console.log("XIAOMI");
 
-        console.log($(document).find(".modal-footer").find(".btn-action[data-user_mode='vendor'][data-action='application_cancelled']").removeClass("d-none"));
+        $(document).find("#btn_application_installed").removeClass("d-none");
+        $(document).find("#btn_application_cancelled").removeClass("d-none");
+
 
     }
     else if( data.campaign == "SAMSUNG" ){

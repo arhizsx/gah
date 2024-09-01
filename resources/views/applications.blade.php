@@ -118,11 +118,12 @@
                 </div>
             </div>
             <div class="modal-footer">
+                X
+                <button type="button" class="btn btn-danger btn-action" id="btn_application_cancelled" data-user_mode="vendor" data-action="application_cancelled" data-id="">Cancelled</button>
+                <button type="button" class="btn btn-primary btn-action" id="btn_application_installed" data-user_mode="vendor" data-action="application_installed" data-id="">Installed</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
 
-                <button type="button" class="btn btn-danger btn-action" id="btn_application_cancelled" data-user_mode="vendor" data-action="application_cancelled" data-id="">Cancelled</button>
-                <button type="button" class="btn btn-primary btn-action" id="btn_application_installed" data-user_mode="vendor" data-action="application_installed" data-id="">Installed</button>
 
                 @if( \Auth::user()->company == null )
 

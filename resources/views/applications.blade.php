@@ -187,11 +187,13 @@ function callbackAction(data){
 
     applicationSetImage(data);
 
+    $(document).find(".btn-action[data-user_mode='vendor']").addClass("d-none");
+    $(document).find(".btn-action[data-user_mode='gt']").addClass("d-none");
+
     if( data.campaign == "XIAOMI" ){
 
         $(document).find("#proof_of_purchase_col").addClass("d-none");
-
-
+        $(document).find(".btn-action[data-user_mode='vendor']").removeClass("d-none");
 
     }
     else if( data.campaign == "SAMSUNG" ){

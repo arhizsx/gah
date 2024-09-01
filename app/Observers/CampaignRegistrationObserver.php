@@ -105,7 +105,7 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
             if( in_array( "NSGT", $no_sgt ) ){
 
                 $users = DB::TABLE("users_access")->where("profile", "NSGT")
-                            ->JOIN("users", "users"."id", "users_access"."user_id")
+                            ->JOIN("users", "users.id", "users_access.user_id")
                             ->SELECT("users.email")
                             ->WHERE("users_access.campaign", $registration->campaign )
                             ->GET();

@@ -200,6 +200,7 @@ function callbackAction(data){
         $(document).find("#btn_application_installed").removeClass("d-none");
         $(document).find("#btn_application_cancelled").removeClass("d-none");
 
+        console.log( $(document).find("#btn_application_installed").html() );
 
     }
     else if( data.campaign == "SAMSUNG" ){

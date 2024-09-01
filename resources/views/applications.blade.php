@@ -194,9 +194,6 @@ function callbackAction(data){
         $(document).find("#proof_of_purchase_col").addClass("d-none");
         console.log("XIAOMI");
 
-        $(document).find("#btn_application_installed").removeClass("d-none");
-        $(document).find("#btn_application_cancelled").removeClass("d-none");
-
         console.log( $(document).find("#btn_application_installed").data() );
 
     }

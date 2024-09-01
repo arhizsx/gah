@@ -198,7 +198,8 @@ function callbackAction(data){
 
         console.log($(document).find(".modal-footer").find(".btn-action[data-user_mode='vendor']"));
 
-        $(document).find(".modal-footer").find("button.btn-action[data-user_mode='vendor']").removeClass("d-none");
+        $(document).find(".modal-footer").find("button.btn-action[data-user_mode='vendor'][data-action='application_cancelled']").removeClass("d-none");
+        $(document).find(".modal-footer").find("button.btn-action[data-user_mode='vendor'][data-action='application_installed']").removeClass("d-none");
 
     }
     else if( data.campaign == "SAMSUNG" ){

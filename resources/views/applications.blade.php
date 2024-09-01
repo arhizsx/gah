@@ -187,6 +187,8 @@ function callbackAction(data){
 
     applicationSetImage(data);
 
+
+
     $(document).find(".btn-action[data-user_mode='vendor']").addClass("d-none");
     $(document).find(".btn-action[data-user_mode='gt']").addClass("d-none");
 

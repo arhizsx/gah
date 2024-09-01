@@ -48,10 +48,10 @@ Route::get('/internal', function () {
 });
 
 Route::get('/mailgun', function () {
-    dd( Mail::raw('This is a test email using Mailgun!', function ($message) {
+     Mail::raw('This is a test email using Mailgun!', function ($message) {
         $message->to('arhizsx@gmail.com')
                 ->subject('Mailgun Test');
-    }) );
+    });
 });
 
 

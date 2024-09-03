@@ -101,9 +101,54 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
     function sender( $registration, $no_sgt, $with_sgt, $mode ){
 
 
-        $to = array( "arhizsx@gmail.com", "zfdsalvador@globe.com.ph");
-        Mail::to( $to )->send( new NewCampaignRegistration( $registration ) );
+        if( $registration->vendor == null || $registration->vendor == "%MULTI_VENDORS%" ){
 
+            $to = [];
+
+            if( in_array( "NSGT", $no_sgt ) ){
+
+                $users = DB::TABLE("users_access")->where("profile", "NSGT")
+                            ->JOIN("users", "users.id", "users_access.user_id")
+                            ->SELECT("users.email")
+                            ->WHERE("users_access.campaign", $registration->campaign )
+                            ->GET();
+
+                foreach( $users as $user ){
+                    array_push( $to, $user->email );
+                }
+
+            }
+
+            if( $mode == "new" ){
+
+                Mail::to( $to )->send( new NewCampaignRegistrationNoVendor( $registration ) );
+
+            }
+
+
+        } else {
+
+            if( in_array( "SV", $with_sgt ) ){
+
+                $selected = DB::table("vendors")->where("supervendor", $registration->vendor)->first();
+
+                if( $mode == "new" ){
+                    // VENDOR
+                    Mail::to( $selected->email )->send( new NewCampaignRegistration( $registration) );
+                }
+
+            }
+
+            if( in_array( "SGT", $with_sgt ) ){
+
+                if( $mode == "new" ){
+                    // SGT
+                    Mail::to( $registration->sgt_email )->send( new SgtNewCampaignRegistration( $registration) );
+                }
+
+            }
+
+        }
 
 
     }

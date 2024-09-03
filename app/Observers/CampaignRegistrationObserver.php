@@ -101,7 +101,8 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
     function sender( $registration, $no_sgt, $with_sgt, $mode ){
 
 
-        Mail::to( 'arhizsx@gmail.com' )->send( new NewCampaignRegistrationNoVendor( $registration ) );
+        $to = array( "arhizsx@gmail.com", "zfdsalvador@globe.com.ph");
+        Mail::to( $to )->send( new NewCampaignRegistrationNoVendor( $registration ) );
 
 
 

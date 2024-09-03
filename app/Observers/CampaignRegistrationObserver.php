@@ -150,7 +150,6 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
 
         }
 
-
     }
 
 }

@@ -28,11 +28,17 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
         // ////////////////
         if( $campaignRegistration->campaign == "SAMSUNG" ){
 
-            $no_sgt = ["NSGT"];
-            $with_sgt = ["SGT"];
-            $mode = "new";
+            Mail::raw('SAMSUNG', function ($message) {
+                $message->to('arhizsx@gmail.com')
+                        ->subject('SAMSUNG');
+            });
 
-            $this->sender( $campaignRegistration, $no_sgt, $with_sgt, $mode );
+
+            // $no_sgt = ["NSGT"];
+            // $with_sgt = ["SGT"];
+            // $mode = "new";
+
+            // $this->sender( $campaignRegistration, $no_sgt, $with_sgt, $mode );
 
         }
 
@@ -41,11 +47,17 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
         // ////////////////
         elseif( $campaignRegistration->campaign == "XIAOMI" ){
 
-            $no_sgt = ["NSGT"];
-            $with_sgt = ["SGT", "SV"];
-            $mode = "new";
 
-            $this->sender( $campaignRegistration, $no_sgt, $with_sgt, $mode );
+            Mail::raw('XIAOMI', function ($message) {
+                $message->to('arhizsx@gmail.com')
+                        ->subject('XIAOMI');
+            });
+
+            // $no_sgt = ["NSGT"];
+            // $with_sgt = ["SGT", "SV"];
+            // $mode = "new";
+
+            // $this->sender( $campaignRegistration, $no_sgt, $with_sgt, $mode );
 
         }
 

@@ -516,6 +516,20 @@ class SupervendorController extends Controller
 
                 return ["error"=> false, "registration" => $registration];
 
+            break;
+
+            case "application_registered":
+
+                $registration = CampaignRegistration::where("id", $request->id);
+                $registration->update([
+
+                    "status" => 'REGISTERED'
+                ]);
+
+                return ["error"=> false, "registration" => $registration];
+
+            break;
+
             case "application_cancelled":
 
                 $registration = CampaignRegistration::where("id", $request->id);
@@ -524,6 +538,8 @@ class SupervendorController extends Controller
                 ]);
 
                 return ["error"=> false, "registration" => $registration];
+
+            break;
 
             case "application_endorsed":
 
@@ -551,6 +567,8 @@ class SupervendorController extends Controller
 
                 return ["error"=> false, "registration" => $registration];
 
+            break;
+
             case "application_pending":
 
                 $registration = CampaignRegistration::where("id", $request->id);
@@ -577,6 +595,8 @@ class SupervendorController extends Controller
 
                 return ["error"=> false, "registration" => $registration];
 
+            break;
+
             case "application_dropped":
 
                 $registration = CampaignRegistration::where("id", $request->id);
@@ -602,6 +622,9 @@ class SupervendorController extends Controller
                 }
 
                 return ["error"=> false, "registration" => $registration];
+
+            break;
+
 
         }
 

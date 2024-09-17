@@ -27,6 +27,10 @@ class SupervendorController extends Controller
         return view("installations");
     }
 
+    function users(){
+        return view("users");
+    }
+
     function company(){
         return view("company");
     }
@@ -490,6 +494,13 @@ class SupervendorController extends Controller
 
                 return $return_data;
 
+                break;
+
+            case "users":
+
+                $users = DB::table("users_access_view")->get();
+
+                return $users;
                 break;
 
             default:

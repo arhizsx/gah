@@ -259,6 +259,7 @@
 <script>
 
 let modal = "#application_details";
+let modal2 = "#confirm_modal";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/sgt';
 let columns = ['campaign', 'complete_name', 'mobile_number', 'province', 'city', 'vendor', 'SGT Name', 'status', 'Registration Date', 'Last Update'];
@@ -267,7 +268,7 @@ let callback = 'callbackAction';
 
 $(() => {
 
-    $(datagrid).setDatagrid( modal, datasource, columns, callback );
+    $(datagrid).setDatagrid( modal, datasource, columns, callback, modal2 );
 
 });
 
@@ -308,8 +309,6 @@ $(document).on("click", ".btn-action", function(){
             $(document).find(".new_status").text(new_status);
 
             $(document).find("#confirm_btn").attr("data-next_action", $(this).data("action"));
-            $(document).find("#confirm_btn").attr("data-id", $(this).data("id"));
-
 
         }
         

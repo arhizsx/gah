@@ -220,8 +220,13 @@ $(document).on("click", ".btn-action", function(){
         
     } else {
 
+        var action = "";
 
-        let action = $(this).data("action");
+        if( $(this).data("action")  == "confirm_action"){
+            action = $(this).data("next_action");
+        } else {
+            action = $(this).data("action");
+        }
 
         $.ajax({
             url: "/supervendor/ajax",

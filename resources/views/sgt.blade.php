@@ -122,12 +122,12 @@
 
                 @if( \Auth::user()->company == null )
 
-                <button type="button" class="btn btn-success btn-action" data-user_mode="gt" data-action="application_endorsed" data-id="">Endorse to SV</button>
-                <button type="button" class="btn btn-warning btn-action" data-user_mode="gt" data-action="application_pending" data-id="">Pending</button>
-                <button type="button" class="btn btn-danger btn-action" data-user_mode="gt" data-action="application_dropped" data-id="">Drop</button>
+                <button type="button" class="btn btn-success btn-action" data-user_mode="gt" data-action="application_endorsed" data-confirm="yes" data-id="">Endorse to SV</button>
+                <button type="button" class="btn btn-warning btn-action" data-user_mode="gt" data-action="application_pending" data-confirm="yes" data-id="">Pending</button>
+                <button type="button" class="btn btn-danger btn-action" data-user_mode="gt" data-action="application_dropped" data-confirm="yes" data-id="">Drop</button>
 
-                <button type="button" class="btn btn-dark btn-action" data-user_mode="gt" data-action="application_cancelled" data-id="">Cancelled</button>
-                <button type="button" class="btn btn-primary btn-action" data-user_mode="gt" data-action="application_installed" data-id="">Installed</button>
+                <button type="button" class="btn btn-dark btn-action" data-user_mode="gt" data-action="application_cancelled" data-confirm="yes" data-id="">Cancelled</button>
+                <button type="button" class="btn btn-primary btn-action" data-user_mode="gt" data-action="application_installed" data-confirm="yes" data-id="">Installed</button>
 
                 @endif
 
@@ -135,6 +135,32 @@
         </div>
     </div>
 </div>
+
+<!-- Confirm Modal -->
+<div class="modal fade" id="confirm_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-fullscreen-lg-down">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Are You Sure?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col text-center">
+                            Are you sure you want to continue setting this to <span class="new_status"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <script>
 
@@ -152,28 +178,44 @@ $(() => {
 });
 
 $(document).on("click", ".btn-action", function(){
-    let action = $(this).data("action");
 
-    $.ajax({
-        url: "/supervendor/ajax",
-        method: "POST",
-        data: {
-            "action" : action,
-            "remarks": $(document).find(modal).find("[name='remarks']").val(),
-            "id": $(this).data("id")
-        },
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-        success: function(resp){
-            if(resp.error == false){
-                location.reload();
-            }
-        },
-        error: function(){
-            console.log("Error in AJAX");
+    if (typeof $(this).data('confirm') !== 'undefined') {
+
+        if( $(this).data('confirm') == "yes" ){
+
+            $(document).find("#confirm_modal").modal("show");
+            $(document).find("#application_details").modal("hide");
+
+        } else {
+
+            let action = $(this).data("action");
+
+            $.ajax({
+                url: "/supervendor/ajax",
+                method: "POST",
+                data: {
+                    "action" : action,
+                    "remarks": $(document).find(modal).find("[name='remarks']").val(),
+                    "id": $(this).data("id")
+                },
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(resp){
+                    if(resp.error == false){
+                        location.reload();
+                    }
+                },
+                error: function(){
+                    console.log("Error in AJAX");
+                }
+            });
+
         }
-    });
+
+        
+    }
+
 
 });
 

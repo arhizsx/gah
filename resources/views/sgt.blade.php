@@ -233,8 +233,8 @@ $(document).on("click", ".btn-action", function(){
             $(document).find("#confirm_btn").attr("data-next_action", $(this).data("action"));
             $(document).find("#confirm_btn").attr("data-id", $(this).data("id"));
 
-            var complete_name = $(modal).find("[name='complete_name']");
-            var mobile_number = $(modal).find("[name='mobile_number']");
+            var complete_name = $(modal).find("[name='complete_name']").val();
+            var mobile_number = $(modal).find("[name='mobile_number']").val();
 
             $(document).find("#confirm_modal").find("[name='confirm_complete_name']").val(complete_name);
             $(document).find("#confirm_modal").find("[name='confirm_mobile_number']").val(mobile_number);

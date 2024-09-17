@@ -215,6 +215,7 @@ $(document).on("click", ".btn-action", function(){
             $(document).find(".new_status").text(new_status);
 
             $(document).find("#confirm_btn").attr("data-next_action", $(this).data("action"));
+            $(document).find("#confirm_btn").attr("data-id", $(this).data("id"));
 
         }
         

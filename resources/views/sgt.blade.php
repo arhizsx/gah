@@ -187,6 +187,33 @@ $(document).on("click", ".btn-action", function(){
             $(document).find("#confirm_modal").modal("show");
             $(document).find("#application_details").modal("hide");
 
+            var new_status = "";
+            switch(  $(this).data("action") ){
+
+                case "application_endorsed":
+                    new_status = "ENDORSED";
+                break;
+
+                case "application_pending":
+                    new_status = "PENDING";
+                break;
+
+                case "application_dropped":
+                    new_status = "DROPPED";
+                break;
+
+                case "application_cancelled":
+                    new_status = "CANCELLED";
+                break;
+
+                case "application_installed":
+                    new_status = "INSTALLED";
+                break;
+
+            }
+
+            $(document).find(".new_status").text(new_status);
+
             $(document).find("#confirm_btn").attr("data-next_action", $(this).data("action"));
 
         }

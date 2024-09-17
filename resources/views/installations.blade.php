@@ -102,12 +102,14 @@
                 </div>
             </div>
             <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-action" data-user_mode="vendor" data-action="application_installed" data-id="">Installed</button>
+
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
-<script>
+<script> 
 
 let x= "";
 let modal = "#installation_details";

@@ -187,7 +187,7 @@ $(document).on("click", ".btn-action", function(){
             $(document).find("#confirm_modal").modal("show");
             $(document).find("#application_details").modal("hide");
 
-            $(document).find("#confirm_btn").data("next_action", $(this).data("action"));
+            $(document).find("#confirm_btn").attr("data-next_action", $(this).data("action"));
 
         }
         

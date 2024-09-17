@@ -147,7 +147,7 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col text-center">
+                        <div class="col text-center p-5">
                             Are you sure you want to set this to <strong><span class="new_status"></span></strong>
                         </div>
                     </div>

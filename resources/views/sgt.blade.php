@@ -151,100 +151,23 @@
                             Are you sure you want to set this to <strong><span class="new_status"></span></strong>
                         </div>
                     </div>
-                </div>
-                <div class="container-fluid">
-                    <div class="section-title">Personal Information</div>
                     <div class="row mt-3 mb-3">
                         <div class="col-3">
-                            <label for="complete_name">Complete Name</label>
+                            <label for="confirm_complete_name">Complete Name</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="complete_name" id="complete_name" placeholder="Customer Name">
+                            <input class="form-control form-control-sm" type="text" value="" name="confirm_complete_name" id="confirm_complete_name" placeholder="Customer Name">
                         </div>
                     </div>
                     <div class="row mb-4 border-bottom pb-3">
                         <div class="col-3">
-                            <label for="mobile_number">Mobile Number</label>
+                            <label for="confirm_mobile_number">Mobile Number</label>
                         </div>
                         <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="mobile_number" id="mobile_number" placeholder="Mobile Number">
-                        </div>
-                    </div>
-                    <div class="section-title">Installation Address</div>
-                    <div class="row mt-3 mb-3">
-                        <div class="col-3">
-                            <label for="province">Province</label>
-                        </div>
-                        <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="province" id="province" placeholder="Province">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-3">
-                            <label for="city">City</label>
-                        </div>
-                        <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="city" id="city" placeholder="City">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-3">
-                            <label for="brgy_village">Barangay / Village</label>
-                        </div>
-                        <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="brgy_village" id="brgy_village" placeholder="Barangay / Village">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-3">
-                            <label for="street">Street</label>
-                        </div>
-                        <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="street" id="street" placeholder="Street">
-                        </div>
-                    </div>
-                    <div class="row mb-3 pb-3">
-                        <div class="col-3">
-                            <label for="house_floor_bldg">House no., Floor no., Bldg</label>
-                        </div>
-                        <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="house_floor_bldg" id="house_floor_bldg" placeholder="House no., Floor no., Bldg">
-                        </div>
-                    </div>
-                    <div class="row mb-4 border-bottom pb-3">
-                        <div class="col-3">
-                            <label for="house_floor_bldg">Schedule</label>
-                        </div>
-                        <div class="col-5">
-                            <input class="form-control form-control-sm" type="text" value="" name="schedule_date" id="schedule_date" placeholder="Schedule Date">
-                        </div>
-                        <div class="col-4">
-                            <input class="form-control form-control-sm" type="text" value="" name="schedule_hour" id="schedule_hour" placeholder="Schedule Hour">
-                        </div>
-                    </div>
-                    <div class="section-title">Attachments</div>
-                    <div class="row mb-4 border-bottom pb-3">
-                        <div class="col text-center" id="proof_of_purchase_col">
-                            <div  class="border" style="width: 100%;">
-                                <a target="_blank" href="" id="href_receipt"><img src="" id="img_receipt" alt-text="receipt"/></a>
-                            </div>
-                            <small>Proof of Purchase</small>
-                        </div>
-                        <div class="col text-center" id="serviceability_col">
-                            <div  class="border" style="width: 100%;">
-                                <a target="_blank" href="" id="href_serviceability_check"><img src=""  id="img_serviceability_check" alt-text="serviceability_check"/></a>
-                            </div>
-                            <small>Serviceability</small>
-                        </div>
-                    </div>
-                    <div class="section-title">Remarks</div>
-                    <div class="row">
-                        <div class="col-12">
-                            <textarea class="form-control form-control-sm" name="remarks" id="remarks" placeholder="Remarks"></textarea>
+                            <input class="form-control form-control-sm" type="text" value="" name="confirm_mobile_number" id="confirm_mobile_number" placeholder="Mobile Number">
                         </div>
                     </div>
                 </div>
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -259,7 +182,6 @@
 <script>
 
 let modal = "#application_details";
-let modal2 = "#confirm_modal";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/sgt';
 let columns = ['campaign', 'complete_name', 'mobile_number', 'province', 'city', 'vendor', 'SGT Name', 'status', 'Registration Date', 'Last Update'];
@@ -268,7 +190,7 @@ let callback = 'callbackAction';
 
 $(() => {
 
-    $(datagrid).setDatagrid( modal, datasource, columns, callback, modal2 );
+    $(datagrid).setDatagrid( modal, datasource, columns, callback);
 
 });
 
@@ -309,6 +231,14 @@ $(document).on("click", ".btn-action", function(){
             $(document).find(".new_status").text(new_status);
 
             $(document).find("#confirm_btn").attr("data-next_action", $(this).data("action"));
+            $(document).find("#confirm_btn").attr("data-id", $(this).data("id"));
+
+            var complete_name = $(modal).find("[name='complete_name']");
+            var mobile_number = $(modal).find("[name='mobile_number']");
+
+            $(document).find("#confirm_modal").find("[name='confirm_complete_name']").val(complete_name);
+            $(document).find("#confirm_modal").find("[name='confirm_mobile_number']").val(mobile_number);
+
 
         }
         
@@ -390,9 +320,6 @@ function applicationSetImage(data){
 
     $("#href_receipt").attr("href", "/files/" + data.receipt);
     $("#href_serviceability_check").attr("href",  "/files/" + data.serviceability_check);
-
-
-
 
 }
 

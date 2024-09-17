@@ -1,5 +1,5 @@
 
-$.fn.setDatagrid = function (modal, datasource, columns, callback = false, modal2 = false) {
+$.fn.setDatagrid = function (modal, datasource, columns, callback = false) {
 
     let whatmodal = modal;
 
@@ -52,7 +52,7 @@ $.fn.setDatagrid = function (modal, datasource, columns, callback = false, modal
         },
         onRowClick: function (e) {
 
-            $(this).openModal(whatmodal, e.data, callback, modal2);
+            $(this).openModal(whatmodal, e.data, callback);
 
         },
         allowColumnResizing: {
@@ -64,7 +64,7 @@ $.fn.setDatagrid = function (modal, datasource, columns, callback = false, modal
 }
 
 
-$.fn.openModal = function (modal, data, callback, modal2 = false) {
+$.fn.openModal = function (modal, data, callback) {
 
     $(document).find(modal).modal("show");
 
@@ -79,20 +79,6 @@ $.fn.openModal = function (modal, data, callback, modal2 = false) {
 
     if (callback != false) {
         eval(callback + "(data)");
-    }
-
-    if (modal2 != false) {
-
-        $.each(data, function (k, v) {
-
-            $(modal2).find("input[name='" + k + "']").val(v);
-            $(modal2).find("textarea[name='" + k + "']").text(v);
-
-        });
-
-        $(modal2).find(".btn-action").attr("data-id", data.id.toString());
-
-
     }
 
 

@@ -148,13 +148,14 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col text-center">
-                            Are you sure you want to continue setting this to <span class="new_status"></span>
+                            Are you sure you want to set this to <strong><span class="new_status"></span></strong>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button id="confirm_btn" type="button" class="btn btn-success btn-action" data-user_mode="gt" data-action="confirm_action" data-next_action="" data-id="">Yes</button>
             </div>
         </div>
     </div>
@@ -186,34 +187,36 @@ $(document).on("click", ".btn-action", function(){
             $(document).find("#confirm_modal").modal("show");
             $(document).find("#application_details").modal("hide");
 
-        } else {
-
-            let action = $(this).data("action");
-
-            $.ajax({
-                url: "/supervendor/ajax",
-                method: "POST",
-                data: {
-                    "action" : action,
-                    "remarks": $(document).find(modal).find("[name='remarks']").val(),
-                    "id": $(this).data("id")
-                },
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                success: function(resp){
-                    if(resp.error == false){
-                        location.reload();
-                    }
-                },
-                error: function(){
-                    console.log("Error in AJAX");
-                }
-            });
+            $(document).find("#confirm_btn").data("next_action", $(this).data("action"));
 
         }
-
         
+    } else {
+
+
+        let action = $(this).data("action");
+
+        $.ajax({
+            url: "/supervendor/ajax",
+            method: "POST",
+            data: {
+                "action" : action,
+                "remarks": $(document).find(modal).find("[name='remarks']").val(),
+                "id": $(this).data("id")
+            },
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function(resp){
+                if(resp.error == false){
+                    location.reload();
+                }
+            },
+            error: function(){
+                console.log("Error in AJAX");
+            }
+        });
+
     }
 
 

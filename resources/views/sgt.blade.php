@@ -129,6 +129,11 @@
                 <button type="button" class="btn btn-dark btn-action" data-user_mode="gt" data-action="application_cancelled" data-confirm="yes" data-id="">Cancelled</button>
                 <button type="button" class="btn btn-primary btn-action" data-user_mode="gt" data-action="application_installed" data-confirm="yes" data-id="">Installed</button>
 
+                @else 
+
+                <button type="button" class="btn btn-dark btn-action" data-user_mode="vendor" data-action="application_cancelled" data-confirm="yes" data-id="">Cancelled</button>
+                <button type="button" class="btn btn-primary btn-action" data-user_mode="vendor" data-action="application_installed" data-confirm="yes" data-id="">Installed</button>
+
                 @endif
 
             </div>

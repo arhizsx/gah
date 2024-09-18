@@ -143,7 +143,7 @@
 </div>
 
 <script>
-
+let svar = "sample variable 101";
 let modal = "#application_details";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/sgt';

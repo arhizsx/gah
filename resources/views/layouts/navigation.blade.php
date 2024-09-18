@@ -46,7 +46,7 @@
                         {{ __('Leads List') }}
                     </x-nav-link>
 
-                    @if(Auth::user()->company == null)
+                    @if( in_array(Auth::user()->id, array( 1, 2, 4 ))  ) 
                     <x-nav-link :href="route('users')" :active="request()->routeIs('users')">
                         {{ __('Users') }}
                     </x-nav-link>
@@ -126,9 +126,12 @@
             <x-responsive-nav-link :href="route('leadslist')" :active="request()->routeIs('leadslist')">
                 {{ __('Leads List') }}
             </x-responsive-nav-link>
+            @if( in_array(Auth::user()->id, array( 1, 2, 4 ))  ) 
+
             <x-responsive-nav-link :href="route('users')" :active="request()->routeIs('users')">
                 {{ __('Users') }}
             </x-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->

@@ -31,6 +31,11 @@ class SupervendorController extends Controller
         return view("users");
     }
 
+    function leadslist(){
+        return view("leadslist");
+    }
+    
+
     function company(){
         return view("company");
     }
@@ -502,6 +507,14 @@ class SupervendorController extends Controller
 
                 return $users;
                 break;
+
+            case "leadslist":
+
+                $data = DB::table("view_registrations")->get();
+
+                return $data;
+                break;
+                
 
             default:
 

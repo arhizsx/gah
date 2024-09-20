@@ -510,7 +510,9 @@ class SupervendorController extends Controller
 
             case "leadslist":
 
-                $data = DB::table("view_registrations")->get();
+                $data = DB::table("view_registrations")
+                        ->wherenotnull("city")
+                        ->get();
 
                 return $data;
                 break;

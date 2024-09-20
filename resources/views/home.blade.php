@@ -26,7 +26,7 @@
             }
 
             .counter-box h3 {
-            font-size: 1.75rem;
+            font-size: 2.5rem;
             font-weight: bold;
             color: #343a40;
             }
@@ -44,7 +44,7 @@
                         <div class="col-md-4 mb-4">
                             <div class="counter-box">
                             <i class="bi bi-graph-up"></i>
-                            <h1>{{ $d->count }}</h1>
+                            <h3>{{ $d->count }}</h3>
                             <p>{{ $d->status }}</p>
                             </div>
                         </div>                    

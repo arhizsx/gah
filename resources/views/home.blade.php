@@ -24,7 +24,7 @@
             }
 
             .counter-box i {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: #4e73df;
             margin-bottom: 10px;
             }

@@ -49,7 +49,24 @@
             <div class="row">
                 @foreach( $data as $d )
                     @if( $d->campaign == "SAMSUNG" )
-
+                        <div class="col-md-4 mb-4">
+                            <div class="counter-box">
+                            <i class="bi bi-graph-up"></i>
+                            <h3>{{ $d->count }}</h3>
+                            <p>{{ $d->status }}</p>
+                            </div>
+                        </div>                    
+                    @endif
+                @endforeach
+            </div>
+            <div class="row">
+                <div class="col mb-2">
+                    <H1>XIAOMI</H1>
+                </div>
+            </div>
+            <div class="row">
+                @foreach( $data as $d )
+                    @if( $d->campaign == "XIAOMI" )
                         <div class="col-md-4 mb-4">
                             <div class="counter-box">
                             <i class="bi bi-graph-up"></i>

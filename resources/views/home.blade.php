@@ -44,7 +44,7 @@
                         <div class="col-md-4 mb-4">
                             <div class="counter-box">
                             <i class="bi bi-graph-up"></i>
-                            <h3>{{ $d->count }}</h3>
+                            <h1>{{ $d->count }}</h1>
                             <p>{{ $d->status }}</p>
                             </div>
                         </div>                    

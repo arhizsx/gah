@@ -38,6 +38,11 @@
         </style>
         <div class="container-fluid" style="height:auto; margin-top:50px;">
             <div class="row">
+                <div class="col">
+                    <H1>SAMSUNG</H1>
+                </div>
+            </div>
+            <div class="row">
                 @foreach( $data as $d )
                     @if( $d->campaign == "SAMSUNG" )
 

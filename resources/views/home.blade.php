@@ -47,11 +47,14 @@
                 </div>
             </div>
             <div class="row">
+                @php 
+                    $total = 0;
+                @endphp
                 @foreach( $data as $d )
-                    @php 
-                        $total = 0;
-                    @endphp
                     @if( $d->campaign == "SAMSUNG" )
+                        @php 
+                           $total = $total + $d->count; 
+                        @endphp         
                         <div class="col-md-3 mb-4">
                             <div class="counter-box">
                             <i class="bi bi-graph-up"></i>
@@ -59,9 +62,6 @@
                             <p>{{ $d->status }}</p>
                             </div>
                         </div>           
-                        @php 
-                           $total = $total + $d->count; 
-                        @endphp         
                     @endif
                 @endforeach
                     <div class="col-md-3 mb-4">
@@ -78,11 +78,14 @@
                 </div>
             </div>
             <div class="row">
+                @php 
+                    $total = 0;
+                @endphp
                 @foreach( $data as $d )
-                    @php 
-                        $total = 0;
-                    @endphp
                     @if( $d->campaign == "XIAOMI" )
+                        @php 
+                           $total = $total + $d->count; 
+                        @endphp         
                         <div class="col-md-3 mb-4">
                             <div class="counter-box">
                             <i class="bi bi-graph-up"></i>
@@ -90,9 +93,6 @@
                             <p>{{ $d->status }}</p>
                             </div>
                         </div>           
-                        @php 
-                           $total = $total + $d->count; 
-                        @endphp         
                     @endif
                 @endforeach
                     <div class="col-md-3 mb-4">

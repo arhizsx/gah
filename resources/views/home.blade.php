@@ -6,6 +6,9 @@
     </x-slot>
     <x-slot name="slot">
         <style>
+            h1 {
+                font-size: 3rem;
+            }
             .counter-box {
             padding: 20px;
             border-radius: 8px;
@@ -38,8 +41,8 @@
         </style>
         <div class="container-fluid" style="height:auto; margin-top:50px;">
             <div class="row">
-                <div class="col">
-                    <H3>SAMSUNG</H3>
+                <div class="col mb-4">
+                    <H1>SAMSUNG</H1>
                 </div>
             </div>
             <div class="row">

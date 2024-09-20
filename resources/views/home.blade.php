@@ -8,9 +8,14 @@
 
         <div class="container-fluid" style="height:auto; margin-top:50px;">
             <div class="row">
-                @php 
-                    print_r($data);
-                @endphp 
+                @foreach( $data as $d )
+                    @if( $d->campaign == "SAMSUNG" )
+                        <div class="col">
+                            {{ $d->status }}
+                            {{ $d->count }}
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
 

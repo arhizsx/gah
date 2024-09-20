@@ -12,7 +12,11 @@ class SupervendorController extends Controller
 {
 
     function index(){
-        return view("home");
+
+        $data = DB::table("view_dashboard")->get();
+
+        return view("home", ["data" => $data]);
+                
     }
 
     function sgt(){

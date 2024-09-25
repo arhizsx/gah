@@ -19,7 +19,7 @@ let x= "";
 let modal = "";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/leadslist';
-let columns = ['campaign', 'complete_name', 'mobile_number', 'province', 'city', 'vendor', 'SGT Name', 'status', 'Registration Date', 'Last Update', "schedule_date", "Aging"];
+let columns = ['campaign', 'complete_name', 'mobile_number', 'province', 'city', 'street', 'brgy_village', 'vendor', 'SGT Name', 'status', 'Registration Date', 'Last Update', "schedule_date", "Aging"];
 
 $(() => {
 

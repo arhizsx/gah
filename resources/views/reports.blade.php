@@ -86,10 +86,10 @@ $(document).on("click", ".pivottable_btn", function(){
     console.log(element);
 
     if($(this).data("action") == "show_pivot_controls" ){
-        doShowPivotControls( element );
+        doShowPivotControls( $(element) );
     }
     else if($(this).data("action") == "hide_pivot_controls" ){
-        doHidePivotControls( element );
+        doHidePivotControls( $(element) );
     }
 
 

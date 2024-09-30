@@ -6,11 +6,9 @@
     </x-slot>
     <x-slot name="slot">
 
-            <div class="row pivottable_data">
-                <div class="col pivottable_output" >
+        <div class="pivottable_output" >
 
-                </div>
-            </div>
+        </div>
 
     </x-slot>
 

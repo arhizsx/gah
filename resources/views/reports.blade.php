@@ -6,8 +6,26 @@
     </x-slot>
     <x-slot name="slot">
 
-        <div class="pivottable_output" >
+        <div class="row my-2">
+            <div class="col-md-12">
+                <H3>Reports</H3>
+                <button class="btn btn-dark btn-shadow btn-sm pivottable_btn d-none" data-action="show_pivot_controls">Customize Pivot</button>
+                <button class="btn btn-dark btn-shadow btn-sm dxdatagrid_btn d-none" data-action="back_to_pivot">Back to Pivot Table</button>
+            </div>
+        </div>
+        <div class="row pivottable_data" data-dashboard_data="{{ $source_table }}">
+            <div class="col pivottable_output" >
 
+            </div>
+            <div class="col clicked_item_table d-none">
+                <div class="dxgrid_container" style="overflow-x: auto !important;">
+                    <div
+                        class="dxgrid_box_filtered table_responsive"
+                        style="min-width: 93vw !important; overflow-x: auto !important;"
+                    >
+                    </div>
+                </div>
+            </div>
         </div>
 
     </x-slot>

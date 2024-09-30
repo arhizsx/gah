@@ -45,8 +45,6 @@
                         <x-nav-link :href="route('leadslist')" :active="request()->routeIs('leadslist')">
                             {{ __('Leads List') }}
                         </x-nav-link>
-                    @endif
-                    @if( in_array(Auth::user()->id, array( 1, 2, 4 ))  ) 
                         <x-nav-link :href="route('reports')" :active="request()->routeIs('reports')">
                             {{ __('Reports') }}
                         </x-nav-link>

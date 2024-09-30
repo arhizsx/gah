@@ -6,10 +6,10 @@
     </x-slot>
     <x-slot name="slot">
 
-        <div class="row pivottable_data d-none mt-3">
+        <div class="row pivottable_data d-none">
             <div class="col-md-12 ps-3">
-                <button class="btn btn-dark btn-shadow btn-sm pivottable_btn" data-action="show_pivot_controls">Customize Pivot</button>
-                <button class="btn btn-dark btn-shadow btn-sm dxdatagrid_btn d-none" data-action="back_to_pivot">Back to Pivot Table</button>
+                <button class="btn btn-dark btn-shadow btn-sm pivottable_btn  mt-3" data-action="show_pivot_controls">Customize Pivot</button>
+                <button class="btn btn-dark btn-shadow btn-sm dxdatagrid_btn d-none  mt-3" data-action="back_to_pivot">Back to Pivot Table</button>
             </div>
         </div>
         <div class="row pivottable_data  d-none">

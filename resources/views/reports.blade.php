@@ -1,3 +1,19 @@
+<style>
+    .pvtTable, .pvtUi, .pvtRendererArea, .js-plotly-plot{
+        width: 100%;
+    }
+    table.pvtTable thead tr th{
+        background-image: linear-gradient(168deg,#000000,#3f3f3f 98%); color: #ffffff;
+    }
+    table.pvtTable tbody tr th{
+        background-image: linear-gradient(168deg,#e9e6e6,#ffffff 98%); color: #000000;
+        width: 15%;
+    }
+
+
+
+</style>
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">

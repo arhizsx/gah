@@ -99,7 +99,7 @@ function doShowPivotControls(element){
     $(document).find(".pvtUi .pvtAxisContainer").show();
     $(document).find(".pvtUi .pvtUiCell").show();
 
-    element.attr("data-action", "hide_pivot_controls");
+    $(document).find(".pivottable_btn").attr("data-action", "hide_pivot_controls");
     element.text("Hide Pivot Controls");
 
 }

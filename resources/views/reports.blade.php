@@ -92,8 +92,6 @@ $(document).on("click", ".pivottable_btn", function(){
 
 function doShowPivotControls(element){
 
-
-
     $(document).find(".pvtUi .pvtAxisContainer").show();
     $(document).find(".pvtUi .pvtUiCell").show();
 

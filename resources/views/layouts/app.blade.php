@@ -56,11 +56,15 @@
                 background-image: linear-gradient(168deg,#e9e6e6,#ffffff 98%); color: #000000;
                 width: 15%;
             }
+
+
+
+            
             li.ui-sortable-handle{
                 padding: 2px;
                 font-size: 12px;
             }
-            
+
             .section-title{
                 font-size: 1.4em;
                 color: darkblue;

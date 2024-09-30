@@ -6,7 +6,7 @@
     </x-slot>
     <x-slot name="slot">
 
-        <div class="row">
+        <div class="row pivottable_data">
             <div class="col-md-12">
                 <button class="btn btn-dark btn-shadow btn-sm pivottable_btn" data-action="show_pivot_controls">Customize Pivot</button>
                 <button class="btn btn-dark btn-shadow btn-sm dxdatagrid_btn d-none" data-action="back_to_pivot">Back to Pivot Table</button>
@@ -16,7 +16,9 @@
             <div class="col pivottable_output d-none" >
 
             </div>
-            <div class="col pivottable_loading" >
+        </div<
+        <div class="row pivottable_loading">
+            <div class="col">
                 Loading Data...
             </div>
         </div>
@@ -38,7 +40,7 @@ var cols = ["status"];
 var vals = [];
 var aggregator = "Count";
 
-$(document).find(".pivottable_output").addClass("d-none");
+$(document).find(".pivottable_data").addClass("d-none");
 $(document).find(".pivottable_loading").removeClass("d-none");
 
 $.ajax({
@@ -64,7 +66,7 @@ $.ajax({
         $(document).find(".pvtUi .pvtAxisContainer").hide();
         $(document).find(".pvtUi .pvtUiCell").hide();
 
-        $(document).find(".pivottable_output").removeClass("d-none");
+        $(document).find(".pivottable_data").removeClass("d-none");
         $(document).find(".pivottable_loading").addClass("d-none");
 
 

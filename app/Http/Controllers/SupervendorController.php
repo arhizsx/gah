@@ -39,7 +39,10 @@ class SupervendorController extends Controller
         return view("leadslist");
     }
     
-
+    function reports(){
+        return view("reports");
+    }
+    
     function company(){
         return view("company");
     }
@@ -521,6 +524,14 @@ class SupervendorController extends Controller
                 return $data;
                 break;
                 
+            case "reports":
+
+                $data = DB::table("view_registrations")
+                        ->wherenotnull("city")
+                        ->get();
+
+                return $data;
+                break;                
 
             default:
 

@@ -33,7 +33,34 @@
         <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/21.2.5/css/dx.light.css" />
         <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/22.2.6/js/dx.all.js"></script>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.23.0/pivot.min.js" integrity="sha512-XgJh9jgd6gAHu9PcRBBAp0Hda8Tg87zi09Q2639t0tQpFFQhGpeCgaiEFji36Ozijjx9agZxB0w53edOFGCQ0g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script src="https://cdn.plot.ly/plotly-basic-latest.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.23.0/plotly_renderers.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/gh/linways/table-to-excel@v1.0.4/dist/tableToExcel.js"></script>
+
         <style>
+            .pvtTable, .pvtUi, .pvtRendererArea, .js-plotly-plot{
+                width: 100%;
+            }
+            table.pvtTable thead tr th{
+                background-image: linear-gradient(168deg,#000000,#3f3f3f 98%); color: #ffffff;
+            }
+            table.pvtTable tbody tr th{
+                background-image: linear-gradient(168deg,#e9e6e6,#ffffff 98%); color: #000000;
+                width: 15%;
+            }
+            li.ui-sortable-handle{
+                padding: 2px;
+                font-size: 12px;
+            }
+            
             .section-title{
                 font-size: 1.4em;
                 color: darkblue;

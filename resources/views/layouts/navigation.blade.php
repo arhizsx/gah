@@ -34,17 +34,21 @@
                         </x-nav-link>
                         @endif
                     @endif
-
-
                     <x-nav-link :href="route('applications')" :active="request()->routeIs('applications')">
                         {{ __('Work Orders') }}
                     </x-nav-link>
                     <x-nav-link :href="route('installations')" :active="request()->routeIs('installations')">
                         {{ __('Processed') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('leadslist')" :active="request()->routeIs('leadslist')">
-                        {{ __('Leads List') }}
-                    </x-nav-link>
+
+                    @if(Auth::user()->company == null)
+                        <x-nav-link :href="route('leadslist')" :active="request()->routeIs('leadslist')">
+                            {{ __('Leads List') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('reports')" :active="request()->routeIs('reports')">
+                            {{ __('Reports') }}
+                        </x-nav-link>
+                    @endif
 
                     @if( in_array(Auth::user()->id, array( 1, 2, 4 ))  ) 
                     <x-nav-link :href="route('users')" :active="request()->routeIs('users')">
@@ -123,9 +127,14 @@
             <x-responsive-nav-link :href="route('installations')" :active="request()->routeIs('installations')">
                 {{ __('Installations') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('leadslist')" :active="request()->routeIs('leadslist')">
-                {{ __('Leads List') }}
-            </x-responsive-nav-link>
+            @if(Auth::user()->company == null)
+                <x-responsive-nav-link :href="route('leadslist')" :active="request()->routeIs('leadslist')">
+                    {{ __('Leads List') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('reports')" :active="request()->routeIs('reports')">
+                    {{ __('Reports') }}
+                </x-responsive-nav-link>
+            @endif
             @if( in_array(Auth::user()->id, array( 1, 2, 4 ))  ) 
 
             <x-responsive-nav-link :href="route('users')" :active="request()->routeIs('users')">

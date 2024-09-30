@@ -13,17 +13,11 @@
             </div>
         </div>
         <div class="row pivottable_data">
-            <div class="col pivottable_output" >
+            <div class="col pivottable_output d-none" >
 
             </div>
-            <div class="col clicked_item_table d-none">
-                <div class="dxgrid_container" style="overflow-x: auto !important;">
-                    <div
-                        class="dxgrid_box_filtered table_responsive"
-                        style="min-width: 93vw !important; overflow-x: auto !important;"
-                    >
-                    </div>
-                </div>
+            <div class="col pivottable_loading" >
+                Loading Data...
             </div>
         </div>
 
@@ -43,6 +37,9 @@ var rows = ["campaign"];
 var cols = ["status"];
 var vals = [];
 var aggregator = "Count";
+
+$(document).find(".pivottable_output").addClass("d-none");
+$(document).find(".pivottable_loading").removeClass("d-none");
 
 $.ajax({
 
@@ -67,10 +64,9 @@ $.ajax({
         $(document).find(".pvtUi .pvtAxisContainer").hide();
         $(document).find(".pvtUi .pvtUiCell").hide();
 
-        // if(element != undefined){
-        //     element.data("action", "show_pivot_controls");
-        //     element.text("Customize Pivot");
-        // }
+        $(document).find(".pivottable_output").removeClass("d-none");
+        $(document).find(".pivottable_loading").addClass("d-none");
+
 
     },
     error: function(){

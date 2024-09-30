@@ -13,7 +13,7 @@
                 <button class="btn btn-dark btn-shadow btn-sm dxdatagrid_btn d-none" data-action="back_to_pivot">Back to Pivot Table</button>
             </div>
         </div>
-        <div class="row pivottable_data" data-dashboard_data="{{ $source_table }}">
+        <div class="row pivottable_data">
             <div class="col pivottable_output" >
 
             </div>

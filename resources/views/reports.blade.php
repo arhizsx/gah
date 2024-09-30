@@ -5,7 +5,6 @@
         </h2>
     </x-slot>
     <x-slot name="slot">
-        <div class="border shadow-lg p-3 mx-3 mt-3 mb-5 bg-white rounded">
 
             <div class="row pivottable_data">
                 <div class="col pivottable_output" >
@@ -13,7 +12,6 @@
                 </div>
             </div>
 
-        </div>
     </x-slot>
 
 </x-app-layout>

@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="row pivottable_loading">
-            <div class="col">
+            <div class="col text-center p-5">
                 Loading Data...
             </div>
         </div>

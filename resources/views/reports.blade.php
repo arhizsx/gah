@@ -26,9 +26,9 @@ var renderers = {};
 
 $.extend(renderers, $.pivotUtilities.renderers, $.pivotUtilities.plotly_renderers);
 
-var rows = [];
+var rows = ["campaign"];
 var cols = ["status"];
-var vals = ["campaign"];
+var vals = [];
 var aggregator = "Count";
 
 $.ajax({

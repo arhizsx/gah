@@ -27,7 +27,7 @@ var renderers = {};
 $.extend(renderers, $.pivotUtilities.renderers, $.pivotUtilities.plotly_renderers);
 
 var rows = [];
-var cols = [];
+var cols = ["status"];
 var vals = [];
 var aggregator = "Count";
 

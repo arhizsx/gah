@@ -88,8 +88,6 @@ $(document).on("click", ".pivottable_btn", function(){
         doHidePivotControls( $(element) );
     }
 
-
-    doShowPivotControls($(this));
 });
 
 function doShowPivotControls(element){
@@ -99,7 +97,7 @@ function doShowPivotControls(element){
     $(document).find(".pvtUi .pvtAxisContainer").show();
     $(document).find(".pvtUi .pvtUiCell").show();
 
-    $(document).find(".pivottable_btn").attr("data-action", "hide_pivot_controls");
+    element.data("action", "hide_pivot_controls");
     element.text("Hide Pivot Controls");
 
 }

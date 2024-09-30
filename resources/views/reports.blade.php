@@ -68,10 +68,10 @@ $.ajax({
         $(document).find(".pvtUi .pvtAxisContainer").hide();
         $(document).find(".pvtUi .pvtUiCell").hide();
 
-        if(element != undefined){
-            element.data("action", "show_pivot_controls");
-            element.text("Customize Pivot");
-        }
+        // if(element != undefined){
+        //     element.data("action", "show_pivot_controls");
+        //     element.text("Customize Pivot");
+        // }
 
     },
     error: function(){

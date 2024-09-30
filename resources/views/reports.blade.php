@@ -83,6 +83,8 @@ $(document).on("click", ".pivottable_btn", function(){
 
     var element = $(this);
 
+    console.log(element);
+
     if($(this).data("action") == "show_pivot_controls" ){
         doShowPivotControls( element );
     }

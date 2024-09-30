@@ -79,6 +79,37 @@ $.ajax({
     }
 });
 
+$(document).on("click", ".pivottable_btn", function(){
+
+    if($(this).data("action") == "show_pivot_controls" ){
+        doShowPivotControls($(this));
+    }
+    else if($(this).data("action") == "hide_pivot_controls" ){
+        doHidePivotControls($(this));
+    }
+
+
+    doShowPivotControls($(this));
+});
+
+function doShowPivotControls(element){
+    $(document).find(".pvtUi .pvtAxisContainer").show();
+    $(document).find(".pvtUi .pvtUiCell").show();
+    element.data("action", "hide_pivot_controls");
+    element.text("Hide Pivot Controls");
+
+}
+
+function doHidePivotControls(element){
+
+    $(document).find(".pvtUi .pvtAxisContainer").hide();
+    $(document).find(".pvtUi .pvtUiCell").hide();
+
+    if(element != undefined){
+        element.data("action", "show_pivot_controls");
+        element.text("Customize Pivot");
+    }
+}
 
 
 </script>

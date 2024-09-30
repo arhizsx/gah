@@ -47,6 +47,14 @@ $.ajax({
             }
         });
 
+        $(document).find(".pvtUi .pvtAxisContainer").hide();
+        $(document).find(".pvtUi .pvtUiCell").hide();
+
+        if(element != undefined){
+            element.data("action", "show_pivot_controls");
+            element.text("Customize Pivot");
+        }
+
     },
     error: function(){
         console.log("Error in AJAX");

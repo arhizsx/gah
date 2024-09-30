@@ -16,7 +16,7 @@
             <div class="col pivottable_output" >
 
             </div>
-        </div<
+        </div>
         <div class="row pivottable_loading">
             <div class="col">
                 Loading Data...

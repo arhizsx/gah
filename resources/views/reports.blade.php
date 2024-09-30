@@ -81,11 +81,13 @@ $.ajax({
 
 $(document).on("click", ".pivottable_btn", function(){
 
+    var element = $(this);
+
     if($(this).data("action") == "show_pivot_controls" ){
-        doShowPivotControls($(this));
+        doShowPivotControls( element );
     }
     else if($(this).data("action") == "hide_pivot_controls" ){
-        doHidePivotControls($(this));
+        doHidePivotControls( element );
     }
 
 
@@ -93,6 +95,8 @@ $(document).on("click", ".pivottable_btn", function(){
 });
 
 function doShowPivotControls(element){
+
+
     $(document).find(".pvtUi .pvtAxisContainer").show();
     $(document).find(".pvtUi .pvtUiCell").show();
     element.data("action", "hide_pivot_controls");

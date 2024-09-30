@@ -44,13 +44,6 @@ $.ajax({
             renderers: renderers,
             rendererName: "Table",
             rendererOptions: {
-                table: {
-                    clickCallback: function(e, value, filters, pivotData){
-                        showClickedCell(e, value, filters, pivotData, clicked_table_visible);
-                    },
-                    rowTotals: true,
-                    colTotals: true
-                }
             }
         });
 

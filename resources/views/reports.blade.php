@@ -7,7 +7,7 @@
     <x-slot name="slot">
         <div class="border shadow-lg p-3 mx-3 mt-3 mb-5 bg-white rounded">
 
-            <div class="row pivottable_data" data-dashboard_data="{{ $source_table }}">
+            <div class="row pivottable_data">
                 <div class="col pivottable_output" >
 
                 </div>
@@ -32,7 +32,7 @@ var vals = [];
 var aggregator = "Count";
 
 $.ajax({
-    
+
     url: "/supervendor/data/reports",
     method: "GET",
     headers: {

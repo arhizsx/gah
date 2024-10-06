@@ -96,13 +96,13 @@
                     </div>
                     <div class="section-title">Attachments</div>
                     <div class="row mb-4 border-bottom pb-3">
-                        <div class="col text-center">
+                        <div class="col text-center" id="proof_of_purchase_col">
                             <div  class="border" style="width: 100%;">
                                 <a target="_blank" href="" id="href_receipt"><img src="" id="img_receipt" alt-text="receipt"/></a>
                             </div>
                             <small>Proof of Purchase</small>
                         </div>
-                        <div class="col text-center">
+                        <div class="col text-center" id="serviceability_col">
                             <div  class="border" style="width: 100%;">
                                 <a target="_blank" href="" id="href_serviceability_check"><img src=""  id="img_serviceability_check" alt-text="serviceability_check"/></a>
                             </div>
@@ -120,6 +120,10 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
+
+                <button type="button" class="btn btn-danger btn-action d-none" id="btn_application_cancelled" data-user_mode="vendor" data-action="application_cancelled" data-id="">Cancelled</button>
+                <button type="button" class="btn btn-primary btn-action  d-none" id="btn_application_installed" data-user_mode="vendor" data-action="application_installed" data-id="">Installed</button>
+
                 @if( \Auth::user()->company == null )
 
                 {{-- <button type="button" class="btn btn-success btn-action" data-user_mode="gt" data-action="application_endorsed" data-id="">Endorse to SV</button>
@@ -128,8 +132,8 @@
 
                 @else
 
-                <button type="button" class="btn btn-danger btn-action" data-user_mode="vendor" data-action="application_cancelled" data-id="">Cancelled</button>
-                <button type="button" class="btn btn-primary btn-action" data-user_mode="vendor" data-action="application_installed" data-id="">Installed</button>
+
+
 
                 @endif
 
@@ -154,6 +158,7 @@ $(() => {
 });
 
 $(document).on("click", ".btn-action", function(){
+
     let action = $(this).data("action");
 
     $.ajax({
@@ -182,28 +187,47 @@ function callbackAction(data){
 
     applicationSetImage(data);
 
-    var show_vendor = ["ENDORSED"];
-    var vendor_btns = $(document).find(modal).find(".btn-action[data-user_mode='vendor']");
 
-    if( $.inArray( data.status, show_vendor ) >= 0){
-        vendor_btns.removeClass("d-none");
-    } else {
-        vendor_btns.addClass("d-none");
+    $(document).find(".btn-action[data-user_mode='vendor']").addClass("d-none");
+    $(document).find(".btn-action[data-user_mode='gt']").addClass("d-none");
+
+    if( data.campaign == "XIAOMI" ){
+
+        $(document).find("#proof_of_purchase_col").addClass("d-none");
+        console.log("XIAOMI");
+
+        $(document).find("#btn_application_installed").removeClass("d-none");
+        $(document).find("#btn_application_cancelled").removeClass("d-none");
+
+
+    }
+    else if( data.campaign == "SAMSUNG" ){
+
     }
 
-    var show_gt = ["REGISTERED", "PENDING", "DROPPED"];
-    var gt_btns = $(document).find(modal).find(".btn-action[data-user_mode='gt']");
+    // var show_vendor = ["ENDORSED"];
+    // var vendor_btns = $(document).find(modal).find(".btn-action[data-user_mode='vendor']");
 
-    if( $.inArray( data.status, show_gt ) >= 0){
-        gt_btns.removeClass("d-none");
-    } else {
-        gt_btns.addClass("d-none");
-    }
+    // if( $.inArray( data.status, show_vendor ) >= 0){
+    //     vendor_btns.removeClass("d-none");
+    // } else {
+    //     vendor_btns.addClass("d-none");
+    // }
+
+    // var show_gt = ["REGISTERED", "PENDING", "DROPPED"];
+    // var gt_btns = $(document).find(modal).find(".btn-action[data-user_mode='gt']");
+
+    // if( $.inArray( data.status, show_gt ) >= 0){
+    //     gt_btns.removeClass("d-none");
+    // } else {
+    //     gt_btns.addClass("d-none");
+    // }
 
 }
 
 
 function applicationSetImage(data){
+
 
     $("#img_receipt").attr("src", "/files/" + data.receipt);
     $("#img_serviceability_check").attr("src",  "/files/" + data.serviceability_check);

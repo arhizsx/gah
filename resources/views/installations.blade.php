@@ -102,12 +102,18 @@
                 </div>
             </div>
             <div class="modal-footer">
+                @if( \Auth::user()->company == null )
+
+                <button type="button" class="btn btn-primary btn-action" data-user_mode="gt" data-action="application_registered" data-id="">Back to Registered</button>
+                
+                @endif 
+
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
-<script>
+<script> 
 
 let x= "";
 let modal = "#installation_details";
@@ -120,5 +126,32 @@ $(() => {
     $(datagrid).setDatagrid( modal, datasource, columns );
 
 });
+
+$(document).on("click", ".btn-action", function(){
+    let action = $(this).data("action");
+
+    $.ajax({
+        url: "/supervendor/ajax",
+        method: "POST",
+        data: {
+            "action" : action,
+            "remarks": $(document).find(modal).find("[name='remarks']").val(),
+            "id": $(this).data("id")
+        },
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function(resp){
+            if(resp.error == false){
+                location.reload();
+            }
+        },
+        error: function(){
+            console.log("Error in AJAX");
+        }
+    });
+
+});
+
 
 </script>

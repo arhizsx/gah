@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\CampaignRegistration;
+use Illuminate\Support\Collection;
 
 class SupervendorController extends Controller
 {
@@ -26,6 +27,10 @@ class SupervendorController extends Controller
         return view("installations");
     }
 
+    function users(){
+        return view("users");
+    }
+
     function company(){
         return view("company");
     }
@@ -35,174 +40,467 @@ class SupervendorController extends Controller
     function data( $action ){
 
         $access = DB::table("users_access")
-            ->where( "user_id", Auth::user()->id );
+            ->where( "user_id", Auth::user()->id )
+            ->get();
+
 
         $registrations = DB::table("view_registrations");
+
+        $campaigns = [ "SAMSUNG", "XIAOMI" ];
+        $return_data = new Collection();
 
         switch( $action ){
 
             case "installations":
 
-                $campaign = array("SAMSUNG");
-
-                $what_campaign = "SAMSUNG";
-                if( in_array("SAMSUNG", $campaign) ){
-
-                    $page_allowed_statuses = array("INSTALLED", "CANCELLED", "DROPPED");
-
-                    $access_data = $access->where("campaign", $what_campaign)->first();
-
-                    if( Auth::user()->company == NULL  ){
-
-                        if( $access_data ){
-
-                            if( $access_data->profile == "SGT" ){
-
-                                $registrations = $registrations
-                                    ->whereIn("campaign", $campaign)
-                                    ->whereIn("status", $page_allowed_statuses)
-                                    ->where("SGT Name", Auth::user()->name);
-
-                            }
-                            elseif( $access_data->profile == "NSGT" ){
-
-                                $registrations = $registrations
-                                    ->whereIn("campaign", $campaign)
-                                    ->whereIn("status", $page_allowed_statuses);
-
-                            }
-
-
-                        } else {
-
-                            $registrations = $registrations
-                                ->whereIn("campaign", $campaign)
-                                ->whereIn("status", $page_allowed_statuses)
-                                ->where( "vendor", Auth::user()->company );
-
-                        }
-
-
-                    } else {
-
-                        $registrations = $registrations
-                                            ->whereIn("campaign", $campaign)
-                                            ->whereIn("status", $page_allowed_statuses)
-                                            ->where( "vendor", Auth::user()->company );
-
-                    }
-                }
-
-
-                $data = $registrations->get();
-
-                break;
-
-
-            case "applications":
-
-                $campaign = array("SAMSUNG", "XIAOMI");
-
-                $what_campaign = "SAMSUNG";
-
-                $page_allowed_statuses = array("REGISTERED");
-
-                $access_data = $access->where("campaign", $what_campaign)->first();
-
                 if( Auth::user()->company == NULL  ){
 
-                    if( $access_data ){
+                    // ////////////////////////
+                    // GT DATA :: INSTALLATIONS
+                    // ////////////////////////
 
-                        if( $access_data->profile == "SGT" ){
+                    foreach(  $campaigns as $campaign ){
 
-                            $registrations = $registrations
-                                ->whereIn("campaign", $campaign)
-                                ->whereIn("status", $page_allowed_statuses)
-                                ->where("SGT Name", Auth::user()->name);
+                        if( $campaign == "SAMSUNG" ){
+
+                            $data = null;
+
+                            if( $access ){
+
+                                foreach( $access as $u ){
+
+                                    if( $u->campaign == $campaign ){
+
+                                        if( $u->profile == "NSGT" ){
+
+                                            $data = DB::table("view_registrations")
+                                                ->whereNotNull("SGT Name")
+                                                ->where("campaign", $campaign)
+                                                ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED") )
+                                                ->get();
+
+                                        }
+                                        else if( $u->profile == "SGT" ){
+
+                                            $data = DB::table("view_registrations")
+                                                ->where("SGT Name", Auth::user()->name)
+                                                ->where("campaign", $campaign)
+                                                ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED") )
+                                                ->get();
+
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
+                            if( $data != null ){
+
+                                $return_data->push(  ...$data );
+
+                            }
 
                         }
-                        elseif( $access_data->profile == "NSGT" ){
 
-                            $registrations = $registrations
-                                ->whereIn("campaign", $campaign)
-                                ->whereIn("status", $page_allowed_statuses);
+                        elseif( $campaign == "XIAOMI" ){
+
+                            $data = null;
+
+                            if( $access ){
+
+                                foreach( $access as $u ){
+
+                                    if( $u->campaign == $campaign ){
+
+                                        if( $u->profile == "NSGT" ){
+
+                                            $data = DB::table("view_registrations")
+                                                ->whereNotNull("SGT Name")
+                                                ->where("campaign", $campaign)
+                                                ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED") )
+                                                ->get();
+
+                                        }
+                                        else if( $u->profile == "SGT" ){
+
+                                            $data = DB::table("view_registrations")
+                                                ->where("SGT Name", Auth::user()->name)
+                                                ->where("campaign", $campaign)
+                                                ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED") )
+                                                ->get();
+
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
+                            if( $data != null ){
+
+                                $return_data->push(  ...$data );
+
+                            }
 
                         }
-
 
                     }
 
 
                 } else {
 
-                    $registrations = $registrations
-                                        ->whereIn("campaign", $campaign)
-                                        ->whereIn("status", $page_allowed_statuses)
-                                        ->where( "vendor", Auth::user()->company );
+                    // VENDOR DATA :: INSTALLATIONS
+
+                    foreach(  $campaigns as $campaign ){
+
+                        if( $campaign == "SAMSUNG" ){
+
+                            $data = null;
+
+                            $data = DB::table("view_registrations")
+                                    ->where("campaign", $campaign)
+                                    ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED") )
+                                    ->where( "vendor", Auth::user()->company )
+                                    ->get();
+
+                            if( $data != null ){
+
+                                $return_data->push(  ...$data );
+
+                            }
+
+
+                        }
+
+
+                        elseif( $campaign == "XIAOMI" ){
+
+                            $data = null;
+
+                            $data = DB::table("view_registrations")
+                                    ->where("campaign", $campaign)
+                                    ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED") )
+                                    ->where( "vendor", Auth::user()->company )
+                                    ->get();
+
+                            if( $data != null ){
+
+                                $return_data->push(  ...$data );
+
+                            }
+
+                        }
+
+                    }
+
 
                 }
 
+                return $return_data;
+
+                break;
 
 
-                $data = $registrations->get();
+            case "applications":
+
+                if( Auth::user()->company == NULL  ){
+
+                    // ////////////////////////
+                    // GT DATA :: APPLICATIONS
+                    // ////////////////////////
+
+                    foreach(  $campaigns as $campaign ){
+
+                        if( $campaign == "SAMSUNG" ){
+
+                            $data = null;
+
+                            if( $access ){
+
+                                foreach( $access as $u ){
+
+                                    if( $u->campaign == $campaign ){
+
+                                        if( $u->profile == "NSGT" ){
+
+                                            $data = DB::table("view_registrations")
+                                                ->whereNotNull("SGT Name")
+                                                ->where("campaign", $campaign)
+                                                ->whereIn("status", array("") )
+                                                ->get();
+
+                                        }
+                                        else if( $u->profile == "SGT" ){
+
+                                            $data = DB::table("view_registrations")
+                                                ->where("SGT Name", Auth::user()->name)
+                                                ->where("campaign", $campaign)
+                                                ->whereIn("status", array("") )
+                                                ->get();
+
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
+                            if( $data != null ){
+
+                                $return_data->push(  ...$data );
+
+                            }
+
+                        }
+
+                        elseif( $campaign == "XIAOMI" ){
+
+                            $data = null;
+
+                            if( $access ){
+
+                                foreach( $access as $u ){
+
+                                    if( $u->campaign == $campaign ){
+
+                                        if( $u->profile == "NSGT" ){
+
+                                            $data = DB::table("view_registrations")
+                                                ->whereNotNull("SGT Name")
+                                                ->where("campaign", $campaign)
+                                                ->whereIn("status", array("REGISTERED") )
+                                                ->get();
+
+                                        }
+                                        else if( $u->profile == "SGT" ){
+
+                                            $data = DB::table("view_registrations")
+                                                ->where("SGT Name", Auth::user()->name)
+                                                ->where("campaign", $campaign)
+                                                ->whereIn("status", array("REGISTERED") )
+                                                ->get();
+
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
+                            if( $data != null ){
+
+                                $return_data->push(  ...$data );
+
+                            }
+
+                        }
+
+                    }
+
+
+                } else {
+
+                    // VENDOR DATA :: APPLICATIONS
+
+                    foreach(  $campaigns as $campaign ){
+
+                        if( $campaign == "SAMSUNG" ){
+
+                            $data = null;
+
+                            $data = DB::table("view_registrations")
+                                    ->where("campaign", $campaign)
+                                    ->whereIn("status", array(""))
+                                    ->where( "vendor", Auth::user()->company )
+                                    ->get();
+
+                            if( $data != null ){
+
+                                $return_data->push(  ...$data );
+
+                            }
+
+
+                        }
+
+
+                        elseif( $campaign == "XIAOMI" ){
+
+                            $data = null;
+
+                            $data = DB::table("view_registrations")
+                                    ->where("campaign", $campaign)
+                                    ->whereIn("status", array("REGISTERED", "ENDORSED"))
+                                    ->where( "vendor", Auth::user()->company )
+                                    ->get();
+
+                            if( $data != null ){
+
+                                $return_data->push(  ...$data );
+
+                            }
+
+                        }
+
+                    }
+
+
+                }
+
+                return $return_data;
 
                 break;
 
             case "sgt":
 
-                $campaign = array("SAMSUNG");
+                if( Auth::user()->company == NULL  ){
 
-                $what_campaign = "SAMSUNG";
-                if( in_array($what_campaign, $campaign) ){
+                    // ////////////////////////
+                    // GT DATA :: SGT
+                    // ////////////////////////
 
-                    $page_allowed_statuses = array("REGISTERED", "PENDING", "ENDORSED");
+                    foreach(  $campaigns as $campaign ){
 
-                    $access_data = $access->where("campaign", $what_campaign)->first();
+                        if( $campaign == "SAMSUNG" ){
 
+                            $data = null;
 
-                    if( Auth::user()->company == NULL  ){
+                            if( $access ){
 
-                        if( $access_data ){
+                                foreach( $access as $u ){
 
-                            if( $access_data->profile == "SGT" ){
+                                    if( $u->campaign == $campaign ){
 
-                                $registrations = $registrations
-                                    ->whereIn("campaign", $campaign)
-                                    ->whereIn("status", $page_allowed_statuses)
-                                    ->where("SGT Name", Auth::user()->name);
+                                        if( $u->profile == "NSGT" ){
+
+                                            $data = DB::table("view_registrations")
+                                                ->whereNotNull("SGT Name")
+                                                ->where("campaign", $campaign)
+                                                ->whereIn("status", array("REGISTERED", "PENDING", "ENDORSED") )
+                                                ->get();
+
+                                        }
+                                        else if( $u->profile == "SGT" ){
+
+                                            $data = DB::table("view_registrations")
+                                                ->where("SGT Name", Auth::user()->name)
+                                                ->where("campaign", $campaign)
+                                                ->whereIn("status", array("REGISTERED", "PENDING", "ENDORSED") )
+                                                ->get();
+
+                                        }
+
+                                    }
+
+                                }
 
                             }
-                            elseif( $access_data->profile == "NSGT" ){
 
-                                $registrations = $registrations
-                                    ->whereIn("campaign", $campaign)
-                                    ->whereIn("status", $page_allowed_statuses);
+                            if( $data != null ){
+
+                                $return_data->push(  ...$data );
 
                             }
 
+                        }
 
-                        } else {
+                        elseif( $campaign == "XIAOMI" ){
 
-                            $registrations = $registrations
-                                ->whereIn("campaign", $campaign)
-                                ->where("status", "X");
+                            $data = null;
+
+                            if( $access ){
+
+                                foreach( $access as $u ){
+
+                                    if( $u->campaign == $campaign ){
+
+                                        if( $u->profile == "NSGT" ){
+
+                                            $data = DB::table("view_registrations")
+                                                ->whereNull("SGT Name")
+                                                ->where("campaign", $campaign)
+                                                ->whereIn("status", array("REGISTERED") )
+                                                ->get();
+
+                                        }
+                                        else if( $u->profile == "SGT" ){
+
+                                            $data = [];
+
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
+                            if( $data != null ){
+
+                                $return_data->push(  ...$data );
+
+                            }
+
+                        }
+
+                    }
+
+
+                } else {
+
+                    // VENDOR DATA :: SGT
+
+                    foreach(  $campaigns as $campaign ){
+
+                        if( $campaign == "SAMSUNG" ){
+
+                            $data = null;
+
+                            $data = [];
+
+                            if( $data != null ){
+
+                                $return_data->push(  ...$data );
+
+                            }
+
 
                         }
 
 
-                    } else {
+                        elseif( $campaign == "XIAOMI" ){
 
-                        $registrations = $registrations
-                                            ->whereIn("status", $page_allowed_statuses)
-                                            ->where( "vendor", Auth::user()->company );
+                            $data = null;
+
+                            $data = [];
+
+                            if( $data != null ){
+
+                                $return_data->push(  ...$data );
+
+                            }
+
+                        }
 
                     }
 
+
                 }
 
-                $data = $registrations->get();
+                return $return_data;
 
+                break;
 
+            case "users":
+
+                $users = DB::table("users_access_view")->get();
+
+                return $users;
                 break;
 
             default:
@@ -229,6 +527,20 @@ class SupervendorController extends Controller
 
                 return ["error"=> false, "registration" => $registration];
 
+            break;
+
+            case "application_registered":
+
+                $registration = CampaignRegistration::where("id", $request->id);
+                $registration->update([
+
+                    "status" => 'REGISTERED'
+                ]);
+
+                return ["error"=> false, "registration" => $registration];
+
+            break;
+
             case "application_cancelled":
 
                 $registration = CampaignRegistration::where("id", $request->id);
@@ -237,6 +549,8 @@ class SupervendorController extends Controller
                 ]);
 
                 return ["error"=> false, "registration" => $registration];
+
+            break;
 
             case "application_endorsed":
 
@@ -264,6 +578,8 @@ class SupervendorController extends Controller
 
                 return ["error"=> false, "registration" => $registration];
 
+            break;
+
             case "application_pending":
 
                 $registration = CampaignRegistration::where("id", $request->id);
@@ -290,6 +606,8 @@ class SupervendorController extends Controller
 
                 return ["error"=> false, "registration" => $registration];
 
+            break;
+
             case "application_dropped":
 
                 $registration = CampaignRegistration::where("id", $request->id);
@@ -315,6 +633,9 @@ class SupervendorController extends Controller
                 }
 
                 return ["error"=> false, "registration" => $registration];
+
+            break;
+
 
         }
 

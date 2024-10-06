@@ -42,9 +42,12 @@
                     <x-nav-link :href="route('installations')" :active="request()->routeIs('installations')">
                         {{ __('Processed') }}
                     </x-nav-link>
-                    {{-- <x-nav-link :href="route('company')" :active="request()->routeIs('company')">
-                        {{ __('Company') }}
-                    </x-nav-link> --}}
+                    @if(Auth::user()->company == null)
+                    <x-nav-link :href="route('users')" :active="request()->routeIs('users')">
+                        {{ __('Users') }}
+                    </x-nav-link>
+                    @endif
+
                 </div>
             </div>
 
@@ -116,9 +119,9 @@
             <x-responsive-nav-link :href="route('installations')" :active="request()->routeIs('installations')">
                 {{ __('Installations') }}
             </x-responsive-nav-link>
-            {{-- <x-responsive-nav-link :href="route('company')" :active="request()->routeIs('company')">
-                {{ __('Company') }}
-            </x-responsive-nav-link> --}}
+            <x-responsive-nav-link :href="route('users')" :active="request()->routeIs('users')">
+                {{ __('Users') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->

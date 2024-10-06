@@ -30,7 +30,7 @@ class UpdatedCampaignRegistration extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('arhizsx@gmail.com', 'Aris Salvador'),
+            from: new Address('postmaster@globeathome.online', 'Globe At Home Online'),
             replyTo: [
                 new Address('admin@globeathome.com', 'Administrator'),
             ],

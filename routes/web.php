@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SamsungController;
 use App\Http\Controllers\SupervendorController;
+use Illuminate\Support\Facades\Mail;
 
 use App\Http\Controllers\CampaignController;
 use App\Models\CampaignRegistration;
@@ -17,6 +18,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/supervendor/applications',  [SupervendorController::class, 'applications'])->name('applications');
     Route::get('/supervendor/installations',  [SupervendorController::class, 'installations'])->name('installations');
     Route::get('/supervendor/company',  [SupervendorController::class, 'company'])->name('company');
+    Route::get('/supervendor/users',  [SupervendorController::class, 'users'])->name('users');
 
     Route::get('/supervendor/data/{action}',  [SupervendorController::class, 'data'])->name('data');
     Route::post('/supervendor/ajax',  [SupervendorController::class, 'ajax'])->name('ajax');
@@ -45,6 +47,14 @@ Route::get('/', function () {
 Route::get('/internal', function () {
     return redirect('https://sam.globe.com.ph/broadband/internal');
 });
+
+Route::get('/mailgun', function () {
+     Mail::raw('This is a test email using Mailgun!', function ($message) {
+        $message->to('arhizsx@gmail.com')
+                ->subject('Mailgun Test');
+    });
+});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

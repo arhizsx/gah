@@ -12,7 +12,11 @@ class SupervendorController extends Controller
 {
 
     function index(){
-        return view("home");
+
+        $data = DB::table("view_dashboard")->get();
+
+        return view("home", ["data" => $data]);
+                
     }
 
     function sgt(){
@@ -31,6 +35,14 @@ class SupervendorController extends Controller
         return view("users");
     }
 
+    function leadslist(){
+        return view("leadslist");
+    }
+    
+    function reports(){
+        return view("reports");
+    }
+    
     function company(){
         return view("company");
     }
@@ -502,6 +514,24 @@ class SupervendorController extends Controller
 
                 return $users;
                 break;
+
+            case "leadslist":
+
+                $data = DB::table("view_registrations")
+                        ->wherenotnull("city")
+                        ->get();
+
+                return $data;
+                break;
+                
+            case "reports":
+
+                $data = DB::table("view_registrations")
+                        ->wherenotnull("city")
+                        ->get();
+
+                return $data;
+                break;                
 
             default:
 

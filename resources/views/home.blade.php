@@ -5,37 +5,103 @@
         </h2>
     </x-slot>
     <x-slot name="slot">
+        <style>
+            h1 {
+                font-size: 2rem;
+                font-weight: bold;
+            }
+            .counter-box {
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            }
 
-        <div class="container-fluid" style="min-height: 380px; height:auto; margin-top:50px;">
-            <div class="row"  style="height: 100%;">
-                <div class="col">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 100%;">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="/images/slider-1.png" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="/images/slider-2.png" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="/images/slider-3.png" alt="Third slide">
-                        </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
+            .counter-box:hover {
+            transform: scale(1.05);
+            }
+
+            .counter-box i {
+            font-size: 2rem;
+            color: #4e73df;
+            margin-bottom: 10px;
+            }
+
+            .counter-box h3 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #343a40;
+            }
+
+            .counter-box p {
+            font-size: 1.25rem;
+            color: #6c757d;
+            }
+        </style>
+        <div class="container-fluid" style="height:auto; margin-top:50px;">
+            <div class="row">
+                <div class="col mb-2">
+                    <H1>SAMSUNG</H1>
                 </div>
+            </div>
+            <div class="row">
+                @php 
+                    $total = 0;
+                @endphp
+                @foreach( $data as $d )
+                    @if( $d->campaign == "SAMSUNG" )
+                        @php 
+                           $total = $total + $d->count; 
+                        @endphp         
+                        <div class="col-md-3 mb-4">
+                            <div class="counter-box">
+                            <i class="bi bi-graph-up"></i>
+                            <h3>{{ $d->count }}</h3>
+                            <p>{{ $d->status }}</p>
+                            </div>
+                        </div>           
+                    @endif
+                @endforeach
+                    <div class="col-md-3 mb-4">
+                        <div class="counter-box">
+                        <i class="bi bi-graph-up"></i>
+                        <h3>{{ $total }}</h3>
+                        <p>TOTAL</p>
+                        </div>
+                    </div>           
+            </div>
+            <div class="row">
+                <div class="col mb-2">
+                    <H1>XIAOMI</H1>
+                </div>
+            </div>
+            <div class="row">
+                @php 
+                    $total = 0;
+                @endphp
+                @foreach( $data as $d )
+                    @if( $d->campaign == "XIAOMI" )
+                        @php 
+                           $total = $total + $d->count; 
+                        @endphp         
+                        <div class="col-md-3 mb-4">
+                            <div class="counter-box">
+                            <i class="bi bi-graph-up"></i>
+                            <h3>{{ $d->count }}</h3>
+                            <p>{{ $d->status }}</p>
+                            </div>
+                        </div>           
+                    @endif
+                @endforeach
+                    <div class="col-md-3 mb-4">
+                        <div class="counter-box">
+                        <i class="bi bi-graph-up"></i>
+                        <h3>{{ $total }}</h3>
+                        <p>TOTAL</p>
+                        </div>
+                    </div>           
             </div>
         </div>
 

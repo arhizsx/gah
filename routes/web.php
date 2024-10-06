@@ -19,6 +19,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/supervendor/installations',  [SupervendorController::class, 'installations'])->name('installations');
     Route::get('/supervendor/company',  [SupervendorController::class, 'company'])->name('company');
     Route::get('/supervendor/users',  [SupervendorController::class, 'users'])->name('users');
+    Route::get('/supervendor/leadslist',  [SupervendorController::class, 'leadslist'])->name('leadslist');
+    Route::get('/supervendor/reports',  [SupervendorController::class, 'reports'])->name('reports');
 
     Route::get('/supervendor/data/{action}',  [SupervendorController::class, 'data'])->name('data');
     Route::post('/supervendor/ajax',  [SupervendorController::class, 'ajax'])->name('ajax');

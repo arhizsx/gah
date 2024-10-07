@@ -151,7 +151,6 @@
                                     <label for="store">Store</label>
                                     <select class="form-control checker select2" data-checker="required" name="store" id="store">
                                         <option value="" selected>Store item was purchased</option>
-                                        <option value="" selected>Store item was purchased</option>
                                         <option value='8TELCOM' data-city='8TELCOM'>8TELCOM</option>
                                         <option value='ABENSON' data-city='ABENSON'>ABENSON</option>
                                         <option value='ADDESSA' data-city='ADDESSA'>ADDESSA</option>

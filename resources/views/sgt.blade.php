@@ -231,7 +231,7 @@ $(document).on("click", ".btn-action", function(){
                                 '<label for="confirm_complete_name">Pending Type</label>' +
                             '</div>' +
                             '<div class="col-9">' +
-                                '<select name="pending_type" class="form-control">' +
+                                '<select name="pending_type" class="form-control" id="pendingType">' +
                                     '<option value="">Select Pending Type</option>' +
                                     '<option value="Pending - Customer Availability">Pending - Customer Availability</option>' +
                                     '<option value="Pending - SV Capacity Issue">Pending - SV Capacity Issue</option>' +
@@ -310,9 +310,10 @@ $(document).on("click", ".btn-action", function(){
 
 });
 
-$(document).find("[name='pending_type']").on("change", function(){
+$(document).find("#pendingType").on("change", function(){
     console.log($(this).val());
 });
+
 
 function callbackAction(data){
 

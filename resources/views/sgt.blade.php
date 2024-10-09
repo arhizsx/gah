@@ -229,7 +229,7 @@ $(document).on("click", ".btn-action", function(){
                                 '<label for="confirm_complete_name">Pending Type</label>' +
                             '</div>' +
                             '<div class="col-9">' +
-                                '<select name="pending_type">' +
+                                '<select name="pending_type" class="form-control">' +
                                     '<option value="">Select Pending Type</option>' +
                                     '<option value="Pending - Customer Availability">Pending - Customer Availability</option>' +
                                     '<option value="Pending - SV Capacity Issue">Pending - SV Capacity Issue</option>' +

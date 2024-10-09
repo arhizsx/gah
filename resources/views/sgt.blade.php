@@ -239,6 +239,9 @@ $(document).on("click", ".btn-action", function(){
                             '</div>' +
                         '</div>'
                     )
+                    
+                    $(document).find("#confirm_btn").attr("disabled", "disabled");
+
                 break;
 
                 case "application_dropped":

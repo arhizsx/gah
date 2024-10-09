@@ -612,31 +612,31 @@ class SupervendorController extends Controller
 
             case "application_pending":
 
-                $this->pending($request);
+                return $this->pending($request);
 
             break;
 
             case "Pending - Customer Availability":
 
-                $this->pending($request);
+                return $this->pending($request);
 
             break;
 
             case "Pending - SV Capacity Issue":
 
-                $this->pending($request);
+                return $this->pending($request);
 
             break;
 
             case "Pending - Adverse Weather":
 
-                $this->pending($request);
+                return $this->pending($request);
 
             break;
 
             case "Pending - Customer Uncontacted":
 
-                $this->pending($request);
+                return $this->pending($request);
 
             break;
 

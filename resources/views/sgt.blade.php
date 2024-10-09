@@ -206,6 +206,8 @@ $(document).on("click", ".btn-action", function(){
 
     if (typeof $(this).data('confirm') !== 'undefined') {
 
+        $(document).find("#confirm_btn").attr("disabled", false);
+
         if( $(this).data('confirm') == "yes" ){
 
             $(document).find("#confirm_modal").modal("show");
@@ -213,7 +215,6 @@ $(document).on("click", ".btn-action", function(){
 
             var new_status = "";
             $(document).find("#custom_field").html('');
-            $(document).find("#confirm_btn").attr("disabled", "");
 
             switch(  $(this).data("action") ){
 

@@ -310,8 +310,9 @@ $(document).on("click", ".btn-action", function(){
 
 });
 
-$(document).find("#pendingType").on("change", function(){
-    console.log($(this).val());
+$(document).on('change', '#pendingType', function() {
+    var selectedValue = $(this).val(); // Get the selected value
+    $('#selectedValue').text('You selected: ' + selectedValue); // Display the selected value
 });
 
 

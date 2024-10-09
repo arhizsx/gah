@@ -612,29 +612,31 @@ class SupervendorController extends Controller
 
             case "application_pending":
 
-                $registration = CampaignRegistration::where("id", $request->id);
+                $this->pending($request);
 
-                $registration_data = CampaignRegistration::where("id", $request->id)->first();
+            break;
 
-                if( $registration_data ){
+            case "Pending - Customer Availability":
 
-                    $registration_data = json_decode($registration_data->data,true);
-                    $registration_data["remarks"] = $request->remarks;
+                $this->pending($request);
 
-                    $registration->update([
-                        "status" => 'PENDING',
-                        "data" => $registration_data
-                    ]);
+            break;
 
-                } else {
+            case "Pending - SV Capacity Issue":
 
-                    $registration->update([
-                        "status" => 'PENDING',
-                    ]);
+                $this->pending($request);
 
-                }
+            break;
 
-                return ["error"=> false, "registration" => $registration];
+            case "Pending - Adverse Weather":
+
+                $this->pending($request);
+
+            break;
+
+            case "Pending - Customer Uncontacted":
+
+                $this->pending($request);
 
             break;
 
@@ -671,6 +673,34 @@ class SupervendorController extends Controller
 
 
         return $request;
+
+    }
+
+    function pending( $request ){
+
+        $registration = CampaignRegistration::where("id", $request->id);
+
+        $registration_data = CampaignRegistration::where("id", $request->id)->first();
+
+        if( $registration_data ){
+
+            $registration_data = json_decode($registration_data->data,true);
+            $registration_data["remarks"] = $request->remarks;
+
+            $registration->update([
+                "status" => $request->action,
+                "data" => $registration_data
+            ]);
+
+        } else {
+
+            $registration->update([
+                "status" => $request->action,
+            ]);
+
+        }
+
+        return ["error"=> false, "registration" => $registration];
 
     }
 

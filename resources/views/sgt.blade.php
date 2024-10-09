@@ -235,8 +235,8 @@ $(document).on("click", ".btn-action", function(){
                                     '<option value="">Select Pending Type</option>' +
                                     '<option value="Pending - Customer Availability">Pending - Customer Availability</option>' +
                                     '<option value="Pending - SV Capacity Issue">Pending - SV Capacity Issue</option>' +
-                                    '<option value="Pending -Adverse Weather">Pending -Adverse Weather</option>' +
-                                    '<option value="Pending -Customer Uncontacted">Pending -Customer Uncontacted</option>' +
+                                    '<option value="Pending - Adverse Weather">Pending - Adverse Weather</option>' +
+                                    '<option value="Pending - Customer Uncontacted">Pending - Customer Uncontacted</option>' +
                                 '</select>' +
                             '</div>' +
                         '</div>'

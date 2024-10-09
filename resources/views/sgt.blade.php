@@ -314,6 +314,8 @@ $(document).on('change', '#pendingType', function() {
 
     if($(this).val() != "" ){
         $(document).find("#confirm_btn").attr("disabled", false)
+        $(document).find("#confirm_btn").attr("data-next_action", $(this).val());
+
     } else {
         $(document).find("#confirm_btn").attr("disabled", "disabled")
     }

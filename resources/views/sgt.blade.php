@@ -311,11 +311,8 @@ $(document).on("click", ".btn-action", function(){
 });
 
 $(document).on('change', '#pendingType', function() {
-    var selectedValue = $(this).val(); // Get the selected value
+    alert($(this).val());
 
-    alert("test");
-    
-    $('#selectedValue').text('You selected: ' + selectedValue); // Display the selected value
 });
 
 

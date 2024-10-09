@@ -310,6 +310,10 @@ $(document).on("click", ".btn-action", function(){
 
 });
 
+$(document).find("[name='pending_type']").on("change", function(){
+    console.log($(this).val());
+});
+
 function callbackAction(data){
 
     applicationSetImage(data);

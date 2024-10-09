@@ -311,7 +311,12 @@ $(document).on("click", ".btn-action", function(){
 });
 
 $(document).on('change', '#pendingType', function() {
-    alert($(this).val());
+
+    if($(this).val() != "" ){
+        $(document).find("#confirm_btn").attr("disabled", false)
+    } else {
+        $(document).find("#confirm_btn").attr("disabled", "disabled")
+    }
 
 });
 

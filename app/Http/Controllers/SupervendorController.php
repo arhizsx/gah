@@ -100,14 +100,10 @@ class SupervendorController extends Controller
                                         elseif( $u->profile == "NSGT" && $u->position == "AREA HEAD"  ){
 
         
-                                            $data = DB::table("view_registrations")
-                                                ->JOIN('locations', function( $join ){
-                                                    $join->on('locations.province','=','view_registrations.province' );
-                                                    $join->on('locations.city','=','view_registrations.city' );
-                                                })
+                                            $data = DB::table("view_registrations_2")
                                                 ->whereNotNull("SGT Name")
                                                 ->where("campaign", $campaign)
-                                                ->where('locations.area_head_email', $usr->email)
+                                                ->where('area_head_email', $usr->email)
                                                 ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED") )
                                                 ->get();
 
@@ -123,13 +119,9 @@ class SupervendorController extends Controller
                                         }
                                         else if( $u->profile == "SGT" && $u->position == "CGE"   ){
 
-                                            $data = DB::table("view_registrations")
-                                                ->JOIN('locations', function( $join ){
-                                                    $join->on('locations.province','=','view_registrations.province' );
-                                                    $join->on('locations.city','=','view_registrations.city' );
-                                                })
+                                            $data = DB::table("view_registrations_2")
                                                 ->where("campaign", $campaign)                                                              ->where('locations.area_head_email', $usr->email)
-                                                ->where('locations.cge_email', $usr->email)                                  
+                                                ->where('cge_email', $usr->email)                                  
                                                 ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED") )
                                                 ->get();
 
@@ -287,13 +279,9 @@ class SupervendorController extends Controller
                                         }
                                         if( $u->profile == "NSGT" && $u->position == "AREA HEAD"  ){
 
-                                            $data = DB::table("view_registrations")
-                                                ->JOIN('locations', function( $join ){
-                                                    $join->on('locations.province','=','view_registrations.province' );
-                                                    $join->on('locations.city','=','view_registrations.city' );
-                                                })
+                                            $data = DB::table("view_registrations_2")
                                                 ->whereNotNull("SGT Name")
-                                                ->where('locations.area_head_email', $usr->email)                                  
+                                                ->where('area_head_email', $usr->email)                                  
                                                 ->where("campaign", $campaign)
                                                 ->whereIn("status", array("") )
                                                 ->get();
@@ -310,12 +298,8 @@ class SupervendorController extends Controller
                                         }
                                         else if( $u->profile == "SGT" && $u->position == "CGE"  ){
 
-                                            $data = DB::table("view_registrations")
-                                                ->JOIN('locations', function( $join ){
-                                                    $join->on('locations.province','=','view_registrations.province' );
-                                                    $join->on('locations.city','=','view_registrations.city' );
-                                                })
-                                                ->where('locations.cge_email', $usr->email)                                  
+                                            $data = DB::table("view_registrations_2")
+                                                ->where('cge_email', $usr->email)                                  
                                                 ->where("campaign", $campaign)
                                                 ->whereIn("status", array("") )
                                                 ->get();
@@ -473,13 +457,9 @@ class SupervendorController extends Controller
                                         }
                                         elseif( $u->profile == "NSGT" && $u->position == "AREA HEAD"  ){
 
-                                            $data = DB::table("view_registrations")
-                                                ->JOIN('locations', function( $join ){
-                                                    $join->on('locations.province','=','view_registrations.province' );
-                                                    $join->on('locations.city','=','view_registrations.city' );
-                                                })
+                                            $data = DB::table("view_registrations_2")
                                                 ->whereNotNull("SGT Name")
-                                                ->where('locations.area_head_email', $usr->email)                                  
+                                                ->where('area_head_email', $usr->email)                                  
                                                 ->where("campaign", $campaign)
                                                 ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED") )
                                                 ->get();
@@ -496,12 +476,8 @@ class SupervendorController extends Controller
                                         }
                                         else if( $u->profile == "SGT" && $u->position == "CGE"  ){
 
-                                            $data = DB::table("view_registrations")
-                                                ->JOIN('locations', function( $join ){
-                                                    $join->on('locations.province','=','view_registrations.province' );
-                                                    $join->on('locations.city','=','view_registrations.city' );
-                                                })
-                                                ->where('locations.cge_email', $usr->email)                                  
+                                            $data = DB::table("view_registrations_2")
+                                                ->where('cge_email', $usr->email)                                  
                                                 ->where("campaign", $campaign)
                                                 ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED") )
                                                 ->get();

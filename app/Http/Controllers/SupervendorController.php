@@ -107,7 +107,6 @@ class SupervendorController extends Controller
                                                 })
                                                 ->whereNotNull("SGT Name")
                                                 ->where("campaign", $campaign)
-                                                ->where('locations.area_head_email', $usr->email)
                                                 ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED") )
                                                 ->get();
 

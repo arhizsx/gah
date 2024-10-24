@@ -111,7 +111,7 @@ class SupervendorController extends Controller
                                                 ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED") )
                                                 ->get();
 
-                                                return $data;
+                                                return $usr->email;
                                                 die;
     
 

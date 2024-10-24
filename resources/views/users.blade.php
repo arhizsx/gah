@@ -19,7 +19,7 @@ let x= "";
 let modal = "";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/users';
-let columns = ['campaign', 'profile', 'name', 'email'];
+let columns = ['campaign', 'profile','position', 'name', 'email'];
 
 $(() => {
 

@@ -81,8 +81,6 @@ class SupervendorController extends Controller
 
                                 foreach( $access as $u ){
 
-                                    return $u->position;
-                                    die;
 
                                     $usr = DB::table("users")
                                             ->where("id", $u->user_id)
@@ -101,6 +99,9 @@ class SupervendorController extends Controller
                                         }
                                         elseif( $u->profile == "NSGT" && $u->position == "AREA HEAD"  ){
 
+                                            return "HERE";
+                                            die;
+        
                                             $data = DB::table("view_registrations")
                                                 ->JOIN('locations', function( $join ){
                                                     $join->on('locations.province','=','view_registrations.province' );

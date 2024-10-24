@@ -81,7 +81,7 @@ class SupervendorController extends Controller
 
                                 foreach( $access as $u ){
 
-                                    return $u;
+                                    return $u->position;
                                     die;
 
                                     $usr = DB::table("users")

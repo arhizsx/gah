@@ -497,6 +497,10 @@ class SupervendorController extends Controller
                                         else if( $u->profile == "SGT" && $u->position == "CGE"  ){
 
                                             $data = DB::table("view_registrations")
+                                                ->JOIN('locations', function( $join ){
+                                                    $join->on('locations.province','=','view_registrations.province' );
+                                                    $join->on('locations.city','=','view_registrations.city' );
+                                                })
                                                 ->where('locations.cge_email', $usr->email)                                  
                                                 ->where("campaign", $campaign)
                                                 ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED") )

@@ -19,7 +19,29 @@ let x= "";
 let modal = "";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/leadslist';
-let columns = ['campaign', 'complete_name', 'mobile_number', 'province', 'city', 'street', 'brgy_village', 'house_floor_bldg', 'vendor', 'SGT Name', 'status', 'Registration Date', 'Last Update', "schedule_date", "Aging"];
+let columns = ['campaign', 'complete_name', 'mobile_number', 'province', 'city', 'street', 'brgy_village', 'house_floor_bldg', 'vendor', 'SGT Name', 'status', 'Registration Date', 'Last Update', "schedule_date", "Aging",
+    {
+        dataField: "area_head_name",
+        caption: "Area Head",
+        visible: false,
+    },
+    {
+        dataField: "area_head_email",
+        caption: "Area Head Email",
+        visible: false,
+    },
+    {
+        dataField: "cge_name",
+        caption: "CGE",
+        visible: false,
+    },
+    {
+        dataField: "cge_email",
+        caption: "CGE Email",
+        visible: false,
+    }
+
+];
 
 $(() => {
 

@@ -147,7 +147,29 @@
 let modal = "#application_details";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/applications';
-let columns = ['campaign', 'complete_name', 'mobile_number', 'province', 'city', 'street', 'brgy_village', 'house_floor_bldg', 'vendor', 'SGT Name', 'status', 'Registration Date', 'Last Update', "Aging"];
+let columns = ['campaign', 'complete_name', 'mobile_number', 'province', 'city', 'street', 'brgy_village', 'house_floor_bldg', 'vendor', 'SGT Name', 'status', 'Registration Date', 'Last Update', "Aging",
+    {
+        dataField: "area_head_name",
+        caption: "Area Head",
+        visible: false,
+    },
+    {
+        dataField: "area_head_email",
+        caption: "Area Head Email",
+        visible: false,
+    },
+    {
+        dataField: "cge_name",
+        caption: "CGE",
+        visible: false,
+    },
+    {
+        dataField: "cge_email",
+        caption: "CGE Email",
+        visible: false,
+    }
+
+];
 let callback = 'callbackAction';
 
 

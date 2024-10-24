@@ -105,7 +105,7 @@ class SupervendorController extends Controller
                                                     $join->on('locations.province','=','view_registrations.province' );
                                                     $join->on('locations.city','=','view_registrations.city' );
                                                 })
-                                                ->select("view_registrations.*", "locations"."area_head_email")
+                                                ->select("view_registrations.*", "locations.area_head_email")
                                                 ->whereNotNull("SGT Name")
                                                 ->where("campaign", $campaign)
                                                 ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED") )

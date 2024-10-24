@@ -120,7 +120,8 @@ class SupervendorController extends Controller
                                         else if( $u->profile == "SGT" && $u->position == "CGE"   ){
 
                                             $data = DB::table("view_registrations_2")
-                                                ->where("campaign", $campaign)                                                              ->where('locations.area_head_email', $usr->email)
+                                                ->where("campaign", $campaign)                                                              
+                                                ->where('area_head_email', $usr->email)
                                                 ->where('cge_email', $usr->email)                                  
                                                 ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED") )
                                                 ->get();

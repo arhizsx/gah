@@ -100,14 +100,14 @@ class SupervendorController extends Controller
                                         elseif( $u->profile == "NSGT" && $u->position == "AREA HEAD"  ){
 
         
-                                            $data = DB::table("view_registrations")                                                
+                                            $data = DB::table("view_registrations")
                                                 ->JOIN('locations', function( $join ){
                                                     $join->on('locations.province','=','view_registrations.province' );
                                                     $join->on('locations.city','=','view_registrations.city' );
                                                 })
-                                                ->select("view_registrations.*", "locations.area_head_email")
                                                 ->whereNotNull("SGT Name")
                                                 ->where("campaign", $campaign)
+                                                ->where('locations.area_head_email', $usr->email)
                                                 ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED") )
                                                 ->get();
 

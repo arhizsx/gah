@@ -111,10 +111,6 @@ class SupervendorController extends Controller
                                                 ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED") )
                                                 ->get();
 
-                                                return $usr->email;
-                                                die;
-    
-
                                         }
                                         else if( $u->profile == "SGT" && $u->position == "SGT"   ){
 

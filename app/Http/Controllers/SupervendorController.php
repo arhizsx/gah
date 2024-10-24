@@ -99,8 +99,6 @@ class SupervendorController extends Controller
                                         }
                                         elseif( $u->profile == "NSGT" && $u->position == "AREA HEAD"  ){
 
-                                            return "HERE";
-                                            die;
         
                                             $data = DB::table("view_registrations")
                                                 ->JOIN('locations', function( $join ){
@@ -112,6 +110,10 @@ class SupervendorController extends Controller
                                                 ->where('locations.area_head_email', $usr->email)
                                                 ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED") )
                                                 ->get();
+
+                                                return $data;
+                                                die;
+    
 
                                         }
                                         else if( $u->profile == "SGT" && $u->position == "SGT"   ){

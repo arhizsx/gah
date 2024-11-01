@@ -614,12 +614,12 @@ class SupervendorController extends Controller
                         array_push($active_campaigns, $my_campaign->campaign);
                     }
 
-                
+                }
 
 
                 $data = DB::table("view_registrations")
                         ->wherenotnull("city")
-                        ->whereIn("campaign", $active_campaigns)
+                        ->whereIn("campaign", $my_campaigns)
                         ->get();
 
                 return $data;

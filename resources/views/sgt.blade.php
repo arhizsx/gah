@@ -126,8 +126,8 @@
                 <button type="button" class="btn btn-warning btn-action" data-user_mode="gt" data-action="application_pending" data-confirm="yes" data-id="">Pending</button>
                 <button type="button" class="btn btn-danger btn-action" data-user_mode="gt" data-action="application_dropped" data-confirm="yes" data-id="">Drop</button>
 
-                <button type="button" class="btn btn-dark btn-action" data-user_mode="gt" data-action="application_cancelled" data-confirm="yes" data-id="">Cancelled</button>
-                <button type="button" class="btn btn-primary btn-action" data-user_mode="gt" data-action="application_installed" data-confirm="yes" data-id="">Installed</button>
+                <!-- <button type="button" class="btn btn-dark btn-action" data-user_mode="gt" data-action="application_cancelled" data-confirm="yes" data-id="">Cancelled</button>
+                <button type="button" class="btn btn-primary btn-action" data-user_mode="gt" data-action="application_installed" data-confirm="yes" data-id="">Installed</button> -->
 
                 @else 
 

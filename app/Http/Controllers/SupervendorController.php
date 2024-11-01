@@ -600,8 +600,26 @@ class SupervendorController extends Controller
 
             case "leadslist":
 
+                $my_campaigns = DB::table("users_access")   
+                                ->select("campaign")
+                                ->distinct()                                                     
+                                ->where("user_id", Auth::user()->id)
+                                ->get();
+
+                $active_campaigns = array();
+                
+                if( $my_campaigns ){
+
+                    foreach( $my_campaigns as $my_campaign ){
+                        array_push($active_campaigns, $my_campaign->campaign);
+                    }
+
+                
+
+
                 $data = DB::table("view_registrations")
                         ->wherenotnull("city")
+                        ->whereIn("campaign", $active_campaigns)
                         ->get();
 
                 return $data;

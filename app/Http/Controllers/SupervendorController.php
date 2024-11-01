@@ -619,7 +619,7 @@ class SupervendorController extends Controller
 
                 $data = DB::table("view_registrations")
                         ->wherenotnull("city")
-                        ->whereIn("campaign", $my_campaigns)
+                        ->whereIn("campaign", $active_campaigns)
                         ->get();
 
                 return $data;

@@ -38,7 +38,7 @@ Route::post('/samsung/register', [SamsungController::class, 'register']);
 Route::get('/samsung', [CampaignController::class, 'samsung']);
 
 
-Route::get('/xiaomi', [CampaignController::class, 'xiaomi']);
+// Route::get('/xiaomi', [CampaignController::class, 'xiaomi']);
 
 
 // NUMBER VERIFIER

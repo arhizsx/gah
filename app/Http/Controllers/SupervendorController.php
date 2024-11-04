@@ -452,7 +452,7 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations")
                                                 ->whereNotNull("SGT Name")
                                                 ->where("campaign", $campaign)
-                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted") )
+                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED") )
                                                 ->get();
 
                                         }
@@ -462,7 +462,7 @@ class SupervendorController extends Controller
                                                 ->whereNotNull("SGT Name")
                                                 ->where('area_head_email', $usr->email)                                  
                                                 ->where("campaign", $campaign)
-                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted") )
+                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED") )
                                                 ->get();
 
                                         }
@@ -471,7 +471,7 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations")
                                                 ->where("SGT Name", Auth::user()->name)
                                                 ->where("campaign", $campaign)
-                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted") )
+                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED") )
                                                 ->get();
 
                                         }
@@ -480,7 +480,7 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations_2")
                                                 ->where('cge_email', $usr->email)                                  
                                                 ->where("campaign", $campaign)
-                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted") )
+                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED") )
                                                 ->get();
 
                                         }

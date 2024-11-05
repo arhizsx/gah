@@ -381,7 +381,7 @@ function callbackAction(data){
         vendor_btns.addClass("d-none");
     }
 
-    var show_gt = ["REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "DROPPED", "Endorsed"];
+    var show_gt = ["REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "DROPPED", "ENDORSED"];
     var gt_btns = $(document).find(modal).find(".btn-action[data-user_mode='gt']");
 
     if( $.inArray( data.status, show_gt ) >= 0){

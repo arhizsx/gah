@@ -277,7 +277,7 @@
                 else if( $(v).is("select") ){
 
 
-                    console.log($(v).html());
+                    console.log($(v).closest(".select2-container--default").html());
 
                     if( $(v).find("option:selected").val() == false ){
 

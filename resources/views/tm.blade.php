@@ -66,12 +66,12 @@
                         <div id="collapseOne" class="accordion-collapse collapse show">
                             <div class="accordion-body">
                                 <div class="form-row">
-                                    <label for="complete_name">Complete Name</label>
-                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="complete_name" id="complete_name">
+                                    <label for="firstname">Firstname</label>
+                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="firstname" id="firstname">
                                 </div>
                                 <div class="form-row">
-                                    <label for="mobile_number">Mobile Number</label>
-                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="mobile_number" id="mobile_number">
+                                    <label for="lastname">Lastname</label>
+                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="lastname" id="lastname">
                                 </div>
                             </div>
                         </div>

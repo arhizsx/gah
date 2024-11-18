@@ -70,7 +70,7 @@
                             required>
                         <button 
                             type="submit" 
-                            style="font-size: 36px; margin-left: 10px; padding: 5px 20px; cursor: pointer;">
+                            style="font-size: 24px; margin-left: 10px; padding: 5px 20px; cursor: pointer;">
                             REGISTER
                         </button>
                     </div>

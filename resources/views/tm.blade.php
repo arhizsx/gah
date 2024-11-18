@@ -335,7 +335,7 @@
 
         if( error_cnt > 0 ){
 
-            // OpenAccordion();
+            OpenAccordion();
             return false;
         }
 
@@ -404,5 +404,37 @@
 
     }
     
+    function OpenAccordion(){
+
+        let accordion = $("#information");
+
+        let accordion_items = accordion.find(".accordion-item");
+
+        $.each( accordion_items, function( k, v ){
+
+               var error = accordion_items.eq( k ).find(".checker-error");
+
+               if( error.length > 0 ){
+
+                accordion_items.eq( k ).find(".accordion-button").removeClass("collapsed");
+
+                var target = accordion_items.eq( k ).find(".accordion-button").data("bs-target");
+                accordion_items.eq( k ).find(target).addClass("show");
+
+
+                console.log( accordion_items.eq( k ).find(".accordion-button").text() );
+
+               }
+               else {
+
+
+               }
+
+        } );
+
+
+
+    }
+
 
 </script>

@@ -58,13 +58,13 @@
 
                 </div>
                 <div class="border rounded-3 p-3 mt-4">
-                    <div style="font-size: 36px; text-align: center; display: flex; align-items: center;">
+                    <div style="font-size: 42px; text-align: center; display: flex; align-items: center;">
                         <span style="margin-right: 5px;">+63</span>
                         <input 
                             type="text" 
                             name="cellnumber" 
                             class="form-control" 
-                            style="font-size: 36px; text-align: left; flex: 1;" 
+                            style="font-size: 42px; text-align: left; flex: 1;" 
                             maxlength="10" 
                             placeholder="9774793907" 
                             required>

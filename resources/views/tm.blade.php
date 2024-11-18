@@ -58,12 +58,17 @@
 
                 </div>
                 <div class="border rounded-3 p-3 mt-4">
-                    <input type="text" name="cellnumber" class="form-control" style="font-size: 36px; font-weight: bolder; text-align: center"
-                        pattern="09[0-9]{9}" 
-                        title="Enter a valid Philippine cellphone number (e.g., 09171234567)" 
-                        maxlength="11" 
-                        required                    
-                    >
+                    <div style="font-size: 36px; text-align: center; display: flex; align-items: center;">
+                        <span style="margin-right: 5px;">+63</span>
+                        <input 
+                            type="text" 
+                            name="cellnumber" 
+                            class="form-control" 
+                            style="font-size: 36px; text-align: center; flex: 1;" 
+                            maxlength="10" 
+                            placeholder="9774793907" 
+                            required>
+                    </div>
                 </div>
                 <div class="d-flex justify-content-center my-5">
                     <small>Globe At Home 2024</small>

@@ -71,7 +71,7 @@
                         <button 
                             class="form-control"
                             type="submit" 
-                            style="font-size: 24px; margin-left: 10px; padding: 5px 30px; cursor: pointer;">
+                            style="">
                             REGISTER
                         </button>
                     </div>

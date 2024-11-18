@@ -58,7 +58,7 @@
 
                 </div>
                 <div class="border rounded-3 p-3 mt-4">
-                    <input type="text" name="cellnumber" class="form-control" style="font-size: 24px">
+                    <input type="text" name="cellnumber" class="form-control" style="font-size: 36px; text-align: center">
                 </div>
                 <div class="d-flex justify-content-center my-5">
                     <small>Globe At Home 2024</small>

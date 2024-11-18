@@ -136,11 +136,6 @@
                         </select>
                         </div>
                     </div>
-                    <div class="form-row">
-                        <label for="serviceability_check">Serviceability Screenshot</label>
-                        <input type="file" class="form-control mb-3 checker" data-checker="required" name="serviceability_check" id="serviceability_check">
-                        <a target="_blank" href="https://gfiberprepaid.globe.com.ph/serviceability/">Check Address Serviceability</a>
-                    </div>
                 </div>
                 <div class="d-flex justify-content-center my-5">
                     <small>Globe At Home 2024</small>

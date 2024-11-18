@@ -277,7 +277,7 @@
                 else if( $(v).is("select") ){
 
 
-                    console.log($(v).parent().html());
+                    console.log($(v).parent().find(".select2-selection--single").html());
 
                     if( $(v).find("option:selected").val() == false ){
 

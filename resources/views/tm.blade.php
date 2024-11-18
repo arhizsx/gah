@@ -60,11 +60,6 @@
                             maxlength="10" 
                             placeholder="9175379140" 
                             required>
-                        <button 
-                            type="submit" 
-                            style="font-size: 24px; line-height: 36px; margin-left: 10px; padding: 10px; cursor: pointer;">
-                            REGISTER
-                        </button>
                     </div>
                 </div>
                 <div class="border rounded-3 p-3 mt-4">

@@ -69,9 +69,18 @@
                             placeholder="9175379140" 
                             required>
                     </div>
-                    <p class="mt-3">Use only the mobile number linked to your TM Raket/GoEarn account. Eligible for selected TM Raket/GoEarn retailers only. We will contact you with this number as well</p>
+                    <p class="mt-3">Use only the mobile number linked to your TM Raket or GoEarn account. Eligible for selected TM Raket or GoEarn retailers only. We will contact you with this number as well</p>
                 </div>
                 <div class="border rounded-3 p-3 mt-4">
+                    <H4>Personal Information</H4>
+                    <div class="form-row">
+                        <label for="lastname">Lastname</label>
+                        <input type="text" class="form-control mb-3 checker" data-checker="required" name="lastname" id="lastname">
+                    </div>
+                    <div class="form-row">
+                        <label for="firstname">Firstname</label>
+                        <input type="text" class="form-control mb-3 checker" data-checker="required" name="firstname" id="firstname">
+                    </div>
                 </div>
                 <div class="d-flex justify-content-center my-5">
                     <small>Globe At Home 2024</small>

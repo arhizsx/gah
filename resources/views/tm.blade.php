@@ -51,7 +51,7 @@
                     <p>GFiber Prepaid offers reloadable UNLI Internet with speeds up to 50Mbps. No monthly bills—just reload anytime you need!</p>
 
                 </div>
-                <div class="border rounded-3 p-3 mt-4">
+                <div class="border rounded-3 p-3 mt-4" style="background-color: #ffffc5;">
                     <div style="font-size: 36px; text-align: center; display: flex; align-items: center; justify-content: center;">
                         <span style="margin-right: 5px;">+63</span>
                         <input 

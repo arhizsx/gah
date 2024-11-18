@@ -57,28 +57,8 @@
                     <p>GFiber Prepaid offers reloadable UNLI Internet with speeds up to 50Mbps. No monthly bills—just reload anytime you need!</p>
 
                 </div>
-
-                <div class="accordion  mt-4" id="information">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <h5>Cellphone</h5>
-                        </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show">
-                            <div class="accordion-body">
-                                <div class="form-row">
-                                    <label for="mobile_number">Mobile Number</label>
-                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="mobile_number" id="mobile_number">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="d-flex justify-content-between mt-3">
-                    <button class='btn btn-outline-dark'>Clear Form</button>
-                    <button class='btn btn-primary action_button' data-action="submit_form">Submit</button>
+                <div class="border rounded-3 p-3 mt-4" style="font-size: 20px">
+                    <input type="text" name="cellnumber">
                 </div>
                 <div class="d-flex justify-content-center my-5">
                     <small>Globe At Home 2024</small>

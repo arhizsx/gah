@@ -236,6 +236,11 @@
                             value = to_check.eq( k ).val();
                             break;
 
+                        case "select":
+
+                            console.log("selection");
+                            break;
+
                         default:
                             console.log( type );
 

@@ -25,4 +25,12 @@ class CampaignController extends Controller
 
     }
 
+    function tm(){
+
+        $provinces = DB::table("location_provinces")->get();
+
+        return view('tm', [ "provinces" => $provinces]);
+
+    }
+
 }

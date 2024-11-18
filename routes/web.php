@@ -40,6 +40,13 @@ Route::get('/samsung', [CampaignController::class, 'samsung']);
 
 // Route::get('/xiaomi', [CampaignController::class, 'xiaomi']);
 
+// TM CAMPAIGN
+Route::post('/TMRaketGoEarnRetailers/register', [SamsungController::class, 'tm']);
+Route::get('/TMRaketGoEarnRetailers', [CampaignController::class, 'tm']);
+
+
+
+
 
 // NUMBER VERIFIER
 Route::get('/', function () {

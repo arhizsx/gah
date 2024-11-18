@@ -228,44 +228,6 @@
 <script>
     $('.select2').select2();
 
-    $(".form-check-label").click(function(){
-
-        $("#agree_policy").prop('checked', true);
-
-    });
-
-    $(document).on("click", ".action_button", function(e){
-
-        e.preventDefault();
-
-        $(this).prop("disabled");
-
-        if( Checker() ) {
-
-            let form = new FormData( $("#samsung_form")[0] );
-            console.log("Submitting");
-
-            var submission = SubmitData( form );
-            $(document).find("#loading").removeClass("d-none");
-            $(document).find("#registration_form").addClass("d-none");
-
-
-            $.when( submission ).done( function( submission ){
-
-                if( submission.error == false ){
-                    $(document).find("#loading").addClass("d-none");
-                    $(document).find("#registration_successful").removeClass("d-none");
-
-                } else {
-                }
-
-            });
-
-
-        }
-
-    });
-
     $(document).on("input", ".checker", function(){
 
         Checker();
@@ -348,6 +310,9 @@
                 }
                 else if( $(v).is("select") ){
 
+
+                    $(v).parent().find(".select2-selection--single").css("background","#FFEFEF");
+
                     if( $(v).find("option:selected").val() == false ){
 
                         $(to_check).eq( k ).css("background","#FFEFEF");
@@ -370,7 +335,7 @@
 
         if( error_cnt > 0 ){
 
-            OpenAccordion();
+            // OpenAccordion();
             return false;
         }
 
@@ -378,37 +343,38 @@
 
     }
 
-    function OpenAccordion(){
 
-        let accordion = $("#information");
+    $(document).on("click", ".action_button", function(e){
 
-        let accordion_items = accordion.find(".accordion-item");
+        e.preventDefault();
 
-        $.each( accordion_items, function( k, v ){
+        $(this).prop("disabled");
 
-               var error = accordion_items.eq( k ).find(".checker-error");
+        if( Checker() ) {
 
-               if( error.length > 0 ){
+            let form = new FormData( $("#samsung_form")[0] );
+            console.log("Submitting");
 
-                accordion_items.eq( k ).find(".accordion-button").removeClass("collapsed");
-
-                var target = accordion_items.eq( k ).find(".accordion-button").data("bs-target");
-                accordion_items.eq( k ).find(target).addClass("show");
-
-
-                console.log( accordion_items.eq( k ).find(".accordion-button").text() );
-
-               }
-               else {
+            var submission = SubmitData( form );
+            $(document).find("#loading").removeClass("d-none");
+            $(document).find("#registration_form").addClass("d-none");
 
 
-               }
+            $.when( submission ).done( function( submission ){
 
-        } );
+                if( submission.error == false ){
+                    $(document).find("#loading").addClass("d-none");
+                    $(document).find("#registration_successful").removeClass("d-none");
+
+                } else {
+                }
+
+            });
 
 
+        }
 
-    }
+    });
 
 
     function SubmitData(form){
@@ -437,6 +403,6 @@
         return defObject.promise();
 
     }
-
+    
 
 </script>

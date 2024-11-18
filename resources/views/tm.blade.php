@@ -43,7 +43,7 @@
                 <input type="hidden"  name="action" id="action" value='register'>
                 <input type="hidden"  name="campaign" id="campaign" value='TM'>
 
-                <img src="/images/finish.png" width="100%" />
+                <!-- <img src="/images/finish.png" width="100%" /> -->
                 <div class="border rounded-3 p-3 mt-4">
                     <H3>FREE GFiber Prepaid for our TM Raket & GoEarn Retailers</H3>
                     <p>Hello, Retailer! Please fill out this form to claim your free GFiber Prepaid Kit.</p>

@@ -61,6 +61,7 @@
                             placeholder="9175379140" 
                             required>
                     </div>
+                    <p>Use only the mobile number linked to your TM Raket/GoEarn account. Eligible for selected TM Raket/GoEarn retailers only. We will contact you with this number as well</p>
                 </div>
                 <div class="border rounded-3 p-3 mt-4">
                     <H4>What is GFiber Prepaid?</H4>

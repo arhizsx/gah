@@ -60,7 +60,7 @@
                             class="form-control" 
                             style="font-size: 36px; text-align: left; flex: 1;" 
                             maxlength="10" 
-                            placeholder="9774793907" 
+                            placeholder="9175379140" 
                             required>
                         <button 
                             type="submit" 
@@ -86,9 +86,7 @@
             <H1>Submitting Data...</H1>
         </div>
         <div id="registration_successful" class="d-none" style="max-width: 640px; min-width: 400px; margin: auto;">
-            <img src="/images/finish.png" width="100%" />
-
-
+            <!-- <img src="/images/finish.png" width="100%" /> -->
             <div class="border rounded-3 p-5 mt-4">
                 <H5>Registration Successful</H5>
                 <p>Please wait for the feedback of our installer.</p>

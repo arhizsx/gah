@@ -164,26 +164,32 @@
 
 </html>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    // Focus on the input field when the page loads
-    document.querySelector('input[name="cellnumber"]').focus();
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//     // Focus on the input field when the page loads
+//     document.querySelector('input[name="cellnumber"]').focus();
+// });
 
-document.querySelector('input[name="cellnumber"]').addEventListener('input', function (e) {
-    const input = e.target;
-    input.value = input.value.replace(/[^0-9]/g, ''); // Allow only numeric input
-    if (input.value.length > 10) {
-        input.value = input.value.slice(0, 10); // Limit to 10 digits
-    }
-});
+// document.querySelector('input[name="cellnumber"]').addEventListener('input', function (e) {
+//     const input = e.target;
+//     input.value = input.value.replace(/[^0-9]/g, ''); // Allow only numeric input
+//     if (input.value.length > 10) {
+//         input.value = input.value.slice(0, 10); // Limit to 10 digits
+//     }
+// });
 
-document.querySelector('button[type="submit"]').addEventListener('click', function () {
-    const input = document.querySelector('input[name="cellnumber"]');
-    if (input.value.length !== 10) {
-        alert("Please enter a valid 10-digit cellphone number.");
-    } else {
-        alert("Number submitted: +63" + input.value);
-        // You can handle form submission here (e.g., send the data to a server).
-    }
-});
+// document.querySelector('button[type="submit"]').addEventListener('click', function () {
+//     const input = document.querySelector('input[name="cellnumber"]');
+//     if (input.value.length !== 10) {
+//         alert("Please enter a valid 10-digit cellphone number.");
+//     } else {
+//         alert("Number submitted: +63" + input.value);
+//         // You can handle form submission here (e.g., send the data to a server).
+//     }
+// });
+
+</script>
+
+<script>
+    $('.select2').select2();
+
 </script>

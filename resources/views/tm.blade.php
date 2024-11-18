@@ -71,7 +71,7 @@
                         <button 
                             type="submit" 
                             style="font-size: 36px; margin-left: 10px; padding: 5px 20px; cursor: pointer;">
-                            Submit
+                            REGISTER
                         </button>
                     </div>
                 </div>

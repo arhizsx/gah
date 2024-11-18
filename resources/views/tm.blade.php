@@ -303,7 +303,7 @@
 
         if( error_cnt > 0 ){
 
-            OpenAccordion();
+            // OpenAccordion();
             return false;
         }
 

@@ -36,7 +36,7 @@
     </head>
 
     <body  class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
-        <div id="registration_form" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
+        <div id="registration" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
             <form id="registration_form">
                 @csrf
 
@@ -49,6 +49,7 @@
                     <p>Hello, Retailer! Please fill out this form to claim your free GFiber Prepaid Kit.</p>
                 </div>
                 <div class="border rounded-3 p-3 mt-4" style="background-color: #ffffc5;">
+                    <label>Mobile number used for TM Raket / GoEarn</label>
                     <div style="font-size: 36px; text-align: center; display: flex; align-items: center; justify-content: center;">
                         <span style="margin-right: 5px;">+63</span>
                         <input 

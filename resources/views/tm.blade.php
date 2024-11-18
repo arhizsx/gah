@@ -115,8 +115,10 @@
                         <label for="zipcode">Zip Code</label>
                         <input type="text" class="form-control mb-3 checker" data-checker="required" name="zipcode" id="zipcode">
                     </div>
+
+                <div class="border rounded-3 p-3 mt-4">
+                    <H4>Installation Schedule</H4>
                     <div class="form-row">
-                        <label for="schedule">Installation Schedule</label>
                         <div id="scchedule" class="d-flex">
                         <input type="date" class="form-control mb-3 checker flex-fill me-1" data-checker="required" name="schedule_date" id="schedule_date">
                         <select class="form-control mb-3 checker flex-fill ms-1 select2" data-checker="required" name="schedule_hour" id="schedule_hour">

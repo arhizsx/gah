@@ -115,24 +115,31 @@
                                     <label for="zipcode">Zip Code</label>
                                     <input type="text" class="form-control mb-3 checker" data-checker="required" name="zipcode" id="zipcode">
                                 </div>
-                                <div class="form-row">
-                                    <label for="schedule">Installation Schedule</label>
-                                    <div id="scchedule" class="d-flex">
-                                    <input type="date" class="form-control mb-3 checker flex-fill me-1" data-checker="required" name="schedule_date" id="schedule_date">
-                                    <select class="form-control mb-3 checker flex-fill ms-1 select2" data-checker="required" name="schedule_hour" id="schedule_hour">
-                                        <option value="" selected>Select Time</option>
-                                        <option value="08:00 AM">08:00 AM</option>
-                                        <option value="09:00 AM">09:00 AM</option>
-                                        <option value="10:00 AM">10:00 AM</option>
-                                        <option value="11:00 AM">11:00 AM</option>
-                                        <option value="12:00 PM">12:00 PM</option>
-                                        <option value="01:00 PM">01:00 PM</option>
-                                        <option value="02:00 PM">02:00 PM</option>
-                                        <option value="03:00 PM">03:00 PM</option>
-                                        <option value="04:00 PM">04:00 PM</option>
-                                        <option value="05:00 PM">05:00 PM</option>
-                                    </select>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <H5>Installation Schedule</H5>
+                            </button>
+                            </h2>
+                            <div class="form-row">
+                                <label for="schedule">Installation Schedule</label>
+                                <div id="scchedule" class="d-flex">
+                                <input type="date" class="form-control mb-3 checker flex-fill me-1" data-checker="required" name="schedule_date" id="schedule_date">
+                                <select class="form-control mb-3 checker flex-fill ms-1 select2" data-checker="required" name="schedule_hour" id="schedule_hour">
+                                    <option value="" selected>Select Time</option>
+                                    <option value="08:00 AM">08:00 AM</option>
+                                    <option value="09:00 AM">09:00 AM</option>
+                                    <option value="10:00 AM">10:00 AM</option>
+                                    <option value="11:00 AM">11:00 AM</option>
+                                    <option value="12:00 PM">12:00 PM</option>
+                                    <option value="01:00 PM">01:00 PM</option>
+                                    <option value="02:00 PM">02:00 PM</option>
+                                    <option value="03:00 PM">03:00 PM</option>
+                                    <option value="04:00 PM">04:00 PM</option>
+                                    <option value="05:00 PM">05:00 PM</option>
+                                </select>
                                 </div>
                             </div>
                         </div>

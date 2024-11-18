@@ -85,61 +85,60 @@
                 <div class="border rounded-3 p-3 mt-4">
                     <H4>Installation Address</H4>
                     <div class="form-row">
-                                    <label for="house_floor_bldg">House no., Floor no., Bldg</label>
-                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="house_floor_bldg" id="house_floor_bldg">
-                                </div>
-                                <div class="form-row">
-                                    <label for="street">Street</label>
-                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="street" id="street">
-                                </div>
-                                <div class="form-row">
-                                    <label for="brgy_village">Barangay / Village</label>
-                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="brgy_village" id="brgy_village">
-                                </div>
-                                <div class="form-row">
-                                    <label for="province">Province</label><br>
-                                    <select class="form-control mb-3 checker location_filters select2"  data-filter='province' data-parent='#collapseTwo' data-checker="required" name="province" id="province" style="width=100%;">
-                                        <option value="" selected>Select Province</option>
-                                        @foreach($provinces as $option)
-                                        <option value="{{ $option->PROVINCE }}">{{ $option->PROVINCE }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="form-row">
-                                    <label for="city">City</label><br>
-                                    <select class="form-control mb-3 checker location_filters select2" data-filter='city' data-parent='#collapseTwo' data-checker="required" name="city" id="city" style="width=100%;">
-                                        <option value="" selected>Select City</option>
-                                    </select>
-                                </div>
-                                <div class="form-row">
-                                    <label for="zipcode">Zip Code</label>
-                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="zipcode" id="zipcode">
-                                </div>
-                                <div class="form-row">
-                                    <label for="schedule">Installation Schedule</label>
-                                    <div id="scchedule" class="d-flex">
-                                    <input type="date" class="form-control mb-3 checker flex-fill me-1" data-checker="required" name="schedule_date" id="schedule_date">
-                                    <select class="form-control mb-3 checker flex-fill ms-1 select2" data-checker="required" name="schedule_hour" id="schedule_hour">
-                                        <option value="" selected>Select Time</option>
-                                        <option value="08:00 AM">08:00 AM</option>
-                                        <option value="09:00 AM">09:00 AM</option>
-                                        <option value="10:00 AM">10:00 AM</option>
-                                        <option value="11:00 AM">11:00 AM</option>
-                                        <option value="12:00 PM">12:00 PM</option>
-                                        <option value="01:00 PM">01:00 PM</option>
-                                        <option value="02:00 PM">02:00 PM</option>
-                                        <option value="03:00 PM">03:00 PM</option>
-                                        <option value="04:00 PM">04:00 PM</option>
-                                        <option value="05:00 PM">05:00 PM</option>
-                                    </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <label for="serviceability_check">Serviceability Screenshot</label>
-                                    <input type="file" class="form-control mb-3 checker" data-checker="required" name="serviceability_check" id="serviceability_check">
-                                    <a target="_blank" href="https://gfiberprepaid.globe.com.ph/serviceability/">Check Address Serviceability</a>
-                                </div>
-
+                        <label for="house_floor_bldg">House no., Floor no., Bldg</label>
+                        <input type="text" class="form-control mb-3 checker" data-checker="required" name="house_floor_bldg" id="house_floor_bldg">
+                    </div>
+                    <div class="form-row">
+                        <label for="street">Street</label>
+                        <input type="text" class="form-control mb-3 checker" data-checker="required" name="street" id="street">
+                    </div>
+                    <div class="form-row">
+                        <label for="brgy_village">Barangay / Village</label>
+                        <input type="text" class="form-control mb-3 checker" data-checker="required" name="brgy_village" id="brgy_village">
+                    </div>
+                    <div class="form-row">
+                        <label for="province">Province</label><br>
+                        <select class="form-control mb-3 checker location_filters select2"  data-filter='province' data-parent='#collapseTwo' data-checker="required" name="province" id="province" style="width=100%;">
+                            <option value="" selected>Select Province</option>
+                            @foreach($provinces as $option)
+                            <option value="{{ $option->PROVINCE }}">{{ $option->PROVINCE }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <label for="city">City</label><br>
+                        <select class="form-control mb-3 checker location_filters select2" data-filter='city' data-parent='#collapseTwo' data-checker="required" name="city" id="city" style="width=100%;">
+                            <option value="" selected>Select City</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <label for="zipcode">Zip Code</label>
+                        <input type="text" class="form-control mb-3 checker" data-checker="required" name="zipcode" id="zipcode">
+                    </div>
+                    <div class="form-row">
+                        <label for="schedule">Installation Schedule</label>
+                        <div id="scchedule" class="d-flex">
+                        <input type="date" class="form-control mb-3 checker flex-fill me-1" data-checker="required" name="schedule_date" id="schedule_date">
+                        <select class="form-control mb-3 checker flex-fill ms-1 select2" data-checker="required" name="schedule_hour" id="schedule_hour">
+                            <option value="" selected>Select Time</option>
+                            <option value="08:00 AM">08:00 AM</option>
+                            <option value="09:00 AM">09:00 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="01:00 PM">01:00 PM</option>
+                            <option value="02:00 PM">02:00 PM</option>
+                            <option value="03:00 PM">03:00 PM</option>
+                            <option value="04:00 PM">04:00 PM</option>
+                            <option value="05:00 PM">05:00 PM</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label for="serviceability_check">Serviceability Screenshot</label>
+                        <input type="file" class="form-control mb-3 checker" data-checker="required" name="serviceability_check" id="serviceability_check">
+                        <a target="_blank" href="https://gfiberprepaid.globe.com.ph/serviceability/">Check Address Serviceability</a>
+                    </div>
                 </div>
                 <div class="d-flex justify-content-center my-5">
                     <small>Globe At Home 2024</small>

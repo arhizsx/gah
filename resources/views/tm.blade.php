@@ -278,6 +278,9 @@
 
                     console.log("SELECTION");
 
+                    $(v).find(".select2-selection--single").css("background","#FFEFEF");
+                    $(v).find(".select2-selection--single").addClass("checker-error");
+
                     if( $(v).find("option:selected").val() == false ){
 
                         $(to_check).eq( k ).css("background","#FFEFEF");

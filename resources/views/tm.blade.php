@@ -276,10 +276,8 @@
                 }
                 else if( $(v).is("select") ){
 
-                    console.log("SELECTION");
 
-                    $(v).find(".select2-selection--single").css("background","#FFEFEF");
-                    $(v).find(".select2-selection--single").addClass("checker-error");
+                    console.log($(v).find(".select2-selection--single").html());
 
                     if( $(v).find("option:selected").val() == false ){
 

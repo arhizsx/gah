@@ -49,7 +49,7 @@
                     <p>Hello, Retailer! Please fill out this form to claim your free GFiber Prepaid Kit.</p>
                 </div>
                 <div class="border rounded-3 p-3 mt-4" style="background-color: #ffffc5;">
-                    <label class="mb-4">Mobile number used for TM Raket / GoEarn</label>
+                    <label class="mb-3">Mobile number used for TM Raket / GoEarn</label>
                     <div style="font-size: 36px; text-align: center; display: flex; align-items: center; justify-content: center;">
                         <span style="margin-right: 5px;">+63</span>
                         <input 

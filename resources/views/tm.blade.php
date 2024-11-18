@@ -49,6 +49,12 @@
                     <p>Hello, Retailer! Please fill out this form to claim your free GFiber Prepaid Kit.</p>
                     <H4>What is GFiber Prepaid?</H4>
                     <p>GFiber Prepaid offers reloadable UNLI Internet with speeds up to 50Mbps. No monthly bills—just reload anytime you need!</p>
+                    <H4>Reminders:</H4>
+                    <ul>
+                        <li>Use only the mobile number linked to your TM Raket or GoEarn account. Eligible for selected TM Raket/GoEarn retailers only.</li>
+                        <li>Availability is subject to service coverage in your area.</li>
+                        <li>Expect an SMS confirmation from us regarding your application.</li>
+                    </ul>
                 </div>
                 <div class="border rounded-3 p-3 mt-4">
                     <label class="mb-3">Mobile number used for TM Raket / GoEarn</label>
@@ -66,12 +72,6 @@
                     <p class="mt-3">Use only the mobile number linked to your TM Raket/GoEarn account. Eligible for selected TM Raket/GoEarn retailers only. We will contact you with this number as well</p>
                 </div>
                 <div class="border rounded-3 p-3 mt-4">
-                    <H4>Reminders:</H4>
-                    <ul>
-                        <li>Use only the mobile number linked to your TM Raket or GoEarn account. Eligible for selected TM Raket/GoEarn retailers only.</li>
-                        <li>Availability is subject to service coverage in your area.</li>
-                        <li>Expect an SMS confirmation from us regarding your application.</li>
-                    </ul>
                 </div>
                 <div class="d-flex justify-content-center my-5">
                     <small>Globe At Home 2024</small>

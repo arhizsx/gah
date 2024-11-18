@@ -47,9 +47,6 @@
                 <div class="border rounded-3 p-3 mt-4">
                     <H4>FREE GFiber Prepaid for our TM Raket & GoEarn Retailers</H4>
                     <p>Hello, Retailer! Please fill out this form to claim your free GFiber Prepaid Kit.</p>
-                    <H4>What is GFiber Prepaid?</H4>
-                    <p>GFiber Prepaid offers reloadable UNLI Internet with speeds up to 50Mbps. No monthly bills—just reload anytime you need!</p>
-
                 </div>
                 <div class="border rounded-3 p-3 mt-4" style="background-color: #ffffc5;">
                     <div style="font-size: 36px; text-align: center; display: flex; align-items: center; justify-content: center;">
@@ -70,6 +67,8 @@
                     </div>
                 </div>
                 <div class="border rounded-3 p-3 mt-4">
+                    <H4>What is GFiber Prepaid?</H4>
+                    <p>GFiber Prepaid offers reloadable UNLI Internet with speeds up to 50Mbps. No monthly bills—just reload anytime you need!</p>
                     <H4>Reminders:</H4>
                     <ul>
                         <li>Use only the mobile number linked to your TM Raket or GoEarn account. Eligible for selected TM Raket/GoEarn retailers only.</li>

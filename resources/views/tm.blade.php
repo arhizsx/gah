@@ -236,11 +236,6 @@
                             value = to_check.eq( k ).val();
                             break;
 
-                        case "select":
-
-                            console.log("selection");
-                            break;
-
                         default:
                             console.log( type );
 
@@ -280,6 +275,8 @@
 
                 }
                 else if( $(v).is("select") ){
+
+                    console.log("SELECTION");
 
                     if( $(v).find("option:selected").val() == false ){
 

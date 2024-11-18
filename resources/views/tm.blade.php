@@ -63,11 +63,13 @@
                         <input 
                             type="text" 
                             name="cellnumber" 
-                            class="form-control" 
+                            class="form-control checker" 
                             style="font-size: 36px; text-align: left; flex: 1;" 
                             maxlength="10" 
                             placeholder="9175379140" 
-                            required>
+                            required
+                            data-checker="required"
+                            >
                     </div>
                     <p class="mt-3">Use only the mobile number linked to your TM Raket or GoEarn account. Eligible for selected TM Raket or GoEarn retailers only. We will contact you with this number as well</p>
                 </div>

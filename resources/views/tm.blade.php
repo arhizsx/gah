@@ -45,7 +45,7 @@
 
                 <!-- <img src="/images/finish.png" width="100%" /> -->
                 <div class="border rounded-3 p-3 mt-4">
-                    <H3>FREE GFiber Prepaid for our TM Raket & GoEarn Retailers</H3>
+                    <H4>FREE GFiber Prepaid for our TM Raket & GoEarn Retailers</H4>
                     <p>Hello, Retailer! Please fill out this form to claim your free GFiber Prepaid Kit.</p>
                     <H4>Reminders:</H4>
                     <ul>

@@ -64,7 +64,7 @@
                             type="text" 
                             name="cellnumber" 
                             class="form-control" 
-                            style="font-size: 36px; text-align: center; flex: 1;" 
+                            style="font-size: 36px; text-align: left; flex: 1;" 
                             maxlength="10" 
                             placeholder="9774793907" 
                             required>

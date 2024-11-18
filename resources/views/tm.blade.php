@@ -134,90 +134,17 @@
                                     </select>
                                     </div>
                                 </div>
-                                <div class="form-row">
-                                    <label for="serviceability_check">Serviceability Screenshot</label>
-                                    <input type="file" class="form-control mb-3 checker" data-checker="required" name="serviceability_check" id="serviceability_check">
-                                    <a target="_blank" href="https://gfiberprepaid.globe.com.ph/serviceability/">Check Address Serviceability</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            <H5>Proof of Purchase or Receipt</H5>
-                        </button>
-                        </h2>
-                        <div id="collapseFour" class="accordion-collapse collapse">
-                            <div class="accordion-body">
-                                <div class="form-row">
-                                    <input type="file" class="form-control checker mb-3" data-checker="required" name="receipt" id="receipt">
-                                </div>
-                                <div class="form-row">
-                                    <label for="store">Store</label>
-                                    <select class="form-control checker select2" data-checker="required" name="store" id="store">
-                                        <option value="" selected>Store item was purchased</option>
-                                        <option value='8TELCOM' data-city='8TELCOM'>8TELCOM</option>
-                                        <option value='ABENSON' data-city='ABENSON'>ABENSON</option>
-                                        <option value='ADDESSA' data-city='ADDESSA'>ADDESSA</option>
-                                        <option value='AEROPHONE' data-city='AEROPHONE'>AEROPHONE</option>
-                                        <option value='ALL_HOME' data-city='ALL_HOME'>ALL HOME</option>
-                                        <option value='ALSONS_TRADING' data-city='ALSONS_TRADING'>ALSONS TRADING</option>
-                                        <option value='ANSONS_EMPORIUM' data-city='ANSONS_EMPORIUM'>ANSONS EMPORIUM</option>
-                                        <option value='APPLIANCE_CENTRUM' data-city='APPLIANCE_CENTRUM'>APPLIANCE CENTRUM</option>
-                                        <option value='ASIAN_HOME' data-city='ASIAN_HOME'>ASIAN HOME</option>
-                                        <option value='AVID_SALES' data-city='AVID_SALES'>AVID SALES</option>
-                                        <option value='CAGAYAN_APPLIANCE' data-city='CAGAYAN_APPLIANCE'>CAGAYAN APPLIANCE</option>
-                                        <option value='CONPINCO_TRADING' data-city='CONPINCO_TRADING'>CONPINCO TRADING</option>
-                                        <option value='CSI_APPLIANCE' data-city='CSI_APPLIANCE'>CSI APPLIANCE</option>
-                                        <option value='DAVAO_IMPORT' data-city='DAVAO_IMPORT'>DAVAO IMPORT</option>
-                                        <option value='DES_APPLIANCE' data-city='DES_APPLIANCE'>DES APPLIANCE</option>
-                                        <option value='DESMARK_CORP' data-city='DESMARK_CORP'>DESMARK CORP</option>
-                                        <option value='DU_EK_SAM,_INC.' data-city='DU_EK_SAM,_INC.'>DU EK SAM, INC.</option>
-                                        <option value='ECHO_ELECTRICAL' data-city='ECHO_ELECTRICAL'>ECHO ELECTRICAL</option>
-                                        <option value='EMCOR' data-city='EMCOR'>EMCOR</option>
-                                        <option value='FAIR_N_SQUARE' data-city='FAIR_N_SQUARE'>FAIR N SQUARE</option>
-                                        <option value='FIESTA_APPLIANCE' data-city='FIESTA_APPLIANCE'>FIESTA APPLIANCE</option>
-                                        <option value='FIRST_FAMILY' data-city='FIRST_FAMILY'>FIRST FAMILY</option>
-                                        <option value='FURNITURE_ARTS_&_APPLIANCES' data-city='FURNITURE_ARTS_&_APPLIANCES'>FURNITURE ARTS & APPLIANCES</option>
-                                        <option value='K_SERVICO_TRADE_INC.' data-city='K_SERVICO_TRADE_INC.'>K SERVICO TRADE INC.</option>
-                                        <option value='KCC' data-city='KCC'>KCC</option>
-                                        <option value='LANDERS' data-city='LANDERS'>LANDERS</option>
-                                        <option value='MAGIC_APPLIANCE' data-city='MAGIC_APPLIANCE'>MAGIC APPLIANCE</option>
-                                        <option value='MAJOR_BRAND' data-city='MAJOR_BRAND'>MAJOR BRAND</option>
-                                        <option value='METRO_PLAZA' data-city='METRO_PLAZA'>METRO PLAZA</option>
-                                        <option value='NORTHERN_MARKETING' data-city='NORTHERN_MARKETING'>NORTHERN MARKETING</option>
-                                        <option value='POS_MARKETING' data-city='POS_MARKETING'>POS MARKETING</option>
-                                        <option value='PRICEWISE' data-city='PRICEWISE'>PRICEWISE</option>
-                                        <option value='QUALITY_APPLIANCE_PLAZA' data-city='QUALITY_APPLIANCE_PLAZA'>QUALITY APPLIANCE PLAZA</option>
-                                        <option value='RJ_HOMES' data-city='RJ_HOMES'>RJ HOMES</option>
-                                        <option value='RL_APPLIANCE' data-city='RL_APPLIANCE'>RL APPLIANCE</option>
-                                        <option value='ROBINSONS_APPLIANCES' data-city='ROBINSONS_APPLIANCES'>ROBINSONS APPLIANCES</option>
-                                        <option value='ROYAL_STAR' data-city='ROYAL_STAR'>ROYAL STAR</option>
-                                        <option value='S_&_R' data-city='S_&_R'>S & R</option>
-                                        <option value='SAVERS_ELECTRONICS' data-city='SAVERS_ELECTRONICS'>SAVERS ELECTRONICS</option>
-                                        <option value='SOLIDMARK' data-city='SOLIDMARK'>SOLIDMARK</option>
-                                        <option value='SOLU_TRADING_CORPORATION' data-city='SOLU_TRADING_CORPORATION'>SOLU TRADING CORPORATION</option>
-                                        <option value='STAR_APPLIANCE' data-city='STAR_APPLIANCE'>STAR APPLIANCE</option>
-                                        <option value='TARLAC_MAC' data-city='TARLAC_MAC'>TARLAC MAC</option>
-                                        <option value='TIONGSAN_BAZAAR' data-city='TIONGSAN_BAZAAR'>TIONGSAN BAZAAR</option>
-                                        <option value='VIC_IMPERIAL_CORP.' data-city='VIC_IMPERIAL_CORP.'>VIC IMPERIAL CORP.</option>
-                                        <option value='VPR_MARKETING' data-city='VPR_MARKETING'>VPR MARKETING</option>
-                                        <option value='WESTERN_MARKETING' data-city='WESTERN_MARKETING'>WESTERN MARKETING</option>
-                                        <option value='WILKRIS_APPLIANCE_CORPORATION' data-city='WILKRIS_APPLIANCE_CORPORATION'>WILKRIS APPLIANCE CORPORATION</option>
-                                        <option value='WILLY_&_SONS' data-city='WILLY_&_SONS'>WILLY & SONS</option>
-                                        <option value='WORLDWIDE' data-city='WORLDWIDE'>WORLDWIDE</option>
-                                   </select>
-                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="border rounded-3 p-3 mt-4" style="font-size: 10px">
+
                         <H5 style="font-size: 14px">Disclaimer</H5>
-                        <p>This Samsung bundle offer is subject to the fiber serviceability of your nominated address. The value of this bundle cannot be converted to cash in case of unsuccessful installation. <a href="https://www.globe.com.ph/website-terms-conditions?_gl=1*11wvnk5*_gcl_aw*R0NMLjE3MTEyNzIzOTEuQ2p3S0NBandudi12QmhCZEVpd0FCQ1lRQS1BUFZtcmp6OWw5TXI4a2xWS0J2cDg4MFlBbDN3cDIzNWlwamtwNWZBdHQ4SXByV2daWGdob0NVakFRQXZEX0J3RQ..*_gcl_au*MTk1NTAzMjE4NS4xNzE4OTI5MDEw*_ga*NzMwMDM2NDYzLjE2NTc1MTk0MjM.*_ga_TD2ZL4WC9D*MTcxODkzOTQ5MC43LjAuMTcxODkzOTQ5My41Ny4wLjA.&_ga=2.129421836.1270274114.1718929010-730036463.1657519423">Terms and conditions</a> apply.</p>
+                        <p>This offer is subject to the fiber serviceability of your nominated address. The value of this bundle cannot be converted to cash in case of unsuccessful installation. Terms and conditions apply.</p>
 
                         <H5 style="font-size: 14px">Privacy Notice</H5>
-                        <p>By completing and submitting this form, I allow GLOBE to collect and process the personal data I will provide for GFiber Prepaid and Samsung partnership, until October 2024, in accordance with the <a target="_blank" href="https://www.globe.com.ph/privacy-policy.html">Privacy Policy of Globe</a>.</p>
+                        <p>By completing and submitting this form, I allow GLOBE to collect and process the personal data I will provide for GFiber Prepaid, until November 2024, in accordance with the Privacy Policy of Globe.</p>
+                        
                         <div class="form-row">
                             <div class="form-check">
                                 <input class="form-check-input checker me-3" data-checker="required" type="checkbox" value="" id="agree_policy">

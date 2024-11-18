@@ -105,220 +105,27 @@
     </body>
 
 </html>
-
 <script>
-
-    $('.select2').select2();
-
-    $(".form-check-label").click(function(){
-
-        $("#agree_policy").prop('checked', true);
-
-    });
-
-    $(document).on("click", ".action_button", function(e){
-
-        e.preventDefault();
-
-        $(this).prop("disabled");
-
-        if( Checker() ) {
-
-            let form = new FormData( $("#samsung_form")[0] );
-            console.log("Submitting");
-
-            var submission = SubmitData( form );
-            $(document).find("#loading").removeClass("d-none");
-            $(document).find("#registration_form").addClass("d-none");
-
-
-            $.when( submission ).done( function( submission ){
-
-                if( submission.error == false ){
-                    $(document).find("#loading").addClass("d-none");
-                    $(document).find("#registration_successful").removeClass("d-none");
-
-                } else {
-                }
-
-            });
-
-
-        }
-
-    });
-
-    $(document).on("input", ".checker", function(){
-
-        Checker();
-
-    });
-
-    function Checker(){
-
-        let to_check = $(document).find(".checker");
-        let error_cnt = 0;
-
-        $.each(to_check, function( k, v){
-
-            if( to_check.eq( k ).data("checker") == "required" ){
-                if( $(v).is("input") ){
-
-                    var type = to_check.eq( k ).attr( "type" );
-                    var value = "";
-
-                    switch( type ){
-
-                        case "text":
-
-                            value = to_check.eq( k ).val();
-                            break;
-
-                        case "date":
-
-                            value = to_check.eq( k ).val();
-                            break;
-
-                        case "checkbox":
-
-
-                            value = to_check.eq( k ).is(":checked");
-                            break;
-
-                        case "file":
-
-                            value = to_check.eq( k ).val();
-                            break;
-
-                        default:
-                            console.log( type );
-
-                    }
-
-                    if( value == false ){
-
-                        if( type != "checkbox"){
-
-                            $(to_check).eq( k ).css("background-color","#FFEFEF");
-                            $(to_check).eq( k ).addClass("checker-error");
-
-                        } else {
-
-                            $(to_check).eq( k ).css("border-color","red");
-                        }
-
-                        $(to_check).eq( k ).addClass("checker-error");
-                        error_cnt = error_cnt + 1;
-
-                    } else {
-
-                        if( type != "checkbox"){
-
-                            $(to_check).eq( k ).css("background","#ffffff");
-
-                        } else {
-
-                            $(to_check).eq( k ).css("border-color","gray");
-
-                        }
-
-                        $(to_check).eq( k ).removeClass("checker-error");
-
-
-                    }
-
-                }
-                else if( $(v).is("select") ){
-
-                    if( $(v).find("option:selected").val() == false ){
-
-                        $(to_check).eq( k ).css("background","#FFEFEF");
-                        $(to_check).eq( k ).addClass("checker-error");
-
-                        error_cnt = error_cnt + 1;
-
-
-                    }
-                    else {
-                        $(to_check).eq( k ).css("background","#ffffff");
-                        $(to_check).eq( k ).removeClass("checker-error");
-
-                    }
-
-                }
-            }
-
-        } );
-
-        if( error_cnt > 0 ){
-
-            OpenAccordion();
-            return false;
-        }
-
-        return true;
-
+document.addEventListener('DOMContentLoaded', function () {
+    // Focus on the input field when the page loads
+    document.querySelector('input[name="cellnumber"]').focus();
+});
+
+document.querySelector('input[name="cellnumber"]').addEventListener('input', function (e) {
+    const input = e.target;
+    input.value = input.value.replace(/[^0-9]/g, ''); // Allow only numeric input
+    if (input.value.length > 10) {
+        input.value = input.value.slice(0, 10); // Limit to 10 digits
     }
+});
 
-    function OpenAccordion(){
-
-        let accordion = $("#information");
-
-        let accordion_items = accordion.find(".accordion-item");
-
-        $.each( accordion_items, function( k, v ){
-
-               var error = accordion_items.eq( k ).find(".checker-error");
-
-               if( error.length > 0 ){
-
-                accordion_items.eq( k ).find(".accordion-button").removeClass("collapsed");
-
-                var target = accordion_items.eq( k ).find(".accordion-button").data("bs-target");
-                accordion_items.eq( k ).find(target).addClass("show");
-
-
-                console.log( accordion_items.eq( k ).find(".accordion-button").text() );
-
-               }
-               else {
-
-
-               }
-
-        } );
-
-
-
+document.querySelector('button[type="submit"]').addEventListener('click', function () {
+    const input = document.querySelector('input[name="cellnumber"]');
+    if (input.value.length !== 10) {
+        alert("Please enter a valid 10-digit cellphone number.");
+    } else {
+        alert("Number submitted: +63" + input.value);
+        // You can handle form submission here (e.g., send the data to a server).
     }
-
-
-    function SubmitData(form){
-
-        var defObject = $.Deferred();  // create a deferred object.
-
-        $.ajax({
-            type: 'post',
-            url: "/supervendor/ajax-public",
-            data: form,
-            enctype: 'multipart/form-data',
-            processData: false,
-            contentType: false,
-            success: function(resp){
-
-                console.log(resp) ;
-
-                defObject.resolve(resp);    //resolve promise and pass the response.
-
-            },
-            error: function(){
-                console.log("Error in AJAX");
-            }
-        });
-
-        return defObject.promise();
-
-    }
-
-
+});
 </script>

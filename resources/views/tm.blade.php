@@ -100,7 +100,7 @@
                     </div>
                     <div class="form-row">
                         <label for="province">Province</label><br>
-                        <select class="form-control mb-3 checker location_filters select2"  data-filter='province' data-parent='#collapseTwo' data-checker="required" name="province" id="province" style="width=100%;">
+                        <select class="form-control mb-3 checker location_filters select2"  data-filter='province'data-checker="required" name="province" id="province" style="width=100%;">
                             <option value="" selected>Select Province</option>
                             @foreach($provinces as $option)
                             <option value="{{ $option->PROVINCE }}">{{ $option->PROVINCE }}</option>
@@ -109,7 +109,7 @@
                     </div>
                     <div class="form-row">
                         <label for="city">City</label><br>
-                        <select class="form-control mb-3 checker location_filters select2" data-filter='city' data-parent='#collapseTwo' data-checker="required" name="city" id="city" style="width=100%;">
+                        <select class="form-control mb-3 checker location_filters select2" data-filter='city' data-checker="required" name="city" id="city" style="width=100%;">
                             <option value="" selected>Select City</option>
                         </select>
                     </div>
@@ -277,7 +277,7 @@
                 else if( $(v).is("select") ){
 
 
-                    $(v).parent().find(".select2-selection--single").css("background","#FFEFEF");
+                    // $(v).parent().find(".select2-selection--single").css("background","#FFEFEF");
 
                     if( $(v).find("option:selected").val() == false ){
 

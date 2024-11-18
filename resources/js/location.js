@@ -1,10 +1,10 @@
 
-$(document).on('change','.location_filters',function(){
+$(document).on('change', '.location_filters', function () {
 
-    let region = $(this).closest( $(this).data("parent") ).find("[data-filter='region']");
-    let province = $(this).closest( $(this).data("parent") ).find("[data-filter='province']");
-    let city = $(this).closest( $(this).data("parent") ).find("[data-filter='city']");
-    let brgy = $(this).closest( $(this).data("parent") ).find("[data-filter='brgy']");
+    let region = $(this).closest($(this).data("parent")).find("[data-filter='region']");
+    let province = $(this).closest($(this).data("parent")).find("[data-filter='province']");
+    let city = $(this).closest($(this).data("parent")).find("[data-filter='city']");
+    let brgy = $(this).closest($(this).data("parent")).find("[data-filter='brgy']");
 
     console.log(region);
     console.log(province);
@@ -14,7 +14,7 @@ $(document).on('change','.location_filters',function(){
     let value = $(this).val();
     let filter = $(this).data("filter");
 
-    switch(filter){
+    switch (filter) {
 
         case "region":
 
@@ -22,25 +22,26 @@ $(document).on('change','.location_filters',function(){
                 url: "/supervendor/locations",
                 method: "POST",
                 data: {
-                    "action" : "provinces",
+                    "action": "provinces",
                     "value": value
                 },
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                success: function(resp){
+                success: function (resp) {
 
+                    console.log(resp);
                     province.find('option')
-                    .remove()
-                    .end()
-                    .append('<option value="">Select Province</option>');
+                        .remove()
+                        .end()
+                        .append('<option value="">Select Province</option>');
 
-                    $.each(resp, function(k, v){
-                        province.append('<option value="' + v.PROVINCE +'" data-region="' + v.REGION +'">' + v.PROVINCE +'</option>')
+                    $.each(resp, function (k, v) {
+                        province.append('<option value="' + v.PROVINCE + '" data-region="' + v.REGION + '">' + v.PROVINCE + '</option>')
                     });
 
                 },
-                error: function(){
+                error: function () {
                     console.log("Error in AJAX");
                 }
             });
@@ -62,7 +63,7 @@ $(document).on('change','.location_filters',function(){
 
         case "province":
 
-                city.find('option')
+            city.find('option')
                 .remove()
                 .end()
                 .append('<option value="">Please wait...</option>');
@@ -71,26 +72,28 @@ $(document).on('change','.location_filters',function(){
                 url: "/supervendor/locations",
                 method: "POST",
                 data: {
-                    "action" : "cities",
+                    "action": "cities",
                     "value": value,
                     "region": region.val()
                 },
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                success: function(resp){
+                success: function (resp) {
+
+                    console.log(resp);
 
                     city.find('option')
-                    .remove()
-                    .end()
-                    .append('<option value="">Select City</option>');
+                        .remove()
+                        .end()
+                        .append('<option value="">Select City</option>');
 
-                    $.each(resp, function(k, v){
-                        city.append('<option value="' + v.CITY +'" data-region="' + v.REGION +'" data-province="' + v.PROVINCE +'">' + v.CITY +'</option>')
+                    $.each(resp, function (k, v) {
+                        city.append('<option value="' + v.CITY + '" data-region="' + v.REGION + '" data-province="' + v.PROVINCE + '">' + v.CITY + '</option>')
                     });
 
                 },
-                error: function(){
+                error: function () {
                     console.log("Error in AJAX");
                 }
             });
@@ -109,7 +112,7 @@ $(document).on('change','.location_filters',function(){
                 url: "/supervendor/locations",
                 method: "POST",
                 data: {
-                    "action" : "brgy",
+                    "action": "brgy",
                     "value": value,
                     "region": region.val(),
                     "province": province.val()
@@ -117,19 +120,19 @@ $(document).on('change','.location_filters',function(){
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                success: function(resp){
+                success: function (resp) {
 
                     brgy.find('option')
-                    .remove()
-                    .end()
-                    .append('<option value="">Select Barangay</option>');
+                        .remove()
+                        .end()
+                        .append('<option value="">Select Barangay</option>');
 
-                    $.each(resp, function(k, v){
-                        city.append('<option value="' + v.BRGY +'" data-region="' + v.REGION +'" data-province="' + v.PROVINCE +'" data-city="' + v.CITY +'">' + v.BRGY +'</option>')
+                    $.each(resp, function (k, v) {
+                        city.append('<option value="' + v.BRGY + '" data-region="' + v.REGION + '" data-province="' + v.PROVINCE + '" data-city="' + v.CITY + '">' + v.BRGY + '</option>')
                     });
 
                 },
-                error: function(){
+                error: function () {
                     console.log("Error in AJAX");
                 }
             });

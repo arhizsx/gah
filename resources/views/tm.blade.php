@@ -58,7 +58,12 @@
 
                 </div>
                 <div class="border rounded-3 p-3 mt-4">
-                    <input type="text" name="cellnumber" class="form-control" style="font-size: 36px; text-align: center">
+                    <input type="text" name="cellnumber" class="form-control" style="font-size: 36px; text-align: center"
+                        pattern="09[0-9]{9}" 
+                        title="Enter a valid Philippine cellphone number (e.g., 09171234567)" 
+                        maxlength="11" 
+                        required                    
+                    >
                 </div>
                 <div class="d-flex justify-content-center my-5">
                     <small>Globe At Home 2024</small>

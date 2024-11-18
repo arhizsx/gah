@@ -69,6 +69,7 @@
                             placeholder="9774793907" 
                             required>
                         <button 
+                            class="form-control"
                             type="submit" 
                             style="font-size: 24px; margin-left: 10px; padding: 5px 30px; cursor: pointer;">
                             REGISTER

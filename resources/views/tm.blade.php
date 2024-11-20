@@ -372,11 +372,11 @@ $('.action_button[data-action="register"]').on('click', function (e) {
 
     if( Checker() ) {
 
+        $("#confirm-register-modal").modal("show");
 
     } else {
 
-        $("#confirm-register-modal").modal("show");
-        document.querySelector('input[name="lastname"]').focus();
+        $(document).find('.checker-error').eq(0).focus();
         
     }
 

@@ -355,8 +355,7 @@ $('.action_button[data-action="register"]').on('click', function (e) {
 
     } else {
 
-        alert("Test");
-
+        console.log("Error");
     }
 
 });

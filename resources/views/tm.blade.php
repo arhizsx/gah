@@ -279,37 +279,37 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
     }
 
 
-    $(document).on("click", ".action_button", function(e){
+    // $(document).on("click", ".action_button", function(e){
 
-        e.preventDefault();
+    //     e.preventDefault();
 
-        $(this).prop("disabled");
+    //     $(this).prop("disabled");
 
-        if( Checker() ) {
+    //     if( Checker() ) {
 
-            let form = new FormData( $("#registration_form")[0] );
-            console.log("Submitting");
+    //         let form = new FormData( $("#registration_form")[0] );
+    //         console.log("Submitting");
 
-            var submission = SubmitData( form );
-            $(document).find("#loading").removeClass("d-none");
-            $(document).find("#registration_form").addClass("d-none");
-
-
-            $.when( submission ).done( function( submission ){
-
-                if( submission.error == false ){
-                    $(document).find("#loading").addClass("d-none");
-                    $(document).find("#registration_successful").removeClass("d-none");
-
-                } else {
-                }
-
-            });
+    //         var submission = SubmitData( form );
+    //         $(document).find("#loading").removeClass("d-none");
+    //         $(document).find("#registration_form").addClass("d-none");
 
 
-        }
+    //         $.when( submission ).done( function( submission ){
 
-    });
+    //             if( submission.error == false ){
+    //                 $(document).find("#loading").addClass("d-none");
+    //                 $(document).find("#registration_successful").removeClass("d-none");
+
+    //             } else {
+    //             }
+
+    //         });
+
+
+    //     }
+
+    // });
 
 
     function SubmitData(form){

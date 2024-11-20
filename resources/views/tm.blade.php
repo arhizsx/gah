@@ -128,8 +128,9 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
         alert("Please enter a valid 10-digit cellphone number.");
         return; // Prevent submission
     } else {
-        alert("Number submitted: +63" + input.value);
-        // You can handle form submission here (e.g., send the data to a server).
+
+        console.log("Checking...")
+
     }
 });
 </script>

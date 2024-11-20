@@ -367,6 +367,11 @@ function callbackAction(data){
         $(document).find("#proof_of_purchase_col").addClass("d-none");
 
     }
+    else if( data.campaign == "TM" ){
+
+        $(document).find("#proof_of_purchase_col").addClass("d-none");
+
+    }
     else if( data.campaign == "SAMSUNG" ){
 
     }

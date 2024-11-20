@@ -222,6 +222,12 @@ function callbackAction(data){
 
 
     }
+    else if( data.campaign == "TM" ){
+
+        $(document).find("#proof_of_purchase_col").addClass("d-none");
+        console.log("TM");
+
+    }
     else if( data.campaign == "SAMSUNG" ){
 
         var show_vendor = ["ENDORSED"];

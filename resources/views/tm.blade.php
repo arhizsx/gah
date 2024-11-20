@@ -89,10 +89,10 @@
                     </div>
                 </form>
             </div>
-            <div id="loading" class="d-none text-center" style="max-width: 640px; min-width: 400px; margin: auto; padding-top: 150px;">
+            <div id="loading" class="d-none text-center">
                 <H1>Checking...</H1>
             </div>
-            <div id="registration_allowed" class="d-none" style="max-width: 640px; min-width: 400px; margin: auto;">
+            <div id="registration_allowed" class="d-none">
                 <!-- <img src="/images/finish.png" width="100%" /> -->
                 <div class="border rounded-3 p-5 mt-4">
                     <H5>Registration Successful</H5>

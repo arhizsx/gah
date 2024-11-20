@@ -37,7 +37,7 @@
 
     <body  class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
         <div id="registration" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
-            <div id="header">
+            <div id="checking">
                 <img src="/images/finish.png" width="100%" />
                 <div class="border rounded-3 p-3 mt-4">
                     <H4>FREE GFiber Prepaid for our TM Raket & GoEarn Retailers</H4>
@@ -51,8 +51,6 @@
                         <li>Expect an SMS confirmation from us regarding your application.</li>
                     </ul>
                 </div>
-            </div>
-            <div id="checking">
                 <form id="registration_form" action="/retailerexclusive/check" method="post">
                     @csrf
 

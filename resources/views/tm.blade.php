@@ -103,11 +103,11 @@
                             <div id="collapseOne" class="accordion-collapse collapse show">
                                 <div class="accordion-body">
                                     <div class="form-row">
-                                        <label for="lastname">Lastname</label>
+                                        <label for="lastname">Last Name</label>
                                         <input type="text" class="form-control mb-3 checker" data-checker="required" name="lastname" id="lastname">
                                     </div>
                                     <div class="form-row">
-                                        <label for="firstname">Firstname</label>
+                                        <label for="firstname">First Name</label>
                                         <input type="text" class="form-control mb-3 checker" data-checker="required" name="firstname" id="firstname">
                                     </div>
                                 </div>

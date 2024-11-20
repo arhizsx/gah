@@ -58,11 +58,7 @@
                 </div>
 
                 <div class="border rounded-3 p-3 mt-4">
-                    <p>
-                        Use only the mobile number linked to your TM EasyRaket/ Globe Prepaid GoEarn account. Eligible for selected retailers only. 
-                        We will contact you with this number as well. (Ex. 09171234567) 
-                        Turn on screen reader support                        
-                    </p>
+                    <label>Mobile number used for TM EasyRaket / Globe Prepaid GoEarn</label>
                     <div style="font-size: 48px; text-align: center; display: flex; align-items: center; justify-content: center;">
                         <span style="margin-right: 5px;">0</span>
                         <input 
@@ -74,7 +70,11 @@
                             placeholder="9774793907" 
                             required>
                     </div>
-
+                    <p>
+                        Use only the mobile number linked to your TM EasyRaket/ Globe Prepaid GoEarn account. Eligible for selected retailers only. 
+                        We will contact you with this number as well. (Ex. 09171234567) 
+                        Turn on screen reader support                        
+                    </p>
                 </div>
 
                 <div class="d-flex justify-content-between mt-3">

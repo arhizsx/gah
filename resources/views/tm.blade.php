@@ -122,7 +122,10 @@ document.querySelector('input[name="cellnumber"]').addEventListener('input', fun
     }
 });
 
-document.querySelector('button[type="submit"]').addEventListener('click', function () {
+document.querySelector('button[type="submit"]').addEventListener('click', function (e) {
+
+    e.preventDefault();
+    
     const input = document.querySelector('input[name="cellnumber"]');
     if (input.value.length !== 10) {
         alert("Please enter a valid 10-digit cellphone number.");

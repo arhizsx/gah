@@ -844,7 +844,7 @@ class SupervendorController extends Controller
 
         return [
             "error" => false,
-            "status" => "NotAllowed",
+            "status" => $status,
         ];
     }
 

@@ -347,6 +347,8 @@ $('.action_button[data-action="checker"]').on('click', function (e) {
 
 $('.action_button[data-action="register"]').on('click', function (e) {
 
+    e.preventDefault();
+
     alert("Test");
 
 });

@@ -356,6 +356,9 @@ $('.action_button[data-action="register"]').on('click', function (e) {
     } else {
 
         console.log("Error");
+        document.querySelector('input[name="cellnumber"]').focus();
+
+
     }
 
 });

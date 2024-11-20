@@ -157,6 +157,22 @@
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <H5>Serviceability Check</H5>
+                            </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <div class="form-row">
+                                        <label for="serviceability_check">Serviceability Screenshot</label>
+                                        <input type="file" class="form-control mb-3 checker" data-checker="required" name="serviceability_check" id="serviceability_check">
+                                        <a target="_blank" href="https://gfiberprepaid.globe.com.ph/serviceability/">Check Address Serviceability</a>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                 <H5>Installation Schedule</H5>
                             </button>
@@ -186,24 +202,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                <H5>Serviceability Check</H5>
-                            </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse">
-                                <div class="accordion-body">
-                                    <div class="form-row">
-                                        <label for="serviceability_check">Serviceability Screenshot</label>
-                                        <input type="file" class="form-control mb-3 checker" data-checker="required" name="serviceability_check" id="serviceability_check">
-                                        <a target="_blank" href="https://gfiberprepaid.globe.com.ph/serviceability/">Check Address Serviceability</a>
-                                    </div>                                    
-                                </div>
-                            </div>
-                        </div>
-
-
                         <div class="border rounded-3 p-3 mt-4" style="font-size: 10px">
 
                             <H5 style="font-size: 14px">Disclaimer</H5>

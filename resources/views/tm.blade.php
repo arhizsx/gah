@@ -255,7 +255,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                        <button type="button" class="btn btn-success">Yes</button>
+                        <button type="button" class="btn btn-success action_button" data-action="confirm_registration">Yes</button>
                     </div>
                 </div>
             </div>
@@ -337,34 +337,34 @@ $('.action_button[data-action="checker"]').on('click', function (e) {
 
     }
 
-    function CheckData(form){
-
-        var defObject = $.Deferred();  // create a deferred object.
-
-        $.ajax({
-            type: 'post',
-            url: "/supervendor/ajax-public",
-            data: form,
-            enctype: 'multipart/form-data',
-            processData: false,
-            contentType: false,
-            success: function(resp){
-
-                console.log(resp) ;
-
-                defObject.resolve(resp);    //resolve promise and pass the response.
-
-            },
-            error: function(){
-                console.log("Error in AJAX");
-            }
-        });
-
-        return defObject.promise();
-
-    }
-
 });
+
+function CheckData(form){
+
+    var defObject = $.Deferred();  // create a deferred object.
+
+    $.ajax({
+        type: 'post',
+        url: "/supervendor/ajax-public",
+        data: form,
+        enctype: 'multipart/form-data',
+        processData: false,
+        contentType: false,
+        success: function(resp){
+
+            console.log(resp) ;
+
+            defObject.resolve(resp);    //resolve promise and pass the response.
+
+        },
+        error: function(){
+            console.log("Error in AJAX");
+        }
+    });
+
+    return defObject.promise();
+
+}
 
 $('.action_button[data-action="register"]').on('click', function (e) {
 
@@ -379,6 +379,14 @@ $('.action_button[data-action="register"]').on('click', function (e) {
         $(document).find('.checker-error').eq(0).focus();
         
     }
+
+});
+
+$('.action_button[data-action="confirm_registration"]').on('click', function (e) {
+
+    e.preventDefault();
+
+    alert("submitting now")
 
 });
 

@@ -72,7 +72,7 @@
                         </div>
                         <p class="mt-3">
                             Use only the mobile number linked to your TM EasyRaket/ Globe Prepaid GoEarn account. Eligible for selected retailers only. 
-                            We will contact you with this number as well. (Ex. 09171234567) 
+                            We will contact you with this number as well. (Ex. +639171234567) 
                             Turn on screen reader support                        
                         </p>
                     </div>

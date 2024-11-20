@@ -351,7 +351,119 @@ $('.action_button[data-action="register"]').on('click', function (e) {
 
     e.preventDefault();
 
-    alert("Test");
+    if( Checker() ) {
+
+    } else {
+
+        alert("Test");
+
+    }
 
 });
+
+function Checker(){
+
+    let to_check = $(document).find(".checker");
+    let error_cnt = 0;
+
+    $.each(to_check, function( k, v){
+
+        if( to_check.eq( k ).data("checker") == "required" ){
+            if( $(v).is("input") ){
+
+                var type = to_check.eq( k ).attr( "type" );
+                var value = "";
+
+                switch( type ){
+
+                    case "text":
+
+                        value = to_check.eq( k ).val();
+                        break;
+
+                    case "date":
+
+                        value = to_check.eq( k ).val();
+                        break;
+
+                    case "checkbox":
+
+
+                        value = to_check.eq( k ).is(":checked");
+                        break;
+
+                    case "file":
+
+                        value = to_check.eq( k ).val();
+                        break;
+
+                    default:
+                        console.log( type );
+
+                }
+
+                if( value == false ){
+
+                    if( type != "checkbox"){
+
+                        $(to_check).eq( k ).css("background-color","#FFEFEF");
+                        $(to_check).eq( k ).addClass("checker-error");
+
+                    } else {
+
+                        $(to_check).eq( k ).css("border-color","red");
+                    }
+
+                    $(to_check).eq( k ).addClass("checker-error");
+                    error_cnt = error_cnt + 1;
+
+                } else {
+
+                    if( type != "checkbox"){
+
+                        $(to_check).eq( k ).css("background","#ffffff");
+
+                    } else {
+
+                        $(to_check).eq( k ).css("border-color","gray");
+
+                    }
+
+                    $(to_check).eq( k ).removeClass("checker-error");
+
+
+                }
+
+            }
+            else if( $(v).is("select") ){
+
+                if( $(v).find("option:selected").val() == false ){
+
+                    $(to_check).eq( k ).css("background","#FFEFEF");
+                    $(to_check).eq( k ).addClass("checker-error");
+
+                    error_cnt = error_cnt + 1;
+
+
+                }
+                else {
+                    $(to_check).eq( k ).css("background","#ffffff");
+                    $(to_check).eq( k ).removeClass("checker-error");
+
+                }
+
+            }
+        }
+
+    } );
+
+    if( error_cnt > 0 ){
+
+        return false;
+    }
+
+    return true;
+
+}
+
 </script>

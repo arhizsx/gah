@@ -115,11 +115,11 @@
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                                 <H5>Installation Address</H5>
                             </button>
                             </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse">
+                            <div id="collapseTwo" class="accordion-collapse show">
                                 <div class="accordion-body">
                                     <div class="form-row">
                                         <label for="house_floor_bldg">House no., Floor no., Bldg</label>
@@ -157,11 +157,11 @@
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                                 <H5>Serviceability Check</H5>
                             </button>
                             </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse">
+                            <div id="collapseFour" class="accordion-collapse show">
                                 <div class="accordion-body">
                                     <div class="form-row">
                                         <label for="serviceability_check">Serviceability Screenshot</label>
@@ -173,11 +173,11 @@
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                                 <H5>Installation Schedule</H5>
                             </button>
                             </h2>
-                            <div id="collapseThree" class="-collapse collapse">
+                            <div id="collapseThree" class="-collapse show">
                                 <div class="accordion-body"accordion>
 
                                     <div class="form-row">

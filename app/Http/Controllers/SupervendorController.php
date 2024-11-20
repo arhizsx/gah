@@ -858,7 +858,7 @@ class SupervendorController extends Controller
 
         return [
             "error" => false,
-        ]
+        ];
 
     }
 

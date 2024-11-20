@@ -234,7 +234,7 @@
                     <H5>You’ve already submitted an application. We’ll be reaching out to you soon</H5>
                 </div>
             </div>
-            <div id="registration_not_allowed" class="d-none">
+            <div id="registration_success" class="d-none">
                 <div class="border rounded-3 p-5 mt-4">
                     <H5>Registration Successful</H5>
                 </div>
@@ -406,13 +406,13 @@ $('.action_button[data-action="confirm_registration"]').on('click', function (e)
 
         if( registration.error == false ){
             
+            $("#loading").addClass("d-none");
             $("#registration_success").removeClass("d-none");        
-            document.querySelector('input[name="cellnumber"]').focus();        
             
         } else {
 
             $("#loading").addClass("d-none");
-            $("#registration_failed").removeClass("d-none");
+            $("#registration_allowed").removeClass("d-none");
 
         }
 

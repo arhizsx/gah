@@ -36,26 +36,27 @@
     </head>
 
     <body  class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
-        <div id="registration" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
+        <div id="header" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
+            <img src="/images/finish.png" width="100%" />
+            <div class="border rounded-3 p-3 mt-4">
+                <H4>FREE GFiber Prepaid for our TM Raket & GoEarn Retailers</H4>
+                <p>Hello, Retailer! Please fill out this form to claim your free GFiber Prepaid Kit.</p>
+                <H4>What is GFiber Prepaid?</H4>
+                <p>GFiber Prepaid offers reloadable UNLI Internet with speeds up to 50Mbps. No monthly bills—just reload anytime you need!</p>
+                <H4>Reminders:</H4>
+                <ul>
+                    <li>Use only the mobile number linked to your TM Raket or GoEarn account. Eligible for selected TM Raket/GoEarn retailers only.</li>
+                    <li>Availability is subject to service coverage in your area.</li>
+                    <li>Expect an SMS confirmation from us regarding your application.</li>
+                </ul>
+            </div>
+        </div>
+        <div id="checking" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
             <form id="registration_form" action="/retailerexclusive/check" method="post">
                 @csrf
 
                 <input type="hidden"  name="action" id="action" value='check'>
                 <input type="hidden"  name="campaign" id="campaign" value='TM'>
-
-                <img src="/images/finish.png" width="100%" />
-                <div class="border rounded-3 p-3 mt-4">
-                    <H4>FREE GFiber Prepaid for our TM Raket & GoEarn Retailers</H4>
-                    <p>Hello, Retailer! Please fill out this form to claim your free GFiber Prepaid Kit.</p>
-                    <H4>What is GFiber Prepaid?</H4>
-                    <p>GFiber Prepaid offers reloadable UNLI Internet with speeds up to 50Mbps. No monthly bills—just reload anytime you need!</p>
-                    <H4>Reminders:</H4>
-                    <ul>
-                        <li>Use only the mobile number linked to your TM Raket or GoEarn account. Eligible for selected TM Raket/GoEarn retailers only.</li>
-                        <li>Availability is subject to service coverage in your area.</li>
-                        <li>Expect an SMS confirmation from us regarding your application.</li>
-                    </ul>
-                </div>
 
                 <div class="border rounded-3 p-3 mt-4">
                     <label class="mb-3">Mobile number used for TM EasyRaket / Globe Prepaid GoEarn</label>
@@ -128,19 +129,19 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
 
     const input = document.querySelector('input[name="cellnumber"]');
 
-    $("#registration").addClass("d-none");
+    $("#checking").addClass("d-none");
     $("#loading").removeClass("d-none");
 
     if (input.value.length !== 10) {
         // alert("Please enter a valid 10-digit cellphone number.");
 
-        $("#registration").removeClass("d-none");
+        $("#checking").removeClass("d-none");
         $("#loading").addClass("d-none");
 
         return; // Prevent submission
     } else {
 
-        $("#registration").addClass("d-none");
+        $("#checking").addClass("d-none");
         $("#loading").removeClass("d-none");
 
         console.log("Checking");

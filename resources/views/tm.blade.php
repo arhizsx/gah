@@ -295,7 +295,9 @@ $('.action_button[data-action="checker"]').on('click', function (e) {
                 $("#loading").addClass("d-none");
 
                 if( checking.status == 'Allowed' ){
-                    $("#registration_allowed").removeClass("d-none");                    
+                    $("#registration_allowed").removeClass("d-none");        
+                    document.querySelector('input[name="cellnumber"]').focus();
+            
                 }
                 else if( checking.status == 'NotAllowed' ){
                     $("#registration_not_allowed").removeClass("d-none");                    

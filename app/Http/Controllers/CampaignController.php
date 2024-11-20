@@ -33,4 +33,12 @@ class CampaignController extends Controller
 
     }
 
+    function tmcheck(Request $request){
+
+        return $request;
+        
+    }
+
+
 }
+

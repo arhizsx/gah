@@ -244,7 +244,9 @@
             <div id="loading" class="d-none text-center">
                 <div class="border rounded-3 p-5 mt-4">
                     <H1 class="mt-5 mb-5">Please wait...</H1>
+                    <div class="mb-5">
                     <i class="fa-solid fa-spinner fa-10x fa-spin-pulse"></i>
+                    </div>
                 </div>
             </div>
             <div class="d-flex justify-content-center my-5">

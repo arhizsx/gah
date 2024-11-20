@@ -123,9 +123,8 @@ document.querySelector('input[name="cellnumber"]').addEventListener('input', fun
     }
 });
 
-document.querySelector('button[type="submit"]').addEventListener('click', function (e) {
+document.querySelector('button[type="submit"]').addEventListener('click', function () {
 
-    e.preventDefault();
 
     const input = document.querySelector('input[name="cellnumber"]');
 

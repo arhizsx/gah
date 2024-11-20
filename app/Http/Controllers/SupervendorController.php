@@ -499,6 +499,72 @@ class SupervendorController extends Controller
 
                         }
 
+                        if( in_array( $campaign, ["SAMSUNG", "TM"]) == true ){
+
+                            $data = null;
+
+                            if( $access ){
+
+                                foreach( $access as $u ){
+
+                                    $usr = DB::table("users")
+                                            ->where("id", $u->user_id)
+                                            ->first();
+
+                                    if( $u->campaign == $campaign ){
+
+                                        if( $u->profile == "NSGT" && $u->position == "NSGT"  ){
+
+                                            $data = DB::table("view_registrations")
+                                                ->whereNotNull("SGT Name")
+                                                ->where("campaign", $campaign)
+                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED") )
+                                                ->get();
+
+                                        }
+                                        elseif( $u->profile == "NSGT" && $u->position == "AREA HEAD"  ){
+
+                                            $data = DB::table("view_registrations_2")
+                                                ->whereNotNull("SGT Name")
+                                                ->where('area_head_email', $usr->email)                                  
+                                                ->where("campaign", $campaign)
+                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED") )
+                                                ->get();
+
+                                        }
+                                        else if( $u->profile == "SGT" && $u->position == "SGT"  ){
+
+                                            $data = DB::table("view_registrations")
+                                                ->where("SGT Name", Auth::user()->name)
+                                                ->where("campaign", $campaign)
+                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED") )
+                                                ->get();
+
+                                        }
+                                        else if( $u->profile == "SGT" && $u->position == "CGE"  ){
+
+                                            $data = DB::table("view_registrations_2")
+                                                ->where('cge_email', $usr->email)                                  
+                                                ->where("campaign", $campaign)
+                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED") )
+                                                ->get();
+
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
+                            if( $data != null ){
+
+                                $return_data->push(  ...$data );
+
+                            }
+
+                        }
+
                         elseif( $campaign == "XIAOMI" ){
 
                             $data = null;

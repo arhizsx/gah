@@ -87,10 +87,10 @@
                 </div>
             </form>
         </div>
-        <div id="loading" class=" text-center" style="max-width: 640px; min-width: 400px; margin: auto; padding-top: 150px;">
-            <H1>Submitting Data...</H1>
+        <div id="loading" class="d-none text-center" style="max-width: 640px; min-width: 400px; margin: auto; padding-top: 150px;">
+            <H1>Checking...</H1>
         </div>
-        <div id="registration_successful" class="d-none" style="max-width: 640px; min-width: 400px; margin: auto;">
+        <div id="registration_allowed" class="d-none" style="max-width: 640px; min-width: 400px; margin: auto;">
             <!-- <img src="/images/finish.png" width="100%" /> -->
             <div class="border rounded-3 p-5 mt-4">
                 <H5>Registration Successful</H5>
@@ -127,12 +127,23 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
     e.preventDefault();
 
     const input = document.querySelector('input[name="cellnumber"]');
+
+    $("#registration").addClass("d-none");
+    $("#loading").removeClass("d-none");
+
     if (input.value.length !== 10) {
         alert("Please enter a valid 10-digit cellphone number.");
+
+        $("#registration").removeClass("d-none");
+        $("#loading").addClass("d-none");
+
         return; // Prevent submission
     } else {
 
-        console.log("Checking...")
+        $("#registration").addClass("d-none");
+        $("#loading").removeClass("d-none");
+
+        console.log("Checking");
 
     }
 });

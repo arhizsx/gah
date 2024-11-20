@@ -36,57 +36,59 @@
     </head>
 
     <body  class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
-        <div id="header" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
-            <img src="/images/finish.png" width="100%" />
-            <div class="border rounded-3 p-3 mt-4">
-                <H4>FREE GFiber Prepaid for our TM Raket & GoEarn Retailers</H4>
-                <p>Hello, Retailer! Please fill out this form to claim your free GFiber Prepaid Kit.</p>
-                <H4>What is GFiber Prepaid?</H4>
-                <p>GFiber Prepaid offers reloadable UNLI Internet with speeds up to 50Mbps. No monthly bills—just reload anytime you need!</p>
-                <H4>Reminders:</H4>
-                <ul>
-                    <li>Use only the mobile number linked to your TM Raket or GoEarn account. Eligible for selected TM Raket/GoEarn retailers only.</li>
-                    <li>Availability is subject to service coverage in your area.</li>
-                    <li>Expect an SMS confirmation from us regarding your application.</li>
-                </ul>
-            </div>
-        </div>
-        <div id="checking" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
-            <form id="registration_form" action="/retailerexclusive/check" method="post">
-                @csrf
-
-                <input type="hidden"  name="action" id="action" value='check'>
-                <input type="hidden"  name="campaign" id="campaign" value='TM'>
-
+        <div id="registration" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
+            <div id="header">
+                <img src="/images/finish.png" width="100%" />
                 <div class="border rounded-3 p-3 mt-4">
-                    <label class="mb-3">Mobile number used for TM EasyRaket / Globe Prepaid GoEarn</label>
-                    <div style="font-size: 48px; text-align: center; display: flex; align-items: center; justify-content: center;">
-                        <span style="margin-right: 5px;">0</span>
-                        <input 
-                            type="text" 
-                            name="cellnumber" 
-                            class="form-control" 
-                            style="font-size: 48px; text-align: left; flex: 1;" 
-                            maxlength="10" 
-                            placeholder="9774793907" 
-                            required>
+                    <H4>FREE GFiber Prepaid for our TM Raket & GoEarn Retailers</H4>
+                    <p>Hello, Retailer! Please fill out this form to claim your free GFiber Prepaid Kit.</p>
+                    <H4>What is GFiber Prepaid?</H4>
+                    <p>GFiber Prepaid offers reloadable UNLI Internet with speeds up to 50Mbps. No monthly bills—just reload anytime you need!</p>
+                    <H4>Reminders:</H4>
+                    <ul>
+                        <li>Use only the mobile number linked to your TM Raket or GoEarn account. Eligible for selected TM Raket/GoEarn retailers only.</li>
+                        <li>Availability is subject to service coverage in your area.</li>
+                        <li>Expect an SMS confirmation from us regarding your application.</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="checking">
+                <form id="registration_form" action="/retailerexclusive/check" method="post">
+                    @csrf
+
+                    <input type="hidden"  name="action" id="action" value='check'>
+                    <input type="hidden"  name="campaign" id="campaign" value='TM'>
+
+                    <div class="border rounded-3 p-3 mt-4">
+                        <label class="mb-3">Mobile number used for TM EasyRaket / Globe Prepaid GoEarn</label>
+                        <div style="font-size: 48px; text-align: center; display: flex; align-items: center; justify-content: center;">
+                            <span style="margin-right: 5px;">0</span>
+                            <input 
+                                type="text" 
+                                name="cellnumber" 
+                                class="form-control" 
+                                style="font-size: 48px; text-align: left; flex: 1;" 
+                                maxlength="10" 
+                                placeholder="9774793907" 
+                                required>
+                        </div>
+                        <p class="mt-3">
+                            Use only the mobile number linked to your TM EasyRaket/ Globe Prepaid GoEarn account. Eligible for selected retailers only. 
+                            We will contact you with this number as well. (Ex. 09171234567) 
+                            Turn on screen reader support                        
+                        </p>
                     </div>
-                    <p class="mt-3">
-                        Use only the mobile number linked to your TM EasyRaket/ Globe Prepaid GoEarn account. Eligible for selected retailers only. 
-                        We will contact you with this number as well. (Ex. 09171234567) 
-                        Turn on screen reader support                        
-                    </p>
-                </div>
 
-                <div class="d-flex justify-content-between mt-3">
-                    <button class='btn btn-outline-dark'>Clear Form</button>
-                    <button type="submit" class='btn btn-primary action_button' data-action="submit_form">Submit</button>
-                </div>
+                    <div class="d-flex justify-content-between mt-3">
+                        <button class='btn btn-outline-dark'>Clear Form</button>
+                        <button type="submit" class='btn btn-primary action_button' data-action="submit_form">Submit</button>
+                    </div>
 
-                <div class="d-flex justify-content-center my-5">
-                    <small>Globe At Home 2024</small>
-                </div>
-            </form>
+                    <div class="d-flex justify-content-center my-5">
+                        <small>Globe At Home 2024</small>
+                    </div>
+                </form>
+            </div>
         </div>
         <div id="loading" class="d-none text-center" style="max-width: 640px; min-width: 400px; margin: auto; padding-top: 150px;">
             <H1>Checking...</H1>

@@ -832,14 +832,14 @@ class SupervendorController extends Controller
         switch( $request->cellnumber){
 
             case "09774793907": 
-                $status = "Allowed"
+                $status = "Allowed";
                 break;
 
             case "09175379140": 
-                $status = "Multiple"
+                $status = "Multiple";
                 break;
             default:
-                $status = "NotAllowed"
+                $status = "NotAllowed";
         }
 
         return [

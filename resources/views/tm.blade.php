@@ -65,7 +65,8 @@
                             <span style="margin-right: 5px;">+63</span>
                             <input 
                                 type="text" 
-                                name="cellnumber" 
+                                name="cellnumber"
+                                id="cellnumber"
                                 class="form-control" 
                                 style="font-size: 48px; text-align: left; flex: 1;" 
                                 maxlength="10" 
@@ -91,6 +92,7 @@
 
                     <input type="hidden"  name="action" id="action" value='tmregister'>
                     <input type="hidden"  name="campaign" id="campaign" value='TM'>
+                    <input type="hidden"  name="mobile_number" id="mobile_number" value=''>
 
                     <div class="accordion  mt-4" id="information">
                         <div class="accordion-item">
@@ -326,8 +328,11 @@ $('.action_button[data-action="checker"]').on('click', function (e) {
                 $("#loading").addClass("d-none");
 
                 if( checking.status == 'Allowed' ){
-                    $("#registration_allowed").removeClass("d-none");        
-                    document.querySelector('input[name="cellnumber"]').focus();
+                    $("#registration_allowed").removeClass("d-none");  
+
+                     $(document).find("#mobile_number").val( $(document).find("#cellnumber").val() );
+
+                    document.querySelector('input[name="firstname"]').focus();
             
                 }
                 else if( checking.status == 'NotAllowed' ){

@@ -60,7 +60,7 @@
                     <div class="border rounded-3 p-3 mt-4">
                         <label class="mb-3">Mobile number used for TM EasyRaket / Globe Prepaid GoEarn</label>
                         <div style="font-size: 48px; text-align: center; display: flex; align-items: center; justify-content: center;">
-                            <span style="margin-right: 5px;">0</span>
+                            <span style="margin-right: 5px;">+63</span>
                             <input 
                                 type="text" 
                                 name="cellnumber" 

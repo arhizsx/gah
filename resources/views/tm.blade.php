@@ -186,7 +186,7 @@
                         <p>This offer is subject to the fiber serviceability of your nominated address. The value of this bundle cannot be converted to cash in case of unsuccessful installation. Terms and conditions apply.</p>
 
                         <H5 style="font-size: 14px">Privacy Notice</H5>
-                        <p>By completing and submitting this form, I allow GLOBE to collect and process the personal data I will provide for GFiber Prepaid, until November 2024, in accordance with the Privacy Policy of Globe.</p>
+                        <p>By completing and submitting this form, I allow GLOBE to collect and process the personal data I will provide to claim my free GFiber Prepaid installation as a GoEarn or TM Raket retailer in accordance with the Privacy Policy of Globe.</p>
                         
                         <div class="form-row">
                             <div class="form-check">

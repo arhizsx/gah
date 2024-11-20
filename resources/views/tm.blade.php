@@ -51,10 +51,10 @@
                         <li>Expect an SMS confirmation from us regarding your application.</li>
                     </ul>
                 </div>
-                <form id="check_form" action="/retailerexclusive/check" method="post">
+                <form id="check_form">
                     @csrf
 
-                    <input type="hidden"  name="action" id="action" value='check'>
+                    <input type="hidden"  name="action" id="action" value='tmcheck'>
                     <input type="hidden"  name="campaign" id="campaign" value='TM'>
 
                     <div class="border rounded-3 p-3 mt-4">
@@ -166,5 +166,33 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
         console.log("Checking");
 
     }
+
+    function CheckData(form){
+
+        var defObject = $.Deferred();  // create a deferred object.
+
+        $.ajax({
+            type: 'post',
+            url: "/supervendor/ajax-public",
+            data: form,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            success: function(resp){
+
+                console.log(resp) ;
+
+                defObject.resolve(resp);    //resolve promise and pass the response.
+
+            },
+            error: function(){
+                console.log("Error in AJAX");
+            }
+        });
+
+        return defObject.promise();
+
+    }
+
 });
 </script>

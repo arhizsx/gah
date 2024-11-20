@@ -83,11 +83,6 @@
                     </div>
                 </form>
             </div>
-            <div id="loading" class="d-none text-center">
-                <div class="border rounded-3 p-5 mt-4">
-                    <H1 class="mt-5 mb-5">Checking...</H1>
-                </div>
-            </div>
             <div id="registration_allowed" class="d-none">
                 <form id="register_form">
                     @csrf
@@ -242,6 +237,11 @@
             <div id="registration_not_allowed" class="d-none">
                 <div class="border rounded-3 p-5 mt-4">
                     <H5>Registration Successful</H5>
+                </div>
+            </div>
+            <div id="loading" class="d-none text-center">
+                <div class="border rounded-3 p-5 mt-4">
+                    <H1 class="mt-5 mb-5">Please wait...</H1>
                 </div>
             </div>
             <div class="d-flex justify-content-center my-5">

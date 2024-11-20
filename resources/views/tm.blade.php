@@ -409,7 +409,7 @@ $('.action_button[data-action="confirm_registration"]').on('click', function (e)
     $("#loading").removeClass("d-none");
     $("#registration_allowed").addClass("d-none");
 
-    $("#complete_name").val( $("#firstname").val() + " " + $("#lastname") );
+    $("#complete_name").val( $("#firstname").val() + " " + $("#lastname").val() );
 
     let form = new FormData( $("#register_form")[0] );
     var registration = CheckData( form );

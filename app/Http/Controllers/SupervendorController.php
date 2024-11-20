@@ -821,6 +821,12 @@ class SupervendorController extends Controller
                 return $this->doTMCheck( $data, $request );
                 break;
 
+            case "tmregister":
+
+                return $this->doTMRegister( $data, $request );
+                break;
+                
+
             default:
 
                 return "action not found";
@@ -847,6 +853,15 @@ class SupervendorController extends Controller
             "status" => $status,
         ];
     }
+
+    function doTMRegister( $data, $request ){
+
+        return [
+            "error" => false,
+        ]
+
+    }
+
 
     function doRegistration( $data, $request ){
 

@@ -87,7 +87,7 @@
                 <form id="register_form">
                     @csrf
 
-                    <input type="hidden"  name="action" id="action" value='tmcheck'>
+                    <input type="hidden"  name="action" id="action" value='tmregister'>
                     <input type="hidden"  name="campaign" id="campaign" value='TM'>
 
                     <div class="accordion  mt-4" id="information">
@@ -400,7 +400,7 @@ $('.action_button[data-action="confirm_registration"]').on('click', function (e)
     $("#registration_allowed").addClass("d-none");
 
     let form = new FormData( $("#register_form")[0] );
-    var registration = RegisterData( form );
+    var registration = CheckData( form );
 
     $.when( registration ).done( function( registration ){
 

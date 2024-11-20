@@ -56,25 +56,116 @@
                         <li>Expect an SMS confirmation from us regarding your application.</li>
                     </ul>
                 </div>
-
-                <div class="border rounded-3 p-3 mt-4">
-                    <div style="font-size: 36px; text-align: center; display: flex; align-items: center; justify-content: center; margin-top: 50px;">
-                        <span style="margin-right: 5px;">+63</span>
-                        <input 
-                            type="text" 
-                            name="cellnumber" 
-                            class="form-control" 
-                            style="font-size: 36px; text-align: center; flex: 1;" 
-                            maxlength="10" 
-                            placeholder="9774793907" 
-                            required>
-                        <button 
-                            type="submit" 
-                            style="font-size: 36px; margin-left: 10px; padding: 5px 20px; cursor: pointer;">
-                            Submit
+                <div class="accordion  mt-4" id="information">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <h5>Personal Information</h5>
                         </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <div class="form-row">
+                                    <label for="firstname">Firstname</label>
+                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="firstname" id="firstname">
+                                </div>
+                                <div class="form-row">
+                                    <label for="lastname">Lastname</label>
+                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="lastname" id="lastname">
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <H5>Installation Address</H5>
+                        </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <div class="form-row">
+                                    <label for="house_floor_bldg">House no., Floor no., Bldg</label>
+                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="house_floor_bldg" id="house_floor_bldg">
+                                </div>
+                                <div class="form-row">
+                                    <label for="street">Street</label>
+                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="street" id="street">
+                                </div>
+                                <div class="form-row">
+                                    <label for="brgy_village">Barangay / Village</label>
+                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="brgy_village" id="brgy_village">
+                                </div>
+                                <div class="form-row">
+                                    <label for="province">Province</label><br>
+                                    <select class="form-control mb-3 checker location_filters select2"  data-filter='province' data-parent='#collapseTwo' data-checker="required" name="province" id="province" style="width=100%;">
+                                        <option value="" selected>Select Province</option>
+                                        @foreach($provinces as $option)
+                                        <option value="{{ $option->PROVINCE }}">{{ $option->PROVINCE }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-row">
+                                    <label for="city">City</label><br>
+                                    <select class="form-control mb-3 checker location_filters select2" data-filter='city' data-parent='#collapseTwo' data-checker="required" name="city" id="city" style="width=100%;">
+                                        <option value="" selected>Select City</option>
+                                    </select>
+                                </div>
+                                <div class="form-row">
+                                    <label for="zipcode">Zip Code</label>
+                                    <input type="text" class="form-control mb-3 checker" data-checker="required" name="zipcode" id="zipcode">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <H5>Installation Schedule</H5>
+                        </button>
+                        </h2>
+                        <div id="collapseThree" class="-collapse collapse">
+                            <div class="accordion-body"accordion>
 
+                                <div class="form-row">
+                                    <label for="schedule">Installation Schedule</label>
+                                    <div id="scchedule" class="d-flex">
+                                    <input type="date" class="form-control mb-3 checker flex-fill me-1" data-checker="required" name="schedule_date" id="schedule_date">
+                                    <select class="form-control mb-3 checker flex-fill ms-1 select2" data-checker="required" name="schedule_hour" id="schedule_hour">
+                                        <option value="" selected>Select Time</option>
+                                        <option value="08:00 AM">08:00 AM</option>
+                                        <option value="09:00 AM">09:00 AM</option>
+                                        <option value="10:00 AM">10:00 AM</option>
+                                        <option value="11:00 AM">11:00 AM</option>
+                                        <option value="12:00 PM">12:00 PM</option>
+                                        <option value="01:00 PM">01:00 PM</option>
+                                        <option value="02:00 PM">02:00 PM</option>
+                                        <option value="03:00 PM">03:00 PM</option>
+                                        <option value="04:00 PM">04:00 PM</option>
+                                        <option value="05:00 PM">05:00 PM</option>
+                                    </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border rounded-3 p-3 mt-4" style="font-size: 10px">
+
+                        <H5 style="font-size: 14px">Disclaimer</H5>
+                        <p>This offer is subject to the fiber serviceability of your nominated address. The value of this bundle cannot be converted to cash in case of unsuccessful installation. Terms and conditions apply.</p>
+
+                        <H5 style="font-size: 14px">Privacy Notice</H5>
+                        <p>By completing and submitting this form, I allow GLOBE to collect and process the personal data I will provide for GFiber Prepaid, until November 2024, in accordance with the Privacy Policy of Globe.</p>
+                        
+                        <div class="form-row">
+                            <div class="form-check">
+                                <input class="form-check-input checker me-3" data-checker="required" type="checkbox" value="" id="agree_policy">
+                                <label class="form-check-label" for="agree_policy">
+                                    I understand and agree with the Privacy notice
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="d-flex justify-content-between mt-3">
@@ -132,31 +223,6 @@
 //     }
 // });
 
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    // Focus on the input field when the page loads
-    document.querySelector('input[name="cellnumber"]').focus();
-});
-
-document.querySelector('input[name="cellnumber"]').addEventListener('input', function (e) {
-    const input = e.target;
-    input.value = input.value.replace(/[^0-9]/g, ''); // Allow only numeric input
-    if (input.value.length > 10) {
-        input.value = input.value.slice(0, 10); // Limit to 10 digits
-    }
-});
-
-document.querySelector('button[type="submit"]').addEventListener('click', function () {
-    const input = document.querySelector('input[name="cellnumber"]');
-    if (input.value.length !== 10) {
-        alert("Please enter a valid 10-digit cellphone number.");
-    } else {
-        alert("Number submitted: +63" + input.value);
-        // You can handle form submission here (e.g., send the data to a server).
-    }
-});
 </script>
 
 <script>

@@ -957,6 +957,7 @@ class SupervendorController extends Controller
             return response()->json(['error' => true, 'message' => $th->getMessage()]);
         }
 
+        $data["complete_name"] = $request->firstname . " " . $request->lastname;
 
         $registration = CampaignRegistration::create([
             "campaign" => $request->campaign,

@@ -90,7 +90,7 @@
                 <form id="register_form">
                     @csrf
 
-                    <input type="hidden"  name="action" id="action" value='tmregister'>
+                    <input type="hidden"  name="action" id="action" value='register'>
                     <input type="hidden"  name="campaign" id="campaign" value='TM'>
                     <input type="hidden"  name="mobile_number" id="mobile_number" value=''>
 

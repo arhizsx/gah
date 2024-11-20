@@ -856,9 +856,43 @@ class SupervendorController extends Controller
 
     function doTMRegister( $data, $request ){
 
-        return [
-            "error" => false,
-        ];
+        // Upload Attached Documents
+        try{
+
+            // Upload path
+            $destinationPath = 'files/';
+
+            // Cycle all uploaded files
+            foreach( $request->file() as $f => $k ){
+
+                if( $request->hasFile( $f )) {
+
+                    $extension = $request->file( $f )->getClientOriginalExtension();
+                    $fileName = $f . '-' . rand( time() , 1000 ) . '-' . $request->file( $f )->getClientOriginalName();
+
+                    // Uploading file to given path
+                    $request->file( $f)->move($destinationPath, $fileName);
+
+                    $data[ $f ] = $fileName;
+
+                }
+            }
+
+        } catch (\Throwable $th) {
+            return response()->json(['error' => true, 'message' => $th->getMessage()]);
+        }
+
+
+        $registration = CampaignRegistration::create([
+            "campaign" => $request->campaign,
+            "user_id" => null,
+            "vendor" => null,
+            "sgt_name" => null,
+            "sgt_email" => null,
+            "data" => json_encode($data)
+        ]);
+
+        return ["error" => false, "registration" => $registration ];
 
     }
 

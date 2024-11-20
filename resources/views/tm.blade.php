@@ -94,8 +94,7 @@
             </div>
             <div id="registration_not_allowed" class="d-none">
                 <div class="border rounded-3 p-5 mt-4">
-                    <H5>Registration Allowed</H5>
-                    <p>Please wait for the feedback of our installer.</p>
+                    <H5>Registration Not Allowed</H5>
                 </div>
             </div>
             <div class="d-flex justify-content-center my-5">
@@ -152,9 +151,16 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
         $.when( checking ).done( function( checking ){
 
             if( checking.error == false ){
-       
+                
                 $("#loading").addClass("d-none");
-                $("#registration_allowed").removeClass("d-none");
+
+                if( checking.status == 'Proceed' ){
+                    $("#registration_allowed").removeClass("d-none");                    
+                }
+                else if( checking.status == 'NotAllowed' ){
+                    $("#registration_not_allowed").removeClass("d-none");                    
+                }
+
                 
             } else {
                 $("#loading").addClass("d-none");

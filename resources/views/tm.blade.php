@@ -79,7 +79,7 @@
 
                     <div class="d-flex justify-content-between mt-3">
                         <button class='btn btn-outline-dark'>Clear Form</button>
-                        <button type="submit" class='btn btn-primary action_button' data-action="submit_form">Submit</button>
+                        <button type="submit" class='btn btn-primary action_button' data-action="checker">Next</button>
                     </div>
                 </form>
             </div>
@@ -222,7 +222,7 @@
                     </div>
                     <div class="d-flex justify-content-between mt-3">
                         <button class='btn btn-outline-dark'>Clear Form</button>
-                        <button type="submit" class='btn btn-primary action_button' data-action="submit_form">Submit</button>
+                        <button type="submit" class='btn btn-primary action_button' data-action="register">Submit</button>
                     </div>
 
                 </form>
@@ -263,7 +263,7 @@ document.querySelector('input[name="cellnumber"]').addEventListener('input', fun
     }
 });
 
-document.querySelector('button[type="submit"]').addEventListener('click', function (e) {
+$('.action_button[data-action="checker"]').on('click', function (e) {
 
     e.preventDefault();
 
@@ -342,6 +342,12 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
         return defObject.promise();
 
     }
+
+});
+
+$('.action_button[data-action="register"]').on('click', function (e) {
+
+    alert("Test");
 
 });
 </script>

@@ -59,7 +59,7 @@
 
                 <div class="border rounded-3 p-3 mt-4">
                     <div style="font-size: 48px; text-align: center; display: flex; align-items: center; justify-content: center;">
-                        <span style="margin-right: 5px;">+63</span>
+                        <span style="margin-right: 5px;">0</span>
                         <input 
                             type="text" 
                             name="cellnumber" 

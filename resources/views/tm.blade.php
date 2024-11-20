@@ -37,7 +37,7 @@
 
     <body  class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
         <div id="registration" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
-            <form id="registration_form">
+            <form id="registration_form" action="/retailerexclusive/check" method="post">
                 @csrf
 
                 <input type="hidden"  name="action" id="action" value='register'>

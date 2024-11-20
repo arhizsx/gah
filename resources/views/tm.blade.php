@@ -37,8 +37,8 @@
 
     <body  class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
         <div id="registration" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
+            <img src="/images/finish.png" width="100%" />
             <div id="checking">
-                <img src="/images/finish.png" width="100%" />
                 <div class="border rounded-3 p-3 mt-4">
                     <H4>FREE GFiber Prepaid for our TM Raket & GoEarn Retailers</H4>
                     <p>Hello, Retailer! Please fill out this form to claim your free GFiber Prepaid Kit.</p>
@@ -123,8 +123,9 @@ document.querySelector('input[name="cellnumber"]').addEventListener('input', fun
     }
 });
 
-document.querySelector('button[type="submit"]').addEventListener('click', function () {
+document.querySelector('button[type="submit"]').addEventListener('click', function (e) {
 
+    e.preventDefault();
 
     const input = document.querySelector('input[name="cellnumber"]');
 

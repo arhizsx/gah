@@ -835,26 +835,27 @@ class SupervendorController extends Controller
     }
     function doTMCheck( $data, $request ){
 
-        switch( $request->cellnumber){
+        $tm = DB::table("tm")
+                ->where("cellnumber", $request->cellnumber)
+                ->first();
 
-            case "9774793907": 
-                $status = "Allowed";
-                break;
+        if( $tm ){
 
-            case "9175379140": 
+            $registrations = DB::table("view_registrations_2")
+                                ->where("mobile_number", $request->cellnumber)
+                                ->where("campaign", "TM")
+                                ->get();
+
+            if(count($registrations) > 0 ) {
                 $status = "Multiple";
-                break;
-            default:
-                $status = "NotAllowed";
+            } else {
+                $status = "Allowed";
+            }
+
+        } else {
+            $status = "NotAllowed";
         }
 
-        $registrations = DB::table("view_registrations_2")
-                            ->where("mobile_number", $request->cellnumber)
-                            ->where("campaign", "TM")
-                            ->get();
-
-
-        return count($registrations);
 
         return [
             "error" => false,

@@ -40,7 +40,7 @@
             <form id="registration_form" action="/retailerexclusive/check" method="post">
                 @csrf
 
-                <input type="hidden"  name="action" id="action" value='register'>
+                <input type="hidden"  name="action" id="action" value='check'>
                 <input type="hidden"  name="campaign" id="campaign" value='TM'>
 
                 <img src="/images/finish.png" width="100%" />

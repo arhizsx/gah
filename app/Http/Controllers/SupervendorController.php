@@ -848,6 +848,14 @@ class SupervendorController extends Controller
                 $status = "NotAllowed";
         }
 
+        $registrations = DB::table("view_registrations_2")
+                            ->where("mobile_number", $request->cellnumber)
+                            ->where("campaign", "TM")
+                            ->get();
+
+
+        return count($registrations);
+
         return [
             "error" => false,
             "status" => $status,

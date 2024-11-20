@@ -73,7 +73,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if( $campaign == "SAMSUNG" ){
+                        if(  in_array( $campaign, ["SAMSUNG", "TM"]) == true ){
 
                             $data = null;
 
@@ -197,7 +197,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if( $campaign == "SAMSUNG" ){
+                        if(  in_array( $campaign, ["SAMSUNG", "TM"]) == true ){
 
                             $data = null;
 
@@ -255,7 +255,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if( $campaign == "SAMSUNG" ){
+                        if(  in_array( $campaign, ["SAMSUNG", "TM"]) == true ){
 
                             $data = null;
 
@@ -376,7 +376,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if( $campaign == "SAMSUNG" ){
+                        if(  in_array( $campaign, ["SAMSUNG", "TM"]) == true ){
 
                             $data = null;
 
@@ -432,72 +432,6 @@ class SupervendorController extends Controller
                     // ////////////////////////
 
                     foreach(  $campaigns as $campaign ){
-
-                        if( $campaign == "SAMSUNG" ){
-
-                            $data = null;
-
-                            if( $access ){
-
-                                foreach( $access as $u ){
-
-                                    $usr = DB::table("users")
-                                            ->where("id", $u->user_id)
-                                            ->first();
-
-                                    if( $u->campaign == $campaign ){
-
-                                        if( $u->profile == "NSGT" && $u->position == "NSGT"  ){
-
-                                            $data = DB::table("view_registrations")
-                                                ->whereNotNull("SGT Name")
-                                                ->where("campaign", $campaign)
-                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED") )
-                                                ->get();
-
-                                        }
-                                        elseif( $u->profile == "NSGT" && $u->position == "AREA HEAD"  ){
-
-                                            $data = DB::table("view_registrations_2")
-                                                ->whereNotNull("SGT Name")
-                                                ->where('area_head_email', $usr->email)                                  
-                                                ->where("campaign", $campaign)
-                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED") )
-                                                ->get();
-
-                                        }
-                                        else if( $u->profile == "SGT" && $u->position == "SGT"  ){
-
-                                            $data = DB::table("view_registrations")
-                                                ->where("SGT Name", Auth::user()->name)
-                                                ->where("campaign", $campaign)
-                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED") )
-                                                ->get();
-
-                                        }
-                                        else if( $u->profile == "SGT" && $u->position == "CGE"  ){
-
-                                            $data = DB::table("view_registrations_2")
-                                                ->where('cge_email', $usr->email)                                  
-                                                ->where("campaign", $campaign)
-                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED") )
-                                                ->get();
-
-                                        }
-
-                                    }
-
-                                }
-
-                            }
-
-                            if( $data != null ){
-
-                                $return_data->push(  ...$data );
-
-                            }
-
-                        }
 
                         if( in_array( $campaign, ["SAMSUNG", "TM"]) == true ){
 
@@ -618,7 +552,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if( $campaign == "SAMSUNG" ){
+                        if(  in_array( $campaign, ["SAMSUNG", "TM"]) == true ){
 
                             $data = null;
 
@@ -887,11 +821,6 @@ class SupervendorController extends Controller
                 return $this->doTMCheck( $data, $request );
                 break;
 
-            case "tmregister":
-
-                return $this->doTMRegister( $data, $request );
-                break;
-                
 
             default:
 
@@ -927,49 +856,6 @@ class SupervendorController extends Controller
             "error" => false,
             "status" => $status,
         ];
-    }
-
-    function doTMRegister( $data, $request ){
-
-        // Upload Attached Documents
-        try{
-
-            // Upload path
-            $destinationPath = 'files/';
-
-            // Cycle all uploaded files
-            foreach( $request->file() as $f => $k ){
-
-                if( $request->hasFile( $f )) {
-
-                    $extension = $request->file( $f )->getClientOriginalExtension();
-                    $fileName = $f . '-' . rand( time() , 1000 ) . '-' . $request->file( $f )->getClientOriginalName();
-
-                    // Uploading file to given path
-                    $request->file( $f)->move($destinationPath, $fileName);
-
-                    $data[ $f ] = $fileName;
-
-                }
-            }
-
-        } catch (\Throwable $th) {
-            return response()->json(['error' => true, 'message' => $th->getMessage()]);
-        }
-
-        $data["complete_name"] = $request->firstname . " " . $request->lastname;
-
-        $registration = CampaignRegistration::create([
-            "campaign" => $request->campaign,
-            "user_id" => null,
-            "vendor" => null,
-            "sgt_name" => null,
-            "sgt_email" => null,
-            "data" => json_encode($data)
-        ]);
-
-        return ["error" => false, "registration" => $registration ];
-
     }
 
 

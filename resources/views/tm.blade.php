@@ -242,6 +242,25 @@
             </div>
         </div>
 
+
+        <div class="modal" tabindex="-1" id="confirm-register-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirm Registration</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Please confirm that all details are correct before submitting. Proceed?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary">Yes</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         @vite(['resources/js/location.js'])
@@ -353,12 +372,12 @@ $('.action_button[data-action="register"]').on('click', function (e) {
 
     if( Checker() ) {
 
+
     } else {
 
-        console.log("Error");
-        document.querySelector('input[name="cellnumber"]').focus();
-
-
+        $("#confirm-register-modal").modal("show");
+        document.querySelector('input[name="lastname"]').focus();
+        
     }
 
 });

@@ -829,8 +829,11 @@ class SupervendorController extends Controller
     }
     function doTMCheck( $data, $request ){
 
-        
-        return $data;
+
+        return [
+            "error" => false,
+            "status" => "Proceed",
+        ];
     }
 
     function doRegistration( $data, $request ){

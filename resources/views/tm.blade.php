@@ -222,6 +222,11 @@
                             </div>
                         </div>
                     </div>
+                    <div class="d-flex justify-content-between mt-3">
+                        <button class='btn btn-outline-dark'>Clear Form</button>
+                        <button type="submit" class='btn btn-primary action_button' data-action="submit_form">Submit</button>
+                    </div>
+
                 </form>
             </div>
             <div id="registration_not_allowed" class="d-none">

@@ -51,7 +51,7 @@
                         <li>Expect an SMS confirmation from us regarding your application.</li>
                     </ul>
                 </div>
-                <form id="registration_form" action="/retailerexclusive/check" method="post">
+                <form id="check_form" action="/retailerexclusive/check" method="post">
                     @csrf
 
                     <input type="hidden"  name="action" id="action" value='check'>
@@ -81,24 +81,25 @@
                         <button class='btn btn-outline-dark'>Clear Form</button>
                         <button type="submit" class='btn btn-primary action_button' data-action="submit_form">Submit</button>
                     </div>
-
-                    <div class="d-flex justify-content-center my-5">
-                        <small>Globe At Home 2024</small>
-                    </div>
                 </form>
             </div>
             <div id="loading" class="d-none text-center">
                 <H1 class="mt-5 mb-5">Checking...</H1>
             </div>
             <div id="registration_allowed" class="d-none">
-                <!-- <img src="/images/finish.png" width="100%" /> -->
                 <div class="border rounded-3 p-5 mt-4">
-                    <H5>Registration Successful</H5>
+                    <H5>Registration Allowed</H5>
                     <p>Please wait for the feedback of our installer.</p>
                 </div>
-                <div class="d-flex justify-content-center my-5">
-                    <small>Globe At Home 2024</small>
+            </div>
+            <div id="registration_not_allowed" class="d-none">
+                <div class="border rounded-3 p-5 mt-4">
+                    <H5>Registration Allowed</H5>
+                    <p>Please wait for the feedback of our installer.</p>
                 </div>
+            </div>
+            <div class="d-flex justify-content-center my-5">
+                <small>Globe At Home 2024</small>
             </div>
         </div>
 
@@ -144,8 +145,23 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
 
     } else {
 
-        $("#checking").addClass("d-none");
-        $("#loading").removeClass("d-none");
+
+        let form = new FormData( $("#check_form")[0] );
+        var checking = CheckData( form );
+
+        $.when( checking ).done( function( checking ){
+
+            if( checking.error == false ){
+       
+                $("#loading").addClass("d-none");
+                $("#registration_allowed").removeClass("d-none");
+                
+            } else {
+                $("#loading").addClass("d-none");
+                $("#registration_not_allowed").removeClass("d-none");
+            }
+
+        });
 
         console.log("Checking");
 

@@ -93,6 +93,7 @@
                     <input type="hidden"  name="action" id="action" value='register'>
                     <input type="hidden"  name="campaign" id="campaign" value='TM'>
                     <input type="hidden"  name="mobile_number" id="mobile_number" value=''>
+                    <input type="hidden"  name="complete_name" id="complete_name" value=''>
 
                     <div class="accordion  mt-4" id="information">
                         <div class="accordion-item">
@@ -407,6 +408,8 @@ $('.action_button[data-action="confirm_registration"]').on('click', function (e)
 
     $("#loading").removeClass("d-none");
     $("#registration_allowed").addClass("d-none");
+
+    $("#complete_name").val( $("#firstname").val() + " " + $("#lastname") );
 
     let form = new FormData( $("#register_form")[0] );
     var registration = CheckData( form );

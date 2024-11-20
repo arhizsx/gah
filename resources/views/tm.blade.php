@@ -132,7 +132,7 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
     $("#loading").removeClass("d-none");
 
     if (input.value.length !== 10) {
-        alert("Please enter a valid 10-digit cellphone number.");
+        // alert("Please enter a valid 10-digit cellphone number.");
 
         $("#registration").removeClass("d-none");
         $("#loading").addClass("d-none");

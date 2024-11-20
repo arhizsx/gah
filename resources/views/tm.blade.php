@@ -140,7 +140,10 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
         $("#checking").removeClass("d-none");
         $("#loading").addClass("d-none");
 
+        document.querySelector('input[name="cellnumber"]').focus();
+
         return; // Prevent submission
+        
     } else {
 
         $("#checking").addClass("d-none");

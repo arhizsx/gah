@@ -244,19 +244,19 @@
 
 
         <div class="modal" tabindex="-1" id="confirm-register-modal">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Confirm Registration</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Please confirm that all details are correct before submitting. Proceed?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-primary">Yes</button>
-                </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title">Confirm Registration</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-5">
+                        <p>Please confirm that all details are correct before submitting. Proceed?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                        <button type="button" class="btn btn-success">Yes</button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -84,7 +84,9 @@
                 </form>
             </div>
             <div id="loading" class="d-none text-center">
-                <H1 class="mt-5 mb-5">Checking...</H1>
+                <div class="border rounded-3 p-5 mt-4">
+                    <H1 class="mt-5 mb-5">Checking...</H1>
+                </div>
             </div>
             <div id="registration_allowed" class="d-none">
                 <form id="register_form">
@@ -237,6 +239,11 @@
                     <H5>You’ve already submitted an application. We’ll be reaching out to you soon</H5>
                 </div>
             </div>
+            <div id="registration_not_allowed" class="d-none">
+                <div class="border rounded-3 p-5 mt-4">
+                    <H5>Registration Successful</H5>
+                </div>
+            </div>
             <div class="d-flex justify-content-center my-5">
                 <small>Globe At Home 2024</small>
             </div>
@@ -386,7 +393,31 @@ $('.action_button[data-action="confirm_registration"]').on('click', function (e)
 
     e.preventDefault();
 
-    alert("submitting now")
+    $("#confirm-register-modal").modal("hide");
+
+    $("#loading").removeClass("d-none");
+    $("#registration_allowed").addClass("d-none");
+
+    let form = new FormData( $("#register_form")[0] );
+    var registration = RegisterData( form );
+
+    $.when( registration ).done( function( registration ){
+
+        if( registration.error == false ){
+            
+            $("#registration_success").removeClass("d-none");        
+            document.querySelector('input[name="cellnumber"]').focus();        
+            
+        } else {
+
+            $("#loading").addClass("d-none");
+            $("#registration_failed").removeClass("d-none");
+
+        }
+
+    });
+
+    console.log("Registered");
 
 });
 

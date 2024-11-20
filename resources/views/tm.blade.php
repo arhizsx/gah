@@ -90,7 +90,7 @@
                 </form>
             </div>
             <div id="loading" class="d-none text-center">
-                <H1>Checking...</H1>
+                <H1 class="mt-5 mb-5">Checking...</H1>
             </div>
             <div id="registration_allowed" class="d-none">
                 <!-- <img src="/images/finish.png" width="100%" /> -->

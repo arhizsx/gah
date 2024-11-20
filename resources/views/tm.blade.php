@@ -87,7 +87,7 @@
                 </div>
             </form>
         </div>
-        <div id="loading" class="d-none text-center" style="max-width: 640px; min-width: 400px; margin: auto; padding-top: 150px;">
+        <div id="loading" class=" text-center" style="max-width: 640px; min-width: 400px; margin: auto; padding-top: 150px;">
             <H1>Submitting Data...</H1>
         </div>
         <div id="registration_successful" class="d-none" style="max-width: 640px; min-width: 400px; margin: auto;">
@@ -125,7 +125,7 @@ document.querySelector('input[name="cellnumber"]').addEventListener('input', fun
 document.querySelector('button[type="submit"]').addEventListener('click', function (e) {
 
     e.preventDefault();
-    
+
     const input = document.querySelector('input[name="cellnumber"]');
     if (input.value.length !== 10) {
         alert("Please enter a valid 10-digit cellphone number.");

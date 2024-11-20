@@ -89,12 +89,16 @@
             <div id="registration_allowed" class="d-none">
                 <div class="border rounded-3 p-5 mt-4">
                     <H5>Registration Allowed</H5>
-                    <p>Please wait for the feedback of our installer.</p>
                 </div>
             </div>
             <div id="registration_not_allowed" class="d-none">
                 <div class="border rounded-3 p-5 mt-4">
-                    <H5>Registration Not Allowed</H5>
+                    <H5>Sorry, it looks like you’re not eligible to proceed</H5>
+                </div>
+            </div>
+            <div id="registration_multiple" class="d-none">
+                <div class="border rounded-3 p-5 mt-4">
+                    <H5>You’ve already submitted an application. We’ll be reaching out to you soon</H5>
                 </div>
             </div>
             <div class="d-flex justify-content-center my-5">
@@ -154,11 +158,14 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
                 
                 $("#loading").addClass("d-none");
 
-                if( checking.status == 'Proceed' ){
+                if( checking.status == 'Allowed' ){
                     $("#registration_allowed").removeClass("d-none");                    
                 }
                 else if( checking.status == 'NotAllowed' ){
                     $("#registration_not_allowed").removeClass("d-none");                    
+                }
+                else if( checking.status == 'Multiple' ){
+                    $("#registration_multiple").removeClass("d-none");                    
                 }
 
                 

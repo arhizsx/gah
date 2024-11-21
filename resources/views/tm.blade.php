@@ -231,7 +231,7 @@
             </div>
             <div id="registration_not_allowed" class="d-none">
                 <div class="border rounded-3 p-5 mt-4">
-                    <H5>Sorry, it looks like you’re not eligible to proceed</H5>
+                    <H5>Oops, the number you entered isn’t eligible for this exclusive promo. But no worries! You can still apply for GFiber Prepaid here: <a href='https://gfiberprepaid.globe.com.ph/'>https://gfiberprepaid.globe.com.ph/</a></H5>
                 </div>
             </div>
             <div id="registration_multiple" class="d-none">

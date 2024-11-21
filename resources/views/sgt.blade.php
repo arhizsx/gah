@@ -275,7 +275,6 @@ $(document).on("click", ".btn-action", function(){
                                     '<option value="Pending - Customer Undecided / On Hold by Subs">Pending - Customer Undecided / On Hold by Subs</option>' +
                                     '<option value="Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)">Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)</option>' +
                                     '<option value="Pending - OSS / DGT System Issue">Pending - OSS / DGT System Issue</option>' +
-                                    '<option value="Pending - OSS / DGT System Issue">Pending - OSS / DGT System Issue</option>' +
                                     '<option value="Pending - Permit Access Issue VG / Subdivision / Barangay">Pending - Permit Access Issue VG / Subdivision / Barangay</option>' +
                                 '</select>' +
                             '</div>' +

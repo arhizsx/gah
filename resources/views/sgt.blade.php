@@ -272,6 +272,11 @@ $(document).on("click", ".btn-action", function(){
                                     '<option value="Pending - SV Capacity Issue">Pending - SV Capacity Issue</option>' +
                                     '<option value="Pending - Adverse Weather">Pending - Adverse Weather</option>' +
                                     '<option value="Pending - Customer Uncontacted">Pending - Customer Uncontacted</option>' +
+                                    '<option value="Pending - Customer Undecided / On Hold by Subs">Pending - Customer Undecided / On Hold by Subs</option>' +
+                                    '<option value="Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)">Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)</option>' +
+                                    '<option value="Pending - OSS / DGT System Issue">Pending - OSS / DGT System Issue</option>' +
+                                    '<option value="Pending - OSS / DGT System Issue">Pending - OSS / DGT System Issue</option>' +
+                                    '<option value="Pending - Permit Access Issue VG / Subdivision / Barangay">Pending - Permit Access Issue VG / Subdivision / Barangay</option>' +
                                 '</select>' +
                             '</div>' +
                         '</div>'
@@ -287,6 +292,26 @@ $(document).on("click", ".btn-action", function(){
 
                 case "application_cancelled":
                     new_status = "CANCELLED";
+
+                    $(document).find("#custom_field").html(
+                        '<div class="row mt-3 mb-3">' +
+                            '<div class="col-3">' +
+                                '<label for="confirm_complete_name">Cancellation Type</label>' +
+                            '</div>' +
+                            '<div class="col-9">' +
+                                '<select name="cancellation_type" class="form-control" id="cancellationType">' +
+                                    '<option value="">Select Cancellation Type</option>' +
+                                    '<option value="Cancelled - Customer Uncontacted and Address Cant Be Located">Cancelled - Customer Uncontacted and Address Cant Be Located</option>' +
+                                    '<option value="Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)">Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)</option>' +
+                                    '<option value="Cancelled - Customer Does not want to avail anymore">Cancelled - Customer Does not want to avail anymore</option>' +
+                                    '<option value="Cancelled - Permit Access Issue VG / Subdivision / Barangay">Cancelled - Permit Access Issue VG / Subdivision / Barangay</option>' +
+                                '</select>' +
+                            '</div>' +
+                        '</div>'
+                    )
+                    
+                    $(document).find("#confirm_btn").attr("disabled", "disabled");
+
                 break;
 
                 case "application_installed":

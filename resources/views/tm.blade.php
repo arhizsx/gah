@@ -2,7 +2,7 @@
 <html lang="en" >
     <head>
         <meta charset="UTF-8">
-        <title>FREE GFiber Prepaid for our GP-TM Raket retailer  Raket & GoEarn Retailers</title>
+        <title>FREE GFiber Prepaid for our EasyRaket and GoEarn retailers</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         
@@ -42,7 +42,7 @@
             <img src="/images/tmv3.png" width="100%" />
             <div id="checking">
                 <div class="border rounded-3 p-3 mt-4">
-                    <H4>FREE GFiber Prepaid for our GP-TM Raket retailer  Raket & GoEarn Retailers</H4>
+                    <H4>FREE GFiber Prepaid for our EasyRaket and GoEarn retailers</H4>
                     <p>Hello, Retailer! Please fill out this form to claim your free GFiber Prepaid Kit.</p>
                     <H4>What is GFiber Prepaid?</H4>
                     <p>GFiber Prepaid offers reloadable UNLI Internet with speeds up to 100Mbps. No monthly bills—just reload anytime you need!</p>

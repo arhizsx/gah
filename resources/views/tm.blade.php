@@ -57,7 +57,7 @@
                     @csrf
 
                     <input type="hidden"  name="action" id="action" value='tmcheck'>
-                    <input type="hidden"  name="campaign" id="campaign" value='TM'>
+                    <input type="hidden"  name="campaign" id="campaign" value='GP-TM'>
 
                     <div class="border rounded-3 p-3 mt-4">
                         <label class="mb-3">Mobile number used for GP-TM Raket retailer  EasyRaket / Globe Prepaid GoEarn</label>

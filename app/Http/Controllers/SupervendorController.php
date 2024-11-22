@@ -58,7 +58,7 @@ class SupervendorController extends Controller
 
         $registrations = DB::table("view_registrations");
 
-        $campaigns = [ "SAMSUNG", "XIAOMI", "TM" ];
+        $campaigns = [ "SAMSUNG", "XIAOMI", "GP-TM" ];
         $return_data = new Collection();
 
         switch( $action ){
@@ -73,7 +73,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "TM"]) == true ){
+                        if(  in_array( $campaign, ["SAMSUNG", "GP-TM"]) == true ){
 
                             $data = null;
 
@@ -197,7 +197,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "TM"]) == true ){
+                        if(  in_array( $campaign, ["SAMSUNG", "GP-TM"]) == true ){
 
                             $data = null;
 
@@ -255,7 +255,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "TM"]) == true ){
+                        if(  in_array( $campaign, ["SAMSUNG", "GP-TM"]) == true ){
 
                             $data = null;
 
@@ -376,7 +376,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "TM"]) == true ){
+                        if(  in_array( $campaign, ["SAMSUNG", "GP-TM"]) == true ){
 
                             $data = null;
 
@@ -433,7 +433,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if( in_array( $campaign, ["SAMSUNG", "TM"]) == true ){
+                        if( in_array( $campaign, ["SAMSUNG", "GP-TM"]) == true ){
 
                             $data = null;
 
@@ -552,7 +552,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "TM"]) == true ){
+                        if(  in_array( $campaign, ["SAMSUNG", "GP-TM"]) == true ){
 
                             $data = null;
 
@@ -838,7 +838,7 @@ class SupervendorController extends Controller
 
             $registrations = DB::table("view_registrations_2")
                                 ->where("mobile_number", $request->cellnumber)
-                                ->where("campaign", "TM")
+                                ->where("campaign", "GP-TM")
                                 ->get();
 
             if(count($registrations) > 0 ) {

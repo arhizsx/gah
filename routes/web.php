@@ -51,11 +51,13 @@ Route::post('/retailerexclusive/check', [CampaignController::class, 'tmcheck']);
 
 // NUMBER VERIFIER
 Route::get('/', function () {
-    return redirect('https://sam.globe.com.ph/broadband');
+    return abort(404);
+    // return redirect('https://sam.globe.com.ph/broadband');
 });
 
 Route::get('/internal', function () {
-    return redirect('https://sam.globe.com.ph/broadband/internal');
+    return abort(404);
+    // return redirect('https://sam.globe.com.ph/broadband/internal');
 });
 
 Route::get('/mailgun', function () {

@@ -39,7 +39,7 @@
 
     <body  class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
         <div id="registration" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
-            <img src="/images/tmv2.jpg" width="100%" />
+            <img src="/images/tmv3.png" width="100%" />
             <div id="checking">
                 <div class="border rounded-3 p-3 mt-4">
                     <H4>FREE GFiber Prepaid for our GP-TM Raket retailer  Raket & GoEarn Retailers</H4>

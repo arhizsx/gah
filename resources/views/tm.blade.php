@@ -45,7 +45,7 @@
                     <H4>FREE GFiber Prepaid for our TM Raket & GoEarn Retailers</H4>
                     <p>Hello, Retailer! Please fill out this form to claim your free GFiber Prepaid Kit.</p>
                     <H4>What is GFiber Prepaid?</H4>
-                    <p>GFiber Prepaid offers reloadable UNLI Internet with speeds up to 50Mbps. No monthly bills—just reload anytime you need!</p>
+                    <p>GFiber Prepaid offers reloadable UNLI Internet with speeds up to 100Mbps. No monthly bills—just reload anytime you need!</p>
                     <H4>Reminders:</H4>
                     <ul>
                         <li>Use only the mobile number linked to your TM Raket or GoEarn account. Eligible for selected TM Raket/GoEarn retailers only.</li>
@@ -155,9 +155,12 @@
                                         <input type="text" class="form-control mb-3 checker" data-checker="required" name="zipcode" id="zipcode">
                                     </div>
                                 </div>
+
+                                <a class="mt-4" target="_blank" href="https://gfiberprepaid.globe.com.ph/serviceability/">Check Address Serviceability</a>
+
                             </div>
                         </div>
-                        <div class="accordion-item">
+                        <!-- <div class="accordion-item">
                             <h2 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                                 <H5>Serviceability Check</H5>
@@ -172,7 +175,7 @@
                                     </div>                                    
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">

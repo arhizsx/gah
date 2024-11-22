@@ -48,9 +48,9 @@
                     <p>GFiber Prepaid offers reloadable UNLI Internet with speeds up to 100Mbps. No monthly bills—just reload anytime you need!</p>
                     <H4>Reminders:</H4>
                     <ul>
-                        <li>Use only the mobile number linked to your TM Raket or GoEarn account. Eligible for selected GP-TM Raket retailer  Raket/GoEarn retailers only.</li>
-                        <li>Availability is subject to service coverage in your area.</li>
-                        <li>Expect an SMS confirmation from us regarding your application.</li>
+                        <li>This offer is exclusive to eligible EasyRaket and GoEarn retailers</li>
+                        <li>Availability is subject to service coverage in your area</li>
+                        <li>Expect an SMS confirmation from us regarding your application within 24 hours</li>
                     </ul>
                 </div>
                 <form id="check_form">

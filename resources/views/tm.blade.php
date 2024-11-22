@@ -2,7 +2,7 @@
 <html lang="en" >
     <head>
         <meta charset="UTF-8">
-        <title>FREE GFiber Prepaid for our TM Raket & GoEarn Retailers</title>
+        <title>FREE GFiber Prepaid for our GP-TM Raket retailer  Raket & GoEarn Retailers</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         
@@ -42,13 +42,13 @@
             <img src="/images/tmv2.jpg" width="100%" />
             <div id="checking">
                 <div class="border rounded-3 p-3 mt-4">
-                    <H4>FREE GFiber Prepaid for our TM Raket & GoEarn Retailers</H4>
+                    <H4>FREE GFiber Prepaid for our GP-TM Raket retailer  Raket & GoEarn Retailers</H4>
                     <p>Hello, Retailer! Please fill out this form to claim your free GFiber Prepaid Kit.</p>
                     <H4>What is GFiber Prepaid?</H4>
                     <p>GFiber Prepaid offers reloadable UNLI Internet with speeds up to 100Mbps. No monthly bills—just reload anytime you need!</p>
                     <H4>Reminders:</H4>
                     <ul>
-                        <li>Use only the mobile number linked to your TM Raket or GoEarn account. Eligible for selected TM Raket/GoEarn retailers only.</li>
+                        <li>Use only the mobile number linked to your TM Raket or GoEarn account. Eligible for selected GP-TM Raket retailer  Raket/GoEarn retailers only.</li>
                         <li>Availability is subject to service coverage in your area.</li>
                         <li>Expect an SMS confirmation from us regarding your application.</li>
                     </ul>
@@ -60,7 +60,7 @@
                     <input type="hidden"  name="campaign" id="campaign" value='TM'>
 
                     <div class="border rounded-3 p-3 mt-4">
-                        <label class="mb-3">Mobile number used for TM EasyRaket / Globe Prepaid GoEarn</label>
+                        <label class="mb-3">Mobile number used for GP-TM Raket retailer  EasyRaket / Globe Prepaid GoEarn</label>
                         <div style="font-size: 48px; text-align: center; display: flex; align-items: center; justify-content: center;">
                             <span style="margin-right: 5px;">+63</span>
                             <input 
@@ -74,7 +74,7 @@
                                 required>
                         </div>
                         <p class="mt-3">
-                            Use only the mobile number linked to your TM EasyRaket/ Globe Prepaid GoEarn account. Eligible for selected retailers only. 
+                            Use only the mobile number linked to your GP-TM Raket retailer  EasyRaket/ Globe Prepaid GoEarn account. Eligible for selected retailers only. 
                             We will contact you with this number as well. (Ex. +639171234567) 
                             Turn on screen reader support                        
                         </p>
@@ -213,7 +213,7 @@
                             <p>This offer is subject to the fiber serviceability of your nominated address. The value of this bundle cannot be converted to cash in case of unsuccessful installation. <a target="_blank" href="https://www.globe.com.ph/website-terms-conditions?_gl=1*11wvnk5*_gcl_aw*R0NMLjE3MTEyNzIzOTEuQ2p3S0NBandudi12QmhCZEVpd0FCQ1lRQS1BUFZtcmp6OWw5TXI4a2xWS0J2cDg4MFlBbDN3cDIzNWlwamtwNWZBdHQ4SXByV2daWGdob0NVakFRQXZEX0J3RQ..*_gcl_au*MTk1NTAzMjE4NS4xNzE4OTI5MDEw*_ga*NzMwMDM2NDYzLjE2NTc1MTk0MjM.*_ga_TD2ZL4WC9D*MTcxODkzOTQ5MC43LjAuMTcxODkzOTQ5My41Ny4wLjA.&_ga=2.129421836.1270274114.1718929010-730036463.1657519423">Terms and conditions</a> apply.</p>
 
                             <H5 style="font-size: 14px">Privacy Notice</H5>
-                            <p>By completing and submitting this form, I allow GLOBE to collect and process the personal data I will provide to claim my free GFiber Prepaid installation as a GoEarn or TM Raket retailer in accordance with the <a target="_blank" href="https://www.globe.com.ph/privacy-policy.html">Privacy Policy of Globe.</a></p>
+                            <p>By completing and submitting this form, I allow GLOBE to collect and process the personal data I will provide to claim my free GFiber Prepaid installation as a GoEarn or GP-TM Raket retailer in accordance with the <a target="_blank" href="https://www.globe.com.ph/privacy-policy.html">Privacy Policy of Globe.</a></p>
                             
                             <div class="form-row">
                                 <div class="form-check">

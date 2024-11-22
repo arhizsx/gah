@@ -50,7 +50,7 @@
                     <ul>
                         <li>This offer is exclusive to eligible EasyRaket and GoEarn retailers</li>
                         <li>Availability is subject to service coverage in your area</li>
-                        <li>Expect an SMS confirmation from us regarding your application within 24 hours</li>
+                        <li>Expect an SMS confirmation from us regarding your application within 2 working days</li>
                     </ul>
                 </div>
                 <form id="check_form">

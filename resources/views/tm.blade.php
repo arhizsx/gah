@@ -91,7 +91,7 @@
                     @csrf
 
                     <input type="hidden"  name="action" id="action" value='register'>
-                    <input type="hidden"  name="campaign" id="campaign" value='TM'>
+                    <input type="hidden"  name="campaign" id="campaign" value='GP-TM'>
                     <input type="hidden"  name="mobile_number" id="mobile_number" value=''>
                     <input type="hidden"  name="complete_name" id="complete_name" value=''>
 

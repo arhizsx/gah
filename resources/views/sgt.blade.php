@@ -337,8 +337,6 @@ $(document).on("click", ".btn-action", function(){
         
     } else {
 
-        alert("T");
-
         var action = "";
 
         if( $(this).data("action")  == "confirm_action"){

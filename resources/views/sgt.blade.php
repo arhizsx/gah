@@ -179,7 +179,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button id="confirm_btn" type="button" class="btn btn-success btn-action" data-user_mode="gt" data-action="confirm_action" data-next_action="" data-id="">Yes</button>
+                <button id="confirm_btn" type="button" class="confirm_btn btn btn-success btn-action" data-user_mode="gt" data-action="confirm_action" data-confirm_type="confirm_pending" data-next_action="" data-id="">Yes</button>
             </div>
         </div>
     </div>
@@ -241,7 +241,7 @@ $(document).on("click", ".btn-action", function(){
 
     if (typeof $(this).data('confirm') !== 'undefined') {
 
-        $(document).find("#confirm_btn").attr("disabled", false);
+        $(document).find(".confirm_btn").attr("disabled", false);
 
         if( $(this).data('confirm') == "yes" ){
 
@@ -266,7 +266,7 @@ $(document).on("click", ".btn-action", function(){
                                 '<label for="confirm_complete_name">Pending Type</label>' +
                             '</div>' +
                             '<div class="col-9">' +
-                                '<select name="pending_type" class="form-control" id="pendingType">' +
+                                '<select name="pending_type" class="form-control selectType" id="pendingType">' +
                                     '<option value="">Select Pending Type</option>' +
                                     '<option value="Pending - Customer Availability">Pending - Customer Availability</option>' +
                                     '<option value="Pending - SV Capacity Issue">Pending - SV Capacity Issue</option>' +
@@ -280,8 +280,9 @@ $(document).on("click", ".btn-action", function(){
                             '</div>' +
                         '</div>'
                     )
-                    
-                    $(document).find("#confirm_btn").attr("disabled", "disabled");
+
+                    $(document).find(".confirm_btn").attr("data-confirm_type", "pending_confirm");
+                    $(document).find(".confirm_btn").attr("disabled", "disabled");
 
                 break;
 
@@ -298,7 +299,7 @@ $(document).on("click", ".btn-action", function(){
                                 '<label for="confirm_complete_name">Cancellation Type</label>' +
                             '</div>' +
                             '<div class="col-9">' +
-                                '<select name="cancellation_type" class="form-control" id="cancellationType">' +
+                                '<select name="cancellation_type" class="form-control selectType" id="cancellationType">' +
                                     '<option value="">Select Cancellation Type</option>' +
                                     '<option value="Cancelled - Customer Uncontacted and Address Cant Be Located">Cancelled - Customer Uncontacted and Address Cant Be Located</option>' +
                                     '<option value="Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)">Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)</option>' +
@@ -309,7 +310,8 @@ $(document).on("click", ".btn-action", function(){
                         '</div>'
                     )
                     
-                    $(document).find("#confirm_btn").attr("disabled", "disabled");
+                    $(document).find(".confirm_btn").attr("data-confirm_type", "cancellation_confirm");
+                    $(document).find(".confirm_btn").attr("disabled", "disabled");
 
                 break;
 
@@ -369,18 +371,17 @@ $(document).on("click", ".btn-action", function(){
 
 });
 
-$(document).on('change', '#pendingType', function() {
+$(document).on('change', '.selectType', function() {
 
     if($(this).val() != "" ){
-        $(document).find("#confirm_btn").attr("disabled", false)
-        $(document).find("#confirm_btn").attr("data-next_action", $(this).val());
+        $(document).find(".confirm_btn").attr("disabled", false)
+        $(document).find(".confirm_btn").attr("data-next_action", $(this).val());
 
     } else {
-        $(document).find("#confirm_btn").attr("disabled", "disabled")
+        $(document).find(".confirm_btn").attr("disabled", "disabled")
     }
 
 });
-
 
 function callbackAction(data){
 

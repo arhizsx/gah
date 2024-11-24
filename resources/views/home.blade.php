@@ -74,7 +74,7 @@
             </div>
             <div class="row">
                 <div class="col mb-2">
-                    <H1>TM</H1>
+                    <H1>GP-TM</H1>
                 </div>
             </div>
             <div class="row">
@@ -82,7 +82,7 @@
                     $total = 0;
                 @endphp
                 @foreach( $data as $d )
-                    @if( $d->campaign == "TM" )
+                    @if( $d->campaign == "GP-TM" )
                         @php 
                            $total = $total + $d->count; 
                         @endphp         

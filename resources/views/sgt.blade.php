@@ -427,9 +427,9 @@ function callbackAction(data){
         "Pending - OSS / DGT System Issue",
         "Pending - Permit Access Issue VG / Subdivision / Barangay",
         "Cancelled - Customer Uncontacted and Address Cant Be Located",
-        "Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-        "Customer Does not want to avail anymore",
-        "Permit Access Issue VG / Subdivision / Barangay",
+        "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+        "Cancelled - Customer Does not want to avail anymore",
+        "Cancelled - Permit Access Issue VG / Subdivision / Barangay",
         "DROPPED", 
         "ENDORSED"
     ];

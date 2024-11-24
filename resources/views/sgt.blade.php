@@ -279,6 +279,11 @@ $(document).on("click", ".btn-action", function(){
                                 '</select>' +
                             '</div>' +
                         '</div>'
+
+                        // Pending - Customer Undecided / On Hold by Subs
+                        // Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)
+                        // Pending - OSS / DGT System Issue
+                        // Pending - Permit Access Issue VG / Subdivision / Barangay
                     )
 
                     $(document).find(".confirm_btn").attr("data-confirm_type", "pending_confirm");
@@ -309,6 +314,11 @@ $(document).on("click", ".btn-action", function(){
                             '</div>' +
                         '</div>'
                     )
+
+                    // Cancelled - Customer Uncontacted and Address Cant Be Located
+                    // Last Mile Issue (OVS, Roadblocked, ROW, High Risk)
+                    // Customer Does not want to avail anymore
+                    // Permit Access Issue VG / Subdivision / Barangay
                     
                     $(document).find(".confirm_btn").attr("data-confirm_type", "cancellation_confirm");
                     $(document).find(".confirm_btn").attr("disabled", "disabled");

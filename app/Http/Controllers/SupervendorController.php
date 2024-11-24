@@ -452,7 +452,26 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations")
                                                 ->whereNotNull("SGT Name")
                                                 ->where("campaign", $campaign)
-                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED") )
+                                                ->whereIn("status", array(
+                                                        "REGISTERED", 
+                                                        "PENDING", 
+                                                        "Pending - Customer Availability", 
+                                                        "Pending - SV Capacity Issue", 
+                                                        "Pending - Adverse Weather", 
+                                                        "Pending - Customer Uncontacted", 
+                                                        "ENDORSED",
+                                                        "Pending - Customer Undecided / On Hold by Subs",
+                                                        "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                                        "Pending - OSS / DGT System Issue",
+                                                        "Pending - Permit Access Issue VG / Subdivision / Barangay",
+
+                                                        "Cancelled - Customer Uncontacted and Address Cant Be Located",
+                                                        "Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                                        "Customer Does not want to avail anymore",
+                                                        "Permit Access Issue VG / Subdivision / Barangay",
+
+                                                        ) 
+                                                    )
                                                 ->get();
 
                                         }
@@ -462,7 +481,17 @@ class SupervendorController extends Controller
                                                 ->whereNotNull("SGT Name")
                                                 ->where('area_head_email', $usr->email)                                  
                                                 ->where("campaign", $campaign)
-                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED") )
+                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED",
+                                                        "Pending - Customer Undecided / On Hold by Subs",
+                                                        "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                                        "Pending - OSS / DGT System Issue",
+                                                        "Pending - Permit Access Issue VG / Subdivision / Barangay",
+                                                        "Cancelled - Customer Uncontacted and Address Cant Be Located",
+                                                        "Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                                        "Customer Does not want to avail anymore",
+                                                        "Permit Access Issue VG / Subdivision / Barangay",
+
+                                                ) )
                                                 ->get();
 
                                         }
@@ -471,7 +500,18 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations")
                                                 ->where("SGT Name", Auth::user()->name)
                                                 ->where("campaign", $campaign)
-                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED") )
+                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED",
+                                                        "Pending - Customer Undecided / On Hold by Subs",
+                                                        "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                                        "Pending - OSS / DGT System Issue",
+                                                        "Pending - Permit Access Issue VG / Subdivision / Barangay",
+
+                                                        "Cancelled - Customer Uncontacted and Address Cant Be Located",
+                                                        "Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                                        "Customer Does not want to avail anymore",
+                                                        "Permit Access Issue VG / Subdivision / Barangay",
+
+                                                ) )
                                                 ->get();
 
                                         }
@@ -480,7 +520,18 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations_2")
                                                 ->where('cge_email', $usr->email)                                  
                                                 ->where("campaign", $campaign)
-                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED") )
+                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED",
+                                                "Pending - Customer Undecided / On Hold by Subs",
+                                                "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                                "Pending - OSS / DGT System Issue",
+                                                "Pending - Permit Access Issue VG / Subdivision / Barangay",
+
+                                                "Cancelled - Customer Uncontacted and Address Cant Be Located",
+                                                "Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                                "Customer Does not want to avail anymore",
+                                                "Permit Access Issue VG / Subdivision / Barangay",
+
+                                                ) )
                                                 ->get();
 
                                         }

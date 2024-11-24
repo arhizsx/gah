@@ -15,6 +15,11 @@ $.fn.setDatagrid = function (modal, datasource, columns, callback = false) {
         export: {
             enabled: true,
         },
+        stateStoring: {
+            enabled: true,
+            type: 'localStorage',
+            storageKey: datasource,
+        },
         columnFixing: {
             enabled: false
         },

@@ -6,9 +6,14 @@
     </x-slot>
     <x-slot name="slot">
         <div class="border shadow-lg p-3 mx-3 mt-3 mb-5 bg-white rounded">
+            <div class="container-fluid p-4">
+                <div class="row">
+                    <div class="col-xl-12">
 
-            <div id="gridContainer"></div>
-
+                        <div id="gridContainer"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </x-slot>
 

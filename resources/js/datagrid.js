@@ -10,7 +10,7 @@ $.fn.setDatagrid = function (modal, datasource, columns, callback = false) {
             mode: 'single',
         },
         showBorders: true,
-        columnAutoWidth: false,
+        columnAutoWidth: true,
         export: {
             enabled: true,
         },
@@ -56,7 +56,7 @@ $.fn.setDatagrid = function (modal, datasource, columns, callback = false) {
 
         },
         allowColumnResizing: {
-            enabled: true
+            enabled: false
         },
         columns: columns,
         showBorders: true,

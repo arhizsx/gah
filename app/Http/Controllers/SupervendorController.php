@@ -709,39 +709,84 @@ class SupervendorController extends Controller
 
                 return ["error"=> false, "registration" => $registration];
 
-            break;
+                break;
 
-            case "application_pending":
+                case "application_pending":
 
-                return $this->pending($request);
+                    return $this->pending($request);
 
-            break;
+                break;
 
-            case "Pending - Customer Availability":
+                case "Pending - Customer Availability":
 
-                return $this->pending($request);
+                    return $this->pending($request);
 
-            break;
+                break;
 
-            case "Pending - SV Capacity Issue":
+                case "Pending - SV Capacity Issue":
 
-                return $this->pending($request);
+                    return $this->pending($request);
 
-            break;
+                    break;
 
-            case "Pending - Adverse Weather":
+                case "Pending - Adverse Weather":
 
-                return $this->pending($request);
+                    return $this->pending($request);
+                    break;
 
-            break;
+                break;
 
-            case "Pending - Customer Uncontacted":
+                case "Pending - Customer Uncontacted":
 
-                return $this->pending($request);
+                    return $this->pending($request);
+                    break;
 
-            break;
+                case "Pending - Customer Undecided / On Hold by Subs":
 
-            case "application_dropped":
+                    return $this->pending($request);
+                    break;
+
+                case "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)":
+
+                    return $this->pending($request);
+                    break;
+
+                case "Pending - OSS / DGT System Issue":
+
+                    return $this->pending($request);
+                    break;
+
+                case "Pending - Permit Access Issue VG / Subdivision / Barangay":
+
+                    return $this->pending($request);
+                    break;
+    
+                case "Pending - Permit Access Issue VG / Subdivision / Barangay":
+
+                    return $this->pending($request);
+                    break;
+    
+                case "Cancelled - Customer Uncontacted and Address Cant Be Located":
+
+                    return $this->pending($request);
+                    break;
+    
+                case "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)":
+
+                    return $this->pending($request);
+                    break;
+
+                case "Cancelled - Customer Does not want to avail anymore":
+
+                    return $this->pending($request);
+                    break;
+
+                case "Cancelled - Permit Access Issue VG / Subdivision / Barangay":
+
+                    return $this->pending($request);
+                    break;
+
+                case "application_dropped":
 
                 $registration = CampaignRegistration::where("id", $request->id);
                 $registration_data = $registration->first();

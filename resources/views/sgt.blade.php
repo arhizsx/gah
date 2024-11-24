@@ -280,10 +280,6 @@ $(document).on("click", ".btn-action", function(){
                             '</div>' +
                         '</div>'
 
-                        // Pending - Customer Undecided / On Hold by Subs
-                        // Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)
-                        // Pending - OSS / DGT System Issue
-                        // Pending - Permit Access Issue VG / Subdivision / Barangay
                     )
 
                     $(document).find(".confirm_btn").attr("data-confirm_type", "pending_confirm");
@@ -315,10 +311,6 @@ $(document).on("click", ".btn-action", function(){
                         '</div>'
                     )
 
-                    // Cancelled - Customer Uncontacted and Address Cant Be Located
-                    // Last Mile Issue (OVS, Roadblocked, ROW, High Risk)
-                    // Customer Does not want to avail anymore
-                    // Permit Access Issue VG / Subdivision / Barangay
                     
                     $(document).find(".confirm_btn").attr("data-confirm_type", "cancellation_confirm");
                     $(document).find(".confirm_btn").attr("disabled", "disabled");
@@ -421,7 +413,26 @@ function callbackAction(data){
         vendor_btns.addClass("d-none");
     }
 
-    var show_gt = ["REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "DROPPED", "ENDORSED"];
+
+
+    var show_gt = [
+        "REGISTERED", 
+        "PENDING", 
+        "Pending - Customer Availability", 
+        "Pending - SV Capacity Issue", 
+        "Pending - Adverse Weather", 
+        "Pending - Customer Uncontacted", 
+        "Pending - Customer Undecided / On Hold by Subs",
+        "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+        "Pending - OSS / DGT System Issue",
+        "Pending - Permit Access Issue VG / Subdivision / Barangay",
+        "Cancelled - Customer Uncontacted and Address Cant Be Located",
+        "Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+        "Customer Does not want to avail anymore",
+        "Permit Access Issue VG / Subdivision / Barangay",
+        "DROPPED", 
+        "ENDORSED"
+    ];
     var gt_btns = $(document).find(modal).find(".btn-action[data-user_mode='gt']");
 
     if( $.inArray( data.status, show_gt ) >= 0){

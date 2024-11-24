@@ -41,7 +41,7 @@
                 @csrf
 
                 <input type="hidden"  name="action" id="action" value='register'>
-                <input type="hidden"  name="campaign" id="campaign" value='TM'>
+                <input type="hidden"  name="campaign" id="campaign" value='GP-TM'>
 
                 <img src="/images/finish.png" width="100%" />
                 <div class="border rounded-3 p-3 mt-4">

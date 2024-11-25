@@ -12,7 +12,7 @@ $.fn.setDatagrid = function (modal, datasource, columns, callback = false) {
         showBorders: true,
         allowColumnReordering: true,
         allowColumnResizing: true,
-        columnHidingEnabled: true,
+        columnHidingEnabled: false,
         columnAutoWidth: true,
         export: {
             enabled: true,

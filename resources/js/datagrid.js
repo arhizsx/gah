@@ -18,7 +18,7 @@ $.fn.setDatagrid = function (modal, datasource, columns, callback = false) {
             enabled: true,
         },
         stateStoring: {
-            enabled: true,
+            enabled: false,
             type: 'localStorage',
             storageKey: datasource,
         },

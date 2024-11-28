@@ -565,11 +565,18 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations_2")
                                                 ->where('cge_email', $usr->email)                                  
                                                 ->where("campaign", $campaign)
-                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED",
-                                                "Pending - Customer Undecided / On Hold by Subs",
-                                                "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-                                                "Pending - OSS / DGT System Issue",
-                                                "Pending - Permit Access Issue VG / Subdivision / Barangay",
+                                                ->whereIn("status", array(
+                                                    "REGISTERED", 
+                                                    "PENDING", 
+                                                    "ENDORSED",
+                                                    "Pending - Customer Availability", 
+                                                    "Pending - SV Capacity Issue", 
+                                                    "Pending - Adverse Weather", 
+                                                    "Pending - Customer Uncontacted", 
+                                                    "Pending - Customer Undecided / On Hold by Subs",
+                                                    "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                                    "Pending - OSS / DGT System Issue",
+                                                    "Pending - Permit Access Issue VG / Subdivision / Barangay",
                                                 ) )
                                                 ->get();
 
@@ -708,7 +715,7 @@ class SupervendorController extends Controller
 
 
                 $data = DB::table("view_registrations")
-                        ->wherenotnull("city")
+                        // ->wherenotnull("city")
                         ->whereIn("campaign", $active_campaigns)
                         ->get();
 
@@ -718,7 +725,7 @@ class SupervendorController extends Controller
             case "reports":
 
                 $data = DB::table("view_registrations")
-                        ->wherenotnull("city")
+                        // ->wherenotnull("city")
                         ->get();
 
                 return $data;

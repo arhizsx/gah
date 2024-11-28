@@ -51,6 +51,20 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
 
         }
 
+        // ////////////////
+        //     XIAOMI
+        // ////////////////
+        elseif( $campaignRegistration->campaign == "REID" ){
+
+
+
+            $no_sgt = ["NSGT"];
+            $with_sgt = ["SGT", "SV"];
+            $mode = "new";
+
+            $this->sender( $campaignRegistration, $no_sgt, $with_sgt, $mode );
+
+        }
     }
 
     /**

@@ -91,7 +91,7 @@
                     @csrf
 
                     <input type="hidden"  name="action" id="action" value='register'>
-                    <input type="hidden"  name="campaign" id="campaign" value='GP-TM'>
+                    <input type="hidden"  name="campaign" id="campaign" value='REID'>
                     <input type="hidden"  name="mobile_number" id="mobile_number" value=''>
                     <input type="hidden"  name="complete_name" id="complete_name" value=''>
 
@@ -244,7 +244,7 @@
             </div>
             <div id="registration_success" class="d-none">
                 <div class="border rounded-3 p-5 mt-4">
-                    <H5>Registration Successful</H5>
+                    <H5>Thank you for choosing GFiber Prepaid! We’ve received your installation details, and our Globe At Home Broadband Specialist will contact you within 2 working days to kickstart the next steps</H5>
                 </div>
             </div>
             <div id="loading" class="d-none text-center">

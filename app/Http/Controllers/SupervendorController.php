@@ -58,7 +58,7 @@ class SupervendorController extends Controller
 
         $registrations = DB::table("view_registrations");
 
-        $campaigns = [ "SAMSUNG", "XIAOMI", "GP-TM" ];
+        $campaigns = [ "SAMSUNG", "XIAOMI", "REID" ];
         $return_data = new Collection();
 
         switch( $action ){
@@ -73,7 +73,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "GP-TM"]) == true ){
+                        if(  in_array( $campaign, ["SAMSUNG", "REID"]) == true ){
 
                             $data = null;
 
@@ -93,7 +93,8 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations")
                                                 ->whereNotNull("SGT Name")
                                                 ->where("campaign", $campaign)
-                                                ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED",
+                                                ->whereIn("status", array(
+                                                    "INSTALLED", "CANCELLED", "DROPPED",
                                                 "Cancelled - Customer Uncontacted and Address Cant Be Located",
                                                 "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
                                                 "Cancelled - Customer Does not want to avail anymore",
@@ -232,7 +233,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "GP-TM"]) == true ){
+                        if(  in_array( $campaign, ["SAMSUNG", "REID"]) == true ){
 
                             $data = null;
 
@@ -303,7 +304,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "GP-TM"]) == true ){
+                        if(  in_array( $campaign, ["SAMSUNG", "REID"]) == true ){
 
                             $data = null;
 
@@ -424,7 +425,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "GP-TM"]) == true ){
+                        if(  in_array( $campaign, ["SAMSUNG", "REID"]) == true ){
 
                             $data = null;
 
@@ -481,7 +482,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if( in_array( $campaign, ["SAMSUNG", "GP-TM"]) == true ){
+                        if( in_array( $campaign, ["SAMSUNG", "REID"]) == true ){
 
                             $data = null;
 
@@ -523,7 +524,14 @@ class SupervendorController extends Controller
                                                 ->whereNotNull("SGT Name")
                                                 ->where('area_head_email', $usr->email)                                  
                                                 ->where("campaign", $campaign)
-                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED",
+                                                ->whereIn("status", array(
+                                                        "REGISTERED", 
+                                                        "PENDING", 
+                                                        "Pending - Customer Availability", 
+                                                        "Pending - SV Capacity Issue", 
+                                                        "Pending - Adverse Weather", 
+                                                        "Pending - Customer Uncontacted", 
+                                                        "ENDORSED",
                                                         "Pending - Customer Undecided / On Hold by Subs",
                                                         "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
                                                         "Pending - OSS / DGT System Issue",
@@ -537,7 +545,13 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations")
                                                 ->where("SGT Name", Auth::user()->name)
                                                 ->where("campaign", $campaign)
-                                                ->whereIn("status", array("REGISTERED", "PENDING", "Pending - Customer Availability", "Pending - SV Capacity Issue", "Pending - Adverse Weather", "Pending - Customer Uncontacted", "ENDORSED",
+                                                ->whereIn("status", array(
+                                                        "REGISTERED", 
+                                                        "PENDING", 
+                                                        "Pending - Customer Availability", 
+                                                        "Pending - SV Capacity Issue", 
+                                                        "Pending - Adverse Weather", 
+                                                        "Pending - Customer Uncontacted", "ENDORSED",
                                                         "Pending - Customer Undecided / On Hold by Subs",
                                                         "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
                                                         "Pending - OSS / DGT System Issue",
@@ -628,7 +642,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "GP-TM"]) == true ){
+                        if(  in_array( $campaign, ["SAMSUNG", "REID"]) == true ){
 
                             $data = null;
 
@@ -959,7 +973,7 @@ class SupervendorController extends Controller
 
             $registrations = DB::table("view_registrations_2")
                                 ->where("mobile_number", $request->cellnumber)
-                                ->where("campaign", "GP-TM")
+                                ->where("campaign", "REID")
                                 ->get();
 
             if(count($registrations) > 0 ) {

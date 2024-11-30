@@ -33,12 +33,37 @@ class CampaignController extends Controller
 
     }
 
-    function tmcheck(Request $request){
+    function hpw(){
 
-        return $request;
-        
+        $provinces = DB::table("location_provinces")->get();
+
+        return view('hpw', [ "provinces" => $provinces]);
+
     }
 
+    function postpaid(){
+
+        $provinces = DB::table("location_provinces")->get();
+
+        return view('postpaid', [ "provinces" => $provinces]);
+
+    }
+
+    function grplus(){
+
+        $provinces = DB::table("location_provinces")->get();
+
+        return view('grplus', [ "provinces" => $provinces]);
+
+    }
+
+    function gpo(){
+
+        $provinces = DB::table("location_provinces")->get();
+
+        return view('gpo', [ "provinces" => $provinces]);
+
+    }
 
 }
 

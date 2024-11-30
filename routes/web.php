@@ -42,10 +42,20 @@ Route::get('/samsung', [CampaignController::class, 'samsung']);
 
 // TM CAMPAIGN
 Route::get('/retailerexclusive', [CampaignController::class, 'tm']);
-Route::post('/retailerexclusive/check', [CampaignController::class, 'tmcheck']);
 
 
+// HPW CAMPAIGN
+Route::get('/HPW', [CampaignController::class, 'hpw']);
 
+
+// POSTPAID CAMPAIGN
+Route::get('/postpaid', [CampaignController::class, 'grplus']);
+
+// GR+ CAMPAIGN
+Route::get('/GR+', [CampaignController::class, 'grplus']);
+
+// GPO CAMPAIGN
+Route::get('/GPO', [CampaignController::class, 'gpo']);
 
 
 // NUMBER VERIFIER

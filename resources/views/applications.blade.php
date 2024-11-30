@@ -146,7 +146,33 @@
 let modal = "#application_details";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/applications';
-let columns = ['campaign', 'complete_name', 'mobile_number', 'province', 'city', 'street', 'brgy_village', 'house_floor_bldg', 'vendor', 'SGT Name', 'status', 'Registration Date', 'Last Update', "Aging",
+let columns = [
+    'campaign', 
+    'complete_name', 
+    'mobile_number', 
+    'province', 
+    'city', 
+    {
+        dataField: "street",
+        caption: "Street",
+        visible: false,
+    },
+    {
+        dataField: "brgy_village",
+        caption: "Brgy / Village",
+        visible: false,
+    },
+    {
+        dataField: "house_floor_bldg",
+        caption: "House Flr / Bldg",
+        visible: false,
+    },
+    'vendor', 
+    'SGT Name', 
+    'status', 
+    'Registration Date', 
+    'Last Update', 
+    "Aging",
     {
         dataField: "area_head_name",
         caption: "Area Head",

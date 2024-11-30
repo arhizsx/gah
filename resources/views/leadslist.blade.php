@@ -19,7 +19,36 @@ let x= "";
 let modal = "";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/leadslist';
-let columns = ['id','campaign', 'complete_name', 'mobile_number', 'province', 'city', 'street', 'brgy_village', 'house_floor_bldg', 'vendor', 'SGT Name', 'status', 'Registration Date', 'Last Update', "schedule_date", "Aging","remarks",
+let columns = [
+    'id',
+    'campaign', 
+    'complete_name', 
+    'mobile_number', 
+    'province', 
+    'city', 
+    {
+        dataField: "street",
+        caption: "Street",
+        visible: false,
+    },
+    {
+        dataField: "brgy_village",
+        caption: "Brgy / Village",
+        visible: false,
+    },
+    {
+        dataField: "house_floor_bldg",
+        caption: "House Flr / Bldg",
+        visible: false,
+    },
+    'vendor', 
+    'SGT Name', 
+    'status', 
+    'Registration Date', 
+    'Last Update', 
+    "schedule_date", 
+    "Aging",
+    "remarks",
     {
         dataField: "area_head_name",
         caption: "Area Head",

@@ -49,7 +49,7 @@ Route::get('/HPW', [CampaignController::class, 'hpw']);
 
 
 // POSTPAID CAMPAIGN
-Route::get('/postpaid', [CampaignController::class, 'grplus']);
+Route::get('/postpaid', [CampaignController::class, 'postpaid']);
 
 // GR+ CAMPAIGN
 Route::get('/GR+', [CampaignController::class, 'grplus']);

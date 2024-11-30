@@ -41,7 +41,6 @@ Route::get('/samsung', [CampaignController::class, 'samsung']);
 // Route::get('/xiaomi', [CampaignController::class, 'xiaomi']);
 
 // TM CAMPAIGN
-// Route::post('/retailerexclusive/register', [SamsungController::class, 'tm']);
 Route::get('/retailerexclusive', [CampaignController::class, 'tm']);
 Route::post('/retailerexclusive/check', [CampaignController::class, 'tmcheck']);
 

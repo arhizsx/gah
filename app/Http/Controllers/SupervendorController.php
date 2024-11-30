@@ -94,7 +94,9 @@ class SupervendorController extends Controller
                                                 ->whereNotNull("SGT Name")
                                                 ->where("campaign", $campaign)
                                                 ->whereIn("status", array(
-                                                    "INSTALLED", "CANCELLED", "DROPPED",
+                                                "INSTALLED", 
+                                                "CANCELLED", 
+                                                "DROPPED",
                                                 "Cancelled - Customer Uncontacted and Address Cant Be Located",
                                                 "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
                                                 "Cancelled - Customer Does not want to avail anymore",
@@ -111,7 +113,10 @@ class SupervendorController extends Controller
                                                 ->whereNotNull("SGT Name")
                                                 ->where("campaign", $campaign)
                                                 ->where('area_head_email', $usr->email)
-                                                ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED",
+                                                ->whereIn("status", array(
+                                                "INSTALLED", 
+                                                "CANCELLED", 
+                                                "DROPPED",
                                                 "Cancelled - Customer Uncontacted and Address Cant Be Located",
                                                 "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
                                                 "Cancelled - Customer Does not want to avail anymore",
@@ -126,11 +131,14 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations")
                                                 ->where("SGT Name", Auth::user()->name)
                                                 ->where("campaign", $campaign)
-                                                ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED",
-                                                "Cancelled - Customer Uncontacted and Address Cant Be Located",
-                                                "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-                                                "Cancelled - Customer Does not want to avail anymore",
-                                                "Cancelled - Permit Access Issue VG / Subdivision / Barangay",
+                                                ->whereIn("status", array(
+                                                    "INSTALLED", 
+                                                    "CANCELLED", 
+                                                    "DROPPED",
+                                                    "Cancelled - Customer Uncontacted and Address Cant Be Located",
+                                                    "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                                    "Cancelled - Customer Does not want to avail anymore",
+                                                    "Cancelled - Permit Access Issue VG / Subdivision / Barangay",
                                                 ) )
                                                 ->get();
 

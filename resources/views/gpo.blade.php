@@ -232,11 +232,6 @@
                     </div>
                 </form>
             </div>
-            <div id="registration_not_allowed" class="d-none">
-                <div class="border rounded-3 p-5 mt-4">
-                    {!! $not_allowed_html !!}
-                </div>
-            </div>
             <div id="registration_error" class="d-none">
                 <div class="border rounded-3 p-5 mt-4">
                     {!! $error_html !!}                    

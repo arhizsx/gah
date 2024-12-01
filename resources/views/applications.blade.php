@@ -94,19 +94,21 @@
                             <input disabled class="form-control form-control-sm" type="text" value="" name="schedule_hour" id="schedule_hour" placeholder="Schedule Hour">
                         </div>
                     </div>
-                    <div class="section-title">Attachments</div>
-                    <div class="row mb-4 border-bottom pb-3">
-                        <div class="col text-center" id="proof_of_purchase_col">
-                            <div  class="border" style="width: 100%;">
-                                <a target="_blank" href="" id="href_receipt"><img src="" id="img_receipt" alt-text="receipt"/></a>
+                    <div class="attach_box">
+                        <div class="section-title">Attachments</div>
+                        <div class="row mb-4 border-bottom pb-3">
+                            <div class="col text-center" id="proof_of_purchase_col">
+                                <div  class="border" style="width: 100%;">
+                                    <a target="_blank" href="" id="href_receipt"><img src="" id="img_receipt" alt-text="receipt"/></a>
+                                </div>
+                                <small>Proof of Purchase</small>
                             </div>
-                            <small>Proof of Purchase</small>
-                        </div>
-                        <div class="col text-center" id="serviceability_col">
-                            <div  class="border" style="width: 100%;">
-                                <a target="_blank" href="" id="href_serviceability_check"><img src=""  id="img_serviceability_check" alt-text="serviceability_check"/></a>
+                            <div class="col text-center" id="serviceability_col">
+                                <div  class="border" style="width: 100%;">
+                                    <a target="_blank" href="" id="href_serviceability_check"><img src=""  id="img_serviceability_check" alt-text="serviceability_check"/></a>
+                                </div>
+                                <small>Serviceability</small>
                             </div>
-                            <small>Serviceability</small>
                         </div>
                     </div>
                     <div class="section-title">Remarks</div>
@@ -238,6 +240,7 @@ function callbackAction(data){
     $(document).find(".btn-action[data-user_mode='vendor']").addClass("d-none");
     $(document).find(".btn-action[data-user_mode='gt']").addClass("d-none");
 
+
     if( data.campaign == "XIAOMI" ){
 
         $(document).find("#proof_of_purchase_col").addClass("d-none");
@@ -248,10 +251,9 @@ function callbackAction(data){
 
 
     }
-    else if( data.campaign == "TM" ){
+    else if( data.campaign == "REID" ){
 
         $(document).find("#proof_of_purchase_col").addClass("d-none");
-        console.log("TM");
 
     }
     else if( data.campaign == "SAMSUNG" ){
@@ -274,6 +276,9 @@ function callbackAction(data){
             gt_btns.addClass("d-none");
         }
 
+    } else {
+
+        $(document).find(".attach_box").addClass("d-none");
 
     }
 

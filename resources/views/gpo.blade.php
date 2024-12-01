@@ -87,7 +87,6 @@
 
                 <div class="border rounded-3 p-3 mt-4">
                     <H4>{{ $title }}</H4>
-                    {!! $numbercheck_html !!}
                 </div>
 
                 <div class="border rounded-3 p-3 mt-4">

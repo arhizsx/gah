@@ -46,7 +46,9 @@ Route::get('/retailerexclusive', [CampaignController::class, 'tm']);
 
 // HPW CAMPAIGN
 Route::get('/HPW', [CampaignController::class, 'hpw']);
-Route::get('/hpw', [CampaignController::class, 'hpw']);
+Route::get('/hpw', function(){
+    return redirect('/HPW');
+});
 
 
 // POSTPAID CAMPAIGN

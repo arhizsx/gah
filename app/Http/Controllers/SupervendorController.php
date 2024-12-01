@@ -966,9 +966,9 @@ class SupervendorController extends Controller
                 return $this->doRegistration( $data, $request );
                 break;
 
-            case "tmcheck":
+            case "numbercheck":
 
-                return $this->doTMCheck( $data, $request );
+                return $this->doNumberCheck( $data, $request );
                 break;
 
 
@@ -1008,6 +1008,44 @@ class SupervendorController extends Controller
         ];
     }
 
+    function doNumberCheck( $data, $request ){
+
+        if($request->campaign  == 'POSTPAID'){
+            $table = "postpaid";
+        } else {
+            return [
+                "error" => true,
+                "status" => "Campaign Not Configured in Number Chaeck",
+            ];
+        }
+
+        $mobile_number = DB::table($table)
+                ->where("cellnumber", $request->cellnumber)
+                ->first();
+
+        if( $mobile_number ){
+
+            $registrations = DB::table("view_registrations_2")
+                                ->where("mobile_number", $request->cellnumber)
+                                ->where("campaign", $request->campaign)
+                                ->get();
+
+            if(count($registrations) > 0 ) {
+                $status = "Multiple";
+            } else {
+                $status = "Allowed";
+            }
+
+        } else {
+            $status = "NotAllowed";
+        }
+
+
+        return [
+            "error" => false,
+            "status" => $status,
+        ];
+    }    
 
     function doRegistration( $data, $request ){
 

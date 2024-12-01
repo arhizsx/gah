@@ -54,13 +54,19 @@ Route::get('/hpw', function(){
 // POSTPAID CAMPAIGN
 Route::get('/postpaid', [CampaignController::class, 'postpaid']);
 
+
 // GR+ CAMPAIGN
 Route::get('/GR+', [CampaignController::class, 'grplus']);
-Route::get('/gr+', [CampaignController::class, 'grplus']);
+Route::get('/gr+', function(){
+    return redirect('/GR+');
+});
+
 
 // GPO CAMPAIGN
 Route::get('/GPO', [CampaignController::class, 'gpo']);
-Route::get('/gpo', [CampaignController::class, 'gpo']);
+Route::get('/gpo', function(){
+    return redirect('/GPO');
+});
 
 
 // NUMBER VERIFIER

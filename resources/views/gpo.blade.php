@@ -78,23 +78,18 @@
         <div id="registration" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
             <img src="{{ $header_banner }}" width="100%" />
             <form id="register_form">
-                    @csrf
+                @csrf
 
-                    <input type="hidden"  name="action" id="action" value='register'>
-                    <input type="hidden"  name="campaign" id="campaign" value='{{ $campaign }}'>
-                    <input type="hidden"  name="mobile_number" id="mobile_number" value=''>
-                    <input type="hidden"  name="complete_name" id="complete_name" value=''>
+                <input type="hidden"  name="action" id="action" value='register'>
+                <input type="hidden"  name="campaign" id="campaign" value='{{ $campaign }}'>
+                <input type="hidden"  name="mobile_number" id="mobile_number" value=''>
+                <input type="hidden"  name="complete_name" id="complete_name" value=''>
 
-            <div id="checking">
-                <div class="border rounded-3 p-3 mt-4">
-                    <H4>{{ $title }}</H4>
-                    {!! $numbercheck_html !!}
-                </div>
-                <form id="check_form">
-                    @csrf
-
-                    <input type="hidden"  name="action" id="action" value='numbercheck'>
-                    <input type="hidden"  name="campaign" id="campaign" value='{{ $campaign }}'>
+                <div id="registration_allowed">
+                    <div class="border rounded-3 p-3 mt-4">
+                        <H4>{{ $title }}</H4>
+                        {!! $numbercheck_html !!}
+                    </div>
 
                     <div class="border rounded-3 p-3 mt-4">
                         <label class="mb-3">{{ $mobile_number_label }}</label>
@@ -114,10 +109,6 @@
                             {{ $mobile_number_subtext }}
                         </p>
                     </div>
-                </form>
-            </div>
-            <div id="registration_allowed">
-
                     <div class="accordion  mt-4" id="information">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
@@ -237,7 +228,7 @@
                         <button type="submit" class='btn btn-primary action_button' data-action="register">Submit</button>
                     </div>
 
-            </div>
+                </div>
             </form>
             <div id="registration_not_allowed" class="d-none">
                 <div class="border rounded-3 p-5 mt-4">

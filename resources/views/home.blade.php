@@ -105,6 +105,131 @@
             </div>
             <div class="row">
                 <div class="col mb-2">
+                    <H1>GPO</H1>
+                </div>
+            </div>
+            <div class="row">
+                @php 
+                    $total = 0;
+                @endphp
+                @foreach( $data as $d )
+                    @if( $d->campaign == "GPO" )
+                        @php 
+                           $total = $total + $d->count; 
+                        @endphp         
+                        <div class="col-md-3 mb-4">
+                            <div class="counter-box">
+                            <i class="bi bi-graph-up"></i>
+                            <h3>{{ $d->count }}</h3>
+                            <p>{{ $d->status }}</p>
+                            </div>
+                        </div>           
+                    @endif
+                @endforeach
+                    <div class="col-md-3 mb-4">
+                        <div class="counter-box">
+                        <i class="bi bi-graph-up"></i>
+                        <h3>{{ $total }}</h3>
+                        <p>TOTAL</p>
+                        </div>
+                    </div>           
+            </div>
+            <div class="row">
+                <div class="col mb-2">
+                    <H1>POSTPAID</H1>
+                </div>
+            </div>
+            <div class="row">
+                @php 
+                    $total = 0;
+                @endphp
+                @foreach( $data as $d )
+                    @if( $d->campaign == "POSTPAID" )
+                        @php 
+                           $total = $total + $d->count; 
+                        @endphp         
+                        <div class="col-md-3 mb-4">
+                            <div class="counter-box">
+                            <i class="bi bi-graph-up"></i>
+                            <h3>{{ $d->count }}</h3>
+                            <p>{{ $d->status }}</p>
+                            </div>
+                        </div>           
+                    @endif
+                @endforeach
+                    <div class="col-md-3 mb-4">
+                        <div class="counter-box">
+                        <i class="bi bi-graph-up"></i>
+                        <h3>{{ $total }}</h3>
+                        <p>TOTAL</p>
+                        </div>
+                    </div>           
+            </div>
+            <div class="row">
+                <div class="col mb-2">
+                    <H1>HPW</H1>
+                </div>
+            </div>
+            <div class="row">
+                @php 
+                    $total = 0;
+                @endphp
+                @foreach( $data as $d )
+                    @if( $d->campaign == "HPW" )
+                        @php 
+                           $total = $total + $d->count; 
+                        @endphp         
+                        <div class="col-md-3 mb-4">
+                            <div class="counter-box">
+                            <i class="bi bi-graph-up"></i>
+                            <h3>{{ $d->count }}</h3>
+                            <p>{{ $d->status }}</p>
+                            </div>
+                        </div>           
+                    @endif
+                @endforeach
+                    <div class="col-md-3 mb-4">
+                        <div class="counter-box">
+                        <i class="bi bi-graph-up"></i>
+                        <h3>{{ $total }}</h3>
+                        <p>TOTAL</p>
+                        </div>
+                    </div>           
+            </div>
+            <div class="row">
+                <div class="col mb-2">
+                    <H1>GR+</H1>
+                </div>
+            </div>
+            <div class="row">
+                @php 
+                    $total = 0;
+                @endphp
+                @foreach( $data as $d )
+                    @if( $d->campaign == "GR+" )
+                        @php 
+                           $total = $total + $d->count; 
+                        @endphp         
+                        <div class="col-md-3 mb-4">
+                            <div class="counter-box">
+                            <i class="bi bi-graph-up"></i>
+                            <h3>{{ $d->count }}</h3>
+                            <p>{{ $d->status }}</p>
+                            </div>
+                        </div>           
+                    @endif
+                @endforeach
+                    <div class="col-md-3 mb-4">
+                        <div class="counter-box">
+                        <i class="bi bi-graph-up"></i>
+                        <h3>{{ $total }}</h3>
+                        <p>TOTAL</p>
+                        </div>
+                    </div>           
+            </div>
+
+            <div class="row">
+                <div class="col mb-2">
                     <H1>XIAOMI</H1>
                 </div>
             </div>

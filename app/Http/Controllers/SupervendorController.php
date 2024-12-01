@@ -58,7 +58,7 @@ class SupervendorController extends Controller
 
         $registrations = DB::table("view_registrations");
 
-        $campaigns = [ "SAMSUNG", "XIAOMI", "REID" ];
+        $campaigns = [ "SAMSUNG", "XIAOMI", "REID", "GPO", "HPW", "GR+", "POSTPAID" ];
         $return_data = new Collection();
 
         switch( $action ){
@@ -484,7 +484,6 @@ class SupervendorController extends Controller
 
                 if( Auth::user()->company == NULL  ){
 
-                    return "TEST";
 
                     // ////////////////////////
                     // GT DATA :: SGT

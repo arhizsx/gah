@@ -538,7 +538,12 @@
                 }
             } 
             else if( to_check.eq( k ).data("checker") == "cellnumber" ){
-                alert( "Cellnumber Check" );
+
+                $(to_check).eq( k ).css("background","#FFEFEF");
+                $(to_check).eq( k ).addClass("checker-error");
+
+                error_cnt = error_cnt + 1;
+
             }
 
         } );

@@ -247,6 +247,11 @@
                     <H5>Thank you for choosing GFiber Prepaid! We’ve received your installation details, and our Globe At Home Broadband Specialist will contact you within 2 working days to kickstart the next steps</H5>
                 </div>
             </div>
+            <div id="registration_error" class="d-none">
+                <div class="border rounded-3 p-5 mt-4">
+                    <H5>Oops, an error occured... Please retry again later...</H5>
+                </div>
+            </div>
             <div id="loading" class="d-none text-center">
                 <div class="border rounded-3 p-5 mt-4">
                     <H1 class="mt-5 mb-5">Please wait...</H1>
@@ -345,18 +350,10 @@ $('.action_button[data-action="checker"]').on('click', function (e) {
                 else if( checking.status == 'Multiple' ){
                     $("#registration_multiple").removeClass("d-none");                    
                 }
-                else if( checking.status == 'Error' ){
-                    $("#registration_error").removeClass("d-none");                    
-                } 
-                else {
-                    alert("Unknown Error Occured")
-                }
-
-
                 
             } else {
                 $("#loading").addClass("d-none");
-                $("#registration_not_allowed").removeClass("d-none");
+                $("#registration_error").removeClass("d-none");
             }
 
         });

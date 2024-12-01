@@ -352,14 +352,13 @@ $('.action_button[data-action="checker"]').on('click', function (e) {
                 else if( checking.status == 'Error' ){
                     $("#registration_error").removeClass("d-none");                    
                 } 
-                else {
-                    alert("Unknown Error Occured")
-                }
 
                 
             } else {
+
                 $("#loading").addClass("d-none");
-                $("#registration_error").removeClass("d-none");
+                $("#registration_error").removeClass("d-none");                    
+
             }
 
         });

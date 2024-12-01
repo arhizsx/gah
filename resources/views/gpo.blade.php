@@ -102,7 +102,7 @@
                             style="font-size: 48px; text-align: left; flex: 1;" 
                             maxlength="10" 
                             placeholder="9171234567" 
-                            data-checker="required"
+                            data-checker="cellnumber"
                             required>
                     </div>
                     <p class="mt-3">
@@ -536,6 +536,9 @@
                     }
 
                 }
+            } 
+            else if( to_check.eq( k ).data("checker") == "cellnumber" ){
+                alert( "Cellnumber Check" );
             }
 
         } );

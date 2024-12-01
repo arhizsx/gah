@@ -359,7 +359,7 @@ $('.action_button[data-action="checker"]').on('click', function (e) {
                 
             } else {
                 $("#loading").addClass("d-none");
-                $("#registration_not_allowed").removeClass("d-none");
+                $("#registration_error").removeClass("d-none");
             }
 
         });

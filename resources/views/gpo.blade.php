@@ -77,6 +77,14 @@
     <body  class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
         <div id="registration" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
             <img src="{{ $header_banner }}" width="100%" />
+            <form id="register_form">
+                    @csrf
+
+                    <input type="hidden"  name="action" id="action" value='register'>
+                    <input type="hidden"  name="campaign" id="campaign" value='{{ $campaign }}'>
+                    <input type="hidden"  name="mobile_number" id="mobile_number" value=''>
+                    <input type="hidden"  name="complete_name" id="complete_name" value=''>
+
             <div id="checking">
                 <div class="border rounded-3 p-3 mt-4">
                     <H4>{{ $title }}</H4>
@@ -106,21 +114,9 @@
                             {{ $mobile_number_subtext }}
                         </p>
                     </div>
-
-                    <div class="d-flex justify-content-between mt-3">
-                        <button class='btn btn-outline-dark'>Clear Form</button>
-                        <button type="submit" class='btn btn-primary action_button' data-action="checker">Next</button>
-                    </div>
                 </form>
             </div>
             <div id="registration_allowed">
-                <form id="register_form">
-                    @csrf
-
-                    <input type="hidden"  name="action" id="action" value='register'>
-                    <input type="hidden"  name="campaign" id="campaign" value='{{ $campaign }}'>
-                    <input type="hidden"  name="mobile_number" id="mobile_number" value=''>
-                    <input type="hidden"  name="complete_name" id="complete_name" value=''>
 
                     <div class="accordion  mt-4" id="information">
                         <div class="accordion-item">
@@ -241,8 +237,8 @@
                         <button type="submit" class='btn btn-primary action_button' data-action="register">Submit</button>
                     </div>
 
-                </form>
             </div>
+            </form>
             <div id="registration_not_allowed" class="d-none">
                 <div class="border rounded-3 p-5 mt-4">
                     {!! $not_allowed_html !!}

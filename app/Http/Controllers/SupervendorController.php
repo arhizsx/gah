@@ -1048,7 +1048,7 @@ class SupervendorController extends Controller
                 "status" => $status,
             ];
         } catch (\Throwable $th) {
-            return response()->json(['error' => true, 'message' => $th->getMessage()]);
+            return response()->json(['error' => true, 'status' => 'Error',  'message' => $th->getMessage()]);
         }
     }    
 

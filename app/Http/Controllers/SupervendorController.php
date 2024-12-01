@@ -484,6 +484,8 @@ class SupervendorController extends Controller
 
                 if( Auth::user()->company == NULL  ){
 
+                    return "TEST";
+
                     // ////////////////////////
                     // GT DATA :: SGT
                     // ////////////////////////
@@ -512,11 +514,11 @@ class SupervendorController extends Controller
                                                 ->whereIn("status", array(
                                                         "REGISTERED", 
                                                         "PENDING", 
+                                                        "ENDORSED",
                                                         "Pending - Customer Availability", 
                                                         "Pending - SV Capacity Issue", 
                                                         "Pending - Adverse Weather", 
                                                         "Pending - Customer Uncontacted", 
-                                                        "ENDORSED",
                                                         "Pending - Customer Undecided / On Hold by Subs",
                                                         "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
                                                         "Pending - OSS / DGT System Issue",
@@ -535,11 +537,11 @@ class SupervendorController extends Controller
                                                 ->whereIn("status", array(
                                                         "REGISTERED", 
                                                         "PENDING", 
+                                                        "ENDORSED",
                                                         "Pending - Customer Availability", 
                                                         "Pending - SV Capacity Issue", 
                                                         "Pending - Adverse Weather", 
                                                         "Pending - Customer Uncontacted", 
-                                                        "ENDORSED",
                                                         "Pending - Customer Undecided / On Hold by Subs",
                                                         "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
                                                         "Pending - OSS / DGT System Issue",

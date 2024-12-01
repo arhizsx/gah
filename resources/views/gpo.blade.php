@@ -98,10 +98,11 @@
                             type="text" 
                             name="cellnumber"
                             id="cellnumber"
-                            class="form-control" 
+                            class="form-control checker" 
                             style="font-size: 48px; text-align: left; flex: 1;" 
                             maxlength="10" 
                             placeholder="9171234567" 
+                            data-checker="required"
                             required>
                     </div>
                     <p class="mt-3">

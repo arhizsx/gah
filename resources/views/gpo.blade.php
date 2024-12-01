@@ -7,7 +7,7 @@
 
    $title = "FREE GFiber Prepaid for our Mobile Postpaid Customers";
    
-   $numbercheck_html = 
+   $header_html = 
    "<p>Please fill out this form to claim your free GFiber Prepaid Installation!</p>" . 
    "<H4>What is GFiber Prepaid?</H4>" . 
    "<p>GFiber Prepaid offers reloadable UNLI fiber internet speeds up to 100Mbps. No monthly bills - reload only when you need to!</p>" . 
@@ -87,6 +87,7 @@
 
                 <div class="border rounded-3 p-3 mt-4">
                     <H4>{{ $title }}</H4>
+                    {!! $header_html !!}
                 </div>
 
                 <div class="border rounded-3 p-3 mt-4">

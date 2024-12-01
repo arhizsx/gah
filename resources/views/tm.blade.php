@@ -345,6 +345,13 @@ $('.action_button[data-action="checker"]').on('click', function (e) {
                 else if( checking.status == 'Multiple' ){
                     $("#registration_multiple").removeClass("d-none");                    
                 }
+                else if( checking.status == 'Error' ){
+                    $("#registration_error").removeClass("d-none");                    
+                } 
+                else {
+                    alert("Unknown Error Occured")
+                }
+
 
                 
             } else {

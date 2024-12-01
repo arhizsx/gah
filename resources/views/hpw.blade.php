@@ -181,10 +181,10 @@
                                         <label for="zipcode">Zip Code</label>
                                         <input type="text" class="form-control mb-3 checker" data-checker="required" name="zipcode" id="zipcode">
                                     </div>
+                                    <div class="form-row">
+                                        <a class="mt-4" target="_blank" href="https://gfiberprepaid.globe.com.ph/serviceability/">Check Address Serviceability</a>
+                                    </div>
                                 </div>
-
-                                <a class="mt-4" target="_blank" href="https://gfiberprepaid.globe.com.ph/serviceability/">Check Address Serviceability</a>
-
                             </div>
                         </div>
                         <div class="accordion-item">

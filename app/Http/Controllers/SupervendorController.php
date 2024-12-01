@@ -1019,33 +1019,39 @@ class SupervendorController extends Controller
             ];
         }
 
-        $mobile_number = DB::table($table)
-                ->where("cellnumber", $request->cellnumber)
-                ->first();
+        try {
 
-        if( $mobile_number ){
+            $mobile_number = DB::table($table)
+                    ->where("cellnumber", $request->cellnumber)
+                    ->first();
 
-            $registrations = DB::table("view_registrations_2")
-                                ->where("mobile_number", $request->cellnumber)
-                                ->where("campaign", $request->campaign)
-                                ->get();
+            if( $mobile_number ){
 
-            if(count($registrations) > 0 ) {
-                $status = "Multiple";
+                $registrations = DB::table("view_registrations_2")
+                                    ->where("mobile_number", $request->cellnumber)
+                                    ->where("campaign", $request->campaign)
+                                    ->get();
+
+                if(count($registrations) > 0 ) {
+                    $status = "Multiple";
+                } else {
+                    $status = "Allowed";
+                }
+
             } else {
-                $status = "Allowed";
+                $status = "NotAllowed";
             }
 
-        } else {
-            $status = "NotAllowed";
+
+            return [
+                "error" => false,
+                "status" => $status,
+            ];
+        } catch (\Throwable $th) {
+            return response()->json(['error' => true, 'message' => $th->getMessage()]);
         }
-
-
-        return [
-            "error" => false,
-            "status" => $status,
-        ];
     }    
+
 
     function doRegistration( $data, $request ){
 

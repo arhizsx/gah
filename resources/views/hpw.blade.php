@@ -33,6 +33,12 @@
     $registration_confirmation_message_html =
     "<p>Please confirm that all details are correct before submitting. Proceed?</p>";
 
+    $privacy_html = 
+    "<p>By completing and submitting this form, I allow GLOBE to collect and process the personal data I will provide to claim my free GFiber Prepaid installation as a GoEarn or GP-TM Raket retailer in accordance with the <a target='_blank' href='https://www.globe.com.ph/privacy-policy'>Privacy Policy of Globe.</a></p>";
+
+    $disclaimer_html = 
+    "<p>This offer is subject to the fiber serviceability of your nominated address. The value of this bundle cannot be converted to cash in case of unsuccessful installation. <a target='_blank' href='https://www.globe.com.ph/website-terms-conditions'>Terms and conditions</a> apply.</p>"
+
 ?>
 
 <!DOCTYPE html>
@@ -220,11 +226,11 @@
                         </div>
                         <div class="border rounded-3 p-3 mt-4" style="font-size: 10px">
 
-                            <H5 style="font-size: 14px">Disclaimer</H5>
-                            <p>This offer is subject to the fiber serviceability of your nominated address. The value of this bundle cannot be converted to cash in case of unsuccessful installation. <a target="_blank" href="https://www.globe.com.ph/website-terms-conditions?_gl=1*11wvnk5*_gcl_aw*R0NMLjE3MTEyNzIzOTEuQ2p3S0NBandudi12QmhCZEVpd0FCQ1lRQS1BUFZtcmp6OWw5TXI4a2xWS0J2cDg4MFlBbDN3cDIzNWlwamtwNWZBdHQ4SXByV2daWGdob0NVakFRQXZEX0J3RQ..*_gcl_au*MTk1NTAzMjE4NS4xNzE4OTI5MDEw*_ga*NzMwMDM2NDYzLjE2NTc1MTk0MjM.*_ga_TD2ZL4WC9D*MTcxODkzOTQ5MC43LjAuMTcxODkzOTQ5My41Ny4wLjA.&_ga=2.129421836.1270274114.1718929010-730036463.1657519423">Terms and conditions</a> apply.</p>
+                        <H5 style="font-size: 14px">Disclaimer</H5>
+                            {!! $disclaimer_html !!} 
 
                             <H5 style="font-size: 14px">Privacy Notice</H5>
-                            <p>By completing and submitting this form, I allow GLOBE to collect and process the personal data I will provide to claim my free GFiber Prepaid installation as a GoEarn or GP-TM Raket retailer in accordance with the <a target="_blank" href="https://www.globe.com.ph/privacy-policy.html">Privacy Policy of Globe.</a></p>
+                            {!! $privacy_html !!}
                             
                             <div class="form-row">
                                 <div class="form-check">

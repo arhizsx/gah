@@ -288,6 +288,10 @@
 </html>
 <script>
     
+    $(document).ready(function(){
+        $(document).find("[name='province']").val("").change();
+    });
+
     document.addEventListener('DOMContentLoaded', function () {
         // Focus on the input field when the page loads
         document.querySelector('input[name="mobile_number"]').focus();

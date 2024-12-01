@@ -1,6 +1,6 @@
 <?php 
    $campaign = "HPW";
-   $header_banner = "/images/tm.jpg";
+   $header_banner = "/images/temp.png";
 
    $mobile_number_label = "Home Prepaid Wifi Account Number";
    $mobile_number_subtext = "Enter your Home Prepaid WiFi  number to check eligibility for this offer.";

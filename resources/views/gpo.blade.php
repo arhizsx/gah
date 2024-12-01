@@ -539,10 +539,17 @@
             } 
             else if( to_check.eq( k ).data("checker") == "cellnumber" ){
 
-                $(to_check).eq( k ).css("background","#FFEFEF");
-                $(to_check).eq( k ).addClass("checker-error");
 
-                error_cnt = error_cnt + 1;
+                if( $(to_check).eq( k ).val().length < 10 ){
+                    $(to_check).eq( k ).css("background","#FFEFEF");
+                    $(to_check).eq( k ).addClass("checker-error");
+                    error_cnt = error_cnt + 1;
+                }
+                else {
+                    $(to_check).eq( k ).css("background","#ffffff");
+                    $(to_check).eq( k ).removeClass("checker-error");
+                }
+
 
             }
 

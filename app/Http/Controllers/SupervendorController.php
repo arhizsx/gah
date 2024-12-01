@@ -1010,7 +1010,10 @@ class SupervendorController extends Controller
 
     function doNumberCheck( $data, $request ){
 
-        if($request->campaign  == 'POSTPAID'){
+        if($request->campaign  == 'REID'){
+            $table = "tm";
+        }
+        elseif($request->campaign  == 'POSTPAID'){
             $table = "postpaid";
         }
         elseif($request->campaign  == 'HPW'){

@@ -134,7 +134,7 @@
                         </div>
                     </div>           
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col mb-2">
                     <H1>POSTPAID</H1>
                 </div>
@@ -226,7 +226,7 @@
                         <p>TOTAL</p>
                         </div>
                     </div>           
-            </div>
+            </div> -->
 
             <div class="row">
                 <div class="col mb-2">

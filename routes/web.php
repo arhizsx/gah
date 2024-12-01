@@ -46,6 +46,7 @@ Route::get('/retailerexclusive', [CampaignController::class, 'tm']);
 
 // HPW CAMPAIGN
 Route::get('/HPW', [CampaignController::class, 'hpw']);
+Route::get('/hpw', [CampaignController::class, 'hpw']);
 
 
 // POSTPAID CAMPAIGN
@@ -53,9 +54,11 @@ Route::get('/postpaid', [CampaignController::class, 'postpaid']);
 
 // GR+ CAMPAIGN
 Route::get('/GR+', [CampaignController::class, 'grplus']);
+Route::get('/gr+', [CampaignController::class, 'grplus']);
 
 // GPO CAMPAIGN
 Route::get('/GPO', [CampaignController::class, 'gpo']);
+Route::get('/gpo', [CampaignController::class, 'gpo']);
 
 
 // NUMBER VERIFIER

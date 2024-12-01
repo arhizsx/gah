@@ -1,7 +1,11 @@
 <?php 
-   $campaign = "POSTPAID";
+   $campaign = "HPW";
+   $header_banner = "/images/tm.jpg";
 
-   $title = "FREE GFiber Prepaid for our Mobile Postpaid Customers";
+   $mobile_number_label = "Home Prepaid Wifi Account Number";
+   $mobile_number_subtext = "Enter your Home Prepaid WiFi  number to check eligibility for this offer.";
+
+   $title = "FREE GFiber Prepaid for our Home Prepaid WiFi Customers";
    
    $numbercheck_html = 
    "<p>Please fill out this form to claim your free GFiber Prepaid Installation!</p>" . 
@@ -9,7 +13,7 @@
    "<p>GFiber Prepaid offers reloadable UNLI fiber internet speeds up to 100Mbps. No monthly bills - reload only when you need to!</p>" . 
    "<H4>Reminders:</H4>" . 
    "<ul>" . 
-       "<li>This offer is for selected Mobile Postpaid customers, subject to validation</li>" . 
+       "<li>This offer is for selected Home Prepaid WiFi customers</li>" . 
        "<li>Subject to fiber serviceability in your area</li>" . 
        "<li>Expect an SMS confirmation regarding your application within 2 working days</li>" . 
    "</ul>";
@@ -72,7 +76,7 @@
 
     <body  class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
         <div id="registration" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
-            <img src="/images/tm.jpg" width="100%" />
+            <img src="{{ $header_banner }}" width="100%" />
             <div id="checking">
                 <div class="border rounded-3 p-3 mt-4">
                     <H4>{{ $title }}</H4>
@@ -85,7 +89,7 @@
                     <input type="hidden"  name="campaign" id="campaign" value='{{ $campaign }}'>
 
                     <div class="border rounded-3 p-3 mt-4">
-                        <label class="mb-3">Mobile Number</label>
+                        <label class="mb-3">{{ $mobile_number_label }}</label>
                         <div style="font-size: 48px; text-align: center; display: flex; align-items: center; justify-content: center;">
                             <span style="margin-right: 5px;">+63</span>
                             <input 
@@ -99,7 +103,7 @@
                                 required>
                         </div>
                         <p class="mt-3">
-                            Eligible for selected susbcribers only. We will contact you with this number as well. (Ex. +639171234567).
+                            {{ $mobile_number_subtext }}
                         </p>
                     </div>
 

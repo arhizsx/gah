@@ -99,8 +99,8 @@
                             <span style="margin-right: 5px;">+63</span>
                             <input 
                                 type="text" 
-                                name="cellnumber"
-                                id="cellnumber"
+                                name="mobile_number"
+                                id="mobile_number"
                                 class="form-control checker" 
                                 style="font-size: 48px; text-align: left; flex: 1;" 
                                 maxlength="10" 
@@ -290,10 +290,10 @@
     
     document.addEventListener('DOMContentLoaded', function () {
         // Focus on the input field when the page loads
-        document.querySelector('input[name="cellnumber"]').focus();
+        document.querySelector('input[name="mobile_number"]').focus();
     });
 
-    document.querySelector('input[name="cellnumber"]').addEventListener('input', function (e) {
+    document.querySelector('input[name="mobile_number"]').addEventListener('input', function (e) {
         const input = e.target;
         input.value = input.value.replace(/[^0-9]/g, ''); // Allow only numeric input
         if (input.value.length > 10) {
@@ -305,7 +305,7 @@
 
         e.preventDefault();
 
-        const input = document.querySelector('input[name="cellnumber"]');
+        const input = document.querySelector('input[name="mobile_number"]');
 
         $("#checking").addClass("d-none");
         $("#loading").removeClass("d-none");
@@ -316,7 +316,7 @@
             $("#checking").removeClass("d-none");
             $("#loading").addClass("d-none");
 
-            document.querySelector('input[name="cellnumber"]').focus();
+            document.querySelector('input[name="mobile_number"]').focus();
 
             return; // Prevent submission
 
@@ -335,7 +335,7 @@
                     if( checking.status == 'Allowed' ){
                         $("#registration_allowed").removeClass("d-none");  
 
-                        $(document).find("#mobile_number").val( $(document).find("#cellnumber").val() );
+                        $(document).find("#mobile_number").val( $(document).find("#mobile_number").val() );
 
                         document.querySelector('input[name="firstname"]').focus();
                 

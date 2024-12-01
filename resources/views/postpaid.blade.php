@@ -236,6 +236,11 @@
                         </a></H5>
                 </div>
             </div>
+            <div id="registration_error" class="d-none">
+                <div class="border rounded-3 p-5 mt-4">
+                    <H5>Oops, an error occured... Please retry again later...</H5>
+                </div>
+            </div>
             <div id="registration_multiple" class="d-none">
                 <div class="border rounded-3 p-5 mt-4">
                     <H5>You’ve already submitted an application. We’ll be reaching out to you soon</H5>

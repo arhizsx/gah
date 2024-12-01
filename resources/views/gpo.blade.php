@@ -77,6 +77,42 @@
     <body  class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
         <div id="registration" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
             <img src="{{ $header_banner }}" width="100%" />
+            <div id="checking">
+                <div class="border rounded-3 p-3 mt-4">
+                    <H4>{{ $title }}</H4>
+                    {!! $numbercheck_html !!}
+                </div>
+                <form id="check_form">
+                    @csrf
+
+                    <input type="hidden"  name="action" id="action" value='numbercheck'>
+                    <input type="hidden"  name="campaign" id="campaign" value='{{ $campaign }}'>
+
+                    <div class="border rounded-3 p-3 mt-4">
+                        <label class="mb-3">{{ $mobile_number_label }}</label>
+                        <div style="font-size: 48px; text-align: center; display: flex; align-items: center; justify-content: center;">
+                            <span style="margin-right: 5px;">+63</span>
+                            <input 
+                                type="text" 
+                                name="cellnumber"
+                                id="cellnumber"
+                                class="form-control" 
+                                style="font-size: 48px; text-align: left; flex: 1;" 
+                                maxlength="10" 
+                                placeholder="9171234567" 
+                                required>
+                        </div>
+                        <p class="mt-3">
+                            {{ $mobile_number_subtext }}
+                        </p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-3">
+                        <button class='btn btn-outline-dark'>Clear Form</button>
+                        <button type="submit" class='btn btn-primary action_button' data-action="checker">Next</button>
+                    </div>
+                </form>
+            </div>
             <div id="registration_allowed">
                 <form id="register_form">
                     @csrf

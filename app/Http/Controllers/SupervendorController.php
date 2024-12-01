@@ -73,7 +73,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "REID"]) == true ){
+                        if(  in_array( $campaign, ["SAMSUNG", "REID", "GPO", "HPW", "GR+", "POSTPAID"]) == true ){
 
                             $data = null;
 
@@ -312,7 +312,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "REID"]) == true ){
+                        if(  in_array( $campaign, ["SAMSUNG", "REID", "GPO", "HPW", "GR+", "POSTPAID"]) == true ){
 
                             $data = null;
 
@@ -490,7 +490,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if( in_array( $campaign, ["SAMSUNG", "REID"]) == true ){
+                        if( in_array( $campaign, ["SAMSUNG", "REID", "GPO", "HPW", "GR+", "POSTPAID"]) == true ){
 
                             $data = null;
 
@@ -657,7 +657,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "REID"]) == true ){
+                        if(  in_array( $campaign, ["SAMSUNG", "REID", "GPO", "HPW", "GR+", "POSTPAID"]) == true ){
 
                             $data = null;
 

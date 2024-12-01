@@ -45,21 +45,21 @@ Route::get('/retailerexclusive', [CampaignController::class, 'tm']);
 
 
 // HPW CAMPAIGN
-Route::get('/HPW', [CampaignController::class, 'hpw']);
-Route::get('/hpw', function(){
-    return redirect('/HPW');
-});
+// Route::get('/HPW', [CampaignController::class, 'hpw']);
+// Route::get('/hpw', function(){
+    // return redirect('/HPW');
+// });
 
 
 // POSTPAID CAMPAIGN
-Route::get('/postpaid', [CampaignController::class, 'postpaid']);
+// Route::get('/postpaid', [CampaignController::class, 'postpaid']);
 
 
 // GR+ CAMPAIGN
-Route::get('/GR+', [CampaignController::class, 'grplus']);
-Route::get('/gr+', function(){
-    return redirect('/GR+');
-});
+// Route::get('/GR+', [CampaignController::class, 'grplus']);
+// Route::get('/gr+', function(){
+    // return redirect('/GR+');
+// });
 
 
 // GPO CAMPAIGN

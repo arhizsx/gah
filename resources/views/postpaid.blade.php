@@ -34,7 +34,7 @@
     "<p>Please confirm that all details are correct before submitting. Proceed?</p>";
 
     $privacy_html = 
-    "<p>By completing and submitting this form, I allow GLOBE to collect and process the personal data I will provide to claim my free GFiber Prepaid installation as a GoEarn or GP-TM Raket retailer in accordance with the <a target='_blank' href='https://www.globe.com.ph/privacy-policy'>Privacy Policy of Globe.</a></p>";
+    "<p>By completing and submitting this form, I allow GLOBE to collect and process the personal data I will provide to claim my free GFiber Prepaid installation in accordance with the <a target='_blank' href='https://www.globe.com.ph/privacy-policy'>Privacy Policy of Globe.</a></p>";
 
     $disclaimer_html = 
     "<p>This offer is subject to the fiber serviceability of your nominated address. The value of this bundle cannot be converted to cash in case of unsuccessful installation. <a target='_blank' href='https://www.globe.com.ph/website-terms-conditions'>Terms and conditions</a> apply.</p>"

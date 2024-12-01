@@ -2,20 +2,21 @@
    $campaign = "GPO";
    $header_banner = "/images/temp.png";
 
-   $mobile_number_label = "Mobile Number";
-   $mobile_number_subtext = "Eligible for selected susbcribers only. We will contact you with this number as well. (Ex. +639171234567).";
+   $mobile_number_label = "Mobile number with registered GCash Pera Outlet";
+   $mobile_number_subtext = "Gamitin and mobile number na registered as your GCash Pera Outlet account. Only selected GCash Pera Outlet customers are eligible for this offer. (Example: +639171234567).";
 
-   $title = "FREE GFiber Prepaid for our Mobile Postpaid Customers";
+   $title = "FREE GFiber Prepaid for GCash Pera Outlet Retailers";
    
    $header_html = 
-   "<p>Please fill out this form to claim your free GFiber Prepaid Installation!</p>" . 
+   "<p>I-claim na ang iyong FREE GFiber Prepaid installation! I-fill out lamang ang form na ito.</p>" . 
    "<H4>What is GFiber Prepaid?</H4>" . 
-   "<p>GFiber Prepaid offers reloadable UNLI fiber internet speeds up to 100Mbps. No monthly bills - reload only when you need to!</p>" . 
+   "<small>Ano ang GFiber Prepaid?</small>" .
+   "<p>Ang GFiber Prepaid ay reloadable UNLI fiber internet na up to 100 Mbps. Walang docs required at monthly bills -- mag-load lang kapag kailangan! </p>" . 
    "<H4>Reminders:</H4>" . 
    "<ul>" . 
-       "<li>This offer is for selected Mobile Postpaid customers, subject to validation</li>" . 
-       "<li>Subject to fiber serviceability in your area</li>" . 
-       "<li>Expect an SMS confirmation regarding your application within 2 working days</li>" . 
+       "<li>Ang offer na ito ay para sa select GCash Pera Outlet Retailers lamang. Subject to validation</li>" . 
+       "<li>Ang availability ay subject to service coverage ng iyong area</li>" . 
+       "<li>Maghintay ng SMS confirmation regarding your application within 2 working days</li>" . 
    "</ul>";
 
    $error_html = 
@@ -31,7 +32,7 @@
     "<p>Please confirm that all details are correct before submitting. Proceed?</p>";
 
     $privacy_html = 
-    "<p>By completing and submitting this form, I allow GLOBE to collect and process the personal data I will provide to claim my free GFiber Prepaid installation as a GoEarn or GP-TM Raket retailer in accordance with the <a target='_blank' href='https://www.globe.com.ph/privacy-policy'>Privacy Policy of Globe.</a></p>";
+    "<p>By completing and submitting this form, I allow GLOBE to collect and process the personal data I will provide to claim my free GFiber Prepaid installation in accordance with the <a target='_blank' href='https://www.globe.com.ph/privacy-policy'>Privacy Policy of Globe.</a></p>";
 
     $disclaimer_html = 
     "<p>This offer is subject to the fiber serviceability of your nominated address. The value of this bundle cannot be converted to cash in case of unsuccessful installation. <a target='_blank' href='https://www.globe.com.ph/website-terms-conditions'>Terms and conditions</a> apply.</p>"        

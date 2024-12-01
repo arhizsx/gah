@@ -288,6 +288,10 @@
 </html>
 <script>
     
+    $(document).ready(function(){
+        $(document).find("[name='province']").val("").change();
+    });
+
     document.addEventListener('DOMContentLoaded', function () {
         // Focus on the input field when the page loads
         document.querySelector('input[name="mobile_number"]').focus();
@@ -300,98 +304,6 @@
             input.value = input.value.slice(0, 10); // Limit to 10 digits
         }
     });
-
-    $('.action_button[data-action="checker"]').on('click', function (e) {
-
-        e.preventDefault();
-
-        const input = document.querySelector('input[name="mobile_number"]');
-
-        $("#checking").addClass("d-none");
-        $("#loading").removeClass("d-none");
-
-        if (input.value.length !== 10) {
-            alert("Please enter a valid 10-digit cellphone number.");
-
-            $("#checking").removeClass("d-none");
-            $("#loading").addClass("d-none");
-
-            document.querySelector('input[name="mobile_number"]').focus();
-
-            return; // Prevent submission
-
-        } else {
-
-
-            let form = new FormData( $("#check_form")[0] );
-            var checking = CheckData( form );
-
-            $.when( checking ).done( function( checking ){
-
-                if( checking.error == false ){
-                    
-                    $("#loading").addClass("d-none");
-
-                    if( checking.status == 'Allowed' ){
-                        $("#registration_allowed").removeClass("d-none");  
-
-                        $(document).find("#mobile_number").val( $(document).find("#mobile_number").val() );
-
-                        document.querySelector('input[name="firstname"]').focus();
-                
-                    }
-                    else if( checking.status == 'NotAllowed' ){
-                        $("#registration_not_allowed").removeClass("d-none");                    
-                    }
-                    else if( checking.status == 'Multiple' ){
-                        $("#registration_multiple").removeClass("d-none");                    
-                    }
-                    else if( checking.status == 'Error' ){
-                        $("#registration_error").removeClass("d-none");                    
-                    } 
-
-                    
-                } else {
-
-                    $("#loading").addClass("d-none");
-                    $("#registration_error").removeClass("d-none");                    
-
-                }
-
-            });
-
-            console.log("Checking");
-
-        }
-
-    });
-
-    function CheckData(form){
-
-        var defObject = $.Deferred();  // create a deferred object.
-
-        $.ajax({
-            type: 'post',
-            url: "/supervendor/ajax-public",
-            data: form,
-            enctype: 'multipart/form-data',
-            processData: false,
-            contentType: false,
-            success: function(resp){
-
-                console.log(resp) ;
-
-                defObject.resolve(resp);    //resolve promise and pass the response.
-
-            },
-            error: function(){
-                console.log("Error in AJAX");
-            }
-        });
-
-        return defObject.promise();
-
-    }
 
     $('.action_button[data-action="register"]').on('click', function (e) {
 

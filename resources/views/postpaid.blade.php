@@ -1,8 +1,41 @@
+<?php 
+   $campaign = "POSTPAID";
+
+   $title = "FREE GFiber Prepaid for our Mobile Postpaid Customers";
+   
+   $numbercheck_html = 
+   "<p>Please fill out this form to claim your free GFiber Prepaid Installation!</p>" . 
+   "<H4>What is GFiber Prepaid?</H4>" . 
+   "<p>GFiber Prepaid offers reloadable UNLI fiber internet speeds up to 100Mbps. No monthly bills - reload only when you need to!</p>" . 
+   "<H4>Reminders:</H4>" . 
+   "<ul>" . 
+       "<li>This offer is for selected Mobile Postpaid customers, subject to validation</li>" . 
+       "<li>Subject to fiber serviceability in your area</li>" . 
+       "<li>Expect an SMS confirmation regarding your application within 2 working days</li>" . 
+   "</ul>";
+
+   $not_allowed_html = 
+   "<H5>Oops, the number you entered isn’t eligible for this exclusive promo. But no worries! You can still apply for GFiber Prepaid here: https://gfiberprepaid.globe.com.ph/</a></H5>";
+
+    $error_html = 
+    "<H5>Oops, an error occured... Please retry again later...</H5>";
+
+    $submitted_html = 
+    "<H5>You’ve already submitted an application. We’ll be reaching out to you soon</H5>";
+
+    $registered_html = 
+    "<H5>Thank you for choosing GFiber Prepaid! We’ve received your installation details, and our Globe At Home Broadband Specialist will contact you within 2 working days to kickstart the next steps</H5>";
+
+    $registration_confirmation_message_html =
+    "<p>Please confirm that all details are correct before submitting. Proceed?</p>";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
     <head>
         <meta charset="UTF-8">
-        <title>FREE GFiber Prepaid for our Mobile Postpaid Customers</title>
+        <title>{{ $title }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         
@@ -42,22 +75,14 @@
             <img src="/images/tm.jpg" width="100%" />
             <div id="checking">
                 <div class="border rounded-3 p-3 mt-4">
-                    <H4>FREE GFiber Prepaid for our Mobile Postpaid Customers</H4>
-                    <p>Please fill out this form to claim your free GFiber Prepaid Installation!</p>
-                    <H4>What is GFiber Prepaid?</H4>
-                    <p>GFiber Prepaid offers reloadable UNLI fiber internet speeds up to 100Mbps. No monthly bills - reload only when you need to!</p>
-                    <H4>Reminders:</H4>
-                    <ul>
-                        <li>This offer is for selected Mobile Postpaid customers, subject to validation</li>
-                        <li>Subject to fiber serviceability in your area</li>
-                        <li>Expect an SMS confirmation regarding your application within 2 working days</li>
-                    </ul>
+                    <H4>{{ $title }}</H4>
+                    {!! $numbercheck_html !!}
                 </div>
                 <form id="check_form">
                     @csrf
 
                     <input type="hidden"  name="action" id="action" value='numbercheck'>
-                    <input type="hidden"  name="campaign" id="campaign" value='POSTPAID'>
+                    <input type="hidden"  name="campaign" id="campaign" value='{{ $campaign }}'>
 
                     <div class="border rounded-3 p-3 mt-4">
                         <label class="mb-3">Mobile Number</label>
@@ -89,7 +114,7 @@
                     @csrf
 
                     <input type="hidden"  name="action" id="action" value='register'>
-                    <input type="hidden"  name="campaign" id="campaign" value='POSTPAID'>
+                    <input type="hidden"  name="campaign" id="campaign" value='{{ $campaign }}'>
                     <input type="hidden"  name="mobile_number" id="mobile_number" value=''>
                     <input type="hidden"  name="complete_name" id="complete_name" value=''>
 
@@ -158,22 +183,6 @@
 
                             </div>
                         </div>
-                        <!-- <div class="accordion-item">
-                            <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                                <H5>Serviceability Check</H5>
-                            </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse show">
-                                <div class="accordion-body">
-                                    <div class="form-row">
-                                        <label for="serviceability_check">Serviceability Screenshot</label>
-                                        <input type="file" class="form-control mb-3 checker" data-checker="required" name="serviceability_check" id="serviceability_check">
-                                        <a target="_blank" href="https://gfiberprepaid.globe.com.ph/serviceability/">Check Address Serviceability</a>
-                                    </div>                                    
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
@@ -232,23 +241,22 @@
             </div>
             <div id="registration_not_allowed" class="d-none">
                 <div class="border rounded-3 p-5 mt-4">
-                    <H5>Oops, the number you entered isn’t eligible for this exclusive promo. But no worries! You can still apply for GFiber Prepaid here: https://gfiberprepaid.globe.com.ph/
-                        </a></H5>
+                    {!! $not_allowed_html !!}
                 </div>
             </div>
             <div id="registration_error" class="d-none">
                 <div class="border rounded-3 p-5 mt-4">
-                    <H5>Oops, an error occured... Please retry again later...</H5>
+                    {!! $error_html !!}                    
                 </div>
             </div>
             <div id="registration_multiple" class="d-none">
                 <div class="border rounded-3 p-5 mt-4">
-                    <H5>You’ve already submitted an application. We’ll be reaching out to you soon</H5>
+                    {!!  $submitted_html !!}
                 </div>
             </div>
             <div id="registration_success" class="d-none">
                 <div class="border rounded-3 p-5 mt-4">
-                    <H5>Thank you for choosing GFiber Prepaid! We’ve received your installation details, and our Globe At Home Broadband Specialist will contact you within 2 working days to kickstart the next steps</H5>
+                    {!! $registered_html !!}
                 </div>
             </div>
             <div id="loading" class="d-none text-center">
@@ -273,7 +281,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body p-5">
-                        <p>Please confirm that all details are correct before submitting. Proceed?</p>
+                        {!! $registration_confirmation_message_html !!}
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
@@ -291,264 +299,265 @@
 
 </html>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    // Focus on the input field when the page loads
-    document.querySelector('input[name="cellnumber"]').focus();
-});
-
-document.querySelector('input[name="cellnumber"]').addEventListener('input', function (e) {
-    const input = e.target;
-    input.value = input.value.replace(/[^0-9]/g, ''); // Allow only numeric input
-    if (input.value.length > 10) {
-        input.value = input.value.slice(0, 10); // Limit to 10 digits
-    }
-});
-
-$('.action_button[data-action="checker"]').on('click', function (e) {
-
-    e.preventDefault();
-
-    const input = document.querySelector('input[name="cellnumber"]');
-
-    $("#checking").addClass("d-none");
-    $("#loading").removeClass("d-none");
-
-    if (input.value.length !== 10) {
-        alert("Please enter a valid 10-digit cellphone number.");
-
-        $("#checking").removeClass("d-none");
-        $("#loading").addClass("d-none");
-
+    
+    document.addEventListener('DOMContentLoaded', function () {
+        // Focus on the input field when the page loads
         document.querySelector('input[name="cellnumber"]').focus();
+    });
 
-        return; // Prevent submission
+    document.querySelector('input[name="cellnumber"]').addEventListener('input', function (e) {
+        const input = e.target;
+        input.value = input.value.replace(/[^0-9]/g, ''); // Allow only numeric input
+        if (input.value.length > 10) {
+            input.value = input.value.slice(0, 10); // Limit to 10 digits
+        }
+    });
 
-    } else {
+    $('.action_button[data-action="checker"]').on('click', function (e) {
+
+        e.preventDefault();
+
+        const input = document.querySelector('input[name="cellnumber"]');
+
+        $("#checking").addClass("d-none");
+        $("#loading").removeClass("d-none");
+
+        if (input.value.length !== 10) {
+            alert("Please enter a valid 10-digit cellphone number.");
+
+            $("#checking").removeClass("d-none");
+            $("#loading").addClass("d-none");
+
+            document.querySelector('input[name="cellnumber"]').focus();
+
+            return; // Prevent submission
+
+        } else {
 
 
-        let form = new FormData( $("#check_form")[0] );
-        var checking = CheckData( form );
+            let form = new FormData( $("#check_form")[0] );
+            var checking = CheckData( form );
 
-        $.when( checking ).done( function( checking ){
+            $.when( checking ).done( function( checking ){
 
-            if( checking.error == false ){
+                if( checking.error == false ){
+                    
+                    $("#loading").addClass("d-none");
+
+                    if( checking.status == 'Allowed' ){
+                        $("#registration_allowed").removeClass("d-none");  
+
+                        $(document).find("#mobile_number").val( $(document).find("#cellnumber").val() );
+
+                        document.querySelector('input[name="firstname"]').focus();
+                
+                    }
+                    else if( checking.status == 'NotAllowed' ){
+                        $("#registration_not_allowed").removeClass("d-none");                    
+                    }
+                    else if( checking.status == 'Multiple' ){
+                        $("#registration_multiple").removeClass("d-none");                    
+                    }
+                    else if( checking.status == 'Error' ){
+                        $("#registration_error").removeClass("d-none");                    
+                    } 
+
+                    
+                } else {
+
+                    $("#loading").addClass("d-none");
+                    $("#registration_error").removeClass("d-none");                    
+
+                }
+
+            });
+
+            console.log("Checking");
+
+        }
+
+    });
+
+    function CheckData(form){
+
+        var defObject = $.Deferred();  // create a deferred object.
+
+        $.ajax({
+            type: 'post',
+            url: "/supervendor/ajax-public",
+            data: form,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            success: function(resp){
+
+                console.log(resp) ;
+
+                defObject.resolve(resp);    //resolve promise and pass the response.
+
+            },
+            error: function(){
+                console.log("Error in AJAX");
+            }
+        });
+
+        return defObject.promise();
+
+    }
+
+    $('.action_button[data-action="register"]').on('click', function (e) {
+
+        e.preventDefault();
+
+        if( Checker() ) {
+
+            $("#confirm-register-modal").modal("show");
+
+        } else {
+
+            $(document).find('.checker-error').eq(0).focus();
+            
+        }
+
+    });
+
+    $('.action_button[data-action="confirm_registration"]').on('click', function (e) {
+
+        e.preventDefault();
+
+        $("#confirm-register-modal").modal("hide");
+
+        $("#loading").removeClass("d-none");
+        $("#registration_allowed").addClass("d-none");
+
+        $("#complete_name").val( $("#firstname").val() + " " + $("#lastname").val() );
+
+        let form = new FormData( $("#register_form")[0] );
+        var registration = CheckData( form );
+
+        $.when( registration ).done( function( registration ){
+
+            if( registration.error == false ){
                 
                 $("#loading").addClass("d-none");
-
-                if( checking.status == 'Allowed' ){
-                    $("#registration_allowed").removeClass("d-none");  
-
-                     $(document).find("#mobile_number").val( $(document).find("#cellnumber").val() );
-
-                    document.querySelector('input[name="firstname"]').focus();
-            
-                }
-                else if( checking.status == 'NotAllowed' ){
-                    $("#registration_not_allowed").removeClass("d-none");                    
-                }
-                else if( checking.status == 'Multiple' ){
-                    $("#registration_multiple").removeClass("d-none");                    
-                }
-                else if( checking.status == 'Error' ){
-                    $("#registration_error").removeClass("d-none");                    
-                } 
-
+                $("#registration_success").removeClass("d-none");        
                 
             } else {
 
                 $("#loading").addClass("d-none");
-                $("#registration_error").removeClass("d-none");                    
+                $("#registration_allowed").removeClass("d-none");
 
             }
 
         });
 
-        console.log("Checking");
-
-    }
-
-});
-
-function CheckData(form){
-
-    var defObject = $.Deferred();  // create a deferred object.
-
-    $.ajax({
-        type: 'post',
-        url: "/supervendor/ajax-public",
-        data: form,
-        enctype: 'multipart/form-data',
-        processData: false,
-        contentType: false,
-        success: function(resp){
-
-            console.log(resp) ;
-
-            defObject.resolve(resp);    //resolve promise and pass the response.
-
-        },
-        error: function(){
-            console.log("Error in AJAX");
-        }
-    });
-
-    return defObject.promise();
-
-}
-
-$('.action_button[data-action="register"]').on('click', function (e) {
-
-    e.preventDefault();
-
-    if( Checker() ) {
-
-        $("#confirm-register-modal").modal("show");
-
-    } else {
-
-        $(document).find('.checker-error').eq(0).focus();
-        
-    }
-
-});
-
-$('.action_button[data-action="confirm_registration"]').on('click', function (e) {
-
-    e.preventDefault();
-
-    $("#confirm-register-modal").modal("hide");
-
-    $("#loading").removeClass("d-none");
-    $("#registration_allowed").addClass("d-none");
-
-    $("#complete_name").val( $("#firstname").val() + " " + $("#lastname").val() );
-
-    let form = new FormData( $("#register_form")[0] );
-    var registration = CheckData( form );
-
-    $.when( registration ).done( function( registration ){
-
-        if( registration.error == false ){
-            
-            $("#loading").addClass("d-none");
-            $("#registration_success").removeClass("d-none");        
-            
-        } else {
-
-            $("#loading").addClass("d-none");
-            $("#registration_allowed").removeClass("d-none");
-
-        }
+        console.log("Registered");
 
     });
 
-    console.log("Registered");
+    function Checker(){
 
-});
+        let to_check = $(document).find(".checker");
+        let error_cnt = 0;
 
-function Checker(){
+        $.each(to_check, function( k, v){
 
-    let to_check = $(document).find(".checker");
-    let error_cnt = 0;
+            if( to_check.eq( k ).data("checker") == "required" ){
+                if( $(v).is("input") ){
 
-    $.each(to_check, function( k, v){
+                    var type = to_check.eq( k ).attr( "type" );
+                    var value = "";
 
-        if( to_check.eq( k ).data("checker") == "required" ){
-            if( $(v).is("input") ){
+                    switch( type ){
 
-                var type = to_check.eq( k ).attr( "type" );
-                var value = "";
+                        case "text":
 
-                switch( type ){
+                            value = to_check.eq( k ).val();
+                            break;
 
-                    case "text":
+                        case "date":
 
-                        value = to_check.eq( k ).val();
-                        break;
+                            value = to_check.eq( k ).val();
+                            break;
 
-                    case "date":
-
-                        value = to_check.eq( k ).val();
-                        break;
-
-                    case "checkbox":
+                        case "checkbox":
 
 
-                        value = to_check.eq( k ).is(":checked");
-                        break;
+                            value = to_check.eq( k ).is(":checked");
+                            break;
 
-                    case "file":
+                        case "file":
 
-                        value = to_check.eq( k ).val();
-                        break;
+                            value = to_check.eq( k ).val();
+                            break;
 
-                    default:
-                        console.log( type );
+                        default:
+                            console.log( type );
+
+                    }
+
+                    if( value == false ){
+
+                        if( type != "checkbox"){
+
+                            $(to_check).eq( k ).css("background-color","#FFEFEF");
+                            $(to_check).eq( k ).addClass("checker-error");
+
+                        } else {
+
+                            $(to_check).eq( k ).css("border-color","red");
+                        }
+
+                        $(to_check).eq( k ).addClass("checker-error");
+                        error_cnt = error_cnt + 1;
+
+                    } else {
+
+                        if( type != "checkbox"){
+
+                            $(to_check).eq( k ).css("background","#ffffff");
+
+                        } else {
+
+                            $(to_check).eq( k ).css("border-color","gray");
+
+                        }
+
+                        $(to_check).eq( k ).removeClass("checker-error");
+
+
+                    }
 
                 }
+                else if( $(v).is("select") ){
 
-                if( value == false ){
+                    if( $(v).find("option:selected").val() == false ){
 
-                    if( type != "checkbox"){
-
-                        $(to_check).eq( k ).css("background-color","#FFEFEF");
+                        $(to_check).eq( k ).css("background","#FFEFEF");
                         $(to_check).eq( k ).addClass("checker-error");
 
-                    } else {
+                        error_cnt = error_cnt + 1;
 
-                        $(to_check).eq( k ).css("border-color","red");
+
                     }
-
-                    $(to_check).eq( k ).addClass("checker-error");
-                    error_cnt = error_cnt + 1;
-
-                } else {
-
-                    if( type != "checkbox"){
-
+                    else {
                         $(to_check).eq( k ).css("background","#ffffff");
-
-                    } else {
-
-                        $(to_check).eq( k ).css("border-color","gray");
+                        $(to_check).eq( k ).removeClass("checker-error");
 
                     }
 
-                    $(to_check).eq( k ).removeClass("checker-error");
-
-
                 }
-
             }
-            else if( $(v).is("select") ){
 
-                if( $(v).find("option:selected").val() == false ){
+        } );
 
-                    $(to_check).eq( k ).css("background","#FFEFEF");
-                    $(to_check).eq( k ).addClass("checker-error");
+        if( error_cnt > 0 ){
 
-                    error_cnt = error_cnt + 1;
-
-
-                }
-                else {
-                    $(to_check).eq( k ).css("background","#ffffff");
-                    $(to_check).eq( k ).removeClass("checker-error");
-
-                }
-
-            }
+            return false;
         }
 
-    } );
+        return true;
 
-    if( error_cnt > 0 ){
-
-        return false;
     }
-
-    return true;
-
-}
 
 </script>

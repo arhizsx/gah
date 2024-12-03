@@ -93,6 +93,7 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations")
                                                 ->whereNotNull("SGT Name")
                                                 ->where("campaign", $campaign)
+                                                ->whereNotnull("city")
                                                 ->whereIn("status", array(
                                                 "INSTALLED", 
                                                 "CANCELLED", 
@@ -112,6 +113,7 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations_2")
                                                 ->whereNotNull("SGT Name")
                                                 ->where("campaign", $campaign)
+                                                ->whereNotnull("city")
                                                 ->where('area_head_email', $usr->email)
                                                 ->whereIn("status", array(
                                                 "INSTALLED", 
@@ -131,6 +133,7 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations")
                                                 ->where("SGT Name", Auth::user()->name)
                                                 ->where("campaign", $campaign)
+                                                ->whereNotnull("city")
                                                 ->whereIn("status", array(
                                                     "INSTALLED", 
                                                     "CANCELLED", 
@@ -146,7 +149,8 @@ class SupervendorController extends Controller
                                         else if( $u->profile == "SGT" && $u->position == "CGE"   ){
 
                                             $data = DB::table("view_registrations_2")
-                                                ->where("campaign", $campaign)                                                              
+                                                ->where("campaign", $campaign)             
+                                                ->whereNotnull("city")
                                                 ->where('area_head_email', $usr->email)
                                                 ->where('cge_email', $usr->email)                                  
                                                 ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED",
@@ -192,6 +196,7 @@ class SupervendorController extends Controller
 
                                             $data = DB::table("view_registrations")
                                                 ->whereNotNull("SGT Name")
+                                                ->whereNotnull("city")
                                                 ->where("campaign", $campaign)
                                                 ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED",
                                                 "Cancelled - Customer Uncontacted and Address Cant Be Located",
@@ -208,6 +213,7 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations")
                                                 ->where("SGT Name", Auth::user()->name)
                                                 ->where("campaign", $campaign)
+                                                ->whereNotnull("city")
                                                 ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED",
                                                 "Cancelled - Customer Uncontacted and Address Cant Be Located",
                                                 "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
@@ -247,6 +253,7 @@ class SupervendorController extends Controller
 
                             $data = DB::table("view_registrations")
                                     ->where("campaign", $campaign)
+                                    ->whereNotnull("city")
                                     ->whereIn("status", array(
                                         "INSTALLED", "CANCELLED", "DROPPED",
                                         "Cancelled - Customer Uncontacted and Address Cant Be Located",
@@ -273,6 +280,7 @@ class SupervendorController extends Controller
 
                             $data = DB::table("view_registrations")
                                     ->where("campaign", $campaign)
+                                    ->whereNotnull("city")
                                     ->whereIn("status", array(
                                             "INSTALLED", "CANCELLED", "DROPPED",
                                             "Cancelled - Customer Uncontacted and Address Cant Be Located",
@@ -330,6 +338,7 @@ class SupervendorController extends Controller
 
                                             $data = DB::table("view_registrations")
                                                 ->whereNotNull("SGT Name")
+                                                ->whereNotnull("city")
                                                 ->where("campaign", $campaign)
                                                 ->whereIn("status", array("ENDORSED") )
                                                 ->get();
@@ -339,6 +348,7 @@ class SupervendorController extends Controller
 
                                             $data = DB::table("view_registrations_2")
                                                 ->whereNotNull("SGT Name")
+                                                ->whereNotnull("city")
                                                 ->where('area_head_email', $usr->email)                                  
                                                 ->where("campaign", $campaign)
                                                 ->whereIn("status", array("ENDORSED") )
@@ -350,6 +360,7 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations")
                                                 ->where("SGT Name", Auth::user()->name)
                                                 ->where("campaign", $campaign)
+                                                ->whereNotnull("city")
                                                 ->whereIn("status", array("ENDORSED") )
                                                 ->get();
 
@@ -359,6 +370,7 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations_2")
                                                 ->where('cge_email', $usr->email)                                  
                                                 ->where("campaign", $campaign)
+                                                ->whereNotnull("city")
                                                 ->whereIn("status", array("") )
                                                 ->get();
 
@@ -396,6 +408,7 @@ class SupervendorController extends Controller
 
                                             $data = DB::table("view_registrations")
                                                 ->whereNotNull("SGT Name")
+                                                ->whereNotnull("city")
                                                 ->where("campaign", $campaign)
                                                 ->whereIn("status", array("REGISTERED") )
                                                 ->get();
@@ -406,6 +419,7 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations")
                                                 ->where("SGT Name", Auth::user()->name)
                                                 ->where("campaign", $campaign)
+                                                ->whereNotnull("city")
                                                 ->whereIn("status", array("REGISTERED") )
                                                 ->get();
 
@@ -439,6 +453,7 @@ class SupervendorController extends Controller
 
                             $data = DB::table("view_registrations")
                                     ->where("campaign", $campaign)
+                                    ->whereNotnull("city")
                                     ->whereIn("status", array(""))
                                     ->where( "vendor", Auth::user()->company )
                                     ->get();
@@ -459,6 +474,7 @@ class SupervendorController extends Controller
 
                             $data = DB::table("view_registrations")
                                     ->where("campaign", $campaign)
+                                    ->whereNotnull("city")
                                     ->whereIn("status", array("REGISTERED", "ENDORSED"))
                                     ->where( "vendor", Auth::user()->company )
                                     ->get();
@@ -509,6 +525,7 @@ class SupervendorController extends Controller
 
                                             $data = DB::table("view_registrations")
                                                 ->whereNotNull("SGT Name")
+                                                ->whereNotnull("city")
                                                 ->where("campaign", $campaign)
                                                 ->whereIn("status", array(
                                                         "REGISTERED", 
@@ -533,6 +550,7 @@ class SupervendorController extends Controller
                                                 ->whereNotNull("SGT Name")
                                                 ->where('area_head_email', $usr->email)                                  
                                                 ->where("campaign", $campaign)
+                                                ->whereNotnull("city")
                                                 ->whereIn("status", array(
                                                         "REGISTERED", 
                                                         "PENDING", 
@@ -554,6 +572,7 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations")
                                                 ->where("SGT Name", Auth::user()->name)
                                                 ->where("campaign", $campaign)
+                                                ->whereNotnull("city")
                                                 ->whereIn("status", array(
                                                         "REGISTERED", 
                                                         "PENDING", 
@@ -574,6 +593,7 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations_2")
                                                 ->where('cge_email', $usr->email)                                  
                                                 ->where("campaign", $campaign)
+                                                ->whereNotnull("city")
                                                 ->whereIn("status", array(
                                                     "REGISTERED", 
                                                     "PENDING", 
@@ -625,6 +645,7 @@ class SupervendorController extends Controller
                                             $data = DB::table("view_registrations")
                                                 ->whereNull("SGT Name")
                                                 ->where("campaign", $campaign)
+                                                ->whereNotnull("city")
                                                 ->whereIn("status", array("REGISTERED") )
                                                 ->get();
 
@@ -708,6 +729,7 @@ class SupervendorController extends Controller
 
                 $my_campaigns = DB::table("users_access")   
                                 ->select("campaign")
+                                ->whereNotnull("city")
                                 ->distinct()                                                     
                                 ->where("user_id", Auth::user()->id)
                                 ->get();

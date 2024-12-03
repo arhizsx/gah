@@ -447,45 +447,32 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "REID"]) == true ){
 
-                            $data = null;
+                        $data = null;
 
-                            $data = DB::table("view_registrations")
-                                    ->where("campaign", $campaign)
-                                    ->whereNotnull("city")
-                                    ->whereIn("status", array("ENDORSED"))
-                                    ->where( "vendor", Auth::user()->company )
-                                    ->get();
+                        $data = DB::table("view_registrations")
+                                ->where("campaign", $campaign)
+                                ->whereNotnull("city")
+                                ->whereIn("status", array(
+                                    "ENDORSED",
+                                    "Pending - Customer Availability", 
+                                    "Pending - SV Capacity Issue", 
+                                    "Pending - Adverse Weather", 
+                                    "Pending - Customer Uncontacted", 
+                                    "Pending - Customer Undecided / On Hold by Subs",
+                                    "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                    "Pending - OSS / DGT System Issue",
+                                    "Pending - Permit Access Issue VG / Subdivision / Barangay",                                
+                                ))
+                                ->where( "vendor", Auth::user()->company )
+                                ->get();
 
-                            if( $data != null ){
+                        if( $data != null ){
 
-                                $return_data->push(  ...$data );
-
-                            }
-
-
-                        }
-
-
-                        elseif( $campaign == "XIAOMI" ){
-
-                            $data = null;
-
-                            $data = DB::table("view_registrations")
-                                    ->where("campaign", $campaign)
-                                    ->whereNotnull("city")
-                                    ->whereIn("status", array("ENDORSED"))
-                                    ->where( "vendor", Auth::user()->company )
-                                    ->get();
-
-                            if( $data != null ){
-
-                                $return_data->push(  ...$data );
-
-                            }
+                            $return_data->push(  ...$data );
 
                         }
+
 
                     }
 

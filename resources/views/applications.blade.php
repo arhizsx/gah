@@ -135,6 +135,7 @@
 
                 @else 
 
+                <button type="button" class="btn btn-warning btn-action" data-user_mode="vendor" data-action="application_pending" data-confirm="yes" data-id="">Pending</button>
                 <button type="button" class="btn btn-dark btn-action" data-user_mode="vendor" data-action="application_cancelled" data-confirm="yes" data-id="">Cancelled</button>
                 <button type="button" class="btn btn-primary btn-action" data-user_mode="vendor" data-action="application_installed" data-confirm="yes" data-id="">Installed</button>
 

@@ -149,6 +149,7 @@ let modal = "#application_details";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/applications';
 let columns = [
+    'id',
     'campaign', 
     'complete_name', 
     'mobile_number', 

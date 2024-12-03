@@ -114,7 +114,7 @@
                     <div class="section-title">Remarks</div>
                     <div class="row">
                         <div class="col-12">
-                            <input disabled class="form-control form-control-sm" type="text" value="" name="remarks" id="remarks" placeholder="Remarks">
+                            <input class="form-control form-control-sm" type="text" value="" name="remarks" id="remarks" placeholder="Remarks">
                         </div>
                     </div>
                 </div>

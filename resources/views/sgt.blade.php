@@ -415,7 +415,8 @@ function callbackAction(data){
     }
     else if( data.campaign == "SAMSUNG" ){
 
-    } else {
+    } 
+    else {
         $(document).find(".attach_box").addClass("d-none");
     }
 

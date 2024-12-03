@@ -729,7 +729,6 @@ class SupervendorController extends Controller
 
                 $my_campaigns = DB::table("users_access")   
                                 ->select("campaign")
-                                ->whereNotnull("city")
                                 ->distinct()                                                     
                                 ->where("user_id", Auth::user()->id)
                                 ->get();
@@ -746,7 +745,7 @@ class SupervendorController extends Controller
 
 
                 $data = DB::table("view_registrations")
-                        // ->wherenotnull("city")
+                        ->wherenotnull("city")
                         ->whereIn("campaign", $active_campaigns)
                         ->get();
 
@@ -756,7 +755,7 @@ class SupervendorController extends Controller
             case "reports":
 
                 $data = DB::table("view_registrations")
-                        // ->wherenotnull("city")
+                        ->wherenotnull("city")
                         ->get();
 
                 return $data;

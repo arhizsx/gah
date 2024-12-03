@@ -120,6 +120,7 @@ let modal = "#installation_details";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/installations';
 let columns = [
+    'id',
     'campaign', 
     'complete_name', 
     'mobile_number', 

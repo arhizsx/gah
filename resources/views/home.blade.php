@@ -41,7 +41,7 @@
             }
         </style>
         <div class="container-fluid" style="height:auto; margin-top:50px;">
-            @if( \Auth::user()->company != null )
+            @if( \Auth::user()->company == null )
 
             <div class="row">
                 <div class="col mb-2">

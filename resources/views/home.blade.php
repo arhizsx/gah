@@ -229,7 +229,7 @@
                         </div>
                     </div>           
             </div> -->
-
+<!-- 
             <div class="row">
                 <div class="col mb-2">
                     <H1>XIAOMI</H1>
@@ -260,7 +260,7 @@
                         <p>TOTAL</p>
                         </div>
                     </div>           
-            </div>
+            </div> -->
 
             @endif
         </div>

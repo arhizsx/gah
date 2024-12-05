@@ -1,4 +1,4 @@
-<?php         
+<?php 
    $campaign = "GPO";
    $header_banner = "/images/temp.png";
 
@@ -36,7 +36,6 @@
 
     $disclaimer_html = 
     "<p>This offer is subject to the fiber serviceability of your nominated address. The value of this bundle cannot be converted to cash in case of unsuccessful installation. <a target='_blank' href='https://www.globe.com.ph/website-terms-conditions'>Terms and conditions</a> apply.</p>"        
-
 ?>
 
 <!DOCTYPE html>
@@ -81,43 +80,7 @@
     <body  class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
         <div id="registration" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
             <img src="{{ $header_banner }}" width="100%" />
-            <div id="checking">
-                <div class="border rounded-3 p-3 mt-4">
-                    <H4>{{ $title }}</H4>
-                    {!! $numbercheck_html !!}
-                </div>
-                <form id="check_form">
-                    @csrf
-
-                    <input type="hidden"  name="action" id="action" value='numbercheck'>
-                    <input type="hidden"  name="campaign" id="campaign" value='{{ $campaign }}'>
-
-                    <div class="border rounded-3 p-3 mt-4">
-                        <label class="mb-3">{{ $mobile_number_label }}</label>
-                        <div style="font-size: 48px; text-align: center; display: flex; align-items: center; justify-content: center;">
-                            <span style="margin-right: 5px;">+63</span>
-                            <input 
-                                type="text" 
-                                name="cellnumber"
-                                id="cellnumber"
-                                class="form-control" 
-                                style="font-size: 48px; text-align: left; flex: 1;" 
-                                maxlength="10" 
-                                placeholder="9171234567" 
-                                required>
-                        </div>
-                        <p class="mt-3">
-                            {{ $mobile_number_subtext }}
-                        </p>
-                    </div>
-
-                    <div class="d-flex justify-content-between mt-3">
-                        <button class='btn btn-outline-dark'>Clear Form</button>
-                        <button type="submit" class='btn btn-primary action_button' data-action="checker">Next</button>
-                    </div>
-                </form>
-            </div>
-            <div id="registration_allowed" class="d-none">
+            <div id="registration_allowed">
                 <form id="register_form">
                     @csrf
 
@@ -126,6 +89,30 @@
                     <input type="hidden"  name="mobile_number" id="mobile_number" value=''>
                     <input type="hidden"  name="complete_name" id="complete_name" value=''>
 
+                    <div class="border rounded-3 p-3 mt-4">
+                        <H4>{{ $title }}</H4>
+                        {!! $header_html !!}
+                    </div>
+
+                    <div class="border rounded-3 p-3 mt-4">
+                        <label class="mb-3">{{ $mobile_number_label }}</label>
+                        <div style="font-size: 48px; text-align: center; display: flex; align-items: center; justify-content: center;">
+                            <span style="margin-right: 5px;">+63</span>
+                            <input 
+                                type="text" 
+                                name="mobile_number"
+                                id="mobile_number"
+                                class="form-control checker" 
+                                style="font-size: 48px; text-align: left; flex: 1;" 
+                                maxlength="10" 
+                                placeholder="9171234567" 
+                                data-checker="cellnumber"
+                                required>
+                        </div>
+                        <p class="mt-3">
+                            {{ $mobile_number_subtext }}
+                        </p>
+                    </div>
                     <div class="accordion  mt-4" id="information">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
@@ -229,7 +216,7 @@
 
                             <H5 style="font-size: 14px">Privacy Notice</H5>
                             {!! $privacy_html !!}
-                                                        
+                            
                             <div class="form-row">
                                 <div class="form-check">
                                     <input class="form-check-input checker me-3" data-checker="required" type="checkbox" value="" id="agree_policy">
@@ -244,13 +231,7 @@
                         <button class='btn btn-outline-dark'>Clear Form</button>
                         <button type="submit" class='btn btn-primary action_button' data-action="register">Submit</button>
                     </div>
-
                 </form>
-            </div>
-            <div id="registration_not_allowed" class="d-none">
-                <div class="border rounded-3 p-5 mt-4">
-                    {!! $not_allowed_html !!}
-                </div>
             </div>
             <div id="registration_error" class="d-none">
                 <div class="border rounded-3 p-5 mt-4">
@@ -307,18 +288,17 @@
 
 </html>
 <script>
-
+    
     $(document).ready(function(){
         $(document).find("[name='province']").val("").change();
     });
 
-    
     document.addEventListener('DOMContentLoaded', function () {
         // Focus on the input field when the page loads
-        document.querySelector('input[name="cellnumber"]').focus();
+        document.querySelector('input[name="mobile_number"]').focus();
     });
 
-    document.querySelector('input[name="cellnumber"]').addEventListener('input', function (e) {
+    document.querySelector('input[name="mobile_number"]').addEventListener('input', function (e) {
         const input = e.target;
         input.value = input.value.replace(/[^0-9]/g, ''); // Allow only numeric input
         if (input.value.length > 10) {
@@ -330,7 +310,7 @@
 
         e.preventDefault();
 
-        const input = document.querySelector('input[name="cellnumber"]');
+        const input = document.querySelector('input[name="mobile_number"]');
 
         $("#checking").addClass("d-none");
         $("#loading").removeClass("d-none");
@@ -341,7 +321,7 @@
             $("#checking").removeClass("d-none");
             $("#loading").addClass("d-none");
 
-            document.querySelector('input[name="cellnumber"]').focus();
+            document.querySelector('input[name="mobile_number"]').focus();
 
             return; // Prevent submission
 
@@ -360,7 +340,7 @@
                     if( checking.status == 'Allowed' ){
                         $("#registration_allowed").removeClass("d-none");  
 
-                        $(document).find("#mobile_number").val( $(document).find("#cellnumber").val() );
+                        $(document).find("#mobile_number").val( $(document).find("#mobile_number").val() );
 
                         document.querySelector('input[name="firstname"]').focus();
                 
@@ -560,6 +540,21 @@
                     }
 
                 }
+            } 
+            else if( to_check.eq( k ).data("checker") == "cellnumber" ){
+
+
+                if( $(to_check).eq( k ).val().length < 10 ){
+                    $(to_check).eq( k ).css("background","#FFEFEF");
+                    $(to_check).eq( k ).addClass("checker-error");
+                    error_cnt = error_cnt + 1;
+                }
+                else {
+                    $(to_check).eq( k ).css("background","#ffffff");
+                    $(to_check).eq( k ).removeClass("checker-error");
+                }
+
+
             }
 
         } );

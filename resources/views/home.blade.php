@@ -43,7 +43,7 @@
         <div class="container-fluid" style="height:auto; margin-top:50px;">
             @if( \Auth::user()->company == null )
 
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col mb-2">
                     <H1>SAMSUNG</H1>
                 </div>
@@ -135,7 +135,7 @@
                         <p>TOTAL</p>
                         </div>
                     </div>           
-            </div>
+            </div> -->
             <!-- <div class="row">
                 <div class="col mb-2">
                     <H1>POSTPAID</H1>

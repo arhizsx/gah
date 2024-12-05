@@ -13,9 +13,10 @@ class SupervendorController extends Controller
 
     function index(){
 
-        $data = DB::table("view_dashboard")->get();
+        // $data = DB::table("view_dashboard")->get();
 
-        return view("home", ["data" => $data]);
+        // return view("home", ["data" => $data]);
+        return view("home", ["data" => null]);
                 
     }
 

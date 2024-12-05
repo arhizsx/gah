@@ -7,7 +7,7 @@
 
    $title = "FREE GFiber Prepaid for GCash Pera Outlet Retailers";
    
-   $header_html = 
+   $numbercheck_html = 
    "<p>I-claim na ang iyong FREE GFiber Prepaid installation! I-fill out lamang ang form na ito.</p>" . 
    "<H4>What is GFiber Prepaid?</H4>" . 
    "<small>Ano ang GFiber Prepaid?</small>" .

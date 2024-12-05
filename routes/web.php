@@ -52,7 +52,7 @@ Route::get('/retailerexclusive', [CampaignController::class, 'tm']);
 
 
 // POSTPAID CAMPAIGN
-// Route::get('/postpaid', [CampaignController::class, 'postpaid']);
+Route::get('/postpaid', [CampaignController::class, 'postpaid']);
 
 
 // GR+ CAMPAIGN
@@ -67,6 +67,13 @@ Route::get('/GPO', [CampaignController::class, 'gpo']);
 Route::get('/gpo', function(){
     return redirect('/GPO');
 });
+
+// B2B CAMPAIGN
+Route::get('/B2B', [CampaignController::class, 'b2b']);
+Route::get('/b2b', function(){
+    return redirect('/B2B');
+});
+
 
 
 // NUMBER VERIFIER

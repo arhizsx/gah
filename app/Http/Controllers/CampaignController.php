@@ -65,5 +65,14 @@ class CampaignController extends Controller
 
     }
 
+    function b2b(){
+
+        $provinces = DB::table("location_provinces")->get();
+
+        return view('b2b', [ "provinces" => $provinces]);
+
+    }
+
+
 }
 

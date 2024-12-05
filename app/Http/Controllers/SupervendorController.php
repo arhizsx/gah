@@ -1028,6 +1028,9 @@ class SupervendorController extends Controller
         elseif($request->campaign  == 'GPO'){
             $table = "gpo";
         }
+        elseif($request->campaign  == 'B2B'){
+            $table = "b2b";
+        }
         elseif($request->campaign  == 'HPW'){
             $table = "hpw";
         } else {

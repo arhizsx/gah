@@ -58,7 +58,7 @@ class SupervendorController extends Controller
 
         $registrations = DB::table("view_registrations");
 
-        $campaigns = [ "SAMSUNG", "XIAOMI", "REID", "GPO", "HPW", "GR+", "POSTPAID" ];
+        $campaigns = [ "SAMSUNG", "XIAOMI", "REID", "GPO", "HPW", "GR+", "POSTPAID", "ECPAY", "B2B" ];
         $return_data = new Collection();
 
         switch( $action ){
@@ -73,7 +73,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "REID", "GPO", "HPW", "GR+", "POSTPAID"]) == true ){
+                        if(  in_array( $campaign, ["SAMSUNG", "XIAOMI", "REID", "GPO", "HPW", "GR+", "POSTPAID", "ECPAY", "B2B" ]) == true ){
 
                             $data = null;
 
@@ -247,7 +247,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "REID"]) == true ){
+                        if(  in_array( $campaign, ["SAMSUNG", "XIAOMI", "REID", "GPO", "HPW", "GR+", "POSTPAID", "ECPAY", "B2B"]) == true ){
 
                             $data = null;
 
@@ -320,7 +320,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "REID", "GPO", "HPW", "GR+", "POSTPAID"]) == true ){
+                        if(  in_array( $campaign, ["SAMSUNG", "XIAOMI", "REID", "GPO", "HPW", "GR+", "POSTPAID", "ECPAY", "B2B"]) == true ){
 
                             $data = null;
 
@@ -494,7 +494,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if( in_array( $campaign, ["SAMSUNG", "REID", "GPO", "HPW", "GR+", "POSTPAID"]) == true ){
+                        if( in_array( $campaign, ["SAMSUNG", "XIAOMI", "REID", "GPO", "HPW", "GR+", "POSTPAID", "ECPAY", "B2B"]) == true ){
 
                             $data = null;
 
@@ -666,7 +666,7 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "REID", "GPO", "HPW", "GR+", "POSTPAID"]) == true ){
+                        if(  in_array( $campaign, ["SAMSUNG", "XIAOMI", "REID", "GPO", "HPW", "GR+", "POSTPAID", "ECPAY", "B2B"]) == true ){
 
                             $data = null;
 

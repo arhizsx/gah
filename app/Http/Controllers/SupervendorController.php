@@ -13,10 +13,13 @@ class SupervendorController extends Controller
 
     function index(){
 
-        // $data = DB::table("view_dashboard")->get();
+        $data = DB::table("view_dashboard")->get();
+        $campaigns = DB::table("view_dashboard")
+            ->DISTINCT("campaign")
+            ->SELECT("campaign")->get();
 
-        // return view("home", ["data" => $data]);
-        return view("home", ["data" => null]);
+        return view("home", ["data" => $data, "campaigns" => $campaigns]);
+        // return view("home", ["data" => null]);
                 
     }
 

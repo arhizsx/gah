@@ -1,5 +1,5 @@
 <?php 
-   $campaign = "GR+";
+   $campaign = "XIAOMI";
    $header_banner = "/images/xiaomi.jpg";
 
    $mobile_number_label = "Mobile Number";

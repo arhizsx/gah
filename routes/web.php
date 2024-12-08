@@ -38,17 +38,17 @@ Route::post('/samsung/register', [SamsungController::class, 'register']);
 Route::get('/samsung', [CampaignController::class, 'samsung']);
 
 
-// Route::get('/xiaomi', [CampaignController::class, 'xiaomi']);
+Route::get('/xiaomi', [CampaignController::class, 'xiaomi']);
 
 // TM CAMPAIGN
 Route::get('/retailerexclusive', [CampaignController::class, 'tm']);
 
 
 // HPW CAMPAIGN
-// Route::get('/HPW', [CampaignController::class, 'hpw']);
-// Route::get('/hpw', function(){
-    // return redirect('/HPW');
-// });
+Route::get('/HPW', [CampaignController::class, 'hpw']);
+Route::get('/hpw', function(){
+    return redirect('/HPW');
+});
 
 
 // POSTPAID CAMPAIGN

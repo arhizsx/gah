@@ -62,7 +62,7 @@ class SupervendorController extends Controller
 
         $registrations = DB::table("view_registrations");
 
-        $campaigns = [ "SAMSUNG", "XIAOMI", "REID", "GPO", "HPW", "GR+", "POSTPAID", "ECPAY", "B2B" ];
+        $campaigns = [ "SAMSUNG", "XIAOMI", "REID", "GPO", "HPW", "GR+", "POSTPAID", "ECPAY", "B2B", "XIAOMI" ];
         $return_data = new Collection();
 
         switch( $action ){
@@ -77,28 +77,67 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "XIAOMI", "REID", "GPO", "HPW", "GR+", "POSTPAID", "ECPAY", "B2B" ]) == true ){
 
-                            $data = null;
+                        $data = null;
 
-                            if( $access ){
+                        if( $access ){
 
-                                foreach( $access as $u ){
+                            foreach( $access as $u ){
 
 
-                                    $usr = DB::table("users")
-                                            ->where("id", $u->user_id)
-                                            ->first();
+                                $usr = DB::table("users")
+                                        ->where("id", $u->user_id)
+                                        ->first();
 
-                                    if( $u->campaign == $campaign ){
+                                if( $u->campaign == $campaign ){
 
-                                        if( $u->profile == "NSGT" && $u->position == "NSGT"  ){
+                                    if( $u->profile == "NSGT" && $u->position == "NSGT"  ){
 
-                                            $data = DB::table("view_registrations")
-                                                ->whereNotNull("SGT Name")
-                                                ->where("campaign", $campaign)
-                                                ->whereNotnull("city")
-                                                ->whereIn("status", array(
+                                        $data = DB::table("view_registrations")
+                                            ->whereNotNull("SGT Name")
+                                            ->where("campaign", $campaign)
+                                            ->whereNotnull("city")
+                                            ->whereIn("status", array(
+                                            "INSTALLED", 
+                                            "CANCELLED", 
+                                            "DROPPED",
+                                            "Cancelled - Customer Uncontacted and Address Cant Be Located",
+                                            "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                            "Cancelled - Customer Does not want to avail anymore",
+                                            "Cancelled - Permit Access Issue VG / Subdivision / Barangay",
+
+                                            ) )
+                                            ->get();
+
+                                    }
+                                    elseif( $u->profile == "NSGT" && $u->position == "AREA HEAD"  ){
+
+    
+                                        $data = DB::table("view_registrations_2")
+                                            ->whereNotNull("SGT Name")
+                                            ->where("campaign", $campaign)
+                                            ->whereNotnull("city")
+                                            ->where('area_head_email', $usr->email)
+                                            ->whereIn("status", array(
+                                            "INSTALLED", 
+                                            "CANCELLED", 
+                                            "DROPPED",
+                                            "Cancelled - Customer Uncontacted and Address Cant Be Located",
+                                            "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                            "Cancelled - Customer Does not want to avail anymore",
+                                            "Cancelled - Permit Access Issue VG / Subdivision / Barangay",
+
+                                            ) )
+                                            ->get();
+
+                                    }
+                                    else if( $u->profile == "SGT" && $u->position == "SGT"   ){
+
+                                        $data = DB::table("view_registrations")
+                                            ->where("SGT Name", Auth::user()->name)
+                                            ->where("campaign", $campaign)
+                                            ->whereNotnull("city")
+                                            ->whereIn("status", array(
                                                 "INSTALLED", 
                                                 "CANCELLED", 
                                                 "DROPPED",
@@ -106,67 +145,25 @@ class SupervendorController extends Controller
                                                 "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
                                                 "Cancelled - Customer Does not want to avail anymore",
                                                 "Cancelled - Permit Access Issue VG / Subdivision / Barangay",
+                                            ) )
+                                            ->get();
 
-                                                ) )
-                                                ->get();
+                                    }
+                                    else if( $u->profile == "SGT" && $u->position == "CGE"   ){
 
-                                        }
-                                        elseif( $u->profile == "NSGT" && $u->position == "AREA HEAD"  ){
+                                        $data = DB::table("view_registrations_2")
+                                            ->where("campaign", $campaign)             
+                                            ->whereNotnull("city")
+                                            ->where('area_head_email', $usr->email)
+                                            ->where('cge_email', $usr->email)                                  
+                                            ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED",
+                                            "Cancelled - Customer Uncontacted and Address Cant Be Located",
+                                            "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                            "Cancelled - Customer Does not want to avail anymore",
+                                            "Cancelled - Permit Access Issue VG / Subdivision / Barangay",
 
-        
-                                            $data = DB::table("view_registrations_2")
-                                                ->whereNotNull("SGT Name")
-                                                ->where("campaign", $campaign)
-                                                ->whereNotnull("city")
-                                                ->where('area_head_email', $usr->email)
-                                                ->whereIn("status", array(
-                                                "INSTALLED", 
-                                                "CANCELLED", 
-                                                "DROPPED",
-                                                "Cancelled - Customer Uncontacted and Address Cant Be Located",
-                                                "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-                                                "Cancelled - Customer Does not want to avail anymore",
-                                                "Cancelled - Permit Access Issue VG / Subdivision / Barangay",
-
-                                                ) )
-                                                ->get();
-
-                                        }
-                                        else if( $u->profile == "SGT" && $u->position == "SGT"   ){
-
-                                            $data = DB::table("view_registrations")
-                                                ->where("SGT Name", Auth::user()->name)
-                                                ->where("campaign", $campaign)
-                                                ->whereNotnull("city")
-                                                ->whereIn("status", array(
-                                                    "INSTALLED", 
-                                                    "CANCELLED", 
-                                                    "DROPPED",
-                                                    "Cancelled - Customer Uncontacted and Address Cant Be Located",
-                                                    "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-                                                    "Cancelled - Customer Does not want to avail anymore",
-                                                    "Cancelled - Permit Access Issue VG / Subdivision / Barangay",
-                                                ) )
-                                                ->get();
-
-                                        }
-                                        else if( $u->profile == "SGT" && $u->position == "CGE"   ){
-
-                                            $data = DB::table("view_registrations_2")
-                                                ->where("campaign", $campaign)             
-                                                ->whereNotnull("city")
-                                                ->where('area_head_email', $usr->email)
-                                                ->where('cge_email', $usr->email)                                  
-                                                ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED",
-                                                "Cancelled - Customer Uncontacted and Address Cant Be Located",
-                                                "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-                                                "Cancelled - Customer Does not want to avail anymore",
-                                                "Cancelled - Permit Access Issue VG / Subdivision / Barangay",
-
-                                                ) )
-                                                ->get();
-
-                                        }
+                                            ) )
+                                            ->get();
 
                                     }
 
@@ -174,73 +171,14 @@ class SupervendorController extends Controller
 
                             }
 
-                            if( $data != null ){
+                        }
 
-                                $return_data->push(  ...$data );
+                        if( $data != null ){
 
-                            }
+                            $return_data->push(  ...$data );
 
                         }
 
-                        elseif( $campaign == "XIAOMI" ){
-
-                            $data = null;
-
-                            if( $access ){
-
-                                foreach( $access as $u ){
-
-                                    $usr = DB::table("users")
-                                            ->where("id", $u->user_id)
-                                            ->first();
-
-                                    if( $u->campaign == $campaign ){
-
-                                        if( $u->profile == "NSGT"){
-
-                                            $data = DB::table("view_registrations")
-                                                ->whereNotNull("SGT Name")
-                                                ->whereNotnull("city")
-                                                ->where("campaign", $campaign)
-                                                ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED",
-                                                "Cancelled - Customer Uncontacted and Address Cant Be Located",
-                                                "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-                                                "Cancelled - Customer Does not want to avail anymore",
-                                                "Cancelled - Permit Access Issue VG / Subdivision / Barangay",
-
-                                                ) )
-                                                ->get();
-
-                                        }
-                                        else if( $u->profile == "SGT"){
-
-                                            $data = DB::table("view_registrations")
-                                                ->where("SGT Name", Auth::user()->name)
-                                                ->where("campaign", $campaign)
-                                                ->whereNotnull("city")
-                                                ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED",
-                                                "Cancelled - Customer Uncontacted and Address Cant Be Located",
-                                                "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-                                                "Cancelled - Customer Does not want to avail anymore",
-                                                "Cancelled - Permit Access Issue VG / Subdivision / Barangay",
-
-                                                ) )
-                                                ->get();
-
-                                        }
-                                    }
-
-                                }
-
-                            }
-
-                            if( $data != null ){
-
-                                $return_data->push(  ...$data );
-
-                            }
-
-                        }
 
                     }
 
@@ -251,56 +189,25 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "XIAOMI", "REID", "GPO", "HPW", "GR+", "POSTPAID", "ECPAY", "B2B"]) == true ){
 
-                            $data = null;
+                        $data = null;
 
-                            $data = DB::table("view_registrations")
-                                    ->where("campaign", $campaign)
-                                    ->whereNotnull("city")
-                                    ->whereIn("status", array(
-                                        "INSTALLED", "CANCELLED", "DROPPED",
-                                        "Cancelled - Customer Uncontacted and Address Cant Be Located",
-                                        "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-                                        "Cancelled - Customer Does not want to avail anymore",
-                                        "Cancelled - Permit Access Issue VG / Subdivision / Barangay",
-                                        ) )
-                                    ->where( "vendor", Auth::user()->company )
-                                    ->get();
+                        $data = DB::table("view_registrations")
+                                ->where("campaign", $campaign)
+                                ->whereNotnull("city")
+                                ->whereIn("status", array(
+                                    "INSTALLED", "CANCELLED", "DROPPED",
+                                    "Cancelled - Customer Uncontacted and Address Cant Be Located",
+                                    "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                    "Cancelled - Customer Does not want to avail anymore",
+                                    "Cancelled - Permit Access Issue VG / Subdivision / Barangay",
+                                    ) )
+                                ->where( "vendor", Auth::user()->company )
+                                ->get();
 
-                            if( $data != null ){
+                        if( $data != null ){
 
-                                $return_data->push(  ...$data );
-
-                            }
-
-
-                        }
-
-
-                        elseif( $campaign == "XIAOMI" ){
-
-                            $data = null;
-
-                            $data = DB::table("view_registrations")
-                                    ->where("campaign", $campaign)
-                                    ->whereNotnull("city")
-                                    ->whereIn("status", array(
-                                            "INSTALLED", "CANCELLED", "DROPPED",
-                                            "Cancelled - Customer Uncontacted and Address Cant Be Located",
-                                            "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-                                            "Cancelled - Customer Does not want to avail anymore",
-                                            "Cancelled - Permit Access Issue VG / Subdivision / Barangay",
-                                        ) 
-                                    )
-                                    ->where( "vendor", Auth::user()->company )
-                                    ->get();
-
-                            if( $data != null ){
-
-                                $return_data->push(  ...$data );
-
-                            }
+                            $return_data->push(  ...$data );
 
                         }
 
@@ -324,121 +231,69 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "XIAOMI", "REID", "GPO", "HPW", "GR+", "POSTPAID", "ECPAY", "B2B"]) == true ){
+                        $data = null;
 
-                            $data = null;
+                        if( $access ){
 
-                            if( $access ){
+                            foreach( $access as $u ){
 
-                                foreach( $access as $u ){
+                                $usr = DB::table("users")
+                                        ->where("id", $u->user_id)
+                                        ->first();
 
-                                    $usr = DB::table("users")
-                                            ->where("id", $u->user_id)
-                                            ->first();
+                                if( $u->campaign == $campaign ){
 
-                                    if( $u->campaign == $campaign ){
+                                    if( $u->profile == "NSGT" && $u->position == "NSGT"  ){
 
-                                        if( $u->profile == "NSGT" && $u->position == "NSGT"  ){
+                                        $data = DB::table("view_registrations")
+                                            ->whereNotNull("SGT Name")
+                                            ->whereNotnull("city")
+                                            ->where("campaign", $campaign)
+                                            ->whereIn("status", array("ENDORSED") )
+                                            ->get();
 
-                                            $data = DB::table("view_registrations")
-                                                ->whereNotNull("SGT Name")
-                                                ->whereNotnull("city")
-                                                ->where("campaign", $campaign)
-                                                ->whereIn("status", array("ENDORSED") )
-                                                ->get();
+                                    }
+                                    if( $u->profile == "NSGT" && $u->position == "AREA HEAD"  ){
 
-                                        }
-                                        if( $u->profile == "NSGT" && $u->position == "AREA HEAD"  ){
+                                        $data = DB::table("view_registrations_2")
+                                            ->whereNotNull("SGT Name")
+                                            ->whereNotnull("city")
+                                            ->where('area_head_email', $usr->email)                                  
+                                            ->where("campaign", $campaign)
+                                            ->whereIn("status", array("ENDORSED") )
+                                            ->get();
 
-                                            $data = DB::table("view_registrations_2")
-                                                ->whereNotNull("SGT Name")
-                                                ->whereNotnull("city")
-                                                ->where('area_head_email', $usr->email)                                  
-                                                ->where("campaign", $campaign)
-                                                ->whereIn("status", array("ENDORSED") )
-                                                ->get();
+                                    }
+                                    else if( $u->profile == "SGT" && $u->position == "SGT"  ){
 
-                                        }
-                                        else if( $u->profile == "SGT" && $u->position == "SGT"  ){
+                                        $data = DB::table("view_registrations")
+                                            ->where("SGT Name", Auth::user()->name)
+                                            ->where("campaign", $campaign)
+                                            ->whereNotnull("city")
+                                            ->whereIn("status", array("ENDORSED") )
+                                            ->get();
 
-                                            $data = DB::table("view_registrations")
-                                                ->where("SGT Name", Auth::user()->name)
-                                                ->where("campaign", $campaign)
-                                                ->whereNotnull("city")
-                                                ->whereIn("status", array("ENDORSED") )
-                                                ->get();
+                                    }
+                                    else if( $u->profile == "SGT" && $u->position == "CGE"  ){
 
-                                        }
-                                        else if( $u->profile == "SGT" && $u->position == "CGE"  ){
-
-                                            $data = DB::table("view_registrations_2")
-                                                ->where('cge_email', $usr->email)                                  
-                                                ->where("campaign", $campaign)
-                                                ->whereNotnull("city")
-                                                ->whereIn("status", array("") )
-                                                ->get();
-
-                                        }
+                                        $data = DB::table("view_registrations_2")
+                                            ->where('cge_email', $usr->email)                                  
+                                            ->where("campaign", $campaign)
+                                            ->whereNotnull("city")
+                                            ->whereIn("status", array("") )
+                                            ->get();
 
                                     }
 
                                 }
-
-                            }
-
-                            if( $data != null ){
-
-                                $return_data->push(  ...$data );
 
                             }
 
                         }
 
-                        elseif( $campaign == "XIAOMI" ){
+                        if( $data != null ){
 
-                            $data = null;
-
-                            if( $access ){
-
-                                foreach( $access as $u ){
-
-                                    $usr = DB::table("users")
-                                            ->where("id", $u->user_id)
-                                            ->first();
-
-                                    if( $u->campaign == $campaign ){
-
-                                        if( $u->profile == "NSGT"){
-
-                                            $data = DB::table("view_registrations")
-                                                ->whereNotNull("SGT Name")
-                                                ->whereNotnull("city")
-                                                ->where("campaign", $campaign)
-                                                ->whereIn("status", array("REGISTERED") )
-                                                ->get();
-
-                                        }
-                                        else if( $u->profile == "SGT"){
-
-                                            $data = DB::table("view_registrations")
-                                                ->where("SGT Name", Auth::user()->name)
-                                                ->where("campaign", $campaign)
-                                                ->whereNotnull("city")
-                                                ->whereIn("status", array("REGISTERED") )
-                                                ->get();
-
-                                        }
-                                    }
-
-                                }
-
-                            }
-
-                            if( $data != null ){
-
-                                $return_data->push(  ...$data );
-
-                            }
+                            $return_data->push(  ...$data );
 
                         }
 
@@ -498,94 +353,26 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if( in_array( $campaign, ["SAMSUNG", "XIAOMI", "REID", "GPO", "HPW", "GR+", "POSTPAID", "ECPAY", "B2B"]) == true ){
 
-                            $data = null;
+                        $data = null;
 
-                            if( $access ){
+                        if( $access ){
 
-                                foreach( $access as $u ){
+                            foreach( $access as $u ){
 
-                                    $usr = DB::table("users")
-                                            ->where("id", $u->user_id)
-                                            ->first();
+                                $usr = DB::table("users")
+                                        ->where("id", $u->user_id)
+                                        ->first();
 
-                                    if( $u->campaign == $campaign ){
+                                if( $u->campaign == $campaign ){
 
-                                        if( $u->profile == "NSGT" && $u->position == "NSGT"  ){
+                                    if( $u->profile == "NSGT" && $u->position == "NSGT"  ){
 
-                                            $data = DB::table("view_registrations")
-                                                ->whereNotNull("SGT Name")
-                                                ->whereNotnull("city")
-                                                ->where("campaign", $campaign)
-                                                ->whereIn("status", array(
-                                                        "REGISTERED", 
-                                                        "PENDING", 
-                                                        "ENDORSED",
-                                                        "Pending - Customer Availability", 
-                                                        "Pending - SV Capacity Issue", 
-                                                        "Pending - Adverse Weather", 
-                                                        "Pending - Customer Uncontacted", 
-                                                        "Pending - Customer Undecided / On Hold by Subs",
-                                                        "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-                                                        "Pending - OSS / DGT System Issue",
-                                                        "Pending - Permit Access Issue VG / Subdivision / Barangay",
-                                                        ) 
-                                                    )
-                                                ->get();
-
-                                        }
-                                        elseif( $u->profile == "NSGT" && $u->position == "AREA HEAD"  ){
-
-                                            $data = DB::table("view_registrations_2")
-                                                ->whereNotNull("SGT Name")
-                                                ->where('area_head_email', $usr->email)                                  
-                                                ->where("campaign", $campaign)
-                                                ->whereNotnull("city")
-                                                ->whereIn("status", array(
-                                                        "REGISTERED", 
-                                                        "PENDING", 
-                                                        "ENDORSED",
-                                                        "Pending - Customer Availability", 
-                                                        "Pending - SV Capacity Issue", 
-                                                        "Pending - Adverse Weather", 
-                                                        "Pending - Customer Uncontacted", 
-                                                        "Pending - Customer Undecided / On Hold by Subs",
-                                                        "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-                                                        "Pending - OSS / DGT System Issue",
-                                                        "Pending - Permit Access Issue VG / Subdivision / Barangay",
-                                                ) )
-                                                ->get();
-
-                                        }
-                                        else if( $u->profile == "SGT" && $u->position == "SGT"  ){
-
-                                            $data = DB::table("view_registrations")
-                                                ->where("SGT Name", Auth::user()->name)
-                                                ->where("campaign", $campaign)
-                                                ->whereNotnull("city")
-                                                ->whereIn("status", array(
-                                                        "REGISTERED", 
-                                                        "PENDING", 
-                                                        "Pending - Customer Availability", 
-                                                        "Pending - SV Capacity Issue", 
-                                                        "Pending - Adverse Weather", 
-                                                        "Pending - Customer Uncontacted", "ENDORSED",
-                                                        "Pending - Customer Undecided / On Hold by Subs",
-                                                        "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-                                                        "Pending - OSS / DGT System Issue",
-                                                        "Pending - Permit Access Issue VG / Subdivision / Barangay",
-                                                ) )
-                                                ->get();
-
-                                        }
-                                        else if( $u->profile == "SGT" && $u->position == "CGE"  ){
-
-                                            $data = DB::table("view_registrations_2")
-                                                ->where('cge_email', $usr->email)                                  
-                                                ->where("campaign", $campaign)
-                                                ->whereNotnull("city")
-                                                ->whereIn("status", array(
+                                        $data = DB::table("view_registrations")
+                                            ->whereNotNull("SGT Name")
+                                            ->whereNotnull("city")
+                                            ->where("campaign", $campaign)
+                                            ->whereIn("status", array(
                                                     "REGISTERED", 
                                                     "PENDING", 
                                                     "ENDORSED",
@@ -597,67 +384,87 @@ class SupervendorController extends Controller
                                                     "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
                                                     "Pending - OSS / DGT System Issue",
                                                     "Pending - Permit Access Issue VG / Subdivision / Barangay",
-                                                ) )
-                                                ->get();
+                                                    ) 
+                                                )
+                                            ->get();
 
-                                        }
+                                    }
+                                    elseif( $u->profile == "NSGT" && $u->position == "AREA HEAD"  ){
+
+                                        $data = DB::table("view_registrations_2")
+                                            ->whereNotNull("SGT Name")
+                                            ->where('area_head_email', $usr->email)                                  
+                                            ->where("campaign", $campaign)
+                                            ->whereNotnull("city")
+                                            ->whereIn("status", array(
+                                                    "REGISTERED", 
+                                                    "PENDING", 
+                                                    "ENDORSED",
+                                                    "Pending - Customer Availability", 
+                                                    "Pending - SV Capacity Issue", 
+                                                    "Pending - Adverse Weather", 
+                                                    "Pending - Customer Uncontacted", 
+                                                    "Pending - Customer Undecided / On Hold by Subs",
+                                                    "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                                    "Pending - OSS / DGT System Issue",
+                                                    "Pending - Permit Access Issue VG / Subdivision / Barangay",
+                                            ) )
+                                            ->get();
+
+                                    }
+                                    else if( $u->profile == "SGT" && $u->position == "SGT"  ){
+
+                                        $data = DB::table("view_registrations")
+                                            ->where("SGT Name", Auth::user()->name)
+                                            ->where("campaign", $campaign)
+                                            ->whereNotnull("city")
+                                            ->whereIn("status", array(
+                                                    "REGISTERED", 
+                                                    "PENDING", 
+                                                    "Pending - Customer Availability", 
+                                                    "Pending - SV Capacity Issue", 
+                                                    "Pending - Adverse Weather", 
+                                                    "Pending - Customer Uncontacted", "ENDORSED",
+                                                    "Pending - Customer Undecided / On Hold by Subs",
+                                                    "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                                    "Pending - OSS / DGT System Issue",
+                                                    "Pending - Permit Access Issue VG / Subdivision / Barangay",
+                                            ) )
+                                            ->get();
+
+                                    }
+                                    else if( $u->profile == "SGT" && $u->position == "CGE"  ){
+
+                                        $data = DB::table("view_registrations_2")
+                                            ->where('cge_email', $usr->email)                                  
+                                            ->where("campaign", $campaign)
+                                            ->whereNotnull("city")
+                                            ->whereIn("status", array(
+                                                "REGISTERED", 
+                                                "PENDING", 
+                                                "ENDORSED",
+                                                "Pending - Customer Availability", 
+                                                "Pending - SV Capacity Issue", 
+                                                "Pending - Adverse Weather", 
+                                                "Pending - Customer Uncontacted", 
+                                                "Pending - Customer Undecided / On Hold by Subs",
+                                                "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                                "Pending - OSS / DGT System Issue",
+                                                "Pending - Permit Access Issue VG / Subdivision / Barangay",
+                                            ) )
+                                            ->get();
 
                                     }
 
                                 }
-
-                            }
-
-                            if( $data != null ){
-
-                                $return_data->push(  ...$data );
 
                             }
 
                         }
 
-                        elseif( $campaign == "XIAOMI" ){
+                        if( $data != null ){
 
-                            $data = null;
-
-                            if( $access ){
-
-                                foreach( $access as $u ){
-
-
-                                    $usr = DB::table("users")
-                                            ->where("id", $u->user_id)
-                                            ->first();
-
-                                    if( $u->campaign == $campaign ){
-
-                                        if( $u->profile == "NSGT" ){
-
-                                            $data = DB::table("view_registrations")
-                                                ->whereNull("SGT Name")
-                                                ->where("campaign", $campaign)
-                                                ->whereNotnull("city")
-                                                ->whereIn("status", array("REGISTERED") )
-                                                ->get();
-
-                                        }
-                                        else if( $u->profile == "SGT" ){
-
-                                            $data = [];
-
-                                        }
-
-                                    }
-
-                                }
-
-                            }
-
-                            if( $data != null ){
-
-                                $return_data->push(  ...$data );
-
-                            }
+                            $return_data->push(  ...$data );
 
                         }
 
@@ -670,35 +477,17 @@ class SupervendorController extends Controller
 
                     foreach(  $campaigns as $campaign ){
 
-                        if(  in_array( $campaign, ["SAMSUNG", "XIAOMI", "REID", "GPO", "HPW", "GR+", "POSTPAID", "ECPAY", "B2B"]) == true ){
 
-                            $data = null;
+                        $data = null;
 
-                            $data = [];
+                        $data = [];
 
-                            if( $data != null ){
+                        if( $data != null ){
 
-                                $return_data->push(  ...$data );
-
-                            }
-
+                            $return_data->push(  ...$data );
 
                         }
 
-
-                        elseif( $campaign == "XIAOMI" ){
-
-                            $data = null;
-
-                            $data = [];
-
-                            if( $data != null ){
-
-                                $return_data->push(  ...$data );
-
-                            }
-
-                        }
 
                     }
 

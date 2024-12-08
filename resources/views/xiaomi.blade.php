@@ -164,6 +164,10 @@
                                         <input type="text" class="form-control mb-3 checker" data-checker="required" name="zipcode" id="zipcode">
                                     </div>
                                     <div class="form-row">
+                                        <label for="promo_code">Promo Code</label>
+                                        <input type="text" class="form-control mb-3 checker" data-checker="required" name="promo_code" id="promo_code">
+                                    </div>
+                                    <div class="form-row">
                                         <a class="mt-4" target="_blank" href="https://gfiberprepaid.globe.com.ph/serviceability/">Check Address Serviceability</a>
                                     </div>
                                 </div>

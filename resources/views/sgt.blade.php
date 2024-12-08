@@ -408,12 +408,12 @@ function callbackAction(data){
 
     applicationSetImage(data);
 
-    if( data.campaign == "XIAOMI" ){
+    // if( data.campaign == "XIAOMI" ){
 
-        $(document).find("#proof_of_purchase_col").addClass("d-none");
+    //     $(document).find("#proof_of_purchase_col").addClass("d-none");
 
-    }
-    else if( data.campaign == "SAMSUNG" ){
+    // }
+    if( data.campaign == "SAMSUNG" ){
 
     } 
     else {

@@ -48,7 +48,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="card">
-                            <div class="card-header">{{ $pl->project }}</div>
+                            <div class="card-header"><H1>{{ $pl->project }}</H1></div>
                             <div class="card-body">
                                 <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

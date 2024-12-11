@@ -41,43 +41,63 @@
             }
         </style>
         <div class="container-fluid" style="height:auto; margin-top:50px;">
-            @if( \Auth::user()->company == null )
 
-            @foreach($campaigns as $campaign)
-            <div class="row">
-                <div class="col mb-2">
-                    <H1>{{ $campaign->campaign }}</H1>
+            @if( \Auth::user()->id == 1 )
+
+                @foreach($projects_list as $pl )
+
+                <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $pl->project }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
                 </div>
-            </div>
-            <div class="row">
-                @php 
-                    $total = 0;
-                @endphp
-                @foreach( $data as $d )
-                    @if( $d->campaign == $campaign->campaign )
-                        @php 
-                           $total = $total + $d->count; 
-                        @endphp         
-                        <div class="col-md-3 mb-4">
-                            <div class="counter-box">
-                            <i class="bi bi-graph-up"></i>
-                            <h3>{{ $d->count }}</h3>
-                            <p>{{ $d->status }}</p>
-                            </div>
-                        </div>           
-                    @endif
-                @endforeach
-                <div class="col-md-3 mb-4">
-                    <div class="counter-box">
-                    <i class="bi bi-graph-up"></i>
-                    <h3>{{ $total }}</h3>
-                    <p>TOTAL</p>
-                    </div>
-                </div>           
-            </div>
-            @endforeach
+                </div>
 
+                @endforeach
+
+            @else 
+
+                @if( \Auth::user()->company == null )
+                @foreach($campaigns as $campaign)
+                <div class="row">
+                    <div class="col mb-2">
+                        <H1>{{ $campaign->campaign }}</H1>
+                    </div>
+                </div>
+                <div class="row">
+                    @php 
+                        $total = 0;
+                    @endphp
+                    @foreach( $data as $d )
+                        @if( $d->campaign == $campaign->campaign )
+                            @php 
+                            $total = $total + $d->count; 
+                            @endphp         
+                            <div class="col-md-3 mb-4">
+                                <div class="counter-box">
+                                <i class="bi bi-graph-up"></i>
+                                <h3>{{ $d->count }}</h3>
+                                <p>{{ $d->status }}</p>
+                                </div>
+                            </div>           
+                        @endif
+                    @endforeach
+                    <div class="col-md-3 mb-4">
+                        <div class="counter-box">
+                        <i class="bi bi-graph-up"></i>
+                        <h3>{{ $total }}</h3>
+                        <p>TOTAL</p>
+                        </div>
+                    </div>           
+                </div>
+                @endforeach
+
+                @endif
             @endif
+
         </div>
 
     </x-slot>

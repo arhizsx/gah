@@ -53,7 +53,10 @@
                                 @foreach($project_campaigns as $pc)
                                     @if( $pc->project == $pl->project )
                                         <div class="mb-3 border-bottom">
-                                            <H3>{{ $pc->campaign }}</H3>                                        
+                                            @php 
+                                                print_r($pc);
+                                            @endphp 
+                                            <!-- <H3>{{ $pc->campaign }}</H3>                                         -->
                                         </div>
                                     @endif
                                 @endforeach

@@ -56,7 +56,6 @@
                                             @php 
                                                 print_r($pc);
                                             @endphp 
-                                            <!-- <H3>{{ $pc->campaign }}</H3>                                         -->
                                         </div>
                                     @endif
                                 @endforeach

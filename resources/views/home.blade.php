@@ -50,10 +50,13 @@
                         <div class="card">
                             <div class="card-header"><H1>{{ $pl->project }}</H1></div>
                             <div class="card-body">
-                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="card-link">Card link</a>
-                                <a href="#" class="card-link">Another link</a>
+                                @foreach($project_campaigns as $pc)
+                                    @if( $pc->project == $pl->project )
+                                        <div class="mb-3 border-bottom">
+                                            <H3>{{ $pc->campaign }}</H3>                                        
+                                        </div>
+                                    @endif
+                                @endforeach
                             </div>
                         </div>
                     </div>

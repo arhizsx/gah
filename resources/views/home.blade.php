@@ -52,8 +52,30 @@
                             <div class="card-body">
                                 @foreach($project_campaigns as $pc)
                                     @if( $pc->project == $pl->project )
-                                        <div class="mb-3 border-bottom p-3">
+                                        <div class="mb-3 p-3">
                                            <H2 style="font-weight: bold; font-size:1.5em;">{{  $pc->campaign }}</H2>
+                                           <div class="container-fluid">
+                                                <div class="row p-0">
+                                                    <div class="col">
+                                                        <card-subtitle>REGISTERED</card-subtitle>
+                                                    </div>
+                                                    <div class="col">
+                                                        <card-subtitle>PENDING</card-subtitle>
+                                                    </div>
+                                                    <div class="col">
+                                                        <card-subtitle>ENDORSED</card-subtitle>
+                                                    </div>
+                                                    <div class="col">
+                                                        <card-subtitle>INSTALLED`</card-subtitle>
+                                                    </div>
+                                                    <div class="col"> 
+                                                        <card-subtitle>CANCELLED`</card-subtitle>
+                                                    </div>
+                                                    <div class="col"> 
+                                                        <card-subtitle>DROPPED</card-subtitle>
+                                                    </div>
+                                                </div>
+                                           </div>
                                         </div>
                                     @endif
                                 @endforeach

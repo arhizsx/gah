@@ -52,8 +52,8 @@
                             <div class="card-body">
                                 @foreach($project_campaigns as $pc)
                                     @if( $pc->project == $pl->project )
-                                        <div class="mb-3 border-bottom">
-                                           <H3>{{  $pc->campaign }}</H3>
+                                        <div class="mb-3 border-bottom p-3">
+                                           <H2>{{  $pc->campaign }}</H2>
                                         </div>
                                     @endif
                                 @endforeach

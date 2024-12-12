@@ -57,42 +57,96 @@
 
                 @if( \Auth::user()->company == null )
                     <div class="row">
-                    @foreach($projects_list as $pl )
-                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="card mb-3">
-                                <div class="card-header"><H1>{{ $pl->project }}</H1></div>
-                                <div class="card-body">
-                                    @foreach($project_campaigns as $pc)
-                                        @if( $pc->project == $pl->project )
-                                            <div class="mb-3 p-3">
-                                            <H2 style="font-weight: bold; font-size:1.5em;">{{  $pc->alias }}</H2>
-                                            <div class="container-fluid">
-                                                    <div class="row p-0 border">
-                                                        @foreach($types as $t)
+                        <div class="col">
+                            @php 
+                                $allowed = ["AMY", "REID", "CURTIS" ];
+                            @endphp 
+                            @foreach($projects_list as $pl )
 
-                                                        @php 
-                                                            $val = 0;
-                                                            foreach($data as $d){
-                                                                if( $d->campaign == $pc->campaign && $d->status == $t ){
-                                                                    $val = $d->count;
-                                                                }
-                                                            }    
-                                                        @endphp 
-                                                        
-                                                        <div class="col border text-center p-2">
-                                                            <H2 style="font-weight: bold; font-size: 1.4em;" data-campaign="{{  $pc->campaign }}" data-type="{{ $t }}">{{ $val }}</H2>
-                                                            <card-subtitle>{{ $t }}</card-subtitle>
-                                                        </div>
-                                                        @endforeach
+                                @if( in_array($pl->project, $allowed ) )
+                                <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="card mb-3">
+                                        <div class="card-header"><H1>{{ $pl->project }}</H1></div>
+                                        <div class="card-body">
+                                            @foreach($project_campaigns as $pc)
+                                                @if( $pc->project == $pl->project )
+                                                    <div class="mb-3 p-3">
+                                                    <H2 style="font-weight: bold; font-size:1.5em;">{{  $pc->alias }}</H2>
+                                                    <div class="container-fluid">
+                                                            <div class="row p-0 border">
+                                                                @foreach($types as $t)
+
+                                                                @php 
+                                                                    $val = 0;
+                                                                    foreach($data as $d){
+                                                                        if( $d->campaign == $pc->campaign && $d->status == $t ){
+                                                                            $val = $d->count;
+                                                                        }
+                                                                    }    
+                                                                @endphp 
+                                                                
+                                                                <div class="col border text-center p-2">
+                                                                    <H2 style="font-weight: bold; font-size: 1.4em;" data-campaign="{{  $pc->campaign }}" data-type="{{ $t }}">{{ $val }}</H2>
+                                                                    <card-subtitle>{{ $t }}</card-subtitle>
+                                                                </div>
+                                                                @endforeach
+                                                            </div>
                                                     </div>
-                                            </div>
-                                            </div>
-                                        @endif
-                                    @endforeach
+                                                    </div>
+                                                @endif
+                                            @endforeach
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                                @endif
+
+                            @endforeach
                         </div>
-                    @endforeach
+                        <div class="col">
+                            @php 
+                                $allowed = ["DRAKE" ];
+                            @endphp 
+
+                            @if( in_array($pl->project, $allowed ) )
+                                <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="card mb-3">
+                                        <div class="card-header"><H1>{{ $pl->project }}</H1></div>
+                                        <div class="card-body">
+                                            @foreach($project_campaigns as $pc)
+                                                @if( $pc->project == $pl->project )
+                                                    <div class="mb-3 p-3">
+                                                    <H2 style="font-weight: bold; font-size:1.5em;">{{  $pc->alias }}</H2>
+                                                    <div class="container-fluid">
+                                                            <div class="row p-0 border">
+                                                                @foreach($types as $t)
+
+                                                                @php 
+                                                                    $val = 0;
+                                                                    foreach($data as $d){
+                                                                        if( $d->campaign == $pc->campaign && $d->status == $t ){
+                                                                            $val = $d->count;
+                                                                        }
+                                                                    }    
+                                                                @endphp 
+                                                                
+                                                                <div class="col border text-center p-2">
+                                                                    <H2 style="font-weight: bold; font-size: 1.4em;" data-campaign="{{  $pc->campaign }}" data-type="{{ $t }}">{{ $val }}</H2>
+                                                                    <card-subtitle>{{ $t }}</card-subtitle>
+                                                                </div>
+                                                                @endforeach
+                                                            </div>
+                                                    </div>
+                                                    </div>
+                                                @endif
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
+                            
+                        </div>
+
+
                     </div>
 
                 <!-- @foreach($campaigns as $campaign)

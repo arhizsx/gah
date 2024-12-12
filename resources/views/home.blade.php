@@ -56,30 +56,22 @@
                                            <H2 style="font-weight: bold; font-size:1.5em;">{{  $pc->alias }}</H2>
                                            <div class="container-fluid">
                                                 <div class="row p-0 border">
+                                                    @php 
+                                                        $types = [
+                                                            "REGISTERED",
+                                                            "PENDING",
+                                                            "ENDORSED",
+                                                            "INSTALLED",
+                                                            "CANCELLED",
+                                                            "DROPPED";                                                                
+                                                        ];
+                                                    @endphp
+                                                    @foreach($types as $t)
                                                     <div class="col border text-center p-2">
-                                                        <H1 data-campaign="{{  $pc->campaign }}" data-type="REGISTERED">0</H1>
-                                                        <card-subtitle>REGISTERED</card-subtitle>
+                                                        <H1 data-campaign="{{  $pc->campaign }}" data-type="{{ $t }}">0</H1>
+                                                        <card-subtitle>{{ $t }}</card-subtitle>
                                                     </div>
-                                                    <div class="col border text-center p-2">
-                                                        <H1 data-campaign="{{  $pc->campaign }}" data-type="PENDING">0</H1>
-                                                        <card-subtitle>PENDING</card-subtitle>
-                                                    </div>
-                                                    <div class="col border text-center p-2">
-                                                        <H1 data-campaign="{{  $pc->campaign }}" data-type="ENDORSED">0</H1>
-                                                        <card-subtitle>ENDORSED</card-subtitle>
-                                                    </div>
-                                                    <div class="col border text-center p-2">
-                                                        <H1 data-campaign="{{  $pc->campaign }}" data-type="INSTALLED">0</H1>
-                                                        <card-subtitle>INSTALLED`</card-subtitle>
-                                                    </div>
-                                                    <div class="col border text-center p-2">
-                                                        <H1 data-campaign="{{  $pc->campaign }}" data-type="CANCELLED">0</H1>
-                                                        <card-subtitle>CANCELLED`</card-subtitle>
-                                                    </div>
-                                                    <div class="col border text-center p-2">
-                                                        <H1 data-campaign="{{  $pc->campaign }}" data-type="DROPPED">0</H1>
-                                                        <card-subtitle>DROPPED</card-subtitle>
-                                                    </div>
+                                                    @endforeach
                                                 </div>
                                            </div>
                                         </div>

@@ -55,23 +55,23 @@
                                         <div class="mb-3 p-3">
                                            <H2 style="font-weight: bold; font-size:1.5em;">{{  $pc->campaign }}</H2>
                                            <div class="container-fluid">
-                                                <div class="row p-0">
-                                                    <div class="col">
+                                                <div class="row p-0 border">
+                                                    <div class="col border">
                                                         <card-subtitle>REGISTERED</card-subtitle>
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="col border">
                                                         <card-subtitle>PENDING</card-subtitle>
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="col border">
                                                         <card-subtitle>ENDORSED</card-subtitle>
                                                     </div>
-                                                    <div class="col">
+                                                    <div class="col border">
                                                         <card-subtitle>INSTALLED`</card-subtitle>
                                                     </div>
-                                                    <div class="col"> 
+                                                    <div class="col border">
                                                         <card-subtitle>CANCELLED`</card-subtitle>
                                                     </div>
-                                                    <div class="col"> 
+                                                    <div class="col border">
                                                         <card-subtitle>DROPPED</card-subtitle>
                                                     </div>
                                                 </div>

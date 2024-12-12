@@ -1,3 +1,15 @@
+@php 
+    $types = [
+        "REGISTERED",
+        "PENDING",
+        "ENDORSED",
+        "INSTALLED",
+        "CANCELLED",
+        "DROPPED"                                                              
+    ];
+
+@endphp
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
@@ -56,19 +68,19 @@
                                            <H2 style="font-weight: bold; font-size:1.5em;">{{  $pc->alias }}</H2>
                                            <div class="container-fluid">
                                                 <div class="row p-0 border">
-                                                    @php 
-                                                        $types = [
-                                                            "REGISTERED",
-                                                            "PENDING",
-                                                            "ENDORSED",
-                                                            "INSTALLED",
-                                                            "CANCELLED",
-                                                            "DROPPED"                                                              
-                                                        ];
-                                                    @endphp
                                                     @foreach($types as $t)
+
+                                                    @php 
+                                                        $val = 0;
+                                                         foreach($data as $d){
+                                                            if( $d->campaign == $pc->campaign && $d->status == $t ){
+                                                                $val = $d->count;
+                                                            }
+                                                         }    
+                                                    @endphp 
+                                                    
                                                     <div class="col border text-center p-2">
-                                                        <H1 data-campaign="{{  $pc->campaign }}" data-type="{{ $t }}">0</H1>
+                                                        <H1 data-campaign="{{  $pc->campaign }}" data-type="{{ $t }}">{{ $val }}</H1>
                                                         <card-subtitle>{{ $t }}</card-subtitle>
                                                     </div>
                                                     @endforeach

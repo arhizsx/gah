@@ -57,27 +57,27 @@
                                            <div class="container-fluid">
                                                 <div class="row p-0 border">
                                                     <div class="col border text-center p-2">
-                                                        <H1>0</H1>
+                                                        <H1 data-campaign="{{  $pc->campaign }}" data-type="REGISTERED">0</H1>
                                                         <card-subtitle>REGISTERED</card-subtitle>
                                                     </div>
                                                     <div class="col border text-center p-2">
-                                                        <H1>0</H1>
+                                                        <H1 data-campaign="{{  $pc->campaign }}" data-type="PENDING">0</H1>
                                                         <card-subtitle>PENDING</card-subtitle>
                                                     </div>
                                                     <div class="col border text-center p-2">
-                                                        <H1>0</H1>
+                                                        <H1 data-campaign="{{  $pc->campaign }}" data-type="ENDORSED">0</H1>
                                                         <card-subtitle>ENDORSED</card-subtitle>
                                                     </div>
                                                     <div class="col border text-center p-2">
-                                                        <H1>0</H1>
+                                                        <H1 data-campaign="{{  $pc->campaign }}" data-type="INSTALLED">0</H1>
                                                         <card-subtitle>INSTALLED`</card-subtitle>
                                                     </div>
                                                     <div class="col border text-center p-2">
-                                                        <H1>0</H1>
+                                                        <H1 data-campaign="{{  $pc->campaign }}" data-type="CANCELLED">0</H1>
                                                         <card-subtitle>CANCELLED`</card-subtitle>
                                                     </div>
                                                     <div class="col border text-center p-2">
-                                                        <H1>0</H1>
+                                                        <H1 data-campaign="{{  $pc->campaign }}" data-type="DROPPED">0</H1>
                                                         <card-subtitle>DROPPED</card-subtitle>
                                                     </div>
                                                 </div>

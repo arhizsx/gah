@@ -56,22 +56,28 @@
                                            <H2 style="font-weight: bold; font-size:1.5em;">{{  $pc->campaign }}</H2>
                                            <div class="container-fluid">
                                                 <div class="row p-0 border">
-                                                    <div class="col border">
+                                                    <div class="col border text-center p-3">
+                                                        <H1>0</H1>
                                                         <card-subtitle>REGISTERED</card-subtitle>
                                                     </div>
-                                                    <div class="col border">
+                                                    <div class="col border text-center p-3">
+                                                        <H1>0</H1>
                                                         <card-subtitle>PENDING</card-subtitle>
                                                     </div>
                                                     <div class="col border text-center p-3">
+                                                        <H1>0</H1>
                                                         <card-subtitle>ENDORSED</card-subtitle>
                                                     </div>
-                                                    <div class="col border">
+                                                    <div class="col border text-center p-3">
+                                                        <H1>0</H1>
                                                         <card-subtitle>INSTALLED`</card-subtitle>
                                                     </div>
-                                                    <div class="col border">
+                                                    <div class="col border text-center p-3">
+                                                        <H1>0</H1>
                                                         <card-subtitle>CANCELLED`</card-subtitle>
                                                     </div>
-                                                    <div class="col border">
+                                                    <div class="col border text-center p-3">
+                                                        <H1>0</H1>
                                                         <card-subtitle>DROPPED</card-subtitle>
                                                     </div>
                                                 </div>

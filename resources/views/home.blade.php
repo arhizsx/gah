@@ -63,7 +63,7 @@
                                                             "ENDORSED",
                                                             "INSTALLED",
                                                             "CANCELLED",
-                                                            "DROPPED";                                                                
+                                                            "DROPPED"                                                              
                                                         ];
                                                     @endphp
                                                     @foreach($types as $t)

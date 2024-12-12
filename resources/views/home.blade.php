@@ -53,7 +53,7 @@
                                 @foreach($project_campaigns as $pc)
                                     @if( $pc->project == $pl->project )
                                         <div class="mb-3 p-3">
-                                           <H2 style="font-weight: bold; font-size:1.5em;">{{  $pc->campaign }}</H2>
+                                           <H2 style="font-weight: bold; font-size:1.5em;">{{  $pc->alias }}</H2>
                                            <div class="container-fluid">
                                                 <div class="row p-0 border">
                                                     <div class="col border text-center p-2">

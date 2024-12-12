@@ -47,7 +47,7 @@
                 @foreach($projects_list as $pl )
                 <div class="row">
                     <div class="col">
-                        <div class="card">
+                        <div class="card mb-3">
                             <div class="card-header"><H1>{{ $pl->project }}</H1></div>
                             <div class="card-body">
                                 @foreach($project_campaigns as $pc)

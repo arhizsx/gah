@@ -56,10 +56,9 @@
 
 
                 @if( \Auth::user()->company == null )
-
-                    @foreach($projects_list as $pl )
                     <div class="row">
-                        <div class="col">
+                    @foreach($projects_list as $pl )
+                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="card mb-3">
                                 <div class="card-header"><H1>{{ $pl->project }}</H1></div>
                                 <div class="card-body">
@@ -93,8 +92,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                     @endforeach
+                    </div>
 
                 <!-- @foreach($campaigns as $campaign)
                 <div class="row">

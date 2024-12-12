@@ -80,7 +80,7 @@
                                                         @endphp 
                                                         
                                                         <div class="col border text-center p-2">
-                                                            <H2 data-campaign="{{  $pc->campaign }}" data-type="{{ $t }}">{{ $val }}</H2>
+                                                            <H2 style="font-weight: bold; font-size: 1.2em;" data-campaign="{{  $pc->campaign }}" data-type="{{ $t }}">{{ $val }}</H2>
                                                             <card-subtitle>{{ $t }}</card-subtitle>
                                                         </div>
                                                         @endforeach

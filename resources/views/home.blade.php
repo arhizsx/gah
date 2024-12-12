@@ -108,7 +108,7 @@
                             @endphp 
 
                             @if( in_array($pl->project, $allowed ) )
-                                <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="col">
                                     <div class="card mb-3">
                                         <div class="card-header"><H1>{{ $pl->project }}</H1></div>
                                         <div class="card-body">

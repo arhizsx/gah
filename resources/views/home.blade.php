@@ -62,7 +62,7 @@
                                                     <div class="col border">
                                                         <card-subtitle>PENDING</card-subtitle>
                                                     </div>
-                                                    <div class="col border">
+                                                    <div class="col border text-center p-3">
                                                         <card-subtitle>ENDORSED</card-subtitle>
                                                     </div>
                                                     <div class="col border">

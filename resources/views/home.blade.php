@@ -57,7 +57,7 @@
 
                 @if( \Auth::user()->company == null )
                     <div class="row">
-                        <div class="col">
+                        <div class="col-xl-6">
                             @php 
                                 $allowed = ["AMY", "REID", "CURTIS" ];
                             @endphp 
@@ -102,7 +102,7 @@
 
                             @endforeach
                         </div>
-                        <div class="col">
+                        <div class="col-xl-6">
                             @php 
                                 $allowed = ["DRAKE" ];
                             @endphp 

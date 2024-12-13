@@ -872,30 +872,13 @@ class SupervendorController extends Controller
 
     function doRegistration( $data, $request ){
 
-        // Upload Attached Documents
-        try{
 
-            // Upload path
-            $destinationPath = 'files/';
+        $result = $this->storeFile( $data, $request );
 
-            // Cycle all uploaded files
-            foreach( $request->file() as $f => $k ){
+        if( $result["error"] == true ){
 
-                if( $request->hasFile( $f )) {
+            return response()->json( ['error' => true, 'message' => $result["message"] ] );
 
-                    $extension = $request->file( $f )->getClientOriginalExtension();
-                    $fileName = $f . '-' . rand( time() , 1000 ) . '-' . $request->file( $f )->getClientOriginalName();
-
-                    // Uploading file to given path
-                    $request->file( $f)->move($destinationPath, $fileName);
-
-                    $data[ $f ] = $fileName;
-
-                }
-            }
-
-        } catch (\Throwable $th) {
-            return response()->json(['error' => true, 'message' => $th->getMessage()]);
         }
 
         $vendor = $this->getVendor($request->province, $request->city);
@@ -939,6 +922,38 @@ class SupervendorController extends Controller
         ]);
 
         return ["error" => false, "registration" => $registration ];
+
+    }
+
+    function storeFile( $data, $request ){
+
+        // Upload Attached Documents
+        try{
+
+            // Upload path
+            $destinationPath = 'files/';
+
+            // Cycle all uploaded files
+            foreach( $request->file() as $f => $k ){
+
+                if( $request->hasFile( $f )) {
+
+                    $extension = $request->file( $f )->getClientOriginalExtension();
+                    $fileName = $f . '-' . rand( time() , 1000 ) . '-' . $request->file( $f )->getClientOriginalName();
+
+                    // Uploading file to given path
+                    $request->file( $f)->move($destinationPath, $fileName);
+
+                    $data[ $f ] = $fileName;
+
+                }
+            }
+
+        } catch (\Throwable $th) {
+            return ['error' => true, 'message' => $th->getMessage()];
+        }
+
+        return [ "error" => false, "data" => $data ];
 
     }
 

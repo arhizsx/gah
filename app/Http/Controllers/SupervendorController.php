@@ -873,12 +873,12 @@ class SupervendorController extends Controller
     function doRegistration( $data, $request ){
 
 
-        $result = $this->storeFile( $data, $request );
+        $result = storeFile( $data, $request );
 
         if( $result["error"] == true ){
-
             return response()->json( ['error' => true, 'message' => $result["message"] ] );
-
+        } else {
+            $data = $result["data"];
         }
 
         $vendor = $this->getVendor($request->province, $request->city);

@@ -902,6 +902,7 @@ class SupervendorController extends Controller
 
         $sgt_name = null;
         $sgt_email = null;
+        $status = "REGISTERED";
 
 
         if( count( $vendor ) == 1 ){
@@ -910,6 +911,7 @@ class SupervendorController extends Controller
 
             $sgt_name = $vendor[0]->sgt_name;
             $sgt_email = $vendor[0]->sgt_email;
+            $status = "ENDORSED";
 
         }
         elseif( count( $vendor ) > 1 ){
@@ -926,6 +928,7 @@ class SupervendorController extends Controller
         $registration = CampaignRegistration::create([
             "campaign" => $request->campaign,
             "user_id" => null,
+            "status" => $status,
             "vendor" => $supervendor,
             "sgt_name" => $sgt_name,
             "sgt_email" => $sgt_email,

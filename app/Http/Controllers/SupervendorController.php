@@ -911,7 +911,10 @@ class SupervendorController extends Controller
 
             $sgt_name = $vendor[0]->sgt_name;
             $sgt_email = $vendor[0]->sgt_email;
-            $status = "ENDORSED";
+
+            if( $request->campaign != 'SAMSUNG' ){
+                $status = "ENDORSED";
+            }
 
         }
         elseif( count( $vendor ) > 1 ){

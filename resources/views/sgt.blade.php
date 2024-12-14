@@ -222,7 +222,7 @@ let columns = [
     {
         dataField: 'mobile_number',
         caption: 'Mobile No',
-        width: '200',
+        width: '150',
         cellTemplate(container, options) {
             if (options.data != null)  {
 

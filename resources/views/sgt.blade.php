@@ -214,7 +214,7 @@ let columns = [
                             "word-wrap": "break-word", // Breaks long words
                             "overflow": "visible",     // No overflow restriction
                         })
-                        .append(`${options.data.province} `)
+                        .append(`${options.data.complete_name} `)
                         .appendTo(container);
             }
         },

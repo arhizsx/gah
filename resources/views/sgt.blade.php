@@ -271,7 +271,24 @@ let columns = [
         caption: "House Flr / Bldg",
         visible: false,
     },
-    'vendor', 
+    {
+        dataField: 'vendor',
+        caption: 'Vendor',
+        width: '250',
+        cellTemplate(container, options) {
+            if (options.data != null)  {
+
+                $('<div>')
+                        .css({
+                            "white-space": "normal",  // Allows wrapping to new lines
+                            "word-wrap": "break-word", // Breaks long words
+                            "overflow": "visible",     // No overflow restriction
+                        })
+                        .append(`${options.data.vendor} `)
+                        .appendTo(container);
+            }
+        },
+    },
     'SGT Name', 
     {
         dataField: 'status',

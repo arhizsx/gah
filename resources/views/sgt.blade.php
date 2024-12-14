@@ -226,7 +226,7 @@ let columns = [
         dataField: 'status',
         caption: 'Status',
         cellTemplate(container, options) {
-            if (options.data.data != null)  {
+            if (options.data != null)  {
 
                 $('<div>')
                         .css({

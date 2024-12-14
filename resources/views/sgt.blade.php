@@ -201,7 +201,24 @@ let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/sgt';
 let columns = [
     'campaign', 
-    'complete_name', 
+    {
+        dataField: 'complete_name',
+        caption: 'Complete Name',
+        width: '250',
+        cellTemplate(container, options) {
+            if (options.data != null)  {
+
+                $('<div>')
+                        .css({
+                            "white-space": "normal",  // Allows wrapping to new lines
+                            "word-wrap": "break-word", // Breaks long words
+                            "overflow": "visible",     // No overflow restriction
+                        })
+                        .append(`${options.data.province} `)
+                        .appendTo(container);
+            }
+        },
+    },
     'mobile_number', 
     {
         dataField: 'province',

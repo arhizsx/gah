@@ -203,8 +203,42 @@ let columns = [
     'campaign', 
     'complete_name', 
     'mobile_number', 
-    'province', 
-    'city', 
+    {
+        dataField: 'province',
+        caption: 'Province',
+        width: '250',
+        cellTemplate(container, options) {
+            if (options.data != null)  {
+
+                $('<div>')
+                        .css({
+                            "white-space": "normal",  // Allows wrapping to new lines
+                            "word-wrap": "break-word", // Breaks long words
+                            "overflow": "visible",     // No overflow restriction
+                        })
+                        .append(`${options.data.province} `)
+                        .appendTo(container);
+            }
+        },
+    },
+    {
+        dataField: 'city',
+        caption: 'City',
+        width: '250',
+        cellTemplate(container, options) {
+            if (options.data != null)  {
+
+                $('<div>')
+                        .css({
+                            "white-space": "normal",  // Allows wrapping to new lines
+                            "word-wrap": "break-word", // Breaks long words
+                            "overflow": "visible",     // No overflow restriction
+                        })
+                        .append(`${options.data.city} `)
+                        .appendTo(container);
+            }
+        },
+    },
     {
         dataField: "street",
         caption: "Street",

@@ -225,6 +225,7 @@ let columns = [
     {
         dataField: 'status',
         caption: 'Status',
+        width: '250',
         cellTemplate(container, options) {
             if (options.data != null)  {
 

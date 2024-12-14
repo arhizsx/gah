@@ -302,7 +302,7 @@ let columns = [
                             "word-wrap": "break-word", // Breaks long words
                             "overflow": "visible",     // No overflow restriction
                         })
-                        .append(`${options.data.['SGT Name']} `)
+                        .append(`${options.data['SGT Name']} `)
                         .appendTo(container);
             }
         },

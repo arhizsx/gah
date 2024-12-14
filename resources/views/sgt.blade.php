@@ -222,7 +222,24 @@ let columns = [
     },
     'vendor', 
     'SGT Name', 
-    'status', 
+    {
+        dataField: 'status',
+        caption: 'Status',
+        cellTemplate(container, options) {
+            if (options.data.data != null)  {
+
+                $('<div>')
+                        .css({
+                            "white-space": "normal",  // Allows wrapping to new lines
+                            "word-wrap": "break-word", // Breaks long words
+                            "overflow": "visible",     // No overflow restriction
+                        })
+                        .append(`${options.data.status} `)
+                        .appendTo(container);
+            }
+        },
+    },
+
     'Registration Date', 
     'Last Update', 
     "Aging",

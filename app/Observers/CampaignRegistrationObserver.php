@@ -23,48 +23,12 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
 
         Log::info("cretated " . json_encode($campaignRegistration));
 
-        // ////////////////
-        //    SAMSUNG
-        // ////////////////
-        if( $campaignRegistration->campaign == "SAMSUNG" ){
+        $no_sgt = ["NSGT"];
+        $with_sgt = ["SGT"];
+        $mode = "new";
 
-            $no_sgt = ["NSGT"];
-            $with_sgt = ["SGT"];
-            $mode = "new";
+        $this->sender( $campaignRegistration, $no_sgt, $with_sgt, $mode );
 
-            $this->sender( $campaignRegistration, $no_sgt, $with_sgt, $mode );
-
-        }
-
-        // ////////////////
-        //     XIAOMI
-        // ////////////////
-        elseif( $campaignRegistration->campaign == "XIAOMI" ){
-
-
-
-            $no_sgt = ["NSGT"];
-            $with_sgt = ["SGT", "SV"];
-            $mode = "new";
-
-            $this->sender( $campaignRegistration, $no_sgt, $with_sgt, $mode );
-
-        }
-
-        // ////////////////
-        //     XIAOMI
-        // ////////////////
-        elseif( $campaignRegistration->campaign == "REID" ){
-
-
-
-            $no_sgt = ["NSGT"];
-            $with_sgt = ["SGT", "SV"];
-            $mode = "new";
-
-            $this->sender( $campaignRegistration, $no_sgt, $with_sgt, $mode );
-
-        }
     }
 
     /**

@@ -56,10 +56,10 @@ Route::get('/postpaid', [CampaignController::class, 'postpaid']);
 
 
 // GR+ CAMPAIGN
-// Route::get('/GR+', [CampaignController::class, 'grplus']);
-// Route::get('/gr+', function(){
-    // return redirect('/GR+');
-// });
+Route::get('/GR+', [CampaignController::class, 'grplus']);
+Route::get('/gr+', function(){
+    return redirect('/GR+');
+});
 
 
 // GPO CAMPAIGN

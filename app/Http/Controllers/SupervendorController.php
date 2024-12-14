@@ -619,84 +619,89 @@ class SupervendorController extends Controller
 
                 return ["error"=> false, "registration" => $registration];
 
+            break;
+
+            case "application_pending":
+
+                return $this->pending($request);
+
+            break;
+
+            case "Pending - Customer Availability":
+
+                return $this->pending($request);
+
+            break;
+
+            case "Pending - SV Capacity Issue":
+
+                return $this->pending($request);
+
+            break;
+
+            case "Pending - Adverse Weather":
+
+                return $this->pending($request);
                 break;
 
-                case "application_pending":
+            break;
 
-                    return $this->pending($request);
+            case "Pending - Customer Uncontacted":
 
-                break;
+                return $this->pending($request);
+            break;
 
-                case "Pending - Customer Availability":
+            case "Pending - Customer Undecided / On Hold by Subs":
 
-                    return $this->pending($request);
+                return $this->pending($request);
+            break;
 
-                break;
+            case "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)":
 
-                case "Pending - SV Capacity Issue":
+                return $this->pending($request);
+            break;
 
-                    return $this->pending($request);
+            case "Pending - OSS / DGT System Issue":
 
-                    break;
+                return $this->pending($request);
+            
+            break;
 
-                case "Pending - Adverse Weather":
+            case "Pending - Permit Access Issue VG / Subdivision / Barangay":
 
-                    return $this->pending($request);
-                    break;
+                return $this->pending($request);
+            
+            break;
 
-                break;
+            case "Pending - Permit Access Issue VG / Subdivision / Barangay":
 
-                case "Pending - Customer Uncontacted":
+                return $this->pending($request);
 
-                    return $this->pending($request);
-                    break;
+            break;
 
-                case "Pending - Customer Undecided / On Hold by Subs":
+            case "Cancelled - Customer Uncontacted and Address Cant Be Located":
 
-                    return $this->pending($request);
-                    break;
+                return $this->pending($request);
 
-                case "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)":
+            break;
 
-                    return $this->pending($request);
-                    break;
+            case "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)":
 
-                case "Pending - OSS / DGT System Issue":
+                return $this->pending($request);
 
-                    return $this->pending($request);
-                    break;
+            break;
 
-                case "Pending - Permit Access Issue VG / Subdivision / Barangay":
+            case "Cancelled - Customer Does not want to avail anymore":
 
-                    return $this->pending($request);
-                    break;
-    
-                case "Pending - Permit Access Issue VG / Subdivision / Barangay":
+                return $this->pending($request);
+            break;
 
-                    return $this->pending($request);
-                    break;
-    
-                case "Cancelled - Customer Uncontacted and Address Cant Be Located":
+            case "Cancelled - Permit Access Issue VG / Subdivision / Barangay":
 
-                    return $this->pending($request);
-                    break;
-    
-                case "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)":
+                return $this->pending($request);
+            break;
 
-                    return $this->pending($request);
-                    break;
-
-                case "Cancelled - Customer Does not want to avail anymore":
-
-                    return $this->pending($request);
-                    break;
-
-                case "Cancelled - Permit Access Issue VG / Subdivision / Barangay":
-
-                    return $this->pending($request);
-                    break;
-
-                case "application_dropped":
+            case "application_dropped":
 
                 $registration = CampaignRegistration::where("id", $request->id);
                 $registration_data = $registration->first();
@@ -716,6 +721,34 @@ class SupervendorController extends Controller
 
                     $registration->update([
                         "status" => 'DROPPED',
+                    ]);
+
+                }
+
+                return ["error"=> false, "registration" => $registration];
+
+            break;
+
+            case "change_status":
+
+            $registration = CampaignRegistration::where("id", $request->id);
+                $registration_data = $registration->first();
+
+                if( $registration_data ){
+
+                    $registration_data = json_decode($registration_data->data,true);
+
+                    $registration_data["remarks"] = $request->remarks;
+
+                    $registration->update([
+                        "status" => $request->new_status,
+                        "data" => $registration_data
+                    ]);
+
+                } else {
+
+                    $registration->update([
+                        "status" => $request->new_status,
                     ]);
 
                 }
@@ -783,35 +816,36 @@ class SupervendorController extends Controller
         }
 
     }
-    function doTMCheck( $data, $request ){
 
-        $tm = DB::table("tm")
-                ->where("cellnumber", $request->cellnumber)
-                ->first();
+    // function doTMCheck( $data, $request ){
 
-        if( $tm ){
+    //     $tm = DB::table("tm")
+    //             ->where("cellnumber", $request->cellnumber)
+    //             ->first();
 
-            $registrations = DB::table("view_registrations_2")
-                                ->where("mobile_number", $request->cellnumber)
-                                ->where("campaign", "REID")
-                                ->get();
+    //     if( $tm ){
 
-            if(count($registrations) > 0 ) {
-                $status = "Multiple";
-            } else {
-                $status = "Allowed";
-            }
+    //         $registrations = DB::table("view_registrations_2")
+    //                             ->where("mobile_number", $request->cellnumber)
+    //                             ->where("campaign", "REID")
+    //                             ->get();
 
-        } else {
-            $status = "NotAllowed";
-        }
+    //         if(count($registrations) > 0 ) {
+    //             $status = "Multiple";
+    //         } else {
+    //             $status = "Allowed";
+    //         }
+
+    //     } else {
+    //         $status = "NotAllowed";
+    //     }
 
 
-        return [
-            "error" => false,
-            "status" => $status,
-        ];
-    }
+    //     return [
+    //         "error" => false,
+    //         "status" => $status,
+    //     ];
+    // }
 
     function doNumberCheck( $data, $request ){
 

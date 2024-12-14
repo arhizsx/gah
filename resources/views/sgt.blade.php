@@ -219,7 +219,24 @@ let columns = [
             }
         },
     },
-    'mobile_number', 
+    {
+        dataField: 'mobile_number',
+        caption: 'Mobile No',
+        width: '200',
+        cellTemplate(container, options) {
+            if (options.data != null)  {
+
+                $('<div>')
+                        .css({
+                            "white-space": "normal",  // Allows wrapping to new lines
+                            "word-wrap": "break-word", // Breaks long words
+                            "overflow": "visible",     // No overflow restriction
+                        })
+                        .append(`${options.data.mobile_number} `)
+                        .appendTo(container);
+            }
+        },
+    },
     {
         dataField: 'province',
         caption: 'Province',

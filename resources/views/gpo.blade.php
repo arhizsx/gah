@@ -12,6 +12,12 @@
    "<H4>What is GFiber Prepaid?</H4>" . 
    "<small>Ano ang GFiber Prepaid?</small>" .
    "<p>Ang GFiber Prepaid ay reloadable UNLI fiber internet na up to 100 Mbps. Walang docs required at monthly bills -- mag-load lang kapag kailangan! </p>" . 
+   "<H4>Ano ang kasama sa GFiber Prepaid?</H4>" .
+   "<p>Kasama na ang libreng installation fee + modem (worth P999), at FREE 7 days UNLI INTERNET (worth P199)</p>" .
+   "<H4>Ilang devices ang pwedeng mag-connect?</H4>" .
+   "<p>Recommended up to 6 devices.</p>" .
+   "<H4>Gaano kabilis ang GFiber Prepaid Internet?</H4>" .
+   "<p>Pwedeng umabot ng up to 100Mbps o up to 50Mbps — speed mo, choice mo! Maraming promo options na available for as low as ₱199 for 7 days.</p>" .
    "<H4>Reminders:</H4>" . 
    "<ul>" . 
        "<li>Ang offer na ito ay para sa select GCash Pera Outlet Retailers lamang. Subject to validation</li>" . 

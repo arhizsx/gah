@@ -1,20 +1,21 @@
 <?php 
    $campaign = "GR+";
-   $header_banner = "/images/temp.png";
+   $header_banner = "/images/globenew.png";
 
    $mobile_number_label = "GR+ Member's mobile number";
    $mobile_number_subtext = "Use the mobile number associated with your Globe Rewards+ account. Only selected Globe Rewards+ customers are eligible for this offer. (Example: +639171234567)";
 
-   $title = "Exclusive FREE GFiber Prepaid for being a Globe Rewards+ member!";
+   $title = "Get Free Php999 installation on your GFiber Prepaid Installation";
    
    $numbercheck_html = 
    "<p>Please fill out this form to claim your free GFiber Prepaid Installation!</p>" . 
    "<H4>What is GFiber Prepaid?</H4>" . 
    "<p>GFiber Prepaid offers reloadable UNLI fiber internet speeds up to 100Mbps. No monthly bills - reload only when you need to!</p>" . 
+   "<p>To gain access to more instant perks, priority care and next-level experience go to Globe Rewards+ via GlobeOne" . 
    "<H4>Reminders:</H4>" . 
    "<ul>" . 
        "<li>This offer is for selected GR+ members, subject to validation</li>" . 
-       "<li>Subject to fiber serviceability in your area</li>" . 
+       "<li>Subject to fiber serviceability in your area selected qualified Globe Rewards+ members, subject to validation</li>" . 
        "<li>Expect an SMS confirmation regarding your application within 2 working days</li>" . 
    "</ul>";
 

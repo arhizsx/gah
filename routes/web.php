@@ -56,9 +56,9 @@ Route::get('/postpaid', [CampaignController::class, 'postpaid']);
 
 
 // GR+ CAMPAIGN
-Route::get('/GRP', [CampaignController::class, 'grplus']);
-Route::get('/grp', function(){
-    return redirect('/GRP');
+Route::get('/GRPlus', [CampaignController::class, 'grplus']);
+Route::get('/grplus', function(){
+    return redirect('/GRPlus');
 });
 
 

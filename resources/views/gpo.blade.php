@@ -1,6 +1,6 @@
 <?php         
    $campaign = "GPO";
-   $header_banner = "/images/temp.png";
+   $header_banner = "/images/globenew.png";
 
    $mobile_number_label = "Mobile number with registered GCash Pera Outlet";
    $mobile_number_subtext = "Gamitin and mobile number na registered as your GCash Pera Outlet account. Only selected GCash Pera Outlet customers are eligible for this offer. (Example: +639171234567).";

@@ -26,7 +26,7 @@
    "</ul>";
 
    $not_allowed_html = 
-   "<H5>Oops, the number you entered isn’t eligible for this exclusive promo. But no worries! You can still apply for GFiber Prepaid here: https://gfiberprepaid.globe.com.ph/</a></H5>";
+   "<H5>Oops, the number you entered isn’t eligible for this exclusive promo. But no worries! You can still apply for GFiber Prepaid here: <a href='https://gfiberprepaid.globe.com.ph/'>https://gfiberprepaid.globe.com.ph/</a></H5>";
 
    $error_html = 
     "<H5>Oops, an error occured... Please retry again later...</H5>";

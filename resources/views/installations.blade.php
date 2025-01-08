@@ -126,6 +126,7 @@ let columns = [
         visible: true,
     },
     'campaign', 
+    'source', 
     'complete_name', 
     'mobile_number', 
     'province', 

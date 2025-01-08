@@ -63,7 +63,7 @@ class SupervendorController extends Controller
             ->get();
 
 
-        $registrations = DB::table("view_registrations");
+        $registrations = DB::table("view_registrations_3");
 
         $campaigns = [ "SAMSUNG", "XIAOMI", "REID", "GPO", "HPW", "GR+", "POSTPAID", "ECPAY", "B2B" ];
         $return_data = new Collection();
@@ -96,7 +96,7 @@ class SupervendorController extends Controller
 
                                     if( $u->profile == "NSGT" && $u->position == "NSGT"  ){
 
-                                        $data = DB::table("view_registrations")
+                                        $data = DB::table("view_registrations_3")
                                             ->whereNotNull("SGT Name")
                                             ->where("campaign", $campaign)
                                             ->whereNotnull("city")
@@ -136,7 +136,7 @@ class SupervendorController extends Controller
                                     }
                                     else if( $u->profile == "SGT" && $u->position == "SGT"   ){
 
-                                        $data = DB::table("view_registrations")
+                                        $data = DB::table("view_registrations_3")
                                             ->where("SGT Name", Auth::user()->name)
                                             ->where("campaign", $campaign)
                                             ->whereNotnull("city")
@@ -195,7 +195,7 @@ class SupervendorController extends Controller
 
                         $data = null;
 
-                        $data = DB::table("view_registrations")
+                        $data = DB::table("view_registrations_3")
                                 ->where("campaign", $campaign)
                                 ->whereNotnull("city")
                                 ->whereIn("status", array(
@@ -248,7 +248,7 @@ class SupervendorController extends Controller
 
                                     if( $u->profile == "NSGT" && $u->position == "NSGT"  ){
 
-                                        $data = DB::table("view_registrations")
+                                        $data = DB::table("view_registrations_3")
                                             ->whereNotNull("SGT Name")
                                             ->whereNotnull("city")
                                             ->where("campaign", $campaign)
@@ -269,7 +269,7 @@ class SupervendorController extends Controller
                                     }
                                     else if( $u->profile == "SGT" && $u->position == "SGT"  ){
 
-                                        $data = DB::table("view_registrations")
+                                        $data = DB::table("view_registrations_3")
                                             ->where("SGT Name", Auth::user()->name)
                                             ->where("campaign", $campaign)
                                             ->whereNotnull("city")
@@ -312,7 +312,7 @@ class SupervendorController extends Controller
 
                         $data = null;
 
-                        $data = DB::table("view_registrations")
+                        $data = DB::table("view_registrations_3")
                                 ->where("campaign", $campaign)
                                 ->whereNotnull("city")
                                 ->whereIn("status", array(
@@ -371,7 +371,7 @@ class SupervendorController extends Controller
 
                                     if( $u->profile == "NSGT" && $u->position == "NSGT"  ){
 
-                                        $data = DB::table("view_registrations")
+                                        $data = DB::table("view_registrations_3")
                                             ->whereNotNull("SGT Name")
                                             ->whereNotnull("city")
                                             ->where("campaign", $campaign)
@@ -417,7 +417,7 @@ class SupervendorController extends Controller
                                     }
                                     else if( $u->profile == "SGT" && $u->position == "SGT"  ){
 
-                                        $data = DB::table("view_registrations")
+                                        $data = DB::table("view_registrations_3")
                                             ->where("SGT Name", Auth::user()->name)
                                             ->where("campaign", $campaign)
                                             ->whereNotnull("city")
@@ -527,7 +527,7 @@ class SupervendorController extends Controller
                 }
 
 
-                $data = DB::table("view_registrations")
+                $data = DB::table("view_registrations_3")
                         ->wherenotnull("city")
                         ->whereIn("campaign", $active_campaigns)
                         ->get();
@@ -537,7 +537,7 @@ class SupervendorController extends Controller
                 
             case "reports":
 
-                $data = DB::table("view_registrations")
+                $data = DB::table("view_registrations_3")
                         ->wherenotnull("city")
                         ->get();
 

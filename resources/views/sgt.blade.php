@@ -201,6 +201,7 @@ let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/sgt';
 let columns = [
     'campaign', 
+    'source', 
     {
         dataField: 'complete_name',
         caption: 'Complete Name',

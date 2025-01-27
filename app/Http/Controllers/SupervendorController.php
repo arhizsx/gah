@@ -252,7 +252,22 @@ class SupervendorController extends Controller
                                             ->whereNotNull("SGT Name")
                                             ->whereNotnull("city")
                                             ->where("campaign", $campaign)
-                                            ->whereIn("status", array("ENDORSED") )
+                                            ->whereIn("status", array(
+                                                "ENDORSED",
+                                                "REGISTERED", 
+                                                "PENDING", 
+                                                "ENDORSED",
+                                                "Pending - Customer Availability", 
+                                                "Pending - SV Capacity Issue", 
+                                                "Pending - Adverse Weather", 
+                                                "Pending - Customer Uncontacted", 
+                                                "Pending - Customer Undecided / On Hold by Subs",
+                                                "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                                "Pending - OSS / DGT System Issue",
+                                                "Pending - Permit Access Issue VG / Subdivision / Barangay",
+                                                ) 
+                                            )
+
                                             ->get();
 
                                     }
@@ -263,7 +278,21 @@ class SupervendorController extends Controller
                                             ->whereNotnull("city")
                                             ->where('area_head_email', $usr->email)                                  
                                             ->where("campaign", $campaign)
-                                            ->whereIn("status", array("ENDORSED") )
+                                            ->whereIn("status", array(
+                                                "ENDORSED",
+                                                "REGISTERED", 
+                                                "PENDING", 
+                                                "ENDORSED",
+                                                "Pending - Customer Availability", 
+                                                "Pending - SV Capacity Issue", 
+                                                "Pending - Adverse Weather", 
+                                                "Pending - Customer Uncontacted", 
+                                                "Pending - Customer Undecided / On Hold by Subs",
+                                                "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                                "Pending - OSS / DGT System Issue",
+                                                "Pending - Permit Access Issue VG / Subdivision / Barangay",
+                                                ) 
+                                            )
                                             ->get();
 
                                     }
@@ -273,7 +302,21 @@ class SupervendorController extends Controller
                                             ->where("SGT Name", Auth::user()->name)
                                             ->where("campaign", $campaign)
                                             ->whereNotnull("city")
-                                            ->whereIn("status", array("ENDORSED") )
+                                            ->whereIn("status", array(
+                                                "ENDORSED",
+                                                "REGISTERED", 
+                                                "PENDING", 
+                                                "ENDORSED",
+                                                "Pending - Customer Availability", 
+                                                "Pending - SV Capacity Issue", 
+                                                "Pending - Adverse Weather", 
+                                                "Pending - Customer Uncontacted", 
+                                                "Pending - Customer Undecided / On Hold by Subs",
+                                                "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                                "Pending - OSS / DGT System Issue",
+                                                "Pending - Permit Access Issue VG / Subdivision / Barangay",
+                                                ) 
+                                            )
                                             ->get();
 
                                     }
@@ -283,7 +326,21 @@ class SupervendorController extends Controller
                                             ->where('cge_email', $usr->email)                                  
                                             ->where("campaign", $campaign)
                                             ->whereNotnull("city")
-                                            ->whereIn("status", array("") )
+                                            ->whereIn("status", array(
+                                                "ENDORSED",
+                                                "REGISTERED", 
+                                                "PENDING", 
+                                                "ENDORSED",
+                                                "Pending - Customer Availability", 
+                                                "Pending - SV Capacity Issue", 
+                                                "Pending - Adverse Weather", 
+                                                "Pending - Customer Uncontacted", 
+                                                "Pending - Customer Undecided / On Hold by Subs",
+                                                "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                                "Pending - OSS / DGT System Issue",
+                                                "Pending - Permit Access Issue VG / Subdivision / Barangay",
+                                                ) 
+                                            )
                                             ->get();
 
                                     }

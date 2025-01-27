@@ -16,8 +16,6 @@
             </div>
         </div>
     </x-slot>
-
-
 </x-app-layout>
 
 <!-- Modal -->
@@ -129,17 +127,15 @@
 
                 @if( \Auth::user()->company == null )
 
-                <button type="button" class="btn btn-success btn-action" data-user_mode="gt" data-action="application_endorsed" data-confirm="yes" data-id="">Endorse to SV</button>
                 <button type="button" class="btn btn-warning btn-action" data-user_mode="gt" data-action="application_pending" data-confirm="yes" data-id="">Pending</button>
-                <button type="button" class="btn btn-danger btn-action" data-user_mode="gt" data-action="application_dropped" data-confirm="yes" data-id="">Drop</button>
-
                 <button type="button" class="btn btn-dark btn-action" data-user_mode="gt" data-action="application_cancelled" data-confirm="yes" data-id="">Cancelled</button>
                 <button type="button" class="btn btn-primary btn-action" data-user_mode="gt" data-action="application_installed" data-confirm="yes" data-id="">Installed</button>
 
                 @else 
 
-                <!-- <button type="button" class="btn btn-dark btn-action" data-user_mode="vendor" data-action="application_cancelled" data-confirm="yes" data-id="">Cancelled</button>
-                <button type="button" class="btn btn-primary btn-action" data-user_mode="vendor" data-action="application_installed" data-confirm="yes" data-id="">Installed</button> -->
+                <button type="button" class="btn btn-warning btn-action" data-user_mode="vendor" data-action="application_pending" data-confirm="yes" data-id="">Pending</button>
+                <button type="button" class="btn btn-dark btn-action" data-user_mode="vendor" data-action="application_cancelled" data-confirm="yes" data-id="">Cancelled</button>
+                <button type="button" class="btn btn-primary btn-action" data-user_mode="vendor" data-action="application_installed" data-confirm="yes" data-id="">Installed</button>
 
                 @endif
 
@@ -198,82 +194,14 @@
 let svar = "sample variable 101";
 let modal = "#application_details";
 let datagrid = "#gridContainer";
-let datasource = '/supervendor/data/sgt';
+let datasource = '/supervendor/data/applications';
 let columns = [
     'campaign', 
     'source', 
-    {
-        dataField: 'complete_name',
-        caption: 'Complete Name',
-        width: '250',
-        cellTemplate(container, options) {
-            if (options.data != null)  {
-
-                $('<div>')
-                        .css({
-                            "white-space": "normal",  // Allows wrapping to new lines
-                            "word-wrap": "break-word", // Breaks long words
-                            "overflow": "visible",     // No overflow restriction
-                        })
-                        .append(`${options.data.complete_name} `)
-                        .appendTo(container);
-            }
-        },
-    },
-    {
-        dataField: 'mobile_number',
-        caption: 'Mobile No',
-        width: '150',
-        cellTemplate(container, options) {
-            if (options.data != null)  {
-
-                $('<div>')
-                        .css({
-                            "white-space": "normal",  // Allows wrapping to new lines
-                            "word-wrap": "break-word", // Breaks long words
-                            "overflow": "visible",     // No overflow restriction
-                        })
-                        .append(`${options.data.mobile_number} `)
-                        .appendTo(container);
-            }
-        },
-    },
-    {
-        dataField: 'province',
-        caption: 'Province',
-        width: '250',
-        cellTemplate(container, options) {
-            if (options.data != null)  {
-
-                $('<div>')
-                        .css({
-                            "white-space": "normal",  // Allows wrapping to new lines
-                            "word-wrap": "break-word", // Breaks long words
-                            "overflow": "visible",     // No overflow restriction
-                        })
-                        .append(`${options.data.province} `)
-                        .appendTo(container);
-            }
-        },
-    },
-    {
-        dataField: 'city',
-        caption: 'City',
-        width: '250',
-        cellTemplate(container, options) {
-            if (options.data != null)  {
-
-                $('<div>')
-                        .css({
-                            "white-space": "normal",  // Allows wrapping to new lines
-                            "word-wrap": "break-word", // Breaks long words
-                            "overflow": "visible",     // No overflow restriction
-                        })
-                        .append(`${options.data.city} `)
-                        .appendTo(container);
-            }
-        },
-    },
+    'complete_name', 
+    'mobile_number', 
+    'province', 
+    'city', 
     {
         dataField: "street",
         caption: "Street",
@@ -289,61 +217,9 @@ let columns = [
         caption: "House Flr / Bldg",
         visible: false,
     },
-    {
-        dataField: 'vendor',
-        caption: 'Vendor',
-        width: '250',
-        cellTemplate(container, options) {
-            if (options.data != null)  {
-
-                $('<div>')
-                        .css({
-                            "white-space": "normal",  // Allows wrapping to new lines
-                            "word-wrap": "break-word", // Breaks long words
-                            "overflow": "visible",     // No overflow restriction
-                        })
-                        .append(`${options.data.vendor} `)
-                        .appendTo(container);
-            }
-        },
-    },
-    {
-        dataField: 'SGT Name',
-        caption: 'SGT Name',
-        width: '200',
-        cellTemplate(container, options) {
-            if (options.data != null)  {
-
-                $('<div>')
-                        .css({
-                            "white-space": "normal",  // Allows wrapping to new lines
-                            "word-wrap": "break-word", // Breaks long words
-                            "overflow": "visible",     // No overflow restriction
-                        })
-                        .append(`${options.data['SGT Name']} `)
-                        .appendTo(container);
-            }
-        },
-    },
-    {
-        dataField: 'status',
-        caption: 'Status',
-        width: '250',
-        cellTemplate(container, options) {
-            if (options.data != null)  {
-
-                $('<div>')
-                        .css({
-                            "white-space": "normal",  // Allows wrapping to new lines
-                            "word-wrap": "break-word", // Breaks long words
-                            "overflow": "visible",     // No overflow restriction
-                        })
-                        .append(`${options.data.status} `)
-                        .appendTo(container);
-            }
-        },
-    },
-
+    'vendor', 
+    'SGT Name', 
+    'status', 
     'Registration Date', 
     'Last Update', 
     "Aging",
@@ -542,7 +418,24 @@ function callbackAction(data){
     }
 
 
-    var show_vendor = [];
+    var show_vendor = [
+        "REGISTERED", 
+        "PENDING", 
+        "DROPPED", 
+        "ENDORSED",
+        "Pending - Customer Availability", 
+        "Pending - SV Capacity Issue", 
+        "Pending - Adverse Weather", 
+        "Pending - Customer Uncontacted", 
+        "Pending - Customer Undecided / On Hold by Subs",
+        "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+        "Pending - OSS / DGT System Issue",
+        "Pending - Permit Access Issue VG / Subdivision / Barangay",
+        "Cancelled - Customer Uncontacted and Address Cant Be Located",
+        "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+        "Cancelled - Customer Does not want to avail anymore",
+        "Cancelled - Permit Access Issue VG / Subdivision / Barangay",
+    ];
     var vendor_btns = $(document).find(modal).find(".btn-action[data-user_mode='vendor']");
 
     if( $.inArray( data.status, show_vendor ) >= 0){

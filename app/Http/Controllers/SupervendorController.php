@@ -246,7 +246,6 @@ class SupervendorController extends Controller
 
                                 if( $u->campaign == $campaign ){
 
-                                    if( $u->profile == "NSGT" && $u->position == "NSGT"  ){
 
                                         $data = DB::table("view_registrations_3")
                                             ->whereNotNull("SGT Name")
@@ -270,80 +269,6 @@ class SupervendorController extends Controller
 
                                             ->get();
 
-                                    }
-                                    if( $u->profile == "NSGT" && $u->position == "AREA HEAD"  ){
-
-                                        $data = DB::table("view_registrations_3")
-                                            ->whereNotNull("SGT Name")
-                                            ->whereNotnull("city")
-                                            ->where('area_head_email', $usr->email)                                  
-                                            ->where("campaign", $campaign)
-                                            ->whereIn("status", array(
-                                                "ENDORSED",
-                                                "REGISTERED", 
-                                                "PENDING", 
-                                                "ENDORSED",
-                                                "Pending - Customer Availability", 
-                                                "Pending - SV Capacity Issue", 
-                                                "Pending - Adverse Weather", 
-                                                "Pending - Customer Uncontacted", 
-                                                "Pending - Customer Undecided / On Hold by Subs",
-                                                "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-                                                "Pending - OSS / DGT System Issue",
-                                                "Pending - Permit Access Issue VG / Subdivision / Barangay",
-                                                ) 
-                                            )
-                                            ->get();
-
-                                    }
-                                    else if( $u->profile == "SGT" && $u->position == "SGT"  ){
-
-                                        $data = DB::table("view_registrations_3")
-                                            ->where("SGT Name", Auth::user()->name)
-                                            ->where("campaign", $campaign)
-                                            ->whereNotnull("city")
-                                            ->whereIn("status", array(
-                                                "ENDORSED",
-                                                "REGISTERED", 
-                                                "PENDING", 
-                                                "ENDORSED",
-                                                "Pending - Customer Availability", 
-                                                "Pending - SV Capacity Issue", 
-                                                "Pending - Adverse Weather", 
-                                                "Pending - Customer Uncontacted", 
-                                                "Pending - Customer Undecided / On Hold by Subs",
-                                                "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-                                                "Pending - OSS / DGT System Issue",
-                                                "Pending - Permit Access Issue VG / Subdivision / Barangay",
-                                                ) 
-                                            )
-                                            ->get();
-
-                                    }
-                                    else if( $u->profile == "SGT" && $u->position == "CGE"  ){
-
-                                        $data = DB::table("view_registrations_3")
-                                            ->where('cge_email', $usr->email)                                  
-                                            ->where("campaign", $campaign)
-                                            ->whereNotnull("city")
-                                            ->whereIn("status", array(
-                                                "ENDORSED",
-                                                "REGISTERED", 
-                                                "PENDING", 
-                                                "ENDORSED",
-                                                "Pending - Customer Availability", 
-                                                "Pending - SV Capacity Issue", 
-                                                "Pending - Adverse Weather", 
-                                                "Pending - Customer Uncontacted", 
-                                                "Pending - Customer Undecided / On Hold by Subs",
-                                                "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-                                                "Pending - OSS / DGT System Issue",
-                                                "Pending - Permit Access Issue VG / Subdivision / Barangay",
-                                                ) 
-                                            )
-                                            ->get();
-
-                                    }
 
                                 }
 

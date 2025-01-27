@@ -28,10 +28,12 @@
                         {{ __('Home') }}
                     </x-nav-link>
                     @if(Auth::user()->company == null)
-                        @if($access)
-                        <x-nav-link :href="route('sgt')" :active="request()->routeIs('sgt')">
-                            {{ __('SGT') }}
-                        </x-nav-link>
+                        @if( in_array(Auth::user()->id, array( 1, 2, 4 ))  ) 
+                            @if($access)
+                            <x-nav-link :href="route('sgt')" :active="request()->routeIs('sgt')">
+                                {{ __('SGT') }}
+                            </x-nav-link>
+                            @endif
                         @endif
                     @endif
                     <x-nav-link :href="route('applications')" :active="request()->routeIs('applications')">

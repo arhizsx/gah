@@ -304,7 +304,7 @@ let columns = [
     },
     {
         dataField: 'SGT Name',
-        caption: 'SGT Name',
+        caption: 'Area Head',
         width: '200',
         cellTemplate(container, options) {
             if (options.data != null)  {

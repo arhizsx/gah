@@ -43,34 +43,17 @@ let columns = [
         visible: false,
     },
     'vendor', 
-    'SGT Name', 
+    {
+        dataField: 'SGT Name',
+        caption: "Area Head",
+        visible: false,
+    },
     'status', 
     'Registration Date', 
     'Last Update', 
     "schedule_date", 
     "Aging",
     "remarks",
-    {
-        dataField: "area_head_name",
-        caption: "Area Head",
-        visible: false,
-    },
-    {
-        dataField: "area_head_email",
-        caption: "Area Head Email",
-        visible: false,
-    },
-    {
-        dataField: "cge_name",
-        caption: "CGE",
-        visible: false,
-    },
-    {
-        dataField: "cge_email",
-        caption: "CGE Email",
-        visible: false,
-    }
-
 ];
 
 $(() => {

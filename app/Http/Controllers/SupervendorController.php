@@ -266,7 +266,7 @@ class SupervendorController extends Controller
                                                 "Pending - Permit Access Issue VG / Subdivision / Barangay",
                                                 ) 
                                             )
-
+                                            ->orderBy("id","desc")
                                             ->get();
 
 
@@ -309,6 +309,7 @@ class SupervendorController extends Controller
                                     "Pending - Permit Access Issue VG / Subdivision / Barangay",                                
                                 ))
                                 ->where( "vendor", Auth::user()->company )
+                                ->orderBy("id","desc")
                                 ->get();
 
                         if( $data != null ){

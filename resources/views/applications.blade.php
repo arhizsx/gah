@@ -128,20 +128,15 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
                 @if( \Auth::user()->company == null )
-
                 <button type="button" class="btn btn-success btn-action" data-user_mode="gt" data-action="application_endorsed" data-confirm="yes" data-id="">Endorse to SV</button>
+                @endif
+
                 <button type="button" class="btn btn-warning btn-action" data-user_mode="gt" data-action="application_pending" data-confirm="yes" data-id="">Pending</button>
                 <button type="button" class="btn btn-danger btn-action" data-user_mode="gt" data-action="application_dropped" data-confirm="yes" data-id="">Drop</button>
 
                 <button type="button" class="btn btn-dark btn-action" data-user_mode="gt" data-action="application_cancelled" data-confirm="yes" data-id="">Cancelled</button>
                 <button type="button" class="btn btn-primary btn-action" data-user_mode="gt" data-action="application_installed" data-confirm="yes" data-id="">Installed</button>
 
-                @else 
-
-                <!-- <button type="button" class="btn btn-dark btn-action" data-user_mode="vendor" data-action="application_cancelled" data-confirm="yes" data-id="">Cancelled</button>
-                <button type="button" class="btn btn-primary btn-action" data-user_mode="vendor" data-action="application_installed" data-confirm="yes" data-id="">Installed</button> -->
-
-                @endif
 
             </div>
         </div>

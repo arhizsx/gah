@@ -102,12 +102,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                @if( \Auth::user()->company == null )
-
                 <button type="button" class="btn btn-primary btn-action" data-user_mode="gt" data-action="application_registered" data-id="">Back to Registered</button>
-                
-                @endif 
-
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>

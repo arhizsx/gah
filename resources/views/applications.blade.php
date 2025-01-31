@@ -516,6 +516,8 @@ function callbackAction(data){
         $(document).find(".attach_box").addClass("d-none");
     }
 
+    console.log(data);
+
 
     var show_vendor = [];
     var vendor_btns = $(document).find(modal).find(".btn-action[data-user_mode='vendor']");

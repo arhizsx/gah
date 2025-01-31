@@ -78,7 +78,7 @@ Route::get('/b2b', function(){
 // GlobePrepaid CAMPAIGN
 Route::get('/GlobePrepaid', [CampaignController::class, 'globeprepaid']);
 Route::get('/globeprepaid', function(){
-    return redirect('/GRPlus');
+    return redirect('/GlobePrepaid');
 });
 
 

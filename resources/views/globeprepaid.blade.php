@@ -1,28 +1,27 @@
 <?php 
    $campaign = "GLOBE PREPAID";
-   $header_banner = "/images/globenew.png";
+   $header_banner = "/images/temp.png";
 
-   $mobile_number_label = "Globe Prepaid mobile number";
-   $mobile_number_subtext = "Use the mobile number associated with your Globe Prepaid. Only selected Globe Prepaid subscribers are eligible for this offer. (Example: +639171234567)";
+   $mobile_number_label = "Globe Prepaid Mobile Number";
+   $mobile_number_subtext = "Enter your Globe Prepaid Mobile Number to check eligibility for this offer.";
 
-   $title = "Get Free installation on your GFiber Prepaid (Worth Php999)";
+   $title = "FREE GFiber Prepaid for our Home Prepaid WiFi Customers";
    
    $numbercheck_html = 
    "<p>Please fill out this form to claim your free GFiber Prepaid Installation!</p>" . 
    "<H4>What is GFiber Prepaid?</H4>" . 
    "<p>GFiber Prepaid offers reloadable UNLI fiber internet speeds up to 100Mbps. No monthly bills - reload only when you need to!</p>" . 
-   "<p>To gain access to more instant perks, priority care and next-level experience go to Globe Rewards+ via GlobeOne" . 
    "<H4>Reminders:</H4>" . 
    "<ul>" . 
-       "<li>This offer is for selected Globe Prepaid subscribers, subject to validation</li>" . 
-       "<li>Subject to fiber serviceability in your area selected qualified Globe Prepaid subscriber, subject to validation</li>" . 
+       "<li>This offer is for selected Home Prepaid WiFi customers</li>" . 
+       "<li>Subject to fiber serviceability in your area</li>" . 
        "<li>Expect an SMS confirmation regarding your application within 2 working days</li>" . 
    "</ul>";
 
    $not_allowed_html = 
-   "<H5>Oops, the number you entered isn’t eligible for this exclusive promo. But no worries! You can still apply for GFiber Prepaid here: <a href='https://gfiberprepaid.globe.com.ph/'>https://gfiberprepaid.globe.com.ph/</a></H5>";
+   "<H5>Oops, the number you entered isn’t eligible for this exclusive promo. But no worries! You can still apply for GFiber Prepaid here: <a href='https://gfiberprepaid.globe.com.ph'>https://gfiberprepaid.globe.com.ph/</a></H5>";
 
-   $error_html = 
+    $error_html = 
     "<H5>Oops, an error occured... Please retry again later...</H5>";
 
     $submitted_html = 
@@ -35,10 +34,11 @@
     "<p>Please confirm that all details are correct before submitting. Proceed?</p>";
 
     $privacy_html = 
-    "<p>By completing and submitting this form, I allow GLOBE to collect and process the personal data I will provide to claim my free GFiber Prepaid installation as a GoEarn or GP-TM Raket retailer in accordance with the <a target='_blank' href='https://www.globe.com.ph/privacy-policy'>Privacy Policy of Globe.</a></p>";
+    "<p>By completing and submitting this form, I allow GLOBE to collect and process the personal data I will provide to claim my free GFiber Prepaid installation in accordance with the <a target='_blank' href='https://www.globe.com.ph/privacy-policy'>Privacy Policy of Globe.</a></p>";
 
     $disclaimer_html = 
-    "<p>This offer is subject to the fiber serviceability of your nominated address. The value of this bundle cannot be converted to cash in case of unsuccessful installation. <a target='_blank' href='https://www.globe.com.ph/website-terms-conditions'>Terms and conditions</a> apply.</p>"        
+    "<p>This offer is subject to the fiber serviceability of your nominated address. The value of this bundle cannot be converted to cash in case of unsuccessful installation. <a target='_blank' href='https://www.globe.com.ph/website-terms-conditions'>Terms and conditions</a> apply.</p>"
+
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +83,43 @@
     <body  class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
         <div id="registration" style="max-width: 640px; min-width: 400px; margin-left: auto; margin-right: auto;">
             <img src="{{ $header_banner }}" width="100%" />
-            <div id="registration_allowed">
+            <div id="checking">
+                <div class="border rounded-3 p-3 mt-4">
+                    <H4>{{ $title }}</H4>
+                    {!! $numbercheck_html !!}
+                </div>
+                <form id="check_form">
+                    @csrf
+
+                    <input type="hidden"  name="action" id="action" value='numbercheck'>
+                    <input type="hidden"  name="campaign" id="campaign" value='{{ $campaign }}'>
+
+                    <div class="border rounded-3 p-3 mt-4">
+                        <label class="mb-3">{{ $mobile_number_label }}</label>
+                        <div style="font-size: 48px; text-align: center; display: flex; align-items: center; justify-content: center;">
+                            <span style="margin-right: 5px;">+63</span>
+                            <input 
+                                type="text" 
+                                name="cellnumber"
+                                id="cellnumber"
+                                class="form-control" 
+                                style="font-size: 48px; text-align: left; flex: 1;" 
+                                maxlength="10" 
+                                placeholder="9171234567" 
+                                required>
+                        </div>
+                        <p class="mt-3">
+                            {{ $mobile_number_subtext }}
+                        </p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-3">
+                        <button class='btn btn-outline-dark'>Clear Form</button>
+                        <button type="submit" class='btn btn-primary action_button' data-action="checker">Next</button>
+                    </div>
+                </form>
+            </div>
+            <div id="registration_allowed" class="d-none">
                 <form id="register_form">
                     @csrf
 
@@ -92,30 +128,6 @@
                     <input type="hidden"  name="mobile_number" id="mobile_number" value=''>
                     <input type="hidden"  name="complete_name" id="complete_name" value=''>
 
-                    <div class="border rounded-3 p-3 mt-4">
-                        <H4>{{ $title }}</H4>
-                        {!! $numbercheck_html !!}
-                    </div>
-
-                    <div class="border rounded-3 p-3 mt-4">
-                        <label class="mb-3">{{ $mobile_number_label }}</label>
-                        <div style="font-size: 48px; text-align: center; display: flex; align-items: center; justify-content: center;">
-                            <span style="margin-right: 5px;">+63</span>
-                            <input 
-                                type="text" 
-                                name="mobile_number"
-                                id="mobile_number"
-                                class="form-control checker" 
-                                style="font-size: 48px; text-align: left; flex: 1;" 
-                                maxlength="10" 
-                                placeholder="9171234567" 
-                                data-checker="cellnumber"
-                                required>
-                        </div>
-                        <p class="mt-3">
-                            {{ $mobile_number_subtext }}
-                        </p>
-                    </div>
                     <div class="accordion  mt-4" id="information">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
@@ -214,7 +226,7 @@
                         </div>
                         <div class="border rounded-3 p-3 mt-4" style="font-size: 10px">
 
-                            <H5 style="font-size: 14px">Disclaimer</H5>
+                        <H5 style="font-size: 14px">Disclaimer</H5>
                             {!! $disclaimer_html !!} 
 
                             <H5 style="font-size: 14px">Privacy Notice</H5>
@@ -234,7 +246,13 @@
                         <button class='btn btn-outline-dark'>Clear Form</button>
                         <button type="submit" class='btn btn-primary action_button' data-action="register">Submit</button>
                     </div>
+
                 </form>
+            </div>
+            <div id="registration_not_allowed" class="d-none">
+                <div class="border rounded-3 p-5 mt-4">
+                    {!! $not_allowed_html !!}
+                </div>
             </div>
             <div id="registration_error" class="d-none">
                 <div class="border rounded-3 p-5 mt-4">
@@ -291,17 +309,18 @@
 
 </html>
 <script>
-    
+
     $(document).ready(function(){
         $(document).find("[name='province']").val("").change();
     });
 
+    
     document.addEventListener('DOMContentLoaded', function () {
         // Focus on the input field when the page loads
-        document.querySelector('input[name="mobile_number"]').focus();
+        document.querySelector('input[name="cellnumber"]').focus();
     });
 
-    document.querySelector('input[name="mobile_number"]').addEventListener('input', function (e) {
+    document.querySelector('input[name="cellnumber"]').addEventListener('input', function (e) {
         const input = e.target;
         input.value = input.value.replace(/[^0-9]/g, ''); // Allow only numeric input
         if (input.value.length > 10) {
@@ -313,7 +332,7 @@
 
         e.preventDefault();
 
-        const input = document.querySelector('input[name="mobile_number"]');
+        const input = document.querySelector('input[name="cellnumber"]');
 
         $("#checking").addClass("d-none");
         $("#loading").removeClass("d-none");
@@ -324,7 +343,7 @@
             $("#checking").removeClass("d-none");
             $("#loading").addClass("d-none");
 
-            document.querySelector('input[name="mobile_number"]').focus();
+            document.querySelector('input[name="cellnumber"]').focus();
 
             return; // Prevent submission
 
@@ -343,7 +362,7 @@
                     if( checking.status == 'Allowed' ){
                         $("#registration_allowed").removeClass("d-none");  
 
-                        $(document).find("#mobile_number").val( $(document).find("#mobile_number").val() );
+                        $(document).find("#mobile_number").val( $(document).find("#cellnumber").val() );
 
                         document.querySelector('input[name="firstname"]').focus();
                 
@@ -543,21 +562,6 @@
                     }
 
                 }
-            } 
-            else if( to_check.eq( k ).data("checker") == "cellnumber" ){
-
-
-                if( $(to_check).eq( k ).val().length < 10 ){
-                    $(to_check).eq( k ).css("background","#FFEFEF");
-                    $(to_check).eq( k ).addClass("checker-error");
-                    error_cnt = error_cnt + 1;
-                }
-                else {
-                    $(to_check).eq( k ).css("background","#ffffff");
-                    $(to_check).eq( k ).removeClass("checker-error");
-                }
-
-
             }
 
         } );

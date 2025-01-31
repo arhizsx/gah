@@ -516,7 +516,12 @@ function callbackAction(data){
         $(document).find(".attach_box").addClass("d-none");
     }
 
-    console.log(data);
+
+    if(data.vendor == "" || data.vendor == "%MULTI_VENDORS%"){
+        console.log("Hide Buttons");
+    } else {
+        console.log("Show Buttons");
+    }
 
 
     var show_vendor = [];

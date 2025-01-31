@@ -73,6 +73,13 @@ class CampaignController extends Controller
 
     }
 
+    function globeprepaid(){
+
+        $provinces = DB::table("location_provinces")->get();
+
+        return view('globeprepaid', [ "provinces" => $provinces]);
+
+    }
 
 }
 

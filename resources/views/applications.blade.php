@@ -504,11 +504,6 @@ function callbackAction(data){
 
     applicationSetImage(data);
 
-    // if( data.campaign == "XIAOMI" ){
-
-    //     $(document).find("#proof_of_purchase_col").addClass("d-none");
-
-    // }
     if( data.campaign == "SAMSUNG" ){
 
     } 
@@ -521,45 +516,10 @@ function callbackAction(data){
         console.log("Hide Buttons");
     } else {
         console.log("Show Buttons");
+
     }
 
 
-    var show_vendor = [];
-    var vendor_btns = $(document).find(modal).find(".btn-action[data-user_mode='vendor']");
-
-    if( $.inArray( data.status, show_vendor ) >= 0){
-        vendor_btns.removeClass("d-none");
-    } else {
-        vendor_btns.addClass("d-none");
-    }
-
-
-
-    var show_gt = [
-        "REGISTERED", 
-        "PENDING", 
-        "DROPPED", 
-        "ENDORSED",
-        "Pending - Customer Availability", 
-        "Pending - SV Capacity Issue", 
-        "Pending - Adverse Weather", 
-        "Pending - Customer Uncontacted", 
-        "Pending - Customer Undecided / On Hold by Subs",
-        "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-        "Pending - OSS / DGT System Issue",
-        "Pending - Permit Access Issue VG / Subdivision / Barangay",
-        "Cancelled - Customer Uncontacted and Address Cant Be Located",
-        "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-        "Cancelled - Customer Does not want to avail anymore",
-        "Cancelled - Permit Access Issue VG / Subdivision / Barangay",
-    ];
-    var gt_btns = $(document).find(modal).find(".btn-action[data-user_mode='gt']");
-
-    if( $.inArray( data.status, show_gt ) >= 0){
-        gt_btns.removeClass("d-none");
-    } else {
-        gt_btns.addClass("d-none");
-    }
 
 }
 

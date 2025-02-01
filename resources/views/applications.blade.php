@@ -198,13 +198,15 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
-                    <div class="row">
-                        <div class="col text-center p-5">
-                            Select Super Vendor
+                    <div class="row mt-3 mb-3">
+                        <div class="col-3">
+                            <label for="confirm_complete_name">Super Vendor</label>
                         </div>
-                    </div>
-                    <div id="custom_field">
-
+                        <div class="col-9">
+                            <select class="form-control" name="sv">
+                                <option value="">Select SV</option>   
+                            </select>
+                        </div>
                     </div>
                     <div class="row mt-3 mb-3">
                         <div class="col-3">

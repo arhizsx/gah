@@ -472,6 +472,9 @@ $(document).on("click", ".btn-action", function(){
         }
         else if( $(this).data('confirm') == "set_vendor" ){
 
+            var new_status = "";
+            $(document).find("#custom_field").html('');
+
             var sv = $(document).find("#application_details").find("[name='sv']").val();
 
 

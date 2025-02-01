@@ -452,7 +452,7 @@ $(document).on("click", ".btn-action", function(){
 
             }
 
-            var new_status_text = "Are you sure you want to set this to <strong><span class="">" + new_status + "</span></strong>";
+            var new_status_text = "Are you sure you want to set this to <strong><span class=''>" + new_status + "</span></strong>";
 
             $(document).find(".new_status").text(new_status_text);
 
@@ -472,7 +472,7 @@ $(document).on("click", ".btn-action", function(){
             $(document).find("#confirm_modal").modal("show");
             $(document).find("#application_details").modal("hide");
 
-            var new_status_text = "Set this work order's supervendor to <strong><span class="">TEST</span></strong>";
+            var new_status_text = "Set this work order's supervendor to <strong><span class=''>TEST</span></strong>";
 
             $(document).find(".new_status").text(new_status_text);
 

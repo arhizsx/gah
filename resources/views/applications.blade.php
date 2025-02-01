@@ -454,7 +454,7 @@ $(document).on("click", ".btn-action", function(){
 
             var new_status_text = "Are you sure you want to set this to <strong><span class=''>" + new_status + "</span></strong>";
 
-            $(document).find(".new_status").text(new_status_text);
+            $(document).find(".new_status").html(new_status_text);
 
             $(document).find(".confirm_btn").attr("data-next_action", $(this).data("action"));
             $(document).find(".confirm_btn").attr("data-id", $(this).data("id"));
@@ -474,7 +474,7 @@ $(document).on("click", ".btn-action", function(){
 
             var new_status_text = "Set this work order's supervendor to <strong><span class=''>TEST</span></strong>";
 
-            $(document).find(".new_status").text(new_status_text);
+            $(document).find(".new_status").html(new_status_text);
 
 
         }

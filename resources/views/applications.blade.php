@@ -30,6 +30,19 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
+
+                    <div class="section-title">Set Super Vendor</div>
+                    <div class="row mt-3 mb-3">
+                        <div class="col-3">
+                            <label for="complete_name">Super Vendor</label>
+                        </div>
+                        <div class="col-9">
+                            <select class="form-control" name="sv">
+                                <option value="">Select SV</option>   
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="section-title">Personal Information</div>
                     <div class="row mt-3 mb-3">
                         <div class="col-3">

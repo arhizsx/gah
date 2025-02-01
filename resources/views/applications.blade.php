@@ -467,6 +467,10 @@ $(document).on("click", ".btn-action", function(){
         }
         else if( $(this).data('confirm') == "set_vendor" ){
 
+            $(document).find("#confirm_modal").modal("show");
+            $(document).find("#application_details").modal("hide");
+
+
             $(document).find(".new_status").text("SET SV SV");
 
 

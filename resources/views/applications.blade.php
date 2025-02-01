@@ -469,6 +469,8 @@ $(document).on("click", ".btn-action", function(){
         }
         else if( $(this).data('confirm') == "set_vendor" ){
 
+            var sv = $(document).find("#application_details").find("[name='sv']").val();
+
 
             if(sv == ""){
 
@@ -480,7 +482,6 @@ $(document).on("click", ".btn-action", function(){
                 $(document).find("#application_details").modal("hide");
 
                 var new_status_text = "Set this work order's supervendor to <strong><span class=''>TEST</span></strong>";
-                var sv = $(document).find("#application_details").find("[name='sv']").val();
                 $(document).find(".new_status").html(new_status_text);
 
             }

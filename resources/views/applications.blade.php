@@ -469,19 +469,22 @@ $(document).on("click", ".btn-action", function(){
         }
         else if( $(this).data('confirm') == "set_vendor" ){
 
-            $(document).find("#confirm_modal").modal("show");
-            $(document).find("#application_details").modal("hide");
-
-            var new_status_text = "Set this work order's supervendor to <strong><span class=''>TEST</span></strong>";
-            var sv = $(document).find("#application_details").find("[name='sv']").val();
 
             if(sv == ""){
 
                 console.log("No SV selected");
 
+            } else {
+
+                $(document).find("#confirm_modal").modal("show");
+                $(document).find("#application_details").modal("hide");
+
+                var new_status_text = "Set this work order's supervendor to <strong><span class=''>TEST</span></strong>";
+                var sv = $(document).find("#application_details").find("[name='sv']").val();
+                $(document).find(".new_status").html(new_status_text);
+
             }
 
-            $(document).find(".new_status").html(new_status_text);
 
 
         }

@@ -564,6 +564,8 @@ function callbackAction(data){
         $(document).find(".btn-action[data-user_mode='no_vendor']").removeClass("d-none");
 
         $(document).find("#set_super_vendor_box").removeClass("d-none");
+        $(document).find("#application_details").find("[name='sv']").val("");
+
         
         
     } else {

@@ -201,52 +201,6 @@
     </div>
 </div>
 
-<!-- Set Vendor Modal -->
-<div class="modal fade" id="set_vendor_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header bg-primary text-white">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Select Super Vendor</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row mt-3 mb-3">
-                        <div class="col-3">
-                            <label for="confirm_complete_name">Super Vendor</label>
-                        </div>
-                        <div class="col-9">
-                            <select class="form-control" name="sv">
-                                <option value="">Select SV</option>   
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row mt-3 mb-3">
-                        <div class="col-3">
-                            <label for="confirm_complete_name">Complete Name</label>
-                        </div>
-                        <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="confirm_complete_name" id="confirm_complete_name" placeholder="Customer Name">
-                        </div>
-                    </div>
-                    <div class="row mb-4 border-bottom pb-3">
-                        <div class="col-3">
-                            <label for="confirm_mobile_number">Mobile Number</label>
-                        </div>
-                        <div class="col-9">
-                            <input class="form-control form-control-sm" type="text" value="" name="confirm_mobile_number" id="confirm_mobile_number" placeholder="Mobile Number">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button id="confirm_btn" type="button" class="confirm_btn btn btn-success btn-action" data-user_mode="gt" data-action="confirm_action" data-confirm_type="confirm_pending" data-next_action="" data-id="">Yes</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <script>
 let svar = "sample variable 101";
@@ -510,12 +464,6 @@ $(document).on("click", ".btn-action", function(){
             $(document).find("#confirm_modal").find("[name='confirm_mobile_number']").val(mobile_number);
 
 
-        }
-        else if($(this).data('confirm') == 'set_vendor' ){
-
-            $(document).find("#confirm_modal").modal("hide");
-            $(document).find("#application_details").modal("hide");
-            $(document).find("#set_vendor_modal").modal("show");
         }
 
 

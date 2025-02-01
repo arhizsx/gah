@@ -513,7 +513,7 @@ function callbackAction(data){
     }
 
 
-    if(data.vendor == "" || data.vendor == "%MULTI_VENDORS%"){
+    if(data.vendor == "" || data.vendor == "%MULTI_VENDORS%" || data.vendor == null){
 
         $(document).find(".btn-action[data-user_mode='gt']").addClass("d-none");
         $(document).find(".btn-action[data-user_mode='no_vendor']").removeClass("d-none");

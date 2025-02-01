@@ -484,7 +484,7 @@ $(document).on("click", ".btn-action", function(){
                 $(document).find("#confirm_modal").modal("show");
                 $(document).find("#application_details").modal("hide");
 
-                var new_status_text = "Set this work order's supervendor to <strong><span class=''>TEST</span></strong>";
+                var new_status_text = "Set this work order's supervendor to <strong><span class=''>" + sv + "</span></strong>";
                 $(document).find(".new_status").html(new_status_text);
 
             }

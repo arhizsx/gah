@@ -151,7 +151,7 @@
                 <button type="button" class="btn btn-dark btn-action" data-user_mode="gt" data-action="application_cancelled" data-confirm="yes" data-id="">Cancelled</button>
                 <button type="button" class="btn btn-primary btn-action" data-user_mode="gt" data-action="application_installed" data-confirm="yes" data-id="">Installed</button>
 
-                <button type="button" class="btn btn-primary btn-action" data-user_mode="no_vendor" data-action="application_set_vendor" data-confirm="yes" data-id="">Assign SV</button>
+                <button type="button" class="btn btn-primary btn-action" data-user_mode="no_vendor" data-action="application_set_vendor" data-confirm="set_vendor" data-id="">Assign SV</button>
 
             </div>
         </div>
@@ -376,7 +376,6 @@ $(document).on("click", ".btn-action", function(){
 
             $(document).find("#confirm_modal").modal("show");
             $(document).find("#application_details").modal("hide");
-            $(document).find("#set_vendor_modal").modal("hide");
 
             var new_status = "";
             $(document).find("#custom_field").html('');
@@ -466,6 +465,13 @@ $(document).on("click", ".btn-action", function(){
 
 
         }
+        else if( $(this).data('confirm') == "set_vendor" ){
+
+            $(document).find(".new_status").text("SET SV SV");
+
+
+        }
+        
 
 
     } else {

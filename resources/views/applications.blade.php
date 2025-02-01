@@ -137,7 +137,7 @@
                 <button type="button" class="btn btn-dark btn-action" data-user_mode="gt" data-action="application_cancelled" data-confirm="yes" data-id="">Cancelled</button>
                 <button type="button" class="btn btn-primary btn-action" data-user_mode="gt" data-action="application_installed" data-confirm="yes" data-id="">Installed</button>
 
-                <button type="button" class="btn btn-primary btn-action d-none" data-user_mode="gt" data-action="application_set_vendor" data-confirm="yes" data-id="">Set SV</button>
+                <button type="button" class="btn btn-primary btn-action" data-user_mode="no_vendor" data-action="application_set_vendor" data-confirm="yes" data-id="">Set SV</button>
 
             </div>
         </div>
@@ -516,12 +516,12 @@ function callbackAction(data){
     if(data.vendor == "" || data.vendor == "%MULTI_VENDORS%"){
 
         $(document).find(".btn-action[data-user_mode='gt']").addClass("d-none");
-        $(document).find(".btn-action[data-user_mode='application_set_vendor']").removeClass("d-none");
+        $(document).find(".btn-action[data-user_mode='no_vendor']").removeClass("d-none");
         
     } else {
 
         $(document).find(".btn-action[data-user_mode='gt']").removeClass("d-none");
-        $(document).find(".btn-action[data-user_mode='application_set_vendor']").addClass("d-none");
+        $(document).find(".btn-action[data-user_mode='no_vendor']").addClass("d-none");
         
     }
 

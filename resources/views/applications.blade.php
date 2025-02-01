@@ -169,8 +169,8 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col text-center p-5">
-                            Are you sure you want to set this to <strong><span class="new_status"></span></strong>
+                        <div class="col text-center p-5 new_status">
+                            
                         </div>
                     </div>
                     <div id="custom_field">
@@ -452,7 +452,9 @@ $(document).on("click", ".btn-action", function(){
 
             }
 
-            $(document).find(".new_status").text(new_status);
+            new_status_text = "Are you sure you want to set this to <strong><span class="">" + new_status + "</span></strong>";
+
+            $(document).find(".new_status").text(new_status_text);
 
             $(document).find(".confirm_btn").attr("data-next_action", $(this).data("action"));
             $(document).find(".confirm_btn").attr("data-id", $(this).data("id"));
@@ -470,8 +472,9 @@ $(document).on("click", ".btn-action", function(){
             $(document).find("#confirm_modal").modal("show");
             $(document).find("#application_details").modal("hide");
 
+            new_status_text = "Set this work order's supervendor to <strong><span class="">TEST</span></strong>";
 
-            $(document).find(".new_status").text("SET SV SV");
+            $(document).find(".new_status").text(new_status_text);
 
 
         }

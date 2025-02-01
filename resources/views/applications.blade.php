@@ -30,16 +30,17 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
-
-                    <div class="section-title">Set Super Vendor</div>
-                    <div class="row mt-3 mb-3">
-                        <div class="col-3">
-                            <label for="complete_name">Super Vendor</label>
-                        </div>
-                        <div class="col-9">
-                            <select class="form-control" name="sv">
-                                <option value="">Select SV</option>   
-                            </select>
+                    <div id="set_super_vendor_box" class="d-none">
+                        <div class="section-title">Set Super Vendor</div>
+                        <div class="row mt-3 mb-3">
+                            <div class="col-3">
+                                <label for="complete_name">Super Vendor</label>
+                            </div>
+                            <div class="col-9">
+                                <select class="form-control" name="sv">
+                                    <option value="">Select SV</option>   
+                                </select>
+                            </div>
                         </div>
                     </div>
 
@@ -531,12 +532,17 @@ function callbackAction(data){
 
         $(document).find(".btn-action[data-user_mode='gt']").addClass("d-none");
         $(document).find(".btn-action[data-user_mode='no_vendor']").removeClass("d-none");
+
+        $(document).find("#set_super_vendor_box").removeClass("d-none");
+        
         
     } else {
+
 
         $(document).find(".btn-action[data-user_mode='gt']").removeClass("d-none");
         $(document).find(".btn-action[data-user_mode='no_vendor']").addClass("d-none");
         
+        $(document).find("#set_super_vendor_box").addClass("d-none");
     }
 
 

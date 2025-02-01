@@ -31,7 +31,10 @@ class SupervendorController extends Controller
     }
 
     function applications(){
-        return view("applications");
+
+        $vendors_list = DB::table("vendors_list")->get();
+
+        return view("applications", ["vendors_list" => $vendors_list]);
     }
 
     function installations(){

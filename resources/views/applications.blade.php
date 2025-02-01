@@ -38,7 +38,10 @@
                             </div>
                             <div class="col-9">
                                 <select class="form-control" name="sv">
-                                    <option value="">Select SV</option>   
+                                    <option value="">Select SV</option>
+                                    @foreach($vendors_list as $v)
+                                        <option value="{{ $v->vendor }}">{{ $v->vendor }}</option>  
+                                    @endforeach 
                                 </select>
                             </div>
                         </div>

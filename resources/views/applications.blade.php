@@ -513,8 +513,11 @@ function callbackAction(data){
 
 
     if(data.vendor == "" || data.vendor == "%MULTI_VENDORS%"){
-        console.log("Hide Buttons");
+
+        $(document).find(".btn-action[data-user_mode='gt']").addClass("d-none");
+        
     } else {
+
         console.log("Show Buttons");
 
     }

@@ -5,7 +5,7 @@
    $mobile_number_label = "Globe Prepaid Mobile Number";
    $mobile_number_subtext = "Enter your Globe Prepaid Mobile Number to check eligibility for this offer.";
 
-   $title = "FREE GFiber Prepaid for our Home Prepaid WiFi Customers";
+   $title = "Get Free installation on your GFiber Prepaid (Worth Php999)";
    
    $numbercheck_html = 
    "<p>Please fill out this form to claim your free GFiber Prepaid Installation!</p>" . 
@@ -13,7 +13,7 @@
    "<p>GFiber Prepaid offers reloadable UNLI fiber internet speeds up to 100Mbps. No monthly bills - reload only when you need to!</p>" . 
    "<H4>Reminders:</H4>" . 
    "<ul>" . 
-       "<li>This offer is for selected Home Prepaid WiFi customers</li>" . 
+       "<li>This offer is for selected Globe Prepaid subscribers, subject to validation</li>" . 
        "<li>Subject to fiber serviceability in your area</li>" . 
        "<li>Expect an SMS confirmation regarding your application within 2 working days</li>" . 
    "</ul>";

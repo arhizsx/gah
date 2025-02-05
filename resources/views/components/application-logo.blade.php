@@ -1,1 +1,1 @@
-<img src="/images/gt.png" width="100px">
+<img src="/images/globenew.png" width="100px">

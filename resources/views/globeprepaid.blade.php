@@ -1,6 +1,6 @@
 <?php 
    $campaign = "GLOBE PREPAID";
-   $header_banner = "/images/temp.png";
+   $header_banner = "/images/globenew.png";
 
    $mobile_number_label = "Globe Prepaid Mobile Number";
    $mobile_number_subtext = "Enter your Globe Prepaid Mobile Number to check eligibility for this offer.";

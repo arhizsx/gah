@@ -1,6 +1,6 @@
 <?php         
    $campaign = "B2B";
-   $header_banner = "/images/temp.png";
+   $header_banner = "/images/globenew.png";
 
    $mobile_number_label = "Mobile Number";
    $mobile_number_subtext = "Eligible for selected susbcribers only. We will contact you with this number as well. (Ex. +639171234567).";

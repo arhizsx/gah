@@ -68,7 +68,7 @@ class SupervendorController extends Controller
 
         $registrations = DB::table("view_registrations_3");
 
-        $campaigns = [ "SAMSUNG", "XIAOMI", "REID", "GPO", "HPW", "GR+", "POSTPAID", "ECPAY", "B2B" ];
+        $campaigns = [ "SAMSUNG", "XIAOMI", "REID", "GPO", "HPW", "GR+", "POSTPAID", "ECPAY", "B2B", "GLOBE PREPAID" ];
         $return_data = new Collection();
 
         switch( $action ){

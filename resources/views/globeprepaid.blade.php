@@ -1,5 +1,5 @@
 <?php 
-   $campaign = "GLOBE PREPAID";
+   $campaign = "GP-BB Offloader";
    $header_banner = "/images/globenew.png";
 
    $mobile_number_label = "Globe Prepaid Mobile Number";

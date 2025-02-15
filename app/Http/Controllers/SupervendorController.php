@@ -52,7 +52,7 @@ class SupervendorController extends Controller
                             ->ORDERBY("SUPERVENDOR", "ASC")
                             ->get();
 
-        return view("applications", ["vendors_list" => $vendors_list]);
+        return view("applications", ["vendors_list" => $vendors_list, "gt_list" => $gt_list]);
     }
 
     function installations(){

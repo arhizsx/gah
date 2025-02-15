@@ -484,44 +484,35 @@ $(document).on("click", ".btn-action", function(){
         }
         else if( $(this).data('confirm') == "set_vendor" ){
 
+            $(document).find("#confirm_modal").modal("show");
+            $(document).find("#application_details").modal("hide");
+
             var new_status = "";
             $(document).find("#custom_field").html('');
 
             var sv = $(document).find("#application_details").find("[name='sv']").val();
 
+            $(document).find("#custom_field").html(
+                '<div class="row mt-3 mb-3">' +
+                    '<div class="col-3">' +
+                        '<label for="confirm_complete_name">Pending Type</label>' +
+                    '</div>' +
+                    '<div class="col-9">' +
+                        '<select name="pending_type" class="form-control selectType" id="pendingType">' +
+                            '<option value="">Select Pending Type</option>' +
+                            '<option value="Pending - Customer Availability">Pending - Customer Availability</option>' +
+                            '<option value="Pending - SV Capacity Issue">Pending - SV Capacity Issue</option>' +
+                            '<option value="Pending - Adverse Weather">Pending - Adverse Weather</option>' +
+                            '<option value="Pending - Customer Uncontacted">Pending - Customer Uncontacted</option>' +
+                            '<option value="Pending - Customer Undecided / On Hold by Subs">Pending - Customer Undecided / On Hold by Subs</option>' +
+                            '<option value="Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)">Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)</option>' +
+                            '<option value="Pending - OSS / DGT System Issue">Pending - OSS / DGT System Issue</option>' +
+                            '<option value="Pending - Permit Access Issue VG / Subdivision / Barangay">Pending - Permit Access Issue VG / Subdivision / Barangay</option>' +
+                        '</select>' +
+                    '</div>' +
+                '</div>'
 
-            if(sv == ""){
-
-                console.log("No SV selected");
-
-            } else {
-
-                $(document).find("#confirm_modal").modal("show");
-                $(document).find("#application_details").modal("hide");
-
-                var new_status_text = "Set this work order's supervendor to <strong><span class=''>" + sv + "</span></strong>";
-                $(document).find(".new_status").html(new_status_text);
-
-                var action = $(this).data("action");
-                var id = $(this).data("id");
-                var complete_name = $(modal).find("[name='complete_name']").val();
-                var mobile_number = $(modal).find("[name='mobile_number']").val();
-
-                $(document).find("#confirm_modal").find("[name='confirm_id']").val(id);
-                $(document).find("#confirm_modal").find("[name='confirm_complete_name']").val(complete_name);
-                $(document).find("#confirm_modal").find("[name='confirm_mobile_number']").val(mobile_number);
-
-                $(document).find(".confirm_btn").attr("data-confirm_type", "set_vendor_confirm");
-                $(document).find("#confirm_modal").find(".confirm_btn").removeClass("d-none");
-
-                $(document).find(".confirm_btn").attr("data-payload", sv);
-
-
-                $(document).find(".confirm_btn").attr("data-next_action", action);
-                $(document).find(".confirm_btn").attr("data-id", id);
-            
-
-            }
+            )
 
 
 

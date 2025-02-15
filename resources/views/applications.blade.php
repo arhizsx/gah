@@ -469,9 +469,7 @@ $(document).on("click", ".btn-action", function(){
 
             $(document).find(".new_status").html(new_status_text);
 
-            $(document).find(".confirm_btn").attr("data-next_action", $(this).data("id"));
             $(document).find(".confirm_btn").attr("data-next_action", $(this).data("action"));
-
             $(document).find(".confirm_btn").attr("data-id", $(this).data("id"));
 
             var id = $(this).data("id");
@@ -504,6 +502,7 @@ $(document).on("click", ".btn-action", function(){
                 var new_status_text = "Set this work order's supervendor to <strong><span class=''>" + sv + "</span></strong>";
                 $(document).find(".new_status").html(new_status_text);
 
+                var action = $(this).data("action");
                 var id = $(this).data("id");
                 var complete_name = $(modal).find("[name='complete_name']").val();
                 var mobile_number = $(modal).find("[name='mobile_number']").val();
@@ -513,10 +512,11 @@ $(document).on("click", ".btn-action", function(){
                 $(document).find("#confirm_modal").find("[name='confirm_mobile_number']").val(mobile_number);
 
                 $(document).find(".confirm_btn").attr("data-confirm_type", "set_vendor_confirm");
-                $(document).find(".confirm_btn").attr("disabled", "disabled");
-
                 $(document).find("#confirm_modal").find(".confirm_btn").removeClass("d-none");
-                
+
+                $(document).find(".confirm_btn").attr("data-next_action", action);
+                $(document).find(".confirm_btn").attr("data-id", id);
+            
 
             }
 

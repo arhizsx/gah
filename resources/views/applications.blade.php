@@ -552,7 +552,7 @@ $(document).on("click", ".btn-action", function(){
             },
             success: function(resp){
                 if(resp.error == false){
-                    // location.reload();
+                    location.reload();
                 }
             },
             error: function(){

@@ -205,7 +205,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button id="confirm_btn" type="button" class="confirm_btn btn btn-success btn-action" data-user_mode="gt" data-action="confirm_action" data-confirm_type="confirm_pending" data-next_action="" data-id="">Yes</button>
+                <button id="confirm_btn" type="button" class="confirm_btn btn btn-success btn-action" data-user_mode="gt" data-action="confirm_action" data-confirm_type="confirm_pending" data-next_action="" data-id="" data-payload="">Yes</button>
             </div>
         </div>
     </div>
@@ -514,6 +514,9 @@ $(document).on("click", ".btn-action", function(){
                 $(document).find(".confirm_btn").attr("data-confirm_type", "set_vendor_confirm");
                 $(document).find("#confirm_modal").find(".confirm_btn").removeClass("d-none");
 
+                $(document).find(".confirm_btn").attr("data-payload", sv);
+
+
                 $(document).find(".confirm_btn").attr("data-next_action", action);
                 $(document).find(".confirm_btn").attr("data-id", id);
             
@@ -542,7 +545,8 @@ $(document).on("click", ".btn-action", function(){
             data: {
                 "action" : action,
                 "remarks": $(document).find(modal).find("[name='remarks']").val(),
-                "id": $(this).data("id")
+                "id": $(this).data("id"),
+                "payload": $(this).data("payload"),
             },
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

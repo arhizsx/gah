@@ -256,7 +256,7 @@ class SupervendorController extends Controller
                                             ->where("campaign", $campaign)
                                             ->whereIn("status", array(
                                                 "ENDORSED",
-                                                "REGISTERED", 
+                                                "UNASSIGNED", 
                                                 "PENDING", 
                                                 "ENDORSED",
                                                 "Pending - Customer Availability", 
@@ -363,7 +363,7 @@ class SupervendorController extends Controller
                                             ->whereNotnull("city")
                                             ->where("campaign", $campaign)
                                             ->whereIn("status", array(
-                                                    "REGISTERED", 
+                                                    "UNASSIGNED", 
                                                     "PENDING", 
                                                     "ENDORSED",
                                                     "Pending - Customer Availability", 
@@ -387,7 +387,7 @@ class SupervendorController extends Controller
                                             ->where("campaign", $campaign)
                                             ->whereNotnull("city")
                                             ->whereIn("status", array(
-                                                    "REGISTERED", 
+                                                    "UNASSIGNED", 
                                                     "PENDING", 
                                                     "ENDORSED",
                                                     "Pending - Customer Availability", 
@@ -409,7 +409,7 @@ class SupervendorController extends Controller
                                             ->where("campaign", $campaign)
                                             ->whereNotnull("city")
                                             ->whereIn("status", array(
-                                                    "REGISTERED", 
+                                                    "UNASSIGNED", 
                                                     "PENDING", 
                                                     "Pending - Customer Availability", 
                                                     "Pending - SV Capacity Issue", 
@@ -430,7 +430,7 @@ class SupervendorController extends Controller
                                             ->where("campaign", $campaign)
                                             ->whereNotnull("city")
                                             ->whereIn("status", array(
-                                                "REGISTERED", 
+                                                "UNASSIGNED", 
                                                 "PENDING", 
                                                 "ENDORSED",
                                                 "Pending - Customer Availability", 
@@ -562,7 +562,7 @@ class SupervendorController extends Controller
                 $registration = CampaignRegistration::where("id", $request->id);
                 $registration->update([
 
-                    "status" => 'REGISTERED'
+                    "status" => 'UNASSIGNED'
                 ]);
 
                 return ["error"=> false, "registration" => $registration];
@@ -909,7 +909,7 @@ class SupervendorController extends Controller
 
         $sgt_name = null;
         $sgt_email = null;
-        $status = "REGISTERED";
+        $status = "UNASSIGNED";
 
 
         if( count( $vendor ) == 1 ){

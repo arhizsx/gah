@@ -18,8 +18,16 @@ class SupervendorController extends Controller
             ->DISTINCT("campaign")
             ->SELECT("campaign")->get();
 
-        $projects_list = DB::table("projects")->distinct("project")->select("project")->get();
-        $project_campaigns = DB::table("projects")->orderBy("project", "asc")->orderBy("campaign_sort", "asc")->get();
+        $projects_list = DB::table("projects")
+                            ->distinct("project")
+                            ->select("project")
+                            ->get();
+
+        $project_campaigns = DB::table("projects")
+                                ->where("active", 1)
+                                ->orderBy("project", "asc")
+                                ->orderBy("campaign_sort", "asc")
+                                ->get();
 
         return view("home", ["data" => $data, "campaigns" => $campaigns, "projects_list" => $projects_list, "project_campaigns" => $project_campaigns]);
         // return view("home", ["data" => null]);

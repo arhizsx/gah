@@ -512,6 +512,9 @@ $(document).on("click", ".btn-action", function(){
                 $(document).find("#confirm_modal").find("[name='confirm_complete_name']").val(complete_name);
                 $(document).find("#confirm_modal").find("[name='confirm_mobile_number']").val(mobile_number);
 
+                $(document).find(".confirm_btn").attr("data-confirm_type", "set_vendor_confirm");
+                $(document).find(".confirm_btn").attr("disabled", "disabled");
+
             }
 
 

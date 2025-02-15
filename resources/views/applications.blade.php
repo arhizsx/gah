@@ -474,7 +474,7 @@ $(document).on("click", ".btn-action", function(){
 
             $(document).find(".confirm_btn").attr("data-id", $(this).data("id"));
 
-            var id = $(modal).find("[name='id']").val();
+            var id = $(this).data("id");
             var complete_name = $(modal).find("[name='complete_name']").val();
             var mobile_number = $(modal).find("[name='mobile_number']").val();
 

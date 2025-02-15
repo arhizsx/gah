@@ -512,10 +512,10 @@ $(document).on("click", ".btn-action", function(){
                     '</div>' +
                     '<div class="col-9">' +
                         '<select name="selectSGT" class="form-control selectSGT" id="selectSGT">' +
-                            '<option value="">Select Area Headr</option>' +
+                            '<option value="">Select Area Head</option>' +
                             @php 
                                 foreach ($gt_list as $g) { 
-                                    echo '"<option value=\'' . $g->sgt_name . '\' data-gt=\'' . $g->SUPERVENDOR . '\' . class=\'d-none\'>' . $g->sgt_name . '</option>" + ';
+                                    echo '"<option value=\'' . $g->sgt_name . '\' data-vendor=\'' . $g->SUPERVENDOR . '\' . class=\'d-none\'>' . $g->sgt_name . '</option>" + ';
                                 }
                             @endphp
                         '</select>' +
@@ -579,13 +579,20 @@ $(document).on('change', '.selectType', function() {
 
 $(document).on('change', '.selectVendor', function() {
 
-if($(this).val() != "" ){
-    $(document).find(".confirm_btn").attr("disabled", false)
-    $(document).find(".confirm_btn").attr("data-payload", $(this).val());
+$(document).find(".selectSGT").find("option").addClass("d-none");
+   
+    if($(this).val() != "" ){
+        $(document).find(".confirm_btn").attr("disabled", false)
+        $(document).find(".confirm_btn").attr("data-payload", $(this).val());
 
-} else {
-    $(document).find(".confirm_btn").attr("disabled", "disabled")
-}
+
+    } else {
+        $(document).find(".confirm_btn").attr("disabled", "disabled")
+
+        var sgt = $(document).find(".selectSGT").val();
+
+        $(document).find(".selectSGT").find("option[data-vendor='" + sgt + "']").removeClass("d-none"); 
+    }
 
 });
 

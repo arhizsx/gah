@@ -563,6 +563,18 @@ class SupervendorController extends Controller
 
         switch( $request->action ){
 
+            case "application_hpw":
+
+                $registration = CampaignRegistration::where("id", $request->id);
+                $registration->update([
+
+                    "status" => 'HPW INSTALLED'
+                ]);
+
+                return ["error"=> false, "registration" => $registration];
+
+            break;
+
             case "application_installed":
 
                 $registration = CampaignRegistration::where("id", $request->id);

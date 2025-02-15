@@ -607,9 +607,6 @@ $(document).on('change', '.selectSGT', function() {
 
         $(document).find(".confirm_btn").attr("disabled", false);
 
-    } else {
-
-        $(document).find(".confirm_btn").attr("disabled", "disabled");
 
         var email = $(document).find(".selectSGT option:selected").attr("data-email");
         var gt = $(document).find(".selectSGT option:selected").attr("value");
@@ -617,8 +614,11 @@ $(document).on('change', '.selectSGT', function() {
 
         var  payload =  JSON( { "email": email, "gt": gt } );
 
-        console.log(payload);
         $(document).find(".confirm_btn").data("payload", payload);
+
+    } else {
+
+        $(document).find(".confirm_btn").attr("disabled", "disabled");
 
     }
 

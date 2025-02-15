@@ -612,7 +612,7 @@ $(document).on('change', '.selectSGT', function() {
         var gt = $(document).find(".selectSGT option:selected").attr("value");
 
 
-        var  payload =  JSON( { "email": email, "gt": gt } );
+        var  payload =  JSON.stringify ( { "email": email, "gt": gt } );
 
         $(document).find(".confirm_btn").data("payload", payload);
 

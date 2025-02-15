@@ -510,7 +510,6 @@ $(document).on("click", ".btn-action", function(){
                         '</select>' +
                     '</div>' +
                 '</div>'
-
             )
 
 
@@ -534,12 +533,8 @@ $(document).on("click", ".btn-action", function(){
             
 
             }
-
-
-
-        }
         
-
+    
 
     } else {
 

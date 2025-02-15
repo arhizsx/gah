@@ -497,7 +497,7 @@ $(document).on("click", ".btn-action", function(){
                     '</div>' +
                     '<div class="col-9">' +
                         '<select name="selectVendor" class="form-control selectVendor" id="selectVendor">' +
-                            '<option value="">Select Cancellation Type</option>' +
+                            '<option value="">Select Super Vendor</option>' +
                             @php 
                                 foreach ($vendors_list as $v) { 
                                     echo '"<option value=\'' . $v->SUPERVENDOR . '\'>' . $v->SUPERVENDOR . '</option>" + ';

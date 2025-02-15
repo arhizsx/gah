@@ -3,6 +3,7 @@
         "UNASSIGNED",
         "ENDORSED",
         "INSTALLED",
+        "HPW",
         "PENDING",
         "CANCELLED",
         "DROPPED"                                                              

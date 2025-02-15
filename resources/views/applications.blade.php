@@ -585,7 +585,10 @@ $(document).on('change', '.selectVendor', function() {
         $(document).find(".confirm_btn").attr("disabled", false)
         $(document).find(".confirm_btn").attr("data-payload", $(this).val());
     
+        $(document).find(".selectSGT").val("");
+
         var vendor = $(this).val();
+
         $(document).find(".selectSGT").find("option[data-vendor='" + vendor + "']").removeClass("d-none"); 
 
     } else {

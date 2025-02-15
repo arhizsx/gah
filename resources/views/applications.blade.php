@@ -611,8 +611,9 @@ $(document).on('change', '.selectSGT', function() {
 
         $(document).find(".confirm_btn").attr("disabled", "disabled");
 
-        var email = $(this).data("email");
-        var gt = $(this).val();
+        var email = $(document).find(".selectSGT option:selected").attr("data-email");
+        var gt = $(document).find(".selectSGT option:selected").attr("value");
+
 
         var  payload =  JSON( { "email": email, "gt": gt } );
 

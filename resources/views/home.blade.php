@@ -1,6 +1,6 @@
 @php 
     $types = [
-        "REGISTERED",
+        "UNASSIGNED",
         "PENDING",
         "ENDORSED",
         "INSTALLED",

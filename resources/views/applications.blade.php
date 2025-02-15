@@ -589,7 +589,7 @@ $(document).on('change', '.selectVendor', function() {
     } else {
         $(document).find(".confirm_btn").attr("disabled", "disabled")
 
-        var vendor = $(document).find(".selectVendor").val();
+        var vendor = $(this).val();
 
         alert(vendor);
 

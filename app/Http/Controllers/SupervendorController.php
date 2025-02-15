@@ -575,7 +575,7 @@ class SupervendorController extends Controller
 
             case "application_hpw":
 
-                $registration = CampaignRegistration::where("id", $request->id);
+                $registration = CampaignRegistration::find("id", $request->id);
                 $registration->update([
 
                     "status" => 'HPW PROVIDED'
@@ -587,7 +587,7 @@ class SupervendorController extends Controller
 
             case "application_installed":
 
-                $registration = CampaignRegistration::where("id", $request->id);
+                $registration = CampaignRegistration::find("id", $request->id);
                 $registration->update([
 
                     "status" => 'INSTALLED'
@@ -599,7 +599,7 @@ class SupervendorController extends Controller
 
             case "application_registered":
 
-                $registration = CampaignRegistration::where("id", $request->id);
+                $registration = CampaignRegistration::find("id", $request->id);
                 $registration->update([
 
                     "status" => 'UNASSIGNED'
@@ -611,7 +611,7 @@ class SupervendorController extends Controller
 
             case "application_cancelled":
 
-                $registration = CampaignRegistration::where("id", $request->id);
+                $registration = CampaignRegistration::find("id", $request->id);
                 $registration->update([
                     "status" => 'CANCELLED'
                 ]);
@@ -622,7 +622,7 @@ class SupervendorController extends Controller
 
             case "application_endorsed":
 
-                $registration = CampaignRegistration::where("id", $request->id);
+                $registration = CampaignRegistration::find("id", $request->id);
                 $registration_data = $registration->first();
 
                 if( $registration_data ){
@@ -730,7 +730,7 @@ class SupervendorController extends Controller
 
             case "application_dropped":
 
-                $registration = CampaignRegistration::where("id", $request->id);
+                $registration = CampaignRegistration::find("id", $request->id);
                 $registration_data = $registration->first();
 
                 if( $registration_data ){
@@ -752,7 +752,7 @@ class SupervendorController extends Controller
 
                 }
 
-                $registration = CampaignRegistration::where("id", $request->id)->get();
+                $registration = CampaignRegistration::find("id", $request->id)->get();
 
 
                 return ["error"=> false, "registration" => $registration];
@@ -761,7 +761,7 @@ class SupervendorController extends Controller
 
             case "change_status":
 
-                $registration = CampaignRegistration::where("id", $request->id);
+                $registration = CampaignRegistration::find("id", $request->id);
                 $registration_data = $registration->first();
 
                 if( $registration_data ){
@@ -782,7 +782,7 @@ class SupervendorController extends Controller
                     ]);
 
                 }
-                $registration = CampaignRegistration::where("id", $request->id)->get();
+                $registration = CampaignRegistration::find("id", $request->id)->get();
 
                 return ["error"=> false, "registration" => $registration];
 
@@ -790,7 +790,7 @@ class SupervendorController extends Controller
 
             case "application_set_vendor":              
 
-                $registration = CampaignRegistration::where("id", $request->id);
+                $registration = CampaignRegistration::find("id", $request->id);
 
 
                 $registration->update([
@@ -799,7 +799,7 @@ class SupervendorController extends Controller
                     "sgt_email" => $request->payload["email"],
                 ]);
 
-                $registration = CampaignRegistration::where("id", $request->id)->get();
+                $registration = CampaignRegistration::find("id", $request->id)->get();
 
                 return ["error"=> false, "registration" => $registration];       
 
@@ -819,9 +819,8 @@ class SupervendorController extends Controller
 
     function pending( $request ){
 
-        $registration = CampaignRegistration::where("id", $request->id);
-
-        $registration_data = CampaignRegistration::where("id", $request->id)->first();
+        $registration = CampaignRegistration::find("id", $request->id);
+        $registration_data = CampaignRegistration::find("id", $request->id)->first();
 
         if( $registration_data ){
 

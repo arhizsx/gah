@@ -38,6 +38,12 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
     {
         Log::info("updated " . json_encode($campaignRegistration));
 
+        DB::table("logs")->insert([
+            "data" => json_encode($campaignRegistration),
+            "created_at" => now(),
+            "updated_at" => now()
+        ]);
+
         if( $campaignRegistration->vendor == null ){
 
         } elseif( $campaignRegistration->vendor == "%MULTI_VENDORS%" ){

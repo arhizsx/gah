@@ -610,12 +610,10 @@ $(document).on('change', '.selectSGT', function() {
 
         var email = $(document).find(".selectSGT option:selected").attr("data-email");
         var gt = $(document).find(".selectSGT option:selected").attr("value");
+        var vendor = $(document).find(".selectVendor").val();
 
 
-        var  payload =  JSON.stringify ( { "email": email, "gt": gt } );
-
-        alert(payload);
-        console.log(payload);
+        var  payload =  JSON.stringify ( { "email": email, "gt": gt, "vendor": vendor } );
 
         $(document).find(".confirm_btn").attr("data-payload", payload);
 

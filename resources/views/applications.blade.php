@@ -579,7 +579,7 @@ $(document).on('change', '.selectType', function() {
 
 $(document).on('change', '.selectVendor', function() {
 
-$(document).find(".selectSGT").find("option").addClass("d-none");
+    $(document).find(".selectSGT").find("option").addClass("d-none");
    
     if($(this).val() != "" ){
         $(document).find(".confirm_btn").attr("disabled", false)
@@ -589,9 +589,9 @@ $(document).find(".selectSGT").find("option").addClass("d-none");
     } else {
         $(document).find(".confirm_btn").attr("disabled", "disabled")
 
-        var sgt = $(document).find(".selectSGT").val();
+        var vendor = $(document).find(".selectVendor").val();
 
-        $(document).find(".selectSGT").find("option[data-vendor='" + sgt + "']").removeClass("d-none"); 
+        $(document).find(".selectSGT").find("option[data-vendor='" + vendor + "']").removeClass("d-none"); 
     }
 
 });

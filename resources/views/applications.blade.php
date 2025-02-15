@@ -123,8 +123,8 @@
                         </div>
                     </div>
                     <div id="set_super_vendor_box" class="d-none">
-                        <div class="section-title">Set Super Vendor</div>
-                        <div class="row mt-3 mb-3 border-top pt-3">
+                        <div class="section-title border-top pt-3">Set Super Vendor</div>
+                        <div class="row mt-3 mb-3 ">
                             <div class="col-3">
                                 <label for="complete_name">Super Vendor</label>
                             </div>

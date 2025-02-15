@@ -122,6 +122,7 @@ class SupervendorController extends Controller
                                             ->where("campaign", $campaign)
                                             ->whereNotnull("city")
                                             ->whereIn("status", array(
+                                            "HPW INSTALLED", 
                                             "INSTALLED", 
                                             "CANCELLED", 
                                             "DROPPED",
@@ -143,6 +144,7 @@ class SupervendorController extends Controller
                                             ->whereNotnull("city")
                                             ->where('area_head_email', $usr->email)
                                             ->whereIn("status", array(
+                                            "HPW INSTALLED", 
                                             "INSTALLED", 
                                             "CANCELLED", 
                                             "DROPPED",
@@ -162,6 +164,7 @@ class SupervendorController extends Controller
                                             ->where("campaign", $campaign)
                                             ->whereNotnull("city")
                                             ->whereIn("status", array(
+                                                "HPW INSTALLED", 
                                                 "INSTALLED", 
                                                 "CANCELLED", 
                                                 "DROPPED",
@@ -180,11 +183,15 @@ class SupervendorController extends Controller
                                             ->whereNotnull("city")
                                             ->where('area_head_email', $usr->email)
                                             ->where('cge_email', $usr->email)                                  
-                                            ->whereIn("status", array("INSTALLED", "CANCELLED", "DROPPED",
-                                            "Cancelled - Customer Uncontacted and Address Cant Be Located",
-                                            "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-                                            "Cancelled - Customer Does not want to avail anymore",
-                                            "Cancelled - Permit Access Issue VG / Subdivision / Barangay",
+                                            ->whereIn("status", array(
+                                                "HPW INSTALLED", 
+                                                "INSTALLED", 
+                                                "CANCELLED", 
+                                                "DROPPED",
+                                                "Cancelled - Customer Uncontacted and Address Cant Be Located",
+                                                "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
+                                                "Cancelled - Customer Does not want to avail anymore",
+                                                "Cancelled - Permit Access Issue VG / Subdivision / Barangay",
 
                                             ) )
                                             ->get();
@@ -220,7 +227,10 @@ class SupervendorController extends Controller
                                 ->where("campaign", $campaign)
                                 ->whereNotnull("city")
                                 ->whereIn("status", array(
-                                    "INSTALLED", "CANCELLED", "DROPPED",
+                                    "HPW INSTALLED", 
+                                    "INSTALLED", 
+                                    "CANCELLED", 
+                                    "DROPPED",
                                     "Cancelled - Customer Uncontacted and Address Cant Be Located",
                                     "Cancelled - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
                                     "Cancelled - Customer Does not want to avail anymore",

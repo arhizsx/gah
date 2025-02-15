@@ -137,7 +137,7 @@
 
                 <button type="button" class="btn btn-dark btn-action" data-user_mode="gt" data-action="application_cancelled" data-confirm="yes" data-id="">Cancelled</button>
                 <button type="button" class="btn btn-primary btn-action" data-user_mode="gt" data-action="application_installed" data-confirm="yes" data-id="">Installed</button>
-                <button type="button" class="btn btn-secondary btn-action" data-user_mode="gt" data-action="application_hpw" data-confirm="yes" data-id="">HPW Installed</button>
+                <button type="button" class="btn btn-secondary btn-action" data-user_mode="gt" data-action="application_hpw" data-confirm="yes" data-id="">HPW Provided</button>
 
                 <button type="button" class="btn btn-primary btn-action" data-user_mode="no_vendor" data-action="application_set_vendor" data-confirm="set_vendor" data-id="">Assign SV</button>
 
@@ -450,7 +450,7 @@ $(document).on("click", ".btn-action", function(){
                     new_status = "INSTALLED";
 
                 case "application_hpw":
-                    new_status = "HPW INSTALLED";
+                    new_status = "HPW PROVIDED";
 
                 break;
 

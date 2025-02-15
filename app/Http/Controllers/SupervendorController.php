@@ -122,7 +122,7 @@ class SupervendorController extends Controller
                                             ->where("campaign", $campaign)
                                             ->whereNotnull("city")
                                             ->whereIn("status", array(
-                                            "HPW INSTALLED", 
+                                            "HPW PROVIDED", 
                                             "INSTALLED", 
                                             "CANCELLED", 
                                             "DROPPED",
@@ -144,7 +144,7 @@ class SupervendorController extends Controller
                                             ->whereNotnull("city")
                                             ->where('area_head_email', $usr->email)
                                             ->whereIn("status", array(
-                                            "HPW INSTALLED", 
+                                            "HPW PROVIDED", 
                                             "INSTALLED", 
                                             "CANCELLED", 
                                             "DROPPED",
@@ -164,7 +164,7 @@ class SupervendorController extends Controller
                                             ->where("campaign", $campaign)
                                             ->whereNotnull("city")
                                             ->whereIn("status", array(
-                                                "HPW INSTALLED", 
+                                                "HPW PROVIDED", 
                                                 "INSTALLED", 
                                                 "CANCELLED", 
                                                 "DROPPED",
@@ -184,7 +184,7 @@ class SupervendorController extends Controller
                                             ->where('area_head_email', $usr->email)
                                             ->where('cge_email', $usr->email)                                  
                                             ->whereIn("status", array(
-                                                "HPW INSTALLED", 
+                                                "HPW PROVIDED", 
                                                 "INSTALLED", 
                                                 "CANCELLED", 
                                                 "DROPPED",
@@ -227,7 +227,7 @@ class SupervendorController extends Controller
                                 ->where("campaign", $campaign)
                                 ->whereNotnull("city")
                                 ->whereIn("status", array(
-                                    "HPW INSTALLED", 
+                                    "HPW PROVIDED", 
                                     "INSTALLED", 
                                     "CANCELLED", 
                                     "DROPPED",
@@ -578,7 +578,7 @@ class SupervendorController extends Controller
                 $registration = CampaignRegistration::where("id", $request->id);
                 $registration->update([
 
-                    "status" => 'HPW INSTALLED'
+                    "status" => 'HPW PROVIDED'
                 ]);
 
                 return ["error"=> false, "registration" => $registration];

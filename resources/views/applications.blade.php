@@ -515,6 +515,9 @@ $(document).on("click", ".btn-action", function(){
                 $(document).find(".confirm_btn").attr("data-confirm_type", "set_vendor_confirm");
                 $(document).find(".confirm_btn").attr("disabled", "disabled");
 
+                $(document).find("#confirm_modal").find(".confirm-btn").removeClass("d-none");
+                
+
             }
 
 

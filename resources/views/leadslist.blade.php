@@ -20,7 +20,10 @@ let modal = "";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/leadslist';
 let columns = [
-    'id',
+    {
+        dataField: 'id',
+        caption: 'ID',
+    },
     'campaign', 
     'source', 
     'complete_name', 

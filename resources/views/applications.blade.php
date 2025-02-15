@@ -210,6 +210,10 @@ let modal = "#application_details";
 let datagrid = "#gridContainer";
 let datasource = '/supervendor/data/applications';
 let columns = [
+    {
+        dataField: 'id',
+        caption: 'ID',
+    },
     'campaign', 
     'source', 
     {

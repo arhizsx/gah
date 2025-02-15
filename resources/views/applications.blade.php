@@ -580,7 +580,9 @@ $(document).on('change', '.selectType', function() {
 $(document).on('change', '.selectVendor', function() {
 
     $(document).find(".selectSGT").find("option").addClass("d-none");
-   
+    var vendor = $(this).val();
+    alert(vendor);
+
     if($(this).val() != "" ){
         $(document).find(".confirm_btn").attr("disabled", false)
         $(document).find(".confirm_btn").attr("data-payload", $(this).val());
@@ -589,9 +591,7 @@ $(document).on('change', '.selectVendor', function() {
     } else {
         $(document).find(".confirm_btn").attr("disabled", "disabled")
 
-        var vendor = $(this).val();
 
-        alert(vendor);
 
         $(document).find(".selectSGT").find("option[data-vendor='" + vendor + "']").removeClass("d-none"); 
     }

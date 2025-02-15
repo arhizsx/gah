@@ -496,7 +496,8 @@ $(document).on("click", ".btn-action", function(){
                         '<label for="confirm_complete_name">Super Vendor</label>' +
                     '</div>' +
                     '<div class="col-9">' +
-                        '<select name="pending_type" class="form-control selectVendor" id="selectVendor">' +
+                        '<select name="selectVendor" class="form-control selectVendor" id="selectVendor">' +
+                            '<option value="">Select Cancellation Type</option>' +
                             @php 
                                 foreach ($vendors_list as $v) { 
                                     echo '"<option value=\'' . $v->SUPERVENDOR . '\'>' . $v->SUPERVENDOR . '</option>" + ';

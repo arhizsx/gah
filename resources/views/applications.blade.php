@@ -515,7 +515,7 @@ $(document).on("click", ".btn-action", function(){
                             '<option value="">Select Area Head</option>' +
                             @php 
                                 foreach ($gt_list as $g) { 
-                                    echo '"<option value=\'' . $g->sgt_name . '\' data-vendor=\'' . $g->SUPERVENDOR . '\' . class=\'d-none\'>' . $g->sgt_name . '</option>" + ';
+                                    echo '"<option value=\'' . $g->sgt_name . '\' data-email=\'' . $g->sgt_email . '\'  data-vendor=\'' . $g->SUPERVENDOR . '\' . class=\'d-none\'>' . $g->sgt_name . '</option>" + ';
                                 }
                             @endphp
                         '</select>' +
@@ -609,8 +609,14 @@ $(document).on('change', '.selectSGT', function() {
         $(document).find(".confirm_btn").attr("disabled", false);
 
     } else {
-        
+
         $(document).find(".confirm_btn").attr("disabled", "disabled");
+
+        var email = $(this).data("email");
+        var gt = $(this).val();
+
+        var  payload =  JSON( { "email": email, "gt": gt } );
+        $(document).find(".confirm_btn").attr("data-payload", payload);
 
     }
 

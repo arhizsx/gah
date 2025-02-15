@@ -615,7 +615,9 @@ $(document).on('change', '.selectSGT', function() {
         var gt = $(this).val();
 
         var  payload =  JSON( { "email": email, "gt": gt } );
-        $(document).find(".confirm_btn").attr("data-payload", payload);
+
+        console.log(payload);
+        $(document).find(".confirm_btn").data("payload", payload);
 
     }
 

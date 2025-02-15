@@ -730,6 +730,9 @@ class SupervendorController extends Controller
 
                 }
 
+                $registration = CampaignRegistration::where("id", $request->id)->get();
+
+
                 return ["error"=> false, "registration" => $registration];
 
             break;
@@ -757,6 +760,7 @@ class SupervendorController extends Controller
                     ]);
 
                 }
+                $registration = CampaignRegistration::where("id", $request->id)->get();
 
                 return ["error"=> false, "registration" => $registration];
 

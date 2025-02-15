@@ -601,6 +601,22 @@ $(document).on('change', '.selectVendor', function() {
 });
 
 
+$(document).on('change', '.selectSGT', function() {
+
+
+    if($(this).val() != "" ){
+
+        $(document).find(".confirm_btn").attr("disabled", false);
+
+    } else {
+        
+        $(document).find(".confirm_btn").attr("disabled", "disabled");
+
+    }
+
+});
+
+
 function callbackAction(data){
 
     applicationSetImage(data);

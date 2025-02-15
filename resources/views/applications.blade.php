@@ -588,8 +588,9 @@ $(document).on('change', '.selectVendor', function() {
         $(document).find(".selectSGT").val("");
 
         var vendor = $(this).val();
-
         $(document).find(".selectSGT").find("option[data-vendor='" + vendor + "']").removeClass("d-none"); 
+
+        $(document).find(".confirm_btn").attr("disabled", "disabled")
 
     } else {
         $(document).find(".confirm_btn").attr("disabled", "disabled")

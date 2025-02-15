@@ -179,6 +179,14 @@
                     </div>
                     <div class="row mt-3 mb-3">
                         <div class="col-3">
+                            <label for="confirm_complete_name">ID</label>
+                        </div>
+                        <div class="col-9">
+                            <input class="form-control form-control-sm" type="text" value="" name="confirm_id" id="confirm_id" placeholder="ID">
+                        </div>
+                    </div>
+                    <div class="row mt-3 mb-3">
+                        <div class="col-3">
                             <label for="confirm_complete_name">Complete Name</label>
                         </div>
                         <div class="col-9">

@@ -515,7 +515,7 @@ $(document).on("click", ".btn-action", function(){
                             '<option value="">Select Area Headr</option>' +
                             @php 
                                 foreach ($gt_list as $g) { 
-                                    echo '"<option value=\'' . $g->sgt_name . '\'>' . $g->sgt_name . '</option>" + ';
+                                    echo '"<option value=\'' . $g->sgt_name . '\' data-gt=\'' . $g->SUPERVENDOR . '\' . class=\'d-none\'>' . $g->sgt_name . '</option>" + ';
                                 }
                             @endphp
                         '</select>' +

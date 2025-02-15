@@ -129,7 +129,7 @@
                                 <label for="complete_name">Super Vendor</label>
                             </div>
                             <div class="col-9">
-                                <select class="form-control" name="sv">
+                                <select class="form-control" name="sv" style="border-color: red;">
                                     <option value="">Select SV</option>
                                     @foreach($vendors_list as $v)
                                         <option value="{{ $v->vendor }}">{{ $v->vendor }}</option>  

@@ -30,23 +30,6 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
-                    <div id="set_super_vendor_box" class="d-none">
-                        <div class="section-title">Set Super Vendor</div>
-                        <div class="row mt-3 mb-3 border-bottom pb-3">
-                            <div class="col-3">
-                                <label for="complete_name">Super Vendor</label>
-                            </div>
-                            <div class="col-9">
-                                <select class="form-control" name="sv">
-                                    <option value="">Select SV</option>
-                                    @foreach($vendors_list as $v)
-                                        <option value="{{ $v->vendor }}">{{ $v->vendor }}</option>  
-                                    @endforeach 
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="section-title">Personal Information</div>
                     <div class="row mt-3 mb-3">
                         <div class="col-3">
@@ -139,6 +122,23 @@
                             <textarea class="form-control form-control-sm" name="remarks" id="remarks" placeholder="Remarks"></textarea>
                         </div>
                     </div>
+                    <div id="set_super_vendor_box" class="d-none">
+                        <div class="section-title">Set Super Vendor</div>
+                        <div class="row mt-3 mb-3 border-bottom pb-3">
+                            <div class="col-3">
+                                <label for="complete_name">Super Vendor</label>
+                            </div>
+                            <div class="col-9">
+                                <select class="form-control" name="sv">
+                                    <option value="">Select SV</option>
+                                    @foreach($vendors_list as $v)
+                                        <option value="{{ $v->vendor }}">{{ $v->vendor }}</option>  
+                                    @endforeach 
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <div class="modal-footer">

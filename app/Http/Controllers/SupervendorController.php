@@ -766,13 +766,14 @@ class SupervendorController extends Controller
 
                 $registration = CampaignRegistration::where("id", $request->id);
 
-                return $request;
 
                 $registration->update([
                     "vendor" => $request->vendor,
-                    "sgt_name" => $request->payload["sgt_name"],
-                    "sgt_email" => $request->payload["sgt_email"],
+                    "sgt_name" => $request->payload["gt"],
+                    "sgt_email" => $request->payload["email"],
                 ]);
+
+                $registration = CampaignRegistration::where("id", $request->id);
 
                 return ["error"=> false, "registration" => $registration];       
 

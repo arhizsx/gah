@@ -611,10 +611,11 @@ $(document).on('change', '.selectSGT', function() {
         var email = $(document).find(".selectSGT option:selected").attr("data-email");
         var gt = $(document).find(".selectSGT option:selected").attr("value");
 
-        alert(email);
-        alert(gt);
 
         var  payload =  JSON.stringify ( { "email": email, "gt": gt } );
+
+        alert(payload);
+        console.log(payload);
 
         $(document).find(".confirm_btn").data("payload", payload);
 

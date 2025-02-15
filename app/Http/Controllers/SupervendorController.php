@@ -40,7 +40,11 @@ class SupervendorController extends Controller
 
     function applications(){
 
-        $vendors_list = DB::table("locations")->DISTINCT("SUPERVENDOR")->SELECT("SUPERVENDOR")->get();
+        $vendors_list = DB::table("locations")
+                            ->DISTINCT("SUPERVENDOR")
+                            ->SELECT("SUPERVENDOR")
+                            ->ORDERBY("SUPERVENDOR", "ASC")
+                            ->get();
 
         return view("applications", ["vendors_list" => $vendors_list]);
     }

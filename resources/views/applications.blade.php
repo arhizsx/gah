@@ -487,7 +487,6 @@ $(document).on("click", ".btn-action", function(){
             var new_status = "";
             $(document).find("#custom_field").html('');
 
-            
             var sv = $(document).find("#application_details").find("[name='sv']").val();
 
             $(document).find("#custom_field").html(
@@ -512,7 +511,40 @@ $(document).on("click", ".btn-action", function(){
 
             )
 
-            var new_status_text = "Are you sure you want to set this to <strong><span class=''>" + new_status + "</span></strong>";
+
+
+            if(sv == ""){
+
+                console.log("No SV selected");
+
+            } else {
+
+                $(document).find("#confirm_modal").modal("show");
+                $(document).find("#application_details").modal("hide");
+
+                var new_status_text = "Set this work order's supervendor to <strong><span class=''>" + sv + "</span></strong>";
+                $(document).find(".new_status").html(new_status_text);
+
+                var action = $(this).data("action");
+                var id = $(this).data("id");
+                var complete_name = $(modal).find("[name='complete_name']").val();
+                var mobile_number = $(modal).find("[name='mobile_number']").val();
+
+                $(document).find("#confirm_modal").find("[name='confirm_id']").val(id);
+                $(document).find("#confirm_modal").find("[name='confirm_complete_name']").val(complete_name);
+                $(document).find("#confirm_modal").find("[name='confirm_mobile_number']").val(mobile_number);
+
+                $(document).find(".confirm_btn").attr("data-confirm_type", "set_vendor_confirm");
+                $(document).find("#confirm_modal").find(".confirm_btn").removeClass("d-none");
+
+                $(document).find(".confirm_btn").attr("data-payload", sv);
+
+
+                $(document).find(".confirm_btn").attr("data-next_action", action);
+                $(document).find(".confirm_btn").attr("data-id", id);
+            
+
+            }
 
 
 

@@ -504,7 +504,7 @@ $(document).on("click", ".btn-action", function(){
                 var new_status_text = "Set this work order's supervendor to <strong><span class=''>" + sv + "</span></strong>";
                 $(document).find(".new_status").html(new_status_text);
 
-                var id = $(modal).find("[name='id']").val();
+                var id = $(this).data("id");
                 var complete_name = $(modal).find("[name='complete_name']").val();
                 var mobile_number = $(modal).find("[name='mobile_number']").val();
 

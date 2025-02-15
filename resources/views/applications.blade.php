@@ -511,11 +511,11 @@ $(document).on("click", ".btn-action", function(){
                         '<label for="confirm_complete_name">Area Head</label>' +
                     '</div>' +
                     '<div class="col-9">' +
-                        '<select name="selectVendor" class="form-control selectVendor" id="selectVendor">' +
+                        '<select name="selectSGT" class="form-control selectSGT" id="selectSGT">' +
                             '<option value="">Select Area Headr</option>' +
                             @php 
-                                foreach ($vendors_list as $v) { 
-                                    echo '"<option value=\'' . $v->SUPERVENDOR . '\'>' . $v->SUPERVENDOR . '</option>" + ';
+                                foreach ($gt_list as $g) { 
+                                    echo '"<option value=\'' . $g['SGT Name'] . '\'>' . $v$g['SGT Name'] . '</option>" + ';
                                 }
                             @endphp
                         '</select>' +

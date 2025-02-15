@@ -46,6 +46,12 @@ class SupervendorController extends Controller
                             ->ORDERBY("SUPERVENDOR", "ASC")
                             ->get();
 
+        $gt_list = DB::table("locations")
+                            ->DISTINCT("SUPERVENDOR", "SGT Name", "sgt_email")
+                            ->SELECT("SUPERVENDOR", "SGT Name", "sgt_email")
+                            ->ORDERBY("SUPERVENDOR", "ASC")
+                            ->get();
+
         return view("applications", ["vendors_list" => $vendors_list]);
     }
 
@@ -759,6 +765,8 @@ class SupervendorController extends Controller
             case "application_set_vendor":              
 
                 $registration = CampaignRegistration::where("id", $request->id);
+
+                
                 $registration->update([
                     "vendor" => $request->vendor
                 ]);

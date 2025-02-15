@@ -797,6 +797,7 @@ class SupervendorController extends Controller
                     "vendor" => $request->payload["vendor"],
                     "sgt_name" => $request->payload["gt"],
                     "sgt_email" => $request->payload["email"],
+                    "status" => "ENDORSED",
                 ]);
 
                 $registration = CampaignRegistration::where("id", $request->id)->get();

@@ -768,7 +768,9 @@ class SupervendorController extends Controller
 
                 
                 $registration->update([
-                    "vendor" => $request->vendor
+                    "vendor" => $request->vendor,
+                    "sgt_name" => $request->payload["sgt_name"],
+                    "sgt_email" => $request->payload["sgt_email"],
                 ]);
 
                 return ["error"=> false, "registration" => $registration];       

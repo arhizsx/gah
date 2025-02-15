@@ -505,6 +505,21 @@ $(document).on("click", ".btn-action", function(){
                             @endphp
                         '</select>' +
                     '</div>' +
+                '</div>' +
+                '<div class="row mt-3 mb-3">' +
+                    '<div class="col-3">' +
+                        '<label for="confirm_complete_name">Area Head</label>' +
+                    '</div>' +
+                    '<div class="col-9">' +
+                        '<select name="selectVendor" class="form-control selectVendor" id="selectVendor">' +
+                            '<option value="">Select Area Headr</option>' +
+                            @php 
+                                foreach ($vendors_list as $v) { 
+                                    echo '"<option value=\'' . $v->SUPERVENDOR . '\'>' . $v->SUPERVENDOR . '</option>" + ';
+                                }
+                            @endphp
+                        '</select>' +
+                    '</div>' +
                 '</div>'
             )
 

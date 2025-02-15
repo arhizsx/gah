@@ -730,7 +730,7 @@ class SupervendorController extends Controller
 
             case "change_status":
 
-            $registration = CampaignRegistration::where("id", $request->id);
+                $registration = CampaignRegistration::where("id", $request->id);
                 $registration_data = $registration->first();
 
                 if( $registration_data ){
@@ -755,6 +755,21 @@ class SupervendorController extends Controller
                 return ["error"=> false, "registration" => $registration];
 
             break;
+
+            case "application_set_vendor":              
+
+                $registration = CampaignRegistration::where("id", $request->id);
+                $registration->update([
+                    "vendor" => $request->vendor
+                ]);
+
+                return ["error"=> false, "registration" => $registration];       
+
+            break;
+
+            default:
+
+                return "action not found";
 
 
         }

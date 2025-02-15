@@ -583,7 +583,6 @@ $(document).on('change', '.selectVendor', function() {
 
     if($(this).val() != "" ){
         $(document).find(".confirm_btn").attr("disabled", false)
-        $(document).find(".confirm_btn").attr("data-payload", $(this).val());
     
         $(document).find(".selectSGT").val("");
 

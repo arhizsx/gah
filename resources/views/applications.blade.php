@@ -500,7 +500,7 @@ $(document).on("click", ".btn-action", function(){
                         '<select name="pending_type" class="form-control selectType" id="pendingType">' +
                             @php 
                                 foreach($vendors_list as $v) 
-                                    echo '<option value="' . $v->vendor . '">' . $v->vendor . '</option>';
+                                    echo ''<option value="' . $v->vendor . '">' . $v->vendor . '</option>'+ ';
                             @endphp
                         '</select>' +
                     '</div>' +

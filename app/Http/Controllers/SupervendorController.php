@@ -47,8 +47,8 @@ class SupervendorController extends Controller
                             ->get();
 
         $gt_list = DB::table("locations")
-                            ->DISTINCT("SUPERVENDOR", "SGT Name", "sgt_email")
-                            ->SELECT("SUPERVENDOR", "SGT Name", "sgt_email")
+                            ->DISTINCT("SUPERVENDOR", "sgt_name", "sgt_email")
+                            ->SELECT("SUPERVENDOR", "sgt_name", "sgt_email")
                             ->ORDERBY("SUPERVENDOR", "ASC")
                             ->get();
 

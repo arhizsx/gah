@@ -193,7 +193,7 @@
                             <input class="form-control form-control-sm" type="text" value="" name="confirm_complete_name" id="confirm_complete_name" placeholder="Customer Name">
                         </div>
                     </div>
-                    <div class="row mb-4 border-bottom pb-3">
+                    <div class="row mb-4 pb-3">
                         <div class="col-3">
                             <label for="confirm_mobile_number">Mobile Number</label>
                         </div>

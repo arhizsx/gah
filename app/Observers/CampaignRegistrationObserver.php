@@ -30,6 +30,14 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
 
         $this->sender( $campaignRegistration, $no_sgt, $with_sgt, $mode );
 
+        DB::table("logs")->insert([
+            "user_id" => Auth::id(),
+            "action" => "CREATE",
+            "data" => json_encode($campaignRegistration),
+            "created_at" => now(),
+            "updated_at" => now()
+        ]);
+
     }
 
     /**
@@ -46,17 +54,6 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
             "created_at" => now(),
             "updated_at" => now()
         ]);
-
-        if( $campaignRegistration->vendor == null ){
-
-        } elseif( $campaignRegistration->vendor == "%MULTI_VENDORS%" ){
-
-        } else {
-
-            // $selected = DB::table("vendors")->where("supervendor", $campaignRegistration->vendor)->first();
-            // Mail::to( $selected->email )->queue( new UpdatedCampaignRegistration($campaignRegistration) );
-
-        }
 
 
     }

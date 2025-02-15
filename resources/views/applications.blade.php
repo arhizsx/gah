@@ -494,19 +494,14 @@ $(document).on("click", ".btn-action", function(){
             $(document).find("#custom_field").html(
                 '<div class="row mt-3 mb-3">' +
                     '<div class="col-3">' +
-                        '<label for="confirm_complete_name">Pending Type</label>' +
+                        '<label for="confirm_complete_name">Super Vendor</label>' +
                     '</div>' +
                     '<div class="col-9">' +
                         '<select name="pending_type" class="form-control selectType" id="pendingType">' +
-                            '<option value="">Select Pending Type</option>' +
-                            '<option value="Pending - Customer Availability">Pending - Customer Availability</option>' +
-                            '<option value="Pending - SV Capacity Issue">Pending - SV Capacity Issue</option>' +
-                            '<option value="Pending - Adverse Weather">Pending - Adverse Weather</option>' +
-                            '<option value="Pending - Customer Uncontacted">Pending - Customer Uncontacted</option>' +
-                            '<option value="Pending - Customer Undecided / On Hold by Subs">Pending - Customer Undecided / On Hold by Subs</option>' +
-                            '<option value="Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)">Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)</option>' +
-                            '<option value="Pending - OSS / DGT System Issue">Pending - OSS / DGT System Issue</option>' +
-                            '<option value="Pending - Permit Access Issue VG / Subdivision / Barangay">Pending - Permit Access Issue VG / Subdivision / Barangay</option>' +
+                            @php 
+                                foreach($vendors_list as $v) 
+                                    echo '<option value="' . $v->vendor . '">' . $v->vendor . '</option>';
+                            @endphp
                         '</select>' +
                     '</div>' +
                 '</div>'

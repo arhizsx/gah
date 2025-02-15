@@ -12,6 +12,7 @@ use App\Mail\SgtNewCampaignRegistration;
 use App\Mail\NewCampaignRegistrationNoVendor;
 use App\Mail\UpdatedCampaignRegistration;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
 {
@@ -39,6 +40,8 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
         Log::info("updated " . json_encode($campaignRegistration));
 
         DB::table("logs")->insert([
+            "user_id" => Auth::id(),
+            "action" => "UPDATE",
             "data" => json_encode($campaignRegistration),
             "created_at" => now(),
             "updated_at" => now()

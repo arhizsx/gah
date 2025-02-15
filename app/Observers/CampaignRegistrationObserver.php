@@ -47,6 +47,27 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
     {
         Log::info("updated " . json_encode($campaignRegistration));
 
+        $originalData = $campaignRegistration->getOriginal(); 
+
+        DB::table("logs")->insert([
+            "user_id" => Auth::id(),
+            "action" => "UPDATE",
+            "old_data" => json_encode($campaignRegistration),
+            "data" => json_encode($campaignRegistration),
+            "created_at" => now(),
+            "updated_at" => now()
+        ]);
+
+
+    }
+
+    /**
+     * Handle the CampaignRegistration "updated" event.
+     */
+    public function updated(CampaignRegistration $campaignRegistration): void
+    {
+        Log::info("updated " . json_encode($campaignRegistration));
+
         DB::table("logs")->insert([
             "user_id" => Auth::id(),
             "action" => "UPDATE",

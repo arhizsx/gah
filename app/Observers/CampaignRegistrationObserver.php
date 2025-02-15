@@ -52,7 +52,7 @@ class CampaignRegistrationObserver implements ShouldHandleEventsAfterCommit
         DB::table("logs")->insert([
             "user_id" => Auth::id(),
             "action" => "UPDATE",
-            "old_data" => json_encode($campaignRegistration),
+            "old_data" => json_encode($originalData),
             "data" => json_encode($campaignRegistration),
             "created_at" => now(),
             "updated_at" => now()

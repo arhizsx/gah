@@ -591,6 +591,8 @@ $(document).on('change', '.selectVendor', function() {
 
         var vendor = $(document).find(".selectVendor").val();
 
+        alert(vendor);
+
         $(document).find(".selectSGT").find("option[data-vendor='" + vendor + "']").removeClass("d-none"); 
     }
 

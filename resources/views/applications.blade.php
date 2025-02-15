@@ -125,10 +125,7 @@
                     <div id="set_super_vendor_box" class="d-none  mt-5">
                         <div class="section-title border-top pt-3">Set Super Vendor</div>
                         <div class="row mt-3 mb-3 ">
-                            <div class="col-3">
-                                <label for="complete_name">Super Vendor</label>
-                            </div>
-                            <div class="col-9">
+                            <div class="col-12">
                                 <select class="form-control" name="sv" style="border: 2px solid red;">
                                     <option value="">Select SV</option>
                                     @foreach($vendors_list as $v)

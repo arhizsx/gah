@@ -586,13 +586,11 @@ $(document).on('change', '.selectVendor', function() {
         $(document).find(".confirm_btn").attr("data-payload", $(this).val());
     
         var vendor = $(this).val();
-        alert(vendor);
-
         $(document).find(".selectSGT").find("option[data-vendor='" + vendor + "']").removeClass("d-none"); 
 
     } else {
         $(document).find(".confirm_btn").attr("disabled", "disabled")
-
+        $(document).find(".selectSGT").find("option").addClass("d-none");
     }
 
 });

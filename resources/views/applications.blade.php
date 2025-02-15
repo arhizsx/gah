@@ -474,6 +474,8 @@ $(document).on("click", ".btn-action", function(){
             $(document).find("#confirm_modal").modal("show");
             $(document).find("#application_details").modal("hide");
 
+            $(document).find(".confirm_btn").attr("disabled", false);
+
             var new_status_text = "Update this work order's supervendor";
             $(document).find(".new_status").html(new_status_text);
 

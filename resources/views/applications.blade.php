@@ -122,20 +122,6 @@
                             <textarea class="form-control form-control-sm" name="remarks" id="remarks" placeholder="Remarks"></textarea>
                         </div>
                     </div>
-                    <div id="set_super_vendor_box" class="d-none  mt-5">
-                        <div class="section-title border-top pt-3">Set Super Vendor</div>
-                        <div class="row mt-3 mb-3 ">
-                            <div class="col-12">
-                                <select class="form-control" name="sv" style="border: 2px solid red;">
-                                    <option value="">Select SV</option>
-                                    @foreach($vendors_list as $v)
-                                        <option value="{{ $v->vendor }}">{{ $v->vendor }}</option>  
-                                    @endforeach 
-                                </select>
-                                <small style="color: red;">Please select the super vendor you want to assign this lead</small>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
             </div>
@@ -513,7 +499,7 @@ $(document).on("click", ".btn-action", function(){
                         '<select name="pending_type" class="form-control selectVendor" id="selectVendor">' +
                             @php 
                                 foreach ($vendors_list as $v) { 
-                                    echo '"<option value=\'' . $v->vendor . '\'>' . $v->vendor . '</option>" + ';
+                                    echo '"<option value=\'' . $v->SUPERVENDOR . '\'>' . $v->SUPERVENDOR . '</option>" + ';
                                 }
                             @endphp
                         '</select>' +

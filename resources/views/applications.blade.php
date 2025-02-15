@@ -484,12 +484,10 @@ $(document).on("click", ".btn-action", function(){
         }
         else if( $(this).data('confirm') == "set_vendor" ){
 
-            $(document).find("#confirm_modal").modal("show");
-            $(document).find("#application_details").modal("hide");
-
             var new_status = "";
             $(document).find("#custom_field").html('');
 
+            
             var sv = $(document).find("#application_details").find("[name='sv']").val();
 
             $(document).find("#custom_field").html(
@@ -513,6 +511,8 @@ $(document).on("click", ".btn-action", function(){
                 '</div>'
 
             )
+
+            var new_status_text = "Are you sure you want to set this to <strong><span class=''>" + new_status + "</span></strong>";
 
 
 

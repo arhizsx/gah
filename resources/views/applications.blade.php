@@ -135,7 +135,7 @@
                                         <option value="{{ $v->vendor }}">{{ $v->vendor }}</option>  
                                     @endforeach 
                                 </select>
-                                <small>Please select the super vendor you want to assign this lead</small>
+                                <small style="color: red;">Please select the super vendor you want to assign this lead</small>
                             </div>
                         </div>
                     </div>

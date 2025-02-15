@@ -1,9 +1,9 @@
 @php 
     $types = [
         "UNASSIGNED",
-        "PENDING",
         "ENDORSED",
         "INSTALLED",
+        "PENDING",
         "CANCELLED",
         "DROPPED"                                                              
     ];

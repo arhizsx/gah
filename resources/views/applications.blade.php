@@ -617,7 +617,7 @@ $(document).on('change', '.selectSGT', function() {
         alert(payload);
         console.log(payload);
 
-        $(document).find(".confirm_btn").data("payload", payload);
+        $(document).find(".confirm_btn").attr("data-payload", payload);
 
     } else {
 

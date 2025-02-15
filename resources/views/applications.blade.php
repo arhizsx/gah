@@ -510,7 +510,7 @@ $(document).on("click", ".btn-action", function(){
                         '<label for="confirm_complete_name">Super Vendor</label>' +
                     '</div>' +
                     '<div class="col-9">' +
-                        '<select name="pending_type" class="form-control selectType" id="pendingType">' +
+                        '<select name="pending_type" class="form-control selectVendor" id="selectVendor">' +
                             @php 
                                 foreach ($vendors_list as $v) { 
                                     echo '"<option value=\'' . $v->vendor . '\'>' . $v->vendor . '</option>" + ';
@@ -573,6 +573,19 @@ $(document).on('change', '.selectType', function() {
     }
 
 });
+
+$(document).on('change', '.selectVendor', function() {
+
+if($(this).val() != "" ){
+    $(document).find(".confirm_btn").attr("disabled", false)
+    $(document).find(".confirm_btn").attr("data-payload", $(this).val());
+
+} else {
+    $(document).find(".confirm_btn").attr("disabled", "disabled")
+}
+
+});
+
 
 function callbackAction(data){
 

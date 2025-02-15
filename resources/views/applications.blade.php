@@ -590,6 +590,7 @@ $(document).on('change', '.selectVendor', function() {
 
     } else {
         $(document).find(".confirm_btn").attr("disabled", "disabled")
+        $(document).find(".selectSGT").val("");
         $(document).find(".selectSGT").find("option").addClass("d-none");
     }
 

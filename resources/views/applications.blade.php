@@ -122,7 +122,7 @@
                             <textarea class="form-control form-control-sm" name="remarks" id="remarks" placeholder="Remarks"></textarea>
                         </div>
                     </div>
-                    <div id="set_super_vendor_box mt-3" class="d-none">
+                    <div id="set_super_vendor_box" class="d-none  mt-3">
                         <div class="section-title border-top pt-3">Set Super Vendor</div>
                         <div class="row mt-3 mb-3 ">
                             <div class="col-3">

@@ -495,6 +495,15 @@ $(document).on("click", ".btn-action", function(){
             $(document).find(".confirm_btn").attr("data-next_action", $(this).data("action"));
             $(document).find(".confirm_btn").attr("data-id", $(this).data("id"));
 
+            var id = $(this).data("id");
+            var complete_name = $(modal).find("[name='complete_name']").val();
+            var mobile_number = $(modal).find("[name='mobile_number']").val();
+
+            $(document).find("#confirm_modal").find("[name='confirm_id']").val(id);
+            $(document).find("#confirm_modal").find("[name='confirm_complete_name']").val(complete_name);
+            $(document).find("#confirm_modal").find("[name='confirm_mobile_number']").val(mobile_number);
+
+
             $(document).find("#custom_field").html(
                 '<div class="row mt-3 mb-3">' +
                     '<div class="col-3">' +
@@ -511,18 +520,9 @@ $(document).on("click", ".btn-action", function(){
                     '</div>' +
                 '</div>'
             )
-            
-            var id = $(this).data("id");
-            var complete_name = $(modal).find("[name='complete_name']").val();
-            var mobile_number = $(modal).find("[name='mobile_number']").val();
 
-            $(document).find("#confirm_modal").find("[name='confirm_id']").val(id);
-            $(document).find("#confirm_modal").find("[name='confirm_complete_name']").val(complete_name);
-            $(document).find("#confirm_modal").find("[name='confirm_mobile_number']").val(mobile_number);
-
-
-        }
-        
+            $(document).find("#confirm_modal").find(".confirm_btn").removeClass("d-none");
+        }        
     
 
     } else {

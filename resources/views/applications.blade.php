@@ -449,6 +449,8 @@ $(document).on("click", ".btn-action", function(){
                 case "application_installed":
                     new_status = "INSTALLED";
 
+                break;
+
                 case "application_hpw":
                     new_status = "HPW PROVIDED";
 

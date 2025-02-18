@@ -668,24 +668,26 @@ class SupervendorController extends Controller
 
             case "Pending - Adverse Weather":
 
-                return $this->pending($request);
-                break;
+                return $this->pending($request);                
 
             break;
 
             case "Pending - Customer Uncontacted":
 
                 return $this->pending($request);
+
             break;
 
             case "Pending - Customer Undecided / On Hold by Subs":
 
                 return $this->pending($request);
+
             break;
 
             case "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)":
 
                 return $this->pending($request);
+
             break;
 
             case "Pending - OSS / DGT System Issue":
@@ -721,6 +723,7 @@ class SupervendorController extends Controller
             case "Cancelled - Customer Does not want to avail anymore":
 
                 return $this->pending($request);
+
             break;
 
             case "Cancelled - Permit Access Issue VG / Subdivision / Barangay":
@@ -820,7 +823,7 @@ class SupervendorController extends Controller
 
     function pending( $request ){
 
-        $registration = CampaignRegistration::find("id", $request->id);
+        $registration = CampaignRegistration::where("id", $request->id)->first();
         $registration_data = CampaignRegistration::where("id", $request->id)->first();
 
         if( $registration_data ){

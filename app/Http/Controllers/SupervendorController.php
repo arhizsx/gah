@@ -823,7 +823,7 @@ class SupervendorController extends Controller
 
     function pending( $request ){
 
-        $registration = CampaignRegistration::where("id", $request->id)->first();
+        $registration = CampaignRegistration::where("id",$request->id)->first();
         $registration_data = CampaignRegistration::where("id", $request->id)->first();
 
         if( $registration_data ){
@@ -831,10 +831,11 @@ class SupervendorController extends Controller
             $registration_data = json_decode($registration_data->data,true);
             $registration_data["remarks"] = $request->remarks;
 
-            $registration->update([
-                "status" => $request->action,
-                "data" => $registration_data
-            ]);
+            $registration
+                ->update([
+                    "status" => $request->action,
+                    "data" => $registration_data
+                ]);
 
         } else {
 

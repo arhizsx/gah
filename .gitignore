@@ -19,4 +19,4 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-/storage/globeathome.json
+storage/globeathome.json

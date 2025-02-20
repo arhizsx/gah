@@ -30,6 +30,14 @@ return [
 
     'disks' => [
 
+        'gcs' => [
+            'driver' => 'gcs',
+            'project_id' => env('GOOGLE_CLOUD_PROJECT_ID'),
+            'bucket' => env('GOOGLE_CLOUD_STORAGE_BUCKET'),
+            'key_file' => env('GOOGLE_CLOUD_KEY_FILE'), 
+            'apiUri' => env('GOOGLE_CLOUD_STORAGE_API_URI', 'https://storage.googleapis.com'),
+        ],
+                
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),

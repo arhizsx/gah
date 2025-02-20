@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Mail;
 
 use App\Http\Controllers\CampaignController;
 use App\Models\CampaignRegistration;
+use Illuminate\Support\Facades\Storage;
 
 // SUPERVENDOR
 Route::group(['middleware' => ['auth', 'verified']], function () {
@@ -106,6 +107,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::get('/gcs', function () {
+    return  Storage::disk('gcs')->write('uploads/test.txt', 'Hello from Laravel!');
 });
 
 require __DIR__.'/auth.php';

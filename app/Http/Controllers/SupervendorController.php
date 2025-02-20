@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\CampaignRegistration;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Storage;
 
 class SupervendorController extends Controller
 {
@@ -622,12 +623,15 @@ class SupervendorController extends Controller
 
             case "application_endorsed":
 
+                return $this->pending($request);
+
                 $registration = CampaignRegistration::where("id", $request->id)->first();
-                $registration_data = $registration->first();
+
+                return $request->all();
 
                 if( $registration_data ){
 
-                    $registration_data = json_decode($registration_data->data,true);
+                    $registration_data = json_decode($registration->data,true);
                     $registration_data["remarks"] = $request->remarks;
 
                     $registration->update([
@@ -732,6 +736,7 @@ class SupervendorController extends Controller
             break;
 
             case "application_dropped":
+
 
                 $registration = CampaignRegistration::where("id", $request->id)->first();
                 $registration_data = $registration->first();
@@ -873,36 +878,6 @@ class SupervendorController extends Controller
 
     }
 
-    // function doTMCheck( $data, $request ){
-
-    //     $tm = DB::table("tm")
-    //             ->where("cellnumber", $request->cellnumber)
-    //             ->first();
-
-    //     if( $tm ){
-
-    //         $registrations = DB::table("view_registrations_3")
-    //                             ->where("mobile_number", $request->cellnumber)
-    //                             ->where("campaign", "REID")
-    //                             ->get();
-
-    //         if(count($registrations) > 0 ) {
-    //             $status = "Multiple";
-    //         } else {
-    //             $status = "Allowed";
-    //         }
-
-    //     } else {
-    //         $status = "NotAllowed";
-    //     }
-
-
-    //     return [
-    //         "error" => false,
-    //         "status" => $status,
-    //     ];
-    // }
-
     function doNumberCheck( $data, $request ){
 
         if($request->campaign  == 'REID'){
@@ -1025,6 +1000,42 @@ class SupervendorController extends Controller
 
             // Upload path
             $destinationPath = 'files/';
+            $disk = Storage::disk('gcs');
+
+            // Cycle all uploaded files
+            foreach( $request->file() as $f => $k ){
+
+                if( $request->hasFile( $f )) {
+
+                    $extension = $request->file( $f )->getClientOriginalExtension();
+                    $fileName = $f . '-' . rand( time() , 1000 ) . '-' . $request->file( $f )->getClientOriginalName();
+
+                    // Uploading file to given path
+
+                    return Storage::disk('gcs')->write('uploads/'.$filename, $request-($f)->get());
+                    $disk->putFileAs('', $file, $fileName);
+
+                    $data[ $f ] = $fileName;
+
+                }
+            }
+
+        } catch (\Throwable $th) {
+            return ['error' => true, 'message' => $th->getMessage()];
+        }
+
+        return [ "error" => false, "data" => $data ];
+
+    }
+
+    // Cloud Storage Upload Function
+    function storeFileGcs($data, $request)
+    {
+        // Upload Attached Documents
+        try{
+
+            // Upload path
+            $destinationPath = 'files/';
 
             // Cycle all uploaded files
             foreach( $request->file() as $f => $k ){
@@ -1047,9 +1058,10 @@ class SupervendorController extends Controller
         }
 
         return [ "error" => false, "data" => $data ];
-
     }
-
+            
+    
+    
     function locations( Request $request ){
 
         switch( $request->action ){

@@ -739,7 +739,7 @@ class SupervendorController extends Controller
 
 
                 $registration = CampaignRegistration::where("id", $request->id)->first();
-                $registration_data = $registration->first();
+                $registration_data = CampaignRegistration::where("id", $request->id)->first();
 
                 if( $registration_data ){
 
@@ -767,10 +767,12 @@ class SupervendorController extends Controller
 
             break;
 
+            // NEW STATUS CHANGER NOT YET IMPLEMENTED
+
             case "change_status":
 
                 $registration = CampaignRegistration::where("id", $request->id)->first();
-                $registration_data = $registration->first();
+                $registration_data = CampaignRegistration::where("id", $request->id)->first();
 
                 if( $registration_data ){
 
@@ -799,7 +801,6 @@ class SupervendorController extends Controller
             case "application_set_vendor":              
 
                 $registration = CampaignRegistration::where("id", $request->id)->first();
-
 
                 $registration->update([
                     "vendor" => $request->payload["vendor"],
@@ -1026,41 +1027,7 @@ class SupervendorController extends Controller
 
         return [ "error" => false, "data" => $data ];
 
-    }
-
-    // Cloud Storage Upload Function
-    function storeFileGcs($data, $request)
-    {
-        // Upload Attached Documents
-        try{
-
-            // Upload path
-            $destinationPath = 'files/';
-
-            // Cycle all uploaded files
-            foreach( $request->file() as $f => $k ){
-
-                if( $request->hasFile( $f )) {
-
-                    $extension = $request->file( $f )->getClientOriginalExtension();
-                    $fileName = $f . '-' . rand( time() , 1000 ) . '-' . $request->file( $f )->getClientOriginalName();
-
-                    // Uploading file to given path
-                    $request->file( $f)->move($destinationPath, $fileName);
-
-                    $data[ $f ] = $fileName;
-
-                }
-            }
-
-        } catch (\Throwable $th) {
-            return ['error' => true, 'message' => $th->getMessage()];
-        }
-
-        return [ "error" => false, "data" => $data ];
-    }
-            
-    
+    }    
     
     function locations( Request $request ){
 

@@ -381,7 +381,7 @@ class SupervendorController extends Controller
                             return DB::table("view_registrations_3")
                                 ->whereNotNull("city")
                                 ->where("campaign", $campaign)
-                                ->where("updated_at", "<", $todayMidnight) // Only yesterday and older
+                                ->where("Last Update", "<", $todayMidnight) // Only yesterday and older
                                 ->whereIn("status", [
                                     "ENDORSED",
                                     "UNASSIGNED",
@@ -403,7 +403,7 @@ class SupervendorController extends Controller
                         $todayData = DB::table("view_registrations_3")
                             ->whereNotNull("city")
                             ->where("campaign", $campaign)
-                            ->where("updated_at", ">=", $todayMidnight) // Only today's data
+                            ->where("Last Update", ">=", $todayMidnight) // Only today's data
                             ->whereIn("status", [
                                 "ENDORSED",
                                 "UNASSIGNED",
@@ -438,7 +438,7 @@ class SupervendorController extends Controller
                             return DB::table("view_registrations_3")
                                 ->where("campaign", $campaign)
                                 ->whereNotNull("city")
-                                ->where("updated_at", "<", $todayMidnight) // Only yesterday and older
+                                ->where("Last Update", "<", $todayMidnight) // Only yesterday and older
                                 ->where("vendor", $userCompany)
                                 ->whereIn("status", [
                                     "ENDORSED",
@@ -459,7 +459,7 @@ class SupervendorController extends Controller
                         $todayData = DB::table("view_registrations_3")
                             ->where("campaign", $campaign)
                             ->whereNotNull("city")
-                            ->where("updated_at", ">=", $todayMidnight) // Only today's data
+                            ->where("Last Update", ">=", $todayMidnight) // Only today's data
                             ->where("vendor", $userCompany)
                             ->whereIn("status", [
                                 "ENDORSED",

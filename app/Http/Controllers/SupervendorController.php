@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\CampaignRegistration;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Carbon;
 
 class SupervendorController extends Controller
 {
@@ -43,24 +41,19 @@ class SupervendorController extends Controller
 
     function applications(){
 
-        $vendors_list = Cache::remember('vendors_list', 3600, function () {
-            return DB::table("locations")
-                        ->distinct()
-                        ->select("SUPERVENDOR")
-                        ->orderBy("SUPERVENDOR", "ASC")
-                        ->get();
-        });
-    
-        // Cache gt_list for 10 minutes
-        $gt_list = Cache::remember('gt_list', 3600, function () {
-            return DB::table("locations")
-                        ->distinct()
-                        ->select("SUPERVENDOR", "sgt_name", "sgt_email")
-                        ->orderBy("SUPERVENDOR", "ASC")
-                        ->get();
-        });
-    
-        return view("applications", compact("vendors_list", "gt_list"));
+        $vendors_list = DB::table("locations")
+                            ->DISTINCT("SUPERVENDOR")
+                            ->SELECT("SUPERVENDOR")
+                            ->ORDERBY("SUPERVENDOR", "ASC")
+                            ->get();
+
+        $gt_list = DB::table("locations")
+                            ->DISTINCT("SUPERVENDOR", "sgt_name", "sgt_email")
+                            ->SELECT("SUPERVENDOR", "sgt_name", "sgt_email")
+                            ->ORDERBY("SUPERVENDOR", "ASC")
+                            ->get();
+
+        return view("applications", ["vendors_list" => $vendors_list, "gt_list" => $gt_list]);
     }
 
     function installations(){
@@ -365,127 +358,6 @@ class SupervendorController extends Controller
 
 
                 return $return_data;
-
-                // $return_data = collect();
-                // $userCompany = Auth::user()->company;
-                // $cacheExpiration = 21600; // 6 hours cache expiration
-                // $todayMidnight = Carbon::now()->startOfDay(); // Today 00:00:00
-            
-                // if ($userCompany == NULL) {
-                //     // GT DATA :: APPLICATIONS
-                //     foreach ($campaigns as $campaign) {
-                //         $yesterdayCacheKey = "gt_data_yesterday_{$campaign}";
-            
-                //         // Get Cached Yesterday's Data (Cache for 6 hours)
-                //         $yesterdayData = Cache::remember($yesterdayCacheKey, $cacheExpiration, function () use ($campaign, $todayMidnight) {
-                //             return DB::table("view_registrations_3")
-                //                 ->whereNotNull("city")
-                //                 ->where("campaign", $campaign)
-                //                 ->where("Last Update", "<", $todayMidnight) // Only yesterday and older
-                //                 ->whereIn("status", [
-                //                     "ENDORSED",
-                //                     "UNASSIGNED",
-                //                     "PENDING",
-                //                     "Pending - Customer Availability",
-                //                     "Pending - SV Capacity Issue",
-                //                     "Pending - Adverse Weather",
-                //                     "Pending - Customer Uncontacted",
-                //                     "Pending - Customer Undecided / On Hold by Subs",
-                //                     "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-                //                     "Pending - OSS / DGT System Issue",
-                //                     "Pending - Permit Access Issue VG / Subdivision / Barangay",
-                //                 ])
-                //                 ->orderBy("id", "desc")
-                //                 ->get();
-                //         });
-            
-                //         // Fetch Fresh Data for Today
-                //         $todayData = DB::table("view_registrations_3")
-                //             ->whereNotNull("city")
-                //             ->where("campaign", $campaign)
-                //             ->where("Last Update", ">=", $todayMidnight) // Only today's data
-                //             ->whereIn("status", [
-                //                 "ENDORSED",
-                //                 "UNASSIGNED",
-                //                 "PENDING",
-                //                 "Pending - Customer Availability",
-                //                 "Pending - SV Capacity Issue",
-                //                 "Pending - Adverse Weather",
-                //                 "Pending - Customer Uncontacted",
-                //                 "Pending - Customer Undecided / On Hold by Subs",
-                //                 "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-                //                 "Pending - OSS / DGT System Issue",
-                //                 "Pending - Permit Access Issue VG / Subdivision / Barangay",
-                //             ])
-                //             ->orderBy("id", "desc")
-                //             ->get();
-            
-                //         // Merge Yesterday's Cached Data + Today's Fresh Data, then Remove Duplicates
-                //         $mergedData = $yesterdayData->merge($todayData)->unique('id')->values();
-            
-                //         // Merge to Return Data
-                //         if (!$mergedData->isEmpty()) {
-                //             $return_data = $return_data->merge($mergedData);
-                //         }
-                //     }
-                // } else {
-                //     // VENDOR DATA :: APPLICATIONS
-                //     foreach ($campaigns as $campaign) {
-                //         $yesterdayCacheKey = "vendor_data_yesterday_{$campaign}_{$userCompany}";
-            
-                //         // Get Cached Yesterday's Data (Cache for 6 hours)
-                //         $yesterdayData = Cache::remember($yesterdayCacheKey, $cacheExpiration, function () use ($campaign, $userCompany, $todayMidnight) {
-                //             return DB::table("view_registrations_3")
-                //                 ->where("campaign", $campaign)
-                //                 ->whereNotNull("city")
-                //                 ->where("Last Update", "<", $todayMidnight) // Only yesterday and older
-                //                 ->where("vendor", $userCompany)
-                //                 ->whereIn("status", [
-                //                     "ENDORSED",
-                //                     "Pending - Customer Availability",
-                //                     "Pending - SV Capacity Issue",
-                //                     "Pending - Adverse Weather",
-                //                     "Pending - Customer Uncontacted",
-                //                     "Pending - Customer Undecided / On Hold by Subs",
-                //                     "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-                //                     "Pending - OSS / DGT System Issue",
-                //                     "Pending - Permit Access Issue VG / Subdivision / Barangay",
-                //                 ])
-                //                 ->orderBy("id", "desc")
-                //                 ->get();
-                //         });
-            
-                //         // Fetch Fresh Data for Today
-                //         $todayData = DB::table("view_registrations_3")
-                //             ->where("campaign", $campaign)
-                //             ->whereNotNull("city")
-                //             ->where("Last Update", ">=", $todayMidnight) // Only today's data
-                //             ->where("vendor", $userCompany)
-                //             ->whereIn("status", [
-                //                 "ENDORSED",
-                //                 "Pending - Customer Availability",
-                //                 "Pending - SV Capacity Issue",
-                //                 "Pending - Adverse Weather",
-                //                 "Pending - Customer Uncontacted",
-                //                 "Pending - Customer Undecided / On Hold by Subs",
-                //                 "Pending - Last Mile Issue (OVS, Roadblocked, ROW, High Risk)",
-                //                 "Pending - OSS / DGT System Issue",
-                //                 "Pending - Permit Access Issue VG / Subdivision / Barangay",
-                //             ])
-                //             ->orderBy("id", "desc")
-                //             ->get();
-            
-                //         // Merge Yesterday's Cached Data + Today's Fresh Data, then Remove Duplicates
-                //         $mergedData = $yesterdayData->merge($todayData)->unique('id')->values();
-            
-                //         // Merge to Return Data
-                //         if (!$mergedData->isEmpty()) {
-                //             $return_data = $return_data->merge($mergedData);
-                //         }
-                //     }
-                // }
-            
-                // return $return_data;                
 
                 break;
 

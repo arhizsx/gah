@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\CampaignRegistration;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Cache;
 
 class SupervendorController extends Controller
 {
@@ -41,19 +42,24 @@ class SupervendorController extends Controller
 
     function applications(){
 
-        $vendors_list = DB::table("locations")
-                            ->DISTINCT("SUPERVENDOR")
-                            ->SELECT("SUPERVENDOR")
-                            ->ORDERBY("SUPERVENDOR", "ASC")
-                            ->get();
-
-        $gt_list = DB::table("locations")
-                            ->DISTINCT("SUPERVENDOR", "sgt_name", "sgt_email")
-                            ->SELECT("SUPERVENDOR", "sgt_name", "sgt_email")
-                            ->ORDERBY("SUPERVENDOR", "ASC")
-                            ->get();
-
-        return view("applications", ["vendors_list" => $vendors_list, "gt_list" => $gt_list]);
+        $vendors_list = Cache::remember('vendors_list', 3600, function () {
+            return DB::table("locations")
+                        ->distinct()
+                        ->select("SUPERVENDOR")
+                        ->orderBy("SUPERVENDOR", "ASC")
+                        ->get();
+        });
+    
+        // Cache gt_list for 10 minutes
+        $gt_list = Cache::remember('gt_list', 3600, function () {
+            return DB::table("locations")
+                        ->distinct()
+                        ->select("SUPERVENDOR", "sgt_name", "sgt_email")
+                        ->orderBy("SUPERVENDOR", "ASC")
+                        ->get();
+        });
+    
+        return view("applications", compact("vendors_list", "gt_list"));
     }
 
     function installations(){

@@ -1,11 +1,14 @@
 @php
+    
     $sgt_allowed_profiles = array("NSGT", "SGT");
 
-    $access = DB::table("users_access")
+    $access = Cache::remember("navigation_access", 86400, function () use ($sgt_allowed_profiles) {
+        return DB::table("users_access")
             ->where( "user_id", Auth::user()->id )
             ->whereIn( "profile", $sgt_allowed_profiles )
             ->get();
 
+    });
 
 @endphp
 
@@ -27,7 +30,7 @@
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('Home') }}
                     </x-nav-link>
-                    @if(Auth::user()->company == null)
+                    <!-- @if(Auth::user()->company == null)
                         @if( in_array(Auth::user()->id, array( 1, 2, 4 ))  ) 
                             @if($access)
                             <x-nav-link :href="route('sgt')" :active="request()->routeIs('sgt')">
@@ -35,7 +38,7 @@
                             </x-nav-link>
                             @endif
                         @endif
-                    @endif
+                    @endif -->
                     <x-nav-link :href="route('applications')" :active="request()->routeIs('applications')">
                         {{ __('Work Orders') }}
                     </x-nav-link>
@@ -116,7 +119,7 @@
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
                 {{ __('Home') }}
             </x-responsive-nav-link>
-            @if(Auth::user()->company == null)
+            <!-- @if(Auth::user()->company == null)
 
                 @if($access)
                 <x-responsive-nav-link :href="route('applications')" :active="request()->routeIs('sgt')">
@@ -124,7 +127,7 @@
                 </x-responsive-nav-link>
                 @endif
 
-            @endif
+            @endif -->
 
             <x-responsive-nav-link :href="route('applications')" :active="request()->routeIs('applications')">
                 {{ __('Applications') }}

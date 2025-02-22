@@ -2,13 +2,10 @@
     
     $sgt_allowed_profiles = array("NSGT", "SGT");
 
-    $access = Cache::remember("navigation_access", 86400, function () use ($sgt_allowed_profiles) {
-        return DB::table("users_access")
-            ->where( "user_id", Auth::user()->id )
-            ->whereIn( "profile", $sgt_allowed_profiles )
-            ->get();
-
-    });
+    $access = DB::table("users_access")
+        ->where( "user_id", Auth::user()->id )
+        ->whereIn( "profile", $sgt_allowed_profiles )
+        ->get();
 
 @endphp
 

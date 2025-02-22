@@ -174,7 +174,7 @@ class SupervendorController extends Controller
 
                     $yesterdayCacheKey = "processed_yesterday_{$userCompany}";
         
-                    // Get Cached Yesterday's Data (Cache for 6 hours)
+                    // Get Cached Yesterday's Data (Cache for 6 hours)  
                     $yesterdayData = Cache::remember($yesterdayCacheKey, $cacheExpiration, function () use ($todayMidnight, $statuses) {
                         return DB::table("view_registrations_3")
                             ->whereNotNull("city")

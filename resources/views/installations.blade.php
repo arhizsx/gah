@@ -110,10 +110,16 @@
 </div>
 <script> 
 
-let x= "";
 let modal = "#installation_details";
 let datagrid = "#gridContainer";
-let datasource = '/supervendor/data/installations';
+
+let datasource = new DevExpress.data.CustomStore({
+    key: "id", // Primary key for data tracking
+    load: function () {
+        return $.getJSON("/supervendor/data/installations");
+    },
+});
+
 let columns = [
     {
         dataField: "id",
@@ -159,6 +165,7 @@ $(() => {
     $(datagrid).setDatagrid( modal, datasource, columns );
 
 });
+
 
 $(document).on("click", ".btn-action", function(){
     let action = $(this).data("action");

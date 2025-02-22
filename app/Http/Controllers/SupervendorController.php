@@ -75,38 +75,26 @@ class SupervendorController extends Controller
 
     function installations(){
 
-        $html = Cache::remember("page_workorders", 3600, function () {
-            return view("installations")->render();
-        });
-        return response($html);
+        return view("installations");
 
     }
 
     function users(){
 
-        $html = Cache::remember("page_users", 3600, function () {
-            return view("users")->render();
-        });
-        return response($html);
+        return view("users");
 
     }
 
     function leadslist(){
 
-        $html = Cache::remember("page_leadslist", 3600, function () {
-            return view("leadslist")->render();
-        });
-        return response($html);
+        return view("leadslist");
 
     }
     
     function reports(){
 
-        $html = Cache::remember("page_reports", 3600, function () {
-            return view("reports")->render();
-        });
-        return response($html);
-
+        return view("reports");
+ 
     }
     
     function company(){
@@ -142,66 +130,21 @@ class SupervendorController extends Controller
             
                 if ($userCompany == NULL) {
 
-                    $yesterdayCacheKey = "processed_yesterday";
-        
-                    // Get Cached Yesterday's Data (Cache for 6 hours)
-                    $yesterdayData = Cache::remember($yesterdayCacheKey, $cacheExpiration, function () use ($todayMidnight, $statuses) {
-                        return DB::table("view_registrations_3")
-                            ->whereNotNull("city")
-                            ->where("Last Update", "<", $todayMidnight) // Only yesterday and older
-                            ->whereIn("status", $statuses)
-                            ->orderBy("id", "desc")
-                            ->get();
-                    });
-        
-                    // Fetch Fresh Data for Today
-                    $todayData = DB::table("view_registrations_3")
+                    $return_data = DB::table("view_registrations_3")
                         ->whereNotNull("city")
-                        ->where("Last Update", ">=", $todayMidnight) // Only today's data
                         ->whereIn("status", $statuses)
                         ->orderBy("id", "desc")
                         ->get();
-        
-                    // Merge Yesterday's Cached Data + Today's Fresh Data, then Remove Duplicates
-                    $mergedData = $todayData->merge($yesterdayData)->unique('id')->values();
-        
-                    // Merge to Return Data
-                    if (!$mergedData->isEmpty()) {
-                        $return_data = $return_data->merge($mergedData);
-                    }
+
 
                 } else {
 
-                    $yesterdayCacheKey = "processed_yesterday_{$userCompany}";
-        
-                    // Get Cached Yesterday's Data (Cache for 6 hours)  
-                    $yesterdayData = Cache::remember($yesterdayCacheKey, $cacheExpiration, function () use ($todayMidnight, $statuses) {
-                        return DB::table("view_registrations_3")
-                            ->whereNotNull("city")
-                            ->where("Last Update", "<", $todayMidnight) // Only yesterday and older
-                            ->where("vendor", $userCompany)
-                            ->whereIn("status", $statuses)
-                            ->orderBy("id", "desc")
-                            ->get();
-                    });
-        
-                    // Fetch Fresh Data for Today
-                    $todayData = DB::table("view_registrations_3")
+                    $return_data = DB::table("view_registrations_3")
                         ->whereNotNull("city")
-                        ->where("Last Update", ">=", $todayMidnight) // Only today's data
                         ->where("vendor", $userCompany)
                         ->whereIn("status", $statuses)
                         ->orderBy("id", "desc")
                         ->get();
-        
-                    // Merge Yesterday's Cached Data + Today's Fresh Data, then Remove Duplicates
-                    $mergedData = $todayData->merge($yesterdayData)->unique('id')->values();
-        
-                    // Merge to Return Data
-                    if (!$mergedData->isEmpty()) {
-                        $return_data = $return_data->merge($mergedData);
-                    }
-
 
                 }
             
@@ -230,108 +173,51 @@ class SupervendorController extends Controller
             
                 if ($userCompany == NULL) {
 
-                    $yesterdayCacheKey = "workorders_yesterday";
-        
-                    // Get Cached Yesterday's Data (Cache for 6 hours)
-                    $yesterdayData = Cache::remember($yesterdayCacheKey, $cacheExpiration, function () use ($todayMidnight, $statuses) {
-                        return DB::table("view_registrations_3")
-                            ->whereNotNull("city")
-                            ->where("Last Update", "<", $todayMidnight) // Only yesterday and older
-                            ->whereIn("status", $statuses)
-                            ->orderBy("id", "desc")
-                            ->get();
-                    });
-        
-                    // Fetch Fresh Data for Today
-                    $todayData = DB::table("view_registrations_3")
+                    $return_data = DB::table("view_registrations_3")
                         ->whereNotNull("city")
-                        ->where("Last Update", ">=", $todayMidnight) // Only today's data
                         ->whereIn("status", $statuses)
                         ->orderBy("id", "desc")
                         ->get();
-        
-                    // Merge Yesterday's Cached Data + Today's Fresh Data, then Remove Duplicates
-                    $mergedData = $todayData->merge($yesterdayData)->unique('id')->values();
-        
-                    // Merge to Return Data
-                    if (!$mergedData->isEmpty()) {
-                        $return_data = $return_data->merge($mergedData);
-                    }
+
 
                 } else {
 
-                    $yesterdayCacheKey = "workorders_yesterday_{$userCompany}";
-        
-                    // Get Cached Yesterday's Data (Cache for 6 hours)
-                    $yesterdayData = Cache::remember($yesterdayCacheKey, $cacheExpiration, function () use ($todayMidnight, $statuses) {
-                        return DB::table("view_registrations_3")
-                            ->whereNotNull("city")
-                            ->where("Last Update", "<", $todayMidnight) // Only yesterday and older
-                            ->where("vendor", $userCompany)
-                            ->whereIn("status", $statuses)
-                            ->orderBy("id", "desc")
-                            ->get();
-                    });
-        
-                    // Fetch Fresh Data for Today
-                    $todayData = DB::table("view_registrations_3")
+                    $return_data = DB::table("view_registrations_3")
                         ->whereNotNull("city")
-                        ->where("Last Update", ">=", $todayMidnight) // Only today's data
                         ->where("vendor", $userCompany)
                         ->whereIn("status", $statuses)
                         ->orderBy("id", "desc")
                         ->get();
-        
-                    // Merge Yesterday's Cached Data + Today's Fresh Data, then Remove Duplicates
-                    $mergedData = $todayData->merge($yesterdayData)->unique('id')->values();
-        
-                    // Merge to Return Data
-                    if (!$mergedData->isEmpty()) {
-                        $return_data = $return_data->merge($mergedData);
-                    }
-
 
                 }
-
+            
                 return $return_data;                
 
             break;
 
             case "users":
 
-                $cacheExpiration = 3600; // 1 hour cache expiration
-
-                $users = Cache::remember("users_access", $cacheExpiration, function () {
-                     return DB::table("users_access_view")->get();
-                });
-
-                return $users;
+                return DB::table("users_access_view")->get();
 
             break;
 
             case "leadslist":
 
-                $cacheExpiration = 3600; // 1 hour cache expiration
+                $return_data = DB::table("view_registrations_3")
+                    ->whereNotNull("city")
+                    ->orderBy("id", "desc")
+                    ->get();
+            
+                return $return_data;                
 
-                $return_data = Cache::remember("leadslist", $cacheExpiration, function () {
-                    return DB::table("view_registrations_3")
-                            ->wherenotnull("city")
-                            ->get();
-                });
-
-                return $return_data;
 
             break;
                 
             case "reports":
 
-                $cacheExpiration = 3600; // 1 hour cache expiration
-
-                $data = Cache::remember("leadslist", $cacheExpiration, function () {
-                    return DB::table("view_registrations_3")
-                            ->wherenotnull("city")
-                            ->get();
-                });
+                $data =  DB::table("view_registrations_3")
+                        ->wherenotnull("city")
+                        ->get();
 
                 return $data;
 
@@ -425,7 +311,6 @@ class SupervendorController extends Controller
 
                 }
 
-
                 return ["error"=> false, "registration" => $registration];
 
             break;
@@ -511,10 +396,10 @@ class SupervendorController extends Controller
             case "Cancelled - Permit Access Issue VG / Subdivision / Barangay":
 
                 return $this->pending($request);
+
             break;
 
             case "application_dropped":
-
 
                 $registration = CampaignRegistration::where("id", $request->id)->first();
                 $registration_data = CampaignRegistration::where("id", $request->id)->first();
@@ -812,22 +697,35 @@ class SupervendorController extends Controller
         switch( $request->action ){
 
             case "provinces":
-                return DB::table("location_provinces")
-                        ->get();
-                break;
+
+                $provinces = Cache::remember('provinces', 86400, function () {
+
+                    return DB::table("location_provinces")
+                            ->get();
+                });
+
+                return $provinces;
+
+            break;
 
             case "cities":
+
+                return DB::table("location_cities")
+                    ->where("PROVINCE", $request->value)
+                    ->get();
+
+            break;
+
+            case "brgy":
+
+                    
                 return DB::table("location_cities")
                         ->where("PROVINCE", $request->value)
                         ->get();
-                break;
 
-            case "brgy":
-                    return DB::table("location_cities")
-                            ->where("PROVINCE", $request->value)
-                            ->get();
-                    break;
-            }
+            break;
+            
+        }
 
 
         return $request;

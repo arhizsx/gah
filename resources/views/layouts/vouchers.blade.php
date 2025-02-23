@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Globe At Home</title>
+        <title>Globe At Home - Vouchers</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
         <!-- Fonts -->
@@ -74,7 +74,7 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.clear_navigation')
+            @include('layouts.vouchers_navigation')
 
             <!-- Page Heading -->
             @isset($header)

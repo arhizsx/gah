@@ -236,11 +236,6 @@ class SupervendorController extends Controller
 
             break;                
 
-            case "vouchers":
-
-                return DB::table("vouchers")
-                            ->get();
-
             default:
                 
                 $data = [];

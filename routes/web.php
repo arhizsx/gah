@@ -10,6 +10,9 @@ use App\Http\Controllers\CampaignController;
 use App\Models\CampaignRegistration;
 use Illuminate\Support\Facades\Storage;
 
+use App\Http\Controllers\VouchersController;
+
+
 // SUPERVENDOR
 Route::group(['middleware' => ['auth', 'verified']], function () {
 
@@ -27,14 +30,15 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/supervendor/data/{action}',  [SupervendorController::class, 'data'])->name('data');
     Route::post('/supervendor/ajax',  [SupervendorController::class, 'ajax'])->name('ajax');
 
-    Route::get('/vouchers', [CampaignController::class, 'vouchers'])->name('vouchers');
-
 
 });
 
+// VOUCHERS
+Route::group(['middleware' => ['auth', 'verified']], function () {
+    Route::get('/vouchers', [VouchersController::class, 'vouchers'])->name('vouchers');
+});
+
 Route::post('/supervendor/locations',  [SupervendorController::class, 'locations'])->name('locations');
-
-
 
 Route::post('/supervendor/ajax-public',  [SupervendorController::class, 'ajax_public'])->name('ajax_public');
 

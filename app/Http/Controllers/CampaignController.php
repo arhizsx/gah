@@ -11,12 +11,6 @@ class CampaignController extends Controller
 
 {
 
-    function vouchers() {
-
-        return view('vouchers');
-
-        
-    }
 
     function samsung(){
 

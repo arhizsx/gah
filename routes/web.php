@@ -36,6 +36,8 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 // VOUCHERS
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/vouchers', [VouchersController::class, 'vouchers'])->name('vouchers');
+    Route::get('/vouchers/data/{action}',  [VouchersController::class, 'data']);
+
 });
 
 Route::post('/supervendor/locations',  [SupervendorController::class, 'locations'])->name('locations');

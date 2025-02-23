@@ -1,3 +1,9 @@
+<style>
+.dx-datagrid-rowsview .dx-row {
+    font-size: .85em; /* Adjust as needed */
+}    
+</style>
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
@@ -208,9 +214,18 @@ let columns = [
     {
         dataField: 'id',
         caption: 'ID',
+        width: '60',
     },
-    'campaign', 
-    'source', 
+    {
+        dataField: 'campaign',
+        caption: 'campaign',
+        width: '100',
+    },
+    {
+        dataField: 'source',
+        caption: 'source',
+        width: '100',
+    },
     {
         dataField: 'complete_name',
         caption: 'Complete Name',
@@ -232,7 +247,7 @@ let columns = [
     {
         dataField: 'mobile_number',
         caption: 'Mobile No',
-        width: '150',
+        width: '120',
         cellTemplate(container, options) {
             if (options.data != null)  {
 
@@ -250,7 +265,7 @@ let columns = [
     {
         dataField: 'province',
         caption: 'Province',
-        width: '250',
+        width: '189',
         cellTemplate(container, options) {
             if (options.data != null)  {
 
@@ -268,7 +283,7 @@ let columns = [
     {
         dataField: 'city',
         caption: 'City',
-        width: '250',
+        width: '189',
         cellTemplate(container, options) {
             if (options.data != null)  {
 
@@ -299,9 +314,27 @@ let columns = [
         visible: false,
     },
     {
+        dataField: 'status',
+        caption: 'Status',
+        width: '180',
+        cellTemplate(container, options) {
+            if (options.data != null)  {
+
+                $('<div>')
+                        .css({
+                            "white-space": "normal",  // Allows wrapping to new lines
+                            "word-wrap": "break-word", // Breaks long words
+                            "overflow": "visible",     // No overflow restriction
+                        })
+                        .append(`${options.data.status} `)
+                        .appendTo(container);
+            }
+        },
+    },
+    {
         dataField: 'vendor',
         caption: 'Vendor',
-        width: '250',
+        width: '190',
         cellTemplate(container, options) {
             if (options.data != null)  {
 
@@ -319,7 +352,7 @@ let columns = [
     {
         dataField: 'SGT Name',
         caption: 'Area Head',
-        width: '200',
+        width: '190',
         cellTemplate(container, options) {
             if (options.data != null)  {
 
@@ -330,24 +363,6 @@ let columns = [
                             "overflow": "visible",     // No overflow restriction
                         })
                         .append(`${options.data['SGT Name']} `)
-                        .appendTo(container);
-            }
-        },
-    },
-    {
-        dataField: 'status',
-        caption: 'Status',
-        width: '250',
-        cellTemplate(container, options) {
-            if (options.data != null)  {
-
-                $('<div>')
-                        .css({
-                            "white-space": "normal",  // Allows wrapping to new lines
-                            "word-wrap": "break-word", // Breaks long words
-                            "overflow": "visible",     // No overflow restriction
-                        })
-                        .append(`${options.data.status} `)
                         .appendTo(container);
             }
         },

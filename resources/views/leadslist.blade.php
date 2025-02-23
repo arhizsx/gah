@@ -23,13 +23,90 @@ let columns = [
     {
         dataField: 'id',
         caption: 'ID',
+        width: '60',
     },
-    'campaign', 
-    'source', 
-    'complete_name', 
-    'mobile_number', 
-    'province', 
-    'city', 
+    {
+        dataField: 'campaign',
+        caption: 'campaign',
+        width: '100',
+    },
+    {
+        dataField: 'source',
+        caption: 'source',
+        width: '100',
+    },
+    {
+        dataField: 'complete_name',
+        caption: 'Complete Name',
+        width: '250',
+        cellTemplate(container, options) {
+            if (options.data != null)  {
+
+                $('<div>')
+                        .css({
+                            "white-space": "normal",  // Allows wrapping to new lines
+                            "word-wrap": "break-word", // Breaks long words
+                            "overflow": "visible",     // No overflow restriction
+                        })
+                        .append(`${options.data.complete_name} `)
+                        .appendTo(container);
+            }
+        },
+    },
+    {
+        dataField: 'mobile_number',
+        caption: 'Mobile No',
+        width: '120',
+        cellTemplate(container, options) {
+            if (options.data != null)  {
+
+                $('<div>')
+                        .css({
+                            "white-space": "normal",  // Allows wrapping to new lines
+                            "word-wrap": "break-word", // Breaks long words
+                            "overflow": "visible",     // No overflow restriction
+                        })
+                        .append(`${options.data.mobile_number} `)
+                        .appendTo(container);
+            }
+        },
+    },
+    {
+        dataField: 'province',
+        caption: 'Province',
+        width: '189',
+        cellTemplate(container, options) {
+            if (options.data != null)  {
+
+                $('<div>')
+                        .css({
+                            "white-space": "normal",  // Allows wrapping to new lines
+                            "word-wrap": "break-word", // Breaks long words
+                            "overflow": "visible",     // No overflow restriction
+                        })
+                        .append(`${options.data.province} `)
+                        .appendTo(container);
+            }
+        },
+    },
+    {
+        dataField: 'city',
+        caption: 'City',
+        width: '189',
+        cellTemplate(container, options) {
+            if (options.data != null)  {
+
+                $('<div>')
+                        .css({
+                            "white-space": "normal",  // Allows wrapping to new lines
+                            "word-wrap": "break-word", // Breaks long words
+                            "overflow": "visible",     // No overflow restriction
+                        })
+                        .append(`${options.data.city} `)
+                        .appendTo(container);
+            }
+        },
+    },
     {
         dataField: "street",
         caption: "Street",
@@ -45,18 +122,64 @@ let columns = [
         caption: "House Flr / Bldg",
         visible: false,
     },
-    'vendor', 
+    {
+        dataField: 'status',
+        caption: 'Status',
+        width: '180',
+        cellTemplate(container, options) {
+            if (options.data != null)  {
+
+                $('<div>')
+                        .css({
+                            "white-space": "normal",  // Allows wrapping to new lines
+                            "word-wrap": "break-word", // Breaks long words
+                            "overflow": "visible",     // No overflow restriction
+                        })
+                        .append(`${options.data.status} `)
+                        .appendTo(container);
+            }
+        },
+    },
+    {
+        dataField: 'vendor',
+        caption: 'Vendor',
+        width: '190',
+        cellTemplate(container, options) {
+            if (options.data != null)  {
+
+                $('<div>')
+                        .css({
+                            "white-space": "normal",  // Allows wrapping to new lines
+                            "word-wrap": "break-word", // Breaks long words
+                            "overflow": "visible",     // No overflow restriction
+                        })
+                        .append(`${options.data.vendor} `)
+                        .appendTo(container);
+            }
+        },
+    },
     {
         dataField: 'SGT Name',
-        caption: "Area Head",
-        visible: false,
+        caption: 'Area Head',
+        width: '190',
+        cellTemplate(container, options) {
+            if (options.data != null)  {
+
+                $('<div>')
+                        .css({
+                            "white-space": "normal",  // Allows wrapping to new lines
+                            "word-wrap": "break-word", // Breaks long words
+                            "overflow": "visible",     // No overflow restriction
+                        })
+                        .append(`${options.data['SGT Name']} `)
+                        .appendTo(container);
+            }
+        },
     },
-    'status', 
+
     'Registration Date', 
     'Last Update', 
-    "schedule_date", 
     "Aging",
-    "remarks",
 ];
 
 $(() => {

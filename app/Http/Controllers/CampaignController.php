@@ -8,7 +8,16 @@ use Illuminate\Support\Facades\DB;
 
 
 class CampaignController extends Controller
+
 {
+
+    function vouchers() {
+
+        return view('vouchers');
+
+        
+    }
+
     function samsung(){
 
         $provinces = DB::table("location_provinces")->get();

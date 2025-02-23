@@ -20,6 +20,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/supervendor/installations',  [SupervendorController::class, 'installations'])->name('installations');
     Route::get('/supervendor/company',  [SupervendorController::class, 'company'])->name('company');
     Route::get('/supervendor/users',  [SupervendorController::class, 'users'])->name('users');
+    Route::get('/supervendor/vendors',  [SupervendorController::class, 'vendors'])->name('vendors');
     Route::get('/supervendor/leadslist',  [SupervendorController::class, 'leadslist'])->name('leadslist');
     Route::get('/supervendor/reports',  [SupervendorController::class, 'reports'])->name('reports');
 
@@ -40,6 +41,8 @@ Route::get('/samsung', [CampaignController::class, 'samsung']);
 
 
 Route::get('/xiaomi', [CampaignController::class, 'xiaomi']);
+
+
 
 // TM CAMPAIGN
 Route::get('/retailerexclusive', [CampaignController::class, 'tm']);
@@ -112,5 +115,9 @@ Route::middleware('auth')->group(function () {
 Route::get('/gcs', function () {
     return  Storage::disk('gcs')->write('uploads/test.txt', 'Hello from Laravel!');
 });
+
+
+Route::get('/vouchers', [CampaignController::class, 'vouchers'])->name('vouchers');
+
 
 require __DIR__.'/auth.php';

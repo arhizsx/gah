@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Users') }}
+            {{ __('Vendors') }}
         </h2>
     </x-slot>
     <x-slot name="slot">
@@ -18,8 +18,8 @@
 let x= "";
 let modal = "";
 let datagrid = "#gridContainer";
-let datasource = '/supervendor/data/users';
-let columns = ['name', 'email', 'profile'];
+let datasource = '/supervendor/data/vendors';
+let columns = ['name', 'email', 'company' ];
 
 $(() => {
 

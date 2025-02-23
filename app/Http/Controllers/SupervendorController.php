@@ -46,10 +46,6 @@ class SupervendorController extends Controller
                 
     }
 
-    function sgt(){
-        return view("sgt");
-    }
-
     function applications(){
 
         // Cache vendors_list for 1 day
@@ -84,6 +80,13 @@ class SupervendorController extends Controller
         return view("users");
 
     }
+
+    function vendors(){
+
+        return view("vendors");
+
+    }
+
 
     function leadslist(){
 
@@ -197,7 +200,17 @@ class SupervendorController extends Controller
 
             case "users":
 
-                return DB::table("users_access_view")->get();
+                return DB::table("view_users_management")
+                            ->select("id", "name", "email", "company", "profile")
+                            ->whereNull("company")
+                            ->get();
+
+            case "vendors":
+
+                return DB::table("view_users_management")
+                            ->select("id", "name", "email", "company", "profile")
+                            ->whereNotNull("company")
+                            ->get();
 
             break;
 
@@ -222,6 +235,11 @@ class SupervendorController extends Controller
                 return $data;
 
             break;                
+
+            case "vouchers":
+
+                return DB::table("vouchers")
+                            ->get();
 
             default:
                 

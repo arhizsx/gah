@@ -18,7 +18,7 @@
 let x= "";
 let modal = "";
 let datagrid = "#gridContainer";
-let datasource = '/supervendor/data/vouchers';
+let datasource = '/vouchers/data/vouchers';
 let columns = [
     "Reference Number",
     "First Name",

@@ -27,6 +27,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/supervendor/data/{action}',  [SupervendorController::class, 'data'])->name('data');
     Route::post('/supervendor/ajax',  [SupervendorController::class, 'ajax'])->name('ajax');
 
+    Route::get('/vouchers', [CampaignController::class, 'vouchers'])->name('vouchers');
+
+
 });
 
 Route::post('/supervendor/locations',  [SupervendorController::class, 'locations'])->name('locations');
@@ -117,7 +120,6 @@ Route::get('/gcs', function () {
 });
 
 
-Route::get('/vouchers', [CampaignController::class, 'vouchers'])->name('vouchers');
 
 
 require __DIR__.'/auth.php';

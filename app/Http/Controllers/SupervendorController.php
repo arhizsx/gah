@@ -300,8 +300,6 @@ class SupervendorController extends Controller
 
             case "application_endorsed":
 
-                return $this->pending($request);
-
                 $registration = CampaignRegistration::where("id", $request->id)->first();
 
                 return $request->all();

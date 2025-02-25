@@ -16,6 +16,9 @@
                     <x-nav-link :href="route('vouchers')" :active="request()->routeIs('vouchers')">
                         {{ __('Vouchers') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('vouchers_management')" :active="request()->routeIs('vouchers_management')">
+                        {{ __('Management') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -70,6 +73,9 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('vouchers')" :active="request()->routeIs('vouchers')">
                 {{ __('Vouchers') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('vouchers_management')" :active="request()->routeIs('vouchers_management')">
+                {{ __('Management') }}
             </x-responsive-nav-link>
         </div>
 

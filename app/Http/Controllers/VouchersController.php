@@ -45,7 +45,10 @@ class VouchersController extends Controller
 
         if( $current_user->position == "admin" ){
             return view($module . 'management')->render();
-        }
+        } 
+
+        return redirect()->route('vouchers');        
+
     }
 
 

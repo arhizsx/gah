@@ -6,7 +6,7 @@
     </x-slot>
     <x-slot name="slot">
         <div class="border shadow-lg bg-white" style="margin-left: 30%; margin-right: 30%; padding: 30px; margin-top: auto; margin-bottom: auto; border-radius: 20px; margin-top: 80px;">
-            <input type="text" class="form-control w-100">
+            <input type="text" class="form-control w-100";  style="font-size: 2em;">
         </div>
     </x-slot>
 </x-app-layout>

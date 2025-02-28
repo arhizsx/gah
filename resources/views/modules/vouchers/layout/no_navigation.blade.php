@@ -7,10 +7,9 @@
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('vouchers') }}">
                         <img src="/images/gt.png" width="40px;">
-                        VOUCHERS
                     </a>
                 </div>
-
+                Vouchers
             </div>
 
             <!-- Settings Dropdown -->

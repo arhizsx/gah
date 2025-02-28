@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     <x-slot name="slot">
-        <div class="border shadow-lg p-3 mx-3 mt-3 mb-5 bg-white rounded" style="width: 200px;">
+        <div class="" style="width: 50%; height: 50vh">
 
             Permission Denied
  

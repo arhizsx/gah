@@ -5,8 +5,10 @@
         </h2>
     </x-slot>
     <x-slot name="slot">
-        <div class="border shadow-lg bg-white" style="margin-left: 30%; margin-right: 30%; padding: 50px; margin-top: auto; margin-bottom: auto; border-radius: 20px; margin-top: 80px;">
-            <input type="text" class="form-control w-100";  style="font-size: 2em;">
+        <div class="container d-flex justify-content-center align-items-center min-vh-100">
+            <div class="border shadow-lg bg-white p-4 rounded-4 w-100" style="max-width: 600px;">
+                <input type="text" class="form-control w-100" style="font-size: 2em;">
+            </div>
         </div>
     </x-slot>
 </x-app-layout>

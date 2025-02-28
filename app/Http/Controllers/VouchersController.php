@@ -30,10 +30,15 @@ class VouchersController extends Controller
 
     function management() {
 
+        $current_user = VoucherUsers::find(Auth::id());
+
         $module = "modules.vouchers.";
 
-        return view($module . 'management');
-
+        if( $current_user->role == "admin" ){
+            return view($module . 'management');
+        } else {
+            return view($module . 'permission');
+        }
     }
 
 

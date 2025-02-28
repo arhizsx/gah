@@ -7,8 +7,8 @@
     <x-slot name="slot">
         <div class="border shadow-lg mt-5 mb-5 p-5 bg-white rounded" style="margin: 25vw">
 
-            <H1 style="font-size: 1.5em; font-weight: bolder; margin-bottom: 15px;">User Details</h1>
-            <table class="table-bordered table">
+            <H1 style="font-size: 1.5em; font-weight: bolder; margin-bottom: 15px;">You Are Not Allowed</h1>
+            <!-- <table class="table-bordered table">
                 <tbody>
                     <tr>
                         <td>Name</td>
@@ -39,7 +39,7 @@
                         <td>{{ now() }}</td>
                     </tr>
                 </tbody>
-            </table>
+            </table> -->
             <p>Authorized Access Only. This system is restricted to authorized users. All access attempts are logged, including IP address, timestamp, and other relevant details. Unauthorized access is strictly prohibited and may result in legal action.</p>
             <div class="col-12 mt-4">
                 <button class="btn btn-primary form-control">Request Access to Vouchers</button>

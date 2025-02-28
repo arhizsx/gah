@@ -41,6 +41,9 @@
                 </tbody>
             </table>
             <p>Authorized Access Only. This system is restricted to authorized users. All access attempts are logged, including IP address, timestamp, and other relevant details. Unauthorized access is strictly prohibited and may result in legal action.</p>
+            <div class="col-12">
+                <button class="btn btn-primary form-control">I Need Access to Vouchers</button>
+            </div>
         </div>
     </x-slot>
 </x-app-layout>

@@ -9,6 +9,7 @@
             <div class="border shadow-lg bg-white p-5 rounded-5 w-100" style="max-width: 600px;">
                 <label>Mobile Number</label>
                 <input type="text" class="form-control w-100" style="font-size: 2em;">
+                <button class="btn btn-primary round-3">Search</button>
             </div>
         </div>
     </x-slot>

@@ -11,7 +11,8 @@
                 <input type="text" class="form-control w-100 mb-3" style="font-size: 2em;">
                 
                 <div class="d-flex justify-content-end">
-                    <button class="btn btn-primary rounded-3 px-5">Search</button>
+                <button class="btn btn-secondary rounded-3 px-5">Clear</button>
+                <button class="btn btn-primary rounded-3 px-5">Search</button>
                 </div>
             </div>
         </div>

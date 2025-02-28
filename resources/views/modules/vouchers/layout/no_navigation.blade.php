@@ -8,7 +8,7 @@
                     <a href="{{ route('vouchers') }}">
                         <img src="/images/gt.png" width="40px;">
                     </a>
-                    <div style="font-size: 2em; margin-left: 20px; font-weight: bolder;">Vouchers</div>
+                    <div style="font-size: 1.75em; margin-left: 20px; font-weight: bolder;">Vouchers</div>
                 </div>
             </div>
 

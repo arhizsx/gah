@@ -17,15 +17,22 @@ class VouchersController extends Controller
 
         $current_user = VoucherUsers::find(Auth::id());
 
-        return $current_user->position;
-
-        $module = "modules.vouchers.";
-
         if( $current_user->position == "admin" ){
-            return view($module . 'management');
+            
+            return view('modules.vouchers.management')->render();
+
         } elseif( $current_user->role == "agent" ){
-            return view($module . 'search');
-        }        
+
+            return view('modules.vouchers.search')->render();
+
+        } else {
+
+            return view('modules.vouchers.search')->render();
+
+        }
+
+
+
     }
 
     function management() {

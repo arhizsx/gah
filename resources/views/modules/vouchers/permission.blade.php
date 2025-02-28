@@ -20,7 +20,7 @@
                     </tr>
                     <tr>
                         <td>IP Address</td>
-                        <td>{{ $request->ip() }}</td>
+                        <td>{{ $requestDetails["ip"] }}</td>
                     </tr>
                 </tbody>
             </table>

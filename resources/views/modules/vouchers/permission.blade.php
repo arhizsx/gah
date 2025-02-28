@@ -7,7 +7,6 @@
     <x-slot name="slot">
         <div class="border shadow-lg p-3 mx-3 mt-3 mb-5 bg-white rounded">
 
-            <H1>Permission Denied</H1>
 
         </div>
     </x-slot>

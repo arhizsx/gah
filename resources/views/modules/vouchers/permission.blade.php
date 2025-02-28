@@ -9,7 +9,7 @@
 
             <H1>Permission Denied</H1>
             <hr>
-            {{ Auth::user()->email }}
+            {{ print_r(Auth::user()) }}
 
         </div>
     </x-slot>

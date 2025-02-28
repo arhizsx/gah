@@ -17,6 +17,6 @@ class VouchersLayout extends Component
 
         $voucher_user = VoucherUsers::find(Auth::user()->id);
 
-        return view('modules.vouchers.layout.main', ["voucher_user", $voucher_user]);
+        return view('modules.vouchers.layout.main', ["voucher_user" => $voucher_user]);
     }
 }

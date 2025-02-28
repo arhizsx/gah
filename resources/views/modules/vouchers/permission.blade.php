@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     <x-slot name="slot">
-        <div class="border shadow-lg mt-3 mb-5 p-5 bg-white rounded" style="margin: 20vw">
+        <div class="border shadow-lg mt-3 mb-5 p-5 bg-white rounded" style="margin: 30vw">
 
             <H1 style="font-size: 1.5em; font-weight: bolder; margin-bottom: 15px;">User Details</h1>
             <table class="table-bordered table">

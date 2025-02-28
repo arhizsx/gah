@@ -40,7 +40,7 @@
                     </tr>
                 </tbody>
             </table> -->
-            <p>If you need an access to the Vouchers Module please press the button below</p>
+            <p>If you need access to the Vouchers Module please press the button below</p>
             <div class="col-12 mt-4">
                 <button class="btn btn-primary form-control">Request Access to Vouchers</button>
             </div>

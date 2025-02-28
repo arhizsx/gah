@@ -128,10 +128,9 @@ Route::get('/gcs', function () {
 //                     //
 // //////////////////////
 
-Route::group(['middleware' => ['auth', 'verified']], function () {
+Route::group(['middleware' => ['auth', 'verified', 'VoucherUser']], function () {
 
     Route::get('/vouchers', [VouchersController::class, 'vouchers'])->name('vouchers');
-
 
     Route::get('/vouchers/management', [VouchersController::class, 'management'])->name('vouchers_management');
 

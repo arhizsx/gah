@@ -17,7 +17,7 @@ class VouchersController extends Controller
 
         $current_user = VoucherUsers::find(Auth::id());
 
-        return $current_user;
+        return $current_user->position;
 
         $module = "modules.vouchers.";
 

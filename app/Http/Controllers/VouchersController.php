@@ -19,13 +19,11 @@ class VouchersController extends Controller
 
         $module = "modules.vouchers.";
 
-        if( $current_user->role == "admin" ){
+        if( $current_user->position == "admin" ){
             return view($module . 'management');
         } elseif( $current_user->role == "agent" ){
             return view($module . 'search');
-        } else {
-            return view($module . 'permission');
-        }
+        }        
     }
 
     function management() {
@@ -34,10 +32,8 @@ class VouchersController extends Controller
 
         $module = "modules.vouchers.";
 
-        if( $current_user->role == "admin" ){
+        if( $current_user->position == "admin" ){
             return view($module . 'management');
-        } else {
-            return view($module . 'permission');
         }
     }
 

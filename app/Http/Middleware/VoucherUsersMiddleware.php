@@ -21,6 +21,7 @@ class VoucherUsersMiddleware
         $voucher_user = VoucherUsers::where("user_id",$request->user()->id)->first();
 
         if( !$voucher_user ){
+            
             return response()->view('modules.vouchers.permission', [
                 'requestDetails' => [
                     'ip' => $request->ip(),

@@ -7,7 +7,7 @@
     <x-slot name="slot">
         <div class="border shadow-lg mt-3 mb-5 p-5 bg-white rounded" style="margin: 20vw">
 
-            <H1 style="font-size: 1.5em">User Details</h1>
+            <H1 style="font-size: 1.5em; font-weight: bolder; margin-bottom: 15px;">User Details</h1>
             <table class="table-bordered table">
                 <tbody>
                     <tr>

@@ -22,6 +22,18 @@
                         <td>IP Address</td>
                         <td>{{ $requestDetails["ip"] }}</td>
                     </tr>
+                    <tr>
+                        <td>User Agent</td>
+                        <td>{{ $requestDetails["user_agent"] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Method</td>
+                        <td>{{ $requestDetails["method"] }}</td>
+                    </tr>
+                    <tr>
+                        <td>URL</td>
+                        <td>{{ $requestDetails["url"] }}</td>
+                    </tr>
                 </tbody>
             </table>
 

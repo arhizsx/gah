@@ -7,7 +7,7 @@
     <x-slot name="slot">
         <div class="shadow-lg mt-5 mb-5 p-5 bg-white" style="margin: 25vw; border-radius: 25px; border: 3px solid red;">
 
-            <H1 style="font-size: 2.5em; font-weight: bolder; margin-bottom: 15px;">You are not allowed</h1>
+            <H1 style="font-size: 2.5em; font-weight: bolder; margin-bottom: 15px;">Unauthorized Access</h1>
             <!-- <table class="table-bordered table">
                 <tbody>
                     <tr>

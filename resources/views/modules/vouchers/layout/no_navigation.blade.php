@@ -8,8 +8,8 @@
                     <a href="{{ route('vouchers') }}">
                         <img src="/images/gt.png" width="40px;">
                     </a>
+                    <H1>Vouchers</H1>
                 </div>
-                Vouchers
             </div>
 
             <!-- Settings Dropdown -->

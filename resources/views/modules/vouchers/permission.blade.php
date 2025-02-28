@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     <x-slot name="slot">
-        <div class="border shadow-lg mt-5 mb-5 p-5 bg-white rounded" style="margin: 25vw; border-radius: 25px;">
+        <div class="shadow-lg mt-5 mb-5 p-5 bg-white" style="margin: 25vw; border-radius: 25px; border: 1px solid red;">
 
             <H1 style="font-size: 2.5em; font-weight: bolder; margin-bottom: 15px;">You Are Not Allowed</h1>
             <!-- <table class="table-bordered table">

@@ -74,7 +74,7 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('modules.vouchers.layout.navigation')
+            @include('modules.vouchers.layout.no_navigation')
         
             <!-- Page Heading -->
             @isset($header)

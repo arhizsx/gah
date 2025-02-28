@@ -22,6 +22,7 @@ class VoucherUsersMiddleware
 
         if( !$voucher_user ){
             return response()->json(['message' => 'Unauthorized'], 403);
+            return response()->view('modules.vouchers.permission');
         }
         
         return $next($request);

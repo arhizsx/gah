@@ -8,7 +8,7 @@
         <div class="border shadow-lg p-3 mx-3 mt-3 mb-5 bg-white rounded" style="width: 200px;">
 
             Permission Denied
-
+ 
         </div>
     </x-slot>
 </x-app-layout>

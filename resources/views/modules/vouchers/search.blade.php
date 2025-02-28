@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     <x-slot name="slot">
-        <div class="border shadow-lg p-5 m-5 bg-white rounded">
+        <div class="border shadow-lg bg-white" style="margin-left: 20%vw; margin-right: 20%vw;">
             <input type="text" class="form-control w-100">
         </div>
     </x-slot>

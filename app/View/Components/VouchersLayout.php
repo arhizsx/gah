@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 use Illuminate\View\View;
-
+use App\Models\VoucherUsers;
 class VouchersLayout extends Component
 {
     /**
@@ -12,6 +12,9 @@ class VouchersLayout extends Component
      */
     public function render(): View
     {
-        return view('modules.vouchers.layout.main');
+
+        $voucher_user = VoucherUsers::find(Auth::user()->id);
+
+        return view('modules.vouchers.layout.main', ["voucher_user", $voucher_user]);
     }
 }

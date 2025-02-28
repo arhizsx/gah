@@ -72,11 +72,10 @@
         </style>
 
     </head>
-    @php 
-        $voucher_user = \VoucherUser::find(\Auth::user()->id);
-        
-        $position = "";
+    @php
 
+        $position = "";
+        
         if( $voucher_user ) {
             $position = $voucher_user->position;    
         }
@@ -84,7 +83,7 @@
     @endphp
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('modules.vouchers.layout.navigation')
+            @include('modules.vouchers.layout.navigation', [ "position" => $position])
 
             <!-- Page Heading -->
             @isset($header)

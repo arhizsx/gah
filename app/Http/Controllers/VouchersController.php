@@ -29,7 +29,11 @@ class VouchersController extends Controller
     }
 
     function management() {
-        return view('vouchers');
+
+        $module = "modules.vouchers.";
+
+        return view($module . 'management');
+
     }
 
 

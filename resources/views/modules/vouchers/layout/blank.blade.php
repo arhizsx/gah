@@ -86,7 +86,7 @@
             @endisset
 
             <!-- Page Content -->
-            <main class="flex-grow flex items-center justify-center">
+            <main>
                 {{ $slot }}
             </main>
         </div>

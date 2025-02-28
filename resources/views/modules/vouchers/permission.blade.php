@@ -12,7 +12,7 @@
                 <tbody>
                     <tr>
                         <td>Name</td>
-                        <td>{{ Auth::user()->email }}</td>
+                        <td>{{ Auth::user()->name }}</td>
                     </tr>
                     <tr>
                         <td>Email</td>

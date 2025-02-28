@@ -12,6 +12,6 @@ class VouchersLayout extends Component
      */
     public function render(): View
     {
-        return view('layouts.vouchers');
+        return view('modules.vouchers.layout.main');
     }
 }

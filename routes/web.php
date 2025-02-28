@@ -133,7 +133,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/vouchers', [VouchersController::class, 'vouchers'])->name('vouchers');
 
 
-    Route::get('/vouchers/management', [VouchersController::class, 'vouchers_management'])->name('vouchers_management');
+    Route::get('/vouchers/management', [VouchersController::class, 'maangement'])->name('vouchers_management');
 
     Route::get('/vouchers/data/{action}',  [VouchersController::class, 'data']);
         

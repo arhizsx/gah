@@ -21,7 +21,7 @@ class VouchersController extends Controller
 
         if( $current_user->position == "admin" ){
             
-            return view( $module.'management' )->render();
+            return view( $module.'vouchers' )->render();
 
         } elseif( $current_user->role == "agent" ){
 

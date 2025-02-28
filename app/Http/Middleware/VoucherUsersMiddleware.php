@@ -21,7 +21,6 @@ class VoucherUsersMiddleware
         $voucher_user = VoucherUsers::where("user_id",$request->user()->id)->first();
 
         if( !$voucher_user ){
-            return response()->json(['message' => 'Unauthorized'], 403);
             return response()->view('modules.vouchers.permission');
         }
         

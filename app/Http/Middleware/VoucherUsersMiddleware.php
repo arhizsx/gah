@@ -18,7 +18,7 @@ class VoucherUsersMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         
-        $voucher_user = VoucherUsers::find($request->user()->id);
+        $voucher_user = VoucherUsers::where("user_id",$request->user()->id)->first();
 
         if( !$voucher_user ){
             return response()->json(['message' => 'Unauthorized'], 403);

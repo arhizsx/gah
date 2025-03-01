@@ -773,7 +773,7 @@ class SupervendorController extends Controller
                     // return Storage::disk('gcs')->write('uploads/'.$filename, $request-($f)->get());
                     // $disk->putFileAs('', $file, $fileName);
 
-                    $data[ $f ] = $fileName;
+                    // $data[ $f ] = $fileName;
 
                     return $data;
 

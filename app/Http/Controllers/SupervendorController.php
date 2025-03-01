@@ -88,9 +88,10 @@ class SupervendorController extends Controller
 
     }
 
-
     // CAMPAIGNS ************************
 
+    
+    // PAGE FUNCTIONS ////////////////////////
 
     function index(){
 
@@ -181,11 +182,13 @@ class SupervendorController extends Controller
         return view("company");
     }
 
-    // Table Data
+    // PAGE FUNCTIONS *******************
+
+
+    // DATA FUNCTIONS ///////////////////
 
     function data( $action ){
 
-        $campaigns = [ "SAMSUNG", "REID", "GPO", "HPW", "POSTPAID", "ECPAY", "B2B", "GP-BB Offloader" ];
         $return_data = new Collection();
         $userCompany = Auth::user()->company;
         $cacheExpiration = 21600; // 6 hours cache expiration
@@ -403,6 +406,87 @@ class SupervendorController extends Controller
 
             break;
 
+
+            case "application_dropped":
+
+                $registration = CampaignRegistration::where("id", $request->id)->first();
+                $registration_data = CampaignRegistration::where("id", $request->id)->first();
+
+                if( $registration_data ){
+
+                    $registration_data = json_decode($registration_data->data,true);
+
+                    $registration_data["remarks"] = $request->remarks;
+
+                    $registration->update([
+                        "status" => 'DROPPED',
+                        "data" => $registration_data
+                    ]);
+
+                } else {
+
+                    $registration->update([
+                        "status" => 'DROPPED',
+                    ]);
+
+                }
+
+                $registration = CampaignRegistration::where("id", $request->id)->get();
+
+
+                return ["error"=> false, "registration" => $registration];
+
+            break;
+
+            // NEW STATUS CHANGER NOT YET IMPLEMENTED
+
+            case "change_status":
+
+                $registration = CampaignRegistration::where("id", $request->id)->first();
+                $registration_data = CampaignRegistration::where("id", $request->id)->first();
+
+                if( $registration_data ){
+
+                    $registration_data = json_decode($registration_data->data,true);
+
+                    $registration_data["remarks"] = $request->remarks;
+
+                    $registration->update([
+                        "status" => $request->new_status,
+                        "data" => $registration_data
+                    ]);
+
+                } else {
+
+                    $registration->update([
+                        "status" => $request->new_status,
+                    ]);
+
+                }
+                $registration = CampaignRegistration::where("id", $request->id)->get();
+
+                return ["error"=> false, "registration" => $registration];
+
+            break;
+
+            case "application_set_vendor":              
+
+                $registration = CampaignRegistration::where("id", $request->id)->first();
+
+                $registration->update([
+                    "vendor" => $request->payload["vendor"],
+                    "sgt_name" => $request->payload["gt"],
+                    "sgt_email" => $request->payload["email"],
+                    "status" => "ENDORSED",
+                ]);
+
+                $registration = CampaignRegistration::where("id", $request->id)->get();
+
+                return ["error"=> false, "registration" => $registration];       
+
+            break;
+
+
             case "application_pending":
 
                 return $this->pending($request);
@@ -487,92 +571,12 @@ class SupervendorController extends Controller
 
             break;
 
-            case "application_dropped":
-
-                $registration = CampaignRegistration::where("id", $request->id)->first();
-                $registration_data = CampaignRegistration::where("id", $request->id)->first();
-
-                if( $registration_data ){
-
-                    $registration_data = json_decode($registration_data->data,true);
-
-                    $registration_data["remarks"] = $request->remarks;
-
-                    $registration->update([
-                        "status" => 'DROPPED',
-                        "data" => $registration_data
-                    ]);
-
-                } else {
-
-                    $registration->update([
-                        "status" => 'DROPPED',
-                    ]);
-
-                }
-
-                $registration = CampaignRegistration::where("id", $request->id)->get();
-
-
-                return ["error"=> false, "registration" => $registration];
-
-            break;
-
-            // NEW STATUS CHANGER NOT YET IMPLEMENTED
-
-            case "change_status":
-
-                $registration = CampaignRegistration::where("id", $request->id)->first();
-                $registration_data = CampaignRegistration::where("id", $request->id)->first();
-
-                if( $registration_data ){
-
-                    $registration_data = json_decode($registration_data->data,true);
-
-                    $registration_data["remarks"] = $request->remarks;
-
-                    $registration->update([
-                        "status" => $request->new_status,
-                        "data" => $registration_data
-                    ]);
-
-                } else {
-
-                    $registration->update([
-                        "status" => $request->new_status,
-                    ]);
-
-                }
-                $registration = CampaignRegistration::where("id", $request->id)->get();
-
-                return ["error"=> false, "registration" => $registration];
-
-            break;
-
-            case "application_set_vendor":              
-
-                $registration = CampaignRegistration::where("id", $request->id)->first();
-
-                $registration->update([
-                    "vendor" => $request->payload["vendor"],
-                    "sgt_name" => $request->payload["gt"],
-                    "sgt_email" => $request->payload["email"],
-                    "status" => "ENDORSED",
-                ]);
-
-                $registration = CampaignRegistration::where("id", $request->id)->get();
-
-                return ["error"=> false, "registration" => $registration];       
-
-            break;
-
             default:
 
                 return "action not found";
 
 
         }
-
 
         return $request;
 
@@ -689,7 +693,6 @@ class SupervendorController extends Controller
         }
     }    
 
-
     function doRegistration( $data, $request ){
 
 
@@ -763,11 +766,16 @@ class SupervendorController extends Controller
                     $fileName = $f . '-' . rand( time() , 1000 ) . '-' . $request->file( $f )->getClientOriginalName();
 
                     // Uploading file to given path
+                    Storage::disk('gcs')->put($fileName, $f->get());
 
-                    return Storage::disk('gcs')->write('uploads/'.$filename, $request-($f)->get());
-                    $disk->putFileAs('', $file, $fileName);
+                    return Storage::disk('gcs')->url($fileName);
+
+                    // return Storage::disk('gcs')->write('uploads/'.$filename, $request-($f)->get());
+                    // $disk->putFileAs('', $file, $fileName);
 
                     $data[ $f ] = $fileName;
+
+                    return $data;
 
                 }
             }
@@ -827,5 +835,7 @@ class SupervendorController extends Controller
                 ->where("city", $city)
                 ->get();
     }
+
+    // DATA FUNCTIONS *******************
 
 }

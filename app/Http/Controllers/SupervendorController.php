@@ -14,6 +14,84 @@ use Illuminate\Support\Carbon;
 class SupervendorController extends Controller
 {
 
+    // CAMPAIGNS ////////////////////////
+
+    function samsung(){
+
+        $provinces = DB::table("location_provinces")->get();
+
+        return view('samsung', [ "provinces" => $provinces]);
+
+    }
+
+    function xiaomi(){
+
+        $provinces = DB::table("location_provinces")->get();
+
+        return view('xiaomi', [ "provinces" => $provinces]);
+
+    }
+
+    function tm(){
+
+        $provinces = DB::table("location_provinces")->get();
+
+        return view('tm', [ "provinces" => $provinces]);
+
+    }
+
+    function hpw(){
+
+        $provinces = DB::table("location_provinces")->get();
+
+        return view('hpw', [ "provinces" => $provinces]);
+
+    }
+
+    function postpaid(){
+
+        $provinces = DB::table("location_provinces")->get();
+
+        return view('postpaid', [ "provinces" => $provinces]);
+
+    }
+
+    function grplus(){
+
+        $provinces = DB::table("location_provinces")->get();
+
+        return view('grplus', [ "provinces" => $provinces]);
+
+    }
+
+    function gpo(){
+
+        $provinces = DB::table("location_provinces")->get();
+
+        return view('gpo', [ "provinces" => $provinces]);
+
+    }
+
+    function b2b(){
+
+        $provinces = DB::table("location_provinces")->get();
+
+        return view('b2b', [ "provinces" => $provinces]);
+
+    }
+
+    function globeprepaid(){
+
+        $provinces = DB::table("location_provinces")->get();
+
+        return view('globeprepaid', [ "provinces" => $provinces]);
+
+    }
+
+
+    // CAMPAIGNS ************************
+
+
     function index(){
 
         $data = Cache::remember('dashboard_data', 3600, function () {
@@ -86,7 +164,6 @@ class SupervendorController extends Controller
         return view("vendors");
 
     }
-
 
     function leadslist(){
 

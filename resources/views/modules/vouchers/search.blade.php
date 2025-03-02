@@ -11,10 +11,10 @@
                     <label class="mb-3">Mobile Number / Email / Name</label>
                     <input type="text" class="form-control w-100 mb-3" style="font-size: 2em;" name="search">
                     <div class="d-flex justify-content-end">
-                    <button class="btn btn-secondary rounded-3 px-5 me-3">Clear</button>
-                    <button class="btn btn-primary rounded-3 px-5">Search</button>
-                </form
-                </div>
+                        <button class="btn btn-secondary rounded-3 px-5 me-3">Clear</button>
+                        <button class="btn btn-primary rounded-3 px-5">Search</button>
+                    </div>
+                </form>
             </div>
         </div>
     </x-slot>
@@ -35,7 +35,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             success: function(resp){
-                console.log( resp );
+                console.log( resp ),
             },
             error: function(){
                 console.log("Error in AJAX");

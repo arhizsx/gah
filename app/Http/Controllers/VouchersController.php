@@ -72,4 +72,11 @@ class VouchersController extends Controller
         return json_encode($data);
 
     }
+
+    function search( Request $request ){
+
+        return $request;
+
+    }
+
 }

@@ -7,15 +7,42 @@
     <x-slot name="slot">
         <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 350px)">
             <div class="border shadow-lg bg-white p-5 rounded-5 w-100" style="max-width: 600px;">
-                <label class="mb-3">Mobile Number / Email</label>
-                <input type="text" class="form-control w-100 mb-3" style="font-size: 2em;">
-                
-                <div class="d-flex justify-content-end">
-                <button class="btn btn-secondary rounded-3 px-5 me-3">Clear</button>
-                <button class="btn btn-primary rounded-3 px-5">Search</button>
+                <form id="search_form">
+                    <label class="mb-3">Mobile Number / Email / Name</label>
+                    <input type="text" class="form-control w-100 mb-3" style="font-size: 2em;" name="search">
+                    <div class="d-flex justify-content-end">
+                    <button class="btn btn-secondary rounded-3 px-5 me-3">Clear</button>
+                    <button class="btn btn-primary rounded-3 px-5">Search</button>
+                </form
                 </div>
             </div>
         </div>
     </x-slot>
 </x-app-layout>
 
+<script>
+
+    $("#search_form").on("submit", function(e){
+
+        e.preventDefault();
+        $form = $(this).serialize();
+
+        $.ajax({
+            url: "/vouchers/search",
+            method: "POST",
+            data: $form,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function(resp){
+                console.log( resp );
+            },
+            error: function(){
+                console.log("Error in AJAX");
+            }
+        });
+
+    });
+
+
+</script>

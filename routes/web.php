@@ -170,6 +170,8 @@ use App\Http\Controllers\VouchersController;
 
         Route::get('/vouchers/data/{action}',  [VouchersController::class, 'data']);        
 
+        Route::post('/vouchers/search',  [VouchersController::class, 'search']);        
+
     });
 
 

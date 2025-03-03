@@ -126,6 +126,12 @@ $("#search_form").on("submit", function(e) {
                                                     `<div class='col-xl-3'>` +
                                                         item["Full Name"] +
                                                     `</div>` +
+                                                    `<div class='col-xl-3'>` +
+                                                        item["Mobile Number"] +
+                                                    `</div>` +
+                                                    `<div class='col-xl-3'>` +
+                                                        item["Email"] +
+                                                    `</div>` +
                                                 `</div>` +
                                             `</div>`;
 

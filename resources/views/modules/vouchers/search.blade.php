@@ -12,7 +12,7 @@
                     <input type="text" class="form-control w-100 mb-3" style="font-size: 2em;" name="search" id="search">
                     <div class="d-flex justify-content-end">
                         <button class="btn btn-secondary rounded-3 px-5 me-3">Clear</button>
-                        <button class="btn btn-primary rounded-3 px-5">Search</button>
+                        <button type="submit" class="btn btn-primary rounded-3 px-5">Search</button>
                     </div>
                 </form>
             </div>

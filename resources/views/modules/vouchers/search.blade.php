@@ -121,24 +121,24 @@ $("#search_form").on("submit", function(e) {
                         // Create a new element for each item (e.g., a list item)
                         // const listItem = `<div class='p-3'>${JSON.stringify(item)}</div>`; // Customize this as needed
             
-                        const listItem = `<div class='result_item py-3 border-bottom mb-3''>` + 
-                                                `<div class='row>` +
-                                                    `<div class='col-4'>` +
-                                                        item["Full Name"] +
-                                                    `</div>` +
-                                                    `<div class='col-4'>` +
-                                                        item["Mobile Number"] +
-                                                    `</div>` +
-                                                    `<div class='col-4'>` +
-                                                        item["Email"] +
-                                                    `</div>` +
+                        const listItem = `<div class='result_item container-fluid py-3 border-bottom mb-3''>` + 
+                                            `<div class='row>` +
+                                                `<div class='col-4'>` +
+                                                    item["Full Name"] +
                                                 `</div>` +
-                                                `<div class='row>` +
-                                                    `<div class='col-4'>` +
-                                                        JSON.stringify(item) +
-                                                    `</div>` +
+                                                `<div class='col-4'>` +
+                                                    item["Mobile Number"] +
                                                 `</div>` +
-                                            `</div>`;
+                                                `<div class='col-4'>` +
+                                                    item["Email"] +
+                                                `</div>` +
+                                            `</div>` +
+                                            `<div class='row>` +
+                                                `<div class='col-4'>` +
+                                                    JSON.stringify(item) +
+                                                `</div>` +
+                                            `</div>` +
+                                        `</div>`;
 
 
 

@@ -18,6 +18,9 @@
                     </x-nav-link>
                     @if( $position == "admin" )
                     <x-nav-link :href="route('vouchers_management')" :active="request()->routeIs('vouchers_management')">
+                        {{ __('Vouchers') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('vouchers_management')" :active="request()->routeIs('vouchers_management')">
                         {{ __('Management') }}
                     </x-nav-link>
                     @endif

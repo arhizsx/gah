@@ -164,7 +164,9 @@ use App\Http\Controllers\VouchersController;
 
     Route::group(['middleware' => ['auth', 'verified', 'VoucherUser']], function () {
 
-        Route::get('/vouchers', [VouchersController::class, 'vouchers'])->name('vouchers');
+        Route::get('/vouchers', [VouchersController::class, 'home'])->name('vouchers_home');
+
+        Route::get('/vouchers/list', [VouchersController::class, 'vouchers'])->name('vouchers_list');
 
         Route::get('/vouchers/management', [VouchersController::class, 'management'])->name('vouchers_management');
 

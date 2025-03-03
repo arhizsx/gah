@@ -13,26 +13,24 @@ use App\Models\VoucherUsers;
 class VouchersController extends Controller
 {
 
+    function home() {
+
+        $current_user = VoucherUsers::find(Auth::id());
+
+        $module = "modules.vouchers.";
+
+        return view( $module.'search')->render();
+
+
+    }
+
     function vouchers() {
 
         $current_user = VoucherUsers::find(Auth::id());
 
         $module = "modules.vouchers.";
 
-        if( $current_user->position == "admin" ){
-            
-            return view( $module.'vouchers' )->render();
-
-        } elseif( $current_user->role == "agent" ){
-
-            return view( $module.'search')->render();
-
-        } else {
-
-            return view( $module . 'search' )->render();
-
-        }
-
+        return view( $module.'vouchers')->render();
 
 
     }

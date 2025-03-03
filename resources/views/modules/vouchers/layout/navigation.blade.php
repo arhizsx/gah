@@ -13,11 +13,11 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('vouchers')" :active="request()->routeIs('vouchers')">
+                    <x-nav-link :href="route('vouchers_home')" :active="request()->routeIs('vouchers_home')">
                         {{ __('Home') }}
                     </x-nav-link>
                     @if( $position == "admin" )
-                    <x-nav-link :href="route('vouchers_management')" :active="request()->routeIs('vouchers_management')">
+                    <x-nav-link :href="route('vouchers_list')" :active="request()->routeIs('vouchers_list')">
                         {{ __('Vouchers') }}
                     </x-nav-link>
                     <x-nav-link :href="route('vouchers_management')" :active="request()->routeIs('vouchers_management')">
@@ -76,12 +76,17 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('vouchers')" :active="request()->routeIs('vouchers')">
+            <x-responsive-nav-link :href="route('vouchers_home')" :active="request()->routeIs('vouchers_home')">
                 {{ __('Home') }}
+            </x-responsive-nav-link>
+            @if( $position == "admin" )
+            <x-responsive-nav-link :href="route('vouchers_list')" :active="request()->routeIs('vouchers_list')">
+                {{ __('Vouchers') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('vouchers_management')" :active="request()->routeIs('vouchers_management')">
                 {{ __('Management') }}
             </x-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->

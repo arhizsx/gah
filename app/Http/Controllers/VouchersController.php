@@ -75,6 +75,10 @@ class VouchersController extends Controller
 
     function search( Request $request ){
 
+        $results = Vouchers::where('Mobile Number', 'like', "%{$keyword}%")
+                    ->orWhere('Email', 'like', "%{$keyword}%")
+                    ->get();
+
         return $request;
 
     }

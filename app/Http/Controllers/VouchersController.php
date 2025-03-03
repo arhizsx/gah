@@ -75,7 +75,7 @@ class VouchersController extends Controller
 
     function search( Request $request ){
 
-        if( len($request->search) == 11 ){
+        if( strlen($request->search) == 11 ){
              if( strpos($request->search, "0") == 0 ){
                 $search = ltrim($request->search, '0');
              } else {

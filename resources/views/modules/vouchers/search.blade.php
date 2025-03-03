@@ -31,7 +31,12 @@
                         </button>
                     </div>
                     <div class="d-flex justify-content-end">
-                        <button type="submit" class="btn btn-primary rounded-3 px-5 btn-controls">Search</button>
+                        <button type="submit" class="btn btn-primary rounded-3 px-5 btn-controls">
+                            <span id="button_text">Search</span>
+                            <span id="loading_icon" class="d-none">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </span>
+                        </button>
                     </div>
                 </form>
             </div>
@@ -45,12 +50,16 @@ $("#search_form").on("submit", function(e) {
     e.preventDefault(); // Prevent the form from submitting the traditional way
 
     const $form = $(this); // Cache the form element
-    const $submitButton = $form.find('button[type="submit"]'); // Find the submit button
 
     const $controls = $form.find('.btn-controls'); // Find the submit button
 
     // Disable the submit button to prevent multiple submissions
     $controls.prop("disabled", true);
+
+    const $submitButton = $form.find('button[type="submit"]'); // Find the submit button
+
+    $submitButton.find("#loading_icon").removeClass("d-none");
+    $submitButton.find("#button_text").addClass("d-none");
 
     // Serialize the form data
     const formData = $form.serialize();
@@ -84,6 +93,10 @@ $("#search_form").on("submit", function(e) {
         .finally(() => {
             // Re-enable the submit button after the request is complete
             $controls.prop("disabled", false);
+
+            $submitButton.find("#loading_icon").addClass("d-none");
+            $submitButton.find("#button_text").removeClass("d-none");
+
         });
 });
 

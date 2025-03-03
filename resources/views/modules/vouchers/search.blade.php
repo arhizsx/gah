@@ -43,5 +43,10 @@ $("#search_form").on("submit", function(e) {
     });
 });
 
+$(document).ready(function() {
+    // Focus on the search input field when the page is loaded
+    $("#search_input").focus();
+});
+
 
 </script>

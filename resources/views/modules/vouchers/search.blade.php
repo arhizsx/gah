@@ -23,26 +23,48 @@
 <script>
 
 $("#search_form").on("submit", function(e) {
-    e.preventDefault(); // This prevents the page from reloading
+    e.preventDefault(); // Prevent the form from submitting the traditional way
 
-    const $form = $(this).serialize(); // Serialize the form data
+    const $form = $(this); // Cache the form element
+    const $submitButton = $form.find('button[type="submit"]'); // Find the submit button
 
-    $.ajax({
-        url: "/vouchers/search",
-        method: "POST",
-        data: $form,
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Include CSRF token
-        },
-        success: function(resp) {
-            console.log(resp); // Handle the response
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            console.error("Error in AJAX:", textStatus, errorThrown); // Log errors
-        }
+    // Disable the submit button to prevent multiple submissions
+    $submitButton.prop("disabled", true);
+
+    // Serialize the form data
+    const formData = $form.serialize();
+
+    // Create a Promise for the AJAX request
+    const ajaxPromise = new Promise((resolve, reject) => {
+        $.ajax({
+            url: "/vouchers/search",
+            method: "POST",
+            data: formData,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Include CSRF token
+            },
+            success: function(resp) {
+                resolve(resp); // Resolve the Promise with the response
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                reject(new Error(`AJAX Error: ${textStatus} - ${errorThrown}`)); // Reject the Promise with an error
+            }
+        });
     });
-});
 
+    // Handle the Promise
+    ajaxPromise
+        .then((resp) => {
+            console.log("Response:", resp); // Handle the successful response
+        })
+        .catch((error) => {
+            console.error("Error:", error.message); // Handle the error
+        })
+        .finally(() => {
+            // Re-enable the submit button after the request is complete
+            $submitButton.prop("disabled", false);
+        });
+});
 $(document).ready(function() {
     // Focus on the search input field when the page is loaded
     $("#search").focus();

@@ -25,13 +25,13 @@
                 <form id="search_form">
                     <label class="mb-3">Mobile Number / Email / Name</label>
                     <div class="position-relative"> <!-- Container for input and X button -->
-                        <input type="text" class="form-control w-100 mb-3" style="font-size: 2em;" name="search" id="search">
-                        <button type="button" id="clear_search" class="btn btn-link position-absolute end-0 top-50 translate-middle-y" style="display: none;">
+                        <input type="text" class="form-control w-100 mb-3 btn-controls" style="font-size: 2em;" name="search" id="search">
+                        <button type="button" id="clear_search" class="btn-controls btn btn-link position-absolute end-0 top-50 translate-middle-y" style="display: none;">
                             <i class="fas fa-times fa-lg"></i> <!-- Font Awesome X icon -->
                         </button>
                     </div>
                     <div class="d-flex justify-content-end">
-                        <button type="submit" class="btn btn-primary rounded-3 px-5">Search</button>
+                        <button type="submit" class="btn btn-primary rounded-3 px-5 btn-controls">Search</button>
                     </div>
                 </form>
             </div>
@@ -47,8 +47,10 @@ $("#search_form").on("submit", function(e) {
     const $form = $(this); // Cache the form element
     const $submitButton = $form.find('button[type="submit"]'); // Find the submit button
 
+    const $controls = $form.find('.btn-controls'); // Find the submit button
+
     // Disable the submit button to prevent multiple submissions
-    $submitButton.prop("disabled", true);
+    $controls.prop("disabled", true);
 
     // Serialize the form data
     const formData = $form.serialize();
@@ -81,7 +83,7 @@ $("#search_form").on("submit", function(e) {
         })
         .finally(() => {
             // Re-enable the submit button after the request is complete
-            $submitButton.prop("disabled", false);
+            $controls.prop("disabled", false);
         });
 });
 

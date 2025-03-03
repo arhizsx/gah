@@ -133,7 +133,7 @@ $("#search_form").on("submit", function(e) {
                                                     item["Email"] +
                                                 `</div>` +
                                             `</div>` +
-                                            `<div class='row'>` +
+                                            `<div class='row mt-3' style='font-size: 0.8em'>` +
                                                 `<div class='col-12'>` +
                                                     JSON.stringify(item) +
                                                 `</div>` +

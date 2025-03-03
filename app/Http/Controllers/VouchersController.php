@@ -76,7 +76,7 @@ class VouchersController extends Controller
     function search( Request $request ){
 
 
-            if ( str_starts_with($string, '0') && len( $request->search ) == 11 ) {
+            if ( str_starts_with($request->search, '0') && len( $request->search ) == 11 ) {
                 $search = substr($request->search, 1);                
             }
             else {

@@ -21,7 +21,7 @@
     </style>
     <x-slot name="slot">
         <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 350px)">
-            <div class="border shadow-lg bg-white p-5 rounded-5 w-100" style="max-width: 600px;">
+            <div class="border shadow-lg bg-white px-5 py-3 rounded-5 w-100" style="max-width: 600px;">
                 <form id="search_form">
                     <label class="mb-3">Mobile Number / Email</label>
                     <div class="position-relative"> <!-- Container for input and X button -->

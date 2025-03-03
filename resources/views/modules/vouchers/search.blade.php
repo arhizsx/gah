@@ -139,7 +139,7 @@ $("#search_form").on("submit", function(e) {
 
                                             `<div class='row mt-3'>` +
                                                 `<div class='col-2 border'>` +
-                                                    `<div><small>Purchased At (Date+Time)</small></div>` +
+                                                    `<div><small>Product SKU</small></div>` +
                                                     `<div>` + item["Product SKU"] + `</div>` +
                                                 `</div>` +
                                                 `<div class='col-2 border'>` +
@@ -147,19 +147,19 @@ $("#search_form").on("submit", function(e) {
                                                     `<div>` + item["Purchased At (Date+Time)"] + `</div>`+
                                                 `</div>` +
                                                 `<div class='col-2 border'>` +
-                                                    `<div><small>Purchased At (Date+Time)</small></div>` +
+                                                    `<div><small>Payment Method</small></div>` +
                                                     `<div>` + item["Payment Method"] + `</div>` +
                                                 `</div>` +
                                                 `<div class='col-2 border'>` +
-                                                    `<div><small>Purchased At (Date+Time)</small></div>` +
+                                                    `<div><small>Payment Status</small></div>` +
                                                     `<div>` + item["Payment Status"] + `</div>` +
                                                 `</div>` +
                                                 `<div class='col-2 border'>` +
-                                                    `<div><small>Purchased At (Date+Time)</small></div>` +
+                                                    `<div><small>Payment Transaction ID</small></div>` +
                                                     `<div>` + item["Payment Transaction ID"] + `</div>` +
                                                 `</div>` +
                                                 `<div class='col-2 border'>` +
-                                                    `<div><small>Purchased At (Date+Time)</small></div>` +
+                                                    `<div><small>Revenue</small></div>` +
                                                     `<div>` + item["Revenue"] + `</div>` +
                                                 `</div>` +
                                             `</div>` +

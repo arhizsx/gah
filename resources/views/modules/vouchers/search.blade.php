@@ -41,7 +41,8 @@
                 </form>
             </div>
 
-            <div id="results_box" class="container">
+        </div>
+        <div id="results_box" class="container">
                 <div class="row">
                     <div class="col">
                         <H1>Result(s)</H1>
@@ -52,7 +53,6 @@
                 </div>
             </div>
 
-        </div>
     </x-slot>
 </x-app-layout>
 

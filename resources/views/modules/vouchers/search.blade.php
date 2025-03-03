@@ -119,7 +119,7 @@ $("#search_form").on("submit", function(e) {
                     // Loop through each item in the response array
                     resp.forEach((item) => {
                         // Create a new element for each item (e.g., a list item)
-                        const listItem = `<li>${JSON.stringify(item)}</li>`; // Customize this as needed
+                        const listItem = `<div class='p-3'>${JSON.stringify(item)}</div>`; // Customize this as needed
             
 
                         // Append the new element to the results list

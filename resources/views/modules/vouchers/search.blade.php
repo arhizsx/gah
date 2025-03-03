@@ -42,7 +42,7 @@
             </div>
 
         </div>
-        <div id="results_box" class="container">
+        <div id="results_box" class="container d-none">
                 <div class="row">
                     <div class="col">
                         <H1>Result(s)</H1>
@@ -73,7 +73,7 @@ $("#search_form").on("submit", function(e) {
     $submitButton.find("#loading_icon").removeClass("d-none");
     $submitButton.find("#button_text").addClass("d-none");
 
-    const $results = $form.find('#results_box'); // Find the submit button
+    const $results = $(document).find('#results_box'); // Find the submit button
     
     $results.addClass("d-none");
     

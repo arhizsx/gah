@@ -123,13 +123,16 @@ $("#search_form").on("submit", function(e) {
             
                         const listItem = `<div class='result_item container-fluid py-3 border-bottom mb-3''>` + 
                                             `<div class='row'>` +
-                                                `<div class='col-4'>` +
+                                                `<div class='col-3'>` +
+                                                    item["Reference Number"] +
+                                                `</div>` +
+                                                `<div class='col-3'>` +
                                                     item["Full Name"] +
                                                 `</div>` +
-                                                `<div class='col-4'>` +
+                                                `<div class='col-3'>` +
                                                     item["Mobile Number"] +
                                                 `</div>` +
-                                                `<div class='col-4'>` +
+                                                `<div class='col-3'>` +
                                                     item["Email"] +
                                                 `</div>` +
                                             `</div>` +

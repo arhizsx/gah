@@ -42,17 +42,19 @@
             </div>
 
         </div>
+
         <div id="results_box" class="container d-none">
+            <div class="border shadow-lg bg-white p-5 rounded-5 w-100" style="">
                 <div class="row">
                     <div class="col">
-                        <H1>Result(s)</H1>
+                        <H1 style="font-size: 1.2em; font-weight: bolder;">Result(s)</H1>
                     </div>
                 </div>
                 <div class="row">
 
                 </div>
             </div>
-
+        </div>
     </x-slot>
 </x-app-layout>
 

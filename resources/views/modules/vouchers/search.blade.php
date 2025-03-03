@@ -44,13 +44,13 @@
         </div>
 
         <div id="results_box" class="container-fluid d-none">
-            <div class="border shadow-lg bg-white p-3 rounded-4 w-100" style="">
+            <div class="border shadow-lg bg-white p-4 rounded-4 w-100" style="">
                 <div class="row">
-                    <div class="col">
+                    <div class="col border-bottom">
                         <H1 style="font-size: 2em; font-weight: bolder;">Result(s)</H1>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" id="results_list">
 
                 </div>
             </div>
@@ -131,6 +131,12 @@ $(document).ready(function() {
     // Focus on the search input field when the page is loaded
     $searchInput.focus();
 
+    if ($searchInput.val().trim() !== "") {
+        $clearButton.show();
+    } else {
+        $clearButton.hide();
+    }
+
 
     // Show/hide the X button based on input value
     $searchInput.on("input", function() {
@@ -153,9 +159,6 @@ $(document).ready(function() {
         $clearButton.hide();
     });
 
-});
-
-$(document).ready(function() {
 });
 
 </script>

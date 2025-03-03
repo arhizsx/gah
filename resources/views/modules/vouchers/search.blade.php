@@ -85,7 +85,7 @@ $("#search_form").on("submit", function(e) {
     const formData = $form.serialize();
     console.log("Form Data:", formData); // Debugging: Log the form data
 
-    console.log($(document).find("#search"));
+    console.log(e);
 
     // Create a Promise for the AJAX request
     const ajaxPromise = new Promise((resolve, reject) => {

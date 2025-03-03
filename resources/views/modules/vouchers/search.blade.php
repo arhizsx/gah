@@ -136,6 +136,27 @@ $("#search_form").on("submit", function(e) {
                                                     item["Email"] +
                                                 `</div>` +
                                             `</div>` +
+
+                                            `<div class='row'>` +
+                                                `<div class='col-2'>` +
+                                                    item["Product SKU"] +
+                                                `</div>` +
+                                                `<div class='col-2'>` +
+                                                    item["Purchased At (Date+Time)"] +
+                                                `</div>` +
+                                                `<div class='col-2'>` +
+                                                    item["Payment Method"] +
+                                                `</div>` +
+                                                `<div class='col-2'>` +
+                                                    item["Payment Status"] +
+                                                `</div>` +
+                                                `<div class='col-2'>` +
+                                                    item["Payment Transaction ID"] +
+                                                `</div>` +
+                                                `<div class='col-2'>` +
+                                                    item["Revenue"] +
+                                                `</div>` +
+                                            `</div>` +
                                             `<div class='row mt-3' style='font-size: 0.8em'>` +
                                                 `<div class='col-12'>` +
                                                     JSON.stringify(item) +

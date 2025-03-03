@@ -75,8 +75,21 @@ class VouchersController extends Controller
 
     function search( Request $request ){
 
-        $results = Vouchers::where('Mobile Number', 'like', "%{$request->search}%")
-                    ->orWhere('Email', 'like', "%{$request->search}%")
+        if (is_int($request->search) || is_float($request->search)) {
+
+            if ( str_starts_with($string, '0') && len( $request->search ) == 11 ) {
+                $search = substr($request->search, 1);                
+            }
+            else {
+                $search = $request->search;
+            }             
+
+        } else {
+            echo "The variable is not a number.";
+        }        
+
+        $results = Vouchers::where('Mobile Number', 'like', "%{$search}%")
+                    ->orWhere('Email', 'like', "%{$search}%")
                     ->get();
 
         return $results;

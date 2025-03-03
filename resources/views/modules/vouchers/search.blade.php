@@ -125,7 +125,7 @@ $("#search_form").on("submit", function(e) {
 
                         // Append the new element to the results list
                         $results.find("#results_list").append(listItem);
-                    });\
+                    });
 
                 } else {
 

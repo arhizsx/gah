@@ -41,14 +41,14 @@
                 </form>
             </div>
 
-            <div id="results_box" class="d-none">
+            <div id="results_box" class="container">
                 <div class="row">
                     <div class="col">
-                        <H3>Result(s)</H3>
+                        <H1>Result(s)</H1>
                     </div>
                 </div>
                 <div class="row">
-                    
+
                 </div>
             </div>
 

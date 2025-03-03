@@ -32,7 +32,6 @@
                         </button>
                     </div>
                     <div class="d-flex justify-content-end">
-                        <button type="button" class="btn btn-secondary rounded-3 px-5 me-3">Clear</button>
                         <button type="submit" class="btn btn-primary rounded-3 px-5">Search</button>
                     </div>
                 </form>

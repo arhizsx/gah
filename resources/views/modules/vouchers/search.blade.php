@@ -118,9 +118,7 @@ $("#search_form").on("submit", function(e) {
                 resp.forEach((item) => {
                     // Create a new element for each item (e.g., a list item)
                     const listItem = `<li>${JSON.stringify(item)}</li>`; // Customize this as needed
-                    
-                    console.log(listItem);
-
+        
 
                     // Append the new element to the results list
                     $results.find("#results_list").append(listItem);
@@ -134,6 +132,7 @@ $("#search_form").on("submit", function(e) {
             } else {
                 // Handle cases where the response is not an array or object
                 $results.find("#results_list").html("<li>No data found or invalid response format.</li>");
+                alert("S");
             }            
 
         })

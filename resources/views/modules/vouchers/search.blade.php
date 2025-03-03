@@ -44,7 +44,7 @@
         </div>
 
         <div id="results_box" class="container-fluid d-none">
-            <div class="border shadow-lg bg-white p-5 rounded-4 w-100" style="">
+            <div class="border shadow-lg bg-white p-3 rounded-4 w-100" style="">
                 <div class="row">
                     <div class="col">
                         <H1 style="font-size: 2em; font-weight: bolder;">Result(s)</H1>

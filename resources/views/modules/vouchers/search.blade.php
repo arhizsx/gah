@@ -79,13 +79,10 @@ $("#search_form").on("submit", function(e) {
     
     $results.addClass("d-none");
     
-
-
-    // Serialize the form data
-    const formData = $form.serialize();
-    console.log("Form Data:", formData); // Debugging: Log the form data
-
-    console.log(e);
+    const searchValue = $("#search").val().trim();
+    const data = {
+        search: searchValue, // Manually include the search value
+    };            
 
     // Create a Promise for the AJAX request
     const ajaxPromise = new Promise((resolve, reject) => {
@@ -93,7 +90,7 @@ $("#search_form").on("submit", function(e) {
         $.ajax({
             url: "/vouchers/search",
             method: "POST",
-            data: formData,
+            data: data,
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Include CSRF token
             },

@@ -8,14 +8,13 @@
     <style>
     /* Style for the X button */
     #clear_search {
-        font-size: 1.5em;
-        color: #999;
-        text-decoration: none;
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-
+    font-size: 1.5em;
+    color: red; /* Make it stand out */
+    background: yellow; /* Make it stand out */
+    border: 1px solid black; /* Make it stand out */
+    z-index: 1000; /* Ensure it's on top */
+    }   
+    
     #clear_search:hover {
         color: #333;
     }    
@@ -27,9 +26,9 @@
                     <label class="mb-3">Mobile Number / Email / Name</label>
                     <div class="position-relative"> <!-- Container for input and X button -->
                         <input type="text" class="form-control w-100 mb-3" style="font-size: 2em;" name="search" id="search">
-                        <button type="button" id="clear_search" class="btn btn-link position-absolute end-0 top-50 translate-middle-y" style="display: none;">
+                        <button type="button" id="clear_search" class="btn btn-link position-absolute end-0 top-50 translate-middle-y">
                             <i class="fas fa-times"></i> <!-- Font Awesome X icon -->
-                        </button>
+                        </button>                    
                     </div>
                     <div class="d-flex justify-content-end">
                         <button type="button" class="btn btn-secondary rounded-3 px-5 me-3">Clear</button>

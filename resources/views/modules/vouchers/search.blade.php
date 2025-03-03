@@ -10,9 +10,10 @@
     /* Style for the X button */
     #clear_search {
     font-size: 1.5em;
-    color: red; /* Make it stand out */
+    color: blue; /* Make it stand out */
     background: yellow; /* Make it stand out */
     border: 1px solid black; /* Make it stand out */
+    border-radius: 30px; 
     z-index: 1000; /* Ensure it's on top */
     }   
     

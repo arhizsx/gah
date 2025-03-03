@@ -18,6 +18,9 @@
     #clear_search:hover {
         color: #333;
     }    
+    .search_info {
+        font-size: 1.2em;
+    }
     </style>
     <x-slot name="slot">
         <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 350px)">

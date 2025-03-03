@@ -23,7 +23,7 @@
         <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 350px)">
             <div class="border shadow-lg bg-white px-5 py-3 rounded-5 w-100" style="max-width: 600px;">
                 <form id="search_form">
-                    <label class="mb-3">Mobile Number / Email / Name</label>
+                    <label class="mb-3">Mobile Number / Email / Name </label>
                     <div class="position-relative"> <!-- Container for input and X button -->
                         <input type="text" class="form-control w-100 mb-3 btn-controls" style="font-size: 2em;" name="search" id="search">
                         <button type="button" id="clear_search" class="btn-controls btn btn-link position-absolute end-0 top-50 translate-middle-y" style="display: none;">

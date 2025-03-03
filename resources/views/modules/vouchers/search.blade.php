@@ -134,7 +134,7 @@ $("#search_form").on("submit", function(e) {
                                                 `</div>` +
                                             `</div>` +
                                             `<div class='row'>` +
-                                                `<div class='col-4'>` +
+                                                `<div class='col-12'>` +
                                                     JSON.stringify(item) +
                                                 `</div>` +
                                             `</div>` +

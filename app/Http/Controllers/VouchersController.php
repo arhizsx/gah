@@ -75,13 +75,16 @@ class VouchersController extends Controller
 
     function search( Request $request ){
 
-
-            if ( str_starts_with($request->search, '0') && len( $request->search ) == 11 ) {
-                $search = substr($request->search, 1);                
-            }
-            else {
+        if( len($request->search) == 11 ){
+             if( strpos($request->search, "0") == 0 ){
+                $search = ltrim($request->search, '0');
+             } else {
                 $search = $request->search;
-            }             
+             }
+        } else {
+            $search = $request->search;
+        }
+
 
         $results = Vouchers::where('Mobile Number', 'like', "%{$search}%")
                     ->orWhere('Email', 'like', "%{$search}%")

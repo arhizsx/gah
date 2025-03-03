@@ -119,8 +119,17 @@ $("#search_form").on("submit", function(e) {
                     // Loop through each item in the response array
                     resp.forEach((item) => {
                         // Create a new element for each item (e.g., a list item)
-                        const listItem = `<div class='p-3'>${JSON.stringify(item)}</div>`; // Customize this as needed
+                        // const listItem = `<div class='p-3'>${JSON.stringify(item)}</div>`; // Customize this as needed
             
+                        const listItem = `<div class='result_item'>` + 
+                                                `<div class='row'>` +
+                                                    `<div class='col-xl-3'>` +
+                                                        ${ item["Full Name"]  }
+                                                    `</div>` +
+                                                `</div>` +
+                                            `</div>`    
+
+
 
                         // Append the new element to the results list
                         $results.find("#results_list").append(listItem);

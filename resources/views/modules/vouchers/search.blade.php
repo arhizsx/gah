@@ -5,6 +5,7 @@
             {{ __('Search') }}
         </h2>
     </x-slot>
+    <x-slot name="slot">
     <style>
     /* Style for the X button */
     #clear_search {
@@ -22,7 +23,6 @@
         font-size: 1.2em;
     }
     </style>
-    <x-slot name="slot">
         <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 350px)">
             <div class="border shadow-lg bg-white px-5 py-3 rounded-5 w-100" style="max-width: 600px;">
                 <form id="search_form">

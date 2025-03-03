@@ -40,6 +40,18 @@
                     </div>
                 </form>
             </div>
+
+            <div id="results_box" class="d-none">
+                <div class="row">
+                    <div class="col">
+                        <H3>Result(s)</H3>
+                    </div>
+                </div>
+                <div class="row">
+
+                </div>
+            </div>
+
         </div>
     </x-slot>
 </x-app-layout>
@@ -60,6 +72,11 @@ $("#search_form").on("submit", function(e) {
 
     $submitButton.find("#loading_icon").removeClass("d-none");
     $submitButton.find("#button_text").addClass("d-none");
+
+    const $results = $form.find('#results_box'); // Find the submit button
+    $results.addClass("d-none");
+    
+
 
     // Serialize the form data
     const formData = $form.serialize();
@@ -96,6 +113,9 @@ $("#search_form").on("submit", function(e) {
 
             $submitButton.find("#loading_icon").addClass("d-none");
             $submitButton.find("#button_text").removeClass("d-none");
+
+            $results.removeClass("d-none");
+
 
         });
 });

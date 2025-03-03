@@ -115,7 +115,6 @@ $("#search_form").on("submit", function(e) {
             // Check if the response is an array
             if (Array.isArray(resp)) {
 
-                if( resp.len() >= 0 ) {
 
                     // Loop through each item in the response array
                     resp.forEach((item) => {
@@ -126,12 +125,6 @@ $("#search_form").on("submit", function(e) {
                         // Append the new element to the results list
                         $results.find("#results_list").append(listItem);
                     });
-
-                } else {
-
-                    $results.find("#results_list").append("Nothing Found");
-
-                }
 
 
             } else if (typeof resp === 'object' && resp !== null) {

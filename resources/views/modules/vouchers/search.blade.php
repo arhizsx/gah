@@ -127,7 +127,7 @@ $("#search_form").on("submit", function(e) {
                                                         ${ item["Full Name"]  }
                                                     `</div>` +
                                                 `</div>` +
-                                            `</div>`    
+                                            `</div>`;
 
 
 

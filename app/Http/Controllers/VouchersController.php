@@ -88,6 +88,9 @@ class VouchersController extends Controller
 
         $results = Vouchers::where('Mobile Number', 'like', "%{$search}%")
                     ->orWhere('Email', 'like', "%{$search}%")
+                    ->orWhere('First Name', 'like', "%{$search}%")
+                    ->orWhere('Middle Name', 'like', "%{$search}%")
+                    ->orWhere('Last Name', 'like', "%{$search}%")
                     ->get();
 
         return $results;

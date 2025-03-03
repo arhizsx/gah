@@ -85,7 +85,7 @@ class VouchersController extends Controller
             }             
 
         } else {
-            echo "The variable is not a number.";
+            $search = $request->search;
         }        
 
         $results = Vouchers::where('Mobile Number', 'like', "%{$search}%")

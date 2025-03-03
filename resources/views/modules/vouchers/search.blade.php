@@ -114,15 +114,26 @@ $("#search_form").on("submit", function(e) {
 
             // Check if the response is an array
             if (Array.isArray(resp)) {
-                // Loop through each item in the response array
-                resp.forEach((item) => {
-                    // Create a new element for each item (e.g., a list item)
-                    const listItem = `<li>${JSON.stringify(item)}</li>`; // Customize this as needed
-        
 
-                    // Append the new element to the results list
-                    $results.find("#results_list").append(listItem);
-                });
+                if( resp.len() > 0 ) {
+
+                    // Loop through each item in the response array
+                    resp.forEach((item) => {
+                        // Create a new element for each item (e.g., a list item)
+                        const listItem = `<li>${JSON.stringify(item)}</li>`; // Customize this as needed
+            
+
+                        // Append the new element to the results list
+                        $results.find("#results_list").append(listItem);
+                    });\
+
+                } else {
+
+                    $results.find("#results_list").append("Nothing Found");
+
+                }
+
+
             } else if (typeof resp === 'object' && resp !== null) {
                 // If the response is an object, loop through its keys and values
                 for (const [key, value] of Object.entries(resp)) {

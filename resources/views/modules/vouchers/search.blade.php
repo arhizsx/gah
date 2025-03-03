@@ -28,6 +28,7 @@
                         <input type="text" class="form-control w-100 mb-3" style="font-size: 2em;" name="search" id="search">
                         <button type="button" id="clear_search" class="btn btn-link position-absolute end-0 top-50 translate-middle-y" style="display: none;">
                             <i class="fas fa-times"></i> <!-- Font Awesome X icon -->
+                            Clear
                         </button>
                     </div>
                     <div class="d-flex justify-content-end">

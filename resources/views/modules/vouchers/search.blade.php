@@ -124,7 +124,7 @@ $("#search_form").on("submit", function(e) {
                         const listItem = `<div class='result_item'>` + 
                                                 `<div class='row'>` +
                                                     `<div class='col-xl-3'>` +
-                                                        ${ item["Full Name"]  }
+                                                        item["Full Name"] +
                                                     `</div>` +
                                                 `</div>` +
                                             `</div>`;

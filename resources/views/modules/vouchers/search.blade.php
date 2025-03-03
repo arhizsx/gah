@@ -22,27 +22,26 @@
 
 <script>
 
-    $("#search_form").on("submit", function(e){
+$("#search_form").on("submit", function(e) {
+    e.preventDefault(); // This prevents the page from reloading
 
-        e.preventDefault();
-        $form = $(this).serialize();
+    const $form = $(this).serialize(); // Serialize the form data
 
-        $.ajax({
-            url: "/vouchers/search",
-            method: "POST",
-            data: $form,
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            success: function(resp){
-                console.log( resp ),
-            },
-            error: function(){
-                console.log("Error in AJAX");
-            }
-        });
-
+    $.ajax({
+        url: "/vouchers/search",
+        method: "POST",
+        data: $form,
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Include CSRF token
+        },
+        success: function(resp) {
+            console.log(resp); // Handle the response
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.error("Error in AJAX:", textStatus, errorThrown); // Log errors
+        }
     });
+});
 
 
 </script>

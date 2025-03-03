@@ -107,6 +107,32 @@ $("#search_form").on("submit", function(e) {
     ajaxPromise
         .then((resp) => {
             console.log("Response:", resp); // Handle the successful response
+
+
+            // Clear the existing content in the results list
+            $results.find("#results_list").html("");
+
+            // Check if the response is an array
+            if (Array.isArray(resp)) {
+                // Loop through each item in the response array
+                resp.forEach((item) => {
+                    // Create a new element for each item (e.g., a list item)
+                    const listItem = `<li>${JSON.stringify(item)}</li>`; // Customize this as needed
+
+                    // Append the new element to the results list
+                    $results.find("#results_list").append(listItem);
+                });
+            } else if (typeof resp === 'object' && resp !== null) {
+                // If the response is an object, loop through its keys and values
+                for (const [key, value] of Object.entries(resp)) {
+                    const listItem = `<li><strong>${key}:</strong> ${JSON.stringify(value)}</li>`; // Customize this as needed
+                    $results.find("#results_list").append(listItem);
+                }
+            } else {
+                // Handle cases where the response is not an array or object
+                $results.find("#results_list").html("<li>No data found or invalid response format.</li>");
+            }            
+
         })
         .catch((error) => {
             console.error("Error:", error.message); // Handle the error

@@ -115,7 +115,7 @@ $("#search_form").on("submit", function(e) {
             // Check if the response is an array
             if (Array.isArray(resp)) {
 
-                if( resp.len() > 0 ) {
+                if( resp.len() >= 0 ) {
 
                     // Loop through each item in the response array
                     resp.forEach((item) => {

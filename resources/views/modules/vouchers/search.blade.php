@@ -83,9 +83,11 @@ $("#search_form").on("submit", function(e) {
 
     // Serialize the form data
     const formData = $form.serialize();
-
+    console.log("Form Data:", formData); // Debugging: Log the form data
+    
     // Create a Promise for the AJAX request
     const ajaxPromise = new Promise((resolve, reject) => {
+
         $.ajax({
             url: "/vouchers/search",
             method: "POST",

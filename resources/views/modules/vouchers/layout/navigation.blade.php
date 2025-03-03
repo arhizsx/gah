@@ -6,7 +6,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('vouchers') }}">
+                    <a href="{{ route('vouchers_home') }}">
                         <img src="/images/gt.png" width="40px;">
                     </a>
                 </div>

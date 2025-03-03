@@ -1,18 +1,3 @@
-<style>
-/* Style for the X button */
-#clear_search {
-    font-size: 1.5em;
-    color: #999;
-    text-decoration: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-#clear_search:hover {
-    color: #333;
-}    
-</style>
 
 <x-vouchers-layout>
     <x-slot name="header">
@@ -20,6 +5,21 @@
             {{ __('Search') }}
         </h2>
     </x-slot>
+    <style>
+    /* Style for the X button */
+    #clear_search {
+        font-size: 1.5em;
+        color: #999;
+        text-decoration: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    #clear_search:hover {
+        color: #333;
+    }    
+    </style>
     <x-slot name="slot">
         <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 350px)">
             <div class="border shadow-lg bg-white p-5 rounded-5 w-100" style="max-width: 600px;">

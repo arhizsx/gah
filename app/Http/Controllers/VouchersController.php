@@ -79,7 +79,7 @@ class VouchersController extends Controller
                     ->orWhere('Email', 'like', "%{$request->search}%")
                     ->get();
 
-        return $request;
+        return $results;
 
     }
 

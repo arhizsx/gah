@@ -122,7 +122,7 @@ $("#search_form").on("submit", function(e) {
                         // const listItem = `<div class='p-3'>${JSON.stringify(item)}</div>`; // Customize this as needed
             
                         const listItem = `<div class='result_item container-fluid py-3 border-bottom mb-3''>` + 
-                                            `<div class='row>` +
+                                            `<div class='row'>` +
                                                 `<div class='col-4'>` +
                                                     item["Full Name"] +
                                                 `</div>` +
@@ -133,7 +133,7 @@ $("#search_form").on("submit", function(e) {
                                                     item["Email"] +
                                                 `</div>` +
                                             `</div>` +
-                                            `<div class='row>` +
+                                            `<div class='row'>` +
                                                 `<div class='col-4'>` +
                                                     JSON.stringify(item) +
                                                 `</div>` +

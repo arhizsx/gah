@@ -700,51 +700,52 @@ class SupervendorController extends Controller
 
             $result = $this->storeFile( $data, $request );
             
-            return $result;
         }
 
 
-        // $vendor = $this->getVendor($request->province, $request->city);
+        $vendor = $this->getVendor($request->province, $request->city);
 
-        // $sgt_name = null;
-        // $sgt_email = null;
-        // $status = "UNASSIGNED";
+        return $vendor;
 
-
-        // if( count( $vendor ) == 1 ){
-
-        //     $supervendor = $vendor[0]->SUPERVENDOR;
-
-        //     $sgt_name = $vendor[0]->sgt_name;
-        //     $sgt_email = $vendor[0]->sgt_email;
-
-        //     if( $request->campaign != 'SAMSUNG' ){
-        //         $status = "ENDORSED";
-        //     }
-
-        // }
-        // elseif( count( $vendor ) > 1 ){
-
-        //     $supervendor = "%MULTI_VENDORS%";
-
-        // } else {
-
-        //     $supervendor = null;
-
-        // }
+        $sgt_name = null;
+        $sgt_email = null;
+        $status = "UNASSIGNED";
 
 
-        // $registration = CampaignRegistration::create([
-        //     "campaign" => $request->campaign,
-        //     "user_id" => null,
-        //     "status" => $status,
-        //     "vendor" => $supervendor,
-        //     "sgt_name" => $sgt_name,
-        //     "sgt_email" => $sgt_email,
-        //     "data" => json_encode($data)
-        // ]);
+        if( count( $vendor ) == 1 ){
 
-        // return ["error" => false, "registration" => $registration ];
+            $supervendor = $vendor[0]->SUPERVENDOR;
+
+            $sgt_name = $vendor[0]->sgt_name;
+            $sgt_email = $vendor[0]->sgt_email;
+
+            if( $request->campaign != 'SAMSUNG' ){
+                $status = "ENDORSED";
+            }
+
+        }
+        elseif( count( $vendor ) > 1 ){
+
+            $supervendor = "%MULTI_VENDORS%";
+
+        } else {
+
+            $supervendor = null;
+
+        }
+
+
+        $registration = CampaignRegistration::create([
+            "campaign" => $request->campaign,
+            "user_id" => null,
+            "status" => $status,
+            "vendor" => $supervendor,
+            "sgt_name" => $sgt_name,
+            "sgt_email" => $sgt_email,
+            "data" => json_encode($data)
+        ]);
+
+        return ["error" => false, "registration" => $registration ];
 
     }
 

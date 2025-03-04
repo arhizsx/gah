@@ -696,6 +696,8 @@ class SupervendorController extends Controller
     function doRegistration( $data, $request ){
 
 
+        return $request->file();
+
         // $result = $this->storeFile( $data, $request );
 
         // if( $result["error"] == true ){

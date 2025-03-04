@@ -755,7 +755,6 @@ class SupervendorController extends Controller
 
             // Upload path
             $destinationPath = 'files/';
-            $disk = Storage::disk('gcs');
 
             // Cycle all uploaded files
             foreach( $request->file() as $f => $k ){
@@ -765,13 +764,8 @@ class SupervendorController extends Controller
                     $extension = $request->file( $f )->getClientOriginalExtension();
                     $fileName = $f . '-' . rand( time() , 1000 ) . '-' . $request->file( $f )->getClientOriginalName();
 
-                    // Uploading file to given path
-                    Storage::disk('gcs')->put($fileName, $f->get());
-
-                    return Storage::disk('gcs')->url($fileName);
-
-                    // return Storage::disk('gcs')->write('uploads/'.$filename, $request-($f)->get());
-                    // $disk->putFileAs('', $file, $fileName);
+                    $request->file('document')->move($destinationPath, $fileName);
+                    
 
                     $data[ $f ] = $fileName;
 

@@ -128,16 +128,16 @@ $("#search_form").on("submit", function(e) {
                                             `</div>` +
                                             `<div class='row'>` +
                                                 `<div class='col-xl-3 border'>` +
-                                                    item["Reference Number"] +
+                                                    `<div class='search_info'>` + item["Reference Number"] + `</div>` +
                                                 `</div>` +
                                                 `<div class='col-xl-3 border'>` +
-                                                    item["Full Name"] +
+                                                    `<div class='search_info'>` + item["Full Name"] +`</div>` +
                                                 `</div>` +
                                                 `<div class='col-xl-3 border'>` +
-                                                    item["Mobile Number"] +
+                                                    `<div class='search_info'>` + item["Mobile Number"] +`</div>` +
                                                 `</div>` +
                                                 `<div class='col-xl-3 border'>` +
-                                                    item["Email"] +
+                                                    `<div class='search_info'>` + item["Email"] +`</div>` +
                                                 `</div>` +
                                             `</div>` +
                                             `<div class='row mt-3' style="font-size: 1.2em; font-weight: bolder;">` +

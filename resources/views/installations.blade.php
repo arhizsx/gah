@@ -316,5 +316,44 @@ $(document).on("click", ".btn-action", function(){
 
 });
 
+function applicationSetImage(data){
+
+$("#img_receipt").attr("src",  "");
+$("#href_receipt").attr("href", "");
+
+$("#img_serviceability_check").attr("src",  "");
+$("#href_serviceability_check").attr("href", "");
+
+$.ajax({
+    url: "/supervendor/gcsExists/" + data.receipt,
+    method: "GET",
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    success: function(resp){
+        $("#img_receipt").attr("src",  resp.url);
+        $("#href_receipt").attr("href", resp.url);
+    },
+    error: function(){
+    }
+});
+
+$.ajax({
+    url: "/supervendor/gcsExists/" + data.serviceability_check,
+    method: "GET",
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    success: function(resp){
+        $("#img_serviceability_check").attr("src",  resp.url);
+        $("#href_serviceability_check").attr("href",  resp.url);
+    },
+    error: function(){
+    }
+});
+
+
+}
+
 
 </script>

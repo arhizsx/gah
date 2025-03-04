@@ -61,6 +61,9 @@ use App\Http\Controllers\VouchersController;
         Route::get('/supervendor/data/{action}',  [SupervendorController::class, 'data'])->name('data');
         Route::post('/supervendor/ajax',  [SupervendorController::class, 'ajax'])->name('ajax');
 
+
+        Route::get('/supervendor/gcsExists/{image}',  [SupervendorController::class, 'gcs_exists'])->name('gcs_exists');
+
     });
 
     // ///////////////

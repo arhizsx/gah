@@ -686,11 +686,34 @@ function callbackAction(data){
 
 function applicationSetImage(data){
 
-    $("#img_receipt").attr("src", "/files/" + data.receipt);
-    $("#img_serviceability_check").attr("src",  "/files/" + data.serviceability_check);
+    $.ajax({
+        url: "/supervendor/gcsExists/" + data.receipt,
+        method: "GET",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function(resp){
+            $("#img_receipt").attr("src",  resp.url);
+            $("#href_receipt").attr("href", "/files/" + resp.url);
+        },
+        error: function(){
+        }
+    });
 
-    $("#href_receipt").attr("href", "/files/" + data.receipt);
-    $("#href_serviceability_check").attr("href",  "/files/" + data.serviceability_check);
+    $.ajax({
+        url: "/supervendor/gcsExists/" + data.serviceability_check,
+        method: "GET",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function(resp){
+            $("#img_serviceability_check").attr("src",  "/files/" + resp.url);
+            $("#href_serviceability_check").attr("href",  "/files/" + resp.url);
+        },
+        error: function(){
+        }
+    });
+
 
 }
 

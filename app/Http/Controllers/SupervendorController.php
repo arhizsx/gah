@@ -771,8 +771,6 @@ class SupervendorController extends Controller
                     $request->file($f)->move($destinationPath, $fileName);                
 
                     $data[ $f ] = $fileName;
-                    
-                    return $data;
 
                 }
             }

@@ -123,8 +123,8 @@ $("#search_form").on("submit", function(e) {
                         // const listItem = `<div class='p-3'>${JSON.stringify(item)}</div>`; // Customize this as needed
             
                         const listItem = `<div class='result_item container-fluid py-3 border-bottom-2 mb-5 p-4''>` + 
-                                            `<div class='row style="font-size: 1.2em; font-weight: bolder;">` +
-                                                'Customer Information' +
+                                            `<div class='row mt-3' style="font-size: 1.2em; font-weight: bolder;">` +
+                                                'Transaction Information' +
                                             `</div>` +
                                             `<div class='row'>` +
                                                 `<div class='col-xl-3 border'>` +
@@ -191,11 +191,6 @@ $("#search_form").on("submit", function(e) {
                                                 `</div>` +
                                                 `<div class='col-xl-3 border'>` +
                                                     `<button class="btn btn-primary form-control mt-2">RESEND VOUCHER</button>` +
-                                                `</div>` +
-                                            `</div>` +
-                                            `<div class='row mt-3' style='font-size: 0.8em'>` +
-                                                `<div class='col-12'>` +
-                                                    JSON.stringify(item) +
                                                 `</div>` +
                                             `</div>` +
                                         `</div>`;

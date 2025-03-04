@@ -138,7 +138,7 @@ $("#search_form").on("submit", function(e) {
                                                 `</div>` +
                                             `</div>` +
                                             `<div class='row mt-3'>` +
-                                                '<strong>Trannsaction Information</strong>'
+                                                '<strong>Trannsaction Information</strong>' +
                                             `</div>` +
                                             `<div class='row'>` +
                                                 `<div class='col-2 border'>` +
@@ -167,7 +167,7 @@ $("#search_form").on("submit", function(e) {
                                                 `</div>` +
                                             `</div>` +
                                             `<div class='row mt-3'>` +
-                                                '<strong>Voucher Information</strong>'
+                                                '<strong>Voucher Information</strong>' +
                                             `</div>` +
                                             `<div class='row'>` +
                                                 `<div class='col-4 border'>` +

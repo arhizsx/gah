@@ -137,8 +137,10 @@ $("#search_form").on("submit", function(e) {
                                                     item["Email"] +
                                                 `</div>` +
                                             `</div>` +
-
                                             `<div class='row mt-3'>` +
+                                                '<strong>Trannsaction Information</strong>'
+                                            `</div>` +
+                                            `<div class='row'>` +
                                                 `<div class='col-2 border'>` +
                                                     `<div><small>Product SKU</small></div>` +
                                                     `<div class='search_info'>` + item["Product SKU"] + `</div>` +
@@ -164,8 +166,10 @@ $("#search_form").on("submit", function(e) {
                                                     `<div class='search_info'>` + item["Revenue"] + `</div>` +
                                                 `</div>` +
                                             `</div>` +
-
                                             `<div class='row mt-3'>` +
+                                                '<strong>Voucher Information</strong>'
+                                            `</div>` +
+                                            `<div class='row'>` +
                                                 `<div class='col-4 border'>` +
                                                     `<div><small>Voucher Type</small></div>` +
                                                     `<div class='search_info'>` + item["Voucher Type"] + `</div>` +

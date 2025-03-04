@@ -166,13 +166,17 @@ $("#search_form").on("submit", function(e) {
                                             `</div>` +
 
                                             `<div class='row mt-3'>` +
-                                                `<div class='col-2 border'>` +
+                                                `<div class='col-4 border'>` +
                                                     `<div><small>Voucher Type</small></div>` +
                                                     `<div class='search_info'>` + item["Voucher Type"] + `</div>` +
                                                 `</div>` +
-                                                `<div class='col-2 border'>` +
+                                                `<div class='col-4 border'>` +
                                                     `<div><small>Voucher Assigned</small></div>` +
                                                     `<div class='search_info'>` + item["Voucher Assigned"] + `</div>`+
+                                                `</div>` +
+                                                `<div class='col-4 border'>` +
+                                                    `<div><small>Redemption Date</small></div>` +
+                                                    `<div class='search_info'>` + item["Redemption Date"] + `</div>`+
                                                 `</div>` +
                                             `</div>` +
                                             `<div class='row mt-3' style='font-size: 0.8em'>` +

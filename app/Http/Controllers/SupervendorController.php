@@ -700,7 +700,7 @@ class SupervendorController extends Controller
         if (!Storage::disk('gcs')) {
             return ['error' => true, 'message' => 'GCS disk is not configured properly'];
         }
-        
+
         if( count($request->allFiles()) > 0 ){
             
             // $result = $this->storeFile( $data, $request );
@@ -840,8 +840,6 @@ class SupervendorController extends Controller
     // DATA FUNCTIONS *******************
 
     // GCS FUNCTIONS 
-
-    use Illuminate\Support\Facades\Storage;
 
     function storeGCS($data, $request)
     {

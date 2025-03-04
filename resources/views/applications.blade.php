@@ -650,10 +650,10 @@ $(document).on('change', '.selectSGT', function() {
 
 function callbackAction(data){
 
-    applicationSetImage(data);
 
     if( data.campaign == "SAMSUNG" ){
-
+        applicationSetImage(data);
+        $(document).find(".attach_box").removeClass("d-none");
     } 
     else {
         $(document).find(".attach_box").addClass("d-none");

@@ -696,7 +696,12 @@ class SupervendorController extends Controller
     function doRegistration( $data, $request ){
 
 
-        return $request->file();
+        return count($request->allFiles());
+
+        foreach( $request->file() as $f => $k ){
+
+        }
+
 
         // $result = $this->storeFile( $data, $request );
 

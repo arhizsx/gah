@@ -124,16 +124,16 @@ $("#search_form").on("submit", function(e) {
             
                         const listItem = `<div class='result_item container-fluid py-3 border-bottom mb-3''>` + 
                                             `<div class='row'>` +
-                                                `<div class='col-3'>` +
+                                                `<div class='col-xl-3'>` +
                                                     item["Reference Number"] +
                                                 `</div>` +
-                                                `<div class='col-3'>` +
+                                                `<div class='col-xl-3'>` +
                                                     item["Full Name"] +
                                                 `</div>` +
-                                                `<div class='col-3'>` +
+                                                `<div class='col-xl-3'>` +
                                                     item["Mobile Number"] +
                                                 `</div>` +
-                                                `<div class='col-3'>` +
+                                                `<div class='col-xl-3'>` +
                                                     item["Email"] +
                                                 `</div>` +
                                             `</div>` +
@@ -141,15 +141,15 @@ $("#search_form").on("submit", function(e) {
                                                 'Trannsaction Information' +
                                             `</div>` +
                                             `<div class='row'>` +
-                                                `<div class='col-2 border'>` +
+                                                `<div class='col-xl-2 border'>` +
                                                     `<div><small>Product SKU</small></div>` +
                                                     `<div class='search_info'>` + item["Product SKU"] + `</div>` +
                                                 `</div>` +
-                                                `<div class='col-2 border'>` +
+                                                `<div class='col-xl-2 border'>` +
                                                     `<div><small>Purchased At (Date+Time)</small></div>` +
                                                     `<div class='search_info'>` + item["Purchased At (Date+Time)"] + `</div>`+
                                                 `</div>` +
-                                                `<div class='col-2 border'>` +
+                                                `<div class='col-xl-2 border'>` +
                                                     `<div><small>Payment Method</small></div>` +
                                                     `<div class='search_info'>` + item["Payment Method"] + `</div>` +
                                                 `</div>` +

@@ -696,20 +696,12 @@ class SupervendorController extends Controller
     function doRegistration( $data, $request ){
 
 
-        return count($request->allFiles());
+        if( count($request->allFiles()) > 0 ){
 
-        foreach( $request->file() as $f => $k ){
+            $result = $this->storeFile( $data, $request );
 
         }
 
-
-        // $result = $this->storeFile( $data, $request );
-
-        // if( $result["error"] == true ){
-        //     return response()->json( ['error' => true, 'message' => $result["message"] ] );
-        // } else {
-        //     $data = $result["data"];
-        // }
 
         $vendor = $this->getVendor($request->province, $request->city);
 

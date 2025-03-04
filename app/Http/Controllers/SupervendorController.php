@@ -883,7 +883,7 @@ class SupervendorController extends Controller
         if (Storage::disk('gcs')->fileExists('files/' . $image )) {
 
             $url = Storage::disk('gcs')->temporaryUrl(
-                'files/' . $image // URL expires in 10 minutes
+                'files/' . $image
             );
 
             return ["exists" => true, "url" => $url];

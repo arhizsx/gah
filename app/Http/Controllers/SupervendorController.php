@@ -863,7 +863,8 @@ class SupervendorController extends Controller
                     // Close the stream after writing
                     // fclose($stream);
 
-                    return Storage::disk('gcs')->url($filePath);
+
+                    return "https://storage.googleapis.com/" . env('GOOGLE_CLOUD_STORAGE_BUCKET') . "/" . $filePath;
 
                     // Save the public URL or file path
                     $data[$f] = Storage::disk('gcs')->url($filePath);

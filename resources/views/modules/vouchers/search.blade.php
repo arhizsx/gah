@@ -153,15 +153,15 @@ $("#search_form").on("submit", function(e) {
                                                     `<div><small>Payment Method</small></div>` +
                                                     `<div class='search_info'>` + item["Payment Method"] + `</div>` +
                                                 `</div>` +
-                                                `<div class='col-2 border'>` +
+                                                `<div class='col-xl-2 border'>` +
                                                     `<div><small>Payment Status</small></div>` +
                                                     `<div class='search_info'>` + item["Payment Status"] + `</div>` +
                                                 `</div>` +
-                                                `<div class='col-2 border'>` +
+                                                `<div class='col-xl-2 border'>` +
                                                     `<div><small>Payment Transaction ID</small></div>` +
                                                     `<div class='search_info'>` + item["Payment Transaction ID"] + `</div>` +
                                                 `</div>` +
-                                                `<div class='col-2 border'>` +
+                                                `<div class='col-xl-2 border'>` +
                                                     `<div><small>Revenue</small></div>` +
                                                     `<div class='search_info'>` + item["Revenue"] + `</div>` +
                                                 `</div>` +
@@ -170,20 +170,20 @@ $("#search_form").on("submit", function(e) {
                                                 'Voucher Information' +
                                             `</div>` +
                                             `<div class='row'>` +
-                                                `<div class='col-3 border'>` +
+                                                `<div class='col-xl-3 border'>` +
                                                     `<div><small>Voucher Type</small></div>` +
                                                     `<div class='search_info'>` + item["Voucher Type"] + `</div>` +
                                                 `</div>` +
-                                                `<div class='col-3 border'>` +
+                                                `<div class='col-xl-3 border'>` +
                                                     `<div><small>Voucher Assigned</small></div>` +
                                                     `<div class='search_info'>` + item["Voucher Assigned"] + `</div>`+
                                                 `</div>` +
-                                                `<div class='col-3 border'>` +
+                                                `<div class='col-xl-3 border'>` +
                                                     `<div><small>Redemption Date</small></div>` +
                                                     `<div class='search_info'>` + item["Redemption Date"] + `</div>`+
                                                 `</div>` +
-                                                `<div class='col-3 border'>` +
-                                                    `<button class="btn btn-primary form-control mt-3">RESEND VOUCHER</button>` +
+                                                `<div class='col-xl-3 border'>` +
+                                                    `<button class="btn btn-primary form-control my-1">RESEND VOUCHER</button>` +
                                                 `</div>` +
                                             `</div>` +
                                             `<div class='row mt-3' style='font-size: 0.8em'>` +

@@ -698,12 +698,16 @@ class SupervendorController extends Controller
 
         if( count($request->allFiles()) > 0 ){
             
-            $result = $this->storeFile( $data, $request );
+            // $result = $this->storeFile( $data, $request );
+            // $data = $result["data"];
 
+
+            $result = $this->storeGCS( $data, $request );
             $data = $result["data"];
 
-        } 
+            return $result;
 
+        } 
         
 
         $vendor = $this->getVendor($request->province, $request->city);
@@ -829,5 +833,34 @@ class SupervendorController extends Controller
     }
 
     // DATA FUNCTIONS *******************
+
+    // GCS FUNCTIONS 
+
+    use Illuminate\Support\Facades\Storage;
+
+    function storeGCS($data, $request)
+    {
+        try {
+            // Cycle through all uploaded files
+            foreach ($request->file() as $f => $file) {
+                if ($request->hasFile($f)) {
+                    $extension = $file->getClientOriginalExtension();
+                    $fileName = $f . '-' . time() . '-' . $file->getClientOriginalName();
+                    
+                    // Store file in GCS (the `gcs` disk should be configured in config/filesystems.php)
+                    $filePath = 'files/' . $fileName;
+                    Storage::disk('gcs')->put($filePath, file_get_contents($file));
+
+                    // Save the public URL or file path
+                    $data[$f] = Storage::disk('gcs')->url($filePath);
+                }
+            }
+        } catch (\Throwable $th) {
+            return ['error' => true, 'message' => $th->getMessage()];
+        }
+
+        return ['error' => false, 'data' => $data];
+    }
+
 
 }

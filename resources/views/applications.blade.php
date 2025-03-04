@@ -686,7 +686,11 @@ function callbackAction(data){
 
 function applicationSetImage(data){
 
-    console.log(data);
+    $("#img_receipt").attr("src",  "");
+    $("#href_receipt").attr("href", "");
+
+    $("#img_serviceability_check").attr("src",  "");
+    $("#href_serviceability_check").attr("href", "");
 
     $.ajax({
         url: "/supervendor/gcsExists/" + data.receipt,

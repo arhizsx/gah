@@ -699,8 +699,6 @@ class SupervendorController extends Controller
         if( count($request->allFiles()) > 0 ){
 
             $result = $this->storeFile( $data, $request );
-
-            return $result;
             
         }
 
@@ -762,16 +760,13 @@ class SupervendorController extends Controller
             // Cycle all uploaded files
             foreach( $request->file() as $f => $k ){
 
-                return $f;
-
-
                 if( $request->hasFile( $f )) {
 
 
 
                     $extension = $request->file( $f )->getClientOriginalExtension();
 
-
+                    return $extension;
 
                     // Uploading file to given path
                     $request->file('document')->move($destinationPath, $fileName);

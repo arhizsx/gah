@@ -123,17 +123,20 @@ $("#search_form").on("submit", function(e) {
                         // const listItem = `<div class='p-3'>${JSON.stringify(item)}</div>`; // Customize this as needed
             
                         const listItem = `<div class='result_item container-fluid py-3 border-bottom mb-3''>` + 
+                                            `<div class='row style="font-size: 1.2em; font-weight: bolder;">` +
+                                                'Customer Information' +
+                                            `</div>` +
                                             `<div class='row'>` +
-                                                `<div class='col-xl-3'>` +
+                                                `<div class='col-xl-3 border'>` +
                                                     item["Reference Number"] +
                                                 `</div>` +
-                                                `<div class='col-xl-3'>` +
+                                                `<div class='col-xl-3 border'>` +
                                                     item["Full Name"] +
                                                 `</div>` +
-                                                `<div class='col-xl-3'>` +
+                                                `<div class='col-xl-3 border'>` +
                                                     item["Mobile Number"] +
                                                 `</div>` +
-                                                `<div class='col-xl-3'>` +
+                                                `<div class='col-xl-3 border'>` +
                                                     item["Email"] +
                                                 `</div>` +
                                             `</div>` +

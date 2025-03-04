@@ -850,17 +850,22 @@ class SupervendorController extends Controller
                     $fileName = $f . '-' . time() . '-' . $file->getClientOriginalName();
                     $filePath = 'files/' . $fileName;
                     
-                    // Open file as a stream
-                    $stream = fopen($file->getRealPath(), 'r');
+                    try {
+                        
+                        $stream = fopen($file->getRealPath(), 'r');
 
-                    if (!$stream) {
-                        throw new \Exception("Failed to open file stream for {$file->getClientOriginalName()}");
+                        if (!$stream) {
+                            throw new \Exception("Failed to open file stream for {$file->getClientOriginalName()}");
+                        }
+                    
+                        Storage::disk('gcs')->writeStream($filePath, $stream);
+
+                    } finally {
+                        if (isset($stream) && is_resource($stream)) {
+                            fclose($stream);
+                        }
                     }
-    
-                    // Write file to GCS (no need to check return value)
-                    Storage::disk('gcs')->writeStream($filePath, $stream);
-
-                    fclose($stream);
+                    
 
                     // Save the file path to data
                     $data[$f] = $fileName;

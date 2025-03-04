@@ -706,10 +706,8 @@ class SupervendorController extends Controller
             // $result = $this->storeFile( $data, $request );
             // $data = $result["data"];
 
-
             $result = $this->storeGCS( $data, $request );
-
-            return $result;
+            $data = $result["data"];
 
         } 
         

@@ -857,11 +857,11 @@ class SupervendorController extends Controller
                         throw new \Exception("Failed to open file stream for {$file->getClientOriginalName()}");
                     }
     
-                    // Try writing to GCS
-                    if (!Storage::disk('gcs')->writeStream($filePath, $stream)) {
-                        throw new \Exception("Failed to write file to GCS at $filePath");
-                    }
-    
+                    // Write file to GCS (no need to check return value)
+                    Storage::disk('gcs')->writeStream($filePath, $stream);
+
+                    // Close the stream after writing
+                    fclose($stream);
 
                     return Storage::disk('gcs')->url($filePath);
 

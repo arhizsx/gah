@@ -705,8 +705,6 @@ class SupervendorController extends Controller
 
         $vendor = $this->getVendor($request->province, $request->city);
 
-        return $vendor;
-
         $sgt_name = null;
         $sgt_email = null;
         $status = "UNASSIGNED";
@@ -719,9 +717,7 @@ class SupervendorController extends Controller
             $sgt_name = $vendor[0]->sgt_name;
             $sgt_email = $vendor[0]->sgt_email;
 
-            if( $request->campaign != 'SAMSUNG' ){
-                $status = "ENDORSED";
-            }
+            $status = "ENDORSED";
 
         }
         elseif( count( $vendor ) > 1 ){

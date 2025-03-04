@@ -697,7 +697,8 @@ class SupervendorController extends Controller
 
 
         if( count($request->allFiles()) > 0 ){
-            $data = $this->storeFile( $data, $request );
+            $result = $this->storeFile( $data, $request );
+            return $result;
         } 
 
 
@@ -727,7 +728,6 @@ class SupervendorController extends Controller
             $supervendor = null;
 
         }
-
 
         $registration = CampaignRegistration::create([
             "campaign" => $request->campaign,

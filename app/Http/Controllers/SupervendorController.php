@@ -854,10 +854,12 @@ class SupervendorController extends Controller
                     $stream = fopen($file->getRealPath(), 'r');
 
                     // Store file using writeStream() for Flysystem v2/v3
-                     Storage::disk('gcs')->writeStream($filePath, $stream);
+                    Storage::disk('gcs')->writeStream($filePath, $stream);
 
                     // Close stream after writing
                     fclose($stream);
+
+                    return Storage::disk('gcs')->url($filePath);
 
                     // Save the public URL or file path
                     $data[$f] = Storage::disk('gcs')->url($filePath);

@@ -768,7 +768,7 @@ class SupervendorController extends Controller
                     $fileName = $f . '-' . rand( time() , 1000 ) . '-' . $request->file( $f )->getClientOriginalName();
 
                     // Uploading file to given path
-                    $request->file('document')->move($destinationPath, $fileName);                    
+                    return $request->file($f)->move($destinationPath, $fileName);                
 
                     $data[ $f ] = $fileName;
 

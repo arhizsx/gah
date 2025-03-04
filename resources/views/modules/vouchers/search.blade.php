@@ -138,7 +138,7 @@ $("#search_form").on("submit", function(e) {
                                                 `</div>` +
                                             `</div>` +
                                             `<div class='row mt-3' style="font-size: 1.2em; font-weight: bolder;">` +
-                                                '<strong>Trannsaction Information</strong>' +
+                                                'Trannsaction Information' +
                                             `</div>` +
                                             `<div class='row'>` +
                                                 `<div class='col-2 border'>` +
@@ -170,17 +170,21 @@ $("#search_form").on("submit", function(e) {
                                                 'Voucher Information' +
                                             `</div>` +
                                             `<div class='row'>` +
-                                                `<div class='col-4 border'>` +
+                                                `<div class='col-3 border'>` +
                                                     `<div><small>Voucher Type</small></div>` +
                                                     `<div class='search_info'>` + item["Voucher Type"] + `</div>` +
                                                 `</div>` +
-                                                `<div class='col-4 border'>` +
+                                                `<div class='col-3 border'>` +
                                                     `<div><small>Voucher Assigned</small></div>` +
                                                     `<div class='search_info'>` + item["Voucher Assigned"] + `</div>`+
                                                 `</div>` +
-                                                `<div class='col-4 border'>` +
+                                                `<div class='col-3 border'>` +
                                                     `<div><small>Redemption Date</small></div>` +
                                                     `<div class='search_info'>` + item["Redemption Date"] + `</div>`+
+                                                `</div>` +
+                                                `<div class='col-3 border'>` +
+                                                    `<div><small>Action</small></div>` +
+                                                    `<button class="btn btn-primary">RESEND VOUCHER</button>`
                                                 `</div>` +
                                             `</div>` +
                                             `<div class='row mt-3' style='font-size: 0.8em'>` +

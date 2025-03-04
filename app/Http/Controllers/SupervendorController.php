@@ -7,9 +7,11 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\CampaignRegistration;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Carbon;
+
+use Illuminate\Support\Facades\Storage;
+
 
 class SupervendorController extends Controller
 {
@@ -695,7 +697,10 @@ class SupervendorController extends Controller
 
     function doRegistration( $data, $request ){
 
-
+        if (!Storage::disk('gcs')) {
+            return ['error' => true, 'message' => 'GCS disk is not configured properly'];
+        }
+        
         if( count($request->allFiles()) > 0 ){
             
             // $result = $this->storeFile( $data, $request );

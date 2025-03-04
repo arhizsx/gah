@@ -700,6 +700,8 @@ class SupervendorController extends Controller
 
             $result = $this->storeFile( $data, $request );
 
+            return $result;
+            
         }
 
 
@@ -751,6 +753,8 @@ class SupervendorController extends Controller
 
         // Upload Attached Documents
         try{
+
+
 
             // Upload path
             $destinationPath = 'files/';

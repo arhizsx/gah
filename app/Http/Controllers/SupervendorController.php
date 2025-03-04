@@ -860,16 +860,9 @@ class SupervendorController extends Controller
                     // Write file to GCS (no need to check return value)
                     Storage::disk('gcs')->writeStream($filePath, $stream);
 
-                    if (Storage::disk('gcs')->fileExists($filePath)) {
-                        return "File exists in GCS!";
-                    } else {
-                        return "File does not exist in GCS!";
-                    }
-                    
-                    // Close the stream after writing
-                    // fclose($stream);
+                    fclose($stream);
 
-                    // Save the public URL or file path
+                    // Save the file path to data
                     $data[$f] = $fileName;
 
                 }

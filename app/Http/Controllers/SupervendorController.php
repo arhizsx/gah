@@ -697,11 +697,8 @@ class SupervendorController extends Controller
 
 
         if( count($request->allFiles()) > 0 ){
-
-            $result = $this->storeFile( $data, $request );
-            
-            return $result;
-        }
+            $data = $this->storeFile( $data, $request );
+        } 
 
 
         $vendor = $this->getVendor($request->province, $request->city);

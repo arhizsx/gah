@@ -648,7 +648,7 @@ class SupervendorController extends Controller
         elseif($request->campaign  == 'B2B'){
             $table = "b2b";
         }
-        elseif($request->campaign  == 'GLOBE PREPAID'){
+        elseif($request->campaign  == 'GP-BB Offloader'){
             $table = "globeprepaid";
         }
         elseif($request->campaign  == 'HPW'){

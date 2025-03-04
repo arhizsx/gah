@@ -709,7 +709,7 @@ class SupervendorController extends Controller
 
             $result = $this->storeGCS( $data, $request );
 
-            return $result;
+            return $result["data"];
 
         } 
         
@@ -854,7 +854,7 @@ class SupervendorController extends Controller
                     $stream = fopen($file->getRealPath(), 'r');
 
                     // Store file using writeStream() for Flysystem v2/v3
-                    return Storage::disk('gcs')->writeStream($filePath, $stream);
+                     Storage::disk('gcs')->writeStream($filePath, $stream);
 
                     // Close stream after writing
                     fclose($stream);

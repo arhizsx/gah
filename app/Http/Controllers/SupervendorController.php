@@ -848,6 +848,7 @@ class SupervendorController extends Controller
                 if ($request->hasFile($f)) {
                     $extension = $file->getClientOriginalExtension();
                     $fileName = $f . '-' . time() . '-' . $file->getClientOriginalName();
+                    $filePath = 'files/' . $fileName;
                     
                     // Open file as a stream
                     $stream = fopen($file->getRealPath(), 'r');

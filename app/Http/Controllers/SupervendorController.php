@@ -700,7 +700,7 @@ class SupervendorController extends Controller
             
             $result = $this->storeFile( $data, $request );
 
-            $data = $result->data;
+            $data = $result["data"];
 
         } 
 

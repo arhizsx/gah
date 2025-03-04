@@ -128,20 +128,24 @@ $("#search_form").on("submit", function(e) {
                                             `</div>` +
                                             `<div class='row'>` +
                                                 `<div class='col-xl-3 border'>` +
+                                                    `<div><small>Reference Number</small></div>` +
                                                     `<div class='search_info'>` + item["Reference Number"] + `</div>` +
                                                 `</div>` +
                                                 `<div class='col-xl-3 border'>` +
-                                                    `<div class='search_info'>` + item["Full Name"] +`</div>` +
+                                                    `<div><small>Full Name</small></div>` +
+                                                    `<div class='search_info'>` + item["Full Name"] +`</div>` +                                                    
                                                 `</div>` +
                                                 `<div class='col-xl-3 border'>` +
+                                                    `<div><small>Mobile Number</small></div>` +
                                                     `<div class='search_info'>` + item["Mobile Number"] +`</div>` +
                                                 `</div>` +
                                                 `<div class='col-xl-3 border'>` +
+                                                    `<div><small>Email</small></div>` +
                                                     `<div class='search_info'>` + item["Email"] +`</div>` +
                                                 `</div>` +
                                             `</div>` +
                                             `<div class='row mt-3' style="font-size: 1.2em; font-weight: bolder;">` +
-                                                'Trannsaction Information' +
+                                                'Transaction Information' +
                                             `</div>` +
                                             `<div class='row'>` +
                                                 `<div class='col-xl-2 border'>` +

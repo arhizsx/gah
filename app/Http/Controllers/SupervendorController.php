@@ -858,7 +858,7 @@ class SupervendorController extends Controller
                     }
     
                     // Write file to GCS (no need to check return value)
-                    Storage::disk('gcs')->writeStream($filePath, $stream);
+                    return Storage::disk('gcs')->writeStream($filePath, $stream);
 
                     // Close the stream after writing
                     fclose($stream);

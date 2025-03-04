@@ -83,8 +83,18 @@ class VouchersController extends Controller
             $search = $request->search;
         }
 
+        $current_user = VoucherUsers::find(Auth::id());
 
-        $results = DB::table("vouchers_view")
+        $module = "modules.vouchers.";
+
+        if( $current_user->position == "admin" ){
+            $table = "vouchers_view";
+        } else {
+            $table = "vouchers_limited_view";
+        }
+
+
+        $results = DB::table($table)
                     ->where('Mobile Number', 'like', "%{$search}%")
                     ->orWhere('Email', 'like', "%{$search}%")
                     ->orWhere('Full Name', 'like', "%{$search}%")

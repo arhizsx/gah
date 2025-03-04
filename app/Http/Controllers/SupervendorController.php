@@ -760,13 +760,13 @@ class SupervendorController extends Controller
             // Cycle all uploaded files
             foreach( $request->file() as $f => $k ){
 
-                if( $request->hasFile( $f )) {
+                return $k;
 
+                if( $request->hasFile( $f )) {
 
 
                     $extension = $request->file( $f )->getClientOriginalExtension();
 
-                    return $extension;
 
                     // Uploading file to given path
                     $request->file('document')->move($destinationPath, $fileName);

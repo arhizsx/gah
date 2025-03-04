@@ -882,8 +882,6 @@ class SupervendorController extends Controller
         
         if (Storage::disk('gcs')->fileExists('files/' . $image )) {
 
-            return "exists";
-
             $url = "https://storage.googleapis.com/" . env('GOOGLE_CLOUD_STORAGE_BUCKET') . "/files/". $image;
             return ["exists" => true, "url" => $url];
 

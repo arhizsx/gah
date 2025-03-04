@@ -853,11 +853,15 @@ class SupervendorController extends Controller
                     // Open file as a stream
                     $stream = fopen($file->getRealPath(), 'r');
 
-                    // Store file using writeStream() for Flysystem v2/v3
-                    Storage::disk('gcs')->writeStream($filePath, $stream);
-
-                    // Close stream after writing
-                    fclose($stream);
+                    if (!$stream) {
+                        throw new \Exception("Failed to open file stream for {$file->getClientOriginalName()}");
+                    }
+    
+                    // Try writing to GCS
+                    if (!Storage::disk('gcs')->writeStream($filePath, $stream)) {
+                        throw new \Exception("Failed to write file to GCS at $filePath");
+                    }
+    
 
                     return Storage::disk('gcs')->url($filePath);
 

@@ -766,8 +766,9 @@ class SupervendorController extends Controller
 
                     // Uploading file to given path
                     $request->file($f)->move($destinationPath, $fileName);                
-
                     $data[ $f ] = $fileName;
+
+                    return $data;
 
                 }
             }

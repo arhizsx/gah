@@ -694,7 +694,7 @@ function applicationSetImage(data){
         },
         success: function(resp){
             $("#img_receipt").attr("src",  resp.url);
-            $("#href_receipt").attr("href", "/files/" + resp.url);
+            $("#href_receipt").attr("href", resp.url);
         },
         error: function(){
         }
@@ -707,8 +707,8 @@ function applicationSetImage(data){
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         success: function(resp){
-            $("#img_serviceability_check").attr("src",  "/files/" + resp.url);
-            $("#href_serviceability_check").attr("href",  "/files/" + resp.url);
+            $("#img_serviceability_check").attr("src",  resp.url);
+            $("#href_serviceability_check").attr("href",  resp.url);
         },
         error: function(){
         }

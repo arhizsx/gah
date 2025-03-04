@@ -849,12 +849,18 @@ class SupervendorController extends Controller
                     $extension = $file->getClientOriginalExtension();
                     $fileName = $f . '-' . time() . '-' . $file->getClientOriginalName();
                     
-                    // Store file in GCS (the `gcs` disk should be configured in config/filesystems.php)
-                    $filePath = 'files/' . $fileName;
-                    Storage::disk('gcs')->put($filePath, file_get_contents($file));
+                    // Open file as a stream
+                    $stream = fopen($file->getRealPath(), 'r');
+
+                    // Store file using writeStream() for Flysystem v2/v3
+                    Storage::disk('gcs')->writeStream($filePath, $stream);
+
+                    // Close stream after writing
+                    fclose($stream);
 
                     // Save the public URL or file path
                     $data[$f] = Storage::disk('gcs')->url($filePath);
+
                 }
             }
         } catch (\Throwable $th) {

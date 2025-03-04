@@ -700,6 +700,7 @@ class SupervendorController extends Controller
 
             $result = $this->storeFile( $data, $request );
             
+            return $result;
         }
 
 
@@ -751,7 +752,6 @@ class SupervendorController extends Controller
         try{
 
 
-
             // Upload path
             $destinationPath = 'files/';
 
@@ -767,8 +767,6 @@ class SupervendorController extends Controller
                     // Uploading file to given path
                     $request->file($f)->move($destinationPath, $fileName);                
                     $data[ $f ] = $fileName;
-
-                    return $data;
 
                 }
             }

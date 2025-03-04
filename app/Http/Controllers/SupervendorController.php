@@ -709,7 +709,7 @@ class SupervendorController extends Controller
 
             $result = $this->storeGCS( $data, $request );
 
-            return $result["data"];
+            return $result;
 
         } 
         

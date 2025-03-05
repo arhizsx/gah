@@ -15,11 +15,10 @@ class VouchersController extends Controller
 
     function home() {
 
-        $current_user = VoucherUsers::find(Auth::id());
 
         $module = "modules.vouchers.";
 
-        $current_user = VoucherUsers::find(Auth::id());
+        $current_user = VoucherUsers::find(Auth::user()->id);
         
         $position = "admin";
 

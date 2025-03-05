@@ -27,7 +27,7 @@ class VouchersController extends Controller
             $position = "agent";
         }
 
-        return view( $module.'search')->compact( $position )->render();
+        return view( $module.'search', compact('position') )->render();
 
 
     }

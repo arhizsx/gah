@@ -99,9 +99,7 @@ $("#search_form").on("submit", function(e) {
             // Check if the response is an array
             if (Array.isArray(resp)) {
 
-                    console.log( resp );
-                    
-                    let results = JSON.parse( resp.results );
+                    let results = JSON.parse( resp.result );
 
                     // Loop through each item in the response array
                     results.forEach((item) => {

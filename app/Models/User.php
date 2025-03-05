@@ -48,12 +48,4 @@ class User extends Authenticatable
         ];
     }
 
-    function getModules(){
-
-        return DB::table("users_modules")
-                ->where("user_id", Auth::user()->id)
-                ->get();        
-
-    }
-
 }

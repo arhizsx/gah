@@ -8,6 +8,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use DB;
+
 
 class AuthenticatedSessionController extends Controller
 {
@@ -28,8 +30,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-
-        $modules = Auth::user()->getModules();
+        $modules = DB::table("users_modules")->where("user_id", Auth::user()->id);
 
         if( $modules ){
 
@@ -50,7 +51,7 @@ class AuthenticatedSessionController extends Controller
 
         } else {
 
-            return redirect()->intended(route('home', absolute: false));
+            return redirect()->intended(route('vouchers_home', absolute: false));
 
         }
 

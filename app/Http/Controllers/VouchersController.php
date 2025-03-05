@@ -81,6 +81,7 @@ class VouchersController extends Controller
 
     function search( Request $request ){
 
+
         if( strlen($request->search) == 11 ){
              if( strpos($request->search, "0") == 0 ){
                 $search = ltrim($request->search, '0');
@@ -90,6 +91,8 @@ class VouchersController extends Controller
         } else {
             $search = $request->search;
         }
+
+        $search = str_replace( "+63", "", $search );
 
         $current_user = VoucherUsers::find(Auth::id());
 

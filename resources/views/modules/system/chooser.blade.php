@@ -12,7 +12,7 @@
         <div class="row">   
         @foreach( $modules as $module )
             <div class="border text-center shadow-lg bg-white px-5 py-3 rounded-5 col" style="min-width: 400px;">
-                <div style="height: 300px;"> <img src="{{ $module->image }}" /> </div>
+                <div> <img width="100%" src="{{ $module->image }}" /> </div>
                 <div style="font-size: 1.25em; font-weight: bolder;"> {{ $module->label }} </div>
             </div>
         @endforeach

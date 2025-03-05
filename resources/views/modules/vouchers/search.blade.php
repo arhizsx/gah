@@ -217,7 +217,7 @@ $("#search_form").on("submit", function(e) {
 $(document).ready(function() {
     const $searchInput = $("#search");
     const $clearButton = $("#clear_search");
-    const $results_box = ${"results_box"};
+    const $results_box = ${"#results_box"};
 
     // Focus on the search input field when the page is loaded
     $searchInput.focus();

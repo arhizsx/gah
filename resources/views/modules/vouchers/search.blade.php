@@ -23,7 +23,7 @@
     </style>
         <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 350px)">
 
-            <x-search-{{ $position }}></x-search-{{ $position }}>
+            <x-dynamic-component :component="'search-' . $position" />
 
         </div>
 

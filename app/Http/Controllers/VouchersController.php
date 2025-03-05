@@ -110,7 +110,7 @@ class VouchersController extends Controller
             $table = "vouchers_limited_view";
 
             $results = DB::table($table)
-                ->where('Mobile Number', 'like', "%{$search}%")
+                ->where('Mobile Number', 'like', "{$search}")
                 ->get();
         }
 

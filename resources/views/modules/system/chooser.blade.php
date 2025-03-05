@@ -7,16 +7,16 @@
     </x-slot>
 
     <x-slot name="slot">
-    <div class="container d-flex justify-content-center align-items-center px-3" style="max-width: 80vw; min-height: calc(100vh - 30vh)">
+    <div class="container d-flex justify-content-center align-items-center px-3" style="min-height: calc(100vh - 30vh)">
 
-        <div class="row">
+        <div class="row">   
         @foreach( $modules as $module )
-            <div class="border shadow-lg bg-white px-5 py-3 rounded-5 col">
+            <div class="border shadow-lg bg-white px-5 py-3 rounded-5 col-xl-4">
             {{ $module->label }}
             </div>
         @endforeach
         </div>
-        
+
     </div>
     </x-slot>
     

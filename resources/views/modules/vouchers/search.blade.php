@@ -22,7 +22,9 @@
     }
     </style>
         <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 350px)">
+
             <x-search-admin></x-search-admin>
+
         </div>
 
         <div id="results_box" class="container-fluid d-none">
@@ -99,7 +101,7 @@ $("#search_form").on("submit", function(e) {
 
 
                     // Loop through each item in the response array
-                    resp.forEach((item) => {
+                    resp.results.forEach((item) => {
                         // Create a new element for each item (e.g., a list item)
                         // const listItem = `<div class='p-3'>${JSON.stringify(item)}</div>`; // Customize this as needed
             

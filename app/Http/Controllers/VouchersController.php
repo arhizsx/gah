@@ -88,19 +88,29 @@ class VouchersController extends Controller
         $module = "modules.vouchers.";
 
         if( $current_user->position == "admin" ){
+            
             $table = "vouchers_view";
+            $search_box = "";
+
+            $results = DB::table($table)
+                ->where('Mobile Number', 'like', "%{$search}%")
+                ->orWhere('Email', 'like', "%{$search}%")
+                ->orWhere('Full Name', 'like', "%{$search}%")
+                ->get();
+
         } else {
+            
             $table = "vouchers_limited_view";
+            $search_box = "";
+
+            $results = DB::table($table)
+                ->where('Mobile Number', 'like', "%{$search}%")
+                ->orWhere('Email', 'like', "%{$search}%")
+                ->orWhere('Full Name', 'like', "%{$search}%")
+                ->get();
         }
-
-
-        $results = DB::table($table)
-                    ->where('Mobile Number', 'like', "%{$search}%")
-                    ->orWhere('Email', 'like', "%{$search}%")
-                    ->orWhere('Full Name', 'like', "%{$search}%")
-                    ->get();
-
-        return $results;
+        
+        return ["result" => $results, "search_box" => $search_box ];
 
     }
 

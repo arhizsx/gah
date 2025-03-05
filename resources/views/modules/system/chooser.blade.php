@@ -11,12 +11,9 @@
 
 
         @foreach( $modules as $module )
-                @php 
-                    print_r( $module );
-                @endphp
-            <x-module>
-                {{ $module->label }}
-            </x-module>
+            <div class="border shadow-lg bg-white px-5 py-3 rounded-5" style="min-width: 30vw;">
+            {{ $module->label }}
+            </div>
         @endforeach
     </div>
     </x-slot>

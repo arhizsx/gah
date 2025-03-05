@@ -8,7 +8,7 @@
                     <a href="{{ route('chooser') }}">
                         <img src="/images/gt.png" width="40px;">
                     </a>
-                    <div style="font-size: 1.75em; margin-left: 15px; font-weight: bolder;">Globe At Home</div>
+                    <div style="font-size: 1.65em; margin-left: 15px; font-weight: bolder;">Globe At Home</div>
                 </div>
             </div>
 

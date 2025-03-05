@@ -8,6 +8,9 @@
 
     <x-slot name="slot">
 
+    <x-dynamic-component :component="search-admin" />
+
+
     </x-slot>
     
 </x-system-blank-layout>

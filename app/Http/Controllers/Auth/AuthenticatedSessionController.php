@@ -34,8 +34,6 @@ class AuthenticatedSessionController extends Controller
 
         if( $modules ){
 
-            dd( count($modules) );
-
             if( count($modules) == 0  ){
 
                 return redirect()->intended(route('home', absolute: false));

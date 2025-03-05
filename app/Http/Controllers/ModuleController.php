@@ -16,9 +16,8 @@ class ModuleController extends Controller
                     ->where("user_id", Auth::user()->id)
                     ->get();
 
-        dd( $modules[0] );
 
-        return view("modules.system.chooser", ["modules" => $modules["items"] ]);
+        return view("modules.system.chooser", ["modules" => $modules ]);
 
     }
 

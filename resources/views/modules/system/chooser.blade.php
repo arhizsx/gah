@@ -10,7 +10,7 @@
     <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 30vh)">
 
                 @php 
-                    print_r( $modules );
+                    print_r( $modules[0]->label );
                 @endphp
 
         @foreach( $modules as $module )

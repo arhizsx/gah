@@ -11,7 +11,7 @@
 
 
         @foreach( $modules as $module )
-            <div class="border shadow-lg bg-white px-5 py-3 rounded-5" style="min-width: 25vw;">
+            <div class="border shadow-lg bg-white px-5 py-3 rounded-5" style="width: 400px;">
             {{ $module->label }}
             </div>
         @endforeach

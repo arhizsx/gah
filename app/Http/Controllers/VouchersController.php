@@ -21,10 +21,14 @@ class VouchersController extends Controller
 
         $current_user = VoucherUsers::find(Auth::id());
         
-        if( $current_user->position == "admin" ){
-            $position = "admin";
-        } else {
-            $position = "agent";
+        $position = "agent";
+        if( $current_user){
+
+
+            if( $current_user->position == "admin" ){
+                $position = "admin";
+            }
+    
         }
 
         return view( $module.'search', compact('position') )->render();

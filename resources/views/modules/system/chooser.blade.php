@@ -7,7 +7,7 @@
     </x-slot>
 
     <x-slot name="slot">
-    <div class="container d-flex justify-content-center align-items-center mx-5" style="min-height: calc(100vh - 30vh)">
+    <div class="container d-flex justify-content-center align-items-center px-3" style="min-height: calc(100vh - 30vh)">
 
 
         @foreach( $modules as $module )

@@ -1,3 +1,3 @@
-<div>
-    <!-- If you do not have a consistent goal in life, you can not live it in a consistent way. - Marcus Aurelius -->
+<div class="border shadow-lg bg-white px-5 py-3 rounded-5 w-100" style="max-width: 600px;">
+    Vouchers
 </div>

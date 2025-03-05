@@ -41,7 +41,7 @@ class AuthenticatedSessionController extends Controller
         }
 
         if ($modules->count() > 1) {
-            return redirect( route('chooser',["modules" => json_encode($modules) ], false ) );
+            return redirect(route('chooser', absolute: false));
         }
         
     }

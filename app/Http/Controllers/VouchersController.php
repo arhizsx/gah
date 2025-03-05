@@ -90,7 +90,6 @@ class VouchersController extends Controller
         if( $current_user->position == "admin" ){
             
             $table = "vouchers_view";
-            $search_box = "";
 
             $results = DB::table($table)
                 ->where('Mobile Number', 'like', "%{$search}%")
@@ -101,16 +100,13 @@ class VouchersController extends Controller
         } else {
             
             $table = "vouchers_limited_view";
-            $search_box = "";
 
             $results = DB::table($table)
                 ->where('Mobile Number', 'like', "%{$search}%")
-                ->orWhere('Email', 'like', "%{$search}%")
-                ->orWhere('Full Name', 'like', "%{$search}%")
                 ->get();
         }
-        
-        return ["result" => $results, "search_box" => $search_box ];
+
+        return $results;
 
     }
 

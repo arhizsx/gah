@@ -99,10 +99,9 @@ $("#search_form").on("submit", function(e) {
             // Check if the response is an array
             if (Array.isArray(resp)) {
 
-                    let results = JSON.parse( resp.result );
 
                     // Loop through each item in the response array
-                    results.forEach((item) => {
+                    resp.forEach((item) => {
                         // Create a new element for each item (e.g., a list item)
                         // const listItem = `<div class='p-3'>${JSON.stringify(item)}</div>`; // Customize this as needed
             

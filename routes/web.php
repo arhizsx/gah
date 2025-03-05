@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Storage;
 
 use App\Http\Controllers\SupervendorController;
 use App\Http\Controllers\VouchersController;
+use App\Http\Controllers\ModuleController;
+
+
 
 
 // ////////////////////////////
@@ -189,7 +192,8 @@ use App\Http\Controllers\VouchersController;
 Route::group(['middleware' => ['auth', 'verified']], function () {
 
     Route::get('/chooser}',  [ModuleController::class, 'chooser'])->name("chooser");        
-    
+    Route::get('/empty_module}',  [ModuleController::class, 'chooser'])->name("empty_module");        
+
 });
 
 require __DIR__.'/auth.php';

@@ -13,4 +13,13 @@ class ModuleController extends Controller
 
     }
 
+    function empty_module( Request $request ){
+
+        return view("modules.system.chooser");
+
+    }
+    
+
 }
+
+

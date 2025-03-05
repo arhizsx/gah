@@ -11,7 +11,7 @@
 
         <div class="row">   
         @foreach( $modules as $module )
-            <div class="border shadow-lg bg-white px-5 py-3 rounded-5 col-xl-4">
+            <div class="border shadow-lg bg-white px-5 py-3 rounded-5 col-auto">
             {{ $module->label }}
             </div>
         @endforeach

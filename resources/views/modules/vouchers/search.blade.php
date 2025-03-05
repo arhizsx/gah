@@ -1,4 +1,3 @@
-
 <x-vouchers-layout>
     @php 
         dd($position);

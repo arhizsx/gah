@@ -30,11 +30,9 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        $modules = DB::table("users_modules")->where("user_id", Auth::user()->id);
+        $modules = DB::table("users_modules")->where("user_id", Auth::user()->id)->get();
 
         if( $modules ){
-
-             dd($modules);
 
             if( count($modules) == 0  ){
 

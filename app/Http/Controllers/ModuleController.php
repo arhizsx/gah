@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 class ModuleController extends Controller
 {
     
-    function chooser( $data){
+    function chooser( $modules){
 
-        return view("modules.system.chooser", ["data" => $data]);
+        return view("modules.system.chooser", ["modules" => $modules]);
 
     }
 

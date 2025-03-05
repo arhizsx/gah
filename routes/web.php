@@ -191,7 +191,7 @@ use App\Http\Controllers\ModuleController;
 
 Route::group(['middleware' => ['auth', 'verified']], function () {
 
-    Route::get('/chooser/{data}',  [ModuleController::class, 'chooser'])->name("chooser");        
+    Route::get('/chooser/{modules}',  [ModuleController::class, 'chooser'])->name("chooser");        
     Route::get('/empty_module',  [ModuleController::class, 'chooser'])->name("empty_module");        
 
 });

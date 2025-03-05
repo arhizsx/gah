@@ -21,7 +21,8 @@ class VouchersController extends Controller
 
         $current_user = VoucherUsers::find(Auth::id());
         
-        $position = "agent";
+        $position = "admin";
+
         if( $current_user){
 
 

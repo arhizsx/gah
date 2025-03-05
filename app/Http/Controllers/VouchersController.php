@@ -20,14 +20,11 @@ class VouchersController extends Controller
 
         $current_user = VoucherUsers::where("user_id", Auth::id())->first();
         
-        $position = "admin";
+        $position = "agent";
 
         if( $current_user){
 
-
-            if( $current_user->position == "admin" ){
-                $position = "admin";
-            }
+            $position =  $current_user->position;
     
         }
 

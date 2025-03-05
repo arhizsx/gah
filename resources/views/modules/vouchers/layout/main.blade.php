@@ -76,8 +76,6 @@
     @php
 
         $position = "";
-
-
         
         if( $voucher_user ) {
             $position = $voucher_user->position;    

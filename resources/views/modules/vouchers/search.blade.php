@@ -179,18 +179,18 @@ $("#search_form").on("submit", function(e) {
                                                 `</div>` +
                                             `</div>`;
 
+                            // Append the new element to the results list
+                            $results.find("#results_list").append(listItem);
 
 
                         });
-                        
+
                     } else {
 
-                        const listItem = "Nothing found";                        
+                        $results.find("#results_list").append("Nothing Found");
 
                     }
 
-                    // Append the new element to the results list
-                    $results.find("#results_list").append(listItem);
 
 
             } else if (typeof resp === 'object' && resp !== null) {

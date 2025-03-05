@@ -51,7 +51,7 @@ class AuthenticatedSessionController extends Controller
 
         } else {
 
-            return redirect()->intended(route('home', absolute: false));
+            return redirect()->intended(route('chooser', absolute: false));
 
         }
 

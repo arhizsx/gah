@@ -9,7 +9,7 @@
     <x-slot name="slot">
     <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 30vh)">
     @php 
-        print_r( $test );
+        print_r( $data );
     @endphp 
 
     <x-module></x-module>

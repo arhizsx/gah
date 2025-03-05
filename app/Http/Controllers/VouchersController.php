@@ -28,7 +28,6 @@ class VouchersController extends Controller
     
         }
 
-        dd($position);
 
         return view( $module.'search', compact('position', 'current_user') )->render();
 

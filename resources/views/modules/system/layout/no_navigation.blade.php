@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('vouchers') }}">
+                    <a href="{{ route('chooser') }}">
                         <img src="/images/gt.png" width="40px;">
                     </a>
                     <div style="font-size: 1.75em; margin-left: 15px; font-weight: bolder;">Globe At Home</div>
@@ -61,12 +61,6 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('vouchers')" :active="request()->routeIs('vouchers')">
-                {{ __('Vouchers') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('vouchers_management')" :active="request()->routeIs('vouchers_management')">
-                {{ __('Management') }}
-            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->

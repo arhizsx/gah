@@ -15,10 +15,7 @@
                     print_r( $module );
                 @endphp
             <x-module>
-                @php 
-                    print_r( $module );
-                @endphp
-                {{ $module->label }}
+                {{ $module["label"] }}
             </x-module>
         @endforeach
     </div>

@@ -18,9 +18,17 @@ class VouchersController extends Controller
 
         $module = "modules.vouchers.";
 
-        // $current_user = VoucherUsers::where("user_id", Auth::id())->first();
+        $current_user = VoucherUsers::where("user_id", Auth::id())->first();
         
-        return view( $module.'search' )->render();
+        $position = "agent";
+
+        if( $current_user){
+
+            $position =  $current_user->position;
+    
+        }
+
+        return view( $module.'search', compact('position', 'current_user') )->render();
 
 
     }

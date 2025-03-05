@@ -15,9 +15,9 @@ class ModuleController extends Controller
                     ->JOIN("modules", "users_modules.module", "modules.module")
                     ->where("user_id", Auth::user()->id)
                     ->get();
-        dd($modules);
+        dd($modules["items"] );
 
-        return view("modules.system.chooser", ["modules" => $modules->items]);
+        return view("modules.system.chooser", ["modules" => $modules["items"] ]);
 
     }
 

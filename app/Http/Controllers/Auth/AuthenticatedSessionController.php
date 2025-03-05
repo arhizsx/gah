@@ -32,6 +32,8 @@ class AuthenticatedSessionController extends Controller
 
         $modules = DB::table("users_modules")->where("user_id", Auth::user()->id)->get();
 
+        dd( count( $modules ) );
+
         if ($modules->isEmpty()) { 
             return redirect()->intended(route('chooser', absolute: false));
         } 

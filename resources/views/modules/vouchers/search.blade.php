@@ -99,89 +99,98 @@ $("#search_form").on("submit", function(e) {
             // Check if the response is an array
             if (Array.isArray(resp)) {
 
-                    // Loop through each item in the response array
-                    resp.forEach((item) => {
-                        // Create a new element for each item (e.g., a list item)
-                        // const listItem = `<div class='p-3'>${JSON.stringify(item)}</div>`; // Customize this as needed
-            
-                        const listItem = `<div class='result_item container-fluid py-3 border mb-4 p-5''>` + 
-                                            `<div class='row mt-3' style="font-size: 1.2em; font-weight: bolder;">` +
-                                                'Customer Information' +
-                                            `</div>` +
-                                            `<div class='row'>` +
-                                                `<div class='col-xl-3 border'>` +
-                                                    `<div><small>Reference Number</small></div>` +
-                                                    `<div class='search_info'>` + item["Reference Number"] + `</div>` +
+                    if( resp.length > 0 ){
+
+                        // Loop through each item in the response array
+                        resp.forEach((item) => {
+                            // Create a new element for each item (e.g., a list item)
+                            // const listItem = `<div class='p-3'>${JSON.stringify(item)}</div>`; // Customize this as needed
+                
+                            const listItem = `<div class='result_item container-fluid py-3 border mb-4 p-5''>` + 
+                                                `<div class='row mt-3' style="font-size: 1.2em; font-weight: bolder;">` +
+                                                    'Customer Information' +
                                                 `</div>` +
-                                                `<div class='col-xl-3 border'>` +
-                                                    `<div><small>Full Name</small></div>` +
-                                                    `<div class='search_info'>` + item["Full Name"] +`</div>` +                                                    
+                                                `<div class='row'>` +
+                                                    `<div class='col-xl-3 border'>` +
+                                                        `<div><small>Reference Number</small></div>` +
+                                                        `<div class='search_info'>` + item["Reference Number"] + `</div>` +
+                                                    `</div>` +
+                                                    `<div class='col-xl-3 border'>` +
+                                                        `<div><small>Full Name</small></div>` +
+                                                        `<div class='search_info'>` + item["Full Name"] +`</div>` +                                                    
+                                                    `</div>` +
+                                                    `<div class='col-xl-3 border'>` +
+                                                        `<div><small>Mobile Number</small></div>` +
+                                                        `<div class='search_info'>` + item["Mobile Number"] +`</div>` +
+                                                    `</div>` +
+                                                    `<div class='col-xl-3 border'>` +
+                                                        `<div><small>Email</small></div>` +
+                                                        `<div class='search_info'>` + item["Email"] +`</div>` +
+                                                    `</div>` +
                                                 `</div>` +
-                                                `<div class='col-xl-3 border'>` +
-                                                    `<div><small>Mobile Number</small></div>` +
-                                                    `<div class='search_info'>` + item["Mobile Number"] +`</div>` +
+                                                `<div class='row mt-3' style="font-size: 1.2em; font-weight: bolder;">` +
+                                                    'Transaction Information' +
                                                 `</div>` +
-                                                `<div class='col-xl-3 border'>` +
-                                                    `<div><small>Email</small></div>` +
-                                                    `<div class='search_info'>` + item["Email"] +`</div>` +
+                                                `<div class='row'>` +
+                                                    `<div class='col-xl-2 border'>` +
+                                                        `<div><small>Product SKU</small></div>` +
+                                                        `<div class='search_info'>` + item["Product SKU"] + `</div>` +
+                                                    `</div>` +
+                                                    `<div class='col-xl-2 border'>` +
+                                                        `<div><small>Purchased At (Date+Time)</small></div>` +
+                                                        `<div class='search_info'>` + item["Purchased At (Date+Time)"] + `</div>`+
+                                                    `</div>` +
+                                                    `<div class='col-xl-2 border'>` +
+                                                        `<div><small>Payment Method</small></div>` +
+                                                        `<div class='search_info'>` + item["Payment Method"] + `</div>` +
+                                                    `</div>` +
+                                                    `<div class='col-xl-2 border'>` +
+                                                        `<div><small>Payment Status</small></div>` +
+                                                        `<div class='search_info'>` + item["Payment Status"] + `</div>` +
+                                                    `</div>` +
+                                                    `<div class='col-xl-2 border'>` +
+                                                        `<div><small>Payment Transaction ID</small></div>` +
+                                                        `<div class='search_info'>` + item["Payment Transaction ID"] + `</div>` +
+                                                    `</div>` +
+                                                    `<div class='col-xl-2 border'>` +
+                                                        `<div><small>Revenue</small></div>` +
+                                                        `<div class='search_info'>` + item["Revenue"] + `</div>` +
+                                                    `</div>` +
                                                 `</div>` +
-                                            `</div>` +
-                                            `<div class='row mt-3' style="font-size: 1.2em; font-weight: bolder;">` +
-                                                'Transaction Information' +
-                                            `</div>` +
-                                            `<div class='row'>` +
-                                                `<div class='col-xl-2 border'>` +
-                                                    `<div><small>Product SKU</small></div>` +
-                                                    `<div class='search_info'>` + item["Product SKU"] + `</div>` +
+                                                `<div class='row mt-3' style="font-size: 1.2em; font-weight: bolder;">` +
+                                                    'Voucher Information' +
                                                 `</div>` +
-                                                `<div class='col-xl-2 border'>` +
-                                                    `<div><small>Purchased At (Date+Time)</small></div>` +
-                                                    `<div class='search_info'>` + item["Purchased At (Date+Time)"] + `</div>`+
+                                                `<div class='row'>` +
+                                                    `<div class='col-xl-3 border'>` +
+                                                        `<div><small>Voucher Type</small></div>` +
+                                                        `<div class='search_info'>` + item["Voucher Type"] + `</div>` +
+                                                    `</div>` +
+                                                    `<div class='col-xl-3 border'>` +
+                                                        `<div><small>Voucher Assigned</small></div>` +
+                                                        `<div class='search_info'>` + item["Voucher Assigned"] + `</div>`+
+                                                    `</div>` +
+                                                    `<div class='col-xl-3 border'>` +
+                                                        `<div><small>Redemption Date</small></div>` +
+                                                        `<div class='search_info'>` + item["Redemption Date"] + `</div>`+
+                                                    `</div>` +
+                                                    `<div class='col-xl-3 border'>` +
+                                                        `<button class="btn btn-primary form-control mt-2">RESEND VOUCHER</button>` +
+                                                    `</div>` +
                                                 `</div>` +
-                                                `<div class='col-xl-2 border'>` +
-                                                    `<div><small>Payment Method</small></div>` +
-                                                    `<div class='search_info'>` + item["Payment Method"] + `</div>` +
-                                                `</div>` +
-                                                `<div class='col-xl-2 border'>` +
-                                                    `<div><small>Payment Status</small></div>` +
-                                                    `<div class='search_info'>` + item["Payment Status"] + `</div>` +
-                                                `</div>` +
-                                                `<div class='col-xl-2 border'>` +
-                                                    `<div><small>Payment Transaction ID</small></div>` +
-                                                    `<div class='search_info'>` + item["Payment Transaction ID"] + `</div>` +
-                                                `</div>` +
-                                                `<div class='col-xl-2 border'>` +
-                                                    `<div><small>Revenue</small></div>` +
-                                                    `<div class='search_info'>` + item["Revenue"] + `</div>` +
-                                                `</div>` +
-                                            `</div>` +
-                                            `<div class='row mt-3' style="font-size: 1.2em; font-weight: bolder;">` +
-                                                'Voucher Information' +
-                                            `</div>` +
-                                            `<div class='row'>` +
-                                                `<div class='col-xl-3 border'>` +
-                                                    `<div><small>Voucher Type</small></div>` +
-                                                    `<div class='search_info'>` + item["Voucher Type"] + `</div>` +
-                                                `</div>` +
-                                                `<div class='col-xl-3 border'>` +
-                                                    `<div><small>Voucher Assigned</small></div>` +
-                                                    `<div class='search_info'>` + item["Voucher Assigned"] + `</div>`+
-                                                `</div>` +
-                                                `<div class='col-xl-3 border'>` +
-                                                    `<div><small>Redemption Date</small></div>` +
-                                                    `<div class='search_info'>` + item["Redemption Date"] + `</div>`+
-                                                `</div>` +
-                                                `<div class='col-xl-3 border'>` +
-                                                    `<button class="btn btn-primary form-control mt-2">RESEND VOUCHER</button>` +
-                                                `</div>` +
-                                            `</div>` +
-                                        `</div>`;
+                                            `</div>`;
 
 
 
-                        // Append the new element to the results list
-                        $results.find("#results_list").append(listItem);
-                    });
+                        });
+                        
+                    } else {
+
+                        const listItem = "Nothing found";                        
+
+                    }
+
+                    // Append the new element to the results list
+                    $results.find("#results_list").append(listItem);
 
 
             } else if (typeof resp === 'object' && resp !== null) {

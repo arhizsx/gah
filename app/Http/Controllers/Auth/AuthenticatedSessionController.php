@@ -28,7 +28,32 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('home', absolute: false));
+
+        $modules = Auth::user()->getModules();
+
+        if( $modules ){
+
+            if( count($modules) == 0  ){
+
+                return redirect()->intended(route('home', absolute: false));
+
+            } 
+            elseif( count($modules) == 1  ){
+
+                return redirect()->intended(route('home', absolute: false));
+
+            } 
+            else {
+
+                return redirect()->intended(route('vouchers_home', absolute: false));
+            }
+
+        } else {
+
+            return redirect()->intended(route('home', absolute: false));
+
+        }
+
     }
 
     /**

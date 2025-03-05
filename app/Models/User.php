@@ -6,6 +6,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use AUth;
+use DB;
+
 
 class User extends Authenticatable
 {
@@ -44,4 +47,13 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    function getModules(){
+
+        return DB::table("users_modules")
+                ->where("user_id", Auth::user()->id)
+                ->get();        
+
+    }
+
 }

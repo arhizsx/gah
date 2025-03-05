@@ -8,7 +8,7 @@
 
     <x-slot name="slot">
 
-    <x-dynamic-component :component="search-admin" />
+    <x-search-admin></x-search-admin>
 
 
     </x-slot>

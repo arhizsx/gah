@@ -99,7 +99,6 @@ $("#search_form").on("submit", function(e) {
             // Check if the response is an array
             if (Array.isArray(resp)) {
 
-
                     // Loop through each item in the response array
                     resp.forEach((item) => {
                         // Create a new element for each item (e.g., a list item)
@@ -218,6 +217,7 @@ $("#search_form").on("submit", function(e) {
 $(document).ready(function() {
     const $searchInput = $("#search");
     const $clearButton = $("#clear_search");
+    const $results_box = ${"results_box"};
 
     // Focus on the search input field when the page is loaded
     $searchInput.focus();
@@ -226,6 +226,7 @@ $(document).ready(function() {
         $clearButton.show();
     } else {
         $clearButton.hide();
+        $results_box.hide();
     }
 
 
@@ -235,6 +236,7 @@ $(document).ready(function() {
             $clearButton.show();
         } else {
             $clearButton.hide();
+            $results_box.hide();
         }
     });
 
@@ -242,12 +244,14 @@ $(document).ready(function() {
     $clearButton.on("click", function() {
         $searchInput.val("").focus(); // Clear input and set focus
         $clearButton.hide();
+        $results_box.hide();
     });
 
     // Clear the input and hide the X button when the "Clear" button is clicked
     $(".btn-secondary").on("click", function() {
         $searchInput.val("").focus(); // Clear input and set focus
         $clearButton.hide();
+        $results_box.hide();
     });
 
 });

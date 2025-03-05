@@ -187,7 +187,7 @@ $("#search_form").on("submit", function(e) {
 
                     } else {
 
-                        $results.find("#results_list").append("Nothing Found");
+                        $results.find("#results_list").append("<div class='mt-3'>Nothing Found</div>");
 
                     }
 

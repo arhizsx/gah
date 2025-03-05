@@ -22,9 +22,7 @@
     }
     </style>
         <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 350px)">
-            <div>{{ print_r( $current_user ) }}</div>
             <x-dynamic-component :component="'search-' . $position" />
-
         </div>
 
         <div id="results_box" class="container-fluid d-none">

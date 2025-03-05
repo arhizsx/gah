@@ -8,13 +8,9 @@
 
     <x-slot name="slot">
     <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 30vh)">
-    @php 
-        print_r( $modules );
-    @endphp 
-
-    <x-module></x-module>
-    <x-module></x-module>
-
+        @foreach( $modules as $module )
+            <x-module></x-module>
+        @endforeach
     </div>
     </x-slot>
     

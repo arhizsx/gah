@@ -186,6 +186,10 @@ use App\Http\Controllers\VouchersController;
 //                     //
 // ******************* //
 
+Route::group(['middleware' => ['auth', 'verified']], function () {
 
+    Route::get('/chooser}',  [ModuleController::class, 'chooser'])->name("chooser");        
+    
+});
 
 require __DIR__.'/auth.php';

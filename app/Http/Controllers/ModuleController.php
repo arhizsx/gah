@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class ModuleController extends Controller
 {
     
-    function chooser( $modules){
+    function chooser(){
 
         $modules = DB::table("users_modules")->where("user_id", Auth::user()->id)->get();
 

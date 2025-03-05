@@ -64,7 +64,7 @@
                 font-size: 12px;
             }
 
-            .section-title{
+            .section-title{ 
                 font-size: 1.4em;
                 color: darkblue;
                 font-weight: bolder;

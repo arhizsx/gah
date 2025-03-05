@@ -18,7 +18,7 @@ class VouchersController extends Controller
 
         $module = "modules.vouchers.";
 
-        $current_user = VoucherUsers::find(Auth::user()->id);
+        $current_user = VoucherUsers::where("user_id", Auth::id())->first();
         
         $position = "admin";
 

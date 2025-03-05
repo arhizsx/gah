@@ -95,7 +95,7 @@ class VouchersController extends Controller
 
         $search = str_replace( "+63", "", $search );
 
-        $current_user = VoucherUsers::find(Auth::id());
+        $current_user = VoucherUsers::where("user_id", Auth::id())->first();
 
         $module = "modules.vouchers.";
 

@@ -15,7 +15,7 @@
                     print_r( $module );
                 @endphp
             <x-module>
-                {{ $module["label"] }}
+                {{ $module->label }}
             </x-module>
         @endforeach
     </div>

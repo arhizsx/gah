@@ -12,7 +12,7 @@ class ModuleController extends Controller
     function chooser(){
 
         $modules = DB::table("users_modules")
-                    ->JOIN("modules", "user_modules.module", "modules.module")
+                    ->JOIN("modules", "users_modules.module", "modules.module")
                     ->where("user_id", Auth::user()->id)->get();
 
         return view("modules.system.chooser", ["modules" => $modules]);

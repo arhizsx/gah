@@ -35,18 +35,7 @@ class VouchersController extends Controller
 
     function vouchers() {
 
-        $current_user = VoucherUsers::find(Auth::id());
-
-        $module = "modules.vouchers.";
-
-        return view( $module.'vouchers')->render();
-
-
-    }
-
-    function management() {
-
-        $current_user = VoucherUsers::find(Auth::id());
+        $current_user = VoucherUsers::where("user_id", Auth::id())->first();
 
         $module = "modules.vouchers.";
 
@@ -54,7 +43,22 @@ class VouchersController extends Controller
             return view($module . 'management')->render();
         } 
 
-        return redirect()->route('vouchers');        
+        return redirect()->route('vouchers_home');        
+
+
+    }
+
+    function management() {
+
+        $current_user = VoucherUsers::where("user_id", Auth::id())->first();
+
+        $module = "modules.vouchers.";
+
+        if( $current_user->position == "admin" ){
+            return view($module . 'management')->render();
+        } 
+
+        return redirect()->route('vouchers_home');        
 
     }
 

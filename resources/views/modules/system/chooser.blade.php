@@ -9,12 +9,14 @@
     <x-slot name="slot">
     <div class="container d-flex justify-content-center align-items-center px-3" style="max-width: 80vw; min-height: calc(100vh - 30vh)">
 
-
+        <div class="row">
         @foreach( $modules as $module )
             <div class="border shadow-lg bg-white px-5 py-3 rounded-5 col">
             {{ $module->label }}
             </div>
         @endforeach
+        </div>
+        
     </div>
     </x-slot>
     

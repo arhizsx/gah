@@ -32,7 +32,7 @@ class VouchersController extends Controller
     
         }
 
-        return view( $module.'search', compact('position') )->render();
+        return view( $module.'search', compact('position', 'current_user') )->render();
 
 
     }

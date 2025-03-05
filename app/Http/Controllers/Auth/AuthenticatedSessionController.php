@@ -34,7 +34,7 @@ class AuthenticatedSessionController extends Controller
 
         if( $modules ){
 
-            dd( $modules );
+            dd( count($modules) );
 
             if( count($modules) == 0  ){
 

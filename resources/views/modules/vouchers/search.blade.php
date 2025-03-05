@@ -22,6 +22,8 @@
     }
     </style>
         <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 350px)">
+
+        {{ $voucher_user }}
             <x-dynamic-component :component="'search-' . $position" />
         </div>
 

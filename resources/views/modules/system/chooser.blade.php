@@ -10,6 +10,8 @@
     <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 30vh)">
 
     <x-search-admin></x-search-admin>
+    <x-search-admin></x-search-admin>
+    <x-search-admin></x-search-admin>
 
     </div>
     </x-slot>

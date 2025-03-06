@@ -56,12 +56,13 @@
                     <div class="modal-loading d-none">
                         <div class="p-5 text-center">
                             <i class="fa-solid text-primary fa-spinner fa-spin fa-10x"></i> 
+                            <div class="p-3">Please wait...</div>
                         </div>
                     </div>
                     <div class="modal-success d-none">
                         <div class="p-5 text-center">
                             <i class="fa-solid text-success fa-circle-check fa-bounce fa-10x"></i> 
-                            <div>Voucher Sent</div>
+                            <div class="p-3">Voucher Sent</div>
                         </div>
                     </div>
                     <div class="modal-error d-none">

@@ -33,7 +33,7 @@
                     <div class="col border-bottom">
                         <H1 style="font-size: 2em; font-weight: bolder;">Result(s)</H1>
                     </div>
-                </div>
+                </div> 
                 <div class="row" id="results_list">
 
                 </div>

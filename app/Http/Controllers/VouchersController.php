@@ -132,7 +132,7 @@ class VouchersController extends Controller
 
     function resend( Request $request ){
             
-        $voucher = Vouchers::find($request->id );
+        $voucher = Vouchers::where("id", $request->id )->first();
 
         if( $voucher ){
 

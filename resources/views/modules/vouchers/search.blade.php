@@ -115,6 +115,10 @@ $(document).on("click", ".serviceButton", function(e) {
             $modal.find(".modal-success").addClass("d-none");
             $modal.find(".modal-footer").removeClass("d-none");
 
+            $modal.find(".serviceButton").attr("data-id", "" );
+            $modal.find(".modal-main").find("#fullname").val("");
+            $modal.find(".modal-main").find("#email").val("");
+
             $modal.find(".serviceButton").attr("data-id", $(this).data("id") );
             $modal.find(".modal-main").find("#fullname").val( $(this).data("fullname") );
             $modal.find(".modal-main").find("#email").val( $(this).data("email") );

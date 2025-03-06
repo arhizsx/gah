@@ -67,8 +67,13 @@
 <script>
 
 $(document).find(".serviceButton").on("click", function(e){
+    
+    e.preventDefault();
+    
     console.log("Service Button");
+
 });
+
 
 $("#search_form").on("submit", function(e) {
 
@@ -249,7 +254,9 @@ $("#search_form").on("submit", function(e) {
         });
 });
 
+
 $(document).ready(function() {
+
     const $searchInput = $("#search");
     const $clearButton = $("#clear_search");
     
@@ -286,7 +293,5 @@ $(document).ready(function() {
     });
 
 });
-
-
 
 </script>

@@ -50,7 +50,18 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <div class="modal-main">
+
+                    </div>
+                    <div class="modal-loading d-none">
+
+                    </div>
+                    <div class="modal-success d-none">
+
+                    </div>
+                    <div class="modal-error d-none">
+
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -70,10 +81,28 @@ $(document).on("click", ".serviceButton", function(e) {
     
     console.log($(this).data()); 
 
+    switch( $(this).data("action") ){
 
-    $("#serviceModal").modal("show");
+        case "ResendVoucher": 
+            $("#serviceModal").modal("show");
+        break;
+
+        case "confirmResendVoucher": 
+            resendVoucher( $(this).data() );
+        break;
+
+        default:
+            alert("serviceButton Action Not Configured");
+
+    }
+
 
 });
+
+function resendVoucher( data ){
+    console.log( data );
+}
+
 
 
 $("#search_form").on("submit", function(e) {

@@ -23,7 +23,7 @@
             font-size: 1.2em;
         }
         </style>
-        <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 70vh)">
+        <div class="container d-flex justify-content-center align-items-center" style="min-height: 70vh">
             <x-dynamic-component :component="'search-' . $position" />
         </div>
 

@@ -41,7 +41,7 @@
         </div>
         <!-- Modal -->
         <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModallLabel" aria-hidden="false">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
                     <div class="modal-title" id="serviceModallLabel" style="font-size: 1.5em; font-weight: bolder;">

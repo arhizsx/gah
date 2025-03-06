@@ -13,7 +13,8 @@
             <br><br>
             Ang iyong GFiber Prepaid promo activation noong <strong>ACTIVATION</strong> ay may kasamang <strong>VOUCHER</strong> 
             <br><br>
-            Gamitin ang code:  <strong style="font-size: 2em;">VOUCHER CODE</strong>  
+            Gamitin ang code: <br>
+            <strong style="font-size: 2em;">VOUCHER CODE</strong>  
             <br><br> 
             <img style="width: 20px;" data-emoji="🔗" class="an1" alt="🔗" aria-label="🔗" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f517/72.png" loading="lazy"> <strong>I-redeem sa Disney+ website</strong> para mapanood ang iyong mga paboritong shows! 
             <br>

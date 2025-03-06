@@ -234,7 +234,7 @@ $("#search_form").on("submit", function(e) {
             },
             error: function(jqXHR, textStatus, errorThrown) {
 
-                errorCode = 0001;
+                errorCode = "VOUCHERS-001";
 
                 reject(new Error(`Error Envountered: ${errorCode}}`)); // Reject the Promise with an error
             }

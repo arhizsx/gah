@@ -124,9 +124,10 @@ $(document).on("click", ".serviceButton", function(e) {
 
 function resendVoucher( data ){
 
-    $modal = $(document).find("#serviceModal");
 
     const ajaxPromise = new Promise((resolve, reject) => {
+
+        $modal = $(document).find("#serviceModal");
 
         $modal.find(".modal-main").addClass("d-none");
         $modal.find(".modal-loading").removeClass("d-none");

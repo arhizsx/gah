@@ -13,17 +13,8 @@
             <br><br>
             Ang iyong GFiber Prepaid promo activation noong <strong>ACTIVATION</strong> ay may kasamang <strong>VOUCHER</strong> 
             <br><br>
-            Gamitin ang code:  <strong>VOUCHER CODE</strong>  <br> 
-            &#128279; <strong>I-redeem sa Disney+ website</strong> para mapanood ang iyong mga paboritong shows! <br> 
-            &#128073; <strong>Paano i-redeem?</strong> Tingnan dito: https://www.facebook.com/share/v/1X7x16JJL1/ <br> <br>
-            &#9888; <strong>Tandaan: </strong><br>
-            ✔ Huwag i-share ang iyong code. Ito ay maaari lamang gamitin ng <strong>isang beses</strong>. 
-            ✔ I-activate sa loob ng <strong>30 days</strong> mula sa pagtanggap ng mensaheng ito. <br>
-            ✔ Hindi magagamit ang code kung may existing Disney+ subscription ka. <br>
-            ✔ Pwede kang gumamit ng ibang Disney+ account para ma-redeem ito. <br>
-            Enjoy your Disney+ Premium access! &#127871;&#127916; <br> <br>
-
-
+            Gamitin ang code:  <strong style="2em">VOUCHER CODE</strong>  
+            <br><br> 
             <img style="width: 20px;" data-emoji="🎉" class="an1" alt="🎉" aria-label="🎉" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f389/72.png" loading="lazy"> Gamitin ang code na pinadala sa iyong registered GFiber Prepaid number 
             <br>
             <img style="width: 20px;" data-emoji="🔗" class="an1" alt="🔗" aria-label="🔗" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f517/72.png" loading="lazy"> <strong>I-redeem sa Disney+ website</strong> para mapanood ang iyong mga paboritong shows! 

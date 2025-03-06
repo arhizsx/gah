@@ -131,8 +131,10 @@ class VouchersController extends Controller
     }
 
     function resend( Request $request ){
-        
-        dd( $request );
+            
+        $voucher = Vouchers::find("id", $request->id );
+
+        dd( $voucher );
 
         $details = [
             'subject' => "Disney+ Voucher from GFiber Prepaid",

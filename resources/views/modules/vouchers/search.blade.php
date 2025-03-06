@@ -25,7 +25,6 @@
         </style>
         <div id="search_box" class="container d-flex justify-content-center align-items-center" style="min-height: 70vh">
             <x-dynamic-component :component="'search-' . $position" />
-            <div class="d-none error-message"></div>
         </div>
 
         <div id="results_box" class="container-fluid d-none">

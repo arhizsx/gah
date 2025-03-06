@@ -314,6 +314,11 @@ let columns = [
         visible: false,
     },
     {
+        dataField: "schedule_date",
+        caption: "Sched Date",
+        visible: false,
+    },
+    {
         dataField: 'status',
         caption: 'Status',
         width: '180',
@@ -621,7 +626,6 @@ $(document).on('change', '.selectVendor', function() {
 
 });
 
-
 $(document).on('change', '.selectSGT', function() {
 
 
@@ -646,7 +650,6 @@ $(document).on('change', '.selectSGT', function() {
     }
 
 });
-
 
 function callbackAction(data){
 
@@ -682,7 +685,6 @@ function callbackAction(data){
 
 
 }
-
 
 function applicationSetImage(data){
 

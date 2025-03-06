@@ -123,6 +123,11 @@ let columns = [
         visible: false,
     },
     {
+        dataField: "schedule_date",
+        caption: "Sched Date",
+        visible: false,
+    },
+    {
         dataField: 'status',
         caption: 'Status',
         width: '180',

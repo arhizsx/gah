@@ -51,7 +51,16 @@
                 </div>
                 <div class="modal-body">
                     <div class="modal-main">
-                        Main
+                        <div class="row">
+                            <div class="col-12">
+                                <input type="text" class="form-control" name="fullname" id="fullname">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <input type="text" class="form-control" name="email" id="email">
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-loading d-none">
                         <div class="p-5 text-center">
@@ -105,6 +114,9 @@ $(document).on("click", ".serviceButton", function(e) {
             $modal.find(".modal-footer").removeClass("d-none");
 
             $modal.find(".serviceButton").attr("data-id", $(this).data("id") );
+            $modal.find(".modal-main").find("#firstname").val( $(this).data("fullname") );
+            $modal.find(".modal-main").find("#email").val( $(this).data("email") );
+
 
             $("#serviceModal").modal("show");
 
@@ -337,7 +349,7 @@ $("#search_form").on("submit", function(e) {
                                                         `<div class='search_info'>` + item["Redemption Date"] + `</div>`+
                                                     `</div>` +
                                                     `<div class='col-xl-3 border'>` +
-                                                        `<a class="btn btn-primary form-control mt-2 serviceButton" data-action="ResendVoucher" data-id="` + item['id'] + `">RESEND VOUCHER</a>` +
+                                                        `<a class="btn btn-primary form-control mt-2 serviceButton" data-action="ResendVoucher" data-id="` + item['id'] + `" data-fullname="`+ item["Full Name"]  + `" data-email="`+ item["Email"]  +  `">RESEND VOUCHER</a>` +
                                                     `</div>` +
                                                 `</div>` +
                                             `</div>`;

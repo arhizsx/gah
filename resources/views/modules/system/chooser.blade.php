@@ -12,7 +12,7 @@
         <div class="row">   
         @foreach( $modules as $module )
             <a href="{{ $module->link }}" class="col">
-                <div class="border m-2 text-center shadow-lg bg-white  p-3 rounded-5" style="width: calc( 100vw / 6 ); min-width: calc(100vw / 6)">
+                <div class="border m-2 text-center shadow-lg bg-white  p-3 rounded-5" style="width: calc( 100vw / 6 ); min-width: 300px;">
                     <div> <img width="100%" src="{{ $module->image }}" class="rounded-5" /> </div>
                     <div style="font-size: 1.25em; font-weight: bolder;"> {{ $module->label }} </div>
                 </div>

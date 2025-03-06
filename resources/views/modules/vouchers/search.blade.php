@@ -101,8 +101,11 @@
 $(document).on("click", ".serviceButton", function(e) {
 
     e.preventDefault();
+
+    let action = $(this).data("action");
+
     
-    switch( $(this).data("action") ){
+    switch( action ){
 
         case "ResendVoucher": 
 
@@ -129,9 +132,8 @@ $(document).on("click", ".serviceButton", function(e) {
         break;
 
         case "confirmResendVoucher": 
-
             let data = {
-                id ; $(this).attr("data-id"),
+                id : $(this).attr("data-id"),
                 action: "confirmResendVoucher"
             }
 

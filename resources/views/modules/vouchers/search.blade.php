@@ -367,11 +367,11 @@ $("#search_form").on("submit", function(e) {
         })
         .catch((error) => {
 
-            $error = $(document).find("#search_box").find("error-message")
+            $error = $(document).find("#search_box").find(".error-message")
             
             $error.show();
             $error.html( error.message );
-            
+
         })
         .finally(() => {
             // Re-enable the submit button after the request is complete

@@ -90,7 +90,11 @@ $(document).on("click", ".serviceButton", function(e) {
 
         case "confirmResendVoucher": 
             
-            resendVoucher( $(this).data() );
+            // Prevent double execution
+            if (!$(this).data("clicked")) {
+                $(this).data("clicked", true); // Mark as clicked
+                resendVoucher($(this).data());
+            }            
 
         break;
 

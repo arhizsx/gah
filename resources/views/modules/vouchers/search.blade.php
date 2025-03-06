@@ -64,7 +64,7 @@
 
 <script>
 
-$("#results_box").on("click", ".serviceButton", function(e) {
+$(document).on("click", ".serviceButton", function(e) {
 
     e.preventDefault();
     

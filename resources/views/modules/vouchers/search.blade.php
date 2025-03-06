@@ -53,12 +53,14 @@
                     <div class="modal-main">
                         <div class="row">
                             <div class="col-12">
-                                <input type="text" class="form-control" name="fullname" id="fullname">
+                                <label>Full Name</label>
+                                <input type="text" class="form-control mb-3" name="fullname" id="fullname">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <input type="text" class="form-control" name="email" id="email">
+                                <label>Email</label>
+                                <input type="text" class="form-control mb-3" name="email" id="email">
                             </div>
                         </div>
                     </div>

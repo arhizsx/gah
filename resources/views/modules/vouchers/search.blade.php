@@ -23,7 +23,7 @@
             font-size: 1.2em;
         }
         </style>
-        <div class="container d-flex justify-content-center align-items-center" style="min-height: 70vh">
+        <div id="search_box" class="container d-flex justify-content-center align-items-center" style="min-height: 70vh">
             <x-dynamic-component :component="'search-' . $position" />
         </div>
 
@@ -92,6 +92,7 @@ $("#search_form").on("submit", function(e) {
     $submitButton.find("#button_text").addClass("d-none");
 
     const $results = $(document).find('#results_box'); // Find the submit button
+    const $search = $(document).find('#search_box'); // Find the submit button
     
     $results.addClass("d-none");
     
@@ -122,14 +123,14 @@ $("#search_form").on("submit", function(e) {
     // Handle the Promise
     ajaxPromise
         .then((resp) => {
-            console.log("Response:", resp); // Handle the successful response
-
 
             // Clear the existing content in the results list
             $results.find("#results_list").html("");
-
+            
             // Check if the response is an array
             if (Array.isArray(resp)) {
+
+                    $search.css("min-height", "30vh");
 
                     if( resp.length > 0 ){
 

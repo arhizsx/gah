@@ -67,7 +67,7 @@
 <script>
 
 $(document).find(".serviceButton").on("click", function(e){
-    console.log("Service Button")
+    console.log("Service Button");
 });
 
 $("#search_form").on("submit", function(e) {

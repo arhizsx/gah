@@ -9,6 +9,9 @@ use Illuminate\Support\Collection;
 use App\Models\Vouchers;
 use App\Models\VoucherUsers;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\GahNotifEmail;
+
 
 class VouchersController extends Controller
 {

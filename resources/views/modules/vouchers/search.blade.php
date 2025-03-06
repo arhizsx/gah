@@ -61,7 +61,7 @@
                     </div>
                     <div class="modal-success d-none">
                         <div class="p-5 text-center">
-                            <i class="fa-regular text-success fa-circle-check fx-10x"></i>
+                            <i class="fa-regular text-success fa-circle-check fa-10x"></i>
                             <div class="p-3">Voucher Sent</div>
                         </div>
                     </div>

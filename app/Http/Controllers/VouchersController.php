@@ -136,7 +136,7 @@ class VouchersController extends Controller
 
         if( $voucher ){
 
-            $purchase_data = date("d/m/Y", strtotime( $voucher->{"Purchased At (Date+Time)"} ));
+            $purchase_data = date("m/d/Y", strtotime( $voucher->{"Purchased At (Date+Time)"} ));
 
             $details = [
                 'subject' => "Disney+ Voucher from GFiber Prepaid " . $purchase_data,

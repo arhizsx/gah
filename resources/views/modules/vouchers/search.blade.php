@@ -149,7 +149,7 @@ function resendVoucher( data ){
             },
             error: function(jqXHR, textStatus, errorThrown) {
             
-                reject(new Error(`AJAX Error: ${textStatus} - ${jqXHR}`)); // Reject the Promise with an error
+                reject(new Error(`AJAX Error: ${textStatus}`)); // Reject the Promise with an error
 
             }
 

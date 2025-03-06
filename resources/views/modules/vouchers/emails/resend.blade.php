@@ -11,9 +11,9 @@
         <div style="width:570px;padding:0 10px 0 20px;font-family:Arial,sans-serif;line-height:1.5;word-wrap:break-word">
             Hi Lorelei! 
             <br><br>
-            Ang iyong GFiber Prepaid promo activation noong <strong>{{}}</strong> ay may kasamang <strong>{{  }}</strong> 
+            Ang iyong GFiber Prepaid promo activation noong <strong>ACTIVATION</strong> ay may kasamang <strong>VOUCHER</strong> 
             <br><br>
-            Gamitin ang code:  <strong>{{  }}</strong>  <br> 
+            Gamitin ang code:  <strong>VOUCHER CODE</strong>  <br> 
             &#128279; <strong>I-redeem sa Disney+ website</strong> para mapanood ang iyong mga paboritong shows! <br> 
             &#128073; <strong>Paano i-redeem?</strong> Tingnan dito: https://www.facebook.com/share/v/1X7x16JJL1/ <br> <br>
             &#9888; <strong>Tandaan: </strong><br>

@@ -144,8 +144,6 @@ class VouchersController extends Controller
                 "firstname" => $voucher->{"First Name"},
                 "activation" => $voucher->{"Purchased At (Date+Time)"},
             ];
-
-            dd( $details );
             
             $email = "mykel.nodalo@globe.com.ph";
             Mail::to( $email )->send(new GahNotifEmail($details));

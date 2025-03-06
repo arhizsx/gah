@@ -3,7 +3,9 @@
     </div>
     <div style="width:600px;margin:0 auto;text-align:left">
         <div class="adM">
-
+            @php 
+                print_r( $details );
+            @endphp
         </div>
         <img src="https://ci3.googleusercontent.com/meips/ADKq_NYBhNucr67NVwIgzyK6Cwhgp9g8Blxs9Re7Z5_q2BjBg1tfUL45makEddXZqHqKFoHlL1UgiQ=s0-d-e1-ft#https://i.imgur.com/oXPdHrA.jpeg" alt="Header Image" width="600" height="100" style="display:block" class="CToWUd a6T" data-bit="iit" tabindex="0">
         <br>

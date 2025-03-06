@@ -59,7 +59,9 @@
                         </div>
                     </div>
                     <div class="modal-success d-none">
-                        Success
+                        <div class="p-5 text-center">
+                            <i class="fa-solid fa-circle-check fa-shake fa-10x"></i> 
+                        </div>
                     </div>
                     <div class="modal-error d-none">
                         Error

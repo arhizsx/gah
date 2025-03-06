@@ -130,7 +130,14 @@ $(document).on("click", ".serviceButton", function(e) {
 
         case "confirmResendVoucher": 
 
-            resendVoucher($(this).data());
+            $modal = $(document).find("#serviceModal");
+            $data = [
+                action : "confirmResendVoucher",
+                id: $modal.find( ".serviceButton" ).attr("data-id");
+            ];
+
+
+            resendVoucher( $data );
 
         break;
 

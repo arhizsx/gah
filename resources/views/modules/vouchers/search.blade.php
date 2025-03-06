@@ -68,7 +68,7 @@ $(document).on("click", ".serviceButton", function(e) {
 
     e.preventDefault();
     
-    console.log($(document).find("#serviceModal").data()); 
+    console.log($(this).data()); 
 
 
     $("#serviceModal").modal("show");

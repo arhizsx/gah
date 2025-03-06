@@ -122,9 +122,9 @@ $(document).on("click", ".serviceButton", function(e) {
             $modal.find(".modal-main").find("#fullname").val("");
             $modal.find(".modal-main").find("#email").val("");
 
-            $modal.find(".serviceButton").attr("data-id", $(this).data("id") );
-            $modal.find(".modal-main").find("#fullname").val( $(this).data("fullname") );
-            $modal.find(".modal-main").find("#email").val( $(this).data("email") );
+            $modal.find(".serviceButton").attr("data-id", $(this).attr("data-id") );
+            $modal.find(".modal-main").find("#fullname").val( $(this).att("data-fullname") );
+            $modal.find(".modal-main").find("#email").val( $(this).attr("data-email") );
 
 
             $("#serviceModal").modal("show");

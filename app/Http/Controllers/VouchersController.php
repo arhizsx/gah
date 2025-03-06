@@ -134,6 +134,8 @@ class VouchersController extends Controller
             
         $voucher = Vouchers::where("id", $request->id )->first();
 
+        dd( $voucher );
+
         if( $voucher ){
 
             $purchase_data = date("m/d/Y", strtotime( $voucher->{"Purchased At (Date+Time)"} ));

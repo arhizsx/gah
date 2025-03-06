@@ -65,7 +65,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary serviceButton" data-action="confirmResendVoucher" data-clicked="false" data-id=""><i class="fa-solid fa-paper-plane"></i> Send</button>
+                    <button type="button" class="btn btn-primary serviceButton" data-action="confirmResendVoucher" data-id=""><i class="fa-solid fa-paper-plane"></i> Send</button>
                 </div>
                 </div>
             </div>
@@ -89,11 +89,7 @@ $(document).on("click", ".serviceButton", function(e) {
 
         case "confirmResendVoucher": 
 
-            // Prevent double execution
-            if (!$(this).data("clicked")) {
-                $(this).data("clicked", true); // Mark as clicked
-                resendVoucher($(this).data());
-            }            
+            resendVoucher($(this).data());
 
         break;
 

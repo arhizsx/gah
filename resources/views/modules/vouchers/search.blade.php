@@ -51,16 +51,16 @@
                 </div>
                 <div class="modal-body">
                     <div class="modal-main">
-
+                        Main
                     </div>
                     <div class="modal-loading d-none">
-
+                        Loading
                     </div>
                     <div class="modal-success d-none">
-
+                        Success
                     </div>
                     <div class="modal-error d-none">
-
+                        Error
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -102,8 +102,64 @@ $(document).on("click", ".serviceButton", function(e) {
 });
 
 function resendVoucher( data ){
-    console.log(data);
-    return false;
+
+    $modal = $(document).find("#serviceModal");
+
+    const ajaxPromise = new Promise((resolve, reject) => {
+
+        $modal.find(".modal-main").removeClass("d-none");
+        $modal.find(".modal-loading").addClass("d-none");
+        $modal.find(".modal-error").addClass("d-none");
+        $modal.find(".modal-success").addClass("d-none");
+
+        $.ajax({
+            url: "/vouchers/resend",
+            method: "POST",
+            data: data,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Include CSRF token
+            },
+            success: function(resp) {
+                
+                resolve(resp); // Resolve the Promise with the response
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+            
+                reject(new Error(`AJAX Error: ${textStatus} - ${errorThrown}`)); // Reject the Promise with an error
+
+            }
+
+        });
+    });
+
+    ajaxPromise
+        .then((resp) => {
+
+            console.log("Sent");
+
+        })
+        .catch((error) => {
+
+            $modal.find(".modal-main").addClass("d-none");
+            $modal.find(".modal-loading").addClass("d-none");
+            $modal.find(".modal-error").removeClass("d-none");
+            $modal.find(".modal-success").addClass("d-none");
+
+
+            console.error("Error:", error.message); // Handle the error
+
+        })
+        .finally(() => {
+
+            $modal.find(".modal-main").addClass("d-none");
+            $modal.find(".modal-loading").addClass("d-none");
+            $modal.find(".modal-error").addClass("d-none");
+            $modal.find(".modal-success").removeClass("d-none");
+
+        });
+
+
 
 }
 

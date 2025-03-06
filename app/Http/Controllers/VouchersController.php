@@ -127,4 +127,8 @@ class VouchersController extends Controller
 
     }
 
+    function resend( Request $request ){
+    
+        return ["error" => false,  "message" => "sent"];
+    }
 }

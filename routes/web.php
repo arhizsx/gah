@@ -180,6 +180,8 @@ use App\Http\Controllers\ModuleController;
 
         Route::post('/vouchers/search',  [VouchersController::class, 'search']);        
 
+        Route::post('/vouchers/resend',  [VouchersController::class, 'resend']);        
+
     });
 
 

@@ -71,7 +71,7 @@ $("#results_box").on("click", ".serviceButton", function(e) {
     e.preventDefault();
     
     console.log("Service Button");
-    console.log($("#serviceModal").length); 
+    console.log($(document).find("#serviceModal").length); 
 
 
     $("#serviceModal").modal("show");

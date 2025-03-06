@@ -62,7 +62,9 @@
     </div>
 
 
-    <script>
+</x-vouchers-layout>
+
+<script>
 
 $("#search_form").on("submit", function(e) {
     e.preventDefault(); // Prevent the form from submitting the traditional way
@@ -194,7 +196,7 @@ $("#search_form").on("submit", function(e) {
                                                         `<div class='search_info'>` + item["Redemption Date"] + `</div>`+
                                                     `</div>` +
                                                     `<div class='col-xl-3 border'>` +
-                                                        `<button class="btn btn-primary form-control mt-2 serviceButton" data-action="resendVoucher" data-id="` + item['id'] + `">RESEND VOUCHER</button>` +
+                                                        `<button class="btn btn-primary form-control mt-2 serviceButton" data-id="` + item['id'] + `">RESEND VOUCHER</button>` +
                                                     `</div>` +
                                                 `</div>` +
                                             `</div>`;
@@ -242,13 +244,7 @@ $("#search_form").on("submit", function(e) {
         });
 });
 
-$(document).find(".serviceButton").on("click", function(e){
 
-    e.preventDefault();
-    
-    console.log( $(this).data() );
-
-});
 
 
 $(document).ready(function() {
@@ -292,6 +288,3 @@ $(document).ready(function() {
 
 
 </script>
-
-</x-vouchers-layout>
-

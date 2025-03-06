@@ -66,7 +66,12 @@
 
 <script>
 
+$(document).find(".serviceButton").on("click", function(e){
+    console.log("Service Button")
+});
+
 $("#search_form").on("submit", function(e) {
+
     e.preventDefault(); // Prevent the form from submitting the traditional way
 
     const $form = $(this); // Cache the form element
@@ -243,9 +248,6 @@ $("#search_form").on("submit", function(e) {
 
         });
 });
-
-
-
 
 $(document).ready(function() {
     const $searchInput = $("#search");

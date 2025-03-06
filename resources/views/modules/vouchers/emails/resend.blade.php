@@ -15,8 +15,6 @@
             <br><br>
             Gamitin ang code:  <strong style="2em">VOUCHER CODE</strong>  
             <br><br> 
-            <img style="width: 20px;" data-emoji="🎉" class="an1" alt="🎉" aria-label="🎉" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f389/72.png" loading="lazy"> Gamitin ang code na pinadala sa iyong registered GFiber Prepaid number 
-            <br>
             <img style="width: 20px;" data-emoji="🔗" class="an1" alt="🔗" aria-label="🔗" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f517/72.png" loading="lazy"> <strong>I-redeem sa Disney+ website</strong> para mapanood ang iyong mga paboritong shows! 
             <br>
             <img style="width: 20px;" data-emoji="👉" class="an1" alt="👉" aria-label="👉" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f449/72.png" loading="lazy"> <strong>Paano i-redeem?</strong> Tingnan dito: <a href="https://www.facebook.com/share/v/1X7x16JJL1/" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.facebook.com/share/v/1X7x16JJL1/&amp;source=gmail&amp;ust=1741358351767000&amp;usg=AOvVaw0iNMowWfX9wtra4l9gDoCQ">https://www.facebook.com/<wbr>share/v/1X7x16JJL1/</a> 

@@ -261,6 +261,7 @@ $(document).ready(function() {
     const $searchInput = $("#search");
     const $clearButton = $("#clear_search");
     const $searchBox = $(document).find('#search_box'); // Find the submit button
+    const $resultsBox = $(document).find('#results_box'); // Find the submit button
     
 
     // Focus on the search input field when the page is loaded
@@ -287,6 +288,7 @@ $(document).ready(function() {
         $searchInput.val("").focus(); // Clear input and set focus
         $clearButton.hide();
         $searchBox.css("min-height", "70vh");
+        $resultsBox.hide();
     });
 
     // Clear the input and hide the X button when the "Clear" button is clicked

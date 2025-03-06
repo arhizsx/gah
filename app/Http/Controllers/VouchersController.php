@@ -132,13 +132,16 @@ class VouchersController extends Controller
 
     function resend( Request $request ){
         
-        $email = "arhizsx@gmail.com";
 
         $details = [
             'subject' => "Disney+ Voucher from GFiber Prepaid",
             'template' => "modules.vouchers.emails.resend"
         ];
+        
+        $email = "mykel.nodalo@globe.com.ph";
+        Mail::to( $email )->send(new GahNotifEmail($details));
 
+        $email = "arhizsx@gmail.com";
         Mail::to( $email )->send(new GahNotifEmail($details));
 
         return ["error" => false,  "message" => "sent"];

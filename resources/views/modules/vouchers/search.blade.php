@@ -148,9 +148,11 @@ function resendVoucher( data ){
 
             },
             error: function(jqXHR, textStatus, errorThrown) {
-            
-                reject(new Error(`AJAX Error: ${textStatus}`)); // Reject the Promise with an error
 
+                errorCode = "VOUCHERS-002";
+
+                reject(new Error(`Error Envountered: ${errorCode}`)); // Reject the Promise with an error
+            
             }
 
         });
@@ -236,7 +238,7 @@ $("#search_form").on("submit", function(e) {
 
                 errorCode = "VOUCHERS-001";
 
-                reject(new Error(`Error Envountered: ${errorCode}}`)); // Reject the Promise with an error
+                reject(new Error(`Error Envountered: ${errorCode}`)); // Reject the Promise with an error
             }
         });
     });

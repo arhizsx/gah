@@ -175,7 +175,7 @@ function resendVoucher( data ){
             $modal.find(".modal-success").addClass("d-none");
             $modal.find(".modal-footer").removeClass("d-none");
 
-            $(modal).find('.modal-error').find(".error-message").html( error.message );
+            $modal.find('.modal-error').find(".error-message").html( error.message );
 
             console.error("Error:", error.message); // Handle the error
 

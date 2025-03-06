@@ -79,13 +79,12 @@ $(document).on("click", ".serviceButton", function(e) {
 
     e.preventDefault();
     
-    console.log($(this).data()); 
-    console.log($(".serviceButton[data-action='confirmResendVoucher']").length);
-
     switch( $(this).data("action") ){
 
         case "ResendVoucher": 
+
             $("#serviceModal").modal("show");
+
         break;
 
         case "confirmResendVoucher": 

@@ -14,6 +14,7 @@ class ModuleController extends Controller
         $modules = DB::table("users_modules")
                     ->JOIN("modules", "users_modules.module", "modules.module")
                     ->where("user_id", Auth::user()->id)
+                    ->orderBy("sort")
                     ->get();
 
 

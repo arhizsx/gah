@@ -11,8 +11,18 @@
         <div style="width:570px;padding:0 10px 0 20px;font-family:Arial,sans-serif;line-height:1.5;word-wrap:break-word">
             Hi Lorelei! 
             <br><br>
-            Ang iyong GFiber Prepaid promo activation noong <strong>Feb 26, 2025 12:06 AM</strong> ay may kasamang <strong>1-month Disney+ Premium access!</strong> 
+            Ang iyong GFiber Prepaid promo activation noong <strong>{{ $activation_date }}</strong> ay may kasamang <strong>{{ $voucher }}</strong> 
             <br><br>
+            Gamitin ang code:  <strong>{{ $voucher_code }}</strong>  <br> 
+            &#128279; <strong>I-redeem sa Disney+ website</strong> para mapanood ang iyong mga paboritong shows! <br> 
+            &#128073; <strong>Paano i-redeem?</strong> Tingnan dito: https://www.facebook.com/share/v/1X7x16JJL1/ <br> <br>
+            &#9888; <strong>Tandaan: </strong><br>
+            ✔ Huwag i-share ang iyong code. Ito ay maaari lamang gamitin ng <strong>isang beses</strong>. 
+            ✔ I-activate sa loob ng <strong>30 days</strong> mula sa pagtanggap ng mensaheng ito. <br>
+            ✔ Hindi magagamit ang code kung may existing Disney+ subscription ka. <br>
+            ✔ Pwede kang gumamit ng ibang Disney+ account para ma-redeem ito. <br>
+            Enjoy your Disney+ Premium access! &#127871;&#127916; <br> <br>
+
 
             <img style="width: 20px;" data-emoji="🎉" class="an1" alt="🎉" aria-label="🎉" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f389/72.png" loading="lazy"> Gamitin ang code na pinadala sa iyong registered GFiber Prepaid number 
             <br>

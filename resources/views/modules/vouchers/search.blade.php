@@ -41,7 +41,7 @@
         </div>
         <!-- Modal -->
         <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModallLabel" aria-hidden="false">
-            <div class="modal-dialog modal-xl">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="serviceModallLabel">Resend Voucher</h5>

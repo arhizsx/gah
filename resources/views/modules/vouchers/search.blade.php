@@ -130,7 +130,7 @@ $("#search_form").on("submit", function(e) {
             // Check if the response is an array
             if (Array.isArray(resp)) {
 
-                    $search.css("min-height", "30vh");
+                    $search.css("min-height", "25vh");
 
                     if( resp.length > 0 ){
 

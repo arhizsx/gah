@@ -206,7 +206,7 @@ $("#search_form").on("submit", function(e) {
                                                         `<div class='search_info'>` + item["Redemption Date"] + `</div>`+
                                                     `</div>` +
                                                     `<div class='col-xl-3 border'>` +
-                                                        `<button class="btn btn-primary form-control mt-2 serviceButton" data-id="` + item['id'] + `">RESEND VOUCHER</button>` +
+                                                        `<a class="btn btn-primary form-control mt-2 serviceButton" data-id="` + item['id'] + `">RESEND VOUCHER</a>` +
                                                     `</div>` +
                                                 `</div>` +
                                             `</div>`;

@@ -88,7 +88,9 @@ $(document).on("click", ".serviceButton", function(e) {
         break;
 
         case "confirmResendVoucher": 
+            
             resendVoucher( $(this).data() );
+
         break;
 
         default:
@@ -100,7 +102,9 @@ $(document).on("click", ".serviceButton", function(e) {
 });
 
 function resendVoucher( data ){
-    console.log( data );
+    
+    return console.log( data );
+    
 }
 
 

@@ -107,8 +107,8 @@ $(document).on("click", ".serviceButton", function(e) {
 });
 
 function resendVoucher( data ){
-    
-    return console.log( data );
+    console.log(data);
+    return false;
 
 }
 

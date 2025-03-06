@@ -130,7 +130,7 @@ $("#search_form").on("submit", function(e) {
             // Check if the response is an array
             if (Array.isArray(resp)) {
 
-                    $search.css("min-height", "25vh");
+                    $search.css("min-height", "30vh");
 
                     if( resp.length > 0 ){
 
@@ -260,6 +260,7 @@ $(document).ready(function() {
 
     const $searchInput = $("#search");
     const $clearButton = $("#clear_search");
+    const $searchBox = $(document).find('#search_box'); // Find the submit button
     
 
     // Focus on the search input field when the page is loaded
@@ -285,6 +286,7 @@ $(document).ready(function() {
     $clearButton.on("click", function() {
         $searchInput.val("").focus(); // Clear input and set focus
         $clearButton.hide();
+        $searchBox.css("min-height", "70vh");
     });
 
     // Clear the input and hide the X button when the "Clear" button is clicked

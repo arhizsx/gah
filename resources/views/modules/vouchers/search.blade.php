@@ -61,6 +61,7 @@
                     <div class="modal-success d-none">
                         <div class="p-5 text-center">
                             <i class="fa-solid text-success fa-circle-check fa-bounce fa-10x"></i> 
+                            <div>Voucher Sent</div>
                         </div>
                     </div>
                     <div class="modal-error d-none">

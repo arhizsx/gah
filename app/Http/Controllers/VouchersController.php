@@ -148,9 +148,6 @@ class VouchersController extends Controller
                 "firstname" => $voucher->{"First Name"},
                 "activation" => $voucher->{"Purchased At (Date+Time)"},
             ];
-            
-            dd( $details );
-
 
             
             $email = Auth::user()->email;

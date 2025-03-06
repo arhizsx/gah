@@ -3,20 +3,17 @@
     </div>
     <div style="width:600px;margin:0 auto;text-align:left">
         <div class="adM">
-            @php 
-                print_r( $data );
-            @endphp
         </div>
         <img src="https://ci3.googleusercontent.com/meips/ADKq_NYBhNucr67NVwIgzyK6Cwhgp9g8Blxs9Re7Z5_q2BjBg1tfUL45makEddXZqHqKFoHlL1UgiQ=s0-d-e1-ft#https://i.imgur.com/oXPdHrA.jpeg" alt="Header Image" width="600" height="100" style="display:block" class="CToWUd a6T" data-bit="iit" tabindex="0">
         <br>
     
         <div style="width:570px;padding:0 10px 0 20px;font-family:Arial,sans-serif;line-height:1.5;word-wrap:break-word">
-            Hi Lorelei! 
+            Hi {{ $data["firstname"] }}! 
             <br><br>
-            Ang iyong GFiber Prepaid promo activation noong <strong>ACTIVATION</strong> ay may kasamang <strong>VOUCHER</strong> 
+            Ang iyong GFiber Prepaid promo activation noong <strong>{{ $data["activation"] }}</strong> ay may kasamang <strong>{{ $data["voucher"] }}</strong> 
             <br><br>
             Gamitin ang code: <br>
-            <strong style="font-size: 2em;">VOUCHER CODE</strong>  
+            <strong style="font-size: 2em;">{{ $data["voucher_code"] }}</strong>  
             <br><br> 
             <img style="width: 20px;" data-emoji="🔗" class="an1" alt="🔗" aria-label="🔗" draggable="false" src="https://fonts.gstatic.com/s/e/notoemoji/16.0/1f517/72.png" loading="lazy"> <strong>I-redeem sa Disney+ website</strong> para mapanood ang iyong mga paboritong shows! 
             <br>

@@ -233,7 +233,10 @@ $("#search_form").on("submit", function(e) {
                 resolve(resp); // Resolve the Promise with the response
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                reject(new Error(`AJAX Error: ${textStatus} - ${errorThrown}`)); // Reject the Promise with an error
+
+                errorCode = 0001;
+
+                reject(new Error(`Error Envountered: ${errorCode}}`)); // Reject the Promise with an error
             }
         });
     });

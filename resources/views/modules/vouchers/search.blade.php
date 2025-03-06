@@ -25,6 +25,7 @@
         </style>
         <div id="search_box" class="container d-flex justify-content-center align-items-center" style="min-height: 70vh">
             <x-dynamic-component :component="'search-' . $position" />
+            <div class="d-none error-message"></div>
         </div>
 
         <div id="results_box" class="container-fluid d-none">
@@ -365,7 +366,12 @@ $("#search_form").on("submit", function(e) {
 
         })
         .catch((error) => {
-            console.error("Error:", error.message); // Handle the error
+
+            $error = $(document).find("#search_box").find("error-message")
+            
+            $error.show();
+            $error.html( error.message );
+            
         })
         .finally(() => {
             // Re-enable the submit button after the request is complete

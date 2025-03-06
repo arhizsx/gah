@@ -66,8 +66,8 @@
 
 <script>
 
-$(document).find(".serviceButton").on("click", function(e){
-    
+$(document).on("click", ".serviceButton", function(e) {
+        
     e.preventDefault();
     
     console.log("Service Button");

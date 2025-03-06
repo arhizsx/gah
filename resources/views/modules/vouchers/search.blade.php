@@ -104,8 +104,6 @@ $(document).on("click", ".serviceButton", function(e) {
             $modal.find(".modal-success").addClass("d-none");
             $modal.find(".modal-footer").removeClass("d-none");
 
-            console.log( $(this).data("id") );
-
             $modal.find(".serviceButton").attr("data-id", $(this).data("id") );
 
             $("#serviceModal").modal("show");

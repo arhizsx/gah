@@ -134,23 +134,30 @@ class VouchersController extends Controller
             
         $voucher = Vouchers::find($request->id );
 
-        dd( $voucher );
+        if( $voucher ){
 
-        $details = [
-            'subject' => "Disney+ Voucher from GFiber Prepaid",
-            'template' => "modules.vouchers.emails.resend",
-            "voucher" => "",
-            "voucher_code" => "",
-            "firstname" => "",
-            "activation" => ""
-        ];
-        
-        $email = "mykel.nodalo@globe.com.ph";
-        Mail::to( $email )->send(new GahNotifEmail($details));
+            $details = [
+                'subject' => "Disney+ Voucher from GFiber Prepaid",
+                'template' => "modules.vouchers.emails.resend",
+                "voucher" => "1-month Disney+ Premium access",
+                "voucher_code" => $voucher->{"Voucher Assigned"},
+                "firstname" => $voucher->{"First Name"},
+                "activation" => $voucher->{"Purchased At (Date+Time)"},
+            ];
 
-        $email = "arhizsx@gmail.com";
-        Mail::to( $email )->send(new GahNotifEmail($details));
+            dd( $details );
+            
+            $email = "mykel.nodalo@globe.com.ph";
+            Mail::to( $email )->send(new GahNotifEmail($details));
+    
+            $email = "arhizsx@gmail.com";
+            Mail::to( $email )->send(new GahNotifEmail($details));
+    
+            return ["error" => false,  "message" => "sent"];
+    
+        }
 
-        return ["error" => false,  "message" => "sent"];
+        return ["error" => true,  "message" => "Item Not Found"];
+
     }
 }

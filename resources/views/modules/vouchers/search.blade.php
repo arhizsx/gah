@@ -92,6 +92,15 @@ $(document).on("click", ".serviceButton", function(e) {
 
         case "ResendVoucher": 
 
+            $modal = $(document).find("#serviceModal");
+
+
+            $modal.find(".modal-main").removeClass("d-none");
+            $modal.find(".modal-loading").addClass("d-none");
+            $modal.find(".modal-error").addClass("d-none");
+            $modal.find(".modal-success").addClass("d-none");
+            $modal.find(".modal-footer").removeClass("d-none");
+
             $("#serviceModal").modal("show");
 
         break;

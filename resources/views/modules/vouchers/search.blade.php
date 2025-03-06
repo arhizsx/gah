@@ -55,12 +55,12 @@
                     </div>
                     <div class="modal-loading d-none">
                         <div class="p-5 text-center">
-                            <i class="fa-solid fa-spinner fa-spin fa-10x"></i> 
+                            <i class="fa-solid text-primary fa-spinner fa-spin fa-10x"></i> 
                         </div>
                     </div>
                     <div class="modal-success d-none">
                         <div class="p-5 text-center">
-                            <i class="fa-solid fa-circle-check fa-shake fa-10x"></i> 
+                            <i class="fa-solid text-success fa-circle-check fa-bounce fa-10x"></i> 
                         </div>
                     </div>
                     <div class="modal-error d-none">

@@ -68,7 +68,7 @@
                     <div class="modal-error d-none">
                         <div class="p-5 text-center">
                             <i class="fa-solid text-danger fa-triangle-exclamation fa-10x"></i>
-                            <div class="p-3">Error Encountered</div>
+                            <div class="p-3 error-message">Error Encountered</div>
                         </div>
                     </div>
                 </div>
@@ -173,6 +173,8 @@ function resendVoucher( data ){
             $modal.find(".modal-error").removeClass("d-none");
             $modal.find(".modal-success").addClass("d-none");
             $modal.find(".modal-footer").removeClass("d-none");
+
+            $(modal).find('.modal-error').find(".error-message").html( error.message );
 
             console.error("Error:", error.message); // Handle the error
 

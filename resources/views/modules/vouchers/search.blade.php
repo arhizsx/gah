@@ -149,6 +149,7 @@ function resendVoucher( data ){
             $modal.find(".modal-loading").addClass("d-none");
             $modal.find(".modal-error").removeClass("d-none");
             $modal.find(".modal-success").addClass("d-none");
+            $modal.find(".modal-footer").removeClass("d-none");
 
             console.error("Error:", error.message); // Handle the error
 
@@ -160,7 +161,6 @@ function resendVoucher( data ){
             $modal.find(".modal-error").addClass("d-none");
             $modal.find(".modal-success").removeClass("d-none");
 
-            $modal.find(".modal-footer").removeClass("d-none");
 
 
         });

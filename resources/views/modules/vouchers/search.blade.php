@@ -106,6 +106,8 @@ $(document).on("click", ".serviceButton", function(e) {
 
             console.log( $(this).data("id") );
 
+            $modal.find(".serviceButton").attr("data-id", $(this).data("id") );
+
             $("#serviceModal").modal("show");
 
         break;

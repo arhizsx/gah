@@ -45,7 +45,7 @@
                 <div class="modal-content">
                 <div class="modal-header">
                     <div class="modal-title" id="serviceModallLabel" style="font-size: 1.5em; font-weight: bolder;">
-                        <i class="fa-solid fa-paper-plane"></i> Resend Voucher
+                        <i class="fa-solid fa-envelope"></i> Resend Voucher
                     </div>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary serviceButton" data-action="confirmResendVoucher" data-id="">Send</button>
+                    <button type="button" class="btn btn-primary serviceButton" data-action="confirmResendVoucher" data-id=""><i class="fa-solid fa-paper-plane"></i> Send</button>
                 </div>
                 </div>
             </div>

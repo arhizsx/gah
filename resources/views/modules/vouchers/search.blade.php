@@ -144,6 +144,13 @@ function resendVoucher( data ){
 
             },
             error: function(jqXHR, textStatus, errorThrown) {
+
+                $modal.find(".modal-main").addClass("d-none");
+                $modal.find(".modal-loading").addClass("d-none");
+                $modal.find(".modal-error").removeClass("d-none");
+                $modal.find(".modal-success").addClass("d-none");
+                $modal.find(".modal-footer").addClass("d-none");
+
             
                 reject(new Error(`AJAX Error: ${textStatus} - ${errorThrown}`)); // Reject the Promise with an error
 

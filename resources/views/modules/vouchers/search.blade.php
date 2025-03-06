@@ -225,6 +225,10 @@ $("#search_form").on("submit", function(e) {
     // Create a Promise for the AJAX request
     const ajaxPromise = new Promise((resolve, reject) => {
 
+        $error = $(document).find("#search_box").find(".error-message")
+        
+        $error.addClass("d-none");
+
         $.ajax({
             url: "/vouchers/search",
             method: "POST",
@@ -367,9 +371,8 @@ $("#search_form").on("submit", function(e) {
         })
         .catch((error) => {
 
-            $error = $(document).find("#search_box").find(".error-message")
             
-            $error.show();
+            $error.removeClass("d-none");
             $error.html( error.message );
 
         })

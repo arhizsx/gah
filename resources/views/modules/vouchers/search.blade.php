@@ -244,7 +244,7 @@ $("#search_form").on("submit", function(e) {
         });
 });
 
-$(".serviceButton").on("click", function(){
+$(document).find(".serviceButton").on("click", function(){
 
     console.log( $(this).data() );
 

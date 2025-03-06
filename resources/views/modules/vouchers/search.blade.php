@@ -242,8 +242,10 @@ $("#search_form").on("submit", function(e) {
         });
 });
 
-$(document).find(".serviceButton").on("click", function(){
+$(document).find(".serviceButton").on("click", function(e){
 
+    e.preventDefault();
+    
     console.log( $(this).data() );
 
 });

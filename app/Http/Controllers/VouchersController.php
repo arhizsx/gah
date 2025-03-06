@@ -136,8 +136,12 @@ class VouchersController extends Controller
 
         if( $voucher ){
 
+            $datetime = $voucher->{"Purchased At (Date+Time)"};
+            $dateObj = DateTime::createFromFormat("m/d/Y h:ia", $datetime);
+            $purchase_data = $dateObj->format("d/m/Y");
+
             $details = [
-                'subject' => "Disney+ Voucher from GFiber Prepaid",
+                'subject' => "Disney+ Voucher from GFiber Prepaid " . $purchase_data,
                 'template' => "modules.vouchers.emails.resend",
                 "voucher" => "1-month Disney+ Premium access",
                 "voucher_code" => $voucher->{"Voucher Assigned"},

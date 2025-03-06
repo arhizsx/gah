@@ -55,7 +55,7 @@
                     </div>
                     <div class="modal-loading d-none">
                         <div class="p-5 text-center">
-                            <i class="fa-solid fa-spinner fa-5x"></i> 
+                            <i class="fa-solid fa-spinner fa-spin fa-10x"></i> 
                         </div>
                     </div>
                     <div class="modal-success d-none">

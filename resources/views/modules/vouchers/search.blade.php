@@ -131,6 +131,7 @@ $("#search_form").on("submit", function(e) {
             if (Array.isArray(resp)) {
 
                     $search.css("min-height", "30vh");
+                    $results.show();
 
                     if( resp.length > 0 ){
 
@@ -220,7 +221,6 @@ $("#search_form").on("submit", function(e) {
 
                     } else {
 
-                        $results.show();
 
                         $results.find("#results_list").append("<div class='mt-3'>Nothing Found</div>");
 

@@ -67,7 +67,7 @@
                     </div>
                     <div class="modal-error d-none">
                         <div class="p-5 text-center">
-                            <i class="fa-solid fa-triangle-exclamation fa-10x"></i>
+                            <i class="fa-solid text-danger fa-triangle-exclamation fa-10x"></i>
                             <div class="p-3">Error Encountered</div>
                         </div>
                     </div>

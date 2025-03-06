@@ -226,7 +226,7 @@ let columns = [
     {
         dataField: "schedule_date",
         caption: "Sched Date",
-        visible: false,
+        visible: true,
     },
     {
         dataField: 'status',

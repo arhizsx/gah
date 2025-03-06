@@ -62,9 +62,7 @@
     </div>
 
 
-</x-vouchers-layout>
-
-<script>
+    <script>
 
 $("#search_form").on("submit", function(e) {
     e.preventDefault(); // Prevent the form from submitting the traditional way
@@ -292,3 +290,6 @@ $(document).ready(function() {
 
 
 </script>
+
+</x-vouchers-layout>
+

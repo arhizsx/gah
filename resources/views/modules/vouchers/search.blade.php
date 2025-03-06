@@ -44,7 +44,7 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <div class="modal-title" id="serviceModallLabel" style="font-size: 1.2em; font-weight: bolder;">
+                    <div class="modal-title" id="serviceModallLabel" style="font-size: 1.5em; font-weight: bolder;">
                         Resend Voucher
                     </div>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

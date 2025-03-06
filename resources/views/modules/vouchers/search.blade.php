@@ -66,11 +66,13 @@
 
 <script>
 
-$(document).on("click", ".serviceButton", function(e) {
+$("#results_box").on("click", ".serviceButton", function(e) {
 
     e.preventDefault();
     
     console.log("Service Button");
+    console.log($("#serviceModal").length); 
+
 
     $("#serviceModal").modal("show");
 

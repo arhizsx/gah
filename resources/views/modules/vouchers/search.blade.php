@@ -40,7 +40,28 @@
             </div>
         </div>
     </x-slot>
+
     
+    <!-- Modal -->
+    <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModallLabel" aria-hidden="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="serviceModallLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            ...
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+
 </x-vouchers-layout>
 
 <script>
@@ -175,7 +196,7 @@ $("#search_form").on("submit", function(e) {
                                                         `<div class='search_info'>` + item["Redemption Date"] + `</div>`+
                                                     `</div>` +
                                                     `<div class='col-xl-3 border'>` +
-                                                        `<button class="btn btn-primary form-control mt-2" data-id="` + item['id'] + `">RESEND VOUCHER</button>` +
+                                                        `<button class="btn btn-primary form-control mt-2 serviceButton" data-action="resendVoucher" data-id="` + item['id'] + `">RESEND VOUCHER</button>` +
                                                     `</div>` +
                                                 `</div>` +
                                             `</div>`;
@@ -223,6 +244,12 @@ $("#search_form").on("submit", function(e) {
         });
 });
 
+$(".serviceButton").on("click", function(){
+
+    console.log( $(this).data() );
+
+});
+
 
 $(document).ready(function() {
     const $searchInput = $("#search");
@@ -261,5 +288,7 @@ $(document).ready(function() {
     });
 
 });
+
+
 
 </script>

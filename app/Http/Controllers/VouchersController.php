@@ -134,7 +134,6 @@ class VouchersController extends Controller
             
 
         $voucher = Vouchers::where("id", $request->id )->first();
-        dd( $voucher );
 
 
         if( $voucher ){
@@ -150,6 +149,8 @@ class VouchersController extends Controller
                 "activation" => $voucher->{"Purchased At (Date+Time)"},
             ];
             
+            dd( $details );
+
 
             
             $email = Auth::user()->email;

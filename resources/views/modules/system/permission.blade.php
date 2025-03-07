@@ -8,39 +8,8 @@
         <div class="shadow-lg mt-5 mb-5 p-5 bg-white" style="margin: 25vw; border-radius: 25px; border: 3px solid red;">
 
             <H1 style="font-size: 2.5em; font-weight: bolder; margin-bottom: 15px;">Unauthorized Access</h1>
-            <!-- <table class="table-bordered table">
-                <tbody>
-                    <tr>
-                        <td>Name</td>
-                        <td>{{ Auth::user()->name }}</td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td>{{ Auth::user()->email }}</td>
-                    </tr>
-                    <tr>
-                        <td>IP Address</td>
-                        <td>{{ $requestDetails["ip"] }}</td>
-                    </tr>
-                    <tr>
-                        <td>User Agent</td>
-                        <td>{{ $requestDetails["user_agent"] }}</td>
-                    </tr>
-                    <tr>
-                        <td>Method</td>
-                        <td>{{ $requestDetails["method"] }}</td>
-                    </tr>
-                    <tr>
-                        <td>URL</td>
-                        <td>{{ $requestDetails["url"] }}</td>
-                    </tr>
-                    <tr>
-                        <td>Timestamp</td>
-                        <td>{{ now() }}</td>
-                    </tr>
-                </tbody>
-            </table> -->
             <p>You do not have permission to access this module. Your access attempt has been logged.</p>
+
         </div>
     </x-slot>
 </x-system-blank-layout>

@@ -33,7 +33,7 @@
         @endphp 
 
         @foreach( $modules as $module )
-            <a href="{{ $module->link }}" class="col-xl-{{ $col }}" style="max-width: 250px;">
+            <a href="{{ $module->link }}" class="col-xl-{{ $col }}" style="max-width: 350px;">
                 <div class="border m-2 text-center shadow-lg bg-white  p-3 rounded-5">
                     <div> <img width="100%" src="{{ $module->image }}" class="rounded-5" /> </div>
                     <div style="font-size: 1.25em; font-weight: bolder;"> {{ $module->label }} </div>

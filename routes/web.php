@@ -17,7 +17,9 @@ use App\Http\Controllers\ModuleController;
 //                           //
 // ////////////////////////////
 
-    Route::middleware('auth')->group(function () {
+
+
+    Route::group(['middleware' => ['auth', 'verified', "LogUserPageVisit"]], function () {
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -145,6 +147,7 @@ use App\Http\Controllers\ModuleController;
 //                            //
 // /////////////////////////////
 
+Route::group(['middleware' => ['LogUserPageVisit']], function () {
 
     Route::get('/', function () {
         return abort(404);
@@ -155,6 +158,8 @@ use App\Http\Controllers\ModuleController;
         return abort(404);
         // return redirect('https://sam.globe.com.ph/broadband/internal');
     });
+    
+});
 
 // ****************************
 //                            //

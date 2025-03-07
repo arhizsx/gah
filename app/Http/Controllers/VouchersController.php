@@ -150,7 +150,7 @@ class VouchersController extends Controller
             ];
 
             
-            $email = Auth::user()->email;
+            $email = $voucher->{"Email"};
             Mail::to( $email )->send(new GahNotifEmail($details));
     
             return ["error" => false,  "message" => "sent"];

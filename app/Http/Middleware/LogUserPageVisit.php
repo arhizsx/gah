@@ -6,7 +6,9 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use DB;
-use App\Models\PageVisit;    
+use App\Models\PageVisit;
+use App\Http\Middleware\Auth;
+
 
 class LogUserPageVisit
 {

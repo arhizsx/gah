@@ -27,7 +27,7 @@ class LogUserPageVisit
             PageVisit::create([
                 "user_id" => Auth::id(),
                 "url" => $request->fullUrl(),
-                "ip" => $request->id()
+                "ip" => $request->ip()
             ]);
             
         } else {
@@ -35,7 +35,7 @@ class LogUserPageVisit
             PageVisit::create([
                 "user_id" => Auth::id(),
                 "url" => $request->fullUrl(),
-                "ip" => $request->id()
+                "ip" => $request->ip()
             ]);
     
         }

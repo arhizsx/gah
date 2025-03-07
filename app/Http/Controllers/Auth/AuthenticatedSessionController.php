@@ -38,7 +38,7 @@ class AuthenticatedSessionController extends Controller
     
         if ($users_modules->count() == 1) {
 
-            $whatModule = DB::table("modules")->where("module", $users_modules->module )->first();
+            $whatModule = DB::table("modules")->where("module", $users_modules[0]->module )->first();
             
             return redirect(route($whatModule->route, absolute: false));
         }

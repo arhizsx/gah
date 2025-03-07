@@ -30,20 +30,20 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        $modules = DB::table("users_modules")->where("user_id", Auth::user()->id)->get();
+        $users_modules = DB::table("users_modules")->where("user_id", Auth::user()->id)->get();
 
-        if ($modules->isEmpty()) { 
+        if ($users_modules->isEmpty()) { 
             return redirect(route('empty_module', absolute: false));
         } 
     
-        if ($modules->count() == 1) {
+        if ($users_modules->count() == 1) {
 
-            $whatModule = DB::table("modules")->where("module", $modules->module )->first();
+            $whatModule = DB::table("modules")->where("module", $users_modules->module )->first();
             
             return redirect(route($whatModule->route, absolute: false));
         }
 
-        if ($modules->count() > 1) {
+        if ($users_modules->count() > 1) {
             return redirect(route('chooser', absolute: false));
         }
         

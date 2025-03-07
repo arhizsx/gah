@@ -9,8 +9,8 @@
 
             <H1 style="font-size: 2.5em; font-weight: bolder; margin-bottom: 15px;">Unauthorized Access</h1>
             <p>You do not have permission to access this module. Your access attempt has been logged.</p>
-            <div class="mt-3">
-                <a class="btn btn-primary" href="/chooser">Your Modules</a>
+            <div class="p-4">
+                <a class="btn btn-primary form-control" href="/chooser">Your Modules</a>
             </div>
         </div>
     </x-slot>

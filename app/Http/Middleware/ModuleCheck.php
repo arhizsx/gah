@@ -26,7 +26,7 @@ class ModuleCheck
 
         if( !$moduleCheck ){
 
-            return response()->view('modules.vouchers.permission', [
+            return response()->view('modules.system.permission', [
                 'requestDetails' => [
                     'ip' => $request->ip(),
                     'user_agent' => $request->userAgent(),

@@ -54,13 +54,13 @@
                         <div class="row">
                             <div class="col-12">
                                 <label>Full Name</label>
-                                <input type="text" class="form-control mb-3" name="fullname" id="fullname">
+                                <input disabled type="text" class="form-control mb-3" name="fullname" id="fullname">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
                                 <label>Email</label>
-                                <input type="text" class="form-control mb-3" name="email" id="email">
+                                <input disabled type="text" class="form-control mb-3" name="email" id="email">
                             </div>
                         </div>
                     </div>
@@ -268,7 +268,7 @@ $("#search_form").on("submit", function(e) {
             error: function(jqXHR, textStatus, errorThrown) {
 
                 errorCode = "VOUCHERS-001";
-
+                
                 reject(new Error(`Error Envountered: ${errorCode}`)); // Reject the Promise with an error
             }
         });

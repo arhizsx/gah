@@ -37,7 +37,11 @@ class AuthenticatedSessionController extends Controller
         } 
     
         if ($modules->count() == 1) {
-            return redirect(route('home', absolute: false));
+
+
+            $whatModule = DB::table("modules")->where("nodule", $modules->module )->first();
+            
+            return redirect(route($whatModule->route, absolute: false));
         }
 
         if ($modules->count() > 1) {

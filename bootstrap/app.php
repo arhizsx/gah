@@ -5,6 +5,7 @@ use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use App\Http\Middleware\VoucherUsersMiddleware;
 use App\Http\Middleware\LogUserPageVisit;
+use App\Http\Middleware\ModuleCheck;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -17,6 +18,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'VoucherUser' => VoucherUsersMiddleware::class,
             'LogUserPageVisit' => LogUserPageVisit::class,
+            'ModuleCheck' => ModuleCheck::class,
         ]);        
 
     })

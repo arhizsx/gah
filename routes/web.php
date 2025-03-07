@@ -42,7 +42,7 @@ use App\Http\Controllers\ModuleController;
     // PAGES
     // ///////
 
-    Route::group(['middleware' => ['auth', 'verified', "LogUserPageVisit"]], function () {
+    Route::group(['middleware' => ['auth', 'verified', "ModuleCheck:supervendor", "LogUserPageVisit"]], function () {
 
         Route::get('/supervendor',  [SupervendorController::class, 'index'])->name('home');
         Route::get('/supervendor/sgt',  [SupervendorController::class, 'sgt'])->name('sgt');
@@ -158,7 +158,7 @@ Route::group(['middleware' => ['LogUserPageVisit']], function () {
         return abort(404);
         // return redirect('https://sam.globe.com.ph/broadband/internal');
     });
-    
+
 });
 
 // ****************************
@@ -176,7 +176,7 @@ Route::group(['middleware' => ['LogUserPageVisit']], function () {
 // //////////////////////
 
 
-    Route::group(['middleware' => ['auth', 'verified', 'VoucherUser', 'LogUserPageVisit']], function () {
+    Route::group(['middleware' => ['auth', 'verified', 'LogUserPageVisit', "ModuleCheck:vouchers"]], function () {
 
         Route::get('/vouchers', [VouchersController::class, 'home'])->name('vouchers_home');
 

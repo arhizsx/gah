@@ -11,7 +11,6 @@ use App\Http\Controllers\ModuleController;
 
 
 
-
 // ////////////////////////////
 //                           //
 //      AUTHENTICATION       //
@@ -41,7 +40,7 @@ use App\Http\Controllers\ModuleController;
     // PAGES
     // ///////
 
-    Route::group(['middleware' => ['auth', 'verified']], function () {
+    Route::group(['middleware' => ['auth', 'verified', "LogUserPageVisit"]], function () {
 
         Route::get('/supervendor',  [SupervendorController::class, 'index'])->name('home');
         Route::get('/supervendor/sgt',  [SupervendorController::class, 'sgt'])->name('sgt');
@@ -81,46 +80,50 @@ use App\Http\Controllers\ModuleController;
     // CAMPAIGN PAGES
     // ///////////////
 
-    // SAMSUNG CAMPAIGN
-    Route::get('/samsung', [SupervendorController::class, 'samsung']);
+    Route::group(['middleware' => ['LogUserPageVisit']], function () {
 
-    // XIAOMI CAMPAIGN
-    Route::get('/xiaomi', [SupervendorController::class, 'xiaomi']);
+        // SAMSUNG CAMPAIGN
+        Route::get('/samsung', [SupervendorController::class, 'samsung']);
 
-    // TM CAMPAIGN
-    Route::get('/retailerexclusive', [SupervendorController::class, 'tm']);
+        // XIAOMI CAMPAIGN
+        Route::get('/xiaomi', [SupervendorController::class, 'xiaomi']);
 
-    // HPW CAMPAIGN
-    Route::get('/HPW', [SupervendorController::class, 'hpw']);
-    Route::get('/hpw', function(){
-        return redirect('/HPW');
-    });
+        // TM CAMPAIGN
+        Route::get('/retailerexclusive', [SupervendorController::class, 'tm']);
 
-    // POSTPAID CAMPAIGN
-    Route::get('/postpaid', [SupervendorController::class, 'postpaid']);
+        // HPW CAMPAIGN
+        Route::get('/HPW', [SupervendorController::class, 'hpw']);
+        Route::get('/hpw', function(){
+            return redirect('/HPW');
+        });
 
-    // GR+ CAMPAIGN
-    Route::get('/GRPlus', [SupervendorController::class, 'grplus']);
-    Route::get('/grplus', function(){
-        return redirect('/GRPlus');
-    });
+        // POSTPAID CAMPAIGN
+        Route::get('/postpaid', [SupervendorController::class, 'postpaid']);
 
-    // GPO CAMPAIGN
-    Route::get('/GPO', [SupervendorController::class, 'gpo']);
-    Route::get('/gpo', function(){
-        return redirect('/GPO');
-    });
+        // GR+ CAMPAIGN
+        Route::get('/GRPlus', [SupervendorController::class, 'grplus']);
+        Route::get('/grplus', function(){
+            return redirect('/GRPlus');
+        });
 
-    // B2B CAMPAIGN
-    Route::get('/B2B', [SupervendorController::class, 'b2b']);
-    Route::get('/b2b', function(){
-        return redirect('/B2B');
-    });
+        // GPO CAMPAIGN
+        Route::get('/GPO', [SupervendorController::class, 'gpo']);
+        Route::get('/gpo', function(){
+            return redirect('/GPO');
+        });
 
-    // GlobePrepaid CAMPAIGN
-    Route::get('/GlobePrepaid', [SupervendorController::class, 'globeprepaid']);
-    Route::get('/globeprepaid', function(){
-        return redirect('/GlobePrepaid');
+        // B2B CAMPAIGN
+        Route::get('/B2B', [SupervendorController::class, 'b2b']);
+        Route::get('/b2b', function(){
+            return redirect('/B2B');
+        });
+
+        // GlobePrepaid CAMPAIGN
+        Route::get('/GlobePrepaid', [SupervendorController::class, 'globeprepaid']);
+        Route::get('/globeprepaid', function(){
+            return redirect('/GlobePrepaid');
+        });
+        
     });
 
     // ***************
@@ -168,7 +171,7 @@ use App\Http\Controllers\ModuleController;
 // //////////////////////
 
 
-    Route::group(['middleware' => ['auth', 'verified', 'VoucherUser']], function () {
+    Route::group(['middleware' => ['auth', 'verified', 'VoucherUser', 'LogUserPageVisit']], function () {
 
         Route::get('/vouchers', [VouchersController::class, 'home'])->name('vouchers_home');
 
@@ -191,7 +194,7 @@ use App\Http\Controllers\ModuleController;
 //                     //
 // ******************* //
 
-Route::group(['middleware' => ['auth', 'verified']], function () {
+Route::group(['middleware' => ['auth', 'verified', 'LogUserPageVisit']], function () {
 
     Route::get('/chooser',  [ModuleController::class, 'chooser'])->name("chooser");        
     Route::get('/empty_module',  [ModuleController::class, 'chooser'])->name("empty_module");        

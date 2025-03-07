@@ -27,6 +27,12 @@ class ModuleController extends Controller
         return view("modules.system.chooser");
 
     }
+
+    function permission( Request $request ){
+
+        return view("modules.system.permission");
+
+    }
     
 
 }

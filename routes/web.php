@@ -204,6 +204,8 @@ Route::group(['middleware' => ['auth', 'verified', 'LogUserPageVisit']], functio
     Route::get('/chooser',  [ModuleController::class, 'chooser'])->name("chooser");        
     Route::get('/empty_module',  [ModuleController::class, 'chooser'])->name("empty_module");        
 
+    Route::get('/permission',  [ModuleController::class, 'permission'])->name("permission");        
+
 });
 
 require __DIR__.'/auth.php';

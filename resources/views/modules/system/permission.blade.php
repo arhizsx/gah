@@ -40,7 +40,7 @@
                     </tr>
                 </tbody>
             </table> -->
-            <p>If you need access to this module please press the button below</p>
+            <p>You do not have permission to access this module. Your access attempt has been logged.</p>
         </div>
     </x-slot>
 </x-system-blank-layout>

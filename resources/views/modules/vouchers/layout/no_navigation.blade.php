@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('vouchers') }}">
+                    <a href="{{ route('vouchers_home') }}">
                         <img src="/images/gt.png" width="40px;">
                     </a>
                     <div style="font-size: 1.75em; margin-left: 15px; font-weight: bolder;">Vouchers</div>
@@ -61,7 +61,7 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('vouchers')" :active="request()->routeIs('vouchers')">
+            <x-responsive-nav-link :href="route('vouchers_home')" :active="request()->routeIs('vouchers_home')">
                 {{ __('Vouchers') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('vouchers_management')" :active="request()->routeIs('vouchers_management')">

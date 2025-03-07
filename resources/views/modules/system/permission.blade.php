@@ -1,4 +1,4 @@
-<x-vouchers-blank-layout>
+<x-system-blank-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Unauthorized Access') }}
@@ -43,4 +43,4 @@
             <p>If you need access to this module please press the button below</p>
         </div>
     </x-slot>
-</x-app-layout>
+</x-system-blank-layout>

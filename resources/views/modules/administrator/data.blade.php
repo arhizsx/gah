@@ -15,14 +15,14 @@
         <div class="border rounded-3 shadow-lg p-3 mx-3 mt-3 mb-5 bg-white rounded" style="overflow-x:auto;">
             <div class="d-flex justify-content-between">
                 <div class="componentTitle">
-                    <i class="fa-solid fa-file-import"></i> File Imports
+                    <i class="fa-solid fa-file-import mr-2"></i> File Imports
                 </div>
                 <div class="ml-auto">
                     <button class="btn btn-primary btn-action" data-action="uploadFile">
-                        <i class="fa-solid fa-upload"></i> Upload File
+                        <i class="fa-solid fa-upload mr-2"></i> Upload File
                     </button>
                     <button class="btn btn-secondary btn-action" data-action="sql">
-                        <i class="fa-solid fa-database"></i> SQL
+                        <i class="fa-solid fa-database mr-2"></i> SQL
                     </button>
                 </div>
                 

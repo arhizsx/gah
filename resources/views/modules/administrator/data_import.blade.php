@@ -5,6 +5,13 @@
         </h2>
     </x-slot>
     <x-slot name="slot">
+        <style>
+            .componentTitle {
+                font-size: 1.5em;
+                font-weight: bolder;
+                margin-bottom: .5em;
+            }
+        </style>
         <div class="border shadow-lg p-3 mx-3 mt-3 mb-5 bg-white rounded" style="overflow-x:auto;">
             <div class="d-flex justify-content-between">
                 <div class="componentTitle">

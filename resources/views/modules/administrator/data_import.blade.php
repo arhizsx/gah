@@ -15,11 +15,11 @@
         <div class="border shadow-lg p-3 mx-3 mt-3 mb-5 bg-white rounded" style="overflow-x:auto;">
             <div class="d-flex justify-content-between">
                 <div class="componentTitle">
-                    <i class="fa-solid fa-file-import mr-2"></i>{{ $file }}
+                    <i class="fa-solid fa-file-import me-2"></i> {{ $file }}
                 </div>
                 <div class="ml-auto">
                     <button class="btn btn-secondary btn-action" data-action="sql">
-                        <i class="fa-solid fa-database mr-2"></i> SQL
+                        <i class="fa-solid fa-database me-2"></i> SQL
                     </button>
                 </div>
             </div>

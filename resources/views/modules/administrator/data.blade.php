@@ -24,29 +24,31 @@
                 </div>
                 
             </div>
-            <table class="table table-striped table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <th>Path</th>
-                        <th>Timestamp</th>
-                        <th>File Type</th>
-                        <th class='text-end'>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($imports as $import)
-                        <tr class="table-row">
-                            <td>{{ $import["path"] }}</td>   
-                            <td>{{ $import["timestamp"] }}</td>   
-                            <td>{{ $import["mimeType"] }}</td>   
-                            <td class='text-end'>
-                                <a href='/administrator/data/import/?file={{ urlencode($import["path"]) }}' target="_blank" class="btn btn-dark">View</a>
-                                <a href='/administrator/data/delete/?file={{ urlencode($import["path"]) }}' target="_blank" class="btn btn-danger">Delete</a>
-                            </td>   
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Path</th>
+                            <th>Timestamp</th>
+                            <th>File Type</th>
+                            <th class='text-end'>Action</th>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach($imports as $import)
+                            <tr class="table-row">
+                                <td>{{ $import["path"] }}</td>   
+                                <td>{{ $import["timestamp"] }}</td>   
+                                <td>{{ $import["mimeType"] }}</td>   
+                                <td class='text-end'>
+                                    <a href='/administrator/data/import/?file={{ urlencode($import["path"]) }}' target="_blank" class="btn btn-dark">View</a>
+                                    <a href='/administrator/data/delete/?file={{ urlencode($import["path"]) }}' target="_blank" class="btn btn-danger">Delete</a>
+                                </td>   
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div class="modal" id="serviceModal" tabindex="-1">
             <div class="modal-dialog">

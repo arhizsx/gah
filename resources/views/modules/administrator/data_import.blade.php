@@ -23,27 +23,29 @@
                     </button>
                 </div>
             </div>
-            <table class="table table-bordered table-striped table-hover">
-                <thead>
-                    <tr>
-                        @foreach( $data[0] as $k => $d )
-                            <th>{{ $d }}</th>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                        <tr>
+                            @foreach( $data[0] as $k => $d )
+                                <th>{{ $d }}</th>
+                            @endforeach
+                        </tr>
+                    <tbody>
+                        @foreach( $data as $k => $d )                    
+                            @php 
+                                if( $k > 0){
+                                    echo '<tr>';
+                                        foreach($d as $key => $value) {
+                                            echo '<td>' . $value . '</td>';
+                                        }
+                                    echo '</tr>';
+                                }
+                            @endphp
                         @endforeach
-                    </tr>
-                <tbody>
-                    @foreach( $data as $k => $d )                    
-                        @php 
-                            if( $k > 0){
-                                echo '<tr>';
-                                    foreach($d as $key => $value) {
-                                        echo '<td>' . $value . '</td>';
-                                    }
-                                echo '</tr>';
-                            }
-                        @endphp
-                    @endforeach
-                </tbody>    
-            </table>                            
+                    </tbody>    
+                </table>     
+            </div>                       
         </div>
     </x-slot>
 </x-administrator-layout>

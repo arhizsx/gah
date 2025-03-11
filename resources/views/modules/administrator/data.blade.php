@@ -21,9 +21,6 @@
                     <button class="btn btn-primary btn-action" data-action="uploadFile">
                         <i class="fa-solid fa-upload mr-2"></i> Upload File
                     </button>
-                    <button class="btn btn-secondary btn-action" data-action="sql">
-                        <i class="fa-solid fa-database mr-2"></i> SQL
-                    </button>
                 </div>
                 
             </div>

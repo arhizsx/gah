@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\SupervendorController;
 use App\Http\Controllers\VouchersController;
 use App\Http\Controllers\ModuleController;
+use App\Http\Controllers\AdministratorController;
 
 
 
@@ -42,7 +43,7 @@ use App\Http\Controllers\ModuleController;
     // PAGES
     // ///////
 
-    Route::group(['middleware' => ['auth', 'verified', "ModuleCheck:supervendor", "LogUserPageVisit"]], function () {
+    Route::group(['middleware' => ['auth', 'verified', "LogUserPageVisit", "ModuleCheck:supervendor"]], function () {
 
         Route::get('/supervendor',  [SupervendorController::class, 'index'])->name('home');
         Route::get('/supervendor/sgt',  [SupervendorController::class, 'sgt'])->name('sgt');
@@ -54,18 +55,8 @@ use App\Http\Controllers\ModuleController;
         Route::get('/supervendor/leadslist',  [SupervendorController::class, 'leadslist'])->name('leadslist');
         Route::get('/supervendor/reports',  [SupervendorController::class, 'reports'])->name('reports');
 
-    });
-
-    // /////////////////////
-    // AUTHENTICATED ACTIONS
-    // /////////////////////
-
-    Route::group(['middleware' => ['auth', 'verified']], function () {
-
         Route::get('/supervendor/data/{action}',  [SupervendorController::class, 'data'])->name('data');
         Route::post('/supervendor/ajax',  [SupervendorController::class, 'ajax'])->name('ajax');
-
-
         Route::get('/supervendor/gcsExists/{image}',  [SupervendorController::class, 'gcs_exists'])->name('gcs_exists');
 
     });
@@ -73,10 +64,12 @@ use App\Http\Controllers\ModuleController;
     // ///////////////
     // PUBLIC ACTIONS
     // ///////////////
+    Route::group(['middleware' => ['LogUserPageVisit']], function () {
 
-    Route::post('/supervendor/locations',  [SupervendorController::class, 'locations'])->name('locations');
-    Route::post('/supervendor/ajax-public',  [SupervendorController::class, 'ajax_public'])->name('ajax_public');
+        Route::post('/supervendor/locations',  [SupervendorController::class, 'locations'])->name('locations');
+        Route::post('/supervendor/ajax-public',  [SupervendorController::class, 'ajax_public'])->name('ajax_public');
 
+    });
 
     // ///////////////
     // CAMPAIGN PAGES
@@ -207,5 +200,27 @@ Route::group(['middleware' => ['auth', 'verified', 'LogUserPageVisit']], functio
     Route::get('/permission',  [ModuleController::class, 'permission'])->name("permission");        
 
 });
+
+
+
+// ************************ //
+//                          //
+//      ADMINISTRATOR       //
+//                          //
+// ************************ //
+
+Route::group(['middleware' => ['auth', 'verified', 'LogUserPageVisit', "ModuleCheck:administrator"]], function () {
+
+    Route::get('/administrator',  [AdministratorController::class, 'index'])->name("administrator");        
+
+    Route::get('/administrator/data',  [AdministratorController::class, 'data'])->name("administrator_data");        
+    Route::get('/administrator/data/import',  [AdministratorController::class, 'data_import']);        
+
+    Route::get('/administrator/users',  [AdministratorController::class, 'users'])->name("administrator_users");        
+
+});
+
+
+
 
 require __DIR__.'/auth.php';

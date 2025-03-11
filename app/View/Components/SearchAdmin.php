@@ -21,6 +21,6 @@ class SearchAdmin extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.search-admin');
+        return view('modules.vouchers.components.search-admin');
     }
 }

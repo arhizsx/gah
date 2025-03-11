@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class SearchAgent extends Component
+class AdministratorLayout extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class SearchAgent extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('modules.vouchers.components.search-agent');
+        return view('modules.administrator.layout.main');
     }
 }

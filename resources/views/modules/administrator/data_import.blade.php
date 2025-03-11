@@ -22,7 +22,6 @@
                         <i class="fa-solid fa-database mr-2"></i> SQL
                     </button>
                 </div>
-                
             </div>
             <table class="table table-bordered table-striped table-hover">
                 <thead>

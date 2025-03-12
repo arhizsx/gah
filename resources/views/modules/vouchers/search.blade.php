@@ -349,19 +349,15 @@ $("#search_form").on("submit", function(e) {
                                                     'Voucher Information' +
                                                 `</div>` +
                                                 `<div class='row'>` +
-                                                    `<div class='col-xl-3 border'>` +
+                                                    `<div class='col-xl-4 border'>` +
                                                         `<div><small>Voucher Type</small></div>` +
                                                         `<div class='search_info'>` + item["Voucher Type"] + `</div>` +
                                                     `</div>` +
-                                                    `<div class='col-xl-3 border'>` +
+                                                    `<div class='col-xl-4 border'>` +
                                                         `<div><small>Voucher Assigned</small></div>` +
                                                         `<div class='search_info'>` + item["Voucher Assigned"] + `</div>`+
                                                     `</div>` +
-                                                    `<div class='col-xl-3 border'>` +
-                                                        `<div><small>Redemption Date</small></div>` +
-                                                        `<div class='search_info'>` + item["Redemption Date"] + `</div>`+
-                                                    `</div>` +
-                                                    `<div class='col-xl-3 border'>` +
+                                                    `<div class='col-xl-4 border'>` +
                                                         `<a class="btn btn-primary form-control mt-2 serviceButton" data-action="ResendVoucher" data-id="` + item['id'] + `" data-fullname="`+ item["Full Name"]  + `" data-email="`+ item["Email"]  +  `">RESEND VOUCHER</a>` +
                                                     `</div>` +
                                                 `</div>` +

@@ -122,7 +122,12 @@ class VouchersController extends Controller
 
             $results = DB::table($table)
                 ->where('Mobile Number', 'like', "{$search}")
-                ->get();
+                ->get()
+                ->map(function ($item) {
+                    $length = strlen($item->{'Mobile Number'});
+                    $item->{'Mobile Number'} = str_repeat('*', $length);
+                    return $item;
+                });
         }
 
         return $results;

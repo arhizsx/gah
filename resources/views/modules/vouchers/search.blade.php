@@ -346,7 +346,7 @@ $("#search_form").on("submit", function(e) {
                                                         `<div class='search_info'>` + item["Voucher Assigned"] + `</div>`+
                                                     `</div>` +
                                                     `<div class='col-xl-4 border'>` +
-                                                        `<a class="btn btn-primary form-control mt-2 serviceButton" data-action="ResendVoucher" data-id="` + item['id'] + `" data-fullname="`+ item["Full Name"]  + `" data-email="`+ item["Email"]  +  `">RESEND VOUCHER</a>` +
+                                                        `<a class="btn btn-primary form-control mt-2 serviceButton" data-action="ResendVoucher" data-id="` + item['id'] + `" data-fullname="`+ item["First Name"] + ` ` + item["Middle Name"] + ` ` +  item["Last Name"] + ` ` +  item["Suffix"]  + `" data-email="`+ item["Email"]  +  `">RESEND VOUCHER</a>` +
                                                     `</div>` +
                                                 `</div>` +
                                                 `<div class='row mt-3' style="font-size: 1.2em; font-weight: bolder;">` +

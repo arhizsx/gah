@@ -379,7 +379,7 @@ $("#search_form").on("submit", function(e) {
                                                         `<div class='search_info'>` + item["SMS Status"] + `</div>` +
                                                     `</div>` +
                                                     `<div class='col-xl-4 border'>` +
-                                                        `<div><small>Viber Remarks</small></div>` +
+                                                        `<div><small>SMS Remarks</small></div>` +
                                                         `<div class='search_info'>` + item["SMS Remarks"] + `</div>`+
                                                     `</div>` +
                                                     `<div class='col-xl-4 border'>` +

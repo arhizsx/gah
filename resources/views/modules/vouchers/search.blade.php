@@ -305,7 +305,7 @@ $("#search_form").on("submit", function(e) {
                                                     `</div>` +
                                                     `<div class='col-xl-3 border'>` +
                                                         `<div><small>Full Name</small></div>` +
-                                                        `<div class='search_info'>` + item["Full Name"] +`</div>` +                                                    
+                                                        `<div class='search_info'>` + item["First Name"] + ` ` + item["Middle Name"] + ` ` +  item["Last Name"] + ` ` +  item["Suffix"] +`</div>` +                                                    
                                                     `</div>` +
                                                     `<div class='col-xl-3 border'>` +
                                                         `<div><small>Mobile Number</small></div>` +

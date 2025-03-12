@@ -16,6 +16,6 @@
             </button>
         </div>
     </form>
-    <div><small><strong>Warning:</strong> Please be aware that all activities on this portal—including page views, clicks, and other interactions—are actively tracked and recorded. This tracking is implemented to enhance user experience, improve website performance, and ensure security.</small></div>
+    <div class="pt-4"><small><strong>Warning:</strong> Please be aware that all activities on this portal—including page views, clicks, and other interactions—are actively tracked and recorded. This tracking is implemented to enhance user experience, improve website performance, and ensure security.</small></div>
     <div class="d-none error-message"></div>
 </div>

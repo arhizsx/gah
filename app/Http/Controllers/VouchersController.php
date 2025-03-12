@@ -124,8 +124,8 @@ class VouchersController extends Controller
                 ->where('Mobile Number', 'like', "{$search}")
                 ->get()
                 ->map(function ($item) {
-                    $length = strlen($item->{'Mobile Number'});
-                    $item->{'Mobile Number'} = str_repeat('*', $length);
+                    $length = strlen($item->{'Voucher Assigned'});
+                    $item->{'Voucher Assigned'} = str_repeat('*', $length);
                     return $item;
                 });
         }

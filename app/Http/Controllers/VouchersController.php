@@ -109,7 +109,7 @@ class VouchersController extends Controller
 
         if( $current_user->position == "admin" ){
             
-            $table = "vouchers_view";
+            $table = "vouchers";
 
             $results = DB::table($table)
                 ->where('Mobile Number', 'like', "%{$search}%")
@@ -119,7 +119,7 @@ class VouchersController extends Controller
 
         } else {
             
-            $table = "vouchers_limited_view";
+            $table = "vouchers";
 
             $results = DB::table($table)
                 ->where('Mobile Number', 'like', "{$search}")

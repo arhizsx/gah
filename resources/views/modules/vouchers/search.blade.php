@@ -349,6 +349,62 @@ $("#search_form").on("submit", function(e) {
                                                         `<a class="btn btn-primary form-control mt-2 serviceButton" data-action="ResendVoucher" data-id="` + item['id'] + `" data-fullname="`+ item["Full Name"]  + `" data-email="`+ item["Email"]  +  `">RESEND VOUCHER</a>` +
                                                     `</div>` +
                                                 `</div>` +
+                                                `<div class='row mt-3' style="font-size: 1.2em; font-weight: bolder;">` +
+                                                    'Viber' +
+                                                `</div>` +
+                                                `<div class='row'>` +
+                                                    `<div class='col-xl-3 border'>` +
+                                                        `<div><small>Viber Status</small></div>` +
+                                                        `<div class='search_info'>` + item["Viber Status"] + `</div>` +
+                                                    `</div>` +
+                                                    `<div class='col-xl-3 border'>` +
+                                                        `<div><small>Viber Seen</small></div>` +
+                                                        `<div class='search_info'>` + item["Viber Seen"] + `</div>`+
+                                                    `</div>` +
+                                                    `<div class='col-xl-3 border'>` +
+                                                        `<div><small>Viber Remarks</small></div>` +
+                                                        `<div class='search_info'>` + item["Viber Remarks"] + `</div>`+
+                                                    `</div>` +
+                                                    `<div class='col-xl-3 border'>` +
+                                                        `<div><small>Viber Processed Date</small></div>` +
+                                                        `<div class='search_info'>` + item["Viber Processed Date"] + `</div>`+
+                                                    `</div>` +
+                                                `</div>` +
+                                                `<div class='row mt-3' style="font-size: 1.2em; font-weight: bolder;">` +
+                                                    'SMS' +
+                                                `</div>` +
+                                                `<div class='row'>` +
+                                                    `<div class='col-xl-4 border'>` +
+                                                        `<div><small>SMS Status</small></div>` +
+                                                        `<div class='search_info'>` + item["SMS Status"] + `</div>` +
+                                                    `</div>` +
+                                                    `<div class='col-xl-4 border'>` +
+                                                        `<div><small>Viber Remarks</small></div>` +
+                                                        `<div class='search_info'>` + item["SMS Remarks"] + `</div>`+
+                                                    `</div>` +
+                                                    `<div class='col-xl-4 border'>` +
+                                                        `<div><small>SMS Processed Date</small></div>` +
+                                                        `<div class='search_info'>` + item["SMS Processed Date"] + `</div>`+
+                                                    `</div>` +
+                                                `</div>` +
+                                                `<div class='row mt-3' style="font-size: 1.2em; font-weight: bolder;">` +
+                                                    'Redemption' +
+                                                `</div>` +
+                                                `<div class='row'>` +
+                                                    `<div class='col-xl-4 border'>` +
+                                                        `<div><small>Redemption Status</small></div>` +
+                                                        `<div class='search_info'>` + item["Redemption Status"] + `</div>` +
+                                                    `</div>` +
+                                                    `<div class='col-xl-4 border'>` +
+                                                        `<div><small>Redemption Date</small></div>` +
+                                                        `<div class='search_info'>` + item["Redemption Date"] + `</div>`+
+                                                    `</div>` +
+                                                    `<div class='col-xl-4 border'>` +
+                                                        `<div><small>Voucher Pack</small></div>` +
+                                                        `<div class='search_info'>` + item["Voucher Pack"] + `</div>`+
+                                                    `</div>` +
+                                                `</div>` +
+
                                             `</div>`;
 
                             // Append the new element to the results list

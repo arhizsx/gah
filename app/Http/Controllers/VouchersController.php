@@ -114,7 +114,6 @@ class VouchersController extends Controller
             $results = DB::table($table)
                 ->where('Mobile Number', 'like', "%{$search}%")
                 ->orWhere('Email', 'like', "%{$search}%")
-                ->orWhere('Full Name', 'like', "%{$search}%")
                 ->get();
 
         } else {

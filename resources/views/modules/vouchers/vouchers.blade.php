@@ -40,10 +40,16 @@ let columns = [
     "Voucher Type",
     "Date Emailed",
     "Voucher Assigned",
-    "Email Sent Date",
-    "Viber/SMS Sent Date",
-    "Viber/SMS  Status",
+    "Source",
+    "Viber Status",
+    "Viber Seen",
+    "Viber Remarks",
+    "Viber Processed Date",
+    "SMS Processed Date",
+    "SMS Status",
+    "Redemption Status",
     "Redemption Date",
+    "Voucher Pack",
     ];
 
 $(() => {

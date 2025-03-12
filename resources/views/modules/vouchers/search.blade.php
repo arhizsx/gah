@@ -320,29 +320,17 @@ $("#search_form").on("submit", function(e) {
                                                     'Transaction Information' +
                                                 `</div>` +
                                                 `<div class='row'>` +
-                                                    `<div class='col-xl-2 border'>` +
+                                                    `<div class='col-xl-4 border'>` +
                                                         `<div><small>Product SKU</small></div>` +
                                                         `<div class='search_info'>` + item["Product SKU"] + `</div>` +
                                                     `</div>` +
-                                                    `<div class='col-xl-2 border'>` +
+                                                    `<div class='col-xl-4 border'>` +
                                                         `<div><small>Purchased At (Date+Time)</small></div>` +
                                                         `<div class='search_info'>` + item["Purchased At (Date+Time)"] + `</div>`+
                                                     `</div>` +
-                                                    `<div class='col-xl-2 border'>` +
-                                                        `<div><small>Payment Method</small></div>` +
-                                                        `<div class='search_info'>` + item["Payment Method"] + `</div>` +
-                                                    `</div>` +
-                                                    `<div class='col-xl-2 border'>` +
+                                                    `<div class='col-xl-4 border'>` +
                                                         `<div><small>Payment Status</small></div>` +
                                                         `<div class='search_info'>` + item["Payment Status"] + `</div>` +
-                                                    `</div>` +
-                                                    `<div class='col-xl-2 border'>` +
-                                                        `<div><small>Payment Transaction ID</small></div>` +
-                                                        `<div class='search_info'>` + item["Payment Transaction ID"] + `</div>` +
-                                                    `</div>` +
-                                                    `<div class='col-xl-2 border'>` +
-                                                        `<div><small>Revenue</small></div>` +
-                                                        `<div class='search_info'>` + item["Revenue"] + `</div>` +
                                                     `</div>` +
                                                 `</div>` +
                                                 `<div class='row mt-3' style="font-size: 1.2em; font-weight: bolder;">` +

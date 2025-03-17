@@ -16,6 +16,6 @@
             </button>
         </div>
     </form>
-    <div class="pt-4"><small><strong>Warning:</strong> Please be aware that all activities on this portal—including page views, clicks, and other interactions—are actively tracked and recorded. This tracking is implemented to enhance user experience, improve website performance, and ensure security.</small></div>
+    <div class="pt-4"><small><strong>Disclaimer:</strong> You confirm that you have obtained the consent of the individual whose mobile number has been provided for voucher redemption purposes. You understand that all activities on this portal—including page views, clicks, and other interactions—will be tracked and recorded for data protection purposes as well as to enhance user experience and improve website performance. Unauthorized access, use, or disclosure of any personal data on this portal will result in penalties and sanctions in accordance with applicable laws and internal policies.</small></div>
     <div class="d-none error-message"></div>
 </div>

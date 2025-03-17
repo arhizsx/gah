@@ -122,36 +122,42 @@ class VouchersController extends Controller
 
             $results = DB::table($table)
                 ->where('Mobile Number', 'like', "{$search}")
-                ->get()
-                ->map(function ($item) {
+                ->get();
 
+                // Get a sample email to generate a consistent mask pattern
+                $sampleEmail = optional($results->first())->Email;
+
+                $maskPattern = [];
+
+                if (!empty($sampleEmail)) {
+                    $emailLength = strlen($sampleEmail);
+                    $maskCount = (int) ceil($emailLength * 0.6);
+
+                    // Generate unique random positions to mask
+                    $maskPattern = array_rand(array_flip(range(0, $emailLength - 1)), $maskCount);
+                }
+
+                $results = $results->map(function ($item) use ($maskPattern) {
+                    // Mask Voucher Assigned
                     $length = strlen($item->{'Voucher Assigned'});
-
                     $item->{'Voucher Assigned'} = str_repeat('*', $length);
 
-                    // Mask Email (Randomly mask 60% of its characters)
-                    if (!empty($item->Email)) {
-                        $email = $item->Email;
-                        $emailLength = strlen($email);
-                        $maskCount = (int) ceil($emailLength * 0.3);
-
-                        // Get random unique positions to mask
-                        $positions = array_rand(array_flip(range(0, $emailLength - 1)), $maskCount);
-
-                        // Convert email to an array
-                        $emailArray = str_split($email);
+                    // Apply the same email masking pattern to all results
+                    if (!empty($item->Email) && !empty($maskPattern)) {
+                        $emailArray = str_split($item->Email);
                         
-                        // Mask selected positions
-                        foreach ($positions as $pos) {
-                            $emailArray[$pos] = '*';
+                        foreach ($maskPattern as $pos) {
+                            if (isset($emailArray[$pos])) {
+                                $emailArray[$pos] = '*';
+                            }
                         }
 
-                        // Convert back to string
                         $item->Email = implode('', $emailArray);
                     }
 
                     return $item;
-                });
+                });                
+                
         }
 
         return $results;

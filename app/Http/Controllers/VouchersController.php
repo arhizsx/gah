@@ -124,49 +124,76 @@ class VouchersController extends Controller
                 ->where('Mobile Number', 'like', "{$search}")
                 ->get();
 
-            // Get a sample email to generate a consistent mask pattern
-            $sampleEmail = optional($results->first())->Email;
-            $maskPattern = [];
+                // Function to generate a consistent mask pattern for a given name
+                function generateMaskPattern($name, $percentage = 0.4) {
+                    $nameLength = strlen($name);
+                    if ($nameLength > 2) {
+                        $maskableIndexes = range(1, $nameLength - 2); // Exclude first and last letter
+                        $maskCount = (int) ceil(count($maskableIndexes) * $percentage);
 
-            if (!empty($sampleEmail)) {
-                [$username, $domain] = explode('@', $sampleEmail, 2);
-                $usernameLength = strlen($username);
+                        if ($maskCount > 0) {
+                            return array_rand(array_flip($maskableIndexes), $maskCount);
+                        }
+                    }
+                    return [];
+                }
 
-                if ($usernameLength > 2) {
-                    // Ensure first and last characters are not masked
-                    $maskableIndexes = range(1, $usernameLength - 2); 
-                    $maskCount = (int) ceil(count($maskableIndexes) * 0.6);
+                // Get a sample record to generate consistent masks
+                $sample = optional($results->first());
+                $nameFields = ['First Name', 'Last Name', 'Middle Name', 'Suffix'];
+                $maskPatterns = [];
 
-                    if ($maskCount > 0) {
-                        // Generate unique random positions to mask within allowed range
-                        $maskPattern = array_rand(array_flip($maskableIndexes), $maskCount);
+                // Generate a consistent mask pattern for each name field
+                foreach ($nameFields as $field) {
+                    if (!empty($sample->$field)) {
+                        $maskPatterns[$field] = generateMaskPattern($sample->$field, 0.4);
                     }
                 }
-            }
 
-            $results = $results->map(function ($item) use ($maskPattern) {
-                // Mask Voucher Assigned
-                $length = strlen($item->{'Voucher Assigned'});
-                $item->{'Voucher Assigned'} = str_repeat('*', $length);
+                // Generate a consistent mask pattern for email
+                $maskPatternEmail = [];
+                if (!empty($sample->Email)) {
+                    [$username, $domain] = explode('@', $sample->Email, 2);
+                    $maskPatternEmail = generateMaskPattern($username, 0.4);
+                }
 
-                // Apply the same email masking pattern to all results
-                if (!empty($item->Email) && !empty($maskPattern)) {
-                    [$username, $domain] = explode('@', $item->Email, 2);
-                    $usernameArray = str_split($username);
+                // Apply masking to all results
+                $results = $results->map(function ($item) use ($maskPatterns, $maskPatternEmail) {
+                    // Mask Voucher Assigned
+                    $length = strlen($item->{'Voucher Assigned'});
+                    $item->{'Voucher Assigned'} = str_repeat('*', $length);
 
-                    // Apply masking only to the pre-selected random positions
-                    foreach ($maskPattern as $pos) {
-                        if (isset($usernameArray[$pos])) {
-                            $usernameArray[$pos] = '*';
+                    // Mask Email
+                    if (!empty($item->Email) && !empty($maskPatternEmail)) {
+                        [$username, $domain] = explode('@', $item->Email, 2);
+                        $usernameArray = str_split($username);
+
+                        foreach ($maskPatternEmail as $pos) {
+                            if (isset($usernameArray[$pos])) {
+                                $usernameArray[$pos] = '*';
+                            }
+                        }
+
+                        $item->Email = implode('', $usernameArray) . '@' . $domain;
+                    }
+
+                    // Mask First Name, Last Name, Middle Name, and Suffix
+                    foreach (['First Name', 'Last Name', 'Middle Name', 'Suffix'] as $field) {
+                        if (!empty($item->$field) && !empty($maskPatterns[$field])) {
+                            $nameArray = str_split($item->$field);
+
+                            foreach ($maskPatterns[$field] as $pos) {
+                                if (isset($nameArray[$pos])) {
+                                    $nameArray[$pos] = '*';
+                                }
+                            }
+
+                            $item->$field = implode('', $nameArray);
                         }
                     }
 
-                    // Rebuild email
-                    $item->Email = implode('', $usernameArray) . '@' . $domain;
-                }
-
-                return $item;
-            });
+                    return $item;
+                });
                 
         }
 

@@ -124,39 +124,49 @@ class VouchersController extends Controller
                 ->where('Mobile Number', 'like', "{$search}")
                 ->get();
 
-                // Get a sample email to generate a consistent mask pattern
-                $sampleEmail = optional($results->first())->Email;
+            // Get a sample email to generate a consistent mask pattern
+            $sampleEmail = optional($results->first())->Email;
+            $maskPattern = [];
 
-                $maskPattern = [];
+            if (!empty($sampleEmail)) {
+                [$username, $domain] = explode('@', $sampleEmail, 2);
+                $usernameLength = strlen($username);
 
-                if (!empty($sampleEmail)) {
-                    $emailLength = strlen($sampleEmail);
-                    $maskCount = (int) ceil($emailLength * 0.5);
+                if ($usernameLength > 2) {
+                    // Ensure first and last characters are not masked
+                    $maskableIndexes = range(1, $usernameLength - 2); 
+                    $maskCount = (int) ceil(count($maskableIndexes) * 0.6);
 
-                    // Generate unique random positions to mask
-                    $maskPattern = array_rand(array_flip(range(0, $emailLength - 1)), $maskCount);
+                    if ($maskCount > 0) {
+                        // Generate unique random positions to mask within allowed range
+                        $maskPattern = array_rand(array_flip($maskableIndexes), $maskCount);
+                    }
                 }
+            }
 
-                $results = $results->map(function ($item) use ($maskPattern) {
-                    // Mask Voucher Assigned
-                    $length = strlen($item->{'Voucher Assigned'});
-                    $item->{'Voucher Assigned'} = str_repeat('*', $length);
+            $results = $results->map(function ($item) use ($maskPattern) {
+                // Mask Voucher Assigned
+                $length = strlen($item->{'Voucher Assigned'});
+                $item->{'Voucher Assigned'} = str_repeat('*', $length);
 
-                    // Apply the same email masking pattern to all results
-                    if (!empty($item->Email) && !empty($maskPattern)) {
-                        $emailArray = str_split($item->Email);
-                        
-                        foreach ($maskPattern as $pos) {
-                            if (isset($emailArray[$pos])) {
-                                $emailArray[$pos] = '*';
-                            }
+                // Apply the same email masking pattern to all results
+                if (!empty($item->Email) && !empty($maskPattern)) {
+                    [$username, $domain] = explode('@', $item->Email, 2);
+                    $usernameArray = str_split($username);
+
+                    // Apply masking only to the pre-selected random positions
+                    foreach ($maskPattern as $pos) {
+                        if (isset($usernameArray[$pos])) {
+                            $usernameArray[$pos] = '*';
                         }
-
-                        $item->Email = implode('', $emailArray);
                     }
 
-                    return $item;
-                });                
+                    // Rebuild email
+                    $item->Email = implode('', $usernameArray) . '@' . $domain;
+                }
+
+                return $item;
+            });
                 
         }
 

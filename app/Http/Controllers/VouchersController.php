@@ -131,7 +131,7 @@ class VouchersController extends Controller
 
                 if (!empty($sampleEmail)) {
                     $emailLength = strlen($sampleEmail);
-                    $maskCount = (int) ceil($emailLength * 0.6);
+                    $maskCount = (int) ceil($emailLength * 0.5);
 
                     // Generate unique random positions to mask
                     $maskPattern = array_rand(array_flip(range(0, $emailLength - 1)), $maskCount);

@@ -124,8 +124,32 @@ class VouchersController extends Controller
                 ->where('Mobile Number', 'like', "{$search}")
                 ->get()
                 ->map(function ($item) {
+
                     $length = strlen($item->{'Voucher Assigned'});
+
                     $item->{'Voucher Assigned'} = str_repeat('*', $length);
+
+                    // Mask Email (Randomly mask 60% of its characters)
+                    if (!empty($item->Email)) {
+                        $email = $item->Email;
+                        $emailLength = strlen($email);
+                        $maskCount = (int) ceil($emailLength * 0.6);
+
+                        // Get random unique positions to mask
+                        $positions = array_rand(array_flip(range(0, $emailLength - 1)), $maskCount);
+
+                        // Convert email to an array
+                        $emailArray = str_split($email);
+                        
+                        // Mask selected positions
+                        foreach ($positions as $pos) {
+                            $emailArray[$pos] = '*';
+                        }
+
+                        // Convert back to string
+                        $item->Email = implode('', $emailArray);
+                    }
+
                     return $item;
                 });
         }

@@ -119,6 +119,10 @@ use App\Http\Controllers\AdministratorController;
             return redirect('/GlobePrepaid');
         });
         
+
+        // 
+        Route::get('/homecredit', [SupervendorController::class, 'homecredit']);
+
     });
 
     // ***************

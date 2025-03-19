@@ -90,6 +90,14 @@ class SupervendorController extends Controller
 
     }
 
+    function homecredit(){
+
+        $provinces = DB::table("location_provinces")->get();
+
+        return view('homecredit', [ "provinces" => $provinces]);
+
+    }
+
     // CAMPAIGNS ************************
 
     

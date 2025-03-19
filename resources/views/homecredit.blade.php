@@ -1,5 +1,5 @@
 <?php 
-   $campaign = "GR+";
+   $campaign = "Home Credit";
    $header_banner = "/images/globenew.png";
 
    $mobile_number_label = "Mobile Number";

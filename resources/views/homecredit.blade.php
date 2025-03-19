@@ -13,7 +13,7 @@
    "<p>GFiber Prepaid offers reloadable UNLI fiber internet speeds up to 100Mbps. No monthly bills - reload only when you need to!</p>" . 
    "<H4>Reminders:</H4>" . 
    "<ul>" . 
-       "<li>Subject to fiber serviceability in your area selected qualified Globe Rewards+ members, subject to validation</li>" . 
+       "<li>Subject to fiber serviceability in your area selected, subject to validation</li>" . 
        "<li>Expect an SMS confirmation regarding your application within 2 working days</li>" . 
    "</ul>";
 

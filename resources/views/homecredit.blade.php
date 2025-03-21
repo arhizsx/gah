@@ -212,11 +212,11 @@
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                <H5>Receipt</H5>
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                <H5>Purchase</H5>
                             </button>
                             </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse">
+                            <div id="collapseFour" class="accordion-collapse show">
                                 <div class="accordion-body">
                                     <div class="form-row">
                                         <input type="file" class="form-control checker mb-3" data-checker="required" name="receipt" id="receipt">

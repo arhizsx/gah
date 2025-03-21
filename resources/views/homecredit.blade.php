@@ -225,10 +225,6 @@
                                         <label for="zipcode">Frontliner ID#</label>
                                         <input type="text" class="form-control checker mb-3" data-checker="required" name="frontliner_id" id="frontliner_id">
                                     </div>
-                                    <div class="form-row">
-                                        <label for="zipcode">Store</label>
-                                        <input type="text" class="form-control checker mb-3" data-checker="required" name="store" id="store">
-                                    </div>
                                 </div>
                             </div>
                         </div>

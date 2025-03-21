@@ -210,6 +210,30 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <H5>Receipt</H5>
+                            </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <div class="form-row">
+                                        <input type="file" class="form-control checker mb-3" data-checker="required" name="receipt" id="receipt">
+                                    </div>
+                                    <div class="form-row">
+                                        <label for="zipcode">Frontliner ID#</label>
+                                        <input type="text" class="form-control checker mb-3" data-checker="required" name="frontliner_id" id="frontliner_id">
+                                    </div>
+                                    <div class="form-row">
+                                        <label for="zipcode">Store</label>
+                                        <input type="text" class="form-control checker mb-3" data-checker="required" name="store" id="store">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
                         <div class="border rounded-3 p-3 mt-4" style="font-size: 10px">
 
                             <H5 style="font-size: 14px">Disclaimer</H5>
